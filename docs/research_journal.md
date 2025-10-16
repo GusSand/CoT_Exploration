@@ -141,6 +141,63 @@
 
 ---
 
+### 2025-10-16: Section 5 Bug Fix - Batch Decoding Error
+
+**Objective**: Fix critical bug causing identical continuous thoughts across all examples.
+
+**Result**: ✅ **SUCCESS** - Bug fixed, step correctness improved from 2-7% to 39-53%
+
+**Bug Description**:
+- Initial results showed all examples had identical continuous thought patterns
+- Root cause: `decode_continuous_thought()` function only decoded first batch item
+- Result spread to all items in batch via `**decoded_initial` pattern
+
+**Fix Applied**:
+- Added `batch_idx` parameter to `decode_continuous_thought()`
+- Moved decode call inside `for b in range(batch_size)` loop
+- Now decodes each batch item separately
+
+**Results Comparison**:
+| Metric | Before Fix | After Fix | Improvement |
+|--------|------------|-----------|-------------|
+| Overall Accuracy | 43.21% | 43.21% | No change (expected) |
+| 1-step correctness | 6.7% | **43.3%** | +36.6pp |
+| 2-step correctness | 2.8% | **42.6%** | +39.8pp |
+| 3-step correctness | 2.8% | **53.1%** | +50.3pp |
+| 4-step correctness | 3.3% | **47.4%** | +44.1pp |
+| 5-step correctness | 2.1% | **39.6%** | +37.5pp |
+
+**Validation**:
+- Continuous thoughts now show problem-specific patterns (verified manually)
+- Example 0: `[' 13', ...]`, Example 13: `[' 10', ' 2', ...]`, Example 14: `[' 4', '4', ' 0', ...]`
+- Step correctness much more credible (39-53% vs. buggy 2-7%)
+- Still below paper's 75-97% - likely different validation methodology
+
+**New Results Location**:
+- `codi/outputs/section5_analysis/section5_run_20251016_142443/`
+
+**Files Modified**:
+- `section5_experiments/section5_analysis.py` - Fixed decode function
+- `codi/section5_analysis.py` - Working copy
+- `QUICK_START.md` - Updated paths and findings
+- `VISUALIZATION_GUIDE.md` - Updated paths
+
+**Time Investment**:
+- Bug identification: 5 minutes (user feedback)
+- Fix implementation: 10 minutes
+- Rerun analysis: 7 minutes
+- Documentation update: 20 minutes
+- **Total**: ~42 minutes
+
+**Impact**: Critical bug fixed. Framework now provides accurate problem-specific continuous thought decoding and credible interpretability analysis. Results closer to paper's reported metrics, though gap remains (likely methodological differences).
+
+**Deliverables**:
+- Bug fix report: `docs/experiments/section5_bugfix_2025-10-16.md`
+- Updated results: `section5_run_20251016_142443/`
+- Updated guides: `QUICK_START.md`, `VISUALIZATION_GUIDE.md`
+
+---
+
 ## Future Experiments
 
 ### Planned (Phase 2)

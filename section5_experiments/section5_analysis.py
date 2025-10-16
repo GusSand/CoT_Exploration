@@ -133,10 +133,18 @@ def decode_continuous_thought(
     hidden_state: torch.Tensor,
     lm_head: torch.nn.Module,
     tokenizer: transformers.PreTrainedTokenizer,
+    batch_idx: int,
     topk: int = 10
 ) -> Dict:
     """
-    Decode a continuous thought token to vocabulary space.
+    Decode a continuous thought token to vocabulary space for a specific batch item.
+
+    Args:
+        hidden_state: Hidden state tensor [batch_size, seq_len, hidden_dim]
+        lm_head: Language model head
+        tokenizer: Tokenizer for decoding
+        batch_idx: Index of the batch item to decode
+        topk: Number of top tokens to return
 
     Returns:
         Dict with 'topk_tokens', 'topk_probs', 'topk_decoded'
@@ -146,15 +154,15 @@ def decode_continuous_thought(
         probs = torch.nn.functional.softmax(logits, dim=-1)
         topk_probs, topk_indices = torch.topk(probs, k=topk, dim=-1)
 
-        # Decode indices to tokens
+        # Decode indices to tokens for the specific batch item
         topk_decoded = []
-        for idx in topk_indices[0, 0]:
+        for idx in topk_indices[batch_idx, 0]:
             token = tokenizer.decode([idx.item()])
             topk_decoded.append(token)
 
         return {
-            'topk_indices': topk_indices[0, 0].cpu().tolist(),
-            'topk_probs': topk_probs[0, 0].cpu().tolist(),
+            'topk_indices': topk_indices[batch_idx, 0].cpu().tolist(),
+            'topk_probs': topk_probs[batch_idx, 0].cpu().tolist(),
             'topk_decoded': topk_decoded
         }
 
@@ -386,13 +394,14 @@ def evaluation_section5(model_args, data_args, training_args, output_dir: str):
             batch_continuous_thoughts = [[] for _ in range(batch_size)]
 
             # Decode initial thought (before any continuous iterations)
-            decoded_initial = decode_continuous_thought(
-                latent_embd,
-                model.codi.lm_head,
-                tokenizer,
-                topk=PROBE_TOPK
-            )
             for b in range(batch_size):
+                decoded_initial = decode_continuous_thought(
+                    latent_embd,
+                    model.codi.lm_head,
+                    tokenizer,
+                    batch_idx=b,
+                    topk=PROBE_TOPK
+                )
                 batch_continuous_thoughts[b].append({
                     'iteration': 0,
                     'type': 'initial',
@@ -415,15 +424,15 @@ def evaluation_section5(model_args, data_args, training_args, output_dir: str):
                 past_key_values = outputs.past_key_values
                 latent_embd_pre_proj = outputs.hidden_states[-1][:, -1, :].unsqueeze(1)
 
-                # Decode before projection
-                decoded = decode_continuous_thought(
-                    latent_embd_pre_proj,
-                    model.codi.lm_head,
-                    tokenizer,
-                    topk=PROBE_TOPK
-                )
-
+                # Decode before projection for each batch item
                 for b in range(batch_size):
+                    decoded = decode_continuous_thought(
+                        latent_embd_pre_proj,
+                        model.codi.lm_head,
+                        tokenizer,
+                        batch_idx=b,
+                        topk=PROBE_TOPK
+                    )
                     batch_continuous_thoughts[b].append({
                         'iteration': i + 1,
                         'type': 'continuous_thought',

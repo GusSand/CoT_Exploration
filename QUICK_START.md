@@ -10,7 +10,7 @@
 
 Your results are in:
 ```
-/workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_135510/
+/workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_142443/
 ```
 
 ### Step 2: Choose Your Viewing Method
@@ -19,13 +19,13 @@ Your results are in:
 
 ```bash
 # If on local machine:
-cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_135510/
+cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_142443/
 xdg-open interpretability_visualization.html  # Linux
 open interpretability_visualization.html       # macOS
 start interpretability_visualization.html      # Windows
 
 # If on remote server:
-cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_135510/
+cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_142443/
 python -m http.server 8000
 # Then open: http://localhost:8000/interpretability_visualization.html
 ```
@@ -33,7 +33,7 @@ python -m http.server 8000
 #### **Option B: Terminal View** 📟
 
 ```bash
-cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_135510/
+cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_142443/
 less interpretability_visualization.txt
 
 # Or show first 20 examples:
@@ -44,7 +44,7 @@ head -300 interpretability_visualization.txt
 
 ```bash
 # Open in Excel, Google Sheets, or pandas:
-cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_135510/
+cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_142443/
 # Then open: interpretability_analysis.csv
 ```
 
@@ -132,13 +132,14 @@ When viewing `interpretability_visualization.html`:
 
 ## ⚠️ Key Finding
 
-**Step Correctness**: 2-7% (vs. paper's reported 75-97%)
+**Step Correctness**: 39-53% (vs. paper's reported 75-97%)
 
-**Why the difference?**
-- Likely different validation methodology
-- Final answers still correct (43.21% overall)
-- Suggests continuous thoughts encode **semantic** meaning, not literal tokens
-- See `docs/experiments/section5_reproduction_2025-10-16.md` for analysis
+**Analysis:**
+- **Bug Fixed**: Previous version had batch decoding bug causing identical continuous thoughts across examples
+- **Corrected Results**: Now showing 39-53% step correctness (much more reasonable!)
+- Still lower than paper's 75-97% - likely different validation methodology
+- Final answers remain correct (43.21% overall accuracy)
+- See `docs/experiments/section5_reproduction_2025-10-16.md` for detailed analysis
 
 ---
 
@@ -163,7 +164,7 @@ bash run_section5.sh  # Full analysis (~7 min)
 # Or just regenerate visualizations:
 cd codi
 python visualize_interpretability.py \
-    --input_dir outputs/section5_analysis/section5_run_20251016_135510 \
+    --input_dir outputs/section5_analysis/section5_run_20251016_142443 \
     --max_examples 50 \
     --output_name my_custom_viz
 ```
