@@ -10,7 +10,7 @@ This guide explains how to access and use the interactive HTML visualization gen
 
 ```bash
 # From your local machine, navigate to the results directory
-cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_142443/
+cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_144501/
 
 # Open the HTML file in your default browser
 # On Linux:
@@ -31,7 +31,7 @@ If you're working on a remote server:
 
 ```bash
 # Navigate to the output directory
-cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_142443/
+cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_144501/
 
 # Start a simple HTTP server
 python -m http.server 8000
@@ -47,7 +47,7 @@ If you're working on a remote server and want to view locally:
 
 ```bash
 # From your LOCAL machine (not the server):
-scp user@server:/workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_142443/interpretability_visualization.html ~/Downloads/
+scp user@server:/workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_144501/interpretability_visualization.html ~/Downloads/
 
 # Then open the downloaded file in your browser
 ```
@@ -340,7 +340,7 @@ print(f"Found {len(interesting_cases)} examples with ' 9' in first thought")
 cd /workspace/CoT_Exploration/codi
 
 python visualize_interpretability.py \
-    --input_dir outputs/section5_analysis/section5_run_20251016_142443 \
+    --input_dir outputs/section5_analysis/section5_run_20251016_144501 \
     --max_examples 25 \
     --output_name custom_viz
 ```

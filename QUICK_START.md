@@ -10,7 +10,7 @@
 
 Your results are in:
 ```
-/workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_142443/
+/workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_144501/
 ```
 
 ### Step 2: Choose Your Viewing Method
@@ -19,13 +19,13 @@ Your results are in:
 
 ```bash
 # If on local machine:
-cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_142443/
+cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_144501/
 xdg-open interpretability_visualization.html  # Linux
 open interpretability_visualization.html       # macOS
 start interpretability_visualization.html      # Windows
 
 # If on remote server:
-cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_142443/
+cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_144501/
 python -m http.server 8000
 # Then open: http://localhost:8000/interpretability_visualization.html
 ```
@@ -33,7 +33,7 @@ python -m http.server 8000
 #### **Option B: Terminal View** 📟
 
 ```bash
-cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_142443/
+cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_144501/
 less interpretability_visualization.txt
 
 # Or show first 20 examples:
@@ -44,7 +44,7 @@ head -300 interpretability_visualization.txt
 
 ```bash
 # Open in Excel, Google Sheets, or pandas:
-cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_142443/
+cd /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_144501/
 # Then open: interpretability_analysis.csv
 ```
 
@@ -132,14 +132,16 @@ When viewing `interpretability_visualization.html`:
 
 ## ⚠️ Key Finding
 
-**Step Correctness**: 39-53% (vs. paper's reported 75-97%)
+**Step Correctness**: 44-56% (vs. paper's reported 75-97%)
 
 **Analysis:**
-- **Bug Fixed**: Previous version had batch decoding bug causing identical continuous thoughts across examples
-- **Corrected Results**: Now showing 39-53% step correctness (much more reasonable!)
-- Still lower than paper's 75-97% - likely different validation methodology
+- **Bug Fixed**: Fixed batch decoding bug causing identical continuous thoughts
+- **Methodology Refined**: Using paper's approach - every other thought (0, 2, 4, 6) + top-5 tokens
+- **Corrected Results**: Now showing 44-56% step correctness
+- **Best Result**: 56.3% on 3-step problems (vs paper's 75.0%, gap: -18.7pp)
+- Still lower than paper's 75-97% - likely subtle validation methodology differences
 - Final answers remain correct (43.21% overall accuracy)
-- See `docs/experiments/section5_reproduction_2025-10-16.md` for detailed analysis
+- See `docs/experiments/section5_methodology_refinement_2025-10-16.md` for detailed analysis
 
 ---
 
@@ -164,7 +166,7 @@ bash run_section5.sh  # Full analysis (~7 min)
 # Or just regenerate visualizations:
 cd codi
 python visualize_interpretability.py \
-    --input_dir outputs/section5_analysis/section5_run_20251016_142443 \
+    --input_dir outputs/section5_analysis/section5_run_20251016_144501 \
     --max_examples 50 \
     --output_name my_custom_viz
 ```
