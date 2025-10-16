@@ -71,7 +71,11 @@ datasets/
 # Output directories
 outputs/
 results/
-experiments/
+
+# Experiment outputs (but keep docs/experiments/ for documentation)
+/experiments/
+codi/experiments/
+!docs/experiments/
 
 # Cache directories
 .cache/

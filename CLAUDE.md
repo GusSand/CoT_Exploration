@@ -105,17 +105,38 @@ Remember, the role will be defined at the beginning of each chat. Do not change 
 ## Development Process
 
 When implementing features:
-- make sure you create the virtual environment in the env directory. 
+- make sure you create the virtual environment in the env directory.
 1. Gather requirements by asking questions
 2. Break requirements into small features
 3. Separate features into multiple tasks
 4. Write tests for each feature
 5. Implement features following the architecture guidelines
-6. If we have user stories write a list of the stories. 
+6. If we have user stories write a list of the stories.
 7. Keep track of the estimated cost vs actual cost
 8. Always keep the user informed of progress in terms of stories (x done/y)
 9. Write documentation
 10. Commit all changes
+
+## Experiment Workflow
+
+**CRITICAL**: After completing ANY experiment or research task, you MUST commit and push results to GitHub:
+
+1. **Document Results**:
+   - Update `docs/research_journal.md` with high-level summary
+   - Create detailed report in `docs/experiments/[experiment_name]_[YYYY-MM-DD].md`
+   - Include: results, configuration, error analysis, validation of claims
+
+2. **Commit to Version Control**:
+   - Stage all documentation files
+   - Stage any new scripts or code created
+   - Create descriptive commit message
+   - Push to GitHub immediately
+
+3. **Never Skip Commits**:
+   - Experiments represent significant work and findings
+   - Version control preserves reproducibility
+   - Teammates need access to latest results
+   - Use proper .gitignore to exclude large model files and logs
 
 ## Maintaining This Document
 
