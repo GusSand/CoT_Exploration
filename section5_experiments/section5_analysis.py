@@ -526,14 +526,13 @@ def evaluation_section5(model_args, data_args, training_args, output_dir: str):
                 reference_steps = extract_intermediate_steps(cots[q_idx])
 
                 # Extract decoded steps from continuous thoughts
-                # Following paper methodology: use only every other thought (even iterations)
-                # Skip thought 0 (initial) and odd iterations, use only even iterations (2, 4, 6)
+                # Following paper methodology: use every other thought starting from iteration 0
+                # Pattern: 0, 2, 4, 6 (include initial, then every other)
                 # Use top-5 decoded tokens per step (as in paper's Table 3)
                 decoded_steps = []
                 for thought in batch_continuous_thoughts[b]:
-                    # Use only even-numbered iterations (actual computation steps)
-                    # Skip iteration 0 (initial) and odd iterations (transitional states)
-                    if thought['iteration'] > 0 and thought['iteration'] % 2 == 0:
+                    # Use even-numbered iterations: 0, 2, 4, 6
+                    if thought['iteration'] % 2 == 0:
                         if thought['topk_decoded']:
                             # Use top-5 tokens as in the paper
                             decoded_steps.append(thought['topk_decoded'][:5])

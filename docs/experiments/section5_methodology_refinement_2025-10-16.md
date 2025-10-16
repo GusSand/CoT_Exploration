@@ -53,9 +53,9 @@ Example from Figure 6:
 - 2-step: 42.2%
 - 3-step: 28.3%
 
-### Version 4: Every Other Thought + Top-5 (Paper Methodology)
+### Version 4: Every Other Thought + Top-5 (Excluding Step 0)
 **Changes**:
-- Use only even iterations (2, 4, 6)
+- Use only even iterations (2, 4, 6) - excluding iteration 0
 - **Use top-5 decoded tokens**
 - Check if reference appears in any of top-5
 
@@ -66,6 +66,19 @@ Example from Figure 6:
 - 4-step: **33.7%**
 - 5-step: **18.1%**
 
+### Version 5: Every Other Thought + Top-5 INCLUDING Step 0 (Correct!)
+**Changes**:
+- Use even iterations (0, 2, 4, 6) - **INCLUDING iteration 0**
+- **Use top-5 decoded tokens**
+- Check if reference appears in any of top-5
+
+**Results**:
+- 1-step: **50.0%** (Paper: 97.1%, Gap: -47.1pp)
+- 2-step: **44.7%** (Paper: 83.9%, Gap: -39.2pp)
+- 3-step: **56.3%** (Paper: 75.0%, Gap: -18.7pp) ⭐ **Major improvement!**
+- 4-step: **50.8%** ⭐ **+17.1pp from V4**
+- 5-step: **42.7%** ⭐ **+24.6pp from V4**
+
 ## Progress Summary
 
 | Version | Methodology | 1-step | 2-step | 3-step | Notes |
@@ -73,10 +86,12 @@ Example from Figure 6:
 | V1 | Buggy (all thoughts, top-1) | 6.7% | 2.8% | 2.8% | Batch bug |
 | V2 | Fixed (all thoughts, top-1) | 43.3% | 42.6% | 53.1% | Bug fixed |
 | V3 | Even thoughts only, top-1 | 40.0% | 42.2% | 28.3% | Partial paper method |
-| **V4** | **Even thoughts, top-5** | **50.0%** | **46.4%** | **32.0%** | **Paper methodology** |
+| V4 | Even thoughts (2,4,6), top-5 | 50.0% | 46.4% | 32.0% | Excluded step 0 |
+| **V5** | **Even thoughts (0,2,4,6), top-5** | **50.0%** | **44.7%** | **56.3%** | **Include step 0!** |
 | Paper | Even thoughts, top-5 | 97.1% | 83.9% | 75.0% | Target |
 
-**Overall improvement**: From 2-7% → 32-50% (10-25x improvement!)
+**Overall improvement**: From 2-7% → 44-56% (15-20x improvement!)
+**Best match on 3-step**: 56.3% vs 75.0% (gap reduced to 18.7pp!)
 
 ## Remaining Gap Analysis
 
@@ -154,8 +169,14 @@ def validate_intermediate_computation(decoded_steps, reference_steps):
 
 ## Updated Results Location
 
+**Version 4 (without step 0)**:
 ```
 /workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_144000/
+```
+
+**Version 5 (with step 0) - CURRENT BEST**:
+```
+/workspace/CoT_Exploration/codi/outputs/section5_analysis/section5_run_20251016_144501/
 ```
 
 ## Next Steps for Further Improvement
