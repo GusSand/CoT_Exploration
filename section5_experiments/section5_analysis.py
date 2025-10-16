@@ -168,12 +168,18 @@ def decode_continuous_thought(
 
 
 def validate_intermediate_computation(
-    decoded_steps: List[str],
+    decoded_steps: List[List[str]],  # Now expects list of top-K token lists
     reference_steps: List[str],
     tolerance: float = 0.01
 ) -> Tuple[List[bool], float]:
     """
     Validate if decoded intermediate results match reference CoT.
+    Following paper methodology: check if reference value appears in top-5 decoded tokens.
+
+    Args:
+        decoded_steps: List of top-K decoded token lists for each step
+        reference_steps: List of reference CoT steps
+        tolerance: Numerical tolerance for floating point comparison
 
     Returns:
         Tuple of (step_correctness_list, overall_accuracy)
@@ -182,24 +188,23 @@ def validate_intermediate_computation(
         return [], 0.0
 
     reference_results = extract_intermediate_results(''.join(f'«{s}»' for s in reference_steps))
-    decoded_results = []
-
-    # Extract numbers from decoded steps
-    for step in decoded_steps:
-        numbers = re.findall(r'-?\d+\.?\d*', step)
-        if numbers:
-            try:
-                decoded_results.append(float(numbers[-1]))
-            except ValueError:
-                decoded_results.append(float('inf'))
 
     # Compare results
     correctness = []
-    for i, (ref, dec) in enumerate(zip(reference_results, decoded_results)):
-        if abs(ref - dec) < tolerance or (ref != 0 and abs((ref - dec) / ref) < tolerance):
-            correctness.append(True)
-        else:
-            correctness.append(False)
+    for i, (ref, topk_tokens) in enumerate(zip(reference_results, decoded_steps)):
+        # Check if reference value appears in any of the top-K decoded tokens
+        found_match = False
+        for token in topk_tokens:
+            numbers = re.findall(r'-?\d+\.?\d*', token)
+            if numbers:
+                try:
+                    decoded_val = float(numbers[-1])
+                    if abs(ref - decoded_val) < tolerance or (ref != 0 and abs((ref - decoded_val) / ref) < tolerance):
+                        found_match = True
+                        break
+                except ValueError:
+                    continue
+        correctness.append(found_match)
 
     # Overall accuracy
     if correctness:
@@ -521,10 +526,17 @@ def evaluation_section5(model_args, data_args, training_args, output_dir: str):
                 reference_steps = extract_intermediate_steps(cots[q_idx])
 
                 # Extract decoded steps from continuous thoughts
+                # Following paper methodology: use only every other thought (even iterations)
+                # Skip thought 0 (initial) and odd iterations, use only even iterations (2, 4, 6)
+                # Use top-5 decoded tokens per step (as in paper's Table 3)
                 decoded_steps = []
                 for thought in batch_continuous_thoughts[b]:
-                    if thought['topk_decoded']:
-                        decoded_steps.append(thought['topk_decoded'][0])  # Top-1 decoded token
+                    # Use only even-numbered iterations (actual computation steps)
+                    # Skip iteration 0 (initial) and odd iterations (transitional states)
+                    if thought['iteration'] > 0 and thought['iteration'] % 2 == 0:
+                        if thought['topk_decoded']:
+                            # Use top-5 tokens as in the paper
+                            decoded_steps.append(thought['topk_decoded'][:5])
 
                 # Validate intermediate computations
                 step_correctness, step_accuracy = validate_intermediate_computation(
