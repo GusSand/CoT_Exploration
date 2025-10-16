@@ -1,0 +1,3 @@
+[submodule "codi"]
+	path = codi
+	url = https://github.com/zhenyi4/codi.git
