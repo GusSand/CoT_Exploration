@@ -16,6 +16,27 @@ from typing import List, Dict
 import html
 
 
+def get_prob_color(prob: float) -> str:
+    """
+    Generate a color based on probability (higher probability = darker blue).
+
+    Args:
+        prob: Probability value between 0 and 1
+
+    Returns:
+        RGB color string
+    """
+    # Use a blue gradient where higher probability is darker
+    # Map probability to a scale from light blue to dark blue
+    min_intensity = 240  # Light blue
+    max_intensity = 30   # Dark blue
+
+    intensity = int(min_intensity - (min_intensity - max_intensity) * prob)
+
+    # Create RGB color (lower red/green values = darker blue)
+    return f"rgb({intensity}, {intensity}, 255)"
+
+
 def generate_html_visualization(predictions: List[Dict], output_file: str, max_examples: int = 20):
     """
     Generate an HTML file with interactive visualizations of continuous thought interpretability.
@@ -30,7 +51,7 @@ def generate_html_visualization(predictions: List[Dict], output_file: str, max_e
         <style>
             body {
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                max-width: 1400px;
+                max-width: 1600px;
                 margin: 0 auto;
                 padding: 20px;
                 background-color: #f5f5f5;
@@ -70,35 +91,43 @@ def generate_html_visualization(predictions: List[Dict], output_file: str, max_e
                 margin-bottom: 15px;
                 border-left: 4px solid #f59e0b;
             }
-            .continuous-thought {
-                background-color: #f3f4f6;
-                padding: 15px;
-                margin: 10px 0;
-                border-radius: 5px;
-                border-left: 4px solid #8b5cf6;
-            }
-            .thought-header {
-                font-weight: bold;
-                color: #8b5cf6;
-                margin-bottom: 10px;
-            }
-            .decoded-tokens {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 5px;
-                margin-top: 10px;
-            }
-            .token {
-                background-color: #e0e7ff;
-                padding: 5px 10px;
-                border-radius: 3px;
+            .thoughts-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 15px;
                 font-family: 'Courier New', monospace;
                 font-size: 0.9em;
             }
-            .token-top1 {
-                background-color: #c7d2fe;
+            .thoughts-table th {
+                background-color: #e0e7ff;
+                padding: 8px;
+                text-align: left;
+                border: 1px solid #c7d2fe;
                 font-weight: bold;
-                border: 2px solid #818cf8;
+            }
+            .thoughts-table td {
+                padding: 8px;
+                border: 1px solid #ddd;
+                text-align: left;
+                vertical-align: top;
+            }
+            .thoughts-table td.thought-label {
+                font-weight: bold;
+                white-space: nowrap;
+                background-color: #f9fafb;
+            }
+            .token-cell {
+                display: inline-block;
+                padding: 4px 8px;
+                margin: 2px;
+                border-radius: 3px;
+                font-weight: bold;
+            }
+            .prob-value {
+                display: block;
+                font-size: 0.75em;
+                color: #333;
+                margin-top: 2px;
             }
             .prediction {
                 background-color: #ecfdf5;
@@ -238,34 +267,52 @@ def generate_html_visualization(predictions: List[Dict], output_file: str, max_e
                 <strong>Extracted Steps:</strong> {', '.join(html.escape(s) for s in pred['reference_steps'])}
             </div>
 
-            <h3>Continuous Thoughts Interpretation</h3>
+            <h3>Continuous Thoughts Interpretation (Top-5 Decoded Tokens)</h3>
+            <table class="thoughts-table">
+                <thead>
+                    <tr>
+                        <th>Thought</th>
+                        <th>Rank 1</th>
+                        <th>Rank 2</th>
+                        <th>Rank 3</th>
+                        <th>Rank 4</th>
+                        <th>Rank 5</th>
+                    </tr>
+                </thead>
+                <tbody>
 """
 
-        # Display continuous thoughts
+        # Display each continuous thought as a row
         for thought in pred['continuous_thoughts']:
             iteration = thought['iteration']
             thought_type = thought['type']
 
+            # Get top 5 tokens and probabilities
+            top5_tokens = thought['topk_decoded'][:5]
+            top5_probs = thought['topk_probs'][:5]
+
             html_content += f"""
-            <div class="continuous-thought">
-                <div class="thought-header">
-                    Thought {iteration} ({thought_type})
-                </div>
-                <div>Top-{len(thought['topk_decoded'])} Decoded Tokens:</div>
-                <div class="decoded-tokens">
+                    <tr>
+                        <td class="thought-label">T{iteration}<br>({thought_type})</td>
 """
 
-            for i, (token, prob) in enumerate(zip(thought['topk_decoded'], thought['topk_probs'])):
-                token_class = "token token-top1" if i == 0 else "token"
+            # Add each token as a cell
+            for token, prob in zip(top5_tokens, top5_probs):
+                color = get_prob_color(prob)
                 html_content += f"""
-                    <span class="{token_class}" title="Probability: {prob:.4f}">
-                        {html.escape(token)}
-                    </span>
+                        <td style="background-color: {color};">
+                            <span class="token-cell">{html.escape(token)}</span>
+                            <span class="prob-value">{prob:.4f}</span>
+                        </td>
 """
 
             html_content += """
-                </div>
-            </div>
+                    </tr>
+"""
+
+        html_content += """
+                </tbody>
+            </table>
 """
 
         # Comparison table
@@ -367,10 +414,13 @@ def generate_text_report(predictions: List[Dict], output_file: str):
             f.write(f"Question: {pred['question_text']}\n\n")
             f.write(f"Reference CoT: {pred['reference_cot']}\n\n")
 
-            f.write("Continuous Thoughts (Top-3 Decoded):\n")
+            f.write("Continuous Thoughts (Top-5 Decoded with Probabilities):\n")
             for thought in pred['continuous_thoughts']:
-                top3 = thought['topk_decoded'][:3] if len(thought['topk_decoded']) >= 3 else thought['topk_decoded']
-                f.write(f"  Thought {thought['iteration']}: {top3}\n")
+                f.write(f"  Thought {thought['iteration']}:\n")
+                top5_tokens = thought['topk_decoded'][:5]
+                top5_probs = thought['topk_probs'][:5]
+                for rank, (token, prob) in enumerate(zip(top5_tokens, top5_probs), 1):
+                    f.write(f"    {rank}. {token:15s} ({prob:.4f})\n")
 
             f.write(f"\nPredicted: {pred['predicted_answer']} | Ground Truth: {pred['ground_truth_answer']}\n")
             f.write(f"Step Accuracy: {pred['overall_step_accuracy']*100:.1f}%\n")
