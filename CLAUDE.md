@@ -101,11 +101,13 @@ Remember, the role will be defined at the beginning of each chat. Do not change 
 1. Gather requirements
 2. Create user stories
 3. Cost the user stories
+4. Make sure you include stories for tracing/debugging like wandb integration. 
 
 ## Development Process
 
 When implementing features:
 - make sure you create the virtual environment in the env directory.
+- make sure you add wandb tracing
 1. Gather requirements by asking questions
 2. Break requirements into small features
 3. Separate features into multiple tasks
