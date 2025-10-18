@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent / "codi"))
 
 from src.model import CODI, ModelArguments, TrainingArguments, DataArguments
 from transformers import AutoTokenizer, HfArgumentParser
+from peft import LoraConfig, TaskType
 
 # Layer configuration - which layers to cache
 LAYER_CONFIG = {
@@ -50,6 +51,10 @@ class ActivationCacher:
                 '--use_lora', 'True',
                 '--ckpt_dir', model_path,
                 '--use_prj', 'True',
+                '--prj_dim', '768',  # GPT-2 uses 768, not default 2048
+                '--lora_r', '128',
+                '--lora_alpha', '32',
+                '--lora_init', 'True',
             ]
         )
 
@@ -57,8 +62,33 @@ class ActivationCacher:
         model_args.train = False
         training_args.greedy = True
 
-        # Load model
-        self.model = CODI(model_args, training_args, data_args)
+        # Create LoRA config for GPT-2
+        lora_config = LoraConfig(
+            task_type=TaskType.CAUSAL_LM,
+            inference_mode=False,
+            r=model_args.lora_r,
+            lora_alpha=model_args.lora_alpha,
+            lora_dropout=0.1,
+            target_modules=["c_attn", "c_proj", 'c_fc'],  # GPT-2 specific
+            init_lora_weights=True,
+        )
+
+        # Load model with lora_config
+        self.model = CODI(model_args, training_args, lora_config)
+
+        # Load checkpoint weights
+        import os
+        from safetensors.torch import load_file
+        try:
+            state_dict = load_file(os.path.join(model_path, "model.safetensors"))
+        except Exception:
+            state_dict = torch.load(os.path.join(model_path, "pytorch_model.bin"), map_location='cpu')
+
+        self.model.load_state_dict(state_dict, strict=False)
+        self.model.codi.tie_weights()
+
+        # Convert to float32 to avoid dtype mismatches (checkpoint has mixed bfloat16/float32)
+        self.model.float()
         self.model.to(device)
         self.model.eval()
 

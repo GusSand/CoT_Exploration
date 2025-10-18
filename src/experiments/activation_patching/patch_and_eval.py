@@ -207,7 +207,7 @@ class ActivationPatcher:
                 pred_tokens.append(next_token_id.item())
                 output_emb = self.model.get_embd(self.model.codi, self.model.model_name)(
                     next_token_id
-                ).unsqueeze(0).unsqueeze(0)
+                ).unsqueeze(1)
 
             # Decode answer
             answer = self.tokenizer.decode(pred_tokens, skip_special_tokens=True)
