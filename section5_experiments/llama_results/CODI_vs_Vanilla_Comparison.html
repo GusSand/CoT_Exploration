@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CODI vs Vanilla Llama Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .improvement {
+            background: #d1fae5;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .improvement-value {
+            font-size: 3em;
+            font-weight: bold;
+            color: #065f46;
+        }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .model-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .vanilla { border-left: 5px solid #ef4444; }
+        .codi { border-left: 5px solid #10b981; }
+        .metric {
+            margin: 15px 0;
+            padding: 10px;
+            background: #f9fafb;
+            border-radius: 5px;
+        }
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        th {
+            background: #f9fafb;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CODI vs Vanilla Llama-3.2-1B-Instruct</h1>
+        <h2>GSM8K Mathematical Reasoning Comparison</h2>
+    </div>
+
+    <div class="improvement">
+        <h2>CODI Training Impact</h2>
+        <div class="improvement-value">+163.9%</div>
+        <p>Relative improvement in accuracy</p>
+        <p><strong>21.00% → 55.42%</strong> (absolute: +34.42pp)</p>
+    </div>
+
+    <div class="comparison">
+        <div class="model-card vanilla">
+            <h2>Vanilla Llama</h2>
+            <p><em>Standard pretrained model</em></p>
+            <div class="metric">
+                <div><strong>Accuracy</strong></div>
+                <div class="metric-value">21.00%</div>
+            </div>
+            <div class="metric">
+                <div><strong>Correct</strong></div>
+                <div class="metric-value">277/1319</div>
+            </div>
+            <div class="metric">
+                <div><strong>Reasoning</strong></div>
+                <div>Direct answer generation</div>
+            </div>
+        </div>
+
+        <div class="model-card codi">
+            <h2>CODI Llama</h2>
+            <p><em>With continuous thought training</em></p>
+            <div class="metric">
+                <div><strong>Accuracy</strong></div>
+                <div class="metric-value">55.42%</div>
+            </div>
+            <div class="metric">
+                <div><strong>Correct</strong></div>
+                <div class="metric-value">731/1319</div>
+            </div>
+            <div class="metric">
+                <div><strong>Reasoning</strong></div>
+                <div>6 continuous thought tokens</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Performance Comparison</h2>
+    <table>
+        <tr>
+            <th>Metric</th>
+            <th>Vanilla Llama</th>
+            <th>CODI Llama</th>
+            <th>Improvement</th>
+        </tr>
+        <tr>
+            <td><strong>Accuracy</strong></td>
+            <td>21.00%</td>
+            <td>55.42%</td>
+            <td style="color: #10b981; font-weight: bold;">+34.42pp (164%)</td>
+        </tr>
+        <tr>
+            <td><strong>Correct Predictions</strong></td>
+            <td>277</td>
+            <td>731</td>
+            <td style="color: #10b981; font-weight: bold;">+454 more correct</td>
+        </tr>
+        <tr>
+            <td><strong>Reasoning Method</strong></td>
+            <td>Direct (0 reasoning tokens)</td>
+            <td>6 continuous thoughts</td>
+            <td>Implicit reasoning</td>
+        </tr>
+        <tr>
+            <td><strong>Compression vs Explicit CoT</strong></td>
+            <td>N/A</td>
+            <td>3.2x compression</td>
+            <td>Efficient reasoning</td>
+        </tr>
+    </table>
+
+    <h2>What CODI Training Achieved</h2>
+    <div style="background: white; padding: 20px; border-radius: 10px; margin: 20px 0;">
+        <ul style="line-height: 1.8;">
+            <li><strong>164% relative improvement</strong> in accuracy</li>
+            <li><strong>454 additional correct answers</strong> out of 1,319 problems</li>
+            <li><strong>Learned to reason in continuous space</strong> using just 6 latent tokens</li>
+            <li><strong>3.2x more efficient</strong> than explicit Chain-of-Thought (~20 tokens)</li>
+            <li><strong>Matches 97.7% of explicit CoT performance</strong> (55.42% vs 56.7% reported in paper)</li>
+        </ul>
+    </div>
+
+    <h2>Analysis</h2>
+    <div style="background: white; padding: 20px; border-radius: 10px;">
+        <h3>Why the Difference?</h3>
+        <p>The vanilla Llama-3.2-1B-Instruct model achieves only 21% accuracy on GSM8K because it attempts to directly generate the final answer without explicit reasoning steps. While the model has been instruction-tuned, it lacks dedicated capacity for multi-step mathematical reasoning.</p>
+
+        <p><strong>CODI training</strong> teaches the model to use 6 continuous thought tokens as an internal "scratchpad":</p>
+        <ul>
+            <li>Encode intermediate numerical values (e.g., "80", "160")</li>
+            <li>Represent mathematical operations ("+", "*", "-")</li>
+            <li>Maintain computational state across steps</li>
+            <li>Enable structured multi-step problem solving</li>
+        </ul>
+
+        <p>Result: <strong>164% relative improvement</strong> using dramatically fewer tokens than natural language reasoning.</p>
+    </div>
+</body>
+</html>
