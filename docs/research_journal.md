@@ -626,6 +626,89 @@ For Corruption Effectiveness:
 
 ---
 
+### 2025-10-19: Both-Correct Activation Patching - Testing Reasoning Hypothesis
+
+**Objective**: Test if CODI learns reasoning by patching CLEAN activations into CORRUPTED questions where the model answers BOTH correctly.
+
+**Status**: ✅ **COMPLETE** - Unexpected result: Model still produces corrupted answer despite clean activations
+
+**Hypothesis**: If the model truly learns reasoning, patching CLEAN activations into a CORRUPTED question should cause the model to output the CLEAN answer (not the corrupted answer).
+
+**Experimental Design**:
+- Filter for pairs where model answers BOTH clean AND corrupted questions correctly
+- Patch CLEAN activations → into CORRUPTED question processing
+- Classify output as: clean_answer / corrupted_answer / other_coherent / gibberish
+- Test across 3 layers: Early (L3), Middle (L6), Late (L11)
+
+**Results**:
+- **Dataset**: 19/45 pairs (42%) met "both-correct" criteria
+- **Filtering**: More permissive than previous experiment (included "both correct" cases)
+
+**Classification Breakdown**:
+| Layer | Clean Answer | Corrupted Answer | Other | Gibberish |
+|-------|--------------|------------------|-------|-----------|
+| Early (L3) | **0.0%** | **100.0%** | 0.0% | 0.0% |
+| Middle (L6) | **0.0%** | **94.7%** | 5.3% | 0.0% |
+| Late (L11) | **21.1%** | **63.2%** | 15.8% | 0.0% |
+
+**Key Finding**: ⚠️ **Model predominantly outputs CORRUPTED answer even when patched with CLEAN activations**
+
+**Interpretation Options**:
+1. **Activations don't encode reasoning strongly**: The continuous thought activations may not be the primary mechanism for reasoning
+2. **Input dominates over activations**: The corrupted question input may override the patched activations
+3. **Partial encoding (late layers)**: L11 shows 21% clean answers, suggesting some reasoning information in late layers
+4. **Need different patching strategy**: May need to patch multiple positions or use different intervention method
+
+**Comparison to Previous Experiment**:
+- Previous: Filtered for "clean correct, corrupted incorrect" → Tested if patching fixes errors
+- This: Filtered for "both correct" → Tested if patching causes answer switching
+- Previous showed 44-56% recovery (but not statistically significant, n=9)
+- This shows 0-21% clean answer production (n=19)
+
+**Technical Achievement**:
+- ✅ Created robust filtering for both-correct pairs (19 found)
+- ✅ Implemented answer classification system (clean/corrupted/other/gibberish)
+- ✅ Full WandB integration with classification tracking
+- ✅ 16-second execution time
+
+**Configuration**:
+- Model: GPT-2 (124M) + CODI (6 latent tokens)
+- Dataset: 45 problem pairs → 19 both-correct pairs
+- Layers: L3 (early), L6 (middle), L11 (late)
+- Runtime: 16 seconds
+- WandB: https://wandb.ai/gussand/codi-activation-patching/runs/2yk4p5u3
+
+**Deliverables**:
+- Experiment script: `src/experiments/activation_patching/run_both_correct_experiment.py`
+- Results: `results_both_correct/experiment_results_both_correct.json`
+- Research journal entry: Updated
+- Detailed report: `docs/experiments/both_correct_activation_patching_2025-10-19.md` (pending)
+
+**Time Investment**:
+- Planning (PM role): 10 minutes
+- Script development: 5 minutes
+- Experiment execution: 16 seconds
+- Documentation: 10 minutes
+- **Total**: ~25 minutes
+
+**Critical Next Steps**:
+1. Investigate why corrupted answer dominates despite clean activations
+2. Test reverse direction: Patch CORRUPTED → CLEAN (compare asymmetry)
+3. Try patching ALL 6 latent token positions (not just first)
+4. Test with larger sample size (current n=19)
+5. Compare with explicit CoT baseline
+
+**Limitations**:
+- Small sample size (19 pairs)
+- Only tested first [THINK] token position
+- Only tested one patching direction (clean→corrupted)
+- No comparison with explicit CoT baseline
+- No control for patching randomness
+
+**Impact**: This experiment challenges the hypothesis that continuous thought activations are the primary driver of reasoning in CODI. The fact that the model produces corrupted answers even when patched with clean activations suggests that reasoning may be distributed across multiple mechanisms, or that the input question dominates over the latent activations.
+
+---
+
 ## Future Experiments
 
 ### Planned (Phase 2)
