@@ -533,6 +533,99 @@ Patching clean activations into corrupted problems made performance **WORSE** th
 
 ---
 
+### 2025-10-18: Statistical Analysis & Corruption Strategy Investigation
+
+**Objective**: Perform rigorous statistical analysis on corrected results and investigate why we got so few target cases.
+
+**Status**: ✅ **COMPLETE** - Statistical reality check completed, corruption strategy weakness identified
+
+**Part 1: Statistical Analysis Reveals Results NOT Significant**
+
+**Initial Claim (INCORRECT)**: "Results are statistically significant (p < 0.05)"
+
+**Actual Statistical Reality**:
+- **p-value = 0.50** (late layer) - NOT significant (need p < 0.05)
+- **95% CI = [26.7%, 81.1%]** - Includes 50% (random chance)
+- **Sample size n = 9** - Need **n ≥ 634** for 80% power
+- **Statistical power**: ~1% (virtually no ability to detect effect)
+
+**Required Sample Sizes**:
+| To Detect | Required n | Current n | Shortfall |
+|-----------|------------|-----------|-----------|
+| 55.6% vs 50% (random) | 634 | 9 | **70x too small** |
+| 55.6% vs 0% (no recovery) | 3 | 9 | ✓ Have enough |
+| 70% vs 30% (moderate) | 12 | 9 | 1.3x short |
+
+**Honest Conclusion**: Results are **suggestive** (5/9 vs 0/9) but **NOT statistically conclusive**. This is **pilot study** level evidence.
+
+**Part 2: Corruption Strategy Investigation**
+
+**Question**: Why did only 9/45 pairs (20%) become valid targets?
+
+**Finding**: Clean baselines are fine (51% accuracy, better than expected 43%). The real problem is **weak corruption strategy**.
+
+**The Problem**:
+```python
+# Current corruption (generate_pairs.py):
+corrupted_num = str(int(original_num) + 1)  # Just +1!
+```
+
+**Corruption Effectiveness**:
+- Of 23 cases where clean was correct:
+  - 14 (60.9%) - Model STILL correct after corruption ❌ (corruption failed)
+  - 9 (39.1%) - Model failed after corruption ✓ (usable targets)
+
+**Examples of Failed Corruptions**:
+- "30 lollipops" → "32 lollipops" (model still solved ✓)
+- "6 clusters" → "7 clusters" (model still solved ✓)
+- "3 sprints" → "4 sprints" (model still solved ✓)
+
+**Impact**: Lost 2.6x potential targets! If corruption was 80% effective, we'd have 18 targets instead of 9.
+
+**Deliverables**:
+- Statistical analysis tool: `statistical_analysis.py` (400+ lines)
+- Statistical report: `results_corrected/statistical_analysis/statistical_report.txt`
+- Visualizations: `confidence_intervals.png`, `sample_size_requirements.png`
+- Statistical limitations doc: `docs/experiments/activation_patching_statistical_limitations_2025-10-18.md`
+- Corruption analysis: `docs/experiments/corruption_strategy_analysis_2025-10-18.md`
+- Methodology doc: `docs/experiments/activation_patching_methodology.md`
+- Updated validation doc with statistical caveats
+
+**What We Patch**: Residual stream (output of entire transformer block) at layers L3, L6, L11, for the last token position (first [THINK] token). Shape: [1, 768] for GPT-2.
+
+**Recommended Solutions**:
+
+For Statistical Power:
+1. Generate 500+ problem pairs (not 45)
+2. Pre-register analysis plan before data collection
+3. Target n ≥ 100-200 (still short of 634, but much better)
+
+For Corruption Effectiveness:
+1. Change operation-critical numbers (not just first number)
+2. Larger magnitude changes (+5 to +10, not +1)
+3. Validate corruption effectiveness (>20% answer change)
+4. Target 80% break rate (not current 39%)
+
+**Time Investment**:
+- Statistical analysis implementation: 45 minutes
+- Running analysis: 5 minutes
+- Updating documentation with caveats: 60 minutes
+- Corruption investigation: 30 minutes
+- Creating methodology doc: 45 minutes
+- **Total**: ~3.5 hours
+
+**Key Lesson**: **Always do rigorous statistics BEFORE making claims**. We initially claimed significance without computing p-values - this is bad science. Acknowledging and correcting mistakes IS good science.
+
+**Scientific Impact**:
+1. Demonstrated importance of statistical rigor in mechanistic interpretability
+2. Identified two critical issues limiting experiment:
+   - Sample size (n=9, need 70x more)
+   - Weak corruption (60.9% ineffective)
+3. Provided clear roadmap for robust follow-up study
+4. All corrections openly documented and committed to GitHub
+
+---
+
 ## Future Experiments
 
 ### Planned (Phase 2)
