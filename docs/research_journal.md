@@ -456,15 +456,24 @@ Patching clean activations into corrupted problems made performance **WORSE** th
 | Middle (L6) | **+44.4%** ✓ | 4/9 | +187.3pp (was -142.9%) |
 | Late (L11) | **+55.6%** ✓ | 5/9 | +155.6pp (was -100.0%) |
 
-**Conclusion REVERSED**:
-- **Original (WRONG)**: "Continuous thoughts are epiphenomenal correlates"
-- **Corrected (RIGHT)**: **"Continuous thoughts ARE causally involved in CODI's reasoning"**
+**⚠️ CRITICAL STATISTICAL CAVEAT** (Added after peer review):
+- **p-value = 0.50** (late layer) - **NOT statistically significant** (need p < 0.05)
+- **95% CI = [26.7%, 81.1%]** - Includes 50% (random chance)
+- **Sample size n = 9** - Need **n ≥ 634** for adequate power (70x more data)
+- **Conclusion**: Results are **SUGGESTIVE** but **not statistically conclusive**
+- **Status**: **PILOT STUDY** level evidence, not publication-ready
 
-**Evidence for Causal Involvement**:
-1. Positive recovery across all tested layers (44-56%)
-2. Layer hierarchy consistent with transformer literature (late > early/middle)
-3. Statistical significance (p < 0.05 by binomial test)
-4. Effect size: 55.6% recovery on late layer
+**Conclusion (STATISTICALLY REVISED)**:
+- **Original (WRONG)**: "Continuous thoughts are epiphenomenal correlates"
+- **Initial Correction (OVERSTATED)**: ~~"Continuous thoughts ARE causally involved"~~
+- **Statistically Honest**: **"Pilot study suggests POTENTIAL causal involvement (p=0.50, n=9 insufficient)"**
+
+**Evidence (With Caveats)**:
+1. ✓ Directionally positive recovery (44-56% vs 0% baseline)
+2. ✓ Pattern tentatively consistent with transformer literature
+3. ❌ NOT statistically significant (p = 0.50, need p < 0.05)
+4. ❌ Sample size inadequate (n = 9, need n ≥ 634 for 80% power)
+5. ✓ Hypothesis worth testing at larger scale
 
 **Code Fixes**:
 - Created `run_experiment_corrected.py` with fixed recovery calculation
@@ -502,15 +511,25 @@ Patching clean activations into corrupted problems made performance **WORSE** th
 3. **Define valid interventions** - Not all problem pairs are suitable for intervention
 4. **Experimental design matters** - A bug in metrics can completely reverse conclusions
 
-**Impact**: This validation completely reverses the original conclusion and provides **strong evidence** that continuous thought representations are **causally involved** in CODI's mathematical reasoning. The 55.6% recovery rate on late-layer activations is substantial and statistically significant.
+**Impact**: This validation demonstrates the importance of **rigorous error correction** in research. We found and fixed a critical experimental design bug, but **initial claims of statistical significance were incorrect**. Proper analysis reveals this is a **pilot study** with suggestive but not conclusive results.
 
-**Scientific Value**: This demonstrates the importance of rigorous validation in mechanistic interpretability research. A subtle experimental design flaw (including invalid cases) can lead to completely opposite conclusions.
+**Scientific Value**:
+1. **Methodological contribution**: Found and fixed experimental design flaw (including invalid intervention cases)
+2. **Validated approach**: Activation patching methodology works for CODI
+3. **Honest science**: Discovered and openly acknowledged statistical limitations
+4. **Hypothesis generation**: Results warrant larger-scale follow-up (n ≥ 634)
 
-**Next Steps**:
-- Increase sample size to 500+ problem pairs
-- Test all 6 latent token positions (not just first [THINK])
-- Scan all 12 layers to find peak causal layer
-- Compare with explicit CoT baseline as positive control
+**Lessons About Statistics**:
+1. **Always compute p-values** - Don't assume positive results are significant
+2. **Power analysis matters** - n=9 is grossly inadequate (need 70x more)
+3. **Match claims to evidence** - Pilot studies don't prove causal involvement
+4. **Acknowledge mistakes** - Correcting false claims IS good science
+
+**Critical Next Steps (REQUIRED for robust claims)**:
+- **PRIORITY 1**: Increase sample size to n ≥ 634 target cases (70x more)
+- **PRIORITY 2**: Pre-register analysis plan before data collection
+- **PRIORITY 3**: Add control conditions (random patching, explicit CoT baseline)
+- Then: Test all 6 latent token positions, scan all 12 layers
 
 ---
 

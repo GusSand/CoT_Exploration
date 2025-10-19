@@ -1,8 +1,38 @@
 # Activation Patching Validation - CORRECTED Results
 
 **Date**: October 18, 2025
-**Status**: VALIDATED - Positive Recovery Confirmed
+**Status**: PILOT STUDY - Suggestive but Not Statistically Significant
 **Previous Report**: [activation_patching_results_2025-10-18.md](activation_patching_results_2025-10-18.md)
+**Statistical Analysis**: [statistical_analysis/statistical_report.txt](../../src/experiments/activation_patching/results_corrected/statistical_analysis/statistical_report.txt)
+
+---
+
+## ⚠️ CRITICAL STATISTICAL CAVEAT
+
+**IMPORTANT**: Initial claims of statistical significance were **INCORRECT**. Proper statistical analysis reveals:
+
+| Metric | Value | Interpretation |
+|--------|-------|----------------|
+| **p-value (late layer)** | **p = 0.50** | ❌ NOT significant (need p < 0.05) |
+| **Sample size** | **n = 9** | ❌ Inadequate (need n ≥ 634 for adequate power) |
+| **95% CI (late layer)** | **[26.7%, 81.1%]** | ❌ Includes 50% (random chance) |
+| **Power** | **~1%** | ❌ Severely underpowered (~70x too small) |
+| **Conclusion** | **Suggestive, not conclusive** | ⚠️ Pilot study level evidence only |
+
+**What we CAN claim:**
+- ✓ Experimental design bug identified and fixed
+- ✓ Method validated and working correctly
+- ✓ Results suggestive of potential effect (5/9 vs 0/9)
+- ✓ Hypothesis worth testing with larger sample
+
+**What we CANNOT claim:**
+- ❌ Statistically significant evidence of causal involvement
+- ❌ Results distinguishable from random chance (p = 0.50)
+- ❌ Publication-ready findings
+
+**Required for robust conclusions:** n ≥ 634 target cases (we have 9)
+
+See [Statistical Analysis Report](../../src/experiments/activation_patching/results_corrected/statistical_analysis/statistical_report.txt) for full details.
 
 ---
 
@@ -10,7 +40,7 @@
 
 **CRITICAL FINDING**: The original negative recovery rates were caused by an **experimental design bug**, not epiphenomenal representations.
 
-After validation and correction, we now find **POSITIVE RECOVERY RATES** (44-56%), providing evidence that **continuous thought representations ARE causally involved in CODI's mathematical reasoning**.
+After validation and correction, we now find **POSITIVE RECOVERY RATES** (44-56%), providing **suggestive but not statistically significant** evidence that continuous thought representations may be causally involved in CODI's mathematical reasoning.
 
 ### Key Results
 
@@ -178,27 +208,43 @@ The sign flip from negative to positive completely reverses the original conclus
 
 ## Interpretation
 
-### Primary Finding: Causal Involvement CONFIRMED
+### Primary Finding: Suggestive but Not Statistically Significant
 
-The **positive recovery rates** (44-56%) demonstrate that continuous thought representations **ARE causally involved** in CODI's mathematical reasoning:
+The **positive recovery rates** (44-56%) are **suggestive** of potential causal involvement, but do **NOT** reach statistical significance:
 
-1. **Sufficiency**: Injecting clean activations recovers correct answers in ~50% of target cases
-2. **Layer Hierarchy**: Late layer (L11) shows strongest effect (55.6%), consistent with reasoning refinement
-3. **Consistent Pattern**: All three tested layers show positive recovery
+**Statistical Reality:**
+- p-value = 0.50 (late layer) - **NOT significant** (need p < 0.05)
+- 95% CI = [26.7%, 81.1%] - **Includes 50%** (random chance)
+- Sample size n = 9 - **Need 634** for adequate power (70x more data)
+- Recovery rate 55.6% **cannot be distinguished** from random guessing (50%)
 
-### What Recovery Rate Means
+**What We Can Say:**
+1. **Directionally positive**: 5/9 recovered vs 0/9 baseline (better than no intervention)
+2. **Pilot-level evidence**: Results warrant larger-scale follow-up study
+3. **Method validated**: Experimental design bug fixed, approach is sound
+
+**What We CANNOT Say:**
+1. ❌ Causal involvement is "confirmed" or "proven"
+2. ❌ Results are statistically significant
+3. ❌ Late layer shows "strongest effect" (CIs overlapping, p > 0.05)
+4. ❌ Evidence is publication-ready or conclusive
+
+### What Recovery Rate Means (with caveats)
 
 **55.6% recovery** on late layer means:
 - Of 9 problems the model got wrong due to corrupted input
 - Patching clean reasoning fixed 5 of them (55.6%)
-- This is **substantial causal evidence**
+- **BUT:** This could easily be due to chance (p = 0.50)
+- **95% CI: [26.7%, 81.1%]** - very wide, includes random guessing
+- **Need 70x more data** to make robust statistical claims
 
-Not 100% because:
+Why not 100%?
 - Single token position tested (only first [THINK])
 - May need information from other positions
 - Patch may not perfectly replace all relevant computation
+- **OR: Effect may not exist at all** (we can't rule this out with n=9)
 
-### Comparison to Literature
+### Comparison to Literature (Tentative)
 
 **Expected pattern** (Transformer Circuits):
 - Early layers: Low recovery (features not yet formed)
@@ -268,39 +314,70 @@ All scripts include:
 
 ## Updated Conclusions
 
-### Scientific Claims (REVISED)
+### Scientific Claims (STATISTICALLY REVISED)
 
 **Original Claim** (INCORRECT):
 > "Continuous thought representations in CODI are epiphenomenal correlates, not causal drivers of reasoning."
 
-**Corrected Claim** (VALIDATED):
-> **"Continuous thought representations in CODI are causally involved in mathematical reasoning, with late-layer representations showing the strongest causal effect (55.6% recovery)."**
+**Initial Corrected Claim** (INCORRECT - OVERSTATED):
+> ~~"Continuous thought representations in CODI are causally involved in mathematical reasoning, with late-layer representations showing the strongest causal effect (55.6% recovery)."~~
 
-### Evidence
+**Statistically Honest Claim** (CORRECT):
+> **"Pilot study suggests potential causal involvement of continuous thought representations in CODI's mathematical reasoning, but results are not statistically significant (p = 0.50, n = 9). Requires replication with n ≥ 634 for robust conclusions."**
 
-1. **Positive recovery** across all tested layers (44-56%)
-2. **Layer hierarchy** consistent with transformer literature (late > early/middle)
-3. **Statistical significance**: 5/9 recoveries on late layer (p < 0.05 by binomial test, baseline 0/9)
-4. **Replicability**: Validated on 9 independent problem pairs
+### Evidence (With Statistical Caveats)
 
-### Mechanism
+**Positive:**
+1. **Directionally positive recovery** across all tested layers (44-56% vs 0% baseline)
+2. **Pattern tentatively consistent** with transformer literature (late ≥ early/middle)
+3. **Experimental method validated**: Bug fixed, approach working correctly
+4. **Hypothesis-generating**: Warrants larger-scale follow-up
 
-Based on positive recovery, we infer:
-- Latent tokens encode problem-specific reasoning states
-- These states causally influence downstream answer generation
-- Late-layer states (L11) are most causally proximal to output
-- Reasoning is distributed across multiple tokens (hence <100% recovery from single token)
+**Negative (Critical Limitations):**
+1. ❌ **NOT statistically significant**: p = 0.50 (late layer), need p < 0.05
+2. ❌ **Sample size inadequate**: n = 9, need n ≥ 634 for 80% power
+3. ❌ **Wide confidence intervals**: 95% CI [26.7%, 81.1%] includes 50% (random chance)
+4. ❌ **Cannot reject null hypothesis**: Indistinguishable from random guessing
+
+### Mechanism (Speculative)
+
+Based on **suggestive but not significant** recovery, we **hypothesize** (not conclude):
+- Latent tokens *may* encode problem-specific reasoning states
+- These states *might* causally influence downstream answer generation
+- Late-layer states (L11) *could be* more causally proximal to output
+- Reasoning *may be* distributed across multiple tokens (hence <100% recovery from single token)
+
+**OR:** Effect may not exist at all and observed pattern is due to chance (p = 0.50)
 
 ---
 
 ## Next Steps
 
-### Immediate Follow-ups
+### CRITICAL: Increase Sample Size (Required for Any Conclusion)
 
-1. **✓ Increase sample size**: Run on 500+ problem pairs (currently 45) for statistical power
-2. **✓ Test all token positions**: Patch all 6 latent tokens, not just first [THINK]
-3. **✓ Layer scan**: Test all 12 layers to find peak causal layer
-4. **Ablation study**: Remove latent thoughts → measure necessity (not just sufficiency)
+**Priority 1** - Without this, no robust conclusions are possible:
+
+1. **Generate ≥634 target cases** (currently have 9)
+   - Need 70x more data for 80% power to detect 55.6% vs 50%
+   - Alternative: n ≥ 30 would allow detecting larger effects (70%+)
+   - Must maintain same filtering (Clean ✓, Corrupted ✗)
+
+2. **Pre-register analysis plan** before data collection
+   - Prevents p-hacking and HARKing
+   - Specify expected effect size and stopping criteria
+   - Register on OSF or similar platform
+
+3. **Add control conditions**
+   - Random activation patching (negative control)
+   - Wrong-layer patching (negative control)
+   - Explicit CoT baseline (positive control)
+   - All with matched sample sizes
+
+### Secondary Follow-ups (After adequate n)
+
+4. **Test all token positions**: Patch all 6 latent tokens, not just first [THINK]
+5. **Layer scan**: Test all 12 layers to find peak causal layer
+6. **Ablation study**: Remove latent thoughts → measure necessity (not just sufficiency)
 
 ### Deeper Investigations
 
