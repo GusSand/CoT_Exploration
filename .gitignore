@@ -48,6 +48,10 @@ venv.bak/
 *.log
 logs/
 
+# WandB runs
+wandb/
+wandb_runs/
+
 # Temporary files
 *.tmp
 *.temp
@@ -61,11 +65,27 @@ models/
 checkpoints/
 
 # Data files (if they become large)
-data/
 datasets/
 *.csv
 *.jsonl
 *.parquet
+
+# Keep essential data files but exclude large intermediate ones
+src/experiments/activation_patching/problem_pairs_candidates_*.json
+src/experiments/activation_patching/problem_pairs_with_answers_*.json
+src/experiments/activation_patching/problem_pairs_all_*.json
+src/experiments/activation_patching/validation_results_*.json
+!src/experiments/activation_patching/problem_pairs_gpt4_answers.json
+!src/experiments/activation_patching/validation_results_llama_gpt4_532.json
+!src/experiments/activation_patching/validation_results_gpt2_gpt4_532.json
+
+# Keep final curated datasets in data/ directory
+data/
+!data/problem_pairs*.json
+
+# Exclude log files
+gpt4_calculation.log
+evaluation_log.txt
 
 # Output directories
 outputs/
