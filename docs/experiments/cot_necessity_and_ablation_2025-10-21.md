@@ -298,42 +298,272 @@ for pair in cot_dependent_pairs:
 
 ## Methodology
 
-### CoT Necessity Test
+### CoT Necessity Test - Technical Details
 
-**Hypothesis**: If a model truly needs latent CoT tokens, replacing ALL 6 tokens with zeros should cause failure.
+**Research Question**: Does a model truly NEED latent CoT tokens to solve a problem, or can it solve via direct computation without latent reasoning?
 
-**Method**:
+**Hypothesis**: If a model truly needs latent CoT tokens, replacing ALL 6 [THINK] token activations with zeros should cause the model to fail on problems it previously solved correctly.
+
+#### What is Zero-Ablation?
+
+**Zero-ablation** is a causal intervention technique where we replace specific activations with `torch.zeros_like()` tensors during the forward pass. This effectively "removes" the information carried in those activations.
+
+**Why zeros?** Zeros represent the absence of information in the latent space. Unlike random noise (which adds information), zeros provide a null baseline that tests whether the model can compensate without the ablated activations.
+
+#### How CODI Works (Background)
+
+CODI models use 6 special [THINK] tokens between the question and answer:
+
+```
+[Question tokens] [THINK] [THINK] [THINK] [THINK] [THINK] [THINK] [Answer tokens]
+```
+
+During training, these tokens learn to encode reasoning in continuous latent space. The model is trained with self-distillation where:
+- **Teacher task**: Generates explicit CoT in natural language
+- **Student task**: Compresses reasoning into latent [THINK] tokens
+
+At inference, the model uses these 6 latent tokens to perform reasoning without generating explicit reasoning steps.
+
+#### Testing Procedure
+
+**Step 1: Baseline Validation**
+
+Run each problem normally with CODI's latent reasoning:
+
 ```python
-# Create ZERO activations (ablate all reasoning)
-sample_act = patcher.cache_N_token_activations(question, 'middle')[0]
+# Tokenize question
+input_ids = tokenizer.encode(question, return_tensors='pt').to(device)
+
+# Run model with 6 [THINK] tokens (normal CODI inference)
+output = model.generate(
+    input_ids=input_ids,
+    max_new_tokens=200,
+    pad_token_id=tokenizer.eos_token_id
+)
+
+# Extract numerical answer
+decoded = tokenizer.decode(output[0], skip_special_tokens=True)
+predicted_answer = extract_answer(decoded)
+
+# Validate against ground truth
+baseline_correct = (predicted_answer == ground_truth_answer)
+```
+
+**Step 2: Zero-Ablation Test**
+
+Replace all 6 [THINK] token activations with zeros at a specific layer:
+
+```python
+# Get a sample activation to determine shape
+sample_activation = patcher.cache_N_token_activations(question, 'middle')[0]
+# Shape: [hidden_dim] for LLaMA-1B: [2048], for GPT-2-117M: [768]
+
+# Create zero tensors matching activation shape
 zero_activations = [
-    torch.zeros_like(sample_act)
+    torch.zeros_like(sample_activation)  # Shape: [hidden_dim]
     for _ in range(6)  # All 6 [THINK] tokens
 ]
 
-# Run with zeros - should fail if CoT is necessary
+# Run inference with zeros patched at middle layer
 ablated_output = patcher.run_with_N_tokens_patched(
     problem_text=question,
-    patch_activations=zero_activations,
-    layer_name='middle',
+    patch_activations=zero_activations,  # List of 6 zero tensors
+    layer_name='middle',                  # L8 for LLaMA, L6 for GPT-2
     max_new_tokens=200
 )
+
+# Extract and validate
+ablated_answer = extract_answer(ablated_output)
+ablated_correct = (ablated_answer == ground_truth_answer)
 ```
 
-**Classification Logic**:
-- Baseline: Run with normal CODI latent tokens
-- Ablated: Run with all 6 tokens replaced by zeros
-- **Needs CoT (Clean)**: Baseline correct AND ablated incorrect on clean problem
-- **Needs CoT (Corrupted)**: Baseline correct AND ablated incorrect on corrupted problem
-- **Needs CoT (Either)**: Needs CoT for at least one problem in the pair
+**Step 3: Classification**
 
-**Key Decisions**:
+```python
+# Model NEEDS CoT if it fails without latent reasoning
+needs_cot = (baseline_correct and not ablated_correct)
+```
 
-1. **Why ablate ALL 6 tokens?** - To test if model truly needs latent reasoning capacity. Partial ablation tests minimal sufficiency, full ablation tests necessity.
+#### What Happens During Patching?
 
-2. **Why filter on "EITHER" not "BOTH"?** - More inclusive definition ensures we capture all pairs where latent reasoning plays a role. Only 5 additional pairs use "either" vs "both", and they're useful for understanding varied reasoning strategies.
+The `NTokenPatcher` performs activation surgery during the forward pass:
 
-3. **Which layer to ablate?** - Middle layer (L8 for LLaMA, L6 for GPT-2) based on previous experiments showing these layers are most critical for reasoning.
+```python
+class NTokenPatcher:
+    def run_with_N_tokens_patched(self, problem_text, patch_activations, layer_name):
+        # 1. Tokenize input
+        tokens = tokenizer.encode(problem_text)
+        # Shape: [seq_len] e.g., [42] tokens
+
+        # 2. Identify [THINK] token positions
+        think_positions = find_think_tokens(tokens)
+        # Returns indices: [pos1, pos2, pos3, pos4, pos5, pos6]
+
+        # 3. Register forward hook at specified layer
+        def patch_hook(module, input, output):
+            # output shape: [batch=1, seq_len, hidden_dim]
+
+            # Replace activations at [THINK] positions with zeros
+            for i, pos in enumerate(think_positions):
+                if i < len(patch_activations):
+                    output[0, pos, :] = patch_activations[i]
+                    # patch_activations[i] is zeros tensor of shape [hidden_dim]
+
+            return output
+
+        handle = model.layers[layer_name].register_forward_hook(patch_hook)
+
+        # 4. Run forward pass (hook intercepts and modifies)
+        output = model.generate(...)
+
+        # 5. Clean up
+        handle.remove()
+
+        return output
+```
+
+**Key insight**: The zeros replace the latent reasoning information at a specific layer. If the model can still solve the problem, it doesn't need that latent information (direct computation). If it fails, it needs the latent CoT tokens.
+
+#### Why Middle Layer?
+
+**LLaMA (L8 / 16 total)**: Previous experiments showed middle layers (L6-L10) are where reasoning activations are most critical.
+
+**GPT-2 (L6 / 12 total)**: Similarly, middle layers carry the most reasoning information.
+
+**Alternative**: We could test all layers, but middle layer is most conservative - if model doesn't need reasoning there, it likely doesn't need it anywhere.
+
+#### Answer Extraction
+
+```python
+def extract_answer(text: str) -> Optional[float]:
+    """Extract numerical answer from model output."""
+    # GSM8K answers are always numerical
+
+    # Look for patterns like "#### 42" or "answer is 42"
+    patterns = [
+        r'####\s*(-?\d+\.?\d*)',           # GSM8K format
+        r'answer is\s*(-?\d+\.?\d*)',      # Natural language
+        r'=\s*(-?\d+\.?\d*)\s*$',          # Equation format
+    ]
+
+    for pattern in patterns:
+        match = re.search(pattern, text)
+        if match:
+            try:
+                return float(match.group(1))
+            except ValueError:
+                continue
+
+    return None
+```
+
+**Comparison**:
+```python
+predicted_answer = extract_answer(model_output)
+ground_truth_answer = float(problem['answer'])
+
+correct = (predicted_answer is not None and
+           abs(predicted_answer - ground_truth_answer) < 0.01)
+```
+
+We use floating point comparison with small epsilon (0.01) to handle numerical precision issues.
+
+#### Scripts Used
+
+**LLaMA CoT Necessity Test**:
+```bash
+cd /home/paperspace/dev/CoT_Exploration/src/experiments/activation_patching
+python manual_cot_necessity_test.py
+
+# Runs on 101 matched pairs
+# Output: results/cot_necessity_llama_simple.json
+# Runtime: ~1.5 minutes
+```
+
+**GPT-2 CoT Necessity Test**:
+```bash
+python manual_cot_necessity_test_gpt2.py
+
+# Runs on same 101 matched pairs
+# Output: results/cot_necessity_gpt2_simple.json
+# Runtime: ~6 minutes
+```
+
+**Output Format**:
+```json
+{
+  "pair_0_clean": {
+    "baseline_correct": true,
+    "ablated_correct": false,
+    "needs_cot": true
+  },
+  "pair_0_corrupted": {
+    "baseline_correct": true,
+    "ablated_correct": true,
+    "needs_cot": false
+  },
+  "summary": {
+    "needs_cot_clean": 28,
+    "needs_cot_corrupted": 38,
+    "needs_cot_either": 44,
+    "needs_cot_both": 22
+  }
+}
+```
+
+#### Classification Categories
+
+For each pair, we track 4 metrics:
+
+1. **needs_cot_clean**: Model needs CoT for the clean (correct reasoning) problem
+2. **needs_cot_corrupted**: Model needs CoT for the corrupted (incorrect reasoning) problem
+3. **needs_cot_either**: Model needs CoT for at least one problem in the pair
+4. **needs_cot_both**: Model needs CoT for both problems in the pair
+
+**Filtering Decision**: We use `needs_cot_either` because:
+- More inclusive (captures all pairs where latent reasoning plays a role)
+- Only 5 additional pairs vs `needs_cot_both` (44 vs 39)
+- Useful for understanding varied reasoning strategies
+- Conservative: if model needs CoT for ONE problem, it's using latent reasoning
+
+#### Why This Test is Valid
+
+**Causal Intervention**: Zero-ablation is a causal test. We manipulate the hypothesized cause (latent CoT tokens) and observe the effect (model performance).
+
+**Counterfactual**: We compare what happens with vs without latent reasoning on the SAME problem, eliminating confounds.
+
+**Necessity vs Sufficiency**:
+- Zero-ablation tests **necessity** (can model solve WITHOUT latent CoT?)
+- N-token patching tests **sufficiency** (how MUCH latent CoT is needed?)
+
+**Alternative Approaches We Could Have Used**:
+1. ❌ **Attention analysis**: Correlational, not causal
+2. ❌ **Probing classifiers**: Tests if information exists, not if it's used
+3. ❌ **Random noise ablation**: Adds information instead of removing it
+4. ✅ **Zero-ablation**: Clean causal intervention testing necessity
+
+#### Key Decisions
+
+1. **Why ablate ALL 6 tokens?**
+   - Tests if model truly needs latent reasoning capacity
+   - Partial ablation would test minimal sufficiency (different question)
+   - Full ablation provides strongest causal test of necessity
+
+2. **Why filter on "EITHER" not "BOTH"?**
+   - More inclusive: captures all pairs where latent reasoning plays a role
+   - Only 5 additional pairs (44 vs 39)
+   - Useful for understanding varied reasoning strategies
+   - Conservative: if model needs CoT for one problem, it's using latent reasoning
+
+3. **Which layer to ablate?**
+   - Middle layer (L8 for LLaMA, L6 for GPT-2)
+   - Based on previous experiments showing these layers are most critical
+   - Most conservative test: if model doesn't need reasoning at critical layer, it likely uses direct computation
+
+4. **Why not test all layers?**
+   - Would be more thorough but computationally expensive (16 layers × 101 pairs × 2 problems = 3,232 runs)
+   - Middle layer is sufficient for classification (need vs don't need)
+   - Future work could test layer-specific necessity
 
 ### N-Token Ablation Experiments
 
