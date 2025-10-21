@@ -1,0 +1,53 @@
+============================================================
+CODI Minimal Test with Official Code
+============================================================
+
+Initializing CODI model...
+trainable params: 20057088 || all params: 144499200 || trainable%: 13.880414562848792
+Loading checkpoint from ./checkpoints/CODI-gpt2...
+Model loaded successfully!
+
+Loading tokenizer...
+
+Question: Janet's ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?
+Ground Truth: 18
+
+
+============================================================
+Mode: VANILLA
+============================================================
+
+T-2 (before prj): [' 13', '13', ' 12'] ['0.8290', '0.1650', '0.0014']
+T-1 (after prj): ['ame', '13', 'hip'] ['0.4957', '0.3762', '0.0509'] [NOT standard - for comparison only]
+T0 (before prj): ['-', '>>', ' than'] ['0.6028', '0.0673', '0.0525']
+T1 (before prj): [' 9', ' any', ' 8'] ['0.2932', '0.0652', '0.0569']
+T2 (before prj): ['-', '>>', 'NEWS'] ['0.8793', '0.0198', '0.0063']
+T3 (before prj): [' 9', ' 5', '9'] ['0.1020', '0.0848', '0.0665']
+T4 (before prj): ['-', '>>', ' than'] ['0.9065', '0.0139', '0.0032']
+T5 (before prj): [' 5', ' 9', ' 7'] ['0.1097', '0.0958', '0.0729']
+
+Generating final answer...
+Generated answer: The answer is: 18
+
+
+============================================================
+Mode: DISCRETIZED
+============================================================
+
+T-2 (before prj): [' 13', '13', ' 12'] ['0.8290', '0.1650', '0.0014']
+T-1 (after prj): ['ame', '13', 'hip'] ['0.4957', '0.3762', '0.0509'] [NOT standard - for comparison only]
+T0 (before prj): ['-', '>>', ' than'] ['0.6028', '0.0673', '0.0525']
+T0 KEEPING CONTINUOUS (even position)
+T1 (before prj): [' 9', ' any', ' 8'] ['0.2932', '0.0652', '0.0569']
+T1 DISCRETIZING: Replacing continuous vector with token ' 9'
+T2 (before prj): ['-', ' than', ' ('] ['0.8891', '0.0067', '0.0058']
+T2 KEEPING CONTINUOUS (even position)
+T3 (before prj): [' 9', '9', ' 7'] ['0.6224', '0.0762', '0.0337']
+T3 DISCRETIZING: Replacing continuous vector with token ' 9'
+T4 (before prj): ['-', ' than', '>>'] ['0.8705', '0.0080', '0.0051']
+T4 KEEPING CONTINUOUS (even position)
+T5 (before prj): [' 9', '9', ' 8'] ['0.6348', '0.0891', '0.0331']
+T5 DISCRETIZING: Replacing continuous vector with token ' 9'
+
+Generating final answer...
+Generated answer: The answer is: 40
