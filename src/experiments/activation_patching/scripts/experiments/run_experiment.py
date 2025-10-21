@@ -13,12 +13,16 @@ import os
 import re
 import argparse
 from typing import Dict, List
+from pathlib import Path
 from tqdm import tqdm
 import wandb
 import torch
 
 from cache_activations import ActivationCacher, LAYER_CONFIG
 from patch_and_eval import ActivationPatcher
+
+# Get script directory for wandb logs
+SCRIPT_DIR = Path(__file__).parent.absolute()
 
 
 def extract_answer_number(text: str) -> int:
@@ -89,6 +93,7 @@ class ExperimentRunner:
         wandb.init(
             project=wandb_project,
             name=f"direct-patching-3layers-{len(self.pairs)}pairs",
+            dir=str(SCRIPT_DIR / "wandb_runs"),
             config={
                 "experiment": "direct_activation_patching",
                 "num_pairs": len(self.pairs),

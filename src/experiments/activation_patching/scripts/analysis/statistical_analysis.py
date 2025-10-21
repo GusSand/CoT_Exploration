@@ -9,7 +9,7 @@ Provides honest statistical assessment of results including:
 - Effect sizes
 
 Usage:
-    python statistical_analysis.py --results results_corrected/experiment_results_corrected.json
+    python statistical_analysis.py --results results/experiment_results_corrected.json
 """
 
 import json
@@ -404,10 +404,10 @@ class StatisticalAnalyzer:
 def main():
     parser = argparse.ArgumentParser(description='Statistical analysis of activation patching results')
     parser.add_argument('--results', type=str,
-                       default='results_corrected/experiment_results_corrected.json',
+                       default='results/experiment_results_corrected.json',
                        help='Path to experiment results JSON')
     parser.add_argument('--output_dir', type=str,
-                       default='results_corrected/statistical_analysis/',
+                       default='results/statistical_analysis/',
                        help='Output directory for report and plots')
     args = parser.parse_args()
 

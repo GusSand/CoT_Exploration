@@ -8,9 +8,8 @@ Creates multiple visualizations to clearly show:
 4. Layer-by-layer analysis
 
 Usage:
-    python visualize_corrected.py --corrected_results results_corrected/experiment_results_corrected.json \
-                                   --original_results results/experiment_results.json \
-                                   --output_dir results_corrected/plots/
+    python visualize_corrected.py --corrected_results results/experiment_results_corrected.json \
+                                   --output_dir results/plots/
 """
 
 import json
@@ -417,10 +416,10 @@ def plot_summary_infographic(corrected_results, output_dir):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--corrected_results', type=str,
-                       default='results_corrected/experiment_results_corrected.json')
+                       default='results/experiment_results_corrected.json')
     parser.add_argument('--original_results', type=str,
                        default='results/experiment_results.json')
-    parser.add_argument('--output_dir', type=str, default='results_corrected/plots/')
+    parser.add_argument('--output_dir', type=str, default='results/plots/')
     args = parser.parse_args()
 
     # Load results
