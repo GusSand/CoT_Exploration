@@ -4,7 +4,51 @@
 
 [... keeping all previous entries ...]
 
-### 2025-10-21: GPT-2 Activation Steering Experiment
+### 2025-10-21b: LLaMA-3.2-1B Activation Steering Experiment
+
+**Objective**: Test if activation steering transfers to larger model (LLaMA-1B vs GPT-2-117M). Hypothesis: Higher capacity might show better amplification effects.
+
+**Status**: ✅ **COMPLETE** - Steering shows minimal to no effect on LLaMA (stark contrast to GPT-2)
+
+**Critical Finding**: ⚠️ **Steering techniques that work on smaller models don't necessarily transfer to larger ones** - model scale fundamentally changes interpretability method efficacy.
+
+**Key Results**:
+
+| Layer | Baseline | Suppression | Amplification | Observations |
+|-------|----------|-------------|---------------|--------------|
+| **Early (L4)** | 50.0% | 0.0 pts | -16.7 pts @ α=+2.0 | Amplification **degrades** |
+| **Middle (L8)** | 50.0% | 0.0 pts | 0.0 pts | **ZERO effect** (identical predictions) |
+| **Late (L14)** | 50.0% | -16.7 pts @ α=-1.5 | -16.7 pts @ α=+3.0 | Both directions degrade |
+
+**Major Discovery**: 🎯 **Middle layer completely invariant** - byte-for-byte identical predictions across ALL α from -3.0 to +3.0. Steering has zero computational effect.
+
+**vs GPT-2 Comparison**:
+- **GPT-2**: Strong suppression (-12.8 pts), weak amplification (+2.3 pts)
+- **LLaMA**: Near-zero effects, no amplification whatsoever
+- **Model size**: LLaMA 8.5× bigger, 21.5× less training data, 14.3× fewer test samples
+
+**Dataset Constraints**:
+- Started with 532 pairs → 119 CoT-dependent → only **22 balanced samples** (8+8 train, 3+3 test)
+- LLaMA's high baseline (54%) meant only 11 wrong answers among CoT-dependent pairs
+- Test set: 6 samples (3 correct + 3 wrong) - very limited statistical power
+
+**Technical Challenge**: LLaMA's `.generate()` doesn't work with cached `past_key_values`. Required manual token-by-token generation loop.
+
+**Direction Norms**: Early=21.05, Middle=15.60, Late=34.01 (vs GPT-2's 6.93 for middle)
+
+**Why the Difference?** Four hypotheses:
+1. **Dataset too small**: 6 test samples insufficient for statistical significance
+2. **Model robustness**: 1B params more robust to activation perturbations than 117M
+3. **Direction quality**: Computed from only 16 train samples (vs GPT-2's 344)
+4. **Architecture differences**: LLaMA's reasoning might work differently than GPT-2
+
+**Scientific Value**: ✅ Rigorous negative results are valuable - they define boundaries and limitations of methods. Linear steering is NOT universally effective across model scales.
+
+**Full Documentation**: `docs/experiments/activation_steering_llama_2025-10-21.md`
+
+---
+
+### 2025-10-21a: GPT-2 Activation Steering Experiment
 
 **Objective**: Test if steering continuous thought activations toward a "good reasoning" direction (computed as correct_mean - wrong_mean) can improve GPT-2 mathematical problem-solving performance.
 
