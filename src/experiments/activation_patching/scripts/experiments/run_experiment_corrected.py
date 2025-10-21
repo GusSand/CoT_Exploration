@@ -6,8 +6,8 @@ This ensures we're injecting good reasoning, not bad reasoning.
 
 Usage:
     python run_experiment_corrected.py --model_path ~/codi_ckpt/gpt2_gsm8k/ \
-                                        --problem_pairs problem_pairs.json \
-                                        --output_dir results_corrected/
+                                        --problem_pairs data/problem_pairs.json \
+                                        --output_dir results/
 """
 
 import json
@@ -15,12 +15,16 @@ import os
 import re
 import argparse
 from typing import Dict, List
+from pathlib import Path
 from tqdm import tqdm
 import wandb
 import torch
 
 from cache_activations import ActivationCacher, LAYER_CONFIG
 from patch_and_eval import ActivationPatcher
+
+# Get script directory for wandb logs
+SCRIPT_DIR = Path(__file__).parent.absolute()
 
 
 def extract_answer_number(text: str) -> int:
@@ -69,6 +73,7 @@ class CorrectedExperimentRunner:
             wandb.init(
                 project=wandb_project,
                 name="corrected-patching-valid-cases-only",
+                dir=str(SCRIPT_DIR / "wandb_runs"),
                 config={
                     "experiment": "activation_patching_corrected",
                     "model": model_path,
@@ -351,7 +356,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--model_path', type=str, required=True)
     parser.add_argument('--problem_pairs', type=str, required=True)
-    parser.add_argument('--output_dir', type=str, default='results_corrected/')
+    parser.add_argument('--output_dir', type=str, default='results/')
     parser.add_argument('--wandb_project', type=str, default='codi-activation-patching')
     parser.add_argument('--no_wandb', action='store_true')
     args = parser.parse_args()

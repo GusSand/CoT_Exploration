@@ -3,7 +3,7 @@ Auto-calculate corrupted answers from clean solutions.
 Flags problems that need manual review.
 
 Usage:
-    python auto_calculate_answers.py --input problem_pairs_for_review.json --output problem_pairs_calculated.json
+    python auto_calculate_answers.py --input problem_pairs_for_review.json --output data/problem_pairs.json
 """
 
 import json
@@ -130,7 +130,7 @@ def auto_calculate_pair(pair: Dict) -> Dict:
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--input', type=str, default='problem_pairs_for_review.json')
-    parser.add_argument('--output', type=str, default='problem_pairs_calculated.json')
+    parser.add_argument('--output', type=str, default='data/problem_pairs.json')
     args = parser.parse_args()
 
     # Load pairs
