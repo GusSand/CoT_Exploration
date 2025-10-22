@@ -8,7 +8,8 @@ In this project we aim to examine Chain of thought for LLMs usin the
 ## Documentation Index
 
 ### 📋 Project Documentation (`docs/`)
-- ** Codi Paper **: [Codi](docs/codi.pdf) a pdf that details Chain-of-Thought (CoT) reasoning enhances
+- **Data Inventory**: [DATA_INVENTORY.md](docs/DATA_INVENTORY.md) - Complete breakdown of all datasets by experiment, model, and purpose
+- **Codi Paper**: [Codi](docs/codi.pdf) a pdf that details Chain-of-Thought (CoT) reasoning enhances
 Large Language Models (LLMs) by encourag-
 ing step-by-step reasoning in natural language.
 However, leveraging a latent continuous space

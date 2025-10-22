@@ -403,7 +403,7 @@ This perfectly validates the concern - we would have been comparing:
 - Results analysis: `src/experiments/activation_patching/ABLATION_RESULTS_SUMMARY.md`
 - Detailed experiment report: `docs/experiments/cot_necessity_and_ablation_2025-10-21.md`
 - CoT-dependent dataset: `data/problem_pairs_cot_dependent.json`
-- Necessity results: `results/cot_necessity_llama_simple.json`, `results/cot_necessity_gpt2_simple.json`
+- Necessity results: `src/experiments/activation_patching/results/cot_necessity_llama_simple.json`, `src/experiments/activation_patching/results/cot_necessity_gpt2_simple.json`
 - Ablation results: `results/cot_dependent_ablation/{llama,gpt2}_{1,2,4}token/`
 
 **Time Investment**:
