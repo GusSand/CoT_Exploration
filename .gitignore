@@ -80,8 +80,8 @@ src/experiments/activation_patching/validation_results_*.json
 !src/experiments/activation_patching/validation_results_gpt2_gpt4_532.json
 
 # Keep final curated datasets in data/ directory
-data/
-!data/problem_pairs*.json
+#data/
+#!data/problem_pairs*.json
 
 # Exclude log files
 gpt4_calculation.log
