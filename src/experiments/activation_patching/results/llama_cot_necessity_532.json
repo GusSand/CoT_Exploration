@@ -1,0 +1,5322 @@
+[
+  {
+    "pair_id": 0,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 2,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 3,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 4,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 5,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 6,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 7,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 8,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 9,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 10,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 11,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 12,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 13,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 14,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 15,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 16,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 17,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 18,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 19,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 20,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 21,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 22,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 23,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 24,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 25,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 26,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 27,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 28,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 30,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 31,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 32,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 33,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 34,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 35,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 36,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 37,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 38,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 41,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 42,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 43,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 44,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 45,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 46,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 47,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 48,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 49,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 50,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 51,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 52,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 53,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 54,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 55,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 56,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 57,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 58,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 59,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 60,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 61,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 62,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 63,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 64,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 65,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 67,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 68,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 69,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 70,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 72,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 73,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 74,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 75,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 76,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 77,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 78,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 79,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 80,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 81,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 82,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 83,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 84,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 85,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 87,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 88,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 89,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 90,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 92,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 93,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 95,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 96,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 97,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 98,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 99,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 100,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 101,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 103,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 106,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 107,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 108,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 109,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 110,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 112,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 113,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 114,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 115,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 116,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 117,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 118,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 119,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 120,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 121,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 122,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 123,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 124,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 125,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 126,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 127,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 128,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 129,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 130,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 131,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 132,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 133,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 134,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 135,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 137,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 138,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 139,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 140,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 142,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 143,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 144,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 145,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 146,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 147,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 148,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 150,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 151,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 152,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 154,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 155,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 156,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 157,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 158,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 159,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 160,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 161,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 162,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 163,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 164,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 165,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 166,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 167,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 168,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 169,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 171,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 173,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 174,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 175,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 176,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 177,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 178,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 179,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 180,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 181,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 182,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 183,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 186,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 187,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 188,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 189,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 190,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 191,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 192,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 193,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 194,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 195,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 196,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 197,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 198,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 199,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 200,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 201,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 202,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 203,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 204,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 205,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 206,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 207,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 208,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 209,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 210,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 211,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 212,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 213,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 214,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 215,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 216,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 217,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 219,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 220,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 221,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 222,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 224,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 226,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 227,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 228,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 229,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 230,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 231,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 234,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 235,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 237,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 239,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 240,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 242,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 243,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 244,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 245,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 246,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 247,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 248,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 249,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 250,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 251,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 253,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 254,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 255,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 256,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 257,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 258,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 259,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 260,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 261,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 262,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 263,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 264,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 265,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 266,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 267,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 268,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 270,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 271,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 272,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 273,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 274,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 276,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 277,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 278,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 279,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 280,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 281,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 282,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 283,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 284,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 285,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 286,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 287,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 288,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 289,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 290,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 291,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 292,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 293,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 294,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 295,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 296,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 297,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 298,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 299,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 300,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 301,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 302,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 303,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 304,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 305,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 307,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 308,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 310,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 312,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 313,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 315,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 316,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 317,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 318,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 319,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 320,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 321,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 322,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 323,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 324,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 325,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 326,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 327,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 328,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 329,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 330,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 331,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 332,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 333,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 334,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 335,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 300,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 301,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 302,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 303,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 304,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 305,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 307,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 308,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 310,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 312,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 313,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 315,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 316,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 317,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 318,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 319,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 320,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 321,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 322,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 323,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 324,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 325,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 326,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 327,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 328,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 329,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 330,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 331,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 332,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 333,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 334,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 335,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 336,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 338,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 340,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 341,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 342,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 343,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 344,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 345,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 346,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 347,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 348,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 349,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 351,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 352,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 353,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 354,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 355,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 356,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 357,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 358,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 359,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 360,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 361,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 362,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 363,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 364,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 366,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 367,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 368,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 369,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 370,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 372,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 373,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 374,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 375,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 377,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 378,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 379,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 380,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 381,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 382,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 383,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 384,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 385,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 386,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 387,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 388,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 389,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 390,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 391,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 392,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 393,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 394,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 395,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 396,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 397,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 398,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 399,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 400,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 401,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 402,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 403,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 404,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 405,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 406,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 407,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 408,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 409,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 410,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 411,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 412,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 413,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 414,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 415,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 416,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 417,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 418,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 419,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 420,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 421,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 422,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 423,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 424,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 425,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 426,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 427,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 428,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 429,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 430,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 431,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 433,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 434,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 435,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 436,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 437,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 438,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 440,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 441,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 442,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 443,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 444,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 445,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 446,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 447,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 448,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 450,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 451,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 452,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 453,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 454,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 455,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 456,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 457,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 458,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 459,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 461,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 462,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 463,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 464,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 465,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 466,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 468,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 469,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 470,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 471,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 473,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 475,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 476,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 477,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 478,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 479,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 480,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 481,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 482,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 483,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 484,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 485,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 486,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 489,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 490,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 491,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 492,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 493,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 494,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 495,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 497,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 499,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 500,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 501,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 502,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 503,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 504,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 505,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 506,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 507,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 508,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 509,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 510,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 511,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 512,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 513,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 514,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 515,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 516,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 518,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 519,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 520,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 521,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 523,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 524,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 525,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 526,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 527,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 528,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 529,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 530,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 531,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 532,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 533,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 535,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 536,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 537,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 538,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 539,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 540,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 542,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 543,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 544,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": true,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 545,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 547,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 548,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 549,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 550,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 551,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 552,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 553,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 554,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 555,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": true,
+    "corrupted_baseline_correct": true,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": true,
+    "needs_cot_either": true
+  },
+  {
+    "pair_id": 558,
+    "clean_baseline_correct": true,
+    "clean_ablated_correct": true,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  },
+  {
+    "pair_id": 559,
+    "clean_baseline_correct": false,
+    "clean_ablated_correct": false,
+    "clean_needs_cot": false,
+    "corrupted_baseline_correct": false,
+    "corrupted_ablated_correct": false,
+    "corrupted_needs_cot": false,
+    "needs_cot_either": false
+  }
+]

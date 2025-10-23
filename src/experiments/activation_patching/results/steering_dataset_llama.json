@@ -1,0 +1,128 @@
+{
+  "train_correct": [
+    {
+      "pair_id": 112,
+      "correct": true,
+      "expected": 24
+    },
+    {
+      "pair_id": 264,
+      "correct": true,
+      "expected": 400
+    },
+    {
+      "pair_id": 419,
+      "correct": true,
+      "expected": 3000
+    },
+    {
+      "pair_id": 231,
+      "correct": true,
+      "expected": 50
+    },
+    {
+      "pair_id": 523,
+      "correct": true,
+      "expected": 74
+    },
+    {
+      "pair_id": 202,
+      "correct": true,
+      "expected": 100
+    },
+    {
+      "pair_id": 220,
+      "correct": true,
+      "expected": 70
+    },
+    {
+      "pair_id": 537,
+      "correct": true,
+      "expected": 188
+    }
+  ],
+  "train_wrong": [
+    {
+      "pair_id": 363,
+      "correct": false,
+      "expected": 6
+    },
+    {
+      "pair_id": 263,
+      "correct": false,
+      "expected": 8
+    },
+    {
+      "pair_id": 288,
+      "correct": false,
+      "expected": 3
+    },
+    {
+      "pair_id": 308,
+      "correct": false,
+      "expected": 6
+    },
+    {
+      "pair_id": 249,
+      "correct": false,
+      "expected": 5
+    },
+    {
+      "pair_id": 57,
+      "correct": false,
+      "expected": 83
+    },
+    {
+      "pair_id": 157,
+      "correct": false,
+      "expected": 80
+    },
+    {
+      "pair_id": 508,
+      "correct": false,
+      "expected": 120
+    }
+  ],
+  "test_correct": [
+    {
+      "pair_id": 450,
+      "correct": true,
+      "expected": 4
+    },
+    {
+      "pair_id": 221,
+      "correct": true,
+      "expected": 90
+    },
+    {
+      "pair_id": 6,
+      "correct": true,
+      "expected": 260
+    }
+  ],
+  "test_wrong": [
+    {
+      "pair_id": 454,
+      "correct": false,
+      "expected": 150
+    },
+    {
+      "pair_id": 212,
+      "correct": false,
+      "expected": 5
+    },
+    {
+      "pair_id": 77,
+      "correct": false,
+      "expected": 100
+    }
+  ],
+  "stats": {
+    "total_pairs": 219,
+    "correct": 208,
+    "wrong": 11,
+    "balanced_n": 11,
+    "train_size": 16,
+    "test_size": 6
+  }
+}
