@@ -1,8 +1,12 @@
 # Data Inventory - CoT Exploration Project
 
-**Last Updated**: 2025-10-22
+**Last Updated**: 2025-10-23
 
 This document provides a complete breakdown of all datasets in the project, organized by experiment type and model.
+
+**Status Indicators**:
+- ✅ File exists and is ready to use
+- ⚠️ File needs to be generated (see notes for generation commands)
 
 ---
 
@@ -10,19 +14,19 @@ This document provides a complete breakdown of all datasets in the project, orga
 
 | Dataset | Purpose | Size | Models | Location |
 |---------|---------|------|--------|----------|
-| **All 532 Pairs** | Base dataset | 532 pairs | Both | `problem_pairs_all_532.json` |
-| **Matched Pairs** | Both models correct | 101 pairs | Both | `data/problem_pairs_matched.json` |
-| **CoT-Dependent** | Fair comparison | 43 pairs | Both | `data/problem_pairs_cot_dependent.json` |
-| **LLaMA CoT All** | All LLaMA CoT problems | 285 problems | LLaMA | `data/llama_cot_all.json` |
-| **GPT-2 Steering** | Activation steering | 344 train / 86 test | GPT-2 | `results/steering_dataset_gpt2.json` |
-| **LLaMA Steering (Full)** | Activation steering | 425 train / 107 test | LLaMA | `results/steering_dataset_llama_full.json` |
+| **All 532 Pairs** | Base dataset | 532 pairs | Both | [`problem_pairs_gpt4_answers.json`](../src/experiments/activation_patching/problem_pairs_gpt4_answers.json) |
+| **Matched Pairs** | Both models correct | 101 pairs | Both | [`data/problem_pairs_matched.json`](../src/experiments/activation_patching/data/problem_pairs_matched.json) |
+| **CoT-Dependent** | Fair comparison | 43 pairs | Both | [`data/problem_pairs_cot_dependent.json`](../src/experiments/activation_patching/data/problem_pairs_cot_dependent.json) |
+| **LLaMA CoT All** | All LLaMA CoT problems | 285 problems | LLaMA | [`data/llama_cot_all.json`](../src/experiments/activation_patching/data/llama_cot_all.json) |
+| **GPT-2 Steering** | Activation steering | 344 train / 86 test | GPT-2 | `results/steering_dataset_gpt2.json` ⚠️ *To be generated* |
+| **LLaMA Steering (Full)** | Activation steering | 425 train / 107 test | LLaMA | `results/steering_dataset_llama_full.json` ⚠️ *To be generated* |
 
 ---
 
 ## 1. Problem Pair Datasets (Activation Patching)
 
 ### 1.1 Base Dataset: All 532 Pairs
-**File**: `src/experiments/activation_patching/problem_pairs_all_532.json`
+**File**: [`src/experiments/activation_patching/problem_pairs_gpt4_answers.json`](../src/experiments/activation_patching/problem_pairs_gpt4_answers.json)
 
 **Purpose**: Complete set of matched problem pairs (clean + corrupted versions) with GPT-4 calculated answers
 
@@ -62,7 +66,7 @@ This document provides a complete breakdown of all datasets in the project, orga
 ---
 
 ### 1.2 Matched Pairs (Both Models Correct)
-**File**: `src/experiments/activation_patching/data/problem_pairs_matched.json`
+**File**: [`src/experiments/activation_patching/data/problem_pairs_matched.json`](../src/experiments/activation_patching/data/problem_pairs_matched.json)
 
 **Purpose**: Pairs where BOTH GPT-2 and LLaMA answer BOTH clean and corrupted correctly
 
@@ -84,7 +88,7 @@ This document provides a complete breakdown of all datasets in the project, orga
 ---
 
 ### 1.3 CoT-Dependent Pairs (Fair Comparison)
-**File**: `src/experiments/activation_patching/data/problem_pairs_cot_dependent.json`
+**File**: [`src/experiments/activation_patching/data/problem_pairs_cot_dependent.json`](../src/experiments/activation_patching/data/problem_pairs_cot_dependent.json)
 
 **Purpose**: Pairs where BOTH models demonstrably NEED continuous thought tokens to solve correctly
 
@@ -105,12 +109,12 @@ This document provides a complete breakdown of all datasets in the project, orga
 - Fair LLaMA vs GPT-2 comparisons
 - Analysis by difficulty strata
 
-**Documentation**: `docs/experiments/cot_necessity_and_ablation_2025-10-21.md`
+**Documentation**: [`docs/experiments/cot_necessity_and_ablation_2025-10-21.md`](experiments/cot_necessity_and_ablation_2025-10-21.md)
 
 ---
 
 ### 1.4 LLaMA CoT All Problems
-**File**: `src/experiments/activation_patching/data/llama_cot_all.json`
+**File**: [`src/experiments/activation_patching/data/llama_cot_all.json`](../src/experiments/activation_patching/data/llama_cot_all.json)
 
 **Purpose**: Complete list of all individual problems where LLaMA needs CoT to solve correctly (regardless of whether it got them right)
 
@@ -170,7 +174,9 @@ This document provides a complete breakdown of all datasets in the project, orga
 ## 2. CoT Necessity Test Results
 
 ### 2.1 LLaMA CoT Necessity (101 Matched Pairs)
-**File**: `src/experiments/activation_patching/results/cot_necessity_llama_simple.json`
+**File**: `src/experiments/activation_patching/results/cot_necessity_llama_simple.json` ⚠️ *To be generated*
+
+> **Note**: Run `manual_cot_necessity_test.py` to generate this file.
 
 **Purpose**: Test which problems LLaMA needs continuous thought tokens to solve
 
@@ -202,7 +208,9 @@ This document provides a complete breakdown of all datasets in the project, orga
 ---
 
 ### 2.2 GPT-2 CoT Necessity (101 Matched Pairs)
-**File**: `src/experiments/activation_patching/results/cot_necessity_gpt2_simple.json`
+**File**: `src/experiments/activation_patching/results/cot_necessity_gpt2_simple.json` ⚠️ *To be generated*
+
+> **Note**: Run `manual_cot_necessity_test_gpt2.py` to generate this file.
 
 **Purpose**: Test which problems GPT-2 needs continuous thought tokens to solve
 
@@ -231,7 +239,9 @@ This document provides a complete breakdown of all datasets in the project, orga
 ---
 
 ### 2.3 LLaMA CoT Necessity (All 532 Pairs)
-**File**: `src/experiments/activation_patching/results/llama_cot_necessity_532.json`
+**File**: `src/experiments/activation_patching/results/llama_cot_necessity_532.json` ⚠️ *To be generated*
+
+> **Note**: Run `prepare_llama_steering_dataset_full.py` or `prepare_llama_steering_dataset_fast.py` to generate this file.
 
 **Purpose**: Test CoT necessity on entire dataset (not just matched pairs)
 
@@ -248,7 +258,9 @@ This document provides a complete breakdown of all datasets in the project, orga
 ## 3. Activation Steering Datasets
 
 ### 3.1 GPT-2 Steering Dataset
-**File**: `src/experiments/activation_patching/results/steering_dataset_gpt2.json`
+**File**: `src/experiments/activation_patching/results/steering_dataset_gpt2.json` ⚠️ *To be generated*
+
+> **Note**: Run `prepare_steering_dataset.py` to generate this file.
 
 **Purpose**: Balanced dataset for computing steering directions (correct_mean - wrong_mean)
 
@@ -278,12 +290,14 @@ This document provides a complete breakdown of all datasets in the project, orga
 - Amplification: +2.3 pts @ α=+1.0 (limited by ceiling)
 - Random control: -6.7 pts @ α=-3.0 (validates steering is meaningful)
 
-**Documentation**: `docs/experiments/activation_steering_gpt2_2025-10-21.md`
+**Documentation**: [`docs/experiments/activation_steering_gpt2_2025-10-21.md`](experiments/activation_steering_gpt2_2025-10-21.md)
 
 ---
 
 ### 3.2 LLaMA Steering Dataset (Full - 532 Pairs)
-**File**: `src/experiments/activation_patching/results/steering_dataset_llama_full.json`
+**File**: `src/experiments/activation_patching/results/steering_dataset_llama_full.json` ⚠️ *To be generated*
+
+> **Note**: Run `prepare_llama_steering_dataset_full.py` to generate this file.
 
 **Purpose**: Maximum dataset for LLaMA steering (using all 229 CoT-dependent pairs from 532)
 
@@ -317,12 +331,14 @@ This document provides a complete breakdown of all datasets in the project, orga
 - Late layer: -0.9 pts maximum effect
 - Conclusion: LLaMA is fundamentally immune to linear steering
 
-**Documentation**: `docs/experiments/activation_steering_llama_full_2025-10-21.md`
+**Documentation**: [`src/experiments/activation_patching/docs/experiments/activation_steering_llama_full_2025-10-21.md`](../src/experiments/activation_patching/docs/experiments/activation_steering_llama_full_2025-10-21.md)
 
 ---
 
 ### 3.3 LLaMA Steering Dataset (Pilot - Small)
-**File**: `src/experiments/activation_patching/results/steering_dataset_llama.json` (if exists)
+**File**: `src/experiments/activation_patching/results/steering_dataset_llama.json` ⚠️ *To be generated*
+
+> **Note**: Run `prepare_llama_steering_dataset.py` or `prepare_llama_steering_dataset_fast.py` to generate this file.
 
 **Purpose**: Original small pilot steering dataset (before full 532 expansion)
 
@@ -342,7 +358,7 @@ This document provides a complete breakdown of all datasets in the project, orga
 ```
 ┌─────────────────────────────────────────────────────────┐
 │  All 532 Pairs (GPT-4 calculated)                       │
-│  problem_pairs_all_532.json                             │
+│  problem_pairs_gpt4_answers.json                        │
 └──────────────────┬──────────────────────────────────────┘
                    │
                    ├─► LLaMA Necessity Test (532 pairs)
@@ -431,17 +447,19 @@ This document provides a complete breakdown of all datasets in the project, orga
 ### Main Data Directory
 ```
 src/experiments/activation_patching/
-├── problem_pairs_all_532.json              # Base dataset (532 pairs)
+├── problem_pairs_gpt4_answers.json         # Base dataset (532 pairs) ✅
+├── validation_results_llama_gpt4_532.json  # LLaMA validation results ✅
+├── validation_results_gpt2_gpt4_532.json   # GPT-2 validation results ✅
 ├── data/
-│   ├── problem_pairs_matched.json          # 101 matched pairs
-│   ├── problem_pairs_cot_dependent.json    # 43 CoT-dependent pairs
-│   └── llama_cot_all.json                  # 285 LLaMA CoT problems
-└── results/
-    ├── cot_necessity_llama_simple.json     # LLaMA necessity (101)
-    ├── cot_necessity_gpt2_simple.json      # GPT-2 necessity (101)
-    ├── llama_cot_necessity_532.json        # LLaMA necessity (all 532)
-    ├── steering_dataset_gpt2.json          # GPT-2 steering data
-    └── steering_dataset_llama_full.json    # LLaMA steering data (full)
+│   ├── problem_pairs_matched.json          # 101 matched pairs ✅
+│   ├── problem_pairs_cot_dependent.json    # 43 CoT-dependent pairs ✅
+│   └── llama_cot_all.json                  # 285 LLaMA CoT problems ✅
+└── results/ (⚠️ Directory needs to be created)
+    ├── cot_necessity_llama_simple.json     # LLaMA necessity (101) - To generate
+    ├── cot_necessity_gpt2_simple.json      # GPT-2 necessity (101) - To generate
+    ├── llama_cot_necessity_532.json        # LLaMA necessity (all 532) - To generate
+    ├── steering_dataset_gpt2.json          # GPT-2 steering data - To generate
+    └── steering_dataset_llama_full.json    # LLaMA steering data (full) - To generate
 ```
 
 ---
@@ -514,17 +532,22 @@ Base Quality (No Filtering):
 # Count all datasets
 cd src/experiments/activation_patching
 
-# Base datasets
-jq '. | length' problem_pairs_all_532.json                    # Should be 532
-jq '. | length' data/problem_pairs_matched.json               # Should be 101
-jq '. | length' data/problem_pairs_cot_dependent.json         # Should be 43
+# Base datasets (✅ These files exist)
+jq '. | length' problem_pairs_gpt4_answers.json           # Should be 532
+jq '. | length' data/problem_pairs_matched.json           # Should be 101
+jq '. | length' data/problem_pairs_cot_dependent.json     # Should be 43
+jq '. | length' data/llama_cot_all.json                   # Should be 285
 
-# CoT necessity results
+# Validation results (✅ These files exist)
+jq '.num_pairs' validation_results_llama_gpt4_532.json    # Should be 532
+jq '.num_pairs' validation_results_gpt2_gpt4_532.json     # Should be 532
+
+# CoT necessity results (⚠️ Files need to be generated first)
 jq '.num_pairs_tested' results/cot_necessity_llama_simple.json  # Should be 101
 jq '.num_pairs_tested' results/cot_necessity_gpt2_simple.json   # Should be 101
 jq '. | length' results/llama_cot_necessity_532.json            # Should be 532
 
-# Steering datasets
+# Steering datasets (⚠️ Files need to be generated first)
 jq '.train_correct | length' results/steering_dataset_gpt2.json       # Should be 172
 jq '.train_correct | length' results/steering_dataset_llama_full.json # Should be 230
 ```
@@ -537,7 +560,68 @@ jq '.train_correct | length' results/steering_dataset_llama_full.json # Should b
 
 ---
 
-## 10. Future Datasets
+## 10. Generating Missing Files
+
+Several result files are referenced in this document but need to be generated. Here's how to create them:
+
+### Create the Results Directory
+```bash
+cd src/experiments/activation_patching
+mkdir -p results
+```
+
+### Generate CoT Necessity Files
+
+**LLaMA CoT Necessity (101 matched pairs)**:
+```bash
+python manual_cot_necessity_test.py
+# Output: results/cot_necessity_llama_simple.json
+```
+
+**GPT-2 CoT Necessity (101 matched pairs)**:
+```bash
+python manual_cot_necessity_test_gpt2.py
+# Output: results/cot_necessity_gpt2_simple.json
+```
+
+**LLaMA CoT Necessity (All 532 pairs)**:
+```bash
+python prepare_llama_steering_dataset_full.py
+# Output: results/llama_cot_necessity_532.json
+# Also generates: results/steering_dataset_llama_full.json
+```
+
+### Generate Steering Datasets
+
+**GPT-2 Steering Dataset**:
+```bash
+python prepare_steering_dataset.py
+# Output: results/steering_dataset_gpt2.json
+```
+
+**LLaMA Steering Dataset (Full)**:
+```bash
+python prepare_llama_steering_dataset_full.py
+# Output: results/steering_dataset_llama_full.json
+# Also generates: results/llama_cot_necessity_532.json
+```
+
+**LLaMA Steering Dataset (Pilot)**:
+```bash
+python prepare_llama_steering_dataset_fast.py
+# Output: results/steering_dataset_llama.json
+# Also generates: results/llama_cot_necessity_532.json
+```
+
+### Notes
+- All scripts should be run from the `src/experiments/activation_patching/` directory
+- Make sure models are available at `~/codi_ckpt/gpt2_gsm8k/` and `~/codi_ckpt/llama_gsm8k/`
+- Some scripts may take significant time to run (especially full dataset processing)
+- Files are used by downstream analysis and steering experiment scripts
+
+---
+
+## 11. Future Datasets
 
 ### Planned
 - [ ] Multi-step reasoning dataset (≥5 steps)
