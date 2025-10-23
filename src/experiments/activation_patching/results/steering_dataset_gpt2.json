@@ -1,0 +1,3889 @@
+{
+  "model": "gpt2",
+  "total_pairs_per_category": 215,
+  "train_size_per_category": 172,
+  "test_size_per_category": 43,
+  "train_correct": [
+    {
+      "pair_id": 97,
+      "predicted": 12,
+      "expected": 12,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 6,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 373,
+      "predicted": 240000,
+      "expected": 240000,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 79,
+      "predicted": 70,
+      "expected": 70,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 213,
+      "predicted": 250,
+      "expected": 250,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 332,
+      "predicted": 44,
+      "expected": 44,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 121,
+      "predicted": 27,
+      "expected": 27,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 9,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 191,
+      "predicted": 5,
+      "expected": 5,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 312,
+      "predicted": 32,
+      "expected": 32,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 134,
+      "predicted": 720,
+      "expected": 720,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 444,
+      "predicted": 20,
+      "expected": 20,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 397,
+      "predicted": 25,
+      "expected": 25,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 457,
+      "predicted": 45,
+      "expected": 45,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 239,
+      "predicted": 280,
+      "expected": 280,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 543,
+      "predicted": 6,
+      "expected": 6,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 7,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 176,
+      "predicted": 100,
+      "expected": 100,
+      "correct": true,
+      "steps": 1,
+      "total_operations": 3,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 34,
+      "predicted": 23,
+      "expected": 23,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 5,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 224,
+      "predicted": 180,
+      "expected": 180,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 4,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 14,
+      "predicted": 60,
+      "expected": 60,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 513,
+      "predicted": 300,
+      "expected": 300,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 425,
+      "predicted": 150,
+      "expected": 150,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 55,
+      "predicted": 14,
+      "expected": 14,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 304,
+      "predicted": 3200,
+      "expected": 3200,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 470,
+      "predicted": 3,
+      "expected": 3,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 435,
+      "predicted": 5,
+      "expected": 5,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 480,
+      "predicted": 11,
+      "expected": 11,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 117,
+      "predicted": 360,
+      "expected": 360,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 316,
+      "predicted": 156,
+      "expected": 156,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 4,
+      "predicted": 20,
+      "expected": 20,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 285,
+      "predicted": 21,
+      "expected": 21,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 396,
+      "predicted": 3,
+      "expected": 3,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 538,
+      "predicted": 18,
+      "expected": 18,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 6,
+      "predicted": 260,
+      "expected": 260,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 8,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 36,
+      "predicted": 75,
+      "expected": 75,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 291,
+      "predicted": 2,
+      "expected": 2,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 120,
+      "predicted": 240,
+      "expected": 240,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 2,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 508,
+      "predicted": 120,
+      "expected": 120,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 408,
+      "predicted": 20,
+      "expected": 20,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 302,
+      "predicted": 15,
+      "expected": 15,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 167,
+      "predicted": 16,
+      "expected": 16,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 126,
+      "predicted": 82,
+      "expected": 82,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 335,
+      "predicted": 310,
+      "expected": 310,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 268,
+      "predicted": 1375,
+      "expected": 1375,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 320,
+      "predicted": 8,
+      "expected": 8,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 28,
+      "predicted": 25,
+      "expected": 25,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 429,
+      "predicted": 13,
+      "expected": 13,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 27,
+      "predicted": 16,
+      "expected": 16,
+      "correct": true,
+      "steps": 1,
+      "total_operations": 3,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 33,
+      "predicted": 70,
+      "expected": 70,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 109,
+      "predicted": 28,
+      "expected": 28,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 6,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 347,
+      "predicted": 36,
+      "expected": 36,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 355,
+      "predicted": 34,
+      "expected": 34,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 5,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 229,
+      "predicted": 21,
+      "expected": 21,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 305,
+      "predicted": 4,
+      "expected": 4,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 456,
+      "predicted": 78,
+      "expected": 78,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 202,
+      "predicted": 100,
+      "expected": 100,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 5,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 483,
+      "predicted": 40,
+      "expected": 40,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 208,
+      "predicted": 76,
+      "expected": 76,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 8,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 264,
+      "predicted": 400,
+      "expected": 400,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 42,
+      "predicted": 26,
+      "expected": 26,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 158,
+      "predicted": 34,
+      "expected": 34,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 492,
+      "predicted": 32,
+      "expected": 32,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 360,
+      "predicted": 25,
+      "expected": 25,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 159,
+      "predicted": 15,
+      "expected": 15,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 0,
+      "predicted": 18,
+      "expected": 18,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 6,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 476,
+      "predicted": 5,
+      "expected": 5,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 302,
+      "predicted": 15,
+      "expected": 15,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 524,
+      "predicted": 9,
+      "expected": 9,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 6,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 103,
+      "predicted": 140,
+      "expected": 140,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 271,
+      "predicted": 20,
+      "expected": 20,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 6,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 336,
+      "predicted": 72,
+      "expected": 72,
+      "correct": true,
+      "steps": 5,
+      "total_operations": 12,
+      "difficulty": "hard"
+    },
+    {
+      "pair_id": 329,
+      "predicted": 14,
+      "expected": 14,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 270,
+      "predicted": 762,
+      "expected": 762,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 8,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 438,
+      "predicted": 2,
+      "expected": 2,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 481,
+      "predicted": 84,
+      "expected": 84,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 6,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 545,
+      "predicted": 30,
+      "expected": 30,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 84,
+      "predicted": 15,
+      "expected": 15,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 9,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 418,
+      "predicted": 40,
+      "expected": 40,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 419,
+      "predicted": 3000,
+      "expected": 3000,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 220,
+      "predicted": 70,
+      "expected": 70,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 6,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 127,
+      "predicted": 120,
+      "expected": 120,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 389,
+      "predicted": 6,
+      "expected": 6,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 321,
+      "predicted": 1,
+      "expected": 1,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 200,
+      "predicted": 55,
+      "expected": 55,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 4,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 401,
+      "predicted": 14400,
+      "expected": 14400,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 14,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 378,
+      "predicted": 15,
+      "expected": 15,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 6,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 217,
+      "predicted": 15,
+      "expected": 15,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 49,
+      "predicted": 30,
+      "expected": 30,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 10,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 316,
+      "predicted": 156,
+      "expected": 156,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 490,
+      "predicted": 4,
+      "expected": 4,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 5,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 512,
+      "predicted": 120,
+      "expected": 120,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 294,
+      "predicted": 3,
+      "expected": 3,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 6,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 169,
+      "predicted": 120,
+      "expected": 120,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 280,
+      "predicted": 7,
+      "expected": 7,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 555,
+      "predicted": 2,
+      "expected": 2,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 124,
+      "predicted": 10,
+      "expected": 10,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 332,
+      "predicted": 44,
+      "expected": 44,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 321,
+      "predicted": 1,
+      "expected": 1,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 140,
+      "predicted": 20,
+      "expected": 20,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 381,
+      "predicted": 67,
+      "expected": 67,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 6,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 274,
+      "predicted": 3200,
+      "expected": 3200,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 305,
+      "predicted": 4,
+      "expected": 4,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 407,
+      "predicted": 2000,
+      "expected": 2000,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 370,
+      "predicted": 320,
+      "expected": 320,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 254,
+      "predicted": 84,
+      "expected": 84,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 7,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 406,
+      "predicted": 200,
+      "expected": 200,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 388,
+      "predicted": 88,
+      "expected": 88,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 90,
+      "predicted": 225,
+      "expected": 225,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 342,
+      "predicted": 87,
+      "expected": 87,
+      "correct": true,
+      "steps": 1,
+      "total_operations": 5,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 469,
+      "predicted": 4,
+      "expected": 4,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 221,
+      "predicted": 90,
+      "expected": 90,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 516,
+      "predicted": 375,
+      "expected": 375,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 166,
+      "predicted": 5,
+      "expected": 5,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 3,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 317,
+      "predicted": 12,
+      "expected": 12,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 6,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 329,
+      "predicted": 14,
+      "expected": 14,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 335,
+      "predicted": 310,
+      "expected": 310,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 424,
+      "predicted": 570,
+      "expected": 570,
+      "correct": true,
+      "steps": 4,
+      "total_operations": 7,
+      "difficulty": "hard"
+    },
+    {
+      "pair_id": 304,
+      "predicted": 3200,
+      "expected": 3200,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 190,
+      "predicted": 360,
+      "expected": 360,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 486,
+      "predicted": 6,
+      "expected": 6,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 68,
+      "predicted": 36,
+      "expected": 36,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 509,
+      "predicted": 4,
+      "expected": 4,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 95,
+      "predicted": 40,
+      "expected": 40,
+      "correct": true,
+      "steps": 4,
+      "total_operations": 10,
+      "difficulty": "hard"
+    },
+    {
+      "pair_id": 133,
+      "predicted": 13,
+      "expected": 13,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 6,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 461,
+      "predicted": 9,
+      "expected": 9,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 277,
+      "predicted": 4,
+      "expected": 4,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 10,
+      "predicted": 366,
+      "expected": 366,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 284,
+      "predicted": 360,
+      "expected": 360,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 70,
+      "predicted": 7425,
+      "expected": 7425,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 35,
+      "predicted": 9,
+      "expected": 9,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 6,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 222,
+      "predicted": 140,
+      "expected": 140,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 536,
+      "predicted": 8,
+      "expected": 8,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 180,
+      "predicted": 20,
+      "expected": 20,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 372,
+      "predicted": 5,
+      "expected": 5,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 320,
+      "predicted": 8,
+      "expected": 8,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 399,
+      "predicted": 12,
+      "expected": 12,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 6,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 544,
+      "predicted": 80,
+      "expected": 80,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 118,
+      "predicted": 4,
+      "expected": 4,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 6,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 45,
+      "predicted": 104,
+      "expected": 104,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 179,
+      "predicted": 130,
+      "expected": 130,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 3,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 139,
+      "predicted": 70,
+      "expected": 70,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 240,
+      "predicted": 21,
+      "expected": 21,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 6,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 251,
+      "predicted": 70,
+      "expected": 70,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 116,
+      "predicted": 42,
+      "expected": 42,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 248,
+      "predicted": 300,
+      "expected": 300,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 2,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 317,
+      "predicted": 12,
+      "expected": 12,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 6,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 455,
+      "predicted": 1920,
+      "expected": 1920,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 426,
+      "predicted": 11,
+      "expected": 11,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 64,
+      "predicted": 300,
+      "expected": 300,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 495,
+      "predicted": 200,
+      "expected": 200,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 400,
+      "predicted": 48,
+      "expected": 48,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 194,
+      "predicted": 10,
+      "expected": 10,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 152,
+      "predicted": 4,
+      "expected": 4,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 558,
+      "predicted": 3,
+      "expected": 3,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 44,
+      "predicted": 20,
+      "expected": 20,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 130,
+      "predicted": 30,
+      "expected": 30,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 374,
+      "predicted": 45,
+      "expected": 45,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 246,
+      "predicted": 27000,
+      "expected": 27000,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 195,
+      "predicted": 12,
+      "expected": 12,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 3,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 358,
+      "predicted": 20,
+      "expected": 20,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 6,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 52,
+      "predicted": 15,
+      "expected": 15,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 258,
+      "predicted": 6,
+      "expected": 6,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 5,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 83,
+      "predicted": 600,
+      "expected": 600,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 6,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 345,
+      "predicted": 310,
+      "expected": 310,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 7,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 318,
+      "predicted": 123,
+      "expected": 123,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 11,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 32,
+      "predicted": 35,
+      "expected": 35,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 178,
+      "predicted": 122,
+      "expected": 122,
+      "correct": true,
+      "steps": 4,
+      "total_operations": 8,
+      "difficulty": "hard"
+    },
+    {
+      "pair_id": 491,
+      "predicted": 16,
+      "expected": 16,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 3,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 237,
+      "predicted": 90,
+      "expected": 90,
+      "correct": true,
+      "steps": 1,
+      "total_operations": 3,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 243,
+      "predicted": 250,
+      "expected": 250,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 59,
+      "predicted": 187,
+      "expected": 187,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 5,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 262,
+      "predicted": 270,
+      "expected": 270,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 3,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 502,
+      "predicted": 26,
+      "expected": 26,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 8,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 529,
+      "predicted": 11,
+      "expected": 11,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    }
+  ],
+  "train_wrong": [
+    {
+      "pair_id": 450,
+      "predicted": 5,
+      "expected": 4,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 382,
+      "predicted": 310,
+      "expected": 350,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 547,
+      "predicted": 45,
+      "expected": 81,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 168,
+      "predicted": 14,
+      "expected": 18,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 215,
+      "predicted": 40,
+      "expected": 44,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 203,
+      "predicted": 27,
+      "expected": 31,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 67,
+      "predicted": 665,
+      "expected": 595,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 214,
+      "predicted": 2,
+      "expected": 8,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 249,
+      "predicted": 1100,
+      "expected": 5,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 384,
+      "predicted": 36,
+      "expected": 32,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 189,
+      "predicted": 37.33,
+      "expected": 34,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 188,
+      "predicted": 23,
+      "expected": 50,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 15,
+      "predicted": 1365,
+      "expected": 125,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 210,
+      "predicted": 4,
+      "expected": 10,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 132,
+      "predicted": 120,
+      "expected": 60,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 261,
+      "predicted": 3900,
+      "expected": 62,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 437,
+      "predicted": 8,
+      "expected": 7,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 338,
+      "predicted": 30,
+      "expected": 60,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 333,
+      "predicted": 350,
+      "expected": 100,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 125,
+      "predicted": 9,
+      "expected": 10,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 177,
+      "predicted": 1250,
+      "expected": 350,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 352,
+      "predicted": 29,
+      "expected": 21,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 259,
+      "predicted": 104,
+      "expected": 168,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 107,
+      "predicted": 0,
+      "expected": 3,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 230,
+      "predicted": 290000,
+      "expected": 276,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 299,
+      "predicted": 330000,
+      "expected": 31800,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 155,
+      "predicted": 180,
+      "expected": 280,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 367,
+      "predicted": 12,
+      "expected": 19,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 393,
+      "predicted": 45,
+      "expected": 20,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 300,
+      "predicted": 103,
+      "expected": 78,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 257,
+      "predicted": 1400,
+      "expected": 5600,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 93,
+      "predicted": 442.2,
+      "expected": 36,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 375,
+      "predicted": 24,
+      "expected": 48,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 405,
+      "predicted": 280,
+      "expected": 50,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 331,
+      "predicted": 13600,
+      "expected": 8400,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 273,
+      "predicted": 135,
+      "expected": 315,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 323,
+      "predicted": 15,
+      "expected": 75,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 292,
+      "predicted": 45,
+      "expected": 75,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 110,
+      "predicted": 27,
+      "expected": 45,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 344,
+      "predicted": 7,
+      "expected": 2,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 452,
+      "predicted": 37.5,
+      "expected": 50,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 12,
+      "predicted": 12,
+      "expected": 13,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 340,
+      "predicted": 8,
+      "expected": 4,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 422,
+      "predicted": 192,
+      "expected": 284,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 73,
+      "predicted": 7.7,
+      "expected": 255,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 265,
+      "predicted": -3000,
+      "expected": 9500,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 433,
+      "predicted": 0.75,
+      "expected": 6,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 447,
+      "predicted": 31,
+      "expected": 5,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 216,
+      "predicted": -220,
+      "expected": 220,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 319,
+      "predicted": 11,
+      "expected": 15,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 297,
+      "predicted": 5,
+      "expected": 55,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 80,
+      "predicted": 16,
+      "expected": 10,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 307,
+      "predicted": 2,
+      "expected": 16,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 559,
+      "predicted": 4,
+      "expected": 16,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 77,
+      "predicted": 200,
+      "expected": 100,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 431,
+      "predicted": 3,
+      "expected": 1,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 326,
+      "predicted": 10,
+      "expected": 14,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 504,
+      "predicted": 1.5,
+      "expected": 2,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 494,
+      "predicted": 6.5,
+      "expected": 21,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 348,
+      "predicted": 20,
+      "expected": 10,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 308,
+      "predicted": 4,
+      "expected": 6,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 41,
+      "predicted": 400,
+      "expected": 200,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 204,
+      "predicted": 96,
+      "expected": 98,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 47,
+      "predicted": 2800,
+      "expected": 800,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 162,
+      "predicted": 64.8,
+      "expected": 92,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 227,
+      "predicted": 9.5,
+      "expected": 9,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 283,
+      "predicted": 100,
+      "expected": 68,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 197,
+      "predicted": 639,
+      "expected": 6277,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 81,
+      "predicted": 23,
+      "expected": 17,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 108,
+      "predicted": 52.5,
+      "expected": 50,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 403,
+      "predicted": 270,
+      "expected": 81,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 53,
+      "predicted": 160,
+      "expected": 40,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 349,
+      "predicted": 2520,
+      "expected": 2640,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 523,
+      "predicted": 66,
+      "expected": 74,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 466,
+      "predicted": 2,
+      "expected": 1,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 182,
+      "predicted": 24,
+      "expected": 23,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 459,
+      "predicted": 5,
+      "expected": 2,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 341,
+      "predicted": 190,
+      "expected": 260,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 445,
+      "predicted": 30,
+      "expected": 6,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 163,
+      "predicted": 5,
+      "expected": 50,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 440,
+      "predicted": 1296,
+      "expected": 98,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 164,
+      "predicted": 25,
+      "expected": 15,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 540,
+      "predicted": 51,
+      "expected": 39,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 310,
+      "predicted": -3300,
+      "expected": 2050,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 43,
+      "predicted": 650,
+      "expected": 48,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 464,
+      "predicted": 9,
+      "expected": 6,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 346,
+      "predicted": 11,
+      "expected": 9,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 211,
+      "predicted": 5,
+      "expected": 4,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 156,
+      "predicted": 1000,
+      "expected": 1400,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 383,
+      "predicted": 18,
+      "expected": 2,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 414,
+      "predicted": 112,
+      "expected": 56,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 427,
+      "predicted": 66,
+      "expected": 150,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 326,
+      "predicted": 10,
+      "expected": 14,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 453,
+      "predicted": 3200,
+      "expected": 6400,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 482,
+      "predicted": 32,
+      "expected": 26,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 298,
+      "predicted": 650,
+      "expected": 500,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 328,
+      "predicted": 9,
+      "expected": 2,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 82,
+      "predicted": 513,
+      "expected": 623,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 500,
+      "predicted": 15,
+      "expected": 16,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 85,
+      "predicted": 132,
+      "expected": 44,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 279,
+      "predicted": 0,
+      "expected": 6,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 11,
+      "predicted": 744,
+      "expected": 694,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 296,
+      "predicted": 10.5,
+      "expected": 3,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 392,
+      "predicted": 12,
+      "expected": 34,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 330,
+      "predicted": 42,
+      "expected": 31,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 228,
+      "predicted": 9,
+      "expected": 1,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 146,
+      "predicted": 2125,
+      "expected": 2,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 357,
+      "predicted": 7,
+      "expected": 2,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 205,
+      "predicted": 93,
+      "expected": 98,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 9,
+      "predicted": 560,
+      "expected": 460,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 404,
+      "predicted": 26.67,
+      "expected": 22,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 37,
+      "predicted": 3,
+      "expected": 2,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 173,
+      "predicted": 20400,
+      "expected": 18000,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 16,
+      "predicted": 115,
+      "expected": 230,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 362,
+      "predicted": 18,
+      "expected": 23,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 5,
+      "predicted": 88,
+      "expected": 64,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 465,
+      "predicted": 10,
+      "expected": 30,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 322,
+      "predicted": 2,
+      "expected": 9,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 175,
+      "predicted": 10,
+      "expected": 15,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 361,
+      "predicted": 8,
+      "expected": 20,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 106,
+      "predicted": 454,
+      "expected": 72,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 303,
+      "predicted": 3500,
+      "expected": 1300,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 333,
+      "predicted": 350,
+      "expected": 100,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 313,
+      "predicted": 139800,
+      "expected": 120000,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 161,
+      "predicted": 31,
+      "expected": 32,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 532,
+      "predicted": -8,
+      "expected": 25,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 473,
+      "predicted": 20.77,
+      "expected": 10,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 443,
+      "predicted": 121,
+      "expected": 59,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 423,
+      "predicted": 4,
+      "expected": 8,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 20,
+      "predicted": 12.66,
+      "expected": 15,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 137,
+      "predicted": 26.4,
+      "expected": 29,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 411,
+      "predicted": 1290,
+      "expected": 1110,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 46,
+      "predicted": 217,
+      "expected": 163,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 22,
+      "predicted": 10,
+      "expected": 7,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 123,
+      "predicted": 55,
+      "expected": 50,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 247,
+      "predicted": 34,
+      "expected": 32,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 417,
+      "predicted": 1540,
+      "expected": 3140,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 286,
+      "predicted": 230,
+      "expected": 90,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 454,
+      "predicted": 240,
+      "expected": 150,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 171,
+      "predicted": 650,
+      "expected": 1210,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 99,
+      "predicted": 18,
+      "expected": 58,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 334,
+      "predicted": 7,
+      "expected": 6,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 135,
+      "predicted": 50,
+      "expected": 40,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 395,
+      "predicted": 32,
+      "expected": 38,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 293,
+      "predicted": 101,
+      "expected": 83,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 493,
+      "predicted": 125,
+      "expected": 25,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 54,
+      "predicted": 22,
+      "expected": 40,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 315,
+      "predicted": 19,
+      "expected": 14,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 533,
+      "predicted": 200,
+      "expected": 300,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 50,
+      "predicted": 868,
+      "expected": 294,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 300,
+      "predicted": 103,
+      "expected": 78,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 276,
+      "predicted": 15,
+      "expected": 9,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 521,
+      "predicted": 12,
+      "expected": 39,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 364,
+      "predicted": 33,
+      "expected": 49,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 151,
+      "predicted": 2.5,
+      "expected": 5,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 272,
+      "predicted": 4.05,
+      "expected": 5,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 542,
+      "predicted": 6.5,
+      "expected": 7,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 363,
+      "predicted": 7.86,
+      "expected": 6,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 143,
+      "predicted": 14.3,
+      "expected": 16,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 186,
+      "predicted": 15,
+      "expected": 5,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 119,
+      "predicted": 134400,
+      "expected": 95200,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 479,
+      "predicted": 15000,
+      "expected": 15400,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 174,
+      "predicted": 37.5,
+      "expected": 95,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 307,
+      "predicted": 2,
+      "expected": 16,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 310,
+      "predicted": -3300,
+      "expected": 2050,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 255,
+      "predicted": 80,
+      "expected": 192,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 436,
+      "predicted": 17.5,
+      "expected": 15,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 266,
+      "predicted": 254000,
+      "expected": 118000,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 331,
+      "predicted": 13600,
+      "expected": 8400,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 448,
+      "predicted": -11,
+      "expected": 539,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 434,
+      "predicted": 0.67,
+      "expected": 5,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 303,
+      "predicted": 3500,
+      "expected": 1300,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    }
+  ],
+  "test_correct": [
+    {
+      "pair_id": 231,
+      "predicted": 50,
+      "expected": 50,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 501,
+      "predicted": 273,
+      "expected": 273,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 112,
+      "predicted": 24,
+      "expected": 24,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 463,
+      "predicted": 18,
+      "expected": 18,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 235,
+      "predicted": 10,
+      "expected": 10,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 511,
+      "predicted": 110,
+      "expected": 110,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 113,
+      "predicted": 25,
+      "expected": 25,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 3,
+      "predicted": 540,
+      "expected": 540,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 187,
+      "predicted": 106,
+      "expected": 106,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 386,
+      "predicted": 80,
+      "expected": 80,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 312,
+      "predicted": 32,
+      "expected": 32,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 145,
+      "predicted": 4000,
+      "expected": 4000,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 3,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 288,
+      "predicted": 3,
+      "expected": 3,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 514,
+      "predicted": 90000,
+      "expected": 90000,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 462,
+      "predicted": 71,
+      "expected": 71,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 421,
+      "predicted": 12,
+      "expected": 12,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 471,
+      "predicted": 80,
+      "expected": 80,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 131,
+      "predicted": 940,
+      "expected": 940,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 366,
+      "predicted": 9,
+      "expected": 9,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 553,
+      "predicted": 92,
+      "expected": 92,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 6,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 390,
+      "predicted": 12,
+      "expected": 12,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 318,
+      "predicted": 123,
+      "expected": 123,
+      "correct": true,
+      "steps": 3,
+      "total_operations": 11,
+      "difficulty": "medium"
+    },
+    {
+      "pair_id": 154,
+      "predicted": 272,
+      "expected": 272,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 142,
+      "predicted": 140,
+      "expected": 140,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 2,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 58,
+      "predicted": 57,
+      "expected": 57,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 19,
+      "predicted": 6,
+      "expected": 6,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 25,
+      "predicted": 2,
+      "expected": 2,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 290,
+      "predicted": 390,
+      "expected": 390,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 387,
+      "predicted": 36,
+      "expected": 36,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 5,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 56,
+      "predicted": 3,
+      "expected": 3,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 351,
+      "predicted": 10,
+      "expected": 10,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 548,
+      "predicted": 100,
+      "expected": 100,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 442,
+      "predicted": 49,
+      "expected": 49,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 65,
+      "predicted": 36,
+      "expected": 36,
+      "correct": true,
+      "steps": 4,
+      "total_operations": 8,
+      "difficulty": "hard"
+    },
+    {
+      "pair_id": 484,
+      "predicted": 240,
+      "expected": 240,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 7,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 96,
+      "predicted": 3,
+      "expected": 3,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 148,
+      "predicted": 30,
+      "expected": 30,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 160,
+      "predicted": 16,
+      "expected": 16,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 181,
+      "predicted": 160,
+      "expected": 160,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 485,
+      "predicted": 220,
+      "expected": 220,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 18,
+      "predicted": 7,
+      "expected": 7,
+      "correct": true,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 69,
+      "predicted": 60,
+      "expected": 60,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    },
+    {
+      "pair_id": 412,
+      "predicted": 5,
+      "expected": 5,
+      "correct": true,
+      "steps": 2,
+      "total_operations": 4,
+      "difficulty": "easy"
+    }
+  ],
+  "test_wrong": [
+    {
+      "pair_id": 334,
+      "predicted": 7,
+      "expected": 6,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 7,
+      "predicted": 60,
+      "expected": 160,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 31,
+      "predicted": 66.67,
+      "expected": 80,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 315,
+      "predicted": 19,
+      "expected": 14,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 535,
+      "predicted": 4,
+      "expected": 16,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 150,
+      "predicted": 8,
+      "expected": 4,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 319,
+      "predicted": 11,
+      "expected": 15,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 322,
+      "predicted": 2,
+      "expected": 9,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 62,
+      "predicted": 2500,
+      "expected": 25000,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 198,
+      "predicted": 300,
+      "expected": 320,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 420,
+      "predicted": 7000,
+      "expected": 17000,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 115,
+      "predicted": 160,
+      "expected": 90,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 325,
+      "predicted": 60000,
+      "expected": 224000,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 402,
+      "predicted": 2,
+      "expected": 4,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 327,
+      "predicted": 23,
+      "expected": 31,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 98,
+      "predicted": 30,
+      "expected": 5,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 128,
+      "predicted": 350,
+      "expected": 880,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 503,
+      "predicted": 16,
+      "expected": 18,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 260,
+      "predicted": 8,
+      "expected": 11,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 281,
+      "predicted": 2950,
+      "expected": 2450,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 369,
+      "predicted": 1244,
+      "expected": 1198,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 324,
+      "predicted": 12,
+      "expected": 14,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 206,
+      "predicted": 680,
+      "expected": 860,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 497,
+      "predicted": 140,
+      "expected": 112,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 301,
+      "predicted": 128,
+      "expected": 8,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 552,
+      "predicted": 1250,
+      "expected": 450,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 354,
+      "predicted": -45,
+      "expected": 45,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 385,
+      "predicted": 26,
+      "expected": 16,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 122,
+      "predicted": 27,
+      "expected": 48,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 282,
+      "predicted": 180,
+      "expected": 195,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 537,
+      "predicted": 202,
+      "expected": 188,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 201,
+      "predicted": 5250000,
+      "expected": 114,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 114,
+      "predicted": 2700,
+      "expected": 6,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 328,
+      "predicted": 9,
+      "expected": 2,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 441,
+      "predicted": 20,
+      "expected": 80,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 295,
+      "predicted": 410,
+      "expected": 370,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 30,
+      "predicted": 80,
+      "expected": 109,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 446,
+      "predicted": 9,
+      "expected": 2,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 38,
+      "predicted": 40,
+      "expected": 10,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 256,
+      "predicted": 19,
+      "expected": 45,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 377,
+      "predicted": 36,
+      "expected": 50,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 76,
+      "predicted": 9,
+      "expected": 5,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    },
+    {
+      "pair_id": 263,
+      "predicted": 5,
+      "expected": 8,
+      "correct": false,
+      "steps": null,
+      "total_operations": null,
+      "difficulty": "unknown"
+    }
+  ],
+  "summary": {
+    "total_problems": 430,
+    "train_problems": 344,
+    "test_problems": 86
+  }
+}

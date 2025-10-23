@@ -1,0 +1,1730 @@
+{
+  "model_name": "llama",
+  "model_path": "/home/paperspace/codi_ckpt/llama_gsm8k",
+  "num_pairs_tested": 101,
+  "statistics": {
+    "needs_cot_clean": 28,
+    "needs_cot_corrupted": 38,
+    "needs_cot_either": 44,
+    "needs_cot_both": 22
+  },
+  "results": [
+    {
+      "pair_id": 0,
+      "clean": {
+        "expected": 18,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 20,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 3,
+      "clean": {
+        "expected": 540,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 720,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 6,
+      "clean": {
+        "expected": 260,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 320,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 27,
+      "clean": {
+        "expected": 16,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 16,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 28,
+      "clean": {
+        "expected": 25,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 26,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 34,
+      "clean": {
+        "expected": 23,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 22,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 35,
+      "clean": {
+        "expected": 9,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 9,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 49,
+      "clean": {
+        "expected": 30,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 32,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 55,
+      "clean": {
+        "expected": 14,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 14,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 56,
+      "clean": {
+        "expected": 3,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 2,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 59,
+      "clean": {
+        "expected": 187,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 207,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 65,
+      "clean": {
+        "expected": 36,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 54,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 69,
+      "clean": {
+        "expected": 60,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 52,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 83,
+      "clean": {
+        "expected": 600,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 800,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 84,
+      "clean": {
+        "expected": 15,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 15,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 95,
+      "clean": {
+        "expected": 40,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 41,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 97,
+      "clean": {
+        "expected": 12,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 12,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 103,
+      "clean": {
+        "expected": 140,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 154,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 109,
+      "clean": {
+        "expected": 28,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 38,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 112,
+      "clean": {
+        "expected": 24,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 30,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 113,
+      "clean": {
+        "expected": 25,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 40,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 117,
+      "clean": {
+        "expected": 360,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 540,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 118,
+      "clean": {
+        "expected": 4,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 3,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 120,
+      "clean": {
+        "expected": 240,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 360,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 121,
+      "clean": {
+        "expected": 27,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 30,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 126,
+      "clean": {
+        "expected": 82,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 84,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 127,
+      "clean": {
+        "expected": 120,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 121,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 133,
+      "clean": {
+        "expected": 13,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 6,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 134,
+      "clean": {
+        "expected": 720,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 900,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 139,
+      "clean": {
+        "expected": 70,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 71,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 142,
+      "clean": {
+        "expected": 140,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 210,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 145,
+      "clean": {
+        "expected": 4000,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 4400,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 166,
+      "clean": {
+        "expected": 5,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 5,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 176,
+      "clean": {
+        "expected": 100,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 101,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 178,
+      "clean": {
+        "expected": 122,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 120,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 179,
+      "clean": {
+        "expected": 130,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 143,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 190,
+      "clean": {
+        "expected": 360,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 480,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 194,
+      "clean": {
+        "expected": 10,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 8,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 195,
+      "clean": {
+        "expected": 12,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 20,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 200,
+      "clean": {
+        "expected": 55,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 60,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 202,
+      "clean": {
+        "expected": 100,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 110,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 208,
+      "clean": {
+        "expected": 76,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 95,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 217,
+      "clean": {
+        "expected": 15,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 17,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 220,
+      "clean": {
+        "expected": 70,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 73,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 224,
+      "clean": {
+        "expected": 180,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 183,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 231,
+      "clean": {
+        "expected": 50,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 52,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 235,
+      "clean": {
+        "expected": 10,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 11,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 237,
+      "clean": {
+        "expected": 90,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 93,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 240,
+      "clean": {
+        "expected": 21,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 20,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 248,
+      "clean": {
+        "expected": 300,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 375,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 251,
+      "clean": {
+        "expected": 70,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 71,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 254,
+      "clean": {
+        "expected": 84,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 84,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 258,
+      "clean": {
+        "expected": 6,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 14,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 262,
+      "clean": {
+        "expected": 270,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 320,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 270,
+      "clean": {
+        "expected": 762,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 762,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 271,
+      "clean": {
+        "expected": 20,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 30,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 285,
+      "clean": {
+        "expected": 21,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 23,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 294,
+      "clean": {
+        "expected": 3,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 4,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 305,
+      "clean": {
+        "expected": 4,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 5,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 312,
+      "clean": {
+        "expected": 32,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 33,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 317,
+      "clean": {
+        "expected": 12,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 14,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 318,
+      "clean": {
+        "expected": 123,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 153,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 329,
+      "clean": {
+        "expected": 14,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 15,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 305,
+      "clean": {
+        "expected": 4,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 4,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 312,
+      "clean": {
+        "expected": 32,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 33,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 317,
+      "clean": {
+        "expected": 12,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 14,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 318,
+      "clean": {
+        "expected": 123,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 153,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 329,
+      "clean": {
+        "expected": 14,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 15,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 336,
+      "clean": {
+        "expected": 72,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 81,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 342,
+      "clean": {
+        "expected": 87,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 90,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 345,
+      "clean": {
+        "expected": 310,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 314,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 355,
+      "clean": {
+        "expected": 34,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 38,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 358,
+      "clean": {
+        "expected": 20,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 25,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 366,
+      "clean": {
+        "expected": 9,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 9,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 378,
+      "clean": {
+        "expected": 15,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 16,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 381,
+      "clean": {
+        "expected": 67,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 75,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 387,
+      "clean": {
+        "expected": 36,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 42,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 399,
+      "clean": {
+        "expected": 12,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 13,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 400,
+      "clean": {
+        "expected": 48,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 54,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 401,
+      "clean": {
+        "expected": 14400,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 18000,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 412,
+      "clean": {
+        "expected": 5,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 8,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 424,
+      "clean": {
+        "expected": 570,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 630,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 462,
+      "clean": {
+        "expected": 71,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 72,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 469,
+      "clean": {
+        "expected": 4,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 5,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 476,
+      "clean": {
+        "expected": 5,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 5,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 481,
+      "clean": {
+        "expected": 84,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 84,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 484,
+      "clean": {
+        "expected": 240,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 264,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 485,
+      "clean": {
+        "expected": 220,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 219,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 490,
+      "clean": {
+        "expected": 4,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 4,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 491,
+      "clean": {
+        "expected": 16,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 14,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 492,
+      "clean": {
+        "expected": 32,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 36,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 495,
+      "clean": {
+        "expected": 200,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 225,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 502,
+      "clean": {
+        "expected": 26,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 26,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 516,
+      "clean": {
+        "expected": 375,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 390,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 524,
+      "clean": {
+        "expected": 9,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 8,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 529,
+      "clean": {
+        "expected": 11,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 8,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 536,
+      "clean": {
+        "expected": 8,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 9,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 543,
+      "clean": {
+        "expected": 6,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "corrupted": {
+        "expected": 26,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": true
+    },
+    {
+      "pair_id": 545,
+      "clean": {
+        "expected": 30,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 40,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 548,
+      "clean": {
+        "expected": 100,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 110,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "needs_cot_either": false,
+      "needs_cot_both": false
+    },
+    {
+      "pair_id": 553,
+      "clean": {
+        "expected": 92,
+        "baseline_correct": true,
+        "ablated_correct": true,
+        "needs_cot": false
+      },
+      "corrupted": {
+        "expected": 68,
+        "baseline_correct": true,
+        "ablated_correct": false,
+        "needs_cot": true
+      },
+      "needs_cot_either": true,
+      "needs_cot_both": false
+    }
+  ]
+}
