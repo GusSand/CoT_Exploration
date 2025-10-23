@@ -2,7 +2,85 @@
 
 ## Experiment Log
 
-[... keeping all previous entries ...]
+### 2025-10-23: GSM8K CoT Dataset Expansion to 1,000+ Problems
+
+**Objective**: Expand LLaMA CoT-needed dataset from 132 to 1,000-1,500 problems with stratified difficulty distribution to enable robust experimental design.
+
+**Status**: 🔄 **IN PROGRESS** - Testing 7,500 original GSM8K problems
+
+**Motivation**: Current 132 problems insufficient for desired difficulty buckets (2-step: ≥150, 3-step: ≥150, 4-step: ≥100, 5+: ≥50). Need larger dataset for statistical power and difficulty-stratified analysis.
+
+**Approach**:
+1. Load original GSM8K (test + train sets, ~8,792 total)
+2. Exclude 532 already-tested problems
+3. Test CoT necessity on 7,500 new candidates
+4. Calculate reasoning steps from GSM8K solutions
+5. Keep existing 132 + add new to meet targets
+6. Stratify by difficulty and sample to distribution
+
+**Technical Innovation - End-to-End Pipeline**:
+- Single script orchestrates full workflow (`expand_gsm8k_cot_dataset.py`)
+- Reuses existing infrastructure (`ActivationCacherLLaMA`, `NTokenPatcher`)
+- Checkpoints every 100 problems (resumable)
+- ~1.35 problems/second on A100 80GB
+
+**Timing Validation** (10-problem test):
+- Total: 40 seconds
+- Model loading: 30s (one-time)
+- Testing 10 problems: 7s (0.7s/problem)
+- Results: 5/10 baseline correct, 2/10 need CoT (20% rate)
+
+**Extrapolated Performance** (7,500 problems):
+- Model loading: 30 seconds
+- Testing: 7,500 × 0.74s = 5,550s = **~93 minutes**
+- Post-processing: ~2 minutes
+- **Total ETA: ~1.5 hours**
+
+**Initial CoT Rate Observation**: 20% (lower than expected 24.8% from pairs)
+- May indicate different difficulty distribution in test vs train sets
+- Using 7,500 samples (vs 5,000) provides buffer
+
+**Expected Output**:
+- New problems tested: 7,500
+- CoT-needed (est. 20-25% rate): ~1,500-1,875 problems
+- Combined with existing 132: ~1,632-2,007 total
+- Final stratified dataset: 450-1,500 problems meeting targets
+
+**Methodology**:
+- **Baseline inference**: `patcher.run_without_patch()` (with 6 CoT tokens)
+- **Ablated inference**: All 6 tokens replaced with zeros
+- **CoT necessity**: baseline_correct=True AND ablated_correct=False
+
+**Key Design Decisions**:
+1. **No pair generation**: Use original GSM8K directly (simpler, faster, no GPT-4 costs)
+2. **Preserve existing 132**: Mark as `is_existing=True`, prioritize in stratification
+3. **Difficulty from solutions**: Parse GSM8K's `<<calc>>` blocks to count steps
+4. **Checkpoint strategy**: Save every 100 problems to enable resume
+
+**Deliverables**:
+- Pipeline script: `src/experiments/activation_patching/expand_gsm8k_cot_dataset.py`
+- Usage guide: `src/experiments/activation_patching/GSM8K_EXPANSION_GUIDE.md`
+- Checkpoint file: `data/gsm8k_expansion_checkpoint.json`
+- Final dataset: `data/llama_cot_original_stratified_final.json`
+- Experiment report: `docs/experiments/gsm8k_expansion_2025-10-23.md`
+
+**Time Investment** (so far):
+- Script development: 2 hours
+- Testing & validation: 1 hour
+- Documentation: 1 hour
+- Pipeline execution: ~1.5 hours (in progress)
+- **Total**: ~5.5 hours
+
+**Next Steps**:
+1. Monitor pipeline completion (~90 min)
+2. Validate final distribution meets targets
+3. Update DATA_INVENTORY.md with new dataset
+4. Commit and push to GitHub
+5. Use expanded dataset for difficulty-stratified experiments
+
+**Impact**: Enables robust statistical analysis across difficulty levels, supports systematic ablation studies, and provides foundation for fair cross-model comparisons on problems requiring latent reasoning.
+
+---
 
 ### 2025-10-21c: LLaMA Activation Steering - Full Dataset (532 Pairs)
 
