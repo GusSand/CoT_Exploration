@@ -2,11 +2,11 @@
 
 ## Experiment Log
 
-### 2025-10-23: GSM8K CoT Dataset Expansion to 1,000+ Problems
+### 2025-10-23: GSM8K CoT Dataset Expansion to 1,000 Problems
 
-**Objective**: Expand LLaMA CoT-needed dataset from 132 to 1,000-1,500 problems with stratified difficulty distribution to enable robust experimental design.
+**Objective**: Expand LLaMA CoT-needed dataset from 132 to 1,000 problems with stratified difficulty distribution to enable robust experimental design.
 
-**Status**: 🔄 **IN PROGRESS** - Testing 7,500 original GSM8K problems
+**Status**: ✅ **COMPLETE** - Successfully created 1,000-problem dataset with perfect balance
 
 **Motivation**: Current 132 problems insufficient for desired difficulty buckets (2-step: ≥150, 3-step: ≥150, 4-step: ≥100, 5+: ≥50). Need larger dataset for statistical power and difficulty-stratified analysis.
 
@@ -71,14 +71,29 @@
 - Pipeline execution: ~1.5 hours (in progress)
 - **Total**: ~5.5 hours
 
-**Next Steps**:
-1. Monitor pipeline completion (~90 min)
-2. Validate final distribution meets targets
-3. Update DATA_INVENTORY.md with new dataset
-4. Commit and push to GitHub
-5. Use expanded dataset for difficulty-stratified experiments
+**Final Results**:
+1. ✅ Pipeline completed in 94 minutes (tested 7,500 problems)
+2. ✅ Found 3,080 CoT-needed problems (41.1% rate - higher than expected!)
+3. ✅ Created 450-problem dataset meeting all initial targets
+4. ✅ Expanded to 1,000-problem dataset with perfect balance (250 per difficulty)
+5. ✅ All documentation updated and committed to GitHub
 
-**Impact**: Enables robust statistical analysis across difficulty levels, supports systematic ablation studies, and provides foundation for fair cross-model comparisons on problems requiring latent reasoning.
+**Dataset Options Created**:
+- **450 problems**: Initial targets met (150/150/100/50 for 2/3/4/5+ step)
+- **1,000 problems** (RECOMMENDED): Perfect balance (250/250/250/250) for strong statistical power
+- **Buffer**: 2,080 additional CoT-needed problems available for future expansion
+
+**Performance Achievements**:
+- 25× faster than conservative estimate (94 min vs 40 hours)
+- 41.1% CoT discovery rate (vs 24.8% projected from pairs)
+- Instant expansion from 450→1,000 using checkpoint (no re-inference needed)
+
+**Impact**: Enables robust statistical analysis across difficulty levels with strong power (n=250 per group), supports systematic ablation studies with balanced designs, and provides foundation for fair cross-model comparisons on problems requiring latent reasoning.
+
+**Files**:
+- `data/llama_cot_original_stratified_final.json` (450 problems)
+- `data/llama_cot_original_stratified_1000.json` (1,000 problems - RECOMMENDED)
+- `data/gsm8k_expansion_checkpoint.json` (7,500 tested, 3,080 CoT-needed)
 
 ---
 
