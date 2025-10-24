@@ -116,3 +116,5 @@ htmlcov/
 .Trashes
 ehthumbs.db
 Thumbs.db
+src/experiments/linear_probes/data/*.json
+src/experiments/linear_probes/results/
