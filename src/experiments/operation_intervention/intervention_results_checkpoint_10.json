@@ -1,0 +1,382 @@
+[
+  {
+    "problem_id": "train_7075",
+    "question": "The owner of a small store divided the sugar into 12 packs. If each pack weighs 250 grams and has 20 grams of sugar left, how many grams of sugar did he start with?",
+    "correct_answer": "3020",
+    "operation_type": "pure_addition",
+    "conditions": {
+      "baseline": {
+        "answer_text": "The answer is: 3020",
+        "predicted_answer": "3020",
+        "is_correct": true
+      },
+      "to_addition": {
+        "answer_text": "The answer is: 3020",
+        "predicted_answer": "3020",
+        "is_correct": true
+      },
+      "to_multiplication": {
+        "answer_text": "The answer is: 3020",
+        "predicted_answer": "3020",
+        "is_correct": true
+      },
+      "to_mixed": {
+        "answer_text": "The answer is: 3020",
+        "predicted_answer": "3020",
+        "is_correct": true
+      },
+      "random_control": {
+        "answer_text": "The answer is: 3020",
+        "predicted_answer": "3020",
+        "is_correct": true
+      },
+      "wrong_token_control": {
+        "answer_text": "The answer is: 3020",
+        "predicted_answer": "3020",
+        "is_correct": true
+      }
+    }
+  },
+  {
+    "problem_id": "train_4656",
+    "question": "Mary bought 14 apples, 9 oranges, and 6 blueberries. Mary ate 1 of each. How many fruits in total does she have left?",
+    "correct_answer": "26",
+    "operation_type": "pure_addition",
+    "conditions": {
+      "baseline": {
+        "answer_text": "The answer is: 26",
+        "predicted_answer": "26",
+        "is_correct": true
+      },
+      "to_addition": {
+        "answer_text": "The answer is: 28",
+        "predicted_answer": "28",
+        "is_correct": false
+      },
+      "to_multiplication": {
+        "answer_text": "The answer is: 28",
+        "predicted_answer": "28",
+        "is_correct": false
+      },
+      "to_mixed": {
+        "answer_text": "The answer is: 28",
+        "predicted_answer": "28",
+        "is_correct": false
+      },
+      "random_control": {
+        "answer_text": "The answer is: 28",
+        "predicted_answer": "28",
+        "is_correct": false
+      },
+      "wrong_token_control": {
+        "answer_text": "The answer is: 26",
+        "predicted_answer": "26",
+        "is_correct": true
+      }
+    }
+  },
+  {
+    "problem_id": "train_757",
+    "question": "Luna, the poodle, is supposed to eat 2 cups of kibble every day.  But Luna's master, Mary, and her husband, Frank, sometimes feed Luna too much kibble.  One day, starting with a new, 12-cup bag of kibble, Mary gave Luna 1 cup of kibble in the morning and 1 cup of kibble in the evening, But on the same day, Frank also gave Luna 1 cup of kibble in the afternoon and twice as much in the late evening as he had given Luna in the afternoon.  The next morning, how many cups of kibble will Mary find remaining in the bag?",
+    "correct_answer": "7",
+    "operation_type": "pure_addition",
+    "conditions": {
+      "baseline": {
+        "answer_text": "The answer is: 7",
+        "predicted_answer": "7",
+        "is_correct": true
+      },
+      "to_addition": {
+        "answer_text": "The answer is: 7",
+        "predicted_answer": "7",
+        "is_correct": true
+      },
+      "to_multiplication": {
+        "answer_text": "The answer is: 7",
+        "predicted_answer": "7",
+        "is_correct": true
+      },
+      "to_mixed": {
+        "answer_text": "The answer is: 7",
+        "predicted_answer": "7",
+        "is_correct": true
+      },
+      "random_control": {
+        "answer_text": "5+5",
+        "predicted_answer": "5",
+        "is_correct": false
+      },
+      "wrong_token_control": {
+        "answer_text": "The answer is: 7",
+        "predicted_answer": "7",
+        "is_correct": true
+      }
+    }
+  },
+  {
+    "problem_id": "train_6644",
+    "question": "Thomas, Toby, and Rebecca worked a total of 157 hours in one week.  Thomas worked x hours.  Toby worked 10 hours less than twice what Thomas worked, and Rebecca worked 8 hours less than Toby.  How many hours did Rebecca work?",
+    "correct_answer": "56",
+    "operation_type": "pure_addition",
+    "conditions": {
+      "baseline": {
+        "answer_text": "The answer is: 54",
+        "predicted_answer": "54",
+        "is_correct": false
+      },
+      "to_addition": {
+        "answer_text": "The answer is: 54",
+        "predicted_answer": "54",
+        "is_correct": false
+      },
+      "to_multiplication": {
+        "answer_text": "The answer is: 54",
+        "predicted_answer": "54",
+        "is_correct": false
+      },
+      "to_mixed": {
+        "answer_text": "The answer is: 54",
+        "predicted_answer": "54",
+        "is_correct": false
+      },
+      "random_control": {
+        "answer_text": "The answer is: 45",
+        "predicted_answer": "45",
+        "is_correct": false
+      },
+      "wrong_token_control": {
+        "answer_text": "The answer is: 54",
+        "predicted_answer": "54",
+        "is_correct": false
+      }
+    }
+  },
+  {
+    "problem_id": "train_4463",
+    "question": "At a softball game, three players are having a sunflower eating contest. The first player eats 78 seeds. The second eats 53 seeds. The third eats 30 more seeds than the second. How many do they eat in total?",
+    "correct_answer": "214",
+    "operation_type": "pure_addition",
+    "conditions": {
+      "baseline": {
+        "answer_text": "The answer is: 214",
+        "predicted_answer": "214",
+        "is_correct": true
+      },
+      "to_addition": {
+        "answer_text": "The answer is: 214",
+        "predicted_answer": "214",
+        "is_correct": true
+      },
+      "to_multiplication": {
+        "answer_text": "The answer is: 214",
+        "predicted_answer": "214",
+        "is_correct": true
+      },
+      "to_mixed": {
+        "answer_text": "The answer is: 214",
+        "predicted_answer": "214",
+        "is_correct": true
+      },
+      "random_control": {
+        "answer_text": "The answer is: 188",
+        "predicted_answer": "188",
+        "is_correct": false
+      },
+      "wrong_token_control": {
+        "answer_text": "The answer is: 214",
+        "predicted_answer": "214",
+        "is_correct": true
+      }
+    }
+  },
+  {
+    "problem_id": "train_2905",
+    "question": "A pen is longer than the rubber by 3 centimeters, and shorter than the pencil by 2 centimeters. Considering the pencil is 12 centimeters long, what is the total length of the rubber, the pen, and the pencil altogether?",
+    "correct_answer": "29",
+    "operation_type": "pure_addition",
+    "conditions": {
+      "baseline": {
+        "answer_text": "The answer is: 29",
+        "predicted_answer": "29",
+        "is_correct": true
+      },
+      "to_addition": {
+        "answer_text": "The answer is: 29",
+        "predicted_answer": "29",
+        "is_correct": true
+      },
+      "to_multiplication": {
+        "answer_text": "The answer is: 29",
+        "predicted_answer": "29",
+        "is_correct": true
+      },
+      "to_mixed": {
+        "answer_text": "The answer is: 29",
+        "predicted_answer": "29",
+        "is_correct": true
+      },
+      "random_control": {
+        "answer_text": "10+10=<<12-2=10>><<12-2=9>>37>>37>>37>>37>>37=37=42>>37-37-37-37-37-2/37-37-2<<42-37-2/237-2>>37-2>>37-2/2/2-2/2-2/2=2/3>>37-2/2=2/2/3=2/2/2=3/2/2/2/3=2/2/2/2/3>>2/2/3>>3/2/2/3>>2/3>>3/2/2>>3>>3>>2/3>>3>>3>>2/22/3>>3/2/3>>3>>3>>2/3>>3>>3/2/3>>3>>3/2>>3>>3>>3>>",
+        "predicted_answer": "3",
+        "is_correct": false
+      },
+      "wrong_token_control": {
+        "answer_text": "The answer is: 29",
+        "predicted_answer": "29",
+        "is_correct": true
+      }
+    }
+  },
+  {
+    "problem_id": "train_4218",
+    "question": "Kirill is 14 less centimeters in height than his brother. Together their heights equal 112 centimeters. How tall is Kirill in centimeters?",
+    "correct_answer": "49",
+    "operation_type": "pure_addition",
+    "conditions": {
+      "baseline": {
+        "answer_text": "The answer is: 49",
+        "predicted_answer": "49",
+        "is_correct": true
+      },
+      "to_addition": {
+        "answer_text": "The answer is: 49",
+        "predicted_answer": "49",
+        "is_correct": true
+      },
+      "to_multiplication": {
+        "answer_text": "The answer is: 49",
+        "predicted_answer": "49",
+        "is_correct": true
+      },
+      "to_mixed": {
+        "answer_text": "The answer is: 49",
+        "predicted_answer": "49",
+        "is_correct": true
+      },
+      "random_control": {
+        "answer_text": "58",
+        "predicted_answer": "58",
+        "is_correct": false
+      },
+      "wrong_token_control": {
+        "answer_text": "The answer is: 49",
+        "predicted_answer": "49",
+        "is_correct": true
+      }
+    }
+  },
+  {
+    "problem_id": "train_1357",
+    "question": "Lizzy's mother gave her 80 cents and her father gave her 40 cents for keeping to her promise. She went to her uncle's and spent 50 cents buying candy for her little cousin. Her uncle gave her another 70 cents. How many cents does she have now?",
+    "correct_answer": "140",
+    "operation_type": "pure_addition",
+    "conditions": {
+      "baseline": {
+        "answer_text": "The answer is: 140",
+        "predicted_answer": "140",
+        "is_correct": true
+      },
+      "to_addition": {
+        "answer_text": "The answer is: 140",
+        "predicted_answer": "140",
+        "is_correct": true
+      },
+      "to_multiplication": {
+        "answer_text": "The answer is: 140",
+        "predicted_answer": "140",
+        "is_correct": true
+      },
+      "to_mixed": {
+        "answer_text": "The answer is: 140",
+        "predicted_answer": "140",
+        "is_correct": true
+      },
+      "random_control": {
+        "answer_text": "The answer is: 140",
+        "predicted_answer": "140",
+        "is_correct": true
+      },
+      "wrong_token_control": {
+        "answer_text": "The answer is: 140",
+        "predicted_answer": "140",
+        "is_correct": true
+      }
+    }
+  },
+  {
+    "problem_id": "train_196",
+    "question": "Herbert is 10 years younger than Kris. If Kris is 24 years old now, how old will Herbert be next year?",
+    "correct_answer": "15",
+    "operation_type": "pure_addition",
+    "conditions": {
+      "baseline": {
+        "answer_text": "The answer is: 15",
+        "predicted_answer": "15",
+        "is_correct": true
+      },
+      "to_addition": {
+        "answer_text": "The answer is: 15",
+        "predicted_answer": "15",
+        "is_correct": true
+      },
+      "to_multiplication": {
+        "answer_text": "The answer is: 15",
+        "predicted_answer": "15",
+        "is_correct": true
+      },
+      "to_mixed": {
+        "answer_text": "The answer is: 15",
+        "predicted_answer": "15",
+        "is_correct": true
+      },
+      "random_control": {
+        "answer_text": "The answer is: 15",
+        "predicted_answer": "15",
+        "is_correct": true
+      },
+      "wrong_token_control": {
+        "answer_text": "The answer is: 15",
+        "predicted_answer": "15",
+        "is_correct": true
+      }
+    }
+  },
+  {
+    "problem_id": "train_544",
+    "question": "Elise is buying more dog food. She buys a 15kg bag then another 10kg bag, and she now has 40kg of dog food. How many kilograms of dog food did Elise already have?",
+    "correct_answer": "15",
+    "operation_type": "pure_addition",
+    "conditions": {
+      "baseline": {
+        "answer_text": "The answer is: 15",
+        "predicted_answer": "15",
+        "is_correct": true
+      },
+      "to_addition": {
+        "answer_text": "The answer is: 15",
+        "predicted_answer": "15",
+        "is_correct": true
+      },
+      "to_multiplication": {
+        "answer_text": "The answer is: 15",
+        "predicted_answer": "15",
+        "is_correct": true
+      },
+      "to_mixed": {
+        "answer_text": "The answer is: 15",
+        "predicted_answer": "15",
+        "is_correct": true
+      },
+      "random_control": {
+        "answer_text": "The answer is: 15",
+        "predicted_answer": "15",
+        "is_correct": true
+      },
+      "wrong_token_control": {
+        "answer_text": "The answer is: 15",
+        "predicted_answer": "15",
+        "is_correct": true
+      }
+    }
+  }
+]
