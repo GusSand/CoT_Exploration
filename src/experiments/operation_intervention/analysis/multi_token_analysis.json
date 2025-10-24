@@ -1,0 +1,83 @@
+{
+  "accuracies": {
+    "baseline": 0.7833333333333333,
+    "token1_only": 0.7666666666666667,
+    "token5_only": 0.7833333333333333,
+    "multi_token": 0.7666666666666667,
+    "token1_random": 0.45,
+    "token5_random": 0.7833333333333333,
+    "multi_random": 0.45
+  },
+  "change_rates": {
+    "token5_random": 0.0,
+    "token5_only": 0.0,
+    "multi_random": 0.4666666666666667,
+    "token1_random": 0.4666666666666667,
+    "multi_token": 0.08333333333333333,
+    "token1_only": 0.08333333333333333
+  },
+  "by_operation": {
+    "pure_addition": {
+      "baseline": 0.85,
+      "token1_only": 0.85,
+      "token5_only": 0.85,
+      "multi_token": 0.85,
+      "token1_random": 0.4,
+      "token5_random": 0.85,
+      "multi_random": 0.4
+    },
+    "pure_multiplication": {
+      "baseline": 0.75,
+      "token1_only": 0.75,
+      "token5_only": 0.75,
+      "multi_token": 0.75,
+      "token1_random": 0.5,
+      "token5_random": 0.75,
+      "multi_random": 0.5
+    },
+    "mixed": {
+      "baseline": 0.75,
+      "token1_only": 0.7,
+      "token5_only": 0.75,
+      "multi_token": 0.7,
+      "token1_random": 0.45,
+      "token5_random": 0.75,
+      "multi_random": 0.45
+    }
+  },
+  "statistics": {
+    "paired_tests": {
+      "baseline_vs_token1": {
+        "t_statistic": 0.574115788449931,
+        "p_value": 0.5680718717230762
+      },
+      "baseline_vs_token5": {
+        "t_statistic": NaN,
+        "p_value": NaN
+      },
+      "baseline_vs_multi": {
+        "t_statistic": 0.574115788449931,
+        "p_value": 0.5680718717230762
+      },
+      "token1_vs_multi": {
+        "t_statistic": NaN,
+        "p_value": NaN
+      },
+      "baseline_vs_token1_random": {
+        "t_statistic": 5.064797519451639,
+        "p_value": 4.301715534973233e-06
+      },
+      "baseline_vs_multi_random": {
+        "t_statistic": 5.064797519451639,
+        "p_value": 4.301715534973233e-06
+      }
+    },
+    "effect_sizes": {
+      "baseline_vs_token1": 0.039918388841134966,
+      "baseline_vs_token5": 0.0,
+      "baseline_vs_multi": 0.039918388841134966,
+      "baseline_vs_token1_random": 0.7026220545465502,
+      "baseline_vs_multi_random": 0.7026220545465502
+    }
+  }
+}
