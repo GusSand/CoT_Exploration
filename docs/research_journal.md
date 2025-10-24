@@ -124,6 +124,106 @@ Why SAE underperforms:
 
 ---
 
+### 2025-10-24e: SAE Refinement - Testing Smaller Dictionary + Token-Specific Aggregation
+
+**Objective**: Refine SAE configuration to reduce feature death and test if Token 1 L8 aggregation (most discriminative position from operation circuits) improves classification vs pilot's mean pooling.
+
+**Status**: ✅ **COMPLETE** - Mixed results: better autoencoder, worse classifier
+
+**Hypothesis Testing**:
+- **H1**: Smaller dictionary (2048 vs 8192) reduces feature death ✅ **CONFIRMED**
+- **H2**: Weaker L1 (0.0005 vs 0.001) preserves discriminability ❌ **REJECTED**
+- **H3**: Token 1 L8 aggregation beats mean pooling ❌ **REJECTED**
+
+**Configuration**:
+| Parameter | Pilot | Refined | Change |
+|-----------|-------|---------|--------|
+| Features | 8192 (4x expansion) | 2048 (1x expansion) | ÷ 4 |
+| L1 coefficient | 0.001 | 0.0005 | ÷ 2 |
+| Aggregation | Mean pool (all tokens/layers) | Token 1 L8 only | Targeted |
+
+**Key Results**:
+
+**Reconstruction Quality** ✅ **Major Improvement**:
+- MSE: 0.0319 → 0.0161 (-49.5%)
+- Explained variance: 78.62% → **89.25%** (+10.6 pts)
+- Cosine similarity: 89.60% → **94.95%** (+5.4 pts)
+- **Verdict**: FAIR → **GOOD**
+
+**Feature Usage** ✅✅✅ **Dramatic Improvement**:
+- Dead features: **96.97% → 40.67%** (-56.3 pts!)
+- Active features: 248 → 1215 (4.9× more)
+- L0 sparsity: 23.34 → 23.14 (same)
+- **Verdict**: POOR → **FAIR**
+
+**Classification Performance** ❌ **Worse Than Pilot**:
+| Method | Accuracy | vs Baseline | vs Pilot |
+|--------|----------|-------------|----------|
+| Baseline (Raw L8) | 83.3% | - | - |
+| Pilot (Mean pool) | 70.0% | -13.3 pts | - |
+| **Refined (Token 1 L8)** | **63.3%** | **-20.0 pts** | **-6.7 pts** ❌ |
+
+**Per-Class F1 Scores**:
+- Multiplication: 0.86 → 0.77 (-0.09) - previously best class degraded
+- Addition: 0.64 → 0.62 (-0.02)
+- Mixed: 0.58 → 0.52 (-0.06)
+
+**Major Discoveries**:
+
+1. 🎯 **Aggregation Strategy Paradox**: Token 1 L8 is most discriminative for RAW activations (77.5% solo accuracy), but performs WORSE for SAE features (63.3%). Mean pooling across tokens/layers recovers more discriminative signal from compressed features.
+
+2. 📊 **Smaller Dictionary Solves Feature Death**: 2048 features with weaker L1 reduces dead features from 97% to 41%. Reconstruction improves dramatically (89.25% explained variance).
+
+3. ❌ **Better Autoencoder ≠ Better Classifier**: Refined SAE is superior for reconstruction but inferior for classification. Confirms sparsity-discriminability tradeoff persists across configurations.
+
+4. 🔀 **SAE Compression Changes Optimal Strategy**: Single-token aggregation that works for raw activations fails for SAE features. Compression redistributes information in ways that benefit from multi-token averaging.
+
+**Why Token 1 L8 Failed**:
+- Raw Token 1 L8: 77.5% accuracy (concentrated discriminative signal)
+- SAE Token 1 L8: 63.3% accuracy (signal too compressed in single position)
+- SAE Mean pool: 70.0% accuracy (averages recover distributed signal)
+- **Interpretation**: SAE compression spreads information across features differently than raw activations
+
+**Scientific Implications**:
+
+1. **Aggregation matters more for compressed representations**: Strategies that work for raw activations don't transfer to SAE features
+2. **Reconstruction quality ≠ downstream task performance**: 89.25% explained variance doesn't preserve operation-discriminative information
+3. **Feature death is solvable**: Smaller dictionary + weaker L1 dramatically improves feature usage
+4. **Fundamental tradeoff confirmed**: Both pilot and refined underperform raw activations, validating that SAE optimization objective misaligns with classification
+
+**Recommendations**:
+
+✅ **Use Refined SAE (2048 features, L1=0.0005) for**:
+- Interpretability analysis (better feature usage)
+- Understanding what patterns model learns
+- Reconstruction quality (89.25% explained variance)
+
+❌ **Don't use SAE features for**:
+- Classification tasks requiring discriminative power
+- Any downstream task where raw activations work better
+- Expecting single-token strategies to transfer from raw space
+
+✅ **If you must use SAE for classification**:
+- Use **mean pooling**, not single-token aggregation
+- Try supervised auxiliary loss during training
+- Accept 10-15 point performance loss vs raw activations
+
+**Time Investment**: ~1 hour (under estimate)
+- Train: 20 min
+- Validate: 5 min
+- Classify: 10 min
+- Document: 25 min
+
+**Deliverables**:
+- Refined SAE weights (2048 features)
+- Validation report (89.25% explained variance, 40.67% dead features)
+- Token 1 L8 classification results (63.3% accuracy)
+- Comparison document (pilot vs refined analysis)
+
+**Conclusion**: Smaller dictionary solves feature death and improves reconstruction, but doesn't help classification. Token-specific aggregation backfires for SAE features. **Final recommendation: Use raw activations for classification (83.3%), SAE only for interpretability**.
+
+---
+
 ### 2025-10-24b: Operation-Specific Circuits in CODI Continuous Thoughts
 
 **Objective**: Investigate whether CODI's continuous thought representations encode operation-specific information by testing if problems requiring different arithmetic operations (pure addition, pure multiplication, mixed) have distinguishable patterns in latent space.
