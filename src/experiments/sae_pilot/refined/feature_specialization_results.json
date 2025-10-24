@@ -1,0 +1,32 @@
+{
+  "n_features": 2048,
+  "active_features": 1215,
+  "operation_selective_features": {
+    "mixed": 43,
+    "pure_addition": 47,
+    "pure_multiplication": 43
+  },
+  "selectivity_stats": {
+    "operation_mean": 1.8809424575613516,
+    "layer_mean": 2.60777455303206,
+    "token_mean": 2.3987862813569185
+  },
+  "token1_l8_hypothesis": {
+    "token_preferences": {
+      "2": 23,
+      "5": 15,
+      "0": 27,
+      "1": 34,
+      "3": 13,
+      "4": 21
+    },
+    "layer_preferences": {
+      "14": 130,
+      "8": 1,
+      "4": 2
+    },
+    "token1_l8_count": 0,
+    "total_selective": 133,
+    "enrichment": 0.0
+  }
+}
