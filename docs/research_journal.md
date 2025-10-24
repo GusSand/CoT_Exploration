@@ -2,6 +2,100 @@
 
 ## Experiment Log
 
+### 2025-10-24e: SAE Error Analysis - Predicting Reasoning Failures with SAE Features
+
+**Objective**: Use SAE features from continuous thoughts to predict when LLaMA makes reasoning errors in math problems. Test if SAE features capture interpretable error signals.
+
+**Status**: ✅ **COMPLETE** - Successfully achieved >60% error prediction accuracy
+
+**Duration**: ~5 minutes total (3.5 min extraction + 41.5 sec training + 30 sec analysis)
+
+**Research Questions**:
+- **RQ1**: Can SAE features predict correct vs incorrect solutions better than chance?
+- **RQ2**: Where are errors most detectable (which layers/tokens)?
+- **RQ3**: What is the effect size of error-discriminative features?
+
+**Key Results**:
+
+**Error Classification Performance**: ✅ **Target Met**
+- **Test Accuracy**: 65.57% (target: >60%) ✅
+- **Train Accuracy**: 97.67% (some overfitting)
+- **Precision**: 65% (incorrect), 66% (correct)
+- **Recall**: 70% (incorrect), 61% (correct)
+- **Dataset**: 914 solutions (462 incorrect, 452 correct)
+
+**Error Localization** (RQ2): ✅ **Late Layer Dominates**
+| Layer | Error-Predictive Features |
+|-------|---------------------------|
+| **Late (L14)** | **56%** ⭐ Primary error detector |
+| Middle (L8) | 27% |
+| Early (L4) | 17% |
+
+**Token Specialization**:
+| Token | Error-Predictive Features |
+|-------|---------------------------|
+| **Token 5** (last) | **30%** ⭐ Final reasoning state |
+| **Token 1** (early) | **22%** ⭐ Critical decision point |
+| Token 4 | 17% |
+| Token 0 | 16% |
+| Token 2-3 | 7-8% (intermediate processing) |
+
+**Feature Discriminability** (RQ3): Moderate Effect Sizes
+- **Max Cohen's d**: 0.2896 (moderate effect)
+- **Mean Cohen's d (top 100)**: 0.1966
+- **Interpretation**: Consistent but subtle differences between correct/incorrect solutions
+
+**Hot Spots** (Layer × Token):
+- Late × Token 0: 15 features (early error signal in final layer)
+- Late × Token 5: 12 features (accumulation of error signals)
+- Middle × Token 5: 11 features (mid-reasoning error detection)
+
+**Key Findings**:
+
+1. ✅ **SAE features predict errors above chance** (+15.57 pts vs random)
+2. ✅ **Errors become more detectable in late layer** (56% of features)
+3. ✅ **Last token (T5) accumulates error signals** (30% of features)
+4. ⚠️ **Moderate effect sizes** (Cohen's d ~0.2-0.3) limit peak performance
+
+**Implications**:
+- SAE features capture meaningful error signals
+- Real-time error detection: monitor late layer + T5 for best signal
+- Error signals are subtle (not binary switches), requiring multiple features
+- Proof-of-concept for interpretable error detection, though not deployment-ready (65% vs needed 95%+)
+
+**Comparison to Operation Classification**:
+| Task | Accuracy | Difficulty |
+|------|----------|-----------|
+| **Error Prediction** | 65.57% | Moderate |
+| **Operation Classification (SAE)** | 70.0% | Moderate |
+| **Operation Classification (Raw)** | 83.3% | Easier |
+
+**Methodology Notes**:
+- **Smart pivot**: Used existing validation results instead of generating new solutions (saved ~4 hours)
+- **Concatenation strategy**: Used all 18 vectors (3 layers × 6 tokens) = 36,864 features
+- **Balanced dataset**: 50-50 split correct/incorrect solutions
+
+**Limitations**:
+- Overfitting (32.1 pt gap train/test)
+- High false alarm rate (39% false negatives)
+- Coarse labels (no error type annotation)
+- Single model (LLaMA-3.2-1B-Instruct only)
+
+**Future Directions**:
+- Error type classification (arithmetic, logic, misreading)
+- Feature interpretation (visualize what error-predictive features represent)
+- Cross-model validation
+- Causal interventions (steer features to reduce errors)
+
+**Time Breakdown**:
+- Data extraction: 3.5 minutes
+- SAE encoding + training: 41.5 seconds
+- Error pattern analysis: ~30 seconds
+
+**Documentation**: `docs/experiments/sae_error_analysis_2025-10-24.md`
+
+---
+
 ### 2025-10-24d: SAE Pilot - Sparse Autoencoder for Continuous Thought Interpretability
 
 **Objective**: Train Sparse Autoencoder (SAE) on continuous thought activations to find interpretable features and test if they classify operation types better than raw activations (83.3% baseline).
