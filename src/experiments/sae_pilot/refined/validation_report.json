@@ -1,0 +1,31 @@
+{
+  "sae_config": {
+    "input_dim": 2048,
+    "n_features": 2048,
+    "l1_coefficient": 0.0005
+  },
+  "training_info": {
+    "n_epochs": 25,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "final_recon_loss": 0.016557718388909518,
+    "final_l0_sparsity": 23.868943813235262
+  },
+  "reconstruction_quality": {
+    "mse": 0.016070490702986717,
+    "explained_variance": 0.8924906855551529,
+    "cosine_similarity": 0.9494667053222656
+  },
+  "sparsity_metrics": {
+    "l0_mean": 23.13546371459961,
+    "l0_std": 11.459341049194336,
+    "l0_percentage": 0.01129661314189434,
+    "l1_mean": 15.108162879943848,
+    "n_dead_features": 833,
+    "pct_dead_features": 40.673828125
+  },
+  "verdict": {
+    "reconstruction": "FAIR",
+    "sparsity": "POOR"
+  }
+}
