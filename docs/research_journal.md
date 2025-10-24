@@ -108,14 +108,19 @@
 
 **Surprising Finding**: 3-step problems show near-zero failures for tokens 0-4 but 19.4% for Token 5 - suggests model can solve medium-difficulty problems with minimal latent reasoning except for final synthesis step.
 
-**Attention-Importance Correlation (RQ2)** - From previous simple ablation analysis:
+**Attention-Importance Correlation (RQ2)** - Full dataset validation (600 data points: 100 problems × 6 tokens):
 | Layer | Correlation | P-value | Significance |
 |-------|------------|---------|--------------|
-| **Layer 8 (middle)** | **r=0.367** | **p=0.004** | ✅ **Significant** |
-| Layer 14 (late) | r=0.211 | p=0.105 | Trend (marginal) |
-| Layer 4 (early) | r=0.013 | p=0.919 | No correlation |
+| **Layer 8 (middle)** | **r=+0.2184** | **p<0.000001** | ⭐⭐⭐ **Highly significant** |
+| **Layer 14 (late)** | **r=+0.1698** | **p=0.000029** | ⭐⭐⭐ **Highly significant** |
+| Layer 4 (early) | r=-0.0340 | p=0.405 | ❌ Not significant |
 
-**Major Discovery**: 🔬 **Middle layer attention (L8) significantly predicts which tokens are important for correct reasoning!** This validates using attention as a mechanistic indicator of computational importance.
+**Major Discovery**: 🔬 **Middle and late layer attention significantly predicts which tokens are important for correct reasoning!** Layer 8 shows strongest correlation (r=+0.22, p<0.000001), validating that attention is a mechanistically meaningful proxy for causal importance. Early layers (L4) show no correlation, suggesting importance emerges during reasoning computation.
+
+**Per-Token Analysis (Layer 8)**:
+- **Token 5**: Highest importance (20.3%) AND highest attention (0.0816) - significant within-token correlation (r=+0.27, p=0.007)
+- Tokens 0-4: Lower importance (5-8%) and attention (0.01-0.04) - weak or no individual correlations
+- Pattern confirms: The most critical token (Token 5) consistently receives the most attention across problems
 
 **Technical Achievements**:
 1. ✅ Implemented 7-method corruption framework
@@ -151,7 +156,7 @@
 - ✅ Identified 3-step anomaly for future investigation
 
 **Next Steps**:
-- 🔄 **Attention-importance correlation** on full dataset (validate RQ2)
+- ✅ **Attention-importance correlation** - COMPLETE (validated RQ2 with p<0.000001)
 - 🔬 **Compositional analysis** - Token pairs/triplets (future work)
 - 🧠 **Residual stream decomposition** - Understanding computation flow (future work)
 
