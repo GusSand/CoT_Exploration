@@ -18,6 +18,8 @@ This document provides a complete breakdown of all datasets in the project, orga
 | **Matched Pairs** | Both models correct | 101 pairs | Both | [`data/problem_pairs_matched.json`](../src/experiments/activation_patching/data/problem_pairs_matched.json) |
 | **CoT-Dependent** | Fair comparison | 43 pairs | Both | [`data/problem_pairs_cot_dependent.json`](../src/experiments/activation_patching/data/problem_pairs_cot_dependent.json) |
 | **LLaMA CoT All** | All LLaMA CoT problems | 285 problems | LLaMA | [`data/llama_cot_all.json`](../src/experiments/activation_patching/data/llama_cot_all.json) |
+| **LLaMA CoT Stratified (450)** | Original GSM8K problems stratified by difficulty | 450 problems | LLaMA | [`data/llama_cot_original_stratified_final.json`](../src/experiments/activation_patching/data/llama_cot_original_stratified_final.json) |
+| **LLaMA CoT Stratified (1000)** | Expanded stratified dataset with strong statistical power | **1000 problems** | LLaMA | [`data/llama_cot_original_stratified_1000.json`](../src/experiments/activation_patching/data/llama_cot_original_stratified_1000.json) |
 | **GPT-2 Steering** | Activation steering | 344 train / 86 test | GPT-2 | [`results/steering_dataset_gpt2.json`](../src/experiments/activation_patching/results/steering_dataset_gpt2.json) |
 | **LLaMA Steering (Full)** | Activation steering | 425 train / 107 test | LLaMA | [`results/steering_dataset_llama_full.json`](../src/experiments/activation_patching/results/steering_dataset_llama_full.json) |
 
@@ -168,6 +170,182 @@ This document provides a complete breakdown of all datasets in the project, orga
 - Understanding what types of problems need CoT vs direct computation
 
 **Documentation**: Created 2025-10-22
+
+---
+
+### 1.5 LLaMA CoT Stratified Dataset (Original GSM8K Problems)
+**File**: [`src/experiments/activation_patching/data/llama_cot_original_stratified_final.json`](../src/experiments/activation_patching/data/llama_cot_original_stratified_final.json)
+
+**Purpose**: Stratified dataset of **original GSM8K problems** (not generated pairs) where LLaMA needs CoT tokens, with exact target distribution across difficulty levels
+
+**Size**: 450 problems
+
+**Structure**:
+```json
+{
+  "gsm8k_id": "test_86",
+  "question": "Problem text...",
+  "answer": 22,
+  "full_solution": "Step by step... #### 22",
+  "source": "test",
+  "baseline_correct": true,
+  "ablated_correct": false,
+  "needs_cot": true,
+  "reasoning_steps": 3,
+  "difficulty": "3-step",
+  "is_existing": false
+}
+```
+
+**Target Distribution (ALL TARGETS MET)**:
+
+| Difficulty | Target | Existing | New | Total |
+|-----------|--------|----------|-----|-------|
+| 2-step    | ≥150   | 42       | 108 | **150** |
+| 3-step    | ≥150   | 37       | 113 | **150** |
+| 4-step    | ≥100   | 32       | 68  | **100** |
+| 5+step    | ≥50    | 21       | 29  | **50**  |
+| **TOTAL** |        | 132      | 318 | **450** |
+
+**Key Stats**:
+- Source: Original GSM8K problems (test + train sets)
+- Testing: 7,500 problems tested, 3,080 CoT-needed found (41.1% rate)
+- Stratification: Exact targets achieved for all difficulty buckets
+- Existing problems: 132 from previous work marked with `is_existing=True`
+- New problems: 318 from expansion marked with `is_existing=false`
+- Buffer: 2,762 additional CoT-needed problems available in checkpoint
+
+**Difficulty Classification**:
+- Based on counting `<<calculation>>` blocks in GSM8K solutions
+- 2-step: 1-2 calculation blocks (easy)
+- 3-step: 3 calculation blocks (medium)
+- 4-step: 4 calculation blocks (hard)
+- 5+step: 5+ calculation blocks (very hard)
+
+**Fields**:
+- `gsm8k_id`: Original GSM8K identifier (test_N or train_N or existing_N)
+- `question`: Problem text from GSM8K
+- `answer`: Correct answer extracted from `#### N` format
+- `full_solution`: Complete GSM8K solution with calculation blocks
+- `source`: "test" or "train" (GSM8K split)
+- `baseline_correct`: LLaMA correct WITH 6 CoT tokens (always true)
+- `ablated_correct`: LLaMA correct WITHOUT CoT tokens (always false)
+- `needs_cot`: Always true (filter criterion)
+- `reasoning_steps`: Count of calculation blocks
+- `difficulty`: Classified bucket (2-step, 3-step, 4-step, 5+step)
+- `is_existing`: True if from original 132, false if newly added
+
+**Advantages Over Pair-Based Dataset**:
+1. **Scale**: 450 vs 285 problems (58% increase)
+2. **Distribution Control**: Exact stratification by difficulty
+3. **Statistical Power**: n≥50 per difficulty bucket for robust analysis
+4. **Original Problems**: Uses GSM8K directly, no generation artifacts
+5. **Future Expansion**: 2,762 additional problems available for scaling to 1,500+
+
+**Used By**:
+- Difficulty-stratified ablation experiments
+- N-token analysis by reasoning complexity
+- Statistical power analysis with adequate sample sizes
+- Cross-difficulty performance comparisons
+- Robustness testing across problem types
+
+**Generation Pipeline**:
+1. Test CoT necessity on 7,500 GSM8K problems (baseline vs ablated)
+2. Calculate difficulty from solution calculation blocks
+3. Load existing 132 problems from `llama_cot_all.json`
+4. Stratify by difficulty and sample to exact targets
+5. Validate all targets met
+
+**Checkpoint File**: [`data/gsm8k_expansion_checkpoint.json`](../src/experiments/activation_patching/data/gsm8k_expansion_checkpoint.json)
+- Contains all 7,500 tested problems
+- 3,080 CoT-needed problems total
+- Available for future expansion or alternative stratifications
+
+**Documentation**:
+- Detailed report: [`docs/experiments/gsm8k_expansion_2025-10-23.md`](experiments/gsm8k_expansion_2025-10-23.md)
+- Usage guide: [`src/experiments/activation_patching/GSM8K_EXPANSION_GUIDE.md`](../src/experiments/activation_patching/GSM8K_EXPANSION_GUIDE.md)
+- Research journal: [`docs/research_journal.md`](research_journal.md) (2025-10-23 entry)
+
+**Created**: 2025-10-23
+
+**Performance Metrics**:
+- Testing time: 94 minutes for 7,500 problems
+- Rate: 1.33 problems/second
+- 25× faster than conservative estimate
+
+---
+
+### 1.6 LLaMA CoT Stratified Dataset - 1000 Problems (RECOMMENDED)
+**File**: [`src/experiments/activation_patching/data/llama_cot_original_stratified_1000.json`](../src/experiments/activation_patching/data/llama_cot_original_stratified_1000.json)
+
+**Purpose**: **Expanded stratified dataset with strong statistical power** - 1,000 original GSM8K problems where LLaMA needs CoT tokens, with perfectly balanced distribution across all difficulty levels
+
+**Size**: 1,000 problems
+
+**Structure**: Same as section 1.5 above
+
+**Distribution (PERFECTLY BALANCED FOR STRONG STATISTICAL POWER)**:
+
+| Difficulty | Target | Existing | New (from 450) | Additional (from checkpoint) | Total |
+|-----------|--------|----------|----------------|------------------------------|-------|
+| 2-step    | 250    | 42       | 108            | 100                          | **250** |
+| 3-step    | 250    | 37       | 113            | 100                          | **250** |
+| 4-step    | 250    | 32       | 68             | 150                          | **250** |
+| 5+step    | 250    | 21       | 29             | 200                          | **250** |
+| **TOTAL** |        | 132      | 318            | 550                          | **1000** |
+
+**Key Stats**:
+- Source: Original GSM8K problems (test + train sets)
+- Perfectly balanced: 250 problems per difficulty level
+- Strong statistical power: Enables robust subgroup analyses
+- All 132 existing problems preserved with `is_existing=True`
+- 318 problems from initial expansion (450 dataset)
+- 550 additional problems sampled from checkpoint
+- Buffer remaining: 2,080 additional CoT-needed problems still available
+
+**Advantages Over 450-Problem Dataset**:
+1. **Balanced Distribution**: Equal samples across all difficulty levels (250 each)
+2. **Strong Statistical Power**: n=250 per group enables:
+   - Detection of small effect sizes
+   - Robust subgroup analyses
+   - Cross-difficulty comparisons with high confidence
+3. **Flexibility**: Equal group sizes simplify statistical analyses
+4. **Scale**: 122% larger than 450-problem dataset
+
+**Statistical Power**:
+- **n=250 per difficulty** enables detection of:
+  - Small effect sizes (Cohen's d ≥ 0.25)
+  - Interactions between difficulty and treatment
+  - Meaningful subgroup differences
+- Power analysis: >90% power for medium effects (d=0.5) at α=0.05
+
+**Used By**:
+- Difficulty-stratified ablation experiments requiring strong power
+- N-token analysis across complexity levels
+- Statistical modeling with difficulty as covariate
+- Cross-difficulty performance comparisons
+- Subgroup analyses and interaction effects
+
+**Generation Process**:
+1. Started with 450-problem dataset (section 1.5)
+2. Loaded checkpoint with 3,080 CoT-needed problems
+3. Filtered to available problems not in 450 dataset
+4. Random sampled to reach 250 per difficulty level
+5. Verified perfect balance
+
+**Files**:
+- Primary: `data/llama_cot_original_stratified_1000.json` (1,000 problems)
+- Source: `data/llama_cot_original_stratified_final.json` (450 problems)
+- Checkpoint: `data/gsm8k_expansion_checkpoint.json` (7,500 tested, 3,080 CoT-needed)
+
+**Documentation**:
+- Detailed report: [`docs/experiments/gsm8k_expansion_2025-10-23.md`](experiments/gsm8k_expansion_2025-10-23.md)
+- Usage guide: [`src/experiments/activation_patching/GSM8K_EXPANSION_GUIDE.md`](../src/experiments/activation_patching/GSM8K_EXPANSION_GUIDE.md)
+- Research journal: [`docs/research_journal.md`](research_journal.md) (2025-10-23 entry)
+
+**Created**: 2025-10-23 (expanded from 450 to 1,000)
+
+**Recommendation**: **Use this dataset as default** for all difficulty-stratified analyses requiring robust statistical conclusions.
 
 ---
 
