@@ -130,9 +130,12 @@
 - **Total experiments per problem**: 43 (1 baseline + 6 tokens × 7 corruptions)
 
 **Deliverables**:
-- Pipeline scripts: `create_test_dataset.py`, `1_run_token_ablation_FULL.py`, `2_extract_attention.py`, `3_analyze_and_visualize.py`
-- Test results: `ccta_full_results_test.json` (10 problems × 43 experiments)
-- Visualizations: 4 publication-ready figures (PDF + PNG)
+- Pipeline scripts: `create_test_dataset.py`, `create_full_dataset.py`, `1_run_token_ablation_FULL.py`, `2_extract_attention.py`, `correlate_attention_importance.py`, `visualize_correlation.py`, `analyze_full_results.py`
+- Full results: `ccta_full_results_100.json` (100 problems × 43 experiments = 4,300 tests)
+- Attention data: `attention_weights_100.json` (100 problems × 3 layers × 6 tokens)
+- Visualizations:
+  - `attention_importance_correlation.png` - 3-panel scatter plots showing Layer 8/14 correlation (r=+0.22/+0.17, p<0.001)
+  - `token_importance_attention_comparison.png` - Bar chart demonstrating Token 5 dominates both metrics
 - Documentation: `README.md` with complete methodology
 - Report: `docs/experiments/codi_attention_analysis_2025-10-23.md`
 
