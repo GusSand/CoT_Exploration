@@ -1,6 +1,6 @@
 # Data Inventory - CoT Exploration Project
 
-**Last Updated**: 2025-10-23
+**Last Updated**: 2025-10-24
 
 This document provides a complete breakdown of all datasets in the project, organized by experiment type and model.
 
@@ -22,6 +22,7 @@ This document provides a complete breakdown of all datasets in the project, orga
 | **LLaMA CoT Stratified (1000)** | Expanded stratified dataset with strong statistical power | **1000 problems** | LLaMA | [`data/llama_cot_original_stratified_1000.json`](../src/experiments/activation_patching/data/llama_cot_original_stratified_1000.json) |
 | **GPT-2 Steering** | Activation steering | 344 train / 86 test | GPT-2 | [`results/steering_dataset_gpt2.json`](../src/experiments/activation_patching/results/steering_dataset_gpt2.json) |
 | **LLaMA Steering (Full)** | Activation steering | 425 train / 107 test | LLaMA | [`results/steering_dataset_llama_full.json`](../src/experiments/activation_patching/results/steering_dataset_llama_full.json) |
+| **SAE Error Analysis** | Error classification | 914 solutions (1.07 GB) | LLaMA | [`sae_error_analysis/data/error_analysis_dataset.json`](../src/experiments/sae_error_analysis/data/error_analysis_dataset.json) ⚠️ |
 
 ---
 
@@ -518,9 +519,95 @@ This document provides a complete breakdown of all datasets in the project, orga
 
 ---
 
-## 4. Dataset Relationships
+## 4. SAE Error Analysis Datasets
 
-### 4.1 The Filtering Pipeline
+### 4.1 Error Analysis Dataset with Continuous Thoughts
+**File**: [`src/experiments/sae_error_analysis/data/error_analysis_dataset.json`](../src/experiments/sae_error_analysis/data/error_analysis_dataset.json)
+
+**Purpose**: Continuous thought activations extracted for correct and incorrect LLaMA solutions, used to train SAE-based error classifier
+
+**Size**: 914 solutions (1.07 GB)
+
+**Composition**:
+- **Incorrect solutions**: 462 (50.5%)
+- **Correct solutions**: 452 (49.5%)
+- Balanced dataset for binary classification
+
+**Structure**:
+```json
+{
+  "metadata": {
+    "n_correct": 452,
+    "n_incorrect": 462,
+    "total": 914,
+    "layers": ["early", "middle", "late"],
+    "layer_indices": {"early": 4, "middle": 8, "late": 14},
+    "n_latent_tokens": 6,
+    "source": "532 problem pairs validation results"
+  },
+  "correct_solutions": [
+    {
+      "pair_id": 0,
+      "variant": "clean" | "corrupted",
+      "question": "Problem text",
+      "ground_truth": "Expected answer",
+      "predicted": "Model prediction",
+      "is_correct": true,
+      "continuous_thoughts": {
+        "early": [[2048 floats], ...],   // 6 vectors
+        "middle": [[2048 floats], ...],  // 6 vectors
+        "late": [[2048 floats], ...]     // 6 vectors
+      }
+    }
+  ],
+  "incorrect_solutions": [...]  // Same structure, is_correct: false
+}
+```
+
+**Extraction Details**:
+- **Layers extracted**: L4 (early), L8 (middle), L14 (late)
+- **Tokens per layer**: 6 continuous thought tokens
+- **Vectors per solution**: 18 (3 layers × 6 tokens)
+- **Dimensions per vector**: 2048 (LLaMA-3.2-1B hidden size)
+- **Total dimensions per solution**: 36,864 (after concatenation)
+
+**Source Data**:
+- Base: [`validation_results_llama_gpt4_532.json`](../src/experiments/activation_patching/validation_results_llama_gpt4_532.json)
+- Problems: [`problem_pairs_gpt4_answers.json`](../src/experiments/activation_patching/problem_pairs_gpt4_answers.json)
+- Both clean and corrupted variants included
+
+**Selection Criteria**:
+- Sampled 462 incorrect solutions (82% of 566 available)
+- Sampled 452 correct solutions (for balance)
+- Random seed: 42 for reproducibility
+
+**Key Stats**:
+- Model: LLaMA-3.2-1B-Instruct with CODI (6 latent tokens)
+- Extraction time: ~3.5 minutes (4.6 solutions/second)
+- File size: 1.07 GB (excluded from git via .gitignore)
+
+**Used By**:
+- SAE error classification experiment (65.57% test accuracy)
+- Error pattern analysis (layer/token localization)
+- Feature importance analysis (Cohen's d)
+
+**Generation Command**:
+```bash
+python src/experiments/sae_error_analysis/extract_error_thoughts_simple.py \
+  --n_wrong 462 --n_correct 462
+```
+
+**Created**: 2025-10-24
+
+**Status**: ✅ File exists locally (not in git due to size)
+
+**Documentation**: [`docs/experiments/sae_error_analysis_2025-10-24.md`](experiments/sae_error_analysis_2025-10-24.md)
+
+---
+
+## 5. Dataset Relationships
+
+### 5.1 The Filtering Pipeline
 ```
 ┌─────────────────────────────────────────────────────────┐
 │  All 532 Pairs (GPT-4 calculated)                       │
@@ -574,9 +661,9 @@ This document provides a complete breakdown of all datasets in the project, orga
 
 ---
 
-## 5. Model-Specific Breakdowns
+## 6. Model-Specific Breakdowns
 
-### 5.1 GPT-2 (117M parameters)
+### 6.1 GPT-2 (117M parameters)
 **CoT Dependency**: 100% (always needs continuous thought tokens)
 
 **Datasets**:
@@ -608,7 +695,7 @@ This document provides a complete breakdown of all datasets in the project, orga
 
 ---
 
-## 6. File Locations
+## 7. File Locations
 
 ### Main Data Directory
 ```
@@ -630,9 +717,9 @@ src/experiments/activation_patching/
 
 ---
 
-## 7. Critical Insights
+## 8. Critical Insights
 
-### 7.1 Why Filter to CoT-Dependent Pairs?
+### 8.1 Why Filter to CoT-Dependent Pairs?
 **Problem**: LLaMA solves 57% of problems via direct computation (no latent reasoning), while GPT-2 always uses latent reasoning.
 
 **Solution**: Filter to 43 pairs where BOTH models demonstrably need CoT tokens.
@@ -665,7 +752,7 @@ Base Quality (No Filtering):
 
 ---
 
-## 8. Usage Guidelines
+## 9. Usage Guidelines
 
 ### When to Use Each Dataset
 
@@ -691,7 +778,7 @@ Base Quality (No Filtering):
 
 ---
 
-## 9. Data Integrity Checks
+## 10. Data Integrity Checks
 
 ### Verification Commands
 ```bash
@@ -726,7 +813,7 @@ jq '.train_correct | length' results/steering_dataset_llama_full.json # Should b
 
 ---
 
-## 10. Generating Missing Files
+## 11. Generating Missing Files
 
 Several result files are referenced in this document but need to be generated. Here's how to create them:
 
@@ -787,7 +874,7 @@ python prepare_llama_steering_dataset_fast.py
 
 ---
 
-## 11. Future Datasets
+## 12. Future Datasets
 
 ### Planned
 - [ ] Multi-step reasoning dataset (≥5 steps)
