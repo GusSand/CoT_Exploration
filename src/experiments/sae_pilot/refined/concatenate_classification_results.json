@@ -1,0 +1,61 @@
+{
+  "test_accuracy": 0.7166666666666667,
+  "mean_pool_accuracy": 0.7,
+  "token1_l8_accuracy": 0.633,
+  "baseline_accuracy": 0.833,
+  "method": "Concatenate all 18 vectors (3 layers \u00d7 6 tokens)",
+  "feature_dim": 36864,
+  "improvement_vs_mean_pool": 0.01666666666666672,
+  "improvement_vs_token1_l8": 0.08366666666666667,
+  "improvement_vs_baseline": -0.11633333333333329,
+  "classification_report": {
+    "mixed": {
+      "precision": 0.6097560975609756,
+      "recall": 0.625,
+      "f1-score": 0.6172839506172839,
+      "support": 40.0
+    },
+    "pure_addition": {
+      "precision": 0.6666666666666666,
+      "recall": 0.6,
+      "f1-score": 0.631578947368421,
+      "support": 40.0
+    },
+    "pure_multiplication": {
+      "precision": 0.8604651162790697,
+      "recall": 0.925,
+      "f1-score": 0.891566265060241,
+      "support": 40.0
+    },
+    "accuracy": 0.7166666666666667,
+    "macro avg": {
+      "precision": 0.712295960168904,
+      "recall": 0.7166666666666668,
+      "f1-score": 0.713476387681982,
+      "support": 120.0
+    },
+    "weighted avg": {
+      "precision": 0.712295960168904,
+      "recall": 0.7166666666666667,
+      "f1-score": 0.7134763876819821,
+      "support": 120.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      25,
+      10,
+      5
+    ],
+    [
+      15,
+      24,
+      1
+    ],
+    [
+      1,
+      2,
+      37
+    ]
+  ]
+}
