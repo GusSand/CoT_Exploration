@@ -1,0 +1,80 @@
+{
+  "accuracies": {
+    "baseline": 0.7833333333333333,
+    "to_addition": 0.7666666666666667,
+    "to_multiplication": 0.7666666666666667,
+    "to_mixed": 0.7666666666666667,
+    "random_control": 0.45,
+    "wrong_token_control": 0.7833333333333333
+  },
+  "by_operation": {
+    "pure_addition": {
+      "baseline": 0.85,
+      "to_addition": 0.85,
+      "to_multiplication": 0.85,
+      "to_mixed": 0.85,
+      "random_control": 0.4,
+      "wrong_token_control": 0.85
+    },
+    "pure_multiplication": {
+      "baseline": 0.75,
+      "to_addition": 0.75,
+      "to_multiplication": 0.75,
+      "to_mixed": 0.75,
+      "random_control": 0.5,
+      "wrong_token_control": 0.75
+    },
+    "mixed": {
+      "baseline": 0.75,
+      "to_addition": 0.7,
+      "to_multiplication": 0.7,
+      "to_mixed": 0.7,
+      "random_control": 0.45,
+      "wrong_token_control": 0.75
+    }
+  },
+  "change_rates": {
+    "to_addition": 0.08333333333333333,
+    "to_multiplication": 0.08333333333333333,
+    "to_mixed": 0.08333333333333333,
+    "random_control": 0.4666666666666667,
+    "wrong_token_control": 0.0
+  },
+  "statistics": {
+    "paired_tests": {
+      "baseline_vs_addition": {
+        "t_statistic": 0.574115788449931,
+        "p_value": 0.5680718717230762
+      },
+      "baseline_vs_random": {
+        "t_statistic": 5.064797519451639,
+        "p_value": 4.301715534973233e-06
+      },
+      "baseline_vs_wrong_token": {
+        "t_statistic": NaN,
+        "p_value": NaN
+      }
+    },
+    "effect_sizes": {
+      "baseline_vs_addition": 0.039918388841134966,
+      "baseline_vs_multiplication": 0.039918388841134966,
+      "baseline_vs_mixed": 0.039918388841134966,
+      "baseline_vs_random": 0.7026220545465502,
+      "baseline_vs_wrong_token": 0.0
+    },
+    "contingency_tables": {
+      "baseline_vs_addition": {
+        "both_correct": 45,
+        "baseline_only": 2,
+        "intervention_only": 1,
+        "both_wrong": 12
+      },
+      "baseline_vs_random": {
+        "both_correct": 26,
+        "baseline_only": 21,
+        "intervention_only": 1,
+        "both_wrong": 12
+      }
+    }
+  }
+}
