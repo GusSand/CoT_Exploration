@@ -118,3 +118,13 @@ ehthumbs.db
 Thumbs.db
 src/experiments/linear_probes/data/*.json
 src/experiments/linear_probes/results/
+
+# GPT-2 experiment data and results (large files)
+src/experiments/gpt2_shared_data/gpt2_predictions_*.json
+src/experiments/gpt2_attention_analysis/results/*.json
+src/experiments/gpt2_linear_probes/results/*.json
+src/experiments/gpt2_linear_probes/results/*.png
+src/experiments/gpt2_sae_training/results/*.pt
+src/experiments/gpt2_sae_training/results/*.json
+src/experiments/gpt2_token_ablation/results/*.json
+src/experiments/gpt2_token_ablation/data/llama_activations_cot_dependent.json
