@@ -46,10 +46,18 @@
 | Finding | SAE Pilot | Linear Probes |
 |---------|-----------|---------------|
 | **Method** | Sparse features (8192) | Raw activations (2048) |
+| **Training Data** | 10,800 vectors (600 problems) | N/A (no training) |
+| **Classification Data** | 914 samples (~730 train, ~184 test) | 100 samples (5-fold CV) |
 | **Best Accuracy** | 70% (error prediction) | 97.61% (correctness) |
 | **Information Flow** | Token/layer specialization | Even distribution |
 | **Key Layer** | L8 Token 1 critical | All positions ≥94% |
 | **Feature Death** | 97% features dead | All 2048 dims used |
+
+**Data Efficiency**:
+- **SAE used 9× more data** (914 vs 100 samples) but achieved **27.6 points lower accuracy** (70% vs 97.6%)
+- **Linear probes** are extremely sample-efficient: 100 samples sufficient for 97.6% accuracy
+- **Task difference**: Error prediction (multi-class) is harder than correctness (binary)
+- **Feature representation**: Raw activations may be more information-preserving than sparse features
 
 **Implications**:
 
