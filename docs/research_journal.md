@@ -2,6 +2,57 @@
 
 ## Experiment Log
 
+### 2025-10-24: Token Threshold & Criticality Experiments
+
+**Objective**: Determine minimum token thresholds for reasoning and data-driven identification of which continuous thought tokens are most critical in LLaMA CODI.
+
+**Status**: 🔄 **IN PROGRESS** - Pilot (10 problems) running
+
+**Research Questions**:
+- **RQ1 (Threshold)**: What is the degradation curve as we corrupt 1→6 tokens? Does 4/6 corruption (67%) cause catastrophic failure?
+- **RQ2 (Critical Tokens)**: Which token position(s) are most critical? (Data-driven, not preset)
+- **RQ3 (Enhancement)**: Can enhancing specific tokens improve performance? Which positions are most enhancement-responsive?
+- **RQ4 (Convergence)**: Do corruption and enhancement measures agree on critical tokens?
+
+**Critical Innovation**: 🎯 **Multi-method token criticality assessment** - Combines threshold degradation (1→6 corruption), critical token identification (skip tests), enhancement responsiveness (amplification), and convergent validity testing. First systematic comparison of corruption vs enhancement for token importance.
+
+**Methodology**:
+- **Model**: LLaMA-3.2-1B CODI (16 layers, 6 latent tokens)
+- **Dataset**: 10-problem pilot from stratified GSM8K
+- **Test layer**: Middle (L8)
+- **Exp 1 (Threshold)**: 25 corruption configs × 2 methods = 50 experiments/problem
+- **Exp 2 (Enhancement)**: 6 positions × 5 multipliers = 30 experiments/problem
+- **Total**: 800 experiments (500 threshold + 300 enhancement)
+
+**Key Design Decisions**:
+1. **Strategic sampling** for corruption levels (not exhaustive combinations)
+2. **Skip tests at level 4** - Corrupt 4/6 tokens, skip each token individually → identifies which single token is sufficient
+3. **Enhancement standalone** - Pure amplification without corruption to isolate effect
+4. **Data-driven approach** - No preset hypothesis about z₃/z₄, let data identify critical tokens
+
+**Pilot Results**: **[PENDING - Threshold test running, ~8 minutes remaining]**
+
+**Next Steps**:
+1. ⏳ Complete threshold experiment
+2. ⏳ Run enhancement experiment (~5 minutes)
+3. ⏳ Analyze results and generate visualizations
+4. ⏳ Update this entry with findings
+5. ⏳ Expand to 100 problems if pilot successful
+
+**Deliverables**:
+- Scripts: `src/experiments/token_threshold/scripts/` (7 scripts)
+- Results: `src/experiments/token_threshold/results/` (5 JSON files)
+- Figures: `src/experiments/token_threshold/figures/` (6 figures, PDF + PNG)
+- Documentation: `docs/experiments/token_threshold_2025-10-24.md`
+- WandB: `codi-token-threshold` project
+
+**Time Investment**: ~6-7 hours (estimated)
+- Infrastructure + development: ~4 hours ✅
+- Experiment runtime: ~15 minutes 🔄
+- Analysis + documentation: ~2 hours ⏳
+
+---
+
 ### 2025-10-23b: CODI Attention & Importance Analysis (CCTA)
 
 **Objective**: Establish causal attribution of continuous thought token importance using multi-method corruption analysis, and test correlation between attention patterns and token importance.
