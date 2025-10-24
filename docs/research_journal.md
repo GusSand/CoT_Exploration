@@ -2,6 +2,90 @@
 
 ## Experiment Log
 
+### 2025-10-24g: SAE L12-L16 Training - Extended Late-Layer Error Prediction
+
+**Objective**: Despite L14 being sufficient, test if L12-L16 features (5 consecutive late layers) can push accuracy to 70-75% target range for error prediction.
+
+**Status**: ✅ **COMPLETE** - Modest improvement, target not met
+
+**Key Results**:
+
+**Performance Comparison**:
+- **L14-only**: 66.67%
+- **L12-L16**: 69.40% (+2.73 percentage points)
+- **Target**: 70-75% ❌ NOT MET (0.6% shy of minimum)
+- **Feature dimension**: 61,440 (5 layers × 6 tokens × 2048 features) vs 12,288 (L14-only)
+
+**SAE Quality (L12-L16)**:
+- **Explained variance**: 91.00% (excellent, better than refined SAE's 89.25%)
+- **Dead features**: 4.2% (excellent, vs refined SAE's 40.67%)
+- **L0 sparsity**: 130.46 (reasonable)
+- **Training time**: ~3 minutes (25 epochs)
+
+**Classification Metrics (L12-L16)**:
+- **Test Accuracy**: 69.40%
+- **Train Accuracy**: 97.95%
+- **Precision**: 68% (incorrect), 72% (correct)
+- **Recall**: 76% (incorrect), 62% (correct)
+- **F1-score**: 72% (incorrect), 67% (correct)
+
+**Major Findings**:
+
+1. ❌ **Modest improvement only**: +2.73 percentage points vs L14-only, falls short of 70% target
+2. 💰 **Poor cost-benefit tradeoff**: 5× feature dimension (61,440 vs 12,288) for only 2.73% gain
+3. ✅ **SAE quality excellent**: 91% explained variance, only 4.2% dead features (best SAE yet)
+4. 🎯 **Confirms L14 hypothesis**: Error signals concentrate in L14, adjacent layers add minimal information
+5. ⚠️ **Overfitting concern**: 28 point train-test gap (97.95% → 69.40%) suggests model memorizing training data
+
+**Cost-Benefit Analysis**:
+
+| Metric | L14-only | L12-L16 | Verdict |
+|--------|----------|---------|---------|
+| **Accuracy** | 66.67% | 69.40% | +2.73 pts |
+| **Feature Dim** | 12,288 | 61,440 | 5× more features |
+| **Inference Cost** | Low | High | 5× slower |
+| **SAE Training** | Reuse existing | New 3-min training | Extra overhead |
+| **Activation Extraction** | 1 layer | 5 layers | 5× extraction time |
+| **Cost per 1% gain** | - | ~18,000 features | Very expensive |
+
+**Verdict**: ❌ **Not worth the computational cost** - 5× resources for <3% improvement
+
+**Implications**:
+
+**Scientific Understanding**:
+- Error-discriminative information is concentrated in L14, not distributed across L12-L16
+- Adjacent layers (L12, L13, L15, L16) provide redundant rather than complementary information
+- Supports hypothesis that reasoning errors become detectable at final computation stage
+- SAE compression may further consolidate information to late layers
+
+**Practical Recommendations**:
+- ✅ **Use L14-only for production**: 66.67% accuracy with 5× lower cost
+- ❌ **Don't use L12-L16**: Marginal benefit doesn't justify computational overhead
+- 🔬 **Better approaches for 70%+ accuracy**:
+  - Ensemble methods (multiple L14 classifiers)
+  - Neural networks instead of logistic regression
+  - Token-specific feature selection (focus on most discriminative tokens)
+  - Error type classification (arithmetic vs logic vs reading)
+
+**Time Investment**: ~1.5 hours
+- L12-L16 extraction: ~2 minutes (914 solutions)
+- SAE training: ~3 minutes (25 epochs)
+- Encoding + classification: ~2 minutes
+- Documentation: ~15 minutes
+
+**Deliverables**:
+- Script: `extract_l12_l16_activations.py` (activation extraction)
+- Script: `train_sae_l12_l16.py` (SAE training)
+- Script: `train_classifier_l12_l16.py` (encoding + classification)
+- Dataset: `error_analysis_dataset_l12_l16.json` (1850.4 MB, 5 layers)
+- SAE weights: `sae_l12_l16/sae_weights.pt` (excellent quality)
+- Results: `error_classification_l12_l16_results.json` (69.40% accuracy)
+- Detailed report: `docs/experiments/sae_l12_l16_analysis_2025-10-24.md` (to be created)
+
+**Conclusion**: L12-L16 features provide marginal improvement (+2.73 pts) at 5× computational cost. **L14-only remains the recommended approach** for error prediction, achieving 66.67% accuracy with minimal overhead. To reach 70%+, pursue ensemble methods or neural networks rather than expanding layer coverage.
+
+---
+
 ### 2025-10-24f: SAE Layer Analysis - L14-Only Error Prediction
 
 **Objective**: Test if L14 (late layer) features alone are sufficient for error prediction, or if L4+L8 (early/middle) features are necessary. Decision threshold: ≥10% performance drop indicates need for L12-L16 SAE training.
