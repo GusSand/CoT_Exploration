@@ -1,0 +1,92 @@
+{
+  "overall_correlation": {
+    "layer_14": {
+      "r": 0.18737897911243134,
+      "p": 3.814334896064898e-06
+    },
+    "layer_8": {
+      "r": 0.23547016548843086,
+      "p": 5.280739039942156e-09
+    },
+    "layer_4": {
+      "r": -0.008043431944809842,
+      "p": 0.8441285478578293
+    }
+  },
+  "per_token": {
+    "token_0": {
+      "importance_mean": 0.07,
+      "importance_std": 0.2564323999762428,
+      "attention_mean": 0.015086247776634991,
+      "attention_std": 0.007218242554767041,
+      "correlation": -0.009849719185178187,
+      "p_value": 0.9225189799992225
+    },
+    "token_1": {
+      "importance_mean": 0.06,
+      "importance_std": 0.238683256575942,
+      "attention_mean": 0.010822732439264656,
+      "attention_std": 0.004411899341666702,
+      "correlation": -0.08013917136805052,
+      "p_value": 0.4280154776261349
+    },
+    "token_2": {
+      "importance_mean": 0.08,
+      "importance_std": 0.27265992434429076,
+      "attention_mean": 0.014044805789599196,
+      "attention_std": 0.006781732403127294,
+      "correlation": -0.10046424807928869,
+      "p_value": 0.3199646495784152
+    },
+    "token_3": {
+      "importance_mean": 0.1,
+      "importance_std": 0.30151134457776363,
+      "attention_mean": 0.0082464127545245,
+      "attention_std": 0.004775460767573275,
+      "correlation": -0.2287795506026322,
+      "p_value": 0.022051104359822882
+    },
+    "token_4": {
+      "importance_mean": 0.06,
+      "importance_std": 0.238683256575942,
+      "attention_mean": 0.017315026787109673,
+      "attention_std": 0.006926049234513097,
+      "correlation": -0.13639749700056394,
+      "p_value": 0.17600459671244104
+    },
+    "token_5": {
+      "importance_mean": 0.26,
+      "importance_std": 0.44084400227680803,
+      "attention_mean": 0.06507520459592342,
+      "attention_std": 0.010221264080856423,
+      "correlation": 0.022055278384286163,
+      "p_value": 0.8275799812929929
+    }
+  },
+  "by_difficulty": {
+    "2-step": {
+      "num_problems": 25,
+      "mean_importance": 0.06666666666666667,
+      "correlation": 0.024478398516853232,
+      "p_value": 0.7662111111100671
+    },
+    "3-step": {
+      "num_problems": 25,
+      "mean_importance": 0.04666666666666667,
+      "correlation": 0.4827307111619907,
+      "p_value": 3.953237691142941e-10
+    },
+    "4-step": {
+      "num_problems": 25,
+      "mean_importance": 0.14666666666666667,
+      "correlation": 0.14660341517618408,
+      "p_value": 0.0734245333383746
+    },
+    "5+step": {
+      "num_problems": 25,
+      "mean_importance": 0.16,
+      "correlation": 0.17285865848129064,
+      "p_value": 0.034402889039604645
+    }
+  }
+}
