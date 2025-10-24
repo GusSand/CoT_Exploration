@@ -79,6 +79,12 @@ src/experiments/activation_patching/validation_results_*.json
 !src/experiments/activation_patching/validation_results_llama_gpt4_532.json
 !src/experiments/activation_patching/validation_results_gpt2_gpt4_532.json
 
+# SAE error analysis - exclude large datasets
+src/experiments/sae_error_analysis/data/error_analysis_dataset.json
+src/experiments/sae_error_analysis/results/*.pt
+src/experiments/sae_error_analysis/results/*.png
+src/experiments/sae_error_analysis/results/*.pdf
+
 # Keep final curated datasets in data/ directory
 #data/
 #!data/problem_pairs*.json
