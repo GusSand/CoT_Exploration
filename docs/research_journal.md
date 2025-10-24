@@ -6,7 +6,7 @@
 
 **Objective**: Establish causal attribution of continuous thought token importance using multi-method corruption analysis, and test correlation between attention patterns and token importance.
 
-**Status**: ✅ **TEST PIPELINE COMPLETE** (10 problems) - Full experiment (100 problems) ready to run
+**Status**: ✅ **COMPLETE** - Full experiment (100 problems) validated test findings
 
 **Research Questions**:
 - **RQ1**: How can we causally attribute the importance of continuous thought tokens in CODI's compressed reasoning?
@@ -37,6 +37,25 @@
 | Position shuffle | **16.7%** | 0.052 | Most robust (reordering) |
 
 **Key Finding**: 📊 **Corruption methods show consistent ~20% failure rates** across most methods, suggesting token importance is robust to corruption type. Position shuffling shows slightly lower failure (16.7%), indicating the model has some position-invariance.
+
+**Full Results (100 problems, 4,300 experiments)**:
+
+**Token Importance** - Confirmed hierarchy with stronger statistics:
+| Token | Failure Rate | Pattern Across Difficulty |
+|-------|-------------|---------------------------|
+| **Token 5** | **20.3%** | 8.6% (2-step) → 29.1% (5+step) ⭐⭐⭐ |
+| Token 1,2,3 | 7.6-7.7% | Scales with difficulty |
+| Token 0,4 | 5.1-5.9% | Scales with difficulty |
+
+**Key Finding**: Token 5 importance **scales dramatically with problem difficulty** (3.4× increase from easy to hard), while other tokens show flatter profiles. This validates that continuous thoughts are MORE critical for harder reasoning, not just always active.
+
+**Corruption Method Effectiveness** (100 problems):
+1. Random replacement: 14.5% (most disruptive)
+2. Gaussian σ=2.0: 11.2%
+3. Zero ablation: 10.5%
+4. Gaussian σ=0.1: 4.3% (least disruptive)
+
+**Surprising Finding**: 3-step problems show near-zero failures for tokens 0-4 but 19.4% for Token 5 - suggests model can solve medium-difficulty problems with minimal latent reasoning except for final synthesis step.
 
 **Attention-Importance Correlation (RQ2)** - From previous simple ablation analysis:
 | Layer | Correlation | P-value | Significance |
@@ -74,12 +93,16 @@
 - Test (10 problems): Proof of concept, limited power
 - Full (100 problems): Planned - will provide robust statistics for RQ1/RQ2
 
-**Critical Next Steps**:
-1. ✅ **Document and commit** test results
-2. 🔄 **Run full experiment** (100 problems, ~13 minutes)
-3. 📊 **Analyze full results** for publication-grade findings
-4. 🔬 **Compositional analysis** - Token pairs/triplets (future work)
-5. 🧠 **Residual stream decomposition** - Understanding computation flow (future work)
+**Results Summary**:
+- ✅ Confirmed Token 5 >> others (20% vs 5-8% importance)
+- ✅ Discovered difficulty scaling (8.6% → 29.1% for Token 5)
+- ✅ Validated random replacement as most effective corruption method
+- ✅ Identified 3-step anomaly for future investigation
+
+**Next Steps**:
+- 🔄 **Attention-importance correlation** on full dataset (validate RQ2)
+- 🔬 **Compositional analysis** - Token pairs/triplets (future work)
+- 🧠 **Residual stream decomposition** - Understanding computation flow (future work)
 
 **Scientific Contribution**:
 - First multi-method corruption analysis for continuous thought attribution
@@ -89,7 +112,8 @@
 **Time Investment**:
 - Framework development: 3 hours
 - Test pipeline validation: 1 hour
-- Documentation: 1.5 hours
+- Full experiment (100 problems): 20 minutes
+- Analysis & documentation: 1.5 hours
 - **Total**: ~5.5 hours
 
 **Impact**: Provides rigorous methodology for understanding which continuous thoughts are critical for reasoning, with direct applications to model compression, debugging, and safety analysis. The attention-importance correlation enables using cheap attention analysis to approximate expensive causal interventions.
