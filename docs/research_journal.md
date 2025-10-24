@@ -2,6 +2,64 @@
 
 ## Experiment Log
 
+### 2025-10-24j: Position-wise Token Ablation - Collective Reasoning Despite Specialization
+
+**Objective**: Test whether continuous thought positions that decode to numbers are causally more important than non-number positions.
+
+**Status**: ✅ **COMPLETE** - Both models show catastrophic failure when ablating ANY positions, despite clear specialization patterns
+
+**Key Results**:
+
+**Position Specialization (Final Layer Decoding)**:
+
+GPT-2 (Layer 11):
+- Positions 1, 3, 5: **0.0%** decode to numbers (alternating pattern)
+- Positions 0, 2, 4: 14-29% decode to numbers
+- χ² = 870.85, p < 1e-150 (highly significant)
+
+LLaMA (Layer 15):
+- Positions 1 & 4: **85%+** decode to numbers (strong specialization)
+- Positions 0, 2, 5: 54-62% decode to numbers
+- Position 3: Only 4.7% (anomaly)
+- χ² = 745.11, p < 1e-150 (highly significant)
+
+**Ablation Results**:
+
+GPT-2 (1000 samples, 43.2% baseline):
+- Ablate number positions: 0.0% accuracy (drop: **-43.2%**)
+- Ablate non-number positions: 0.0% accuracy (drop: **-43.2%**)
+
+LLaMA (424 CoT-dependent, 85.4% baseline):
+- Ablate number positions: 2.6% accuracy (drop: **-82.7%**)
+- Ablate non-number positions: 3.8% accuracy (drop: **-81.6%**)
+
+**Major Findings**:
+
+1. ❌ **User hypothesis REJECTED**: GPT-2 position 5 (last) does NOT decode to numbers (0%) and has no special numerical role
+2. 🔍 **Clear position specialization**: Both models show highly significant position effects in decoding patterns
+3. 💥 **Collective reasoning**: Despite specialization, ablating ANY subset causes catastrophic failure (~0-4% accuracy)
+4. 🔄 **Decoding ≠ Importance**: Positions that decode to numbers are NO more important than those that don't
+5. 🏗️ **Architectural differences**: GPT-2 alternating pattern vs LLaMA strong numerical specialization
+
+**Interpretation**:
+
+The dramatic disconnect between decoding patterns and ablation impacts reveals that:
+- Final layer token decoding shows what positions CAN output, not what they functionally encode
+- Both models use **holistic, distributed reasoning** requiring all positions together
+- Position "specialization" in decoding may be an artifact of output formatting, not functional role
+- Neither model has hierarchical position importance - it's all-or-nothing dependency
+
+**Time**: ~2 hours total (vs 6-7 hours estimated)
+
+**Files Created**:
+- `src/experiments/gpt2_token_ablation/results/gpt2_final_layer_decoding.json`
+- `src/experiments/gpt2_token_ablation/results/llama_final_layer_decoding.json`
+- `src/experiments/gpt2_token_ablation/results/gpt2_position_ablation.json`
+- `src/experiments/gpt2_token_ablation/results/llama_position_ablation.json`
+- `src/experiments/gpt2_token_ablation/results/cross_model_comparison_summary.md`
+
+---
+
 ### 2025-10-24i: Linear Probe Analysis - Even Information Distribution in CODI
 
 **Objective**: Use linear probes to understand where correctness information is stored in CODI's continuous thought space across layers and token positions.

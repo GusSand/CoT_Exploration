@@ -888,6 +888,118 @@ python prepare_llama_steering_dataset_fast.py
 
 ---
 
+## 13. Position-wise Token Ablation Datasets
+
+### 13.1 LLaMA CoT-Dependent Activations (Filtered)
+**File**: [`src/experiments/gpt2_token_ablation/data/llama_activations_cot_dependent.json`](../src/experiments/gpt2_token_ablation/data/llama_activations_cot_dependent.json)
+
+**Purpose**: LLaMA activations filtered to only CoT-dependent problems for position ablation experiments
+
+**Size**: 424 samples (362 correct, 62 incorrect)
+
+**Source**: Filtered from `sae_error_analysis/data/error_analysis_dataset_l12_l16.json` using CoT necessity results
+
+**Layers**: L12-L16 (0-indexed layers 12-15)
+
+**Generation Command**:
+```bash
+cd src/experiments/gpt2_token_ablation
+python scripts/1_filter_cot_dependent.py
+```
+
+**Used By**: Position-type ablation experiment (2025-10-24)
+
+---
+
+### 13.2 GPT-2 Final Layer Token Decoding
+**File**: [`src/experiments/gpt2_token_ablation/results/gpt2_final_layer_decoding.json`](../src/experiments/gpt2_token_ablation/results/gpt2_final_layer_decoding.json)
+
+**Purpose**: Final layer (L11) token decodings for all 6 continuous thought positions
+
+**Size**: 1000 samples
+
+**Structure**:
+```json
+{
+  "model": "GPT-2",
+  "layer": 11,
+  "samples": [
+    {
+      "id": 0,
+      "decoded_positions": [
+        {"position": 0, "token_text": "42", "is_number": true},
+        ...
+      ]
+    }
+  ]
+}
+```
+
+**Generation Command**:
+```bash
+cd src/experiments/gpt2_token_ablation
+python scripts/2_decode_final_layer_simple.py
+```
+
+**Key Stats**:
+- Position 0: 23.8% decode to numbers
+- Positions 1, 3, 5: 0.0% decode to numbers (alternating pattern)
+- Positions 2, 4: 29.2%, 14.6% decode to numbers
+
+**Used By**: Position ablation analysis (2025-10-24)
+
+---
+
+### 13.3 LLaMA Final Layer Token Decoding
+**File**: [`src/experiments/gpt2_token_ablation/results/llama_final_layer_decoding.json`](../src/experiments/gpt2_token_ablation/results/llama_final_layer_decoding.json)
+
+**Purpose**: Final layer (L15) token decodings for all 6 continuous thought positions
+
+**Size**: 424 CoT-dependent samples
+
+**Generation Command**:
+```bash
+cd src/experiments/gpt2_token_ablation
+python scripts/2_decode_final_layer_simple.py
+```
+
+**Key Stats**:
+- Positions 1 & 4: 85.8%, 83.3% decode to numbers (strong specialization)
+- Positions 0, 2, 5: 54-62% decode to numbers
+- Position 3: Only 4.7% decode to numbers
+
+**Used By**: Position ablation analysis (2025-10-24)
+
+---
+
+### 13.4 Position Ablation Results
+
+**Files**:
+- [`src/experiments/gpt2_token_ablation/results/gpt2_position_ablation.json`](../src/experiments/gpt2_token_ablation/results/gpt2_position_ablation.json)
+- [`src/experiments/gpt2_token_ablation/results/llama_position_ablation.json`](../src/experiments/gpt2_token_ablation/results/llama_position_ablation.json)
+
+**Purpose**: Ablation experiment results testing causal importance of number vs non-number positions
+
+**Size**:
+- GPT-2: 1000 samples
+- LLaMA: 424 samples
+
+**Generation Commands**:
+```bash
+cd src/experiments/activation_patching
+python run_position_type_ablation.py          # GPT-2
+python run_position_type_ablation_llama.py    # LLaMA
+```
+
+**Key Results**:
+- **GPT-2**: Ablating ANY positions causes 100% accuracy drop (43.2% → 0.0%)
+- **LLaMA**: Ablating ANY positions causes ~98% accuracy drop (85.4% → 2-4%)
+- Conclusion: Both models use collective reasoning despite position specialization
+
+**Used By**: Cross-model comparison (2025-10-24)
+
+---
+
 **Document Status**: Living document, update when new datasets are created or experiments are run.
 
-**Last Reviewed**: 2025-10-22
+**Last Reviewed**: 2025-10-24
