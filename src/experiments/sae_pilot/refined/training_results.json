@@ -1,0 +1,26 @@
+{
+  "config": {
+    "n_features": 2048,
+    "input_dim": 2048,
+    "l1_coefficient": 0.0005,
+    "n_epochs": 25,
+    "batch_size": 256,
+    "learning_rate": 0.001
+  },
+  "data": {
+    "n_problems": 600,
+    "n_vectors": 10800,
+    "layers": [
+      "early",
+      "middle",
+      "late"
+    ]
+  },
+  "final_metrics": {
+    "reconstruction_loss": 0.016557718388909518,
+    "sparsity_loss": 0.007781980418448531,
+    "total_loss": 0.02433969890482204,
+    "l0_sparsity": 23.868943813235262
+  },
+  "training_time": "2025-10-24T14:40:03.877112"
+}
