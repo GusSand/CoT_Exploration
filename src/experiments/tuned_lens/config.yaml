@@ -17,7 +17,7 @@ model:
 # ==============================================================================
 data:
   # Source dataset (CoT-dependent problems)
-  dataset_path: "src/experiments/activation_patching/data/llama_cot_original_stratified_1000.json"
+  dataset_path: "/home/paperspace/dev/CoT_Exploration/src/experiments/activation_patching/data/llama_cot_original_stratified_1000.json"
 
   # Number of problems to use (set to -1 for all available)
   num_problems: 1000
@@ -220,10 +220,10 @@ output:
   decoded_problems_dir: "src/experiments/tuned_lens/results/decoded_problems"
 
   # Output file names
-  train_data_file: "src/experiments/tuned_lens/data/train_data_{model}_{representation}.pt"
-  test_data_file: "src/experiments/tuned_lens/data/test_data_{model}_{representation}.pt"
-  best_model_file: "src/experiments/tuned_lens/models/tuned_lens_best_{model}_{representation}.pt"
-  final_model_file: "src/experiments/tuned_lens/models/tuned_lens_final_{model}_{representation}.pt"
+  train_data_file: "/home/paperspace/dev/CoT_Exploration/src/experiments/tuned_lens/data/train_data_{model}_{representation}.pt"
+  test_data_file: "/home/paperspace/dev/CoT_Exploration/src/experiments/tuned_lens/data/test_data_{model}_{representation}.pt"
+  best_model_file: "/home/paperspace/dev/CoT_Exploration/src/experiments/tuned_lens/models/tuned_lens_best_{model}_{representation}.pt"
+  final_model_file: "/home/paperspace/dev/CoT_Exploration/src/experiments/tuned_lens/models/tuned_lens_final_{model}_{representation}.pt"
 
   # Logging
   log_file: "src/experiments/tuned_lens/results/run_{timestamp}.log"
