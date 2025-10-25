@@ -341,7 +341,7 @@ This work provides **visual evidence** for the model capacity hypothesis:
 
 ### Documentation
 - `docs/research_journal.md` (updated)
-- `docs/experiments/attention_visualization_analysis_2025-10-25.md` (this file)
+- `docs/experiments/10-25_gpt2_gsm8k_attention_visualization.md` (this file)
 
 ## Conclusion
 

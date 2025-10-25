@@ -1012,7 +1012,7 @@ This is the **first systematic CoT necessity testing protocol** for cross-model 
 1. **`COT_NECESSITY_METHODOLOGY.md`** - Methodology documentation
 2. **`ABLATION_RESULTS_SUMMARY.md`** - Results summary
 3. **`docs/research_journal.md`** - Updated with high-level summary
-4. **`docs/experiments/cot_necessity_and_ablation_2025-10-21.md`** - This file
+4. **`docs/experiments/10-21_both_gsm8k_cot_necessity_ablation.md`** - This file
 
 ---
 

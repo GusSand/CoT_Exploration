@@ -304,7 +304,7 @@ This experiment **falsifies the multi-token intervention hypothesis** and reveal
 
 ## References
 
-- **Operation Circuits Experiment:** `docs/experiments/operation_circuits_2025-10-24.md`
+- **Operation Circuits Experiment:** `docs/experiments/10-24_llama_gsm8k_operation_circuits.md`
 - **Single-Token Intervention:** Analysis results in `analysis/analysis_summary.json`
 - **CODI Paper:** Zhang et al., "Continuous Chain-of-Thought via Self-Distillation"
 - **Skip Test Results:** From Token Threshold experiments

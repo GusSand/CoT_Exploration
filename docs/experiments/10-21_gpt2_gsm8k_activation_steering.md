@@ -387,7 +387,7 @@ Shows first 50 dimensions of 768, highlighting structure in reasoning direction.
 - `reasoning_direction_heatmap.png` - Direction visualization
 
 ### Documentation
-- This report: `docs/experiments/activation_steering_gpt2_2025-10-21.md`
+- This report: `docs/experiments/10-21_gpt2_gsm8k_activation_steering.md`
 - Updated research journal: `docs/research_journal.md`
 
 ---

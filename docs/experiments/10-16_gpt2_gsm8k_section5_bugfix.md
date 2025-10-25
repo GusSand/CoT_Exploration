@@ -311,7 +311,7 @@ All files regenerated with corrected continuous thought decoding:
 ### Documentation Files
 - `QUICK_START.md` (updated results directory, step correctness numbers)
 - `VISUALIZATION_GUIDE.md` (updated results directory paths)
-- `docs/experiments/section5_bugfix_2025-10-16.md` (this file)
+- `docs/experiments/10-16_gpt2_gsm8k_section5_bugfix.md` (this file)
 
 ### Log Files
 - `section5_run_fixed.log` (rerun with fix)

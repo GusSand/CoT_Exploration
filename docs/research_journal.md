@@ -84,7 +84,7 @@ Previous conclusion (INVALID): "Continuous thoughts encode deception near-perfec
 - Valid results: `probe_results_proper_split_gpt2.json` (784 samples, 80/20 split)
 - Response baseline: `probe_results_response_gpt2.json` (70.5% accuracy)
 - Invalid results (DO NOT USE): `probe_results_gpt2.json` (contains data leakage)
-- Corrected documentation: `docs/experiments/gpt2_liars_bench_deception_METHODOLOGY_ERRORS_2025-10-25.md`
+- Corrected documentation: `docs/experiments/10-25_gpt2_liars_bench_INVALID_methodology_errors.md`
 - Old documentation (INVALID): `docs/experiments/gpt2_liars_bench_deception_CORRECTED_2025-10-25.md`
 
 **Lessons Learned**:
@@ -479,7 +479,7 @@ The dramatic disconnect between decoding patterns and ablation impacts reveals t
 - Results: `src/experiments/sae_error_analysis/results/error_classification_l14_only_results.json`
 - Encoded dataset: `src/experiments/sae_error_analysis/results/encoded_error_dataset_l14_only.pt`
 - Visualizations: `error_classification_l14_only_results.{png,pdf}`
-- Detailed report: `docs/experiments/sae_layer_analysis_2025-10-24.md` (to be created)
+- Detailed report: `docs/experiments/10-24_llama_gsm8k_sae_layer_analysis.md` (to be created)
 
 **Conclusion**: ✅ **L14 features are sufficient** - Late-layer features capture all error-discriminative information needed for >60% accuracy. Early/middle layers (L4, L8) do not contribute additional signal and may introduce noise. This validates focusing error detection on final reasoning states and eliminates need for training additional SAEs on intermediate layers.
 
@@ -575,7 +575,7 @@ The dramatic disconnect between decoding patterns and ablation impacts reveals t
 - SAE encoding + training: 41.5 seconds
 - Error pattern analysis: ~30 seconds
 
-**Documentation**: `docs/experiments/sae_error_analysis_2025-10-24.md`
+**Documentation**: `docs/experiments/10-24_llama_gsm8k_sae_error_analysis.md`
 
 ---
 
@@ -678,7 +678,7 @@ Why SAE underperforms:
 - **Data**: 10,800 vectors × 2048 dims (84.4 MB)
 - **Model**: 8192-feature SAE (128 MB)
 - **Results**: Metrics, analysis, visualizations
-- **Documentation**: `docs/experiments/sae_pilot_2025-10-24.md`
+- **Documentation**: `docs/experiments/10-24_llama_gsm8k_sae_pilot.md`
 - **Branch**: `experiment/sae-pilot` (merged to master)
 
 **Critical Next Steps**:
@@ -1046,7 +1046,7 @@ Multiplication:   43 features (32.3%)
 **Code & Data**:
 - **Scripts**: 6 Python files (download, classify, extract, analyze, prototype, master)
 - **Results**: 690MB continuous thoughts + 3.2KB analysis report + 9 visualizations
-- **Documentation**: `docs/experiments/operation_circuits_2025-10-24.md` (comprehensive report)
+- **Documentation**: `docs/experiments/10-24_llama_gsm8k_operation_circuits.md` (comprehensive report)
 - **Branch**: `experiment/operation-circuits-full`
 
 **Limitations**:
@@ -1145,7 +1145,7 @@ Multiplication:   43 features (32.3%)
 - **Code**: `run_intervention.py` (multi-token support), `extract_token5_activations.py`, `run_multi_token_experiment.py`, `analyze_multi_token.py`
 - **Data**: `token5_activation_vectors.json` (440KB), `multi_token_results.json` (88KB), `multi_token_analysis.json` (3.2KB)
 - **Visualizations**: `multi_token_accuracy.png/pdf`, `multi_token_changes.png/pdf`, `multi_token_by_operation.png/pdf`
-- **Documentation**: `docs/experiments/multi_token_intervention_2025-10-24.md` (comprehensive 14-section report)
+- **Documentation**: `docs/experiments/10-24_llama_gsm8k_multi_token_intervention.md` (comprehensive 14-section report)
 - **Branch**: `experiment/multi-token-intervention`
 
 **Future Directions**:
@@ -1231,7 +1231,7 @@ This suggests a "Goldilocks zone" where selective attention is most beneficial.
 - **Results**: `summary_statistics.json` with all correlations and significance tests
 - **Figures**: Updated all 4 visualizations with 100-problem data
 - **Documentation**: `src/experiments/codi_attention_interp/FULL_RESULTS_100.md`
-- **Detailed report**: `docs/experiments/ccta_full_100_2025-10-24.md`
+- **Detailed report**: `docs/experiments/10-24_llama_gsm8k_ccta_full_100.md`
 - **Branch**: `experiment/ccta-full-100`
 
 **Execution Time**: ~5 minutes total
@@ -1304,7 +1304,7 @@ This suggests a "Goldilocks zone" where selective attention is most beneficial.
 - **Scripts**: `src/experiments/token_threshold/scripts/` (7 Python files, 1,623 lines)
 - **Results**: 4 JSON files with 800 experiment results
 - **Figures**: 8 visualizations (4 PDFs + 4 PNGs)
-- **Documentation**: `docs/experiments/token_threshold_2025-10-24.md`
+- **Documentation**: `docs/experiments/10-24_llama_gsm8k_token_threshold.md`
 - **Branch**: `experiment/token-threshold`
 
 **Next Steps**:
@@ -1384,7 +1384,7 @@ This suggests a "Goldilocks zone" where selective attention is most beneficial.
   - `attention_importance_correlation.png` - 3-panel scatter plots showing Layer 8/14 correlation (r=+0.22/+0.17, p<0.001)
   - `token_importance_attention_comparison.png` - Bar chart demonstrating Token 5 dominates both metrics
 - Documentation: `README.md` with complete methodology
-- Report: `docs/experiments/codi_attention_analysis_2025-10-23.md`
+- Report: `docs/experiments/10-23_llama_gsm8k_codi_attention_analysis.md`
 
 **Statistical Power**:
 - Test (10 problems): Proof of concept, limited power
@@ -1472,7 +1472,7 @@ This suggests a "Goldilocks zone" where selective attention is most beneficial.
 - Usage guide: `src/experiments/activation_patching/GSM8K_EXPANSION_GUIDE.md`
 - Checkpoint file: `data/gsm8k_expansion_checkpoint.json`
 - Final dataset: `data/llama_cot_original_stratified_final.json`
-- Experiment report: `docs/experiments/gsm8k_expansion_2025-10-23.md`
+- Experiment report: `docs/experiments/10-23_llama_gsm8k_dataset_expansion_1000.md`
 
 **Time Investment** (so far):
 - Script development: 2 hours
@@ -1601,7 +1601,7 @@ This suggests a "Goldilocks zone" where selective attention is most beneficial.
 
 **Scientific Value**: ✅ Rigorous negative results are valuable - they define boundaries and limitations of methods. Linear steering is NOT universally effective across model scales.
 
-**Full Documentation**: `docs/experiments/activation_steering_llama_2025-10-21.md`
+**Full Documentation**: `docs/experiments/10-21_llama_gsm8k_activation_steering.md`
 
 ---
 
@@ -1695,7 +1695,7 @@ This suggests a "Goldilocks zone" where selective attention is most beneficial.
 - Data: `results/steering_dataset_gpt2.json`, activations, direction, random directions
 - Results: `results/steering_experiments/` (detailed + summary), `results/steering_analysis/`
 - Visualizations: alpha_progression.png, transition_analysis.png, direction_heatmap.png
-- Detailed report: `docs/experiments/activation_steering_gpt2_2025-10-21.md`
+- Detailed report: `docs/experiments/10-21_gpt2_gsm8k_activation_steering.md`
 
 **Time Investment**: ~5 hours
 - Dataset preparation: 30 min
@@ -1783,7 +1783,7 @@ Problems where LLaMA **needs CoT** vs **skips CoT**:
 - Analysis script: `src/experiments/activation_patching/analyze_llama_cot_difficulty.py`
 - Results: `src/experiments/activation_patching/results/llama_cot_difficulty_analysis.json`
 - Figures: `results/figures/` (reasoning_steps, metrics_comparison, stratification)
-- Detailed report: `docs/experiments/llama_cot_difficulty_analysis_2025-10-21.md`
+- Detailed report: `docs/experiments/10-21_gsm8k_llama_difficulty_analysis.md`
 
 **Time Investment**: ~2.5 hours
 - Script development: 1 hour
@@ -1904,7 +1904,7 @@ This perfectly validates the concern - we would have been comparing:
 **Deliverables**:
 - Detailed methodology: `src/experiments/activation_patching/COT_NECESSITY_METHODOLOGY.md`
 - Results analysis: `src/experiments/activation_patching/ABLATION_RESULTS_SUMMARY.md`
-- Detailed experiment report: `docs/experiments/cot_necessity_and_ablation_2025-10-21.md`
+- Detailed experiment report: `docs/experiments/10-21_both_gsm8k_cot_necessity_ablation.md`
 - CoT-dependent dataset: `data/problem_pairs_cot_dependent.json`
 - Necessity results: `src/experiments/activation_patching/results/cot_necessity_llama_simple.json`, `src/experiments/activation_patching/results/cot_necessity_gpt2_simple.json`
 - Ablation results: `results/cot_dependent_ablation/{llama,gpt2}_{1,2,4}token/`
@@ -2032,7 +2032,7 @@ This work ensures all future LLaMA vs GPT-2 activation patching experiments comp
 - Range: [72%, 100%]
 
 **Deliverables**:
-- Comparative analysis: `docs/experiments/gpt2_vs_llama_comparison_2025-10-24.md`
+- Comparative analysis: `docs/experiments/10-24_both_gsm8k_gpt2_vs_llama_comparison.md`
 - Shared data: `src/experiments/gpt2_shared_data/gpt2_predictions_1000.json` (1.7GB)
 - Attention weights: `src/experiments/gpt2_attention_analysis/results/attention_weights_gpt2.json` (1.1GB)
 - Probe results: `src/experiments/gpt2_linear_probes/results/probe_results_gpt2.json`

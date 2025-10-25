@@ -112,7 +112,7 @@ This document provides a complete breakdown of all datasets in the project, orga
 - Fair LLaMA vs GPT-2 comparisons
 - Analysis by difficulty strata
 
-**Documentation**: [`docs/experiments/cot_necessity_and_ablation_2025-10-21.md`](experiments/cot_necessity_and_ablation_2025-10-21.md)
+**Documentation**: [`docs/experiments/10-21_both_gsm8k_cot_necessity_ablation.md`](experiments/10-21_both_gsm8k_cot_necessity_ablation.md)
 
 ---
 
@@ -263,7 +263,7 @@ This document provides a complete breakdown of all datasets in the project, orga
 - Available for future expansion or alternative stratifications
 
 **Documentation**:
-- Detailed report: [`docs/experiments/gsm8k_expansion_2025-10-23.md`](experiments/gsm8k_expansion_2025-10-23.md)
+- Detailed report: [`docs/experiments/10-23_llama_gsm8k_dataset_expansion_1000.md`](experiments/10-23_llama_gsm8k_dataset_expansion_1000.md)
 - Usage guide: [`src/experiments/activation_patching/GSM8K_EXPANSION_GUIDE.md`](../src/experiments/activation_patching/GSM8K_EXPANSION_GUIDE.md)
 - Research journal: [`docs/research_journal.md`](research_journal.md) (2025-10-23 entry)
 
@@ -340,7 +340,7 @@ This document provides a complete breakdown of all datasets in the project, orga
 - Checkpoint: `data/gsm8k_expansion_checkpoint.json` (7,500 tested, 3,080 CoT-needed)
 
 **Documentation**:
-- Detailed report: [`docs/experiments/gsm8k_expansion_2025-10-23.md`](experiments/gsm8k_expansion_2025-10-23.md)
+- Detailed report: [`docs/experiments/10-23_llama_gsm8k_dataset_expansion_1000.md`](experiments/10-23_llama_gsm8k_dataset_expansion_1000.md)
 - Usage guide: [`src/experiments/activation_patching/GSM8K_EXPANSION_GUIDE.md`](../src/experiments/activation_patching/GSM8K_EXPANSION_GUIDE.md)
 - Research journal: [`docs/research_journal.md`](research_journal.md) (2025-10-23 entry)
 
@@ -461,7 +461,7 @@ This document provides a complete breakdown of all datasets in the project, orga
 - Amplification: +2.3 pts @ α=+1.0 (limited by ceiling)
 - Random control: -6.7 pts @ α=-3.0 (validates steering is meaningful)
 
-**Documentation**: [`docs/experiments/activation_steering_gpt2_2025-10-21.md`](experiments/activation_steering_gpt2_2025-10-21.md)
+**Documentation**: [`docs/experiments/10-21_gpt2_gsm8k_activation_steering.md`](experiments/10-21_gpt2_gsm8k_activation_steering.md)
 
 ---
 
@@ -601,7 +601,7 @@ python src/experiments/sae_error_analysis/extract_error_thoughts_simple.py \
 
 **Status**: ✅ File exists locally (not in git due to size)
 
-**Documentation**: [`docs/experiments/sae_error_analysis_2025-10-24.md`](experiments/sae_error_analysis_2025-10-24.md)
+**Documentation**: [`docs/experiments/10-24_llama_gsm8k_sae_error_analysis.md`](experiments/10-24_llama_gsm8k_sae_error_analysis.md)
 
 ---
 
@@ -1279,7 +1279,7 @@ python eval_gpt2.py
 
 **Research Journal**: [`docs/research_journal.md`](research_journal.md) (2025-10-25 entry)
 
-**Detailed Report**: [`docs/experiments/gpt2_liars_bench_deception_detection_2025-10-25.md`](experiments/gpt2_liars_bench_deception_detection_2025-10-25.md)
+**Detailed Report**: [`docs/experiments/10-25_gpt2_liars_bench_deception_detection.md`](experiments/10-25_gpt2_liars_bench_deception_detection.md)
 
 **Reference Paper**: [Measuring Deceptive Alignment in Language Models](https://arxiv.org/pdf/2502.03407) (Apollo Research)
 

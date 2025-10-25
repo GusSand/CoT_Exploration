@@ -430,7 +430,7 @@ numpy==1.24.3
 ### Documentation
 - `src/experiments/operation_circuits/README.md` - Experiment guide
 - `src/experiments/operation_circuits/REPRODUCTION_STATUS.md` - Reproduction log
-- `docs/experiments/operation_circuits_2025-10-24.md` - This detailed report
+- `docs/experiments/10-24_llama_gsm8k_operation_circuits.md` - This detailed report
 - Research journal entry (to be added)
 
 ---
