@@ -26,10 +26,12 @@ User hypothesis: GPT-2's final position (position 5) decodes to numbers and play
 - Classified positions as "number" vs "non-number" based on digit presence
 
 ### 2. Position Ablation
+- **Layer**: Middle layer (not final layer)
 - **Condition A**: Zero-ablate all number-decoding positions
 - **Condition B**: Zero-ablate all non-number-decoding positions
 - **Baseline**: No ablation
 - Measure accuracy impact
+- **Note**: Initial results from middle layer; last layer ablation in progress
 
 ### 3. Cross-Model Comparison
 - Compare position specialization patterns
@@ -39,8 +41,18 @@ User hypothesis: GPT-2's final position (position 5) decodes to numbers and play
 
 ## Datasets
 
-- **GPT-2**: 1000 GSM8k problems (all CoT-dependent, 43.2% baseline accuracy)
-- **LLaMA**: 424 CoT-dependent problems (85.4% baseline accuracy)
+### GPT-2
+- **Source**: `src/experiments/gpt2_shared_data/gpt2_predictions_1000.json`
+- **Size**: 1000 samples (all CoT-dependent - 100% dependency rate)
+- **Baseline Accuracy**: 43.2% (432 correct)
+- **Note**: All GPT-2 samples require CoT for correct solutions
+
+### LLaMA
+- **Source**: `src/experiments/sae_error_analysis/data/error_analysis_dataset_l12_l16.json`
+- **Filter**: CoT-dependent pairs from `src/experiments/activation_patching/results/llama_cot_necessity_532.json`
+- **Size**: 424 samples (filtered from 914 original, 46.4% retention)
+- **Baseline Accuracy**: 85.4%
+- **Note**: Filtered to only include problems where LLaMA needs CoT to solve correctly
 
 ---
 
