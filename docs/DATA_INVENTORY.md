@@ -1003,3 +1003,287 @@ python run_position_type_ablation_llama.py    # LLaMA
 **Document Status**: Living document, update when new datasets are created or experiments are run.
 
 **Last Reviewed**: 2025-10-24
+
+## 14. Liars-Bench Deception Detection Datasets
+
+### 14.1 Preprocessed CODI Training/Validation/Test Data
+**Location**: [`src/experiments/liars_bench_codi/data/processed/`](../src/experiments/liars_bench_codi/data/processed/)
+
+**Source**: [Cadenza-Labs/liars-bench](https://huggingface.co/datasets/Cadenza-Labs/liars-bench) - Instructed Deception (ID) subset
+
+**Purpose**: CODI-formatted liars-bench data for training GPT-2 to answer factual questions honestly
+
+**Files**:
+- `train.json` - Training set (honest examples only)
+- `val.json` - Validation set (honest examples only)
+- `test_honest.json` - Test set (honest examples)
+- `deceptive_for_probes.json` - Deceptive examples for probe training
+
+**Sizes**:
+- Train: 7,074 examples (honest)
+- Validation: 1,515 examples (honest)
+- Test: 1,517 examples (honest)
+- Deceptive: 10,692 examples (for probe training)
+
+**Structure**:
+```json
+{
+  "question": "Is the following statement correct or incorrect? [statement]",
+  "answer": "The statement is [correct/incorrect]; [explanation]",
+  "cot": "",
+  "meta": {
+    "is_honest": true/false,
+    "original_index": 0
+  }
+}
+```
+
+**Question Formats**:
+- "Is the following statement true or false?"
+- "Is the following statement correct or incorrect?"
+
+**Answer Formats**:
+- "True/False"
+- "Correct/Incorrect"
+- "The statement is [label]"
+- "That statement is [label]"
+
+**Generation Command**:
+```bash
+cd src/experiments/liars_bench_codi/scripts
+python 1_download_dataset.py  # Requires HuggingFace token
+python 2_preprocess_data.py
+```
+
+**Used By**:
+- GPT-2 CODI training (train.json, val.json)
+- Honest example evaluation (test_honest.json)
+- Deception probe training (deceptive_for_probes.json + test_honest.json)
+
+**Created**: 2025-10-25
+
+---
+
+### 14.2 GPT-2 Continuous Thought Activations for Probes
+**Location**: [`src/experiments/liars_bench_codi/data/processed/`](../src/experiments/liars_bench_codi/data/processed/)
+
+**Purpose**: Extracted continuous thought activations from GPT-2 CODI for training deception detection probes
+
+**Files**:
+- `activations_gpt2_500.json` - Initial extraction (500+500)
+- `activations_gpt2_1000.json` - Final extraction (1000+1000)
+
+**Size**:
+- Initial: 500 honest + 500 deceptive = 1,000 samples
+- Final: 1,000 honest + 1,000 deceptive = 2,000 samples
+- After deduplication: 622 honest + 236 deceptive = 858 final samples
+
+**Structure**:
+```json
+{
+  "model": "gpt2",
+  "layers": ["layer_4", "layer_8", "layer_11"],
+  "layer_indices": {"layer_4": 4, "layer_8": 8, "layer_11": 11},
+  "n_latent_tokens": 6,
+  "samples": [
+    {
+      "question": "Is the following statement correct or incorrect? [statement]",
+      "answer": "The statement is [correct/incorrect]...",
+      "is_honest": true/false,
+      "thoughts": {
+        "layer_4": [[768 floats], ...],   // 6 vectors
+        "layer_8": [[768 floats], ...],   // 6 vectors
+        "layer_11": [[768 floats], ...]   // 6 vectors
+      }
+    }
+  ]
+}
+```
+
+**Extraction Details**:
+- **Layers**: L4 (early), L8 (middle), L11 (late)
+- **Tokens per layer**: 6 continuous thought tokens
+- **Dimensions per vector**: 768 (GPT-2 hidden size)
+- **Total dimensions per sample**: 13,824 (3 layers × 6 tokens × 768 dims)
+
+**Generation Command**:
+```bash
+cd src/experiments/liars_bench_codi/scripts
+python extract_activations.py --num_samples 500   # Initial
+python extract_activations.py --num_samples 1000  # Final
+```
+
+**Class Distribution** (after deduplication):
+- Honest: 622 (72.49%)
+- Deceptive: 236 (27.51%)
+- Imbalance ratio: ~3:1
+
+**Used By**:
+- Deception detection probe training
+- Per-token probe analysis (18 probes: 3 layers × 6 tokens)
+- Mean pooling probe analysis
+
+**Created**: 2025-10-25
+
+---
+
+### 14.3 Deception Detection Probe Results
+**Location**: [`src/experiments/liars_bench_codi/results/`](../src/experiments/liars_bench_codi/results/)
+
+**Purpose**: Trained linear probe results for honest vs deceptive classification
+
+**Files**:
+- `probe_results_gpt2.json` - Per-token probe results
+- `probe_results_pooled_gpt2.json` - Mean-pooled probe results
+- `probe_heatmap_gpt2.png` - Visualization of probe accuracy matrix
+
+**Probe Configuration**: 18 total probes (3 layers × 6 tokens)
+
+**Key Results**:
+```json
+{
+  "model": "gpt2",
+  "summary": {
+    "mean_accuracy": 0.7249417249417249,
+    "std_accuracy": 0.0,  // Perfect uniformity
+    "min_accuracy": 0.7249417249417249,
+    "max_accuracy": 0.7249417249417249
+  }
+}
+```
+
+**Accuracy Matrix** (all values 72.49%):
+```
+            Token 0  Token 1  Token 2  Token 3  Token 4  Token 5
+Layer 4     72.49%   72.49%   72.49%   72.49%   72.49%   72.49%
+Layer 8     72.49%   72.49%   72.49%   72.49%   72.49%   72.49%
+Layer 11    72.49%   72.49%   72.49%   72.49%   72.49%   72.49%
+```
+
+**Critical Finding**: All probes achieve exactly 72.49% accuracy (= majority class baseline). Confusion matrices show probes learned "always predict honest" instead of detecting deception signal.
+
+**Generation Command**:
+```bash
+cd src/experiments/liars_bench_codi/scripts
+python train_probes.py         # Per-token probes
+python train_probes_pooled.py  # Mean-pooled probes
+python visualize_probes.py     # Heatmap visualization
+```
+
+**Created**: 2025-10-25
+
+---
+
+### 14.4 GPT-2 Honest Example Evaluation Results
+**Location**: [`src/experiments/liars_bench_codi/results/gpt2_honest_eval.json`](../src/experiments/liars_bench_codi/results/gpt2_honest_eval.json)
+
+**Purpose**: Evaluation of trained GPT-2 CODI model on honest test examples
+
+**Size**: 1,517 test examples
+
+**Key Results**:
+```json
+{
+  "accuracy": 91.36453526697429,
+  "correct": 1386,
+  "total": 1517,
+  "target_met": true
+}
+```
+
+**Sample Predictions**: First 100 predictions stored with:
+- Question
+- Expected answer
+- Predicted answer
+- Extracted labels (true/false/correct/incorrect)
+- Match status
+
+**Generation Command**:
+```bash
+cd src/experiments/liars_bench_codi/scripts
+python eval_gpt2.py
+```
+
+**Created**: 2025-10-25
+
+---
+
+### 14.5 Dataset Relationships - Liars-Bench Pipeline
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  Raw Liars-Bench Dataset (HuggingFace)                  │
+│  Cadenza-Labs/liars-bench (Instructed Deception)        │
+│  20,798 total examples                                  │
+└──────────────────┬──────────────────────────────────────┘
+                   │
+                   ↓ Preprocessing (2_preprocess_data.py)
+                   │
+                   ├─► train.json (7,074 honest)
+                   │   └─► GPT-2 CODI Training
+                   │       ├─► Checkpoint: ~/codi_ckpt/gpt2_liars_bench/
+                   │       └─► Training time: 22.5 minutes
+                   │
+                   ├─► val.json (1,515 honest)
+                   │   └─► Validation during training
+                   │
+                   ├─► test_honest.json (1,517 honest)
+                   │   ├─► Evaluation (eval_gpt2.py)
+                   │   │   └─► gpt2_honest_eval.json (91.36% accuracy)
+                   │   └─► Activation extraction (honest examples)
+                   │       └─► activations_gpt2_1000.json (1000 honest)
+                   │
+                   └─► deceptive_for_probes.json (10,692 deceptive)
+                       └─► Activation extraction (deceptive examples)
+                           └─► activations_gpt2_1000.json (1000 deceptive)
+                                   │
+                                   ↓ After deduplication: 858 samples
+                                   │
+                                   ├─► train_probes.py
+                                   │   └─► probe_results_gpt2.json
+                                   │       (18 probes: 3 layers × 6 tokens)
+                                   │       Mean accuracy: 72.49%
+                                   │
+                                   ├─► train_probes_pooled.py
+                                   │   └─► probe_results_pooled_gpt2.json
+                                   │       Pooled accuracy: 72.49%
+                                   │
+                                   └─► visualize_probes.py
+                                       └─► probe_heatmap_gpt2.png
+```
+
+---
+
+### 14.6 Key Statistics Summary
+
+**Dataset Distribution**:
+| Split | Honest | Deceptive | Total |
+|-------|--------|-----------|-------|
+| Train | 7,074 | 0 | 7,074 |
+| Val | 1,515 | 0 | 1,515 |
+| Test | 1,517 | 0 | 1,517 |
+| Probes (raw) | 1,000 | 1,000 | 2,000 |
+| Probes (deduplicated) | 622 | 236 | 858 |
+
+**Model Performance**:
+| Task | Metric | Target | Achieved | Status |
+|------|--------|--------|----------|--------|
+| Task Accuracy | Accuracy on honest examples | ≥90% | **91.36%** | ✅ Exceeded |
+| Probe Accuracy | Deception detection | ≥70% | **72.49%** | ⚠️ Majority baseline |
+
+**Critical Note**: Despite 72.49% probe accuracy exceeding the 70% target, this is a **majority class baseline artifact**. Confusion matrices reveal probes learned "always predict honest" (100% recall for honest, 0% for deceptive). True deception detection capability is ~59% (from cross-validation), below the target.
+
+---
+
+### 14.7 Experiment Documentation
+
+**Research Journal**: [`docs/research_journal.md`](research_journal.md) (2025-10-25 entry)
+
+**Detailed Report**: [`docs/experiments/gpt2_liars_bench_deception_detection_2025-10-25.md`](experiments/gpt2_liars_bench_deception_detection_2025-10-25.md)
+
+**Reference Paper**: [Measuring Deceptive Alignment in Language Models](https://arxiv.org/pdf/2502.03407) (Apollo Research)
+
+**Code Location**: [`src/experiments/liars_bench_codi/`](../src/experiments/liars_bench_codi/)
+
+**Last Updated**: 2025-10-25
+
