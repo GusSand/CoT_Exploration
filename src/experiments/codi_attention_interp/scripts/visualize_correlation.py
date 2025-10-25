@@ -102,7 +102,8 @@ output_file = Path(__file__).parent.parent / 'results' / 'attention_importance_c
 plt.savefig(output_file, dpi=300, bbox_inches='tight')
 print(f'✓ Saved correlation scatter plot to {output_file}')
 
-# Create second figure: Per-token analysis at Layer 8 using SAME SCALE
+# Create second figure: Per-token analysis at Layer 14 (late layer) using SAME SCALE
+layer_for_comparison = 14
 fig, ax = plt.subplots(figsize=(12, 7))
 
 token_stats = []
@@ -119,7 +120,7 @@ for token_pos in range(6):
             importance_scores.append(ccta_prob['corruptions'][f'token_{token_pos}'][corr_type]['importance'])
         token_importance.append(np.mean(importance_scores))
 
-        token_attention.append(attn_prob['attention_by_layer']['layer_8']['continuous_token_attention'][token_pos])
+        token_attention.append(attn_prob['attention_by_layer'][f'layer_{layer_for_comparison}']['continuous_token_attention'][token_pos])
 
     mean_imp = np.mean(token_importance)
     mean_attn = np.mean(token_attention)
@@ -177,13 +178,13 @@ ax.grid(True, alpha=0.3, axis='y')
 ax.legend(fontsize=11, loc='upper left', framealpha=0.95)
 
 # Title
-ax.set_title(f'LLaMA CODI: Token Importance vs Attention Distribution (Layer 8)\n'
+ax.set_title(f'LLaMA CODI: Token Importance vs Attention Distribution (Layer {layer_for_comparison})\n'
              f'Total attention to CoT tokens: {total_attention*100:.2f}% | Token 5 dominates both metrics',
              fontsize=14, fontweight='bold', pad=20)
 
 plt.tight_layout()
 
-output_file2 = Path(__file__).parent.parent / 'results' / 'token_importance_attention_comparison.png'
+output_file2 = Path(__file__).parent.parent / 'results' / f'token_importance_attention_comparison_L{layer_for_comparison}.png'
 plt.savefig(output_file2, dpi=300, bbox_inches='tight')
 print(f'✓ Saved token comparison bar chart to {output_file2}')
 
