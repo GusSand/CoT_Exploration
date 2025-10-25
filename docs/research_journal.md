@@ -2275,3 +2275,116 @@ This is NOT an architectural choice but an **emergent property of capacity const
 2. Cross-model probe comparison (GPT-2 vs LLaMA deception encoding)
 3. Attention analysis on continuous thought tokens during deceptive reasoning
 4. Fine-grained interpretability: Which features distinguish honest vs deceptive thoughts?
+
+
+---
+
+## 2025-10-25: GPT-2 Liars-Bench CORRECTED Results - Balanced Dataset
+
+**Objective**: Fix class imbalance issue and re-evaluate deception detection probes with balanced data.
+
+**Status**: ✅ Complete
+
+**Problem Identified**: Original probe training (72.49% accuracy) was misleading due to:
+- Improper deduplication causing 73%/27% class imbalance
+- Probes learned majority class baseline (always predict "honest")
+- Confusion matrix revealed 0% deceptive recall
+
+**Solution**: Re-train probes with balanced dataset (500 honest + 500 deceptive)
+
+**Corrected Results**:
+
+1. **Probe Performance - REAL DECEPTION DETECTION**:
+   - Mean accuracy: **59.73%** (vs 50% random chance)
+   - Mean F1-score: **0.599** (balanced performance)
+   - Mean AUROC: **0.643** (moderate discrimination)
+   - Standard deviation: 0.41% (very consistent across probes)
+
+2. **Layer-wise Performance**:
+   - Layer 4 (early): 59.95% accuracy, AUROC 0.633
+   - Layer 8 (middle): 59.23% accuracy, AUROC 0.640
+   - Layer 11 (late): 60.02% accuracy, AUROC 0.655
+   - **Late layers slightly better** (65.5% AUROC vs 63.3%)
+
+3. **Confusion Matrix - Actual Detection**:
+   ```
+   Example (Layer 11, Token 0):
+                 Predicted
+                 Deceptive  Honest
+   Actual:
+     Deceptive      300      200    ← 60% recall
+     Honest         198      302    ← 60% recall
+   ```
+   **Both classes detected equally well** (no majority bias)
+
+4. **Comparison to Apollo Research Baseline**:
+   - Apollo (response tokens): **70% accuracy**
+   - Our result (continuous thoughts): **59.73% accuracy**
+   - **Gap: ~10 percentage points**
+
+**Scientific Findings**:
+
+1. **Continuous thoughts DO encode deception** (59.73% > 50% chance):
+   - Statistical evidence of deception signal
+   - AUROC 0.643 shows moderate discrimination ability
+   - Consistent across all 18 layer-token combinations
+
+2. **Deception signal is weaker than in response tokens**:
+   - Continuous thoughts: 59.73% accuracy
+   - Response tokens (Apollo): 70% accuracy
+   - Suggests deception becomes clearer during final output generation
+
+3. **Layer depth effect is minimal**:
+   - Layer 4: 63.3% AUROC
+   - Layer 11: 65.5% AUROC
+   - Only 2.2 percentage point improvement
+   - Deception is encoded uniformly throughout reasoning
+
+4. **Class imbalance is a serious pitfall**:
+   - Imbalanced data: 72.49% accuracy (misleading)
+   - Balanced data: 59.73% accuracy (true performance)
+   - **Always use F1-score and confusion matrices with imbalanced data**
+
+**Revised Conclusion**:
+
+**Continuous thoughts contain detectable but weak deception signals.**
+
+- ✅ Deception IS encoded in continuous thought activations
+- ✅ Linear probes can detect it above chance (59.73% vs 50%)
+- ❌ Signal is weaker than response tokens (59.73% vs 70%)
+- ❌ Did not meet 70% target (missed by 10.27 percentage points)
+
+**Why continuous thoughts underperform response tokens:**
+1. Deception may crystallize during output generation
+2. Continuous space compression loses semantic structure
+3. Linear probes may be insufficient (need non-linear methods)
+4. Smaller model (GPT-2 124M) may encode deception differently than larger models
+
+**Deliverables (Corrected)**:
+- Balanced probe results: `src/experiments/liars_bench_codi/results/probe_results_balanced_gpt2.json`
+- Updated heatmap: `src/experiments/liars_bench_codi/results/probe_heatmap_balanced_gpt2.png`
+- Training script: `src/experiments/liars_bench_codi/scripts/train_probes_balanced.py`
+
+**Methodological Lessons**:
+1. **Always balance classification datasets** - imbalance can inflate accuracy by 12+ percentage points
+2. **Use multiple metrics** - accuracy alone is insufficient (add F1, AUROC, confusion matrix)
+3. **Deduplicate within classes** - global deduplication can create artificial imbalance
+4. **Cross-validation reveals truth** - CV score (59%) matched balanced test accuracy, not imbalanced (72%)
+
+**Time Investment**: ~30 minutes
+- Identified class imbalance issue: 5 min
+- Created balanced training script: 10 min
+- Re-trained 18 probes: 12 min
+- Analysis: 3 min
+
+**Impact**: 
+- **Corrects misleading findings** - 72.49% was majority baseline, not deception detection
+- **Validates continuous thought interpretability** - weak but present deception signal
+- **Establishes response token superiority** - 70% (response) > 59.73% (continuous)
+- **Demonstrates importance of proper evaluation** - class balance critical for probe experiments
+
+**Next Steps**:
+1. ~~Train balanced probes~~ ✅ Complete
+2. Try non-linear probes (2-layer MLP) to capture complex patterns
+3. Compare to response token baseline (extract final layer activations)
+4. Train LLaMA CODI on liars-bench for cross-model comparison

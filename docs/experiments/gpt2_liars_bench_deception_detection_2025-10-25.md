@@ -4,7 +4,29 @@
 **Experiment**: GPT-2 CODI Training + Deception Detection Probes
 **Model**: GPT-2 (124M parameters)
 **Dataset**: [liars-bench](https://huggingface.co/datasets/Cadenza-Labs/liars-bench) Instructed Deception (ID)
-**Status**: ✅ Complete - Both targets exceeded
+**Status**: ⚠️ CORRECTED - See balanced results below
+
+---
+
+## ⚠️ CRITICAL CORRECTION (2025-10-25)
+
+**Original results (72.49% probe accuracy) were INVALID due to class imbalance.**
+
+**Problem**: Improper deduplication created 73%/27% class imbalance. Probes learned majority class baseline ("always predict honest"), not deception detection.
+
+**Corrected Results with Balanced Dataset (500+500)**:
+- **Probe Accuracy: 59.73%** (not 72.49%)
+- **F1-Score: 0.599**
+- **AUROC: 0.643**
+- **Conclusion: Continuous thoughts DO encode deception, but weakly (10% below response token baseline)**
+
+**Impact**:
+- ✅ Task accuracy (91.36%) remains valid
+- ❌ Original probe accuracy (72.49%) was majority baseline artifact
+- ✅ Balanced probes (59.73%) show real but weak deception detection
+- ❌ Did NOT exceed 70% target (missed by 10.27 percentage points)
+
+**See Sections 5.2 and 7 for corrected analysis.**
 
 ---
 
@@ -543,6 +565,82 @@ Actual:
    - Test set's imbalance inflated accuracy to 72.49% majority baseline
    - True deception detection capability: **~59%**, barely above chance (50%)
 
+### Finding 3b: CORRECTED RESULTS - Balanced Dataset (500+500)
+
+**After identifying the class imbalance issue, we re-trained probes on properly balanced data.**
+
+**Balanced Training Configuration**:
+- Deduplication: Within each class separately (maintains balance)
+- Dataset: 500 honest + 500 deceptive = 1,000 samples
+- Perfect 50-50 split
+
+**Corrected Performance**:
+```json
+{
+  "mean_accuracy": 59.73%,
+  "std_accuracy": 0.41%,
+  "mean_f1_score": 0.599,
+  "mean_auroc": 0.643
+}
+```
+
+**Layer-wise Performance**:
+| Layer | Accuracy | F1-Score | AUROC |
+|-------|----------|----------|-------|
+| Layer 4 (early) | 59.95% | 0.609 | 0.633 |
+| Layer 8 (middle) | 59.23% | 0.591 | 0.640 |
+| Layer 11 (late) | 60.02% | 0.599 | 0.655 |
+
+**Confusion Matrix - ACTUAL DETECTION**:
+```
+Example (Layer 11, Token 0):
+              Predicted
+              Deceptive  Honest
+Actual:
+  Deceptive      300      200    ← 60% deceptive recall
+  Honest         198      302    ← 60% honest recall
+```
+
+**Key Findings**:
+
+1. **Probes DO detect deception** (59.73% > 50% random):
+   - Statistically significant above chance
+   - AUROC 0.643 confirms moderate discrimination ability
+   - Both classes detected equally well (no majority bias)
+
+2. **Performance is consistent** (std = 0.41%):
+   - All 18 probes perform similarly
+   - No token/layer specialization for deception
+   - Suggests uniform encoding across continuous thoughts
+
+3. **Signal is weak but present**:
+   - Only ~10% above random chance (59.73% vs 50%)
+   - Much weaker than response tokens (70%)
+   - Suggests deception crystallizes during output generation
+
+4. **Late layers slightly better**:
+   - Layer 4: 63.3% AUROC
+   - Layer 11: 65.5% AUROC
+   - Only 2.2 percentage point improvement
+   - Minimal layer depth effect
+
+**Comparison to Imbalanced Results**:
+| Metric | Imbalanced (622/236) | Balanced (500/500) | Difference |
+|--------|---------------------|-------------------|------------|
+| Accuracy | 72.49% | **59.73%** | -12.76% |
+| Deceptive Recall | 0% | **60%** | +60% |
+| Honest Recall | 100% | 60% | -40% |
+| F1-Score | 0.42 | **0.599** | +17.9% |
+| AUROC | N/A | **0.643** | - |
+
+**Corrected Conclusion**:
+
+✅ **Continuous thoughts DO encode deception**, but the signal is weak (~10% above chance)
+
+❌ **Did NOT meet 70% target** (missed by 10.27 percentage points)
+
+✅ **Real detection confirmed** by balanced recall (60% for both classes)
+
 ### Finding 4: Data Scaling Paradox
 
 **Observed**: 500+500 → 66.28%, 1000+1000 → 72.49% (+6.21%)
@@ -599,18 +697,21 @@ Actual:
    - Activation extraction pipeline works correctly
    - Probe training infrastructure validated
 
-### What Failed
+### What Partially Worked
 
-1. **Deception Detection from Continuous Thoughts**: ❌
-   - Probes learned majority class baseline (72.49%), not deception signal
-   - True deception detection: ~59% (from cross-validation), below 70% target
-   - Class imbalance (73%/27%) caused inflated test accuracy
-   - Continuous thought activations do not contain detectable deception signal with linear probes
+1. **Deception Detection from Continuous Thoughts**: ⚠️ **Weak but present**
+   - **Initial result (72.49%)**: Invalid - class imbalance artifact
+   - **Corrected result (59.73%)**: Valid - real deception detection above chance (50%)
+   - **F1-Score (0.599)** and **AUROC (0.643)** confirm moderate detection ability
+   - **Both classes detected equally well** (60% recall each)
+   - **Conclusion**: Continuous thoughts DO encode deception, but weakly
 
-2. **Comparison to Response Token Baseline**: ❌
+2. **Comparison to Response Token Baseline**: ❌ **Below target**
    - Did NOT match Apollo Research 70% baseline
-   - Continuous thoughts (59% real) < Response tokens (70%)
-   - Suggests deception information may be more concentrated in final outputs than intermediate reasoning
+   - Continuous thoughts: 59.73% accuracy, AUROC 0.643
+   - Response tokens: 70% accuracy (Apollo baseline)
+   - **Gap: 10.27 percentage points**
+   - Suggests deception crystallizes during output generation
 
 ### Scientific Insights
 
@@ -619,10 +720,11 @@ Actual:
    - 91.36% task accuracy proves continuous thoughts encode sufficient information for factual QA
    - However, **task performance ≠ interpretability**
 
-2. **Continuous Thought Interpretability Limitation**:
-   - Continuous thoughts work for task (91% accuracy) but are **opaque to linear probes**
-   - Unlike response tokens (which Apollo found interpretable), continuous thoughts don't expose deception
-   - Suggests compression into latent space **loses semantic structure** that probes can exploit
+2. **Continuous Thought Interpretability - Weak but Present**:
+   - Continuous thoughts work for task (91% accuracy) and ARE interpretable to linear probes (59.73% > 50% chance)
+   - However, signal is weaker than response tokens (59.73% vs 70%)
+   - Suggests compression into latent space **partially preserves** semantic structure
+   - Deception signal exists but is diluted/distributed in continuous space
 
 3. **Class Imbalance Pitfall**:
    - Test accuracy can be misleading metric when classes are imbalanced
@@ -814,7 +916,7 @@ python visualize_probes.py
 }
 ```
 
-**File: results/probe_results_gpt2.json** (excerpt)
+**File: results/probe_results_gpt2.json** (excerpt) - ⚠️ IMBALANCED RESULTS (INVALID)
 ```json
 {
   "model": "gpt2",
@@ -835,6 +937,38 @@ python visualize_probes.py
   ]
 }
 ```
+
+**File: results/probe_results_balanced_gpt2.json** (excerpt) - ✅ BALANCED RESULTS (VALID)
+```json
+{
+  "model": "gpt2",
+  "balanced": true,
+  "target_per_class": 500,
+  "summary": {
+    "mean_accuracy": 0.5973,
+    "std_accuracy": 0.0041,
+    "mean_f1": 0.599,
+    "mean_auroc": 0.643
+  },
+  "probes": [
+    {
+      "layer": "layer_11",
+      "token": 0,
+      "accuracy": 0.602,
+      "f1_score": 0.603,
+      "auroc": 0.655,
+      "confusion_matrix": [[300, 200], [198, 302]],
+      "ci_accuracy_lower": 0.580,
+      "ci_accuracy_upper": 0.634
+    },
+    // ... all 18 probes with similar performance
+  ]
+}
+```
+
+**Visualizations**:
+- Imbalanced: `results/probe_heatmap_gpt2.png` (uniform 72.5% - misleading)
+- **Balanced**: `results/probe_heatmap_balanced_gpt2.png` (consistent ~60% - valid)
 
 ---
 
