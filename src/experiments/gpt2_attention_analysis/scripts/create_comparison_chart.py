@@ -99,68 +99,53 @@ def compute_token_stats(ablation_results, attention_results, layer=8):
     return token_stats
 
 def create_comparison_chart(token_stats, output_dir, layer=8):
-    """Create bar chart comparing importance and attention using dual y-axes."""
-    fig, ax1 = plt.subplots(figsize=(12, 7))
+    """Create bar chart comparing importance and attention using SAME SCALE."""
+    fig, ax = plt.subplots(figsize=(12, 7))
 
     x = np.arange(6)
     width = 0.35
 
-    # Get raw values
-    importance_vals = [s['importance'] * 100 for s in token_stats]  # Convert to percentage
-    attention_vals = [s['attention'] * 100 for s in token_stats]  # Convert to percentage
-
-    # Calculate total attention to continuous thought tokens
+    # Get raw values - both as percentages on SAME SCALE
+    importance_vals = [s['importance'] * 100 for s in token_stats]  # % accuracy drop
     total_attention = sum(s['attention'] for s in token_stats)
-    attention_pct_of_total = [s['attention'] / total_attention * 100 for s in token_stats]
+    attention_pct_of_total = [s['attention'] / total_attention * 100 for s in token_stats]  # % of CoT attention
 
-    # Create first y-axis for importance
-    bars1 = ax1.bar(x - width/2, importance_vals, width,
-                    label='Importance (Ablation Impact)',
-                    color='#e74c3c', alpha=0.8, edgecolor='black', linewidth=1.5)
+    # Create bars with SAME Y-AXIS
+    bars1 = ax.bar(x - width/2, importance_vals, width,
+                   label='Importance (% accuracy drop when ablated)',
+                   color='#e74c3c', alpha=0.8, edgecolor='black', linewidth=1.5)
 
-    ax1.set_xlabel('Token Position', fontsize=13, fontweight='bold')
-    ax1.set_ylabel('Importance (% accuracy drop when ablated)', fontsize=13, fontweight='bold', color='#e74c3c')
-    ax1.tick_params(axis='y', labelcolor='#e74c3c')
-    ax1.set_ylim(0, max(importance_vals) * 1.3)
-
-    # Create second y-axis for attention
-    ax2 = ax1.twinx()
-    bars2 = ax2.bar(x + width/2, attention_pct_of_total, width,
-                    label='Attention (% of total to CoT tokens)',
-                    color='#3498db', alpha=0.8, edgecolor='black', linewidth=1.5)
-
-    ax2.set_ylabel('Attention (% of attention to continuous thought tokens)', fontsize=13, fontweight='bold', color='#3498db')
-    ax2.tick_params(axis='y', labelcolor='#3498db')
-    ax2.set_ylim(0, max(attention_pct_of_total) * 1.3)
+    bars2 = ax.bar(x + width/2, attention_pct_of_total, width,
+                   label='Attention (% of attention among 6 CoT tokens)',
+                   color='#3498db', alpha=0.8, edgecolor='black', linewidth=1.5)
 
     # Add values on top of bars
-    for i, stats_dict in enumerate(token_stats):
+    for i in range(6):
         # Importance percentage
-        ax1.text(i - width/2, importance_vals[i] + max(importance_vals) * 0.03,
+        ax.text(i - width/2, importance_vals[i] + 1.5,
                 f'{importance_vals[i]:.1f}%',
                 ha='center', va='bottom', fontsize=10, fontweight='bold', color='#c0392b')
 
-        # Attention percentage of CoT total
-        ax2.text(i + width/2, attention_pct_of_total[i] + max(attention_pct_of_total) * 0.03,
+        # Attention percentage
+        ax.text(i + width/2, attention_pct_of_total[i] + 1.5,
                 f'{attention_pct_of_total[i]:.1f}%',
                 ha='center', va='bottom', fontsize=10, fontweight='bold', color='#2980b9')
 
-    # Set x-axis
-    ax1.set_xticks(x)
-    ax1.set_xticklabels([f'Token {i}' for i in range(6)], fontsize=11)
-    ax1.grid(True, alpha=0.3, axis='y')
+    # Single y-axis with SAME SCALE for both metrics
+    ax.set_xlabel('Token Position', fontsize=13, fontweight='bold')
+    ax.set_ylabel('Percentage (%)', fontsize=13, fontweight='bold')
+    ax.set_ylim(0, 70)  # 0-70% range covers both metrics
+    ax.set_xticks(x)
+    ax.set_xticklabels([f'Token {i}' for i in range(6)], fontsize=11)
+    ax.grid(True, alpha=0.3, axis='y')
+    ax.legend(fontsize=11, loc='upper left', framealpha=0.95)
 
     # Title
-    fig.suptitle(f'GPT-2 CODI: Token Importance vs Attention Distribution (Layer {layer})\n'
-                 f'Total attention to CoT tokens: {total_attention*100:.2f}% | Tokens 2 & 3 are critical',
-                 fontsize=14, fontweight='bold', y=0.98)
+    ax.set_title(f'GPT-2 CODI: Token Importance vs Attention Distribution (Layer {layer})\n'
+                 f'Total attention to CoT tokens: {total_attention*100:.2f}% | Tokens 2 & 3 critical but attention uniform',
+                 fontsize=14, fontweight='bold', pad=20)
 
-    # Combined legend
-    lines1, labels1 = ax1.get_legend_handles_labels()
-    lines2, labels2 = ax2.get_legend_handles_labels()
-    ax1.legend(lines1 + lines2, labels1 + labels2, fontsize=11, loc='upper left', framealpha=0.95)
-
-    plt.tight_layout(rect=[0, 0, 1, 0.96])
+    plt.tight_layout()
 
     # Save
     output_file = output_dir / 'token_importance_attention_comparison.png'
