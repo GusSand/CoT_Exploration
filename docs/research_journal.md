@@ -2,100 +2,104 @@
 
 ## Experiment Log
 
-### 2025-10-25b: ⚠️ CRITICAL BUG FIX - Deception Detection Completely Re-evaluated
+### 2025-10-25c: ⚠️ METHODOLOGY ERRORS - Deception Detection Results RETRACTED
 
-**Objective**: Fix extraction bug that corrupted all previous deception detection results and re-evaluate with clean, balanced data.
+**Objective**: Identify and correct methodology errors in deception detection experiment.
 
-**Status**: ✅ **COMPLETE** - Bug fixed, all experiments re-run with corrected data
+**Status**: ⚠️ **RETRACTED** - Previous results invalid due to data leakage
 
-**INVALIDATES PREVIOUS FINDINGS**: All liars-bench deception detection results from 2025-10-24/25 were based on corrupted, imbalanced data.
+**RETRACTS ALL PREVIOUS FINDINGS**: All liars-bench deception detection results claiming "98% accuracy" were due to data leakage (testing on training data). **ACTUAL RESULTS SHOW CONTINUOUS THOUGHTS FAIL AT DECEPTION DETECTION.**
 
-**The Bug**:
-- **Location**: `extract_activations.py` line 245
-- **Issue**: Stored entire batch's activations for every sample instead of just that sample's activations
-- **Impact**: After deduplication: 858/2000 samples (43% lost), 72.5%/27.5% class imbalance
+**The Critical Error - Data Leakage**:
+- **Location**: `train_probes.py` lines 65-69
+- **Issue**: Testing on training data instead of using proper train/test split
+- **Impact**: Reported 98% training accuracy as if it were test accuracy
 
 ```python
-# BUGGY CODE (stored ALL batch activations for every sample)
-"thoughts": token_activations
-
-# FIXED CODE (stores only this sample's activations)
-"thoughts": {layer_name: token_activations[layer_name][b] for layer_name in layers.keys()}
+# INCORRECT CODE (data leakage)
+clf.fit(X_scaled, y)
+y_pred = clf.predict(X_scaled)  # ← Predicting on TRAINING data!
+accuracy = accuracy_score(y, y_pred)  # ← This is training accuracy, NOT test
 ```
 
-**Results Comparison**:
+**Actual Cross-Validation Score**: The internal CV score for Layer 4 Token 1 was **51.4%** (random chance), not 98%.
 
-| Method | Corrupted Data (858 samples) | Clean Data (1000 samples) | Difference |
-|--------|------------------------------|---------------------------|------------|
-| **Linear Probes (best)** | 60.0% (L11 Token 1) | **98.10%** (L4 Token 1) | +38.1pp |
-| **Linear Probes (mean)** | 59.73% | 76.11% | +16.4pp |
-| **Response Tokens** | 70.50% ✓ (separate data) | 70.50% ✓ (unchanged) | 0pp |
-| **Non-linear MLPs** | 72.67% (majority class) | 50.00% (chance, overfitting) | -22.7pp |
+**ACTUAL RESULTS (Proper Train/Test Split)**:
+
+| Method | Test Accuracy | AUROC | F1 Score | Verdict |
+|--------|--------------|-------|----------|---------|
+| **Response Tokens** | **70.50%** | **0.777** | **0.642** | ✅ **WINNER** |
+| Continuous L4 Token 5 | 48.83% | 0.465 | 0.498 | ❌ Below random |
+| Continuous L4 Token 4 | 48.62% | 0.464 | 0.500 | ❌ Below random |
+| Continuous L4 Token 2 | 48.20% | 0.465 | 0.491 | ❌ Below random |
+| Continuous L4 Token 1 | **47.98%** | 0.466 | 0.494 | ❌ Below random (was claimed "98%"!) |
+| Continuous L4 Token 3 | 47.77% | 0.465 | 0.487 | ❌ Below random |
+| Continuous L4 Token 0 | 47.35% | 0.456 | 0.489 | ❌ Below random |
+| **Random Chance Baseline** | **50.00%** | **0.500** | **0.500** | Reference |
+
+**Mean continuous thought accuracy**: 47.06% ± 1.02% (WORSE than random!)
 
 **CORRECTED KEY FINDINGS**:
 
-1. **🏆 Continuous thoughts MASSIVELY outperform response tokens**:
-   - L4 Token 1 (continuous): **98.10%** [97.5%, 98.9%]
-   - Response tokens: 70.50% [67.7%, 73.9%]
-   - **Gap: +27.60 percentage points** in favor of continuous thoughts
+1. **❌ Continuous thoughts FAIL at deception detection**:
+   - All Layer 4 tokens: ~48% accuracy (below 50% random baseline)
+   - AUROC ~0.46 (below 0.50 random baseline)
+   - No useful deception signal in continuous thought space
 
-2. **📍 Early layers encode deception best** (opposite of previous finding):
-   - Layer 4: **94-98%** accuracy (excellent)
-   - Layer 8: ~65% accuracy (moderate)
-   - Layer 11: ~68% accuracy (moderate)
-   - Deception peaks in early continuous thought processing
+2. **✅ Response tokens are SUPERIOR**:
+   - Response tokens: 70.50% accuracy, 0.777 AUROC
+   - **Gap: +22.5 percentage points** in favor of response tokens
+   - Previous claim of "98% vs 70%" was completely backwards
 
-3. **📏 Perfect linear separability**:
-   - Single 768-dim token achieves 98% with linear classifier
-   - Non-linear MLPs severely overfit (50% test accuracy)
-   - Deception is linearly separable in continuous thought space
+3. **❌ NO linear separability**:
+   - Linear probes cannot extract deception signal from continuous thoughts
+   - Claim of "perfect linear separability" was due to data leakage
+   - Even training accuracy only reaches ~63%, not 98%
 
-4. **🔍 All L4 tokens are excellent deception detectors**:
-   - Token 1: 98.10% (best)
-   - Token 4: 98.10% (tied)
-   - Token 0: 95.10%
-   - Tokens 2,3,5: 94.1-94.5%
+4. **📊 Evidence of overfitting**:
+   - Training accuracy: ~63%
+   - Test accuracy: ~48%
+   - Overfitting gap: ~15pp (model cannot generalize)
 
 **Scientific Implications**:
 
-Previous conclusion (WRONG): "Continuous thoughts weakly encode deception (60%), response tokens are superior (70%)"
+Previous conclusion (INVALID): "Continuous thoughts encode deception near-perfectly (98%) in early layers, far exceeding response tokens (70%)"
 
-**Corrected conclusion**: "Continuous thoughts encode deception near-perfectly (98%) in early layers, far exceeding response tokens (70%). Deception is linearly separable and peaks during initial reasoning."
+**Corrected conclusion**: "Continuous thoughts FAIL to encode deception (48% test accuracy, worse than random). Response tokens are superior (70.5%). This is a NEGATIVE RESULT for CODI's continuous thought approach on deception detection."
 
 **Impact on Prior Claims**:
-- ❌ "Deception crystallizes during output" → FALSE (peaks early in L4, degrades by L11)
-- ❌ "Continuous thoughts weak, response tokens strong" → REVERSED (98% vs 70%)
-- ❌ "Layer-dependent strengthening" → FALSE (layer-dependent WEAKENING)
-- ✅ "Methodology validated" → TRUE (response token 70% still correct)
+- ❌ "98.10% accuracy" → FALSE (was training accuracy, data leakage)
+- ❌ "Continuous thoughts >> response tokens" → REVERSED (48% vs 70.5%)
+- ❌ "Perfect linear separability" → FALSE (no signal to separate)
+- ❌ "Early layers encode deception best" → FALSE (all layers fail)
+- ✅ "Response token 70% baseline" → TRUE (this was correctly evaluated)
 
-**Why This Matters**:
-- Validates CODI's continuous thought approach
-- Proves latent representations can exceed language-based outputs
-- Demonstrates importance of data quality validation
-- Shows early reasoning layers contain clearest semantic signals
+**Why This Is Important**:
+- **Negative result for CODI**: Continuous thoughts don't encode all properties equally
+- **Task-specific encoding**: Deception may require language-level representations
+- **Methodology matters**: Data leakage can reverse conclusions entirely
+- **Honesty in science**: Retracting false positives is critical
 
 **Deliverables**:
-- Corrected activation dataset: `probe_dataset_gpt2.json` (1000 samples, balanced)
-- Corrupted dataset backup: `probe_dataset_gpt2_CORRUPTED.json` (858 samples)
-- Linear probe results: `probe_results_gpt2.json` (18 probes, 76.11% mean)
-- Non-linear results: `probe_results_nonlinear_proper_split_gpt2.json`
-- Fixed extraction script: `extract_activations.py`
-- Summary document: `docs/experiments/gpt2_liars_bench_deception_CORRECTED_2025-10-25.md`
+- Valid results: `probe_results_proper_split_gpt2.json` (784 samples, 80/20 split)
+- Response baseline: `probe_results_response_gpt2.json` (70.5% accuracy)
+- Invalid results (DO NOT USE): `probe_results_gpt2.json` (contains data leakage)
+- Corrected documentation: `docs/experiments/gpt2_liars_bench_deception_METHODOLOGY_ERRORS_2025-10-25.md`
+- Old documentation (INVALID): `docs/experiments/gpt2_liars_bench_deception_CORRECTED_2025-10-25.md`
 
 **Lessons Learned**:
-1. **Always validate data quality** - 38pp difference due to bug
-2. **Check for duplicates and balance** - prevented publishing wrong results
-3. **Simple baselines matter** - linear probes (98%) beat complex MLPs (50%)
-4. **Early layers encode semantics** - later layers may transform/compress
+1. **Always use proper train/test split** - Never evaluate on training data
+2. **Sanity check extraordinary claims** - 98% should have triggered verification
+3. **Understand evaluation code** - Know difference between train/test accuracy
+4. **Negative results are valid** - Document failures, don't hide them
+5. **Code review critical** - This bug should have been caught earlier
 
-**Time Investment**: ~3 hours total
-- Bug discovery and analysis: 30 min
-- Re-extraction (1000 samples): 10 min
-- Re-training linear probes: 5 min
-- Non-linear probes with proper split: 45 min
-- Analysis and documentation: 90 min
+**Time Investment**: ~1 hour
+- Error discovery: 20 min
+- Analysis of proper split results: 20 min
+- Documentation correction: 20 min
 
-**Bottom Line**: A single Layer 4 continuous thought token achieves **98.10% deception detection** with a simple linear classifier - far exceeding response token baselines and validating CODI's latent reasoning approach.
+**Bottom Line**: The "98% deception detection" claim was **completely invalid** due to data leakage. Actual test performance is **48% (worse than random)**. Response tokens at **70.5%** are clearly superior. This is a **negative result** for continuous thoughts on deception detection.
 
 ---
 
