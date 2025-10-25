@@ -148,9 +148,9 @@ def create_comparison_chart(token_stats, output_dir, layer=8):
     plt.tight_layout()
 
     # Save
-    output_file = output_dir / 'token_importance_attention_comparison.png'
+    output_file = output_dir / f'token_importance_attention_comparison_L{layer}.png'
     plt.savefig(output_file, dpi=300, bbox_inches='tight')
-    plt.savefig(output_dir / 'token_importance_attention_comparison.pdf', bbox_inches='tight')
+    plt.savefig(output_dir / f'token_importance_attention_comparison_L{layer}.pdf', bbox_inches='tight')
     print(f'✓ Saved: {output_file.name}')
 
     return output_file
@@ -166,8 +166,8 @@ def main():
     print(f"  ✓ Loaded {len(ablation_results)} ablation results")
     print(f"  ✓ Loaded {len(attention_results)} attention samples")
 
-    # Compute statistics at Layer 8 (middle layer)
-    layer = 8
+    # Compute statistics at Layer 11 (last layer)
+    layer = 11
     print(f"\n📊 Computing token statistics at Layer {layer}...")
     token_stats = compute_token_stats(ablation_results, attention_results, layer=layer)
 
