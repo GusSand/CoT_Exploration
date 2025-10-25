@@ -130,3 +130,18 @@ src/experiments/gpt2_token_ablation/results/*.json
 src/experiments/gpt2_token_ablation/data/llama_activations_cot_dependent.json
 src/experiments/sae_error_analysis/data/error_analysis_dataset_l12_l16.json
 src/experiments/sae_error_analysis/sae_l12_l16/
+
+# Tuned Lens experiment - exclude large data and model files
+src/experiments/tuned_lens/data/*.pt
+src/experiments/tuned_lens/data/*.json
+src/experiments/tuned_lens/models/*.pt
+src/experiments/tuned_lens/results/*.pt
+src/experiments/tuned_lens/results/*.pkl
+src/experiments/tuned_lens/results/figures/*.png
+src/experiments/tuned_lens/results/figures/*.pdf
+src/experiments/tuned_lens/results/decoded_problems/*.json
+# Keep configuration and structure
+!src/experiments/tuned_lens/config.yaml
+!src/experiments/tuned_lens/data/.gitkeep
+!src/experiments/tuned_lens/models/.gitkeep
+!src/experiments/tuned_lens/results/.gitkeep
