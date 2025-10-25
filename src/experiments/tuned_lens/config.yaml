@@ -1,0 +1,246 @@
+# Tuned Lens for CODI - Configuration File
+# This file controls all experiment parameters
+
+# ==============================================================================
+# MODEL CONFIGURATION
+# ==============================================================================
+model:
+  name: "llama"  # Options: "llama" or "gpt2"
+  checkpoint_path: "~/codi_ckpt/llama_gsm8k/"  # Path to CODI checkpoint
+  hidden_size: 2048  # LLaMA: 2048, GPT-2: 768
+  num_layers: 16     # LLaMA: 16, GPT-2: 12
+  num_ct_tokens: 6   # Number of continuous thought tokens
+  vocab_size: 32000  # LLaMA: ~32000, GPT-2: 50257
+
+# ==============================================================================
+# DATA CONFIGURATION
+# ==============================================================================
+data:
+  # Source dataset (CoT-dependent problems)
+  dataset_path: "src/experiments/activation_patching/data/llama_cot_original_stratified_1000.json"
+
+  # Number of problems to use (set to -1 for all available)
+  num_problems: 1000
+
+  # Train/test split ratios
+  train_split: 0.8   # 80% for training
+  test_split: 0.2    # 20% for testing
+
+  # Random seed for reproducibility
+  random_seed: 42
+
+  # Layers to extract activations from (all layers by default)
+  # LLaMA: 0-15, GPT-2: 0-11
+  layers_to_collect: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+
+  # Representation to use for continuous thoughts
+  # Options: "pre_mlp" (before MLP transform) or "post_mlp" (after MLP transform)
+  representation: "post_mlp"  # Post-MLP is what feeds forward to next layer
+
+# ==============================================================================
+# TRAINING CONFIGURATION
+# ==============================================================================
+training:
+  # Optimizer settings
+  optimizer: "adamw"
+  learning_rate: 1.0e-3  # 0.001
+  weight_decay: 1.0e-4   # 0.0001
+
+  # Training loop settings
+  batch_size: 32
+  num_epochs: 50
+  early_stopping_patience: 5  # Stop if no improvement for N epochs
+  gradient_clip: 1.0          # Clip gradients to prevent instability
+
+  # Learning rate schedule
+  use_lr_schedule: true
+  lr_schedule_type: "cosine"  # Options: "cosine", "linear", "constant"
+
+  # Checkpoint settings
+  save_best_only: true
+  checkpoint_every_n_epochs: 10
+
+# ==============================================================================
+# TUNED LENS MODEL CONFIGURATION
+# ==============================================================================
+tuned_lens:
+  # Apply layer normalization before unembedding
+  use_layer_norm: true
+
+  # Initialize transformations near identity (W ≈ I, b ≈ 0)
+  # CRITICAL for convergence!
+  initialize_near_identity: true
+
+  # Position-specific transformations (Story 8 - advanced)
+  # If false: One transform per layer (shared across 6 positions)
+  # If true: Separate transform for each (layer, position) pair
+  position_specific: false
+
+  # Regularization
+  l2_penalty: 0.0  # L2 penalty on transform weights (increase if collapse occurs)
+
+# ==============================================================================
+# EVALUATION CONFIGURATION
+# ==============================================================================
+evaluation:
+  # Metrics to compute
+  metrics:
+    - "top1_accuracy"       # Top-1 prediction accuracy
+    - "top5_accuracy"       # Top-5 prediction accuracy
+    - "kl_divergence"       # KL divergence from target distribution
+    - "semantic_similarity" # Embedding cosine similarity
+
+  # Statistical tests
+  compute_significance: true  # Run paired t-tests
+  confidence_level: 0.95      # 95% confidence intervals
+
+  # Breakdown analysis
+  per_layer_metrics: true
+  per_position_metrics: true
+  per_difficulty_metrics: true
+
+# ==============================================================================
+# DECODING CONFIGURATION (Story 5)
+# ==============================================================================
+decoding:
+  # Number of problems to decode for interpretability analysis
+  num_problems_to_decode: 20
+
+  # Problems per difficulty level
+  num_per_difficulty: 5  # 5 × 4 difficulties = 20 total
+
+  # Top-K tokens to show for each position/layer
+  top_k_tokens: 5
+
+  # Output format
+  output_format: "json"  # Options: "json", "markdown", "text"
+
+  # Color coding for visualization
+  highlight_numbers: true
+  highlight_operators: true
+
+# ==============================================================================
+# OPERATION VERIFICATION CONFIGURATION (Story 6)
+# ==============================================================================
+operation_verification:
+  # Number of problems per operation type
+  num_addition_problems: 50
+  num_multiplication_problems: 50
+  num_mixed_problems: 50
+
+  # Target position and layer (based on previous findings)
+  target_layer: 8      # Layer 8 encodes operation type
+  target_position: 1   # Token 1 position
+
+  # Operation keywords for classification
+  addition_keywords: ["+", "add", "plus", "sum", "total", "more", "increase"]
+  multiplication_keywords: ["×", "*", "multiply", "times", "product", "each", "per"]
+
+# ==============================================================================
+# CAUSAL INTERVENTION CONFIGURATION (Story 7)
+# ==============================================================================
+causal_intervention:
+  # Positions to test (based on previous findings)
+  # Token 1: Operation encoding
+  # Token 4: Intermediate results
+  # Token 5: Final computation
+  positions_to_test: [1, 4, 5]
+
+  # Layers to test
+  layers_to_test: [8, 12, 15]  # Early, middle, late
+
+  # Number of test problems
+  num_test_problems: 100
+
+  # Intervention methods
+  methods:
+    - "tuned_lens"     # Replace with Tuned Lens decoded token
+    - "logit_lens"     # Replace with Logit Lens decoded token
+    - "random"         # Replace with random token (control)
+
+# ==============================================================================
+# WANDB INTEGRATION
+# ==============================================================================
+wandb:
+  # Enable/disable WandB logging
+  enabled: true
+
+  # Project and entity
+  project: "codi-tuned-lens"
+  entity: null  # Set to your WandB username/team, or null for default
+
+  # Run name (auto-generated if null)
+  run_name: null  # Format: "llama-postmlp-{timestamp}"
+
+  # Tags for organization
+  tags:
+    - "llama"
+    - "tuned-lens"
+    - "interpretability"
+    - "gsm8k"
+
+  # Logging frequency
+  log_interval: 10  # Log every N training batches
+  log_gradients: false  # Log gradient histograms (slower)
+  log_model: true   # Save model checkpoints to WandB
+
+  # What to log
+  log_training_metrics: true
+  log_evaluation_metrics: true
+  log_sample_predictions: true
+  log_visualizations: true
+
+# ==============================================================================
+# COMPUTE CONFIGURATION
+# ==============================================================================
+compute:
+  # Device selection
+  device: "cuda"  # Options: "cuda", "cpu", "auto"
+
+  # Mixed precision training
+  use_amp: false  # Automatic Mixed Precision (fp16)
+
+  # Memory optimization
+  clear_cache_every_n_batches: 10
+  max_batch_size_auto: true  # Auto-adjust batch size to fit GPU memory
+
+  # Parallelization
+  num_workers: 4  # DataLoader workers
+
+# ==============================================================================
+# OUTPUT CONFIGURATION
+# ==============================================================================
+output:
+  # Base output directory
+  output_dir: "src/experiments/tuned_lens/results"
+
+  # Subdirectories
+  models_dir: "src/experiments/tuned_lens/models"
+  figures_dir: "src/experiments/tuned_lens/results/figures"
+  decoded_problems_dir: "src/experiments/tuned_lens/results/decoded_problems"
+
+  # Output file names
+  train_data_file: "src/experiments/tuned_lens/data/train_data_{model}_{representation}.pt"
+  test_data_file: "src/experiments/tuned_lens/data/test_data_{model}_{representation}.pt"
+  best_model_file: "src/experiments/tuned_lens/models/tuned_lens_best_{model}_{representation}.pt"
+  final_model_file: "src/experiments/tuned_lens/models/tuned_lens_final_{model}_{representation}.pt"
+
+  # Logging
+  log_file: "src/experiments/tuned_lens/results/run_{timestamp}.log"
+  verbose: true  # Print detailed logs to console
+
+# ==============================================================================
+# DEBUGGING CONFIGURATION
+# ==============================================================================
+debug:
+  # Enable debug mode (uses small subset of data)
+  enabled: false
+
+  # Debug dataset size
+  num_debug_problems: 10
+  num_debug_epochs: 5
+
+  # Additional checks
+  check_gradients: false
+  check_activations: false
+  profile_memory: false
