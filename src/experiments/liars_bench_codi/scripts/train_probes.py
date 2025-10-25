@@ -35,26 +35,10 @@ def extract_features(samples, layer: str, token: int):
     X = []
     y = []
 
-    seen_questions = set()
-
-    for idx, sample in enumerate(samples):
-        # Structure: thoughts[layer] is a list (batch_size) of lists (num_tokens) of lists (hidden_size)
-        # Due to a bug in extraction, each sample contains the ENTIRE batch's activations
-        # We need to match each sample to its correct batch element based on index
-
-        # Skip duplicates (same question means same batch was stored multiple times)
-        if sample['question'] in seen_questions:
-            continue
-        seen_questions.add(sample['question'])
-
-        batch_data = sample['thoughts'][layer]
-
-        # Each batch has 16 elements, and we saved all 16 for each sample in that batch
-        # The sample index within the batch is idx % batch_size
-        batch_size = len(batch_data)
-        batch_elem_idx = idx % batch_size
-
-        activation = batch_data[batch_elem_idx][token]  # Get the correct batch element's token activation
+    for sample in samples:
+        # Structure: thoughts[layer] = [token0, token1, ..., token5]
+        # Each token is a 768-dim activation vector
+        activation = sample['thoughts'][layer][token]
         X.append(activation)
         y.append(1 if sample['is_honest'] else 0)
 

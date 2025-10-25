@@ -242,7 +242,7 @@ def extract_activations(
                         "question": examples[example_idx]['question'],
                         "answer": examples[example_idx]['answer'],
                         "is_honest": is_honest,
-                        "thoughts": token_activations  # {layer_name: [token0, token1, ..., token5]}
+                        "thoughts": {layer_name: token_activations[layer_name][b] for layer_name in layers.keys()}  # Only this sample's activations
                     })
 
         return results
