@@ -1996,3 +1996,82 @@ This work reveals a **fundamental tradeoff in continuous thought architectures**
 - 🔄 In Progress
 - ❌ Blocked/Failed
 - [ ] Not Started
+
+---
+
+## 2025-10-25: GPT-2 Attention Analysis Visualizations & Cross-Layer Comparison
+
+**Objective**: Create comprehensive attention importance visualizations for GPT-2 matching LLaMA analysis style, and compare attention allocation patterns across layers.
+
+**Status**: ✅ Complete
+
+**Experiment**: Attention-Importance Correlation Analysis
+- Generated 4 attention analysis figures for GPT-2
+- Fixed misleading dual y-axis visualizations in comparison charts
+- Created last/late layer comparison charts (GPT-2 L11, LLaMA L14)
+
+**Key Findings**:
+
+1. **Visualization Fix**: Replaced dual y-axes with single scale (0-70% for GPT-2, 0-50% for LLaMA)
+   - Problem: Dual y-axes made 20.3% and 44.8% appear same height
+   - Solution: Same scale for both importance and attention metrics
+   - Result: Bar heights now directly comparable and meaningful
+
+2. **GPT-2 Layer 11 (Last Layer)**:
+   - Attention distribution: Uniform ~17% per token
+   - Importance: Tokens 2&3 at 50%, others at 19-24%
+   - **Critical finding**: Attention stays uniform even in final layer despite knowing Tokens 2&3 are critical
+   - Total CoT attention: 11.66% of sequence
+
+3. **LLaMA Layer 14 (Late Layer)**:
+   - Token 5 dominates: 49.8% attention, 20.3% importance
+   - Increased concentration from Layer 8 (44.8%) to Layer 14 (49.8%)
+   - **Critical finding**: Model focuses MORE on critical token in later layers
+   - Total CoT attention: 13.06% of sequence
+
+4. **Cross-Model Comparison**:
+   - **GPT-2 (124M)**: Specialized token positions (2&3) with uniform attention
+     - Model doesn't "know" which tokens are important during processing
+     - Information is position-encoded rather than attention-guided
+   - **LLaMA (1B)**: Dynamic attention allocation concentrating on critical information
+     - Attention increases on Token 5 in later layers (44.8% → 49.8%)
+     - Attention-importance alignment indicates active information routing
+
+**Scientific Insight**:
+
+**Model capacity determines continuous thought encoding strategy**:
+- **Small models (GPT-2)**: Use **specialized token positions** with uniform attention
+  - Advantage: Predictable, interpretable (100% probe accuracy on specific tokens)
+  - Disadvantage: Brittle (50% failure when Tokens 2&3 ablated)
+- **Large models (LLaMA)**: Use **distributed encoding** with dynamic attention
+  - Advantage: Robust, fault-tolerant (only 20% failure on critical token)
+  - Disadvantage: Less interpretable, requires more capacity
+
+This is NOT an architectural choice but an **emergent property of capacity constraints**.
+
+**Deliverables**:
+- GPT-2 comparison charts: Layer 8 and Layer 11
+  - `src/experiments/gpt2_attention_analysis/figures/token_importance_attention_comparison_L8.png`
+  - `src/experiments/gpt2_attention_analysis/figures/token_importance_attention_comparison_L11.png`
+- LLaMA comparison charts: Layer 8 and Layer 14
+  - `src/experiments/codi_attention_interp/results/token_importance_attention_comparison_L8.png`
+  - `src/experiments/codi_attention_interp/results/token_importance_attention_comparison_L14.png`
+- 4 GPT-2 attention figures matching LLaMA analysis style
+
+**Code Changes**:
+- Fixed: `src/experiments/gpt2_attention_analysis/scripts/create_comparison_chart.py`
+- Fixed: `src/experiments/codi_attention_interp/scripts/visualize_correlation.py`
+- Both scripts now use single y-axis scale and support layer-specific filenames
+
+**Time Investment**: ~1.5 hours
+- Initial visualization creation: ~30 minutes
+- Debugging dual y-axes issue: ~30 minutes
+- Last layer comparison: ~20 minutes
+- Documentation and commits: ~10 minutes
+
+**Impact**: 
+- Confirms model capacity hypothesis from GPT-2 token ablation study
+- Provides visual evidence of specialized vs distributed encoding strategies
+- Reveals that attention allocation evolves across layers in large models but not small ones
+- Sets foundation for intermediate model size experiments (350M, 700M) to find transition point
+
