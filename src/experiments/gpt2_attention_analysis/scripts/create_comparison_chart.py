@@ -99,66 +99,68 @@ def compute_token_stats(ablation_results, attention_results, layer=8):
     return token_stats
 
 def create_comparison_chart(token_stats, output_dir, layer=8):
-    """Create bar chart comparing importance and attention."""
-    fig, ax = plt.subplots(figsize=(12, 7))
+    """Create bar chart comparing importance and attention using dual y-axes."""
+    fig, ax1 = plt.subplots(figsize=(12, 7))
 
     x = np.arange(6)
     width = 0.35
 
     # Get raw values
-    importance_vals = [s['importance'] for s in token_stats]
-    attention_vals = [s['attention'] for s in token_stats]
+    importance_vals = [s['importance'] * 100 for s in token_stats]  # Convert to percentage
+    attention_vals = [s['attention'] * 100 for s in token_stats]  # Convert to percentage
 
-    # Normalize for visualization
-    max_imp = max(importance_vals)
-    max_attn = max(attention_vals)
+    # Calculate total attention to continuous thought tokens
+    total_attention = sum(s['attention'] for s in token_stats)
+    attention_pct_of_total = [s['attention'] / total_attention * 100 for s in token_stats]
 
-    imp_normalized = [imp / max_imp for imp in importance_vals]
-    attn_normalized = [attn / max_attn for attn in attention_vals]
+    # Create first y-axis for importance
+    bars1 = ax1.bar(x - width/2, importance_vals, width,
+                    label='Importance (Ablation Impact)',
+                    color='#e74c3c', alpha=0.8, edgecolor='black', linewidth=1.5)
 
-    # Create bars
-    bars1 = ax.bar(x - width/2, imp_normalized, width,
-                   label='Importance (Failure Rate)',
-                   color='#e74c3c', alpha=0.8, edgecolor='black', linewidth=1.5)
-    bars2 = ax.bar(x + width/2, attn_normalized, width,
-                   label='Attention Weight',
-                   color='#3498db', alpha=0.8, edgecolor='black', linewidth=1.5)
+    ax1.set_xlabel('Token Position', fontsize=13, fontweight='bold')
+    ax1.set_ylabel('Importance (% accuracy drop when ablated)', fontsize=13, fontweight='bold', color='#e74c3c')
+    ax1.tick_params(axis='y', labelcolor='#e74c3c')
+    ax1.set_ylim(0, max(importance_vals) * 1.3)
 
-    # Add actual values on top of bars
-    for i, (imp_norm, attn_norm, stats_dict) in enumerate(zip(imp_normalized, attn_normalized, token_stats)):
+    # Create second y-axis for attention
+    ax2 = ax1.twinx()
+    bars2 = ax2.bar(x + width/2, attention_pct_of_total, width,
+                    label='Attention (% of total to CoT tokens)',
+                    color='#3498db', alpha=0.8, edgecolor='black', linewidth=1.5)
+
+    ax2.set_ylabel('Attention (% of attention to continuous thought tokens)', fontsize=13, fontweight='bold', color='#3498db')
+    ax2.tick_params(axis='y', labelcolor='#3498db')
+    ax2.set_ylim(0, max(attention_pct_of_total) * 1.3)
+
+    # Add values on top of bars
+    for i, stats_dict in enumerate(token_stats):
         # Importance percentage
-        ax.text(i - width/2, imp_norm + 0.03,
-                f'{stats_dict["importance"]*100:.1f}%',
-                ha='center', va='bottom', fontsize=10, fontweight='bold')
+        ax1.text(i - width/2, importance_vals[i] + max(importance_vals) * 0.03,
+                f'{importance_vals[i]:.1f}%',
+                ha='center', va='bottom', fontsize=10, fontweight='bold', color='#c0392b')
 
-        # Attention value
-        ax.text(i + width/2, attn_norm + 0.03,
-                f'{stats_dict["attention"]:.4f}',
-                ha='center', va='bottom', fontsize=10, fontweight='bold')
+        # Attention percentage of CoT total
+        ax2.text(i + width/2, attention_pct_of_total[i] + max(attention_pct_of_total) * 0.03,
+                f'{attention_pct_of_total[i]:.1f}%',
+                ha='center', va='bottom', fontsize=10, fontweight='bold', color='#2980b9')
 
-        # Add correlation coefficient below token label
-        sig = '***' if stats_dict['p_value'] < 0.001 else '**' if stats_dict['p_value'] < 0.01 else '*' if stats_dict['p_value'] < 0.05 else ''
-        ax.text(i, -0.15, f'r={stats_dict["correlation"]:+.2f}{sig}',
-                ha='center', va='top', fontsize=8, style='italic', color='gray')
+    # Set x-axis
+    ax1.set_xticks(x)
+    ax1.set_xticklabels([f'Token {i}' for i in range(6)], fontsize=11)
+    ax1.grid(True, alpha=0.3, axis='y')
 
-    # Labels and styling
-    ax.set_xlabel('Token Position', fontsize=13, fontweight='bold')
-    ax.set_ylabel('Normalized Value', fontsize=13, fontweight='bold')
-    ax.set_title(f'GPT-2 CODI: Token Importance vs Attention (Layer {layer})\n'
-                 f'Tokens 2 & 3 dominate both metrics (specialized encoding)',
-                 fontsize=14, fontweight='bold', pad=20)
-    ax.set_xticks(x)
-    ax.set_xticklabels([f'Token {i}' for i in range(6)], fontsize=11)
-    ax.legend(fontsize=12, loc='upper left', framealpha=0.95)
-    ax.grid(True, alpha=0.3, axis='y')
-    ax.set_ylim(0, 1.25)
+    # Title
+    fig.suptitle(f'GPT-2 CODI: Token Importance vs Attention Distribution (Layer {layer})\n'
+                 f'Total attention to CoT tokens: {total_attention*100:.2f}% | Tokens 2 & 3 are critical',
+                 fontsize=14, fontweight='bold', y=0.98)
 
-    # Add note about correlation
-    ax.text(0.98, 0.02, '* p<0.05, ** p<0.01, *** p<0.001',
-            transform=ax.transAxes, ha='right', va='bottom',
-            fontsize=8, style='italic', color='gray')
+    # Combined legend
+    lines1, labels1 = ax1.get_legend_handles_labels()
+    lines2, labels2 = ax2.get_legend_handles_labels()
+    ax1.legend(lines1 + lines2, labels1 + labels2, fontsize=11, loc='upper left', framealpha=0.95)
 
-    plt.tight_layout()
+    plt.tight_layout(rect=[0, 0, 1, 0.96])
 
     # Save
     output_file = output_dir / 'token_importance_attention_comparison.png'
@@ -184,15 +186,22 @@ def main():
     print(f"\n📊 Computing token statistics at Layer {layer}...")
     token_stats = compute_token_stats(ablation_results, attention_results, layer=layer)
 
+    # Calculate attention distribution
+    total_attention = sum(s['attention'] for s in token_stats)
+
     print("\n  Token Statistics:")
-    print("  " + "-"*70)
-    print(f"  {'Token':<8} {'Importance':<15} {'Attention':<15} {'Correlation':<15}")
-    print("  " + "-"*70)
+    print("  " + "-"*85)
+    print(f"  {'Token':<8} {'Importance':<15} {'Attention':<18} {'% of CoT Attn':<15} {'Correlation':<15}")
+    print("  " + "-"*85)
     for stats in token_stats:
         sig = '***' if stats['p_value'] < 0.001 else '**' if stats['p_value'] < 0.01 else '*' if stats['p_value'] < 0.05 else ''
+        attn_pct = (stats['attention'] / total_attention * 100) if total_attention > 0 else 0
         print(f"  Token {stats['token']:<3} {stats['importance']*100:>6.1f}%{'':<8} "
-              f"{stats['attention']:>8.4f}{'':<6} r={stats['correlation']:>+6.3f} {sig}")
-    print("  " + "-"*70)
+              f"{stats['attention']*100:>7.3f}%{'':<9} "
+              f"{attn_pct:>6.1f}%{'':<8} "
+              f"r={stats['correlation']:>+6.3f} {sig}")
+    print("  " + "-"*85)
+    print(f"  Total attention to CoT tokens: {total_attention*100:.3f}% of sequence attention")
 
     # Create visualization
     print("\n🎨 Creating comparison chart...")

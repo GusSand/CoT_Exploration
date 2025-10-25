@@ -141,6 +141,13 @@ When implementing features:
    - Teammates need access to latest results
    - Use proper .gitignore to exclude large model files and logs
 
+4. **Document any new dataset created:
+   - We have a file called DATA_INVENTORY.md where we keep track of all the datasets created. 
+   - Update it **ANY TIME** we create a new dataset
+   - make sure there's a hyperlink to the dataset 
+   - make sure you also document how to recreate it
+   - Document which experiment it was used for and how it was stratified it it was and how many items we have. 
+
 ## Maintaining This Document
 
 This document serves as a quick reference guide for the project. To maintain its usefulness:
