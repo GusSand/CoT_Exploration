@@ -165,7 +165,7 @@ Train a Sparse Autoencoder (SAE) on CODI continuous thought activations to:
 
 ### Documentation
 - `README.md` - Complete methodology & results
-- `docs/experiments/sae_pilot_2025-10-24.md` - This file
+- `docs/experiments/10-24_llama_gsm8k_sae_pilot.md` - This file
 
 ---
 

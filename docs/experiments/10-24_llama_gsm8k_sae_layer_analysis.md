@@ -500,7 +500,7 @@ weighted avg       0.67      0.67      0.67       183
 
 **Documentation**:
 - `docs/research_journal.md` (updated with entry 2025-10-24f)
-- `docs/experiments/sae_layer_analysis_2025-10-24.md` (this file)
+- `docs/experiments/10-24_llama_gsm8k_sae_layer_analysis.md` (this file)
 
 ### F. Time Breakdown
 

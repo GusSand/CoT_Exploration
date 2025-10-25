@@ -417,14 +417,14 @@ The HTML uses inline CSS. To customize:
 ### Where to Find More Information
 
 - **Implementation Details**: `section5_experiments/README.md`
-- **Experimental Findings**: `docs/experiments/section5_reproduction_2025-10-16.md`
+- **Experimental Findings**: `docs/experiments/10-16_gpt2_gsm8k_section5_reproduction.md`
 - **Research Journal**: `docs/research_journal.md`
 - **Original Paper**: `docs/codi.pdf` (Section 5, page 8-9)
 
 ### Questions About Results
 
 **Why are step accuracies so low (2-7%)?**
-- See detailed analysis in `docs/experiments/section5_reproduction_2025-10-16.md`
+- See detailed analysis in `docs/experiments/10-16_gpt2_gsm8k_section5_reproduction.md`
 - TL;DR: Likely measuring something different than the paper
 - Final answers are still correct (43.21% accuracy)
 - Suggests semantic vs. literal interpretation

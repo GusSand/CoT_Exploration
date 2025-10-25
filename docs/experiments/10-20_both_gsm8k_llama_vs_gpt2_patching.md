@@ -266,7 +266,7 @@ for _ in range(max_new_tokens):
   - 1-6 tokens: https://wandb.ai/gussand/codi-activation-patching (multiple runs)
 
 ### Documentation:
-- This report: `docs/experiments/llama_vs_gpt2_activation_patching_2025-10-20.md`
+- This report: `docs/experiments/10-20_both_gsm8k_llama_vs_gpt2_patching.md`
 - Research journal entry: `docs/research_journal.md` (2025-10-20 section)
 
 ---

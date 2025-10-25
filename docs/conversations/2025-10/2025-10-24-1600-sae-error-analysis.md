@@ -147,7 +147,7 @@ How long would it take to train an SAE on the llama model we are using on this A
 - `src/experiments/sae_error_analysis/results/*.png, *.pdf` - Visualizations
 
 **Documentation:**
-- `docs/experiments/sae_error_analysis_2025-10-24.md` - Comprehensive 500+ line report
+- `docs/experiments/10-24_llama_gsm8k_sae_error_analysis.md` - Comprehensive 500+ line report
 - `docs/research_journal.md` - Added section 2025-10-24e with high-level summary
 - `docs/DATA_INVENTORY.md` - Added section 4 for SAE error analysis dataset
 
@@ -316,7 +316,7 @@ python src/experiments/sae_error_analysis/3_analyze_error_patterns.py
 
 ## REFERENCES
 
-- **SAE Pilot Experiment:** `docs/experiments/sae_pilot_2025-10-24.md`
+- **SAE Pilot Experiment:** `docs/experiments/10-24_llama_gsm8k_sae_pilot.md`
 - **Operation Circuits:** `docs/experiments/operation_circuits_full_2025-10-23.md`
 - **Validation Results:** `src/experiments/activation_patching/validation_results_llama_gpt4_532.json`
 - **Research Journal:** `docs/research_journal.md` (section 2025-10-24e)

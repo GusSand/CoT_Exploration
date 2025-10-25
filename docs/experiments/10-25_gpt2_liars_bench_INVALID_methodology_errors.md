@@ -271,7 +271,7 @@ The finding that continuous thoughts fail at deception detection while succeedin
 - `/home/paperspace/dev/CoT_Exploration/src/experiments/liars_bench_codi/data/processed/probe_dataset_gpt2_clean.json` (784 samples)
 
 ### This Documentation
-- `/home/paperspace/dev/CoT_Exploration/docs/experiments/gpt2_liars_bench_deception_METHODOLOGY_ERRORS_2025-10-25.md`
+- `/home/paperspace/dev/CoT_Exploration/docs/experiments/10-25_gpt2_liars_bench_INVALID_methodology_errors.md`
 
 ---
 

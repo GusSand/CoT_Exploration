@@ -286,7 +286,7 @@ correctness = [abs(ref - dec) < 0.01 for ref, dec in zip(reference_results, deco
 - Log file: `section5_run.log`
 
 ### Documentation
-- This report: `docs/experiments/section5_reproduction_2025-10-16.md`
+- This report: `docs/experiments/10-16_gpt2_gsm8k_section5_reproduction.md`
 - Implementation guide: `section5_experiments/README.md`
 - Summary: `SECTION5_IMPLEMENTATION_SUMMARY.md`
 

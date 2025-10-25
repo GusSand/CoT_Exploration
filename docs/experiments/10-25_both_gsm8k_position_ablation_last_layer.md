@@ -327,4 +327,4 @@ This rejects the hypothesis that specific positions have special roles and confi
 **Documentation**:
 - Updated: `src/experiments/gpt2_token_ablation/EXPERIMENT_SUMMARY.md`
 - Updated: `docs/research_journal.md`
-- This file: `docs/experiments/position_ablation_last_layer_2025-10-25.md`
+- This file: `docs/experiments/10-25_both_gsm8k_position_ablation_last_layer.md`

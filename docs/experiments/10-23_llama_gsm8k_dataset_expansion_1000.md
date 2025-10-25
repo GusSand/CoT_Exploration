@@ -413,7 +413,7 @@ reasoning_steps = len(calc_blocks)
 
 ### Documentation
 - ✅ `docs/research_journal.md`: High-level entry
-- ✅ `docs/experiments/gsm8k_expansion_2025-10-23.md`: This detailed report
+- ✅ `docs/experiments/10-23_llama_gsm8k_dataset_expansion_1000.md`: This detailed report
 - ⏳ `docs/DATA_INVENTORY.md`: Update pending
 
 ---
@@ -493,7 +493,7 @@ jq 'group_by(.difficulty) | map({difficulty: .[0].difficulty, count: length})' \
 ```bash
 git add data/llama_cot_original_stratified_final.json
 git add expand_gsm8k_cot_dataset.py GSM8K_EXPANSION_GUIDE.md
-git add docs/research_journal.md docs/experiments/gsm8k_expansion_2025-10-23.md
+git add docs/research_journal.md docs/experiments/10-23_llama_gsm8k_dataset_expansion_1000.md
 git add docs/DATA_INVENTORY.md
 git commit -m "feat: Expand LLaMA CoT dataset to 1000+ problems with stratified distribution"
 git push
