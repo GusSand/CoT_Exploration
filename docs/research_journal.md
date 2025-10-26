@@ -2,6 +2,53 @@
 
 ## Experiment Log
 
+### 2025-10-26b: SAE Full Dataset Retraining - Validating Problem Diversity Hypothesis
+
+**Objective**: Retrain SAEs on full 7,473 GSM8K problem dataset to validate that insufficient problem diversity (not architecture) was causing low explained variance.
+
+**Status**: ✅ **COMPLETE** - Hypothesis confirmed with dramatic improvements (+88.6% for Position 0)
+
+**Motivation**:
+- Position 0 achieved only 37.4% EV with baseline (800 problems)
+- Suspected insufficient problem diversity (800 unique problems × 16 layers = limited variation)
+- Full GSM8K has 7,473 training problems = 7.5× more diversity
+
+**Approach**:
+1. Generated activations for all 7,473 GSM8K problems (16 minutes)
+2. Retrained identical SAE architecture (2048→2048, L1=0.0005)
+3. Compared metrics across baseline vs full dataset
+
+**Key Results**:
+
+**SAE Training Quality** (Full Dataset):
+| Position | Baseline EV | Full Dataset EV | Improvement | Death Rate | Status |
+|----------|-------------|-----------------|-------------|------------|--------|
+| 0 | 37.4% ❌ | **70.5%** ✅ | **+88.6%** | 8.6% | PASS |
+| 1 | 70.9% ✅ | 80.6% ✅ | +13.6% | 47.7% | PASS |
+| 2 | 71.0% ✅ | 80.9% ✅ | +13.9% | 62.2% | PASS |
+| 3 | 72.6% ✅ | 79.5% ✅ | +9.4% | 30.5% | PASS |
+| 4 | 66.2% ❌ | 77.0% ✅ | +16.4% | 11.4% | PASS |
+| 5 | 74.3% ✅ | 82.4% ✅ | +10.9% | 19.4% | PASS |
+
+- **Average EV improvement**: +20.0%
+- **All positions now ≥70% EV**: 6/6 (100%)
+- **Feature death rate reduced**: 66.2% → 30.0% (-54.7%)
+
+**Feature Interpretability** (Full Dataset):
+- Feature 1893 (Pos 3): Became more selective (320 → 28 top activations), still focuses on arithmetic operators
+- Feature 148 (Pos 1): Maintained consistent activation patterns, interpretability holds
+
+**Conclusion**:
+✅ **Problem diversity was the bottleneck**, not SAE architecture
+✅ All positions now meet quality thresholds for ablation experiments
+✅ Feature interpretability maintained/improved with full dataset
+
+**Detailed Documentation**: [10-26_codi_gsm8k_sae_full_dataset_retraining.md](experiments/10-26_codi_gsm8k_sae_full_dataset_retraining.md)
+
+**Time Investment**: ~2 hours (data generation + training + analysis)
+
+---
+
 ### 2025-10-26a: SAE CoT Decoder - Discovering Interpretable Features in Continuous Thoughts
 
 **Objective**: Decode CODI's continuous thought tokens into interpretable monosemantic features using Sparse Autoencoders (SAEs), enabling feature-CoT token correlation analysis.
