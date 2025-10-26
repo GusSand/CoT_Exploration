@@ -145,3 +145,13 @@ src/experiments/tuned_lens/results/decoded_problems/*.json
 !src/experiments/tuned_lens/data/.gitkeep
 !src/experiments/tuned_lens/models/.gitkeep
 !src/experiments/tuned_lens/results/.gitkeep
+
+# SAE CoT Decoder experiment - exclude large data and model files
+src/experiments/sae_cot_decoder/data/*.pt
+src/experiments/sae_cot_decoder/models/*.pt
+src/experiments/sae_cot_decoder/analysis/*.pt
+src/experiments/sae_cot_decoder/results/*.txt
+# Keep JSON analysis results and visualizations
+!src/experiments/sae_cot_decoder/analysis/*.json
+!src/experiments/sae_cot_decoder/analysis/*.md
+!src/experiments/sae_cot_decoder/analysis/*.png
