@@ -2705,3 +2705,73 @@ Actual:
 - **Quantifies the gap** - 10.77 percentage point difference
 - **Establishes baseline** - 70.50% is the ceiling for this task/model
 - **Informs future work** - suggests focusing on response tokens or hybrid approaches
+
+### 2025-10-26b: CoT Token Alignment - Training Tuned Lens on All Layers
+
+**Objective**: Train Tuned Lens to decode continuous thought hidden states into their corresponding Chain-of-Thought (CoT) tokens using a uniform split assignment strategy.
+
+**Status**: ✅ **COMPLETE** - Discovered strong position specialization with positions 2-3 showing 2.5× better performance
+
+**Motivation**:
+- Previous tuned lens targeting first response token achieved only ~18% accuracy
+- Continuous thought may encode intermediate reasoning steps (CoT tokens) rather than final output
+- Testing whether CT positions align with explicit reasoning process
+
+**Approach**:
+1. Created CoT alignment dataset with uniform split: N CoT tokens distributed across 6 CT positions
+2. Trained on ALL 16 layers (76,800 samples) vs previous layer-15-only (4,800 samples)
+3. Primary target = first CoT token assigned to each position
+4. Training: AdamW, LR=1e-3, batch=32, early stopping
+
+**Key Results**:
+
+**Overall Performance**:
+- Best Model: Epoch 3 (early stopping at epoch 8)
+- Top-1: 18.43%, Top-5: 45.65%, Top-10: 59.92%
+- Training time: 13m 15s
+
+**Performance by Position** (CRITICAL FINDING):
+| Position | Top-1 | Top-5 | Top-10 | Interpretation |
+|----------|-------|-------|--------|----------------|
+| 0 | **10.00%** | 31.56% | 48.03% | **Poorest** - Abstract representation |
+| 1 | 17.53% | 42.16% | 55.00% | Problem decomposition |
+| **2** | 22.47% | **60.06%** | **74.66%** | **Core reasoning** ⭐ |
+| **3** | **24.78%** | 49.25% | 64.84% | **Peak alignment** ⭐ |
+| 4 | 16.72% | 44.66% | 55.00% | Result aggregation |
+| 5 | 19.06% | 46.19% | 62.00% | Final answer prep |
+
+**Performance by Layer**:
+- Layer 9: 20.50% Top-1 (highest)
+- Layer 15: 20.17% Top-1, 65.50% Top-10
+- Relatively consistent (17-20%) across all layers
+
+**Comparison with Layer-15-Only**:
+- Layer 15 only: 19.24% Top-1, 64.39% Top-10
+- All layers: 18.43% Top-1, 59.92% Top-10
+- **Surprising**: 16× more data performed WORSE
+
+**Key Insights**:
+1. **Position specialization is real**: Positions 2-3 show 2.5× better performance than position 0
+2. **Middle positions encode concrete reasoning**: Positions 2-3 achieve 22-25% Top-1 accuracy
+3. **Uniform split is suboptimal**: Doesn't match observed position specialization
+4. **More data ≠ better**: Training on all layers underperformed single-layer training
+5. **Layer 9 anomaly**: Warrants further investigation
+
+**Limitations**:
+- Uniform split may not match actual CT encoding
+- Only uses first CoT token per position
+- All positions share same transformation
+- No position context in model
+
+**Next Steps**:
+- **Priority 1**: Position-specific transformations (separate W,b for each position)
+- **Priority 2**: Weighted CoT token assignment (more tokens to positions 2-3)
+- **Priority 3**: Multi-token target training
+
+**Files**: 
+- Detailed report: `docs/experiments/10-26_llama_gsm8k_cot_token_alignment.md`
+- Code: `src/experiments/tuned_lens/train_cot_alignment.py`
+- Model: `models/cot_alignment/tuned_lens_all_layers_best.pt`
+
+**Time**: ~2.5 hours
+
