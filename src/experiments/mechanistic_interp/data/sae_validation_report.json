@@ -1,0 +1,67 @@
+{
+  "validation_status": "STRUCTURE_CHECK_PASSED",
+  "note": "Full quality validation (EV, death rate, L0 norm) will be performed in MECH-03 on real continuous thoughts",
+  "models_validated": {
+    "0": {
+      "input_dim": 2048,
+      "n_features": 2048,
+      "l1_coefficient": 0.0005,
+      "model_parameters": 8392704,
+      "forward_pass_works": true,
+      "dummy_ev": -1.2903085960348566,
+      "dummy_l0": 1044.7000732421875,
+      "dummy_death_rate": 0.0
+    },
+    "1": {
+      "input_dim": 2048,
+      "n_features": 2048,
+      "l1_coefficient": 0.0005,
+      "model_parameters": 8392704,
+      "forward_pass_works": true,
+      "dummy_ev": -1.0353261360792883,
+      "dummy_l0": 992.1000366210938,
+      "dummy_death_rate": 0.0009765625
+    },
+    "2": {
+      "input_dim": 2048,
+      "n_features": 2048,
+      "l1_coefficient": 0.0005,
+      "model_parameters": 8392704,
+      "forward_pass_works": true,
+      "dummy_ev": -2.1286686963925905,
+      "dummy_l0": 1052.300048828125,
+      "dummy_death_rate": 0.0
+    },
+    "3": {
+      "input_dim": 2048,
+      "n_features": 2048,
+      "l1_coefficient": 0.0005,
+      "model_parameters": 8392704,
+      "forward_pass_works": true,
+      "dummy_ev": -1.9596722041537573,
+      "dummy_l0": 1025.5999755859375,
+      "dummy_death_rate": 0.0009765625
+    },
+    "4": {
+      "input_dim": 2048,
+      "n_features": 2048,
+      "l1_coefficient": 0.0005,
+      "model_parameters": 8392704,
+      "forward_pass_works": true,
+      "dummy_ev": -1.3294264719218272,
+      "dummy_l0": 962.0,
+      "dummy_death_rate": 0.00244140625
+    },
+    "5": {
+      "input_dim": 2048,
+      "n_features": 2048,
+      "l1_coefficient": 0.0005,
+      "model_parameters": 8392704,
+      "forward_pass_works": true,
+      "dummy_ev": -1.2463657475710455,
+      "dummy_l0": 962.7000122070312,
+      "dummy_death_rate": 0.00244140625
+    }
+  },
+  "timestamp": "2025-10-26T14:37:33.382129"
+}
