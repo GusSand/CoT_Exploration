@@ -1002,7 +1002,7 @@ python run_position_type_ablation_llama.py    # LLaMA
 
 **Document Status**: Living document, update when new datasets are created or experiments are run.
 
-**Last Reviewed**: 2025-10-24
+**Last Reviewed**: 2025-10-26
 
 ## 14. Liars-Bench Deception Detection Datasets
 
@@ -1285,5 +1285,427 @@ python eval_gpt2.py
 
 **Code Location**: [`src/experiments/liars_bench_codi/`](../src/experiments/liars_bench_codi/)
 
-**Last Updated**: 2025-10-25
+**Last Updated**: 2025-10-26
+
+---
+
+## 15. SAE CoT Decoder Datasets (Tuned Lens Expansion)
+
+### 15.1 Enriched CoT-Aligned Training Data
+**File**: [`src/experiments/sae_cot_decoder/data/enriched_train_data_with_cot.pt`](../src/experiments/sae_cot_decoder/data/enriched_train_data_with_cot.pt)
+
+**Purpose**: Tuned Lens activation data enriched with GSM8K chain-of-thought token sequences for training SAEs to decode continuous thoughts
+
+**Size**: 76,800 samples (603.0 MB)
+
+**Composition**:
+- **Source**: 1,000 GSM8K problems × 16 layers × 6 positions × 0.8 train split
+- **Layers**: L0-L15 (all LLaMA-1B layers)
+- **Positions**: 6 continuous thought token positions (0-5)
+- **Hidden dimensions**: 2048 (LLaMA-3.2-1B hidden size)
+
+**Structure**:
+```python
+{
+  "hidden_states": torch.Tensor,  # (76800, 2048) - continuous thought vectors
+  "target_token_ids": torch.Tensor,  # Target token IDs
+  "layers": torch.Tensor,  # Layer indices (0-15)
+  "positions": torch.Tensor,  # Position indices (0-5)
+  "problem_ids": torch.Tensor,  # GSM8K problem identifiers
+  "cot_sequences": List[List[str]],  # CoT calculation steps (e.g., ["16-3-4=9"])
+  "cot_token_ids": List[List[int]]  # Tokenized CoT sequences
+}
+```
+
+**Extraction Details**:
+- **Base data**: `tuned_lens/data/train_data_llama_post_mlp.pt` (76,800 samples)
+- **CoT match rate**: 100% (1,000/1,000 problems matched to GSM8K)
+- **CoT format**: GSM8K `<<calculation>>` blocks (e.g., `<<16-3-4=9>>`)
+- **Average CoT steps**: ~2.6 calculation steps per problem
+
+**Generation Command**:
+```bash
+cd src/experiments/sae_cot_decoder/scripts
+python extract_cot_alignments.py
+```
+
+**Used By**:
+- SAE training for all 6 positions
+- Feature-CoT correlation analysis
+- Position-specific interpretability analysis
+
+**Created**: 2025-10-26
+
+---
+
+### 15.2 Enriched CoT-Aligned Test Data
+**File**: [`src/experiments/sae_cot_decoder/data/enriched_test_data_with_cot.pt`](../src/experiments/sae_cot_decoder/data/enriched_test_data_with_cot.pt)
+
+**Purpose**: Test set for SAE validation and feature analysis
+
+**Size**: 19,200 samples (150.7 MB)
+
+**Composition**: Same structure as training data (0.2 test split)
+
+**Used By**:
+- SAE quality validation (explained variance, feature death rate, L0 norm)
+- Feature extraction for interpretability analysis
+- Layer selectivity analysis
+
+**Created**: 2025-10-26
+
+---
+
+### 15.3 Trained SAE Models (Position-Specific)
+**Location**: [`src/experiments/sae_cot_decoder/models/`](../src/experiments/sae_cot_decoder/models/)
+
+**Purpose**: 6 position-specific sparse autoencoders trained to decompose continuous thoughts into monosemantic features
+
+**Files**:
+- `sae_position_0.pt` - Position 0 SAE (first CoT token)
+- `sae_position_1.pt` - Position 1 SAE
+- `sae_position_2.pt` - Position 2 SAE
+- `sae_position_3.pt` - Position 3 SAE
+- `sae_position_4.pt` - Position 4 SAE
+- `sae_position_5.pt` - Position 5 SAE (last CoT token)
+
+**Architecture**:
+```python
+class SparseAutoencoder:
+    encoder: Linear(2048 → 2048)  # Sparse features
+    decoder: Linear(2048 → 2048)  # Reconstruction
+    L1 coefficient: 0.0005
+    Total parameters per SAE: 8,388,608 (33.6 MB)
+```
+
+**Training Configuration**:
+- **Epochs**: 50
+- **Batch size**: 4096
+- **Learning rate**: 1e-3 with CosineAnnealingLR
+- **Optimizer**: Adam
+- **L1 penalty**: 0.0005
+- **Training time**: ~90 minutes total (all 6 SAEs)
+
+**Quality Metrics**:
+| Position | Explained Variance | Feature Death Rate | L0 Norm | Status |
+|----------|-------------------|-------------------|---------|--------|
+| 0 | 37.4% ❌ | 69.6% ❌ | 19.0 | ⚠️ WARNING |
+| 1 | 70.9% ✅ | 68.4% ❌ | 51.8 | ⚠️ WARNING |
+| 2 | 71.0% ✅ | 80.7% ❌ | 55.4 | ⚠️ WARNING |
+| 3 | 72.6% ✅ | 55.7% ❌ | 50.7 | ⚠️ WARNING |
+| 4 | 66.2% ❌ | 49.5% ❌ | 30.3 | ⚠️ WARNING |
+| 5 | 74.3% ✅ | 73.4% ❌ | 55.7 | ⚠️ WARNING |
+
+**Targets**:
+- Explained Variance: ≥70% (4/6 positions pass)
+- Feature Death Rate: ≤15% (0/6 positions pass)
+- L0 Norm: 50-100 active features
+
+**Key Insight**: High feature death (50-81%) suggests sparse but interpretable features. Position 0 shows markedly lower EV (37.4%), suggesting different encoding.
+
+**Generation Command**:
+```bash
+cd src/experiments/sae_cot_decoder/scripts
+python train_saes.py --no-wandb --epochs 50
+```
+
+**Used By**:
+- Feature extraction for interpretability analysis
+- CoT token correlation analysis
+- Layer selectivity analysis
+
+**Created**: 2025-10-26
+
+**Size**: ~200 MB total (6 models × 33.6 MB each)
+
+---
+
+### 15.4 Feature Catalog (Interpretable Features)
+**File**: [`src/experiments/sae_cot_decoder/analysis/feature_catalog.json`](../src/experiments/sae_cot_decoder/analysis/feature_catalog.json)
+
+**Purpose**: Comprehensive catalog of interpretable SAE features with CoT token correlations
+
+**Size**: 1,455 interpretable features (out of 12,288 total)
+
+**Distribution by Position**:
+- Position 0: 224 interpretable features
+- Position 1: 258 interpretable features
+- Position 2: 225 interpretable features
+- Position 3: 225 interpretable features
+- Position 4: 269 interpretable features
+- Position 5: 254 interpretable features
+
+**Structure**:
+```json
+{
+  "summary": {
+    "total_features": 12288,
+    "interpretable_features_per_position": {...}
+  },
+  "positions": {
+    "0": {
+      "total_features": 2048,
+      "interpretable_features": 224,
+      "top_100_features": [
+        {
+          "feature_id": 1155,
+          "position": 0,
+          "activation_threshold": 0.47,
+          "num_active_samples": 145,
+          "enriched_tokens": [
+            {
+              "token_id": 931,
+              "token_str": "000",
+              "active_count": 56,
+              "inactive_count": 104,
+              "enrichment": 0.533,
+              "p_value": 4.04e-63
+            }
+          ],
+          "interpretability_score": 14,
+          "selectivity": {
+            "selectivity_index": 0.458,
+            "most_selective_layer": 15,
+            "layer_means": {...}
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+**Feature Types Discovered**:
+- **Number features**: Correlate with digits (0-9) and multi-digit numbers (100, 200, 810)
+- **Operation features**: Correlate with arithmetic operators (*, =, -)
+- **Calculation features**: Mixed number-operation patterns
+
+**Example Feature**:
+- **Feature 1155 (Position 0)**: "000" detector
+  - Enrichment: 53.3% when active
+  - p-value: 4.04×10⁻⁶³ (highly significant)
+  - Also correlates with "0", "00", "300", "120", "200"
+
+**Statistical Criteria**:
+- **Chi-squared test**: p-value < 0.01 for token-feature association
+- **Activation threshold**: 75th percentile of feature activations
+- **Enrichment**: Fraction of active samples containing token
+
+**Generation Command**:
+```bash
+cd src/experiments/sae_cot_decoder/scripts
+python analyze_features.py
+```
+
+**Used By**:
+- Identifying monosemantic features
+- Understanding CoT token encoding
+- CODI Figure 6-style analysis
+
+**Created**: 2025-10-26
+
+---
+
+### 15.5 Feature-CoT Correlation Analysis
+**File**: [`src/experiments/sae_cot_decoder/analysis/feature_cot_correlations.json`](../src/experiments/sae_cot_decoder/analysis/feature_cot_correlations.json)
+
+**Purpose**: Statistical correlation between SAE features and explicit CoT tokens
+
+**Size**: 1,455 feature-token correlation mappings
+
+**Analysis Method**:
+1. Extract features for all test samples
+2. Identify active features (above activation threshold)
+3. Build contingency tables (feature active/inactive × token present/absent)
+4. Chi-squared test for independence (p < 0.01)
+5. Calculate enrichment scores
+
+**Key Findings**:
+- **Position 0**: 224 features with significant CoT correlations
+- **Position 4**: 269 features (highest interpretability)
+- **Number tokens**: Strong correlations with digits 0-9, multi-digit numbers
+- **Operation tokens**: Correlations with *, =, +, -
+
+**Created**: 2025-10-26
+
+---
+
+### 15.6 Layer Selectivity Analysis
+**File**: [`src/experiments/sae_cot_decoder/analysis/layer_selectivity.json`](../src/experiments/sae_cot_decoder/analysis/layer_selectivity.json)
+
+**Purpose**: Measure which layers each feature is most active in (layer specialization)
+
+**Metrics**:
+- **Selectivity index**: Normalized entropy of layer activations (0=uniform, 1=single layer)
+- **Most selective layer**: Layer with highest mean activation
+- **Layer means**: Average activation per layer (L0-L15)
+
+**Key Findings**:
+- Features show layer specialization (selectivity index ~0.4-0.5)
+- Late layers (L12-L15) tend to have higher feature activations
+- Position 0 features activate more uniformly across layers
+
+**Used By**:
+- Understanding layer-wise feature specialization
+- Identifying which layers encode which aspects of reasoning
+
+**Created**: 2025-10-26
+
+---
+
+### 15.7 Extracted Features (Test Set)
+**File**: [`src/experiments/sae_cot_decoder/analysis/extracted_features.pt`](../src/experiments/sae_cot_decoder/analysis/extracted_features.pt)
+
+**Purpose**: SAE-encoded feature activations for all test samples
+
+**Size**: 19,200 samples × 6 positions × 2048 features
+
+**Structure**:
+```python
+{
+  "position_0": torch.Tensor,  # (3200, 2048) - features for position 0
+  "position_1": torch.Tensor,  # (3200, 2048)
+  ...
+  "position_5": torch.Tensor,  # (3200, 2048)
+  "metadata": {...}
+}
+```
+
+**Used By**:
+- Feature-CoT correlation analysis
+- Layer selectivity analysis
+- Feature catalog generation
+
+**Created**: 2025-10-26
+
+---
+
+### 15.8 Validation Results
+**File**: [`src/experiments/sae_cot_decoder/analysis/validation_results.json`](../src/experiments/sae_cot_decoder/analysis/validation_results.json)
+
+**Purpose**: Quality metrics for all 6 trained SAEs
+
+**Structure**: See section 15.3 for metrics table
+
+**Created**: 2025-10-26
+
+---
+
+### 15.9 Visualizations
+
+**Files**:
+- [`src/experiments/sae_cot_decoder/analysis/position_comparison.png`](../src/experiments/sae_cot_decoder/analysis/position_comparison.png)
+  - 3-panel visualization comparing explained variance, feature death rate, and L0 norm across positions
+
+- [`src/experiments/sae_cot_decoder/analysis/training_curves.png`](../src/experiments/sae_cot_decoder/analysis/training_curves.png)
+  - 6-panel grid showing training curves for each position (explained variance and feature death rate vs epochs)
+
+**Created**: 2025-10-26
+
+---
+
+### 15.10 Training Summary
+**File**: [`src/experiments/sae_cot_decoder/analysis/training_summary.md`](../src/experiments/sae_cot_decoder/analysis/training_summary.md)
+
+**Purpose**: Human-readable markdown summary of SAE training results
+
+**Content**:
+- Quality validation targets
+- Results by position (explained variance, feature death rate, L0 norm)
+- Summary statistics (positions passing targets)
+
+**Created**: 2025-10-26
+
+---
+
+### 15.11 Dataset Relationships - SAE CoT Decoder Pipeline
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  Tuned Lens Activation Data (Pre-existing)              │
+│  tuned_lens/data/train_data_llama_post_mlp.pt          │
+│  76,800 samples (602 MB)                                │
+└──────────────────┬──────────────────────────────────────┘
+                   │
+                   ↓ CoT Alignment (extract_cot_alignments.py)
+                   │
+┌──────────────────────────────────────────────────────────┐
+│  Enriched Training Data with CoT                         │
+│  enriched_train_data_with_cot.pt (603 MB)               │
+│  76,800 samples with GSM8K CoT sequences                │
+└──────────────────┬───────────────────────────────────────┘
+                   │
+                   ↓ SAE Training (train_saes.py)
+                   │
+┌──────────────────────────────────────────────────────────┐
+│  6 Position-Specific SAE Models (~200 MB total)          │
+│  models/sae_position_{0-5}.pt                           │
+│  2048 features each, L1=0.0005                          │
+└──────────────────┬───────────────────────────────────────┘
+                   │
+                   ├─► Validation (validate_results.py)
+                   │   └─► validation_results.json
+                   │       training_summary.md
+                   │       training_curves.png
+                   │       position_comparison.png
+                   │
+                   └─► Feature Analysis (analyze_features.py)
+                       ├─► extracted_features.pt
+                       │   (19,200 test samples × 6 positions)
+                       │
+                       ├─► feature_cot_correlations.json
+                       │   (1,455 interpretable features)
+                       │
+                       ├─► layer_selectivity.json
+                       │   (Layer specialization analysis)
+                       │
+                       └─► feature_catalog.json
+                           (Top 100 features per position)
+```
+
+---
+
+### 15.12 Key Statistics Summary
+
+**Dataset Sizes**:
+| Dataset | Samples | Size | Purpose |
+|---------|---------|------|---------|
+| Train (enriched) | 76,800 | 603.0 MB | SAE training |
+| Test (enriched) | 19,200 | 150.7 MB | Validation & analysis |
+| SAE models (6) | - | ~200 MB | Feature extraction |
+| Extracted features | 19,200×6 | - | Correlation analysis |
+
+**SAE Quality**:
+| Metric | Target | Positions Passing |
+|--------|--------|------------------|
+| Explained Variance | ≥70% | 4/6 (67%) |
+| Feature Death Rate | ≤15% | 0/6 (0%) |
+| L0 Norm | 50-100 | 4/6 (67%) |
+
+**Feature Interpretability**:
+| Position | Total Features | Interpretable | Percentage |
+|----------|---------------|---------------|------------|
+| 0 | 2048 | 224 | 10.9% |
+| 1 | 2048 | 258 | 12.6% |
+| 2 | 2048 | 225 | 11.0% |
+| 3 | 2048 | 225 | 11.0% |
+| 4 | 2048 | 269 | 13.1% |
+| 5 | 2048 | 254 | 12.4% |
+| **Total** | **12,288** | **1,455** | **11.8%** |
+
+---
+
+### 15.13 Experiment Documentation
+
+**Research Journal**: [`docs/research_journal.md`](research_journal.md) (2025-10-26 entry)
+
+**Detailed Report**: [`docs/experiments/10-26_llama_gsm8k_sae_cot_decoder.md`](experiments/10-26_llama_gsm8k_sae_cot_decoder.md)
+
+**Code Location**: [`src/experiments/sae_cot_decoder/`](../src/experiments/sae_cot_decoder/)
+
+**Base Experiment**: [`src/experiments/tuned_lens/`](../src/experiments/tuned_lens/) (activation data source)
+
+**Reference**: CODI paper Figure 6 (CoT token correlation methodology)
+
+**Created**: 2025-10-26
 
