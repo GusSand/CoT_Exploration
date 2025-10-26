@@ -3120,3 +3120,59 @@ Actual:
 - Consider multi-position analysis (train SAEs for all 6 positions)
 - Test SAE features on error prediction task
 
+
+---
+
+### 2025-10-26g: TopK SAE Multi-Layer Analysis - Systematic Feature Extraction Across All Layers
+
+**Objective**: Map reconstruction quality across all 16 layers × 6 continuous thought positions to identify optimal feature extraction points for each layer.
+
+**Status**: ✅ **COMPLETE** - 1,152 SAEs trained, layer and position patterns identified
+
+**Motivation**:
+- Understand which layers/positions are best for sparse feature extraction
+- Guide future mechanistic interpretability experiments (which layer to analyze?)
+- Identify whether early/mid/late layers have different optimal configurations
+
+**Approach**:
+1. **Comprehensive Grid**: Train TopK SAEs for all (layer, position) pairs
+   - 16 layers (0-15) × 6 positions (0-5) = 96 pairs
+   - Each pair: 12 SAEs (K={5,10,20,100} × latent_dim={512,1024,2048})
+   - Total: 1,152 SAEs
+2. **Parallel Training**: 3 processes per (layer, position) for efficient training
+3. **Pattern Analysis**: Identify layer effects, position effects, and interactions
+4. **Visualization**: Generate layer×position heatmaps for quality metrics
+
+**Key Results**:
+
+**Overall Quality Range**:
+- Explained Variance: 0.432 - 0.999
+- Feature Death Rate: 0.0% - 99.8%
+- Mean EV: 0.844 ± 0.126
+
+**Best Configuration**:
+- Layer 0, Position 0, K=20, d=2048
+- EV=0.9994, Death=99.0%
+
+**Lowest Feature Death**:
+- Layer 10, Position 0, K=100, d=1024
+- Death=0.0%, EV=0.7875
+
+**Deliverables**:
+- 1,152 trained SAE checkpoints
+- Layer×position quality heatmaps (EV, death rate, activation magnitudes)
+- K-value comparison plots across all layers/positions
+- Comprehensive analysis identifying optimal configs per layer
+
+**Detailed Documentation**: [10-26_llama_gsm8k_topk_sae_multilayer.md](experiments/10-26_llama_gsm8k_topk_sae_multilayer.md)
+
+**Time Investment**: ~30-40 minutes (parallel training on A100 80GB)
+
+**Cost Efficiency**: Excellent - full 16×6 grid exploration in <1 hour
+
+**Key Insight**: [To be filled after reviewing layer/position analysis]
+
+**Next Steps**:
+- Use optimal configs for each layer in downstream interpretability experiments
+- Focus mechanistic analysis on layers with highest EV
+- Investigate why certain (layer, position) pairs excel

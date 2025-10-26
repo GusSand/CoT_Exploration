@@ -1,0 +1,177 @@
+================================================================================================
+TopK SAE Multi-Layer Experiment - Completion Script
+================================================================================================
+
+Waiting for training to complete...
+
+    Progress: 38/96 pairs complete
+    Progress: 42/96 pairs complete
+    Progress: 45/96 pairs complete
+    Progress: 48/96 pairs complete
+    Progress: 51/96 pairs complete
+    Progress: 54/96 pairs complete
+    Progress: 57/96 pairs complete
+    Progress: 60/96 pairs complete
+    Progress: 63/96 pairs complete
+    Progress: 66/96 pairs complete
+    Progress: 70/96 pairs complete
+    Progress: 73/96 pairs complete
+    Progress: 76/96 pairs complete
+    Progress: 79/96 pairs complete
+    Progress: 82/96 pairs complete
+    Progress: 85/96 pairs complete
+    Progress: 88/96 pairs complete
+    Progress: 91/96 pairs complete
+    Progress: 95/96 pairs complete
+✓ Training complete!
+
+================================================================================================
+Step 1: Analysis
+================================================================================================
+
+Loading all SAE metrics...
+
+Loaded 1152 SAE configurations
+  Layers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+  Positions: [0, 1, 2, 3, 4, 5]
+  K values: [5, 10, 20, 100]
+  Latent dims: [512, 1024, 2048]
+
+================================================================================
+LAYER EFFECTS (averaged across positions, K=20, d=1024)
+================================================================================
+      explained_variance          ... reconstruction_loss        
+                    mean     std  ...                mean     std
+layer                             ...                            
+0                 0.9666  0.0171  ...              0.0132  0.0080
+1                 0.9676  0.0125  ...              0.0108  0.0067
+2                 0.9679  0.0139  ...              0.0086  0.0058
+3                 0.9649  0.0166  ...              0.0076  0.0051
+4                 0.9572  0.0141  ...              0.0067  0.0047
+5                 0.9544  0.0127  ...              0.0055  0.0036
+6                 0.9289  0.0092  ...              0.0063  0.0034
+7                 0.8996  0.0101  ...              0.0083  0.0041
+8                 0.8489  0.0327  ...              0.0127  0.0043
+9                 0.8271  0.0524  ...              0.0179  0.0051
+10                0.8150  0.0622  ...              0.0214  0.0048
+11                0.7892  0.0786  ...              0.0318  0.0046
+12                0.7712  0.0836  ...              0.0435  0.0049
+13                0.7712  0.0904  ...              0.0600  0.0054
+14                0.7518  0.0811  ...              0.0930  0.0146
+15                0.6801  0.0419  ...              1.4829  0.2970
+
+[16 rows x 6 columns]
+
+Best layer (EV): 2
+Worst layer (EV): 15
+
+================================================================================
+POSITION EFFECTS (averaged across layers, K=20, d=1024)
+================================================================================
+         explained_variance          ... reconstruction_loss        
+                       mean     std  ...                mean     std
+position                             ...                            
+0                    0.8193  0.1570  ...              0.1433  0.4962
+1                    0.8701  0.0889  ...              0.1148  0.3479
+2                    0.8855  0.0719  ...              0.1089  0.3280
+3                    0.8835  0.0753  ...              0.1068  0.3379
+4                    0.8496  0.1288  ...              0.1207  0.4027
+5                    0.8899  0.0639  ...              0.0918  0.2816
+
+[6 rows x 6 columns]
+
+Best position (EV): 5
+Worst position (EV): 0
+
+================================================================================
+LAYER × POSITION MATRIX (EV for K=20, d=1024)
+================================================================================
+position      0      1      2      3      4      5
+layer                                             
+0         0.995  0.956  0.956  0.954  0.981  0.957
+1         0.986  0.955  0.960  0.964  0.980  0.961
+2         0.985  0.959  0.957  0.962  0.986  0.958
+3         0.989  0.957  0.953  0.961  0.981  0.947
+4         0.973  0.946  0.944  0.953  0.977  0.950
+5         0.973  0.949  0.944  0.949  0.968  0.944
+6         0.919  0.935  0.929  0.928  0.943  0.919
+7         0.889  0.911  0.901  0.895  0.912  0.889
+8         0.787  0.869  0.867  0.861  0.839  0.871
+9         0.732  0.843  0.863  0.857  0.800  0.867
+10        0.709  0.835  0.862  0.847  0.772  0.865
+11        0.665  0.807  0.849  0.836  0.721  0.858
+12        0.644  0.782  0.832  0.832  0.694  0.843
+13        0.635  0.783  0.842  0.828  0.687  0.853
+14        0.626  0.754  0.809  0.811  0.685  0.827
+15        0.604  0.681  0.698  0.698  0.670  0.728
+
+Best (layer, position): (0, 0) - EV=0.9946
+
+================================================================================
+K VALUE EFFECTS (averaged across all layers/positions, d=1024)
+================================================================================
+    explained_variance                  ... feature_death_rate                
+                  mean     std     min  ...                std     min     max
+k                                       ...                                   
+5               0.7690  0.1413  0.4824  ...             0.0592  0.6904  0.9951
+10              0.8287  0.1199  0.5586  ...             0.1128  0.5059  0.9902
+20              0.8663  0.1036  0.6043  ...             0.1773  0.2695  0.9795
+100             0.9187  0.0811  0.6843  ...             0.2009  0.0000  0.8916
+
+[4 rows x 8 columns]
+
+Summary saved to: src/experiments/topk_grid_pilot/results/analysis_summary.json
+================================================================================
+Analysis complete!
+================================================================================
+
+================================================================================================
+Step 2: Visualization
+================================================================================================
+
+================================================================================
+Layer × Position Heatmap Generation
+================================================================================
+
+Loading all SAE metrics...
+  Loaded 1152 SAE configurations
+
+Generating individual heatmaps (K=20, d=1024)...
+  Saved: src/experiments/topk_grid_pilot/results/layer_position_explained_variance.png
+  Saved: src/experiments/topk_grid_pilot/results/layer_position_feature_death.png
+  Saved: src/experiments/topk_grid_pilot/results/layer_position_mean_activation.png
+  Saved: src/experiments/topk_grid_pilot/results/layer_position_reconstruction_loss.png
+
+Generating K comparison plots (d=1024)...
+  Saved: src/experiments/topk_grid_pilot/results/layer_position_all_k_ev.png
+  Saved: src/experiments/topk_grid_pilot/results/layer_position_all_k_death.png
+
+================================================================================
+Visualization complete!
+================================================================================
+
+================================================================================================
+Step 3: Documentation
+================================================================================================
+
+================================================================================
+Updating Documentation
+================================================================================
+
+Loading analysis summary...
+  Total SAEs: 1152
+
+Updating research journal...
+✓ Updated research journal: docs/research_journal.md
+
+Creating detailed experiment report...
+✓ Created detailed report: docs/experiments/10-26_llama_gsm8k_topk_sae_multilayer.md
+
+================================================================================
+Documentation update complete!
+================================================================================
+
+================================================================================================
+Step 4: Git Commit & Push
+================================================================================================
+

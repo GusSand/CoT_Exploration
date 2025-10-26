@@ -199,7 +199,7 @@ def main():
             metrics['epochs'] = args.epochs
 
             # Save checkpoint
-            checkpoint_path = output_dir / f'pos{args.position}_d{latent_dim}_k{k}.pt'
+            checkpoint_path = output_dir / f'pos{args.position}_layer{args.layer}_d{latent_dim}_k{k}.pt'
             torch.save({
                 'model_state_dict': model.state_dict(),
                 'config': {
@@ -226,7 +226,7 @@ def main():
             print()
 
     # Save results
-    results_path = output_dir / f'grid_metrics_latent{args.latent_dim if args.latent_dim else "all"}.json'
+    results_path = output_dir / f'grid_metrics_pos{args.position}_layer{args.layer}_latent{args.latent_dim if args.latent_dim else "all"}.json'
     with open(results_path, 'w') as f:
         json.dump({
             'metadata': {
