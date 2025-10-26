@@ -2822,3 +2822,62 @@ Actual:
 
 **Time**: ~2.5 hours
 
+
+### 2025-10-26c: Position-Specific Tuned Lens (Lite) - NEGATIVE RESULT
+
+**Objective**: Test whether position-specific affine transformations for critical layers can address the 2.5× performance gap between CT positions (10% vs 25% Top-1).
+
+**Status**: ✅ **COMPLETE** - Negative result: only 1-2% improvement, not worth added complexity
+
+**Motivation**:
+- Previous CoT alignment showed dramatic position differences (position 0: 10% vs position 3: 24.78%)
+- Hypothesis: Positions encode different information, requiring position-specific transformations
+
+**Approach**:
+- **Lite version**: Position-specific transforms only for critical layers [6, 9, 14, 15]
+- Critical layers: 4 layers × 6 positions = 24 transform sets (~100M params)
+- Non-critical layers: 12 shared transforms (~50M params)
+- Total: ~150M parameters (vs 403M for full, vs ~67M for baseline)
+
+**Key Results**:
+
+| Metric | Position-Specific | Baseline | Improvement |
+|--------|------------------|----------|-------------|
+| Top-1 | 19.76% | 18.43% | +1.33% |
+| Top-5 | 47.51% | 45.65% | +1.86% |
+| Top-10 | 61.28% | 59.92% | +1.36% |
+| Val Loss | 3.5909 | 3.9027 | -8.0% |
+| Params | 151M | ~67M | +2.25× |
+
+**Training**:
+- Best model: Epoch 1 (early stopping at epoch 6)
+- Training time: 11.5 minutes
+- Immediate overfitting: val loss increased from epoch 1
+
+**Conclusions**:
+1. ❌ **Minimal improvement**: Only 1-2% gains across all metrics
+2. ❌ **Poor ROI**: 2.25× parameters for 1-2% is not worth it
+3. ❌ **Did not solve position gap**: 2.5× difference remains
+4. ✓ **Ruled out one hypothesis**: Position-specific transforms alone don't help
+5. ✓ **Saved time**: Lite version avoided wasting 4+ hours on full implementation
+
+**Why It Failed**:
+- Wrong critical layers (not where position patterns emerge)
+- Insufficient scope (only 4/16 layers)
+- Unembedding bottleneck (shared across positions)
+- Fundamental data issue (uniform split doesn't match CT encoding)
+
+**Lessons Learned**:
+- Test hypotheses cheaply first (lite version was right call)
+- Immediate overfitting signals wrong direction, not insufficient capacity
+- Marginal gains (~1-2%) often not worth complexity
+- Skepticism was justified
+
+**Files**:
+- Detailed report: `docs/experiments/10-26_llama_gsm8k_position_specific_tuned_lens.md`
+- Code: `src/experiments/tuned_lens/position_specific_model.py`, `train_position_specific.py`
+- Model: `models/position_specific/position_specific_best.pt`
+
+**Time**: ~30 minutes
+
+**Recommendation**: Do NOT pursue position-specific approaches further. Consider alternative strategies like weighted CoT assignment or position-specific unembedding instead.
