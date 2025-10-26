@@ -1,136 +1,213 @@
 """
-Create detailed visualizations for specific high-value features.
-
-This script generates feature detail plots showing token enrichment and
-statistical significance for user-specified features.
+Visualize specific features from full dataset SAE models.
+Creates detailed activation and token correlation visualizations.
 """
-
+import torch
 import json
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.pyplot as plt
 from pathlib import Path
+from collections import Counter
+from transformers import AutoTokenizer
+import sys
+
+sys.path.append(str(Path(__file__).parent.parent.parent / "operation_circuits"))
+from sae_model import SparseAutoencoder
 
 # Paths
 BASE_DIR = Path(__file__).parent.parent
+MODELS_DIR = BASE_DIR / "models_full_dataset"
 ANALYSIS_DIR = BASE_DIR / "analysis"
-VIZ_DIR = ANALYSIS_DIR / "visualizations"
-VIZ_DIR.mkdir(exist_ok=True)
+VIZ_DIR = ANALYSIS_DIR / "visualizations" / "full_dataset_7473_samples"
+VIZ_DIR.mkdir(exist_ok=True, parents=True)
 
-# Load catalog
-print("Loading feature catalog...")
-with open(ANALYSIS_DIR / "feature_catalog.json", "r") as f:
+# Device
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+print(f"Using device: {device}")
+
+# Load tokenizer
+print("Loading tokenizer...")
+tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.2-1B-Instruct")
+
+# Load test data
+print("Loading test data...")
+test_data_path = BASE_DIR / "results" / "enriched_test_data_with_cot.pt"
+test_data = torch.load(test_data_path, weights_only=False)
+activations = test_data['hidden_states'].to(device)
+metadata = test_data['metadata']
+
+# Load feature catalog
+catalog_path = ANALYSIS_DIR / "feature_catalog_full_dataset.json"
+with open(catalog_path) as f:
     catalog = json.load(f)
 
-def create_feature_detail_plot(position, feature_id, max_tokens=10):
-    """Create detailed visualization for a specific feature.
+print(f"✓ Loaded {len(activations)} test samples")
 
-    Args:
-        position: Position index (0-5)
-        feature_id: Feature ID to visualize
-        max_tokens: Number of top tokens to show
-    """
-    # Find the feature in catalog
-    pos_features = catalog["positions"][str(position)]["top_100_features"]
 
-    feature = None
-    for feat in pos_features:
-        if feat["feature_id"] == feature_id:
-            feature = feat
-            break
+def visualize_feature(position, feature_id):
+    """Create detailed visualization for a specific feature."""
+    print(f"\n{'='*80}")
+    print(f"VISUALIZING POSITION {position}, FEATURE {feature_id}")
+    print(f"{'='*80}")
 
-    if not feature:
-        print(f"⚠️  Feature {feature_id} not found in Position {position}")
-        return
+    # Load SAE model
+    model_path = MODELS_DIR / f"pos_{position}_final.pt"
+    sae = SparseAutoencoder(input_dim=2048, n_features=2048, l1_coefficient=0.0005).to(device)
+    sae.load_state_dict(torch.load(model_path, map_location=device))
+    sae.eval()
 
-    # Extract token data
-    tokens = []
-    enrichments = []
-    p_values = []
+    # Filter samples for this position
+    pos_indices = [i for i, p in enumerate(metadata['positions']) if p == position]
+    pos_activations = activations[pos_indices]
+    pos_cot_token_ids = [metadata['cot_token_ids'][i] for i in pos_indices]
 
-    for token_info in feature["enriched_tokens"][:max_tokens]:
-        tokens.append(token_info["token_str"])
-        enrichments.append(token_info["enrichment"] * 100)  # Convert to percentage
-        p_values.append(token_info["p_value"])
+    print(f"  Analyzing {len(pos_activations)} samples from position {position}")
 
-    # Create figure with two subplots
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
+    # Extract features
+    with torch.no_grad():
+        _, features = sae(pos_activations)
 
-    # Subplot 1: Enrichment percentages
-    y_pos = np.arange(len(tokens))
+    # Get activations for this specific feature
+    feature_acts = features[:, feature_id].cpu().numpy()
 
-    # Color bars by enrichment level
-    colors1 = plt.cm.YlOrRd(np.array(enrichments) / max(enrichments))
+    # Find top activating samples
+    threshold = np.percentile(feature_acts, 90)
+    top_samples = np.where(feature_acts > threshold)[0]
 
-    bars1 = ax1.barh(y_pos, enrichments, color=colors1)
-    ax1.set_yticks(y_pos)
-    ax1.set_yticklabels([f"'{t}'" for t in tokens])
-    ax1.set_xlabel('Enrichment (%)', fontsize=12)
-    ax1.set_title(f'Feature {feature_id} (Position {position})\nToken Enrichment',
-                  fontsize=14, fontweight='bold')
-    ax1.grid(axis='x', alpha=0.3)
+    print(f"  Top activating samples (90th percentile): {len(top_samples)}")
+    print(f"  Threshold: {threshold:.4f}")
 
-    # Add value labels on bars
-    for i, (bar, val) in enumerate(zip(bars1, enrichments)):
-        ax1.text(val + max(enrichments)*0.02, bar.get_y() + bar.get_height()/2,
-                f'{val:.1f}%', va='center', fontsize=10)
+    # Count tokens in top activating samples
+    token_counts_top = Counter()
+    for sample_idx in top_samples:
+        tokens = pos_cot_token_ids[sample_idx]
+        if isinstance(tokens, list):
+            for token in tokens:
+                token_counts_top[token] += 1
 
-    # Subplot 2: Statistical significance
-    # Convert p-values to -log10(p) for visualization
-    neg_log_p = [-np.log10(max(p, 1e-300)) for p in p_values]
+    # Count tokens in all samples
+    token_counts_all = Counter()
+    for tokens in pos_cot_token_ids:
+        if isinstance(tokens, list):
+            for token in tokens:
+                token_counts_all[token] += 1
 
-    # Color bars by significance
-    colors2 = plt.cm.RdPu(np.array(neg_log_p) / max(neg_log_p))
+    # Calculate enrichment
+    enriched_tokens = []
+    for token, count_top in token_counts_top.most_common(15):
+        count_all = token_counts_all[token]
+        freq_top = count_top / len(top_samples)
+        freq_all = count_all / len(pos_activations)
+        enrichment = freq_top / freq_all if freq_all > 0 else 0
 
-    bars2 = ax2.barh(y_pos, neg_log_p, color=colors2)
-    ax2.set_yticks(y_pos)
-    ax2.set_yticklabels([f"'{t}'" for t in tokens])
-    ax2.set_xlabel('-log10(p-value)', fontsize=12)
-    ax2.set_title('Statistical Significance\n(Higher = Stronger Association)',
-                  fontsize=14, fontweight='bold')
+        token_str = tokenizer.decode([token]) if isinstance(token, int) else str(token)
+        enriched_tokens.append({
+            "token": token_str,
+            "enrichment": enrichment,
+            "count_top": count_top,
+            "freq_top": freq_top
+        })
+
+    # Create visualization
+    fig = plt.figure(figsize=(16, 10))
+    gs = fig.add_gridspec(3, 2, hspace=0.3, wspace=0.3)
+
+    # 1. Activation distribution
+    ax1 = fig.add_subplot(gs[0, :])
+    ax1.hist(feature_acts, bins=50, alpha=0.7, color='steelblue', edgecolor='black')
+    ax1.axvline(threshold, color='red', linestyle='--', linewidth=2,
+               label=f'90th percentile: {threshold:.3f}')
+    ax1.set_xlabel('Feature Activation', fontsize=12, fontweight='bold')
+    ax1.set_ylabel('Frequency', fontsize=12, fontweight='bold')
+    ax1.set_title(f'Position {position}, Feature {feature_id}: Activation Distribution',
+                 fontsize=14, fontweight='bold')
+    ax1.legend(fontsize=10)
+    ax1.grid(True, alpha=0.3)
+
+    # 2. Token enrichment
+    ax2 = fig.add_subplot(gs[1, 0])
+    tokens = [t['token'] for t in enriched_tokens[:10]]
+    enrichments = [t['enrichment'] * 100 for t in enriched_tokens[:10]]
+
+    bars = ax2.barh(range(len(tokens)), enrichments, color='coral', alpha=0.8, edgecolor='black')
+    ax2.set_yticks(range(len(tokens)))
+    ax2.set_yticklabels([f"'{t}'" for t in tokens], fontsize=10)
+    ax2.set_xlabel('Enrichment %', fontsize=11, fontweight='bold')
+    ax2.set_title('Top 10 Enriched Tokens', fontsize=12, fontweight='bold')
+    ax2.invert_yaxis()
     ax2.grid(axis='x', alpha=0.3)
 
-    # Add p-value labels
-    for i, (bar, pval, neg_log) in enumerate(zip(bars2, p_values, neg_log_p)):
-        if pval < 0.01:
-            label = f"p<10^{int(-np.log10(max(pval, 1e-300)))}"
-        else:
-            label = f"p={pval:.2e}"
-        ax2.text(neg_log + max(neg_log_p)*0.02, bar.get_y() + bar.get_height()/2,
-                label, va='center', fontsize=9)
+    # Add value labels
+    for i, (bar, val) in enumerate(zip(bars, enrichments)):
+        ax2.text(val, i, f' {val:.0f}%', va='center', fontsize=9, fontweight='bold')
 
-    plt.tight_layout()
+    # 3. Token frequency in top samples
+    ax3 = fig.add_subplot(gs[1, 1])
+    freqs = [t['freq_top'] * 100 for t in enriched_tokens[:10]]
 
-    # Save
+    bars = ax3.barh(range(len(tokens)), freqs, color='lightgreen', alpha=0.8, edgecolor='black')
+    ax3.set_yticks(range(len(tokens)))
+    ax3.set_yticklabels([f"'{t}'" for t in tokens], fontsize=10)
+    ax3.set_xlabel('Frequency in Top Samples (%)', fontsize=11, fontweight='bold')
+    ax3.set_title('Token Frequency (Top Activations)', fontsize=12, fontweight='bold')
+    ax3.invert_yaxis()
+    ax3.grid(axis='x', alpha=0.3)
+
+    # Add value labels
+    for i, (bar, val) in enumerate(zip(bars, freqs)):
+        ax3.text(val, i, f' {val:.1f}%', va='center', fontsize=9, fontweight='bold')
+
+    # 4. Example activations (top 15 samples)
+    ax4 = fig.add_subplot(gs[2, :])
+    top_15_indices = np.argsort(feature_acts)[-15:][::-1]
+    top_15_acts = feature_acts[top_15_indices]
+
+    bars = ax4.bar(range(15), top_15_acts, color='mediumpurple', alpha=0.8, edgecolor='black')
+    ax4.set_xlabel('Sample Rank', fontsize=11, fontweight='bold')
+    ax4.set_ylabel('Activation Strength', fontsize=11, fontweight='bold')
+    ax4.set_title('Top 15 Activations', fontsize=12, fontweight='bold')
+    ax4.set_xticks(range(15))
+    ax4.set_xticklabels([f'#{i+1}' for i in range(15)], fontsize=9)
+    ax4.grid(axis='y', alpha=0.3)
+
+    # Add value labels
+    for i, (bar, val) in enumerate(zip(bars, top_15_acts)):
+        ax4.text(i, val, f'{val:.2f}', ha='center', va='bottom', fontsize=8)
+
+    plt.suptitle(f'Feature {feature_id} Analysis (Position {position}, Full Dataset Model)',
+                fontsize=16, fontweight='bold', y=0.995)
+
     output_path = VIZ_DIR / f"feature_detail_pos{position}_f{feature_id}.png"
     plt.savefig(output_path, dpi=150, bbox_inches='tight')
-    print(f"  ✓ Saved: {output_path.name}")
+    print(f"\n✓ Saved: {output_path}")
     plt.close()
 
     # Print summary
-    print(f"\n  Feature {feature_id} (Position {position}) Summary:")
-    print(f"    Top token: '{tokens[0]}' ({enrichments[0]:.1f}% enrichment, p<10^{int(-np.log10(max(p_values[0], 1e-300)))})")
-    print(f"    Selectivity: {feature.get('layer_selectivity', 'N/A')}")
-    top_3_str = ', '.join([f"'{t}'" for t in tokens[:3]])
-    print(f"    Top 3 tokens: {top_3_str}")
+    print(f"\n📊 Feature {feature_id} Summary:")
+    print(f"  Mean activation: {feature_acts.mean():.4f}")
+    print(f"  Max activation: {feature_acts.max():.4f}")
+    print(f"  90th percentile: {threshold:.4f}")
+    print(f"\n🔝 Top 5 Enriched Tokens:")
+    for i, t in enumerate(enriched_tokens[:5], 1):
+        print(f"  {i}. '{t['token']}': {t['enrichment']*100:.1f}% enrichment "
+              f"({t['count_top']} occurrences in top samples)")
 
 
-# Create visualizations for requested features
-print("\n" + "="*80)
-print("CREATING FEATURE DETAIL VISUALIZATIONS")
-print("="*80)
+if __name__ == "__main__":
+    features_to_visualize = [
+        (1, 1000),  # Position 1, Feature 1000
+        (1, 1377),  # Position 1, Feature 1377
+        (1, 1412),  # Position 1, Feature 1412
+    ]
 
-# Position 1: F148 (270% enrichment for "0")
-print("\n[1/2] Position 1, Feature 148 (Top '0' detector - 270% enrichment)")
-create_feature_detail_plot(position=1, feature_id=148, max_tokens=10)
+    print("="*80)
+    print("FEATURE VISUALIZATION - FULL DATASET MODELS")
+    print("="*80)
 
-# Position 3: F1893 (292% enrichment for "0")
-print("\n[2/2] Position 3, Feature 1893 (Top '0' detector - 292% enrichment)")
-create_feature_detail_plot(position=3, feature_id=1893, max_tokens=10)
+    for position, feature_id in features_to_visualize:
+        visualize_feature(position, feature_id)
 
-print("\n" + "="*80)
-print("VISUALIZATIONS COMPLETE!")
-print("="*80)
-print(f"\nSaved to: {VIZ_DIR}")
-print("\nThese features are the most '0-obsessed' at their respective positions!")
-print("  F148 (Pos 1): 270% enrichment → Early operation encoding")
-print("  F1893 (Pos 3): 292% enrichment → Mid-calculation encoding")
+    print("\n" + "="*80)
+    print("ALL VISUALIZATIONS COMPLETE!")
+    print(f"Saved to: {VIZ_DIR}")
+    print("="*80)
