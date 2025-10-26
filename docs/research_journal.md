@@ -118,6 +118,61 @@
 
 ---
 
+### 2025-10-26e: Position-Specific Tuned Lens (Lite) - Negative Result
+
+**Objective**: Test whether position-specific affine transformations for critical layers could address the 2.5× performance gap between continuous thought positions (position 0: 10% vs position 3: 24.78% Top-1 accuracy).
+
+**Status**: ✅ **COMPLETE** - Negative result: Only 1-2% improvement, not worth complexity
+
+**Motivation**:
+- Previous CoT alignment experiments showed dramatic performance differences across positions
+- Hypothesis: Positions encode different types of information requiring position-specific transformations
+- Test with "lite" version (4 critical layers × 6 positions) instead of full implementation
+
+**Approach**:
+1. **Hybrid Architecture**: Position-specific transforms for layers [6, 9, 14, 15], position-agnostic for others
+2. **Total Parameters**: ~151M (vs 403M full, vs 67M baseline)
+3. **Training**: AdamW, lr=1e-3, batch=32, max 50 epochs with early stopping
+
+**Key Results**:
+
+**Minimal Improvement** (Best model at epoch 1):
+- Top-1 Accuracy: 19.76% (vs 18.43% baseline) → **+1.33%**
+- Top-5 Accuracy: 47.51% (vs 45.65% baseline) → **+1.86%**
+- Top-10 Accuracy: 61.28% (vs 59.92% baseline) → **+1.36%**
+- Validation Loss: 3.5909 (vs 3.9027 baseline) → -8.0%
+
+**Immediate Overfitting**:
+- Best model at epoch 1, validation loss increased steadily afterward
+- Suggests model capacity is not the bottleneck
+- Training time: 11.5 minutes (fast failure)
+
+**Critical Observation**:
+- Position-specific transformations did NOT address the 2.5× position performance gap
+- 2.25× parameter increase for 1-2% improvement = poor ROI
+- Problem likely lies elsewhere (data assignment, shared unembedding, or fundamental encoding mismatch)
+
+**Why It Failed** (Hypotheses):
+1. Wrong critical layers selected
+2. Insufficient scope (only 4/16 layers position-specific)
+3. Unembedding bottleneck (shared across all positions)
+4. Fundamental data issue (uniform split doesn't match actual encoding)
+
+**Scientific Contributions**:
+❌ **Negative result**: Position-specific transformations alone insufficient
+✅ **Validated approach**: Lite version saved ~4 hours vs full implementation
+✅ **Informed future work**: Points to alternative directions (weighted assignment, position-specific unembedding)
+
+**Recommendations**:
+- **Do NOT pursue**: Full position-specific model, more critical layers, or longer training
+- **Consider instead**: Weighted CoT token assignment, position-specific unembedding, alternative decoding targets
+
+**Detailed Documentation**: [10-26_llama_gsm8k_position_specific_tuned_lens.md](experiments/10-26_llama_gsm8k_position_specific_tuned_lens.md)
+
+**Time Investment**: ~30 minutes (implementation + training)
+
+---
+
 ### 2025-10-26b: SAE Full Dataset Retraining - Validating Problem Diversity Hypothesis
 
 **Objective**: Retrain SAEs on full 7,473 GSM8K problem dataset to validate that insufficient problem diversity (not architecture) was causing low explained variance.
