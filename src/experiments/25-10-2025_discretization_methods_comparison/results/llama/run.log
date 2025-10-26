@@ -1,0 +1,161 @@
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:942: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+`torch_dtype` is deprecated! Use `dtype` instead!
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+Loading dataset from /workspace/CoT_Exploration/src/experiments/activation_patching/data/llama_cot_all.json...
+Loaded 285 examples from custom dataset
+Model type: llama
+Batch size: 16
+Device: cuda
+Output directory: /workspace/CoT_Exploration/src/experiments/custom_dataset_results_llama
+================================================================================
+CODI-LLAMA DISCRETIZATION ANALYSIS - CUSTOM DATASET
+================================================================================
+
+Initializing CODI-LLAMA model...
+Model path: meta-llama/Llama-3.2-1B-Instruct
+Checkpoint: /workspace/CoT_Exploration/models/CODI-llama3.2-1b
+trainable params: 98574336 || all params: 1334394880 || trainable%: 7.387193811774817
+Loading checkpoint from /workspace/CoT_Exploration/models/CODI-llama3.2-1b...
+Loading tokenizer...
+
+Model ready on cuda! Starting evaluation...
+
+
+================================================================================
+Batch 1/18 | Examples 1-16/285
+================================================================================
+  vanilla     : 8/12 correct (0.90s, 0.057s/ex)
+  full        : 3/12 correct (0.44s, 0.027s/ex)
+  posthoc     : 7/12 correct (0.61s, 0.038s/ex)
+
+================================================================================
+Batch 2/18 | Examples 17-32/285
+================================================================================
+  vanilla     : 3/11 correct (6.45s, 0.403s/ex)
+  full        : 4/11 correct (2.11s, 0.132s/ex)
+  posthoc     : 3/11 correct (6.66s, 0.416s/ex)
+
+================================================================================
+Batch 3/18 | Examples 33-48/285
+================================================================================
+  vanilla     : 5/10 correct (0.46s, 0.029s/ex)
+  full        : 2/10 correct (0.42s, 0.026s/ex)
+  posthoc     : 3/10 correct (0.62s, 0.039s/ex)
+
+================================================================================
+Batch 4/18 | Examples 49-64/285
+================================================================================
+  vanilla     : 6/10 correct (0.41s, 0.025s/ex)
+  full        : 3/10 correct (0.42s, 0.026s/ex)
+  posthoc     : 4/10 correct (0.62s, 0.039s/ex)
+
+================================================================================
+Batch 5/18 | Examples 65-80/285
+================================================================================
+  vanilla     : 7/14 correct (6.45s, 0.403s/ex)
+  full        : 3/14 correct (0.50s, 0.031s/ex)
+  posthoc     : 5/14 correct (6.56s, 0.410s/ex)
+
+================================================================================
+Batch 6/18 | Examples 81-96/285
+================================================================================
+  vanilla     : 3/12 correct (6.42s, 0.401s/ex)
+  full        : 2/12 correct (6.42s, 0.401s/ex)
+  posthoc     : 4/12 correct (6.58s, 0.411s/ex)
+
+================================================================================
+Batch 7/18 | Examples 97-112/285
+================================================================================
+  vanilla     : 7/12 correct (0.92s, 0.058s/ex)
+  full        : 4/12 correct (0.55s, 0.034s/ex)
+  posthoc     : 3/12 correct (0.75s, 0.047s/ex)
+
+================================================================================
+Batch 8/18 | Examples 113-128/285
+================================================================================
+  vanilla     : 6/11 correct (0.40s, 0.025s/ex)
+  full        : 2/11 correct (0.44s, 0.027s/ex)
+  posthoc     : 4/11 correct (0.73s, 0.045s/ex)
+
+================================================================================
+Batch 9/18 | Examples 129-144/285
+================================================================================
+  vanilla     : 7/11 correct (0.41s, 0.026s/ex)
+  full        : 3/11 correct (0.45s, 0.028s/ex)
+  posthoc     : 3/11 correct (0.64s, 0.040s/ex)
+
+================================================================================
+Batch 10/18 | Examples 145-160/285
+================================================================================
+  vanilla     : 12/16 correct (0.41s, 0.025s/ex)
+  full        : 8/16 correct (0.41s, 0.026s/ex)
+  posthoc     : 10/16 correct (0.60s, 0.038s/ex)
+
+================================================================================
+Batch 11/18 | Examples 161-176/285
+================================================================================
+  vanilla     : 5/10 correct (0.44s, 0.027s/ex)
+  full        : 5/10 correct (0.45s, 0.028s/ex)
+  posthoc     : 2/10 correct (0.64s, 0.040s/ex)
+
+================================================================================
+Batch 12/18 | Examples 177-192/285
+================================================================================
+  vanilla     : 7/12 correct (0.38s, 0.024s/ex)
+  full        : 5/12 correct (0.40s, 0.025s/ex)
+  posthoc     : 6/12 correct (0.63s, 0.040s/ex)
+
+================================================================================
+Batch 13/18 | Examples 193-208/285
+================================================================================
+  vanilla     : 5/10 correct (0.41s, 0.026s/ex)
+  full        : 3/10 correct (0.42s, 0.026s/ex)
+  posthoc     : 4/10 correct (0.64s, 0.040s/ex)
+
+================================================================================
+Batch 14/18 | Examples 209-224/285
+================================================================================
+  vanilla     : 9/15 correct (0.49s, 0.031s/ex)
+  full        : 4/15 correct (0.50s, 0.031s/ex)
+  posthoc     : 5/15 correct (0.77s, 0.048s/ex)
+
+================================================================================
+Batch 15/18 | Examples 225-240/285
+================================================================================
+  vanilla     : 7/11 correct (6.25s, 0.391s/ex)
+  full        : 1/11 correct (0.44s, 0.028s/ex)
+  posthoc     : 3/11 correct (0.64s, 0.040s/ex)
+
+================================================================================
+Batch 16/18 | Examples 241-256/285
+================================================================================
+  vanilla     : 6/12 correct (0.39s, 0.025s/ex)
+  full        : 5/12 correct (0.44s, 0.028s/ex)
+  posthoc     : 3/12 correct (0.65s, 0.041s/ex)
+
+================================================================================
+Batch 17/18 | Examples 257-272/285
+================================================================================
+  vanilla     : 6/12 correct (0.44s, 0.027s/ex)
+  full        : 3/12 correct (0.44s, 0.028s/ex)
+  posthoc     : 3/12 correct (0.62s, 0.039s/ex)
+
+================================================================================
+Batch 18/18 | Examples 273-285/285
+================================================================================
+  vanilla     : 6/7 correct (0.37s, 0.029s/ex)
+  full        : 4/7 correct (0.38s, 0.029s/ex)
+  posthoc     : 6/7 correct (0.56s, 0.043s/ex)
+
+================================================================================
+FINAL RESULTS - CODI-LLAMA ON CUSTOM DATASET
+================================================================================
+vanilla     : 55.29% (115/208) | Avg time: 0.114s
+full        : 30.77% (64/208) | Avg time: 0.055s
+posthoc     : 37.50% (78/208) | Avg time: 0.104s
+
+Total time: 1.3 minutes
+Examples per minute: 220.27
+
+Results saved to /workspace/CoT_Exploration/src/experiments/custom_dataset_results_llama/final_results.json

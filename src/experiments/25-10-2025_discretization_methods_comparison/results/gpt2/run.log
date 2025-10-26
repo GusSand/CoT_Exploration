@@ -1,0 +1,163 @@
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:942: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+`torch_dtype` is deprecated! Use `dtype` instead!
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+/usr/local/lib/python3.12/dist-packages/peft/tuners/lora/layer.py:2174: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+  warnings.warn(
+Loading dataset from /workspace/CoT_Exploration/src/experiments/activation_patching/data/llama_cot_all.json...
+Loaded 285 examples from custom dataset
+Model type: gpt2
+Batch size: 16
+Device: cuda
+Output directory: /workspace/CoT_Exploration/src/experiments/custom_dataset_results_gpt2
+================================================================================
+CODI-GPT2 DISCRETIZATION ANALYSIS - CUSTOM DATASET
+================================================================================
+
+Initializing CODI-GPT2 model...
+Model path: openai-community/gpt2
+Checkpoint: /workspace/CoT_Exploration/models/CODI-gpt2
+trainable params: 20057088 || all params: 144499200 || trainable%: 13.880414562848792
+Loading checkpoint from /workspace/CoT_Exploration/models/CODI-gpt2...
+Loading tokenizer...
+
+Model ready on cuda! Starting evaluation...
+
+
+================================================================================
+Batch 1/18 | Examples 1-16/285
+================================================================================
+  vanilla     : 5/12 correct (0.57s, 0.036s/ex)
+  full        : 2/12 correct (0.23s, 0.014s/ex)
+  posthoc     : 2/12 correct (0.28s, 0.018s/ex)
+
+================================================================================
+Batch 2/18 | Examples 17-32/285
+================================================================================
+  vanilla     : 6/11 correct (0.20s, 0.012s/ex)
+  full        : 1/11 correct (0.20s, 0.013s/ex)
+  posthoc     : 2/11 correct (0.29s, 0.018s/ex)
+
+================================================================================
+Batch 3/18 | Examples 33-48/285
+================================================================================
+  vanilla     : 1/10 correct (0.19s, 0.012s/ex)
+  full        : 0/10 correct (0.20s, 0.012s/ex)
+  posthoc     : 1/10 correct (0.29s, 0.018s/ex)
+
+================================================================================
+Batch 4/18 | Examples 49-64/285
+================================================================================
+  vanilla     : 3/10 correct (0.21s, 0.013s/ex)
+  full        : 3/10 correct (0.21s, 0.013s/ex)
+  posthoc     : 1/10 correct (0.29s, 0.018s/ex)
+
+================================================================================
+Batch 5/18 | Examples 65-80/285
+================================================================================
+  vanilla     : 4/14 correct (0.20s, 0.013s/ex)
+  full        : 0/14 correct (0.23s, 0.014s/ex)
+  posthoc     : 0/14 correct (0.31s, 0.019s/ex)
+
+================================================================================
+Batch 6/18 | Examples 81-96/285
+================================================================================
+  vanilla     : 6/12 correct (0.18s, 0.011s/ex)
+  full        : 0/12 correct (0.23s, 0.015s/ex)
+  posthoc     : 1/12 correct (0.29s, 0.018s/ex)
+
+================================================================================
+Batch 7/18 | Examples 97-112/285
+================================================================================
+  vanilla     : 4/12 correct (0.18s, 0.012s/ex)
+  full        : 2/12 correct (0.21s, 0.013s/ex)
+  posthoc     : 3/12 correct (0.28s, 0.017s/ex)
+
+================================================================================
+Batch 8/18 | Examples 113-128/285
+================================================================================
+  vanilla     : 5/11 correct (0.20s, 0.013s/ex)
+  full        : 0/11 correct (0.20s, 0.013s/ex)
+  posthoc     : 0/11 correct (0.28s, 0.017s/ex)
+
+================================================================================
+Batch 9/18 | Examples 129-144/285
+================================================================================
+  vanilla     : 2/11 correct (0.18s, 0.011s/ex)
+  full        : 3/11 correct (0.20s, 0.012s/ex)
+  posthoc     : 1/11 correct (0.28s, 0.017s/ex)
+
+================================================================================
+Batch 10/18 | Examples 145-160/285
+================================================================================
+  vanilla     : 11/16 correct (0.18s, 0.011s/ex)
+  full        : 1/16 correct (0.20s, 0.013s/ex)
+  posthoc     : 5/16 correct (0.28s, 0.017s/ex)
+
+================================================================================
+Batch 11/18 | Examples 161-176/285
+================================================================================
+  vanilla     : 4/10 correct (0.19s, 0.012s/ex)
+  full        : 2/10 correct (0.21s, 0.013s/ex)
+  posthoc     : 1/10 correct (0.28s, 0.018s/ex)
+
+================================================================================
+Batch 12/18 | Examples 177-192/285
+================================================================================
+  vanilla     : 4/12 correct (0.20s, 0.012s/ex)
+  full        : 3/12 correct (0.21s, 0.013s/ex)
+  posthoc     : 3/12 correct (0.28s, 0.017s/ex)
+
+================================================================================
+Batch 13/18 | Examples 193-208/285
+================================================================================
+  vanilla     : 6/10 correct (0.20s, 0.013s/ex)
+  full        : 3/10 correct (0.19s, 0.012s/ex)
+  posthoc     : 2/10 correct (0.28s, 0.017s/ex)
+
+================================================================================
+Batch 14/18 | Examples 209-224/285
+================================================================================
+  vanilla     : 6/15 correct (0.20s, 0.012s/ex)
+  full        : 1/15 correct (0.21s, 0.013s/ex)
+  posthoc     : 3/15 correct (0.29s, 0.018s/ex)
+
+================================================================================
+Batch 15/18 | Examples 225-240/285
+================================================================================
+  vanilla     : 4/11 correct (0.20s, 0.012s/ex)
+  full        : 2/11 correct (0.20s, 0.013s/ex)
+  posthoc     : 3/11 correct (0.29s, 0.018s/ex)
+
+================================================================================
+Batch 16/18 | Examples 241-256/285
+================================================================================
+  vanilla     : 2/12 correct (0.19s, 0.012s/ex)
+  full        : 0/12 correct (0.22s, 0.014s/ex)
+  posthoc     : 1/12 correct (0.29s, 0.018s/ex)
+
+================================================================================
+Batch 17/18 | Examples 257-272/285
+================================================================================
+  vanilla     : 4/12 correct (0.20s, 0.012s/ex)
+  full        : 0/12 correct (0.20s, 0.013s/ex)
+  posthoc     : 1/12 correct (0.28s, 0.018s/ex)
+
+================================================================================
+Batch 18/18 | Examples 273-285/285
+================================================================================
+  vanilla     : 5/7 correct (0.20s, 0.015s/ex)
+  full        : 0/7 correct (0.18s, 0.014s/ex)
+  posthoc     : 0/7 correct (0.27s, 0.021s/ex)
+
+================================================================================
+FINAL RESULTS - CODI-GPT2 ON CUSTOM DATASET
+================================================================================
+vanilla     : 39.42% (82/208) | Avg time: 0.014s
+full        : 11.06% (23/208) | Avg time: 0.013s
+posthoc     : 14.42% (30/208) | Avg time: 0.018s
+
+Total time: 0.2 minutes
+Examples per minute: 1333.33
+
+Results saved to /workspace/CoT_Exploration/src/experiments/custom_dataset_results_gpt2/final_results.json
