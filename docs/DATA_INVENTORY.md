@@ -1,6 +1,6 @@
 # Data Inventory - CoT Exploration Project
 
-**Last Updated**: 2025-10-24
+**Last Updated**: 2025-10-26
 
 This document provides a complete breakdown of all datasets in the project, organized by experiment type and model.
 
@@ -1709,3 +1709,91 @@ python analyze_features.py
 
 **Created**: 2025-10-26
 
+
+
+---
+
+## 16. Mechanistic Interpretability Datasets
+
+### 16.1 Stratified Test Problems for Step Importance Analysis
+**File**: [`src/experiments/mechanistic_interp/data/stratified_test_problems.json`](../src/experiments/mechanistic_interp/data/stratified_test_problems.json)
+
+**Purpose**: Stratified GSM8K dataset for measuring causal importance of continuous thought positions via ablation experiments
+
+**Size**: 1,000 problems
+
+**Stratification** (by reasoning steps):
+- 1-step: 27 problems (2.7%)
+- 2-step: 223 problems (22.3%)
+- 3-step: 250 problems (25.0%)
+- 4-step: 250 problems (25.0%)
+- 5-step: 175 problems (17.5%)
+- 6-step: 56 problems (5.6%)
+- 7-step: 16 problems (1.6%)
+- 8-step: 3 problems (0.3%)
+
+**Structure**:
+```json
+{
+  "gsm8k_id": "test_123",
+  "question": "Problem text...",
+  "answer": "42",
+  "reasoning_steps": 3
+}
+```
+
+**Source**: GSM8K test set, stratified by counting calculation blocks in solutions
+
+**Generation Command**:
+```bash
+cd src/experiments/mechanistic_interp/scripts
+export PYTHONPATH=/home/paperspace/dev/CoT_Exploration/codi:$PYTHONPATH
+python 01_validate_data.py
+```
+
+**How to Recreate**:
+1. Load GSM8K test set
+2. Extract reasoning difficulty by counting calculation blocks
+3. Stratify by difficulty buckets (1-8 steps)
+4. Sample proportionally to target distribution
+5. Save as JSON with gsm8k_id, question, answer, reasoning_steps
+
+**Used By**:
+- MECH-02: Step Importance Analysis (position-wise ablation)
+- Future: MECH-03 (SAE feature extraction), MECH-04 (correlation analysis), MECH-06 (interventions)
+
+**Experiment**: MECH-02 - Step Importance Analysis
+
+**Created**: 2025-10-26
+
+**Documentation**: [`docs/experiments/10-26_llama_gsm8k_step_importance.md`](experiments/10-26_llama_gsm8k_step_importance.md)
+
+---
+
+### 16.2 Step Importance Analysis Results
+
+**Files**:
+- [`step_importance_scores.json`](../src/experiments/mechanistic_interp/data/step_importance_scores.json) (1.6 MB) - Full results for 1,000 problems
+- [`step_importance_summary_stats.json`](../src/experiments/mechanistic_interp/data/step_importance_summary_stats.json) (1.8 KB) - Aggregate statistics
+- [`step_importance_validation.json`](../src/experiments/mechanistic_interp/data/step_importance_validation.json) (152 KB) - Validation on 87 problems
+
+**Key Results** (from summary_stats.json):
+| Position | Importance | Interpretation |
+|----------|-----------|----------------|
+| 0 | 0.000 | Baseline (no ablation) |
+| 1 | 0.145 | Exploration (recoverable) |
+| 2 | 0.468 | Solution space narrowing |
+| 3 | 0.528 | Refinement begins |
+| 4 | 0.556 | Solution converging |
+| 5 | **0.868** | **Final commitment (critical\!)** |
+
+**Key Finding**: **Progressive refinement strategy** - Late positions (4,5) most critical, contrary to "planning first" hypothesis
+
+**Statistical Validation**:
+- Monotonic trend: Spearman ρ=0.99, p<0.001
+- Effect size: Cohen's d=2.1 (very large)
+- Universal pattern: Late > Early for ALL 8 difficulty levels (3.1× ratio)
+
+**Created**: 2025-10-26
+
+---
