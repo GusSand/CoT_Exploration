@@ -1,0 +1,1679 @@
+================================================================================
+TopK SAE Multi-Layer Multi-Position Training
+================================================================================
+  Layers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+  Positions: [0, 1, 2, 3, 4, 5]
+  Layer-Position pairs: 96
+  Total SAEs: 1152
+  Estimated time: 48.0 - 96.0 minutes
+================================================================================
+
+✓ Layer 0, Position 0 already trained (12 SAEs found)
+
+✓ Layer 0, Position 1 already trained (12 SAEs found)
+
+✓ Layer 0, Position 2 already trained (12 SAEs found)
+
+✓ Layer 0, Position 3 already trained (12 SAEs found)
+
+================================================================================
+Training Layer 0, Position 4 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 0, Position 4 complete in 19.2s
+
+  Progress: 5/96 pairs complete
+  Elapsed: 0.3 min, Remaining: 5.8 min
+
+================================================================================
+Training Layer 0, Position 5 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 0, Position 5 complete in 19.4s
+
+  Progress: 6/96 pairs complete
+  Elapsed: 0.6 min, Remaining: 9.7 min
+
+================================================================================
+Training Layer 1, Position 0 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 1, Position 0 complete in 19.2s
+
+  Progress: 7/96 pairs complete
+  Elapsed: 1.0 min, Remaining: 12.3 min
+
+================================================================================
+Training Layer 1, Position 1 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 1, Position 1 complete in 19.3s
+
+  Progress: 8/96 pairs complete
+  Elapsed: 1.3 min, Remaining: 14.1 min
+
+================================================================================
+Training Layer 1, Position 2 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 1, Position 2 complete in 19.5s
+
+  Progress: 9/96 pairs complete
+  Elapsed: 1.6 min, Remaining: 15.6 min
+
+================================================================================
+Training Layer 1, Position 3 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 1, Position 3 complete in 19.2s
+
+  Progress: 10/96 pairs complete
+  Elapsed: 1.9 min, Remaining: 16.6 min
+
+================================================================================
+Training Layer 1, Position 4 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 1, Position 4 complete in 19.2s
+
+  Progress: 11/96 pairs complete
+  Elapsed: 2.3 min, Remaining: 17.4 min
+
+================================================================================
+Training Layer 1, Position 5 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 1, Position 5 complete in 19.3s
+
+  Progress: 12/96 pairs complete
+  Elapsed: 2.6 min, Remaining: 18.0 min
+
+================================================================================
+Training Layer 2, Position 0 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 2, Position 0 complete in 19.5s
+
+  Progress: 13/96 pairs complete
+  Elapsed: 2.9 min, Remaining: 18.5 min
+
+================================================================================
+Training Layer 2, Position 1 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 2, Position 1 complete in 19.4s
+
+  Progress: 14/96 pairs complete
+  Elapsed: 3.2 min, Remaining: 18.9 min
+
+================================================================================
+Training Layer 2, Position 2 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 2, Position 2 complete in 19.3s
+
+  Progress: 15/96 pairs complete
+  Elapsed: 3.5 min, Remaining: 19.1 min
+
+================================================================================
+Training Layer 2, Position 3 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 2, Position 3 complete in 19.3s
+
+  Progress: 16/96 pairs complete
+  Elapsed: 3.9 min, Remaining: 19.3 min
+
+================================================================================
+Training Layer 2, Position 4 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 2, Position 4 complete in 19.2s
+
+  Progress: 17/96 pairs complete
+  Elapsed: 4.2 min, Remaining: 19.4 min
+
+================================================================================
+Training Layer 2, Position 5 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 2, Position 5 complete in 19.2s
+
+  Progress: 18/96 pairs complete
+  Elapsed: 4.5 min, Remaining: 19.5 min
+
+================================================================================
+Training Layer 3, Position 0 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 3, Position 0 complete in 19.3s
+
+  Progress: 19/96 pairs complete
+  Elapsed: 4.8 min, Remaining: 19.6 min
+
+================================================================================
+Training Layer 3, Position 1 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 3, Position 1 complete in 19.4s
+
+  Progress: 20/96 pairs complete
+  Elapsed: 5.1 min, Remaining: 19.6 min
+
+================================================================================
+Training Layer 3, Position 2 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 3, Position 2 complete in 19.3s
+
+  Progress: 21/96 pairs complete
+  Elapsed: 5.5 min, Remaining: 19.5 min
+
+================================================================================
+Training Layer 3, Position 3 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 3, Position 3 complete in 19.4s
+
+  Progress: 22/96 pairs complete
+  Elapsed: 5.8 min, Remaining: 19.5 min
+
+================================================================================
+Training Layer 3, Position 4 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 3, Position 4 complete in 19.2s
+
+  Progress: 23/96 pairs complete
+  Elapsed: 6.1 min, Remaining: 19.4 min
+
+================================================================================
+Training Layer 3, Position 5 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 3, Position 5 complete in 19.2s
+
+  Progress: 24/96 pairs complete
+  Elapsed: 6.4 min, Remaining: 19.3 min
+
+================================================================================
+Training Layer 4, Position 0 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 4, Position 0 complete in 19.4s
+
+  Progress: 25/96 pairs complete
+  Elapsed: 6.8 min, Remaining: 19.2 min
+
+================================================================================
+Training Layer 4, Position 1 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 4, Position 1 complete in 19.4s
+
+  Progress: 26/96 pairs complete
+  Elapsed: 7.1 min, Remaining: 19.1 min
+
+================================================================================
+Training Layer 4, Position 2 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 4, Position 2 complete in 19.3s
+
+  Progress: 27/96 pairs complete
+  Elapsed: 7.4 min, Remaining: 18.9 min
+
+================================================================================
+Training Layer 4, Position 3 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 4, Position 3 complete in 19.3s
+
+  Progress: 28/96 pairs complete
+  Elapsed: 7.7 min, Remaining: 18.8 min
+
+================================================================================
+Training Layer 4, Position 4 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 4, Position 4 complete in 19.2s
+
+  Progress: 29/96 pairs complete
+  Elapsed: 8.0 min, Remaining: 18.6 min
+
+================================================================================
+Training Layer 4, Position 5 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 4, Position 5 complete in 19.2s
+
+  Progress: 30/96 pairs complete
+  Elapsed: 8.4 min, Remaining: 18.4 min
+
+================================================================================
+Training Layer 5, Position 0 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 5, Position 0 complete in 19.4s
+
+  Progress: 31/96 pairs complete
+  Elapsed: 8.7 min, Remaining: 18.2 min
+
+================================================================================
+Training Layer 5, Position 1 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 5, Position 1 complete in 19.3s
+
+  Progress: 32/96 pairs complete
+  Elapsed: 9.0 min, Remaining: 18.0 min
+
+================================================================================
+Training Layer 5, Position 2 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 5, Position 2 complete in 19.4s
+
+  Progress: 33/96 pairs complete
+  Elapsed: 9.3 min, Remaining: 17.8 min
+
+================================================================================
+Training Layer 5, Position 3 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 5, Position 3 complete in 19.3s
+
+  Progress: 34/96 pairs complete
+  Elapsed: 9.7 min, Remaining: 17.6 min
+
+================================================================================
+Training Layer 5, Position 4 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 5, Position 4 complete in 19.3s
+
+  Progress: 35/96 pairs complete
+  Elapsed: 10.0 min, Remaining: 17.4 min
+
+================================================================================
+Training Layer 5, Position 5 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 5, Position 5 complete in 19.4s
+
+  Progress: 36/96 pairs complete
+  Elapsed: 10.3 min, Remaining: 17.2 min
+
+================================================================================
+Training Layer 6, Position 0 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 6, Position 0 complete in 19.4s
+
+  Progress: 37/96 pairs complete
+  Elapsed: 10.6 min, Remaining: 16.9 min
+
+================================================================================
+Training Layer 6, Position 1 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 6, Position 1 complete in 19.3s
+
+  Progress: 38/96 pairs complete
+  Elapsed: 11.0 min, Remaining: 16.7 min
+
+================================================================================
+Training Layer 6, Position 2 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 6, Position 2 complete in 19.4s
+
+  Progress: 39/96 pairs complete
+  Elapsed: 11.3 min, Remaining: 16.5 min
+
+================================================================================
+Training Layer 6, Position 3 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 6, Position 3 complete in 19.5s
+
+  Progress: 40/96 pairs complete
+  Elapsed: 11.6 min, Remaining: 16.2 min
+
+================================================================================
+Training Layer 6, Position 4 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 6, Position 4 complete in 19.4s
+
+  Progress: 41/96 pairs complete
+  Elapsed: 11.9 min, Remaining: 16.0 min
+
+================================================================================
+Training Layer 6, Position 5 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 6, Position 5 complete in 19.2s
+
+  Progress: 42/96 pairs complete
+  Elapsed: 12.2 min, Remaining: 15.7 min
+
+================================================================================
+Training Layer 7, Position 0 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 7, Position 0 complete in 19.1s
+
+  Progress: 43/96 pairs complete
+  Elapsed: 12.6 min, Remaining: 15.5 min
+
+================================================================================
+Training Layer 7, Position 1 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 7, Position 1 complete in 19.3s
+
+  Progress: 44/96 pairs complete
+  Elapsed: 12.9 min, Remaining: 15.2 min
+
+================================================================================
+Training Layer 7, Position 2 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 7, Position 2 complete in 19.2s
+
+  Progress: 45/96 pairs complete
+  Elapsed: 13.2 min, Remaining: 15.0 min
+
+================================================================================
+Training Layer 7, Position 3 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 7, Position 3 complete in 19.4s
+
+  Progress: 46/96 pairs complete
+  Elapsed: 13.5 min, Remaining: 14.7 min
+
+================================================================================
+Training Layer 7, Position 4 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 7, Position 4 complete in 19.4s
+
+  Progress: 47/96 pairs complete
+  Elapsed: 13.8 min, Remaining: 14.4 min
+
+================================================================================
+Training Layer 7, Position 5 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 7, Position 5 complete in 19.3s
+
+  Progress: 48/96 pairs complete
+  Elapsed: 14.2 min, Remaining: 14.2 min
+
+================================================================================
+Training Layer 8, Position 0 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 8, Position 0 complete in 19.2s
+
+  Progress: 49/96 pairs complete
+  Elapsed: 14.5 min, Remaining: 13.9 min
+
+================================================================================
+Training Layer 8, Position 1 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 8, Position 1 complete in 19.3s
+
+  Progress: 50/96 pairs complete
+  Elapsed: 14.8 min, Remaining: 13.6 min
+
+================================================================================
+Training Layer 8, Position 2 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 8, Position 2 complete in 19.3s
+
+  Progress: 51/96 pairs complete
+  Elapsed: 15.1 min, Remaining: 13.4 min
+
+================================================================================
+Training Layer 8, Position 3 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 8, Position 3 complete in 19.2s
+
+  Progress: 52/96 pairs complete
+  Elapsed: 15.5 min, Remaining: 13.1 min
+
+================================================================================
+Training Layer 8, Position 4 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 8, Position 4 complete in 19.3s
+
+  Progress: 53/96 pairs complete
+  Elapsed: 15.8 min, Remaining: 12.8 min
+
+================================================================================
+Training Layer 8, Position 5 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 8, Position 5 complete in 19.5s
+
+  Progress: 54/96 pairs complete
+  Elapsed: 16.1 min, Remaining: 12.5 min
+
+================================================================================
+Training Layer 9, Position 0 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 9, Position 0 complete in 19.3s
+
+  Progress: 55/96 pairs complete
+  Elapsed: 16.4 min, Remaining: 12.2 min
+
+================================================================================
+Training Layer 9, Position 1 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 9, Position 1 complete in 19.2s
+
+  Progress: 56/96 pairs complete
+  Elapsed: 16.7 min, Remaining: 12.0 min
+
+================================================================================
+Training Layer 9, Position 2 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 9, Position 2 complete in 19.3s
+
+  Progress: 57/96 pairs complete
+  Elapsed: 17.1 min, Remaining: 11.7 min
+
+================================================================================
+Training Layer 9, Position 3 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 9, Position 3 complete in 19.2s
+
+  Progress: 58/96 pairs complete
+  Elapsed: 17.4 min, Remaining: 11.4 min
+
+================================================================================
+Training Layer 9, Position 4 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 9, Position 4 complete in 19.1s
+
+  Progress: 59/96 pairs complete
+  Elapsed: 17.7 min, Remaining: 11.1 min
+
+================================================================================
+Training Layer 9, Position 5 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 9, Position 5 complete in 19.2s
+
+  Progress: 60/96 pairs complete
+  Elapsed: 18.0 min, Remaining: 10.8 min
+
+================================================================================
+Training Layer 10, Position 0 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 10, Position 0 complete in 19.1s
+
+  Progress: 61/96 pairs complete
+  Elapsed: 18.3 min, Remaining: 10.5 min
+
+================================================================================
+Training Layer 10, Position 1 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 10, Position 1 complete in 19.2s
+
+  Progress: 62/96 pairs complete
+  Elapsed: 18.7 min, Remaining: 10.2 min
+
+================================================================================
+Training Layer 10, Position 2 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 10, Position 2 complete in 19.2s
+
+  Progress: 63/96 pairs complete
+  Elapsed: 19.0 min, Remaining: 9.9 min
+
+================================================================================
+Training Layer 10, Position 3 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 10, Position 3 complete in 19.4s
+
+  Progress: 64/96 pairs complete
+  Elapsed: 19.3 min, Remaining: 9.7 min
+
+================================================================================
+Training Layer 10, Position 4 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 10, Position 4 complete in 19.3s
+
+  Progress: 65/96 pairs complete
+  Elapsed: 19.6 min, Remaining: 9.4 min
+
+================================================================================
+Training Layer 10, Position 5 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 10, Position 5 complete in 19.4s
+
+  Progress: 66/96 pairs complete
+  Elapsed: 19.9 min, Remaining: 9.1 min
+
+================================================================================
+Training Layer 11, Position 0 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 11, Position 0 complete in 19.1s
+
+  Progress: 67/96 pairs complete
+  Elapsed: 20.3 min, Remaining: 8.8 min
+
+================================================================================
+Training Layer 11, Position 1 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 11, Position 1 complete in 19.2s
+
+  Progress: 68/96 pairs complete
+  Elapsed: 20.6 min, Remaining: 8.5 min
+
+================================================================================
+Training Layer 11, Position 2 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 11, Position 2 complete in 19.3s
+
+  Progress: 69/96 pairs complete
+  Elapsed: 20.9 min, Remaining: 8.2 min
+
+================================================================================
+Training Layer 11, Position 3 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 11, Position 3 complete in 19.1s
+
+  Progress: 70/96 pairs complete
+  Elapsed: 21.2 min, Remaining: 7.9 min
+
+================================================================================
+Training Layer 11, Position 4 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 11, Position 4 complete in 19.2s
+
+  Progress: 71/96 pairs complete
+  Elapsed: 21.5 min, Remaining: 7.6 min
+
+================================================================================
+Training Layer 11, Position 5 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 11, Position 5 complete in 19.1s
+
+  Progress: 72/96 pairs complete
+  Elapsed: 21.9 min, Remaining: 7.3 min
+
+================================================================================
+Training Layer 12, Position 0 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 12, Position 0 complete in 19.1s
+
+  Progress: 73/96 pairs complete
+  Elapsed: 22.2 min, Remaining: 7.0 min
+
+================================================================================
+Training Layer 12, Position 1 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 12, Position 1 complete in 19.1s
+
+  Progress: 74/96 pairs complete
+  Elapsed: 22.5 min, Remaining: 6.7 min
+
+================================================================================
+Training Layer 12, Position 2 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 12, Position 2 complete in 19.1s
+
+  Progress: 75/96 pairs complete
+  Elapsed: 22.8 min, Remaining: 6.4 min
+
+================================================================================
+Training Layer 12, Position 3 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 12, Position 3 complete in 19.3s
+
+  Progress: 76/96 pairs complete
+  Elapsed: 23.1 min, Remaining: 6.1 min
+
+================================================================================
+Training Layer 12, Position 4 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 12, Position 4 complete in 19.1s
+
+  Progress: 77/96 pairs complete
+  Elapsed: 23.5 min, Remaining: 5.8 min
+
+================================================================================
+Training Layer 12, Position 5 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 12, Position 5 complete in 19.1s
+
+  Progress: 78/96 pairs complete
+  Elapsed: 23.8 min, Remaining: 5.5 min
+
+================================================================================
+Training Layer 13, Position 0 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 13, Position 0 complete in 19.1s
+
+  Progress: 79/96 pairs complete
+  Elapsed: 24.1 min, Remaining: 5.2 min
+
+================================================================================
+Training Layer 13, Position 1 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 13, Position 1 complete in 19.3s
+
+  Progress: 80/96 pairs complete
+  Elapsed: 24.4 min, Remaining: 4.9 min
+
+================================================================================
+Training Layer 13, Position 2 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 13, Position 2 complete in 19.2s
+
+  Progress: 81/96 pairs complete
+  Elapsed: 24.7 min, Remaining: 4.6 min
+
+================================================================================
+Training Layer 13, Position 3 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 13, Position 3 complete in 19.4s
+
+  Progress: 82/96 pairs complete
+  Elapsed: 25.1 min, Remaining: 4.3 min
+
+================================================================================
+Training Layer 13, Position 4 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 13, Position 4 complete in 19.0s
+
+  Progress: 83/96 pairs complete
+  Elapsed: 25.4 min, Remaining: 4.0 min
+
+================================================================================
+Training Layer 13, Position 5 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 13, Position 5 complete in 19.4s
+
+  Progress: 84/96 pairs complete
+  Elapsed: 25.7 min, Remaining: 3.7 min
+
+================================================================================
+Training Layer 14, Position 0 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 14, Position 0 complete in 19.0s
+
+  Progress: 85/96 pairs complete
+  Elapsed: 26.0 min, Remaining: 3.4 min
+
+================================================================================
+Training Layer 14, Position 1 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 14, Position 1 complete in 19.0s
+
+  Progress: 86/96 pairs complete
+  Elapsed: 26.3 min, Remaining: 3.1 min
+
+================================================================================
+Training Layer 14, Position 2 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 14, Position 2 complete in 19.2s
+
+  Progress: 87/96 pairs complete
+  Elapsed: 26.7 min, Remaining: 2.8 min
+
+================================================================================
+Training Layer 14, Position 3 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 14, Position 3 complete in 19.2s
+
+  Progress: 88/96 pairs complete
+  Elapsed: 27.0 min, Remaining: 2.5 min
+
+================================================================================
+Training Layer 14, Position 4 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 14, Position 4 complete in 19.2s
+
+  Progress: 89/96 pairs complete
+  Elapsed: 27.3 min, Remaining: 2.1 min
+
+================================================================================
+Training Layer 14, Position 5 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 14, Position 5 complete in 19.4s
+
+  Progress: 90/96 pairs complete
+  Elapsed: 27.6 min, Remaining: 1.8 min
+
+================================================================================
+Training Layer 15, Position 0 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 15, Position 0 complete in 19.0s
+
+  Progress: 91/96 pairs complete
+  Elapsed: 27.9 min, Remaining: 1.5 min
+
+================================================================================
+Training Layer 15, Position 1 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 15, Position 1 complete in 19.2s
+
+  Progress: 92/96 pairs complete
+  Elapsed: 28.3 min, Remaining: 1.2 min
+
+================================================================================
+Training Layer 15, Position 2 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 15, Position 2 complete in 19.0s
+
+  Progress: 93/96 pairs complete
+  Elapsed: 28.6 min, Remaining: 0.9 min
+
+================================================================================
+Training Layer 15, Position 3 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 15, Position 3 complete in 19.0s
+
+  Progress: 94/96 pairs complete
+  Elapsed: 28.9 min, Remaining: 0.6 min
+
+================================================================================
+Training Layer 15, Position 4 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 15, Position 4 complete in 19.2s
+
+  Progress: 95/96 pairs complete
+  Elapsed: 29.2 min, Remaining: 0.3 min
+
+================================================================================
+Training Layer 15, Position 5 (12 SAEs)
+================================================================================
+
+  Launching: latent_dim=512
+  Launching: latent_dim=1024
+  Launching: latent_dim=2048
+
+  Waiting for 3 processes to complete...
+  ✓ latent_dim=512 complete
+  ✓ latent_dim=1024 complete
+  ✓ latent_dim=2048 complete
+
+  Layer 15, Position 5 complete in 19.2s
+
+  Progress: 96/96 pairs complete
+  Elapsed: 29.5 min, Remaining: 0.0 min
+
+================================================================================
+All training complete!
+  Total time: 29.5 minutes
+  SAEs trained: 1152
+================================================================================
