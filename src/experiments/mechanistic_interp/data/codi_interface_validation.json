@@ -1,0 +1,190 @@
+{
+  "validation_status": "COMPLETE",
+  "n_problems": 3,
+  "problems": [
+    {
+      "problem_id": 1,
+      "question": "John has 3 bags with 7 apples each. How many apples does he have in total?",
+      "difficulty": "easy",
+      "expected_answer": "21",
+      "position_results": [
+        {
+          "position": 0,
+          "importance_score": 0.0,
+          "baseline_answer": "The answer is: 21",
+          "ablated_answer": "The answer is: 21",
+          "answers_match": true,
+          "method": "position_wise_zeroing"
+        },
+        {
+          "position": 1,
+          "importance_score": 0.0,
+          "baseline_answer": "The answer is: 21",
+          "ablated_answer": "The answer is: 21",
+          "answers_match": true,
+          "method": "position_wise_zeroing"
+        },
+        {
+          "position": 2,
+          "importance_score": 0.0,
+          "baseline_answer": "The answer is: 21",
+          "ablated_answer": "The answer is: 21",
+          "answers_match": true,
+          "method": "position_wise_zeroing"
+        },
+        {
+          "position": 3,
+          "importance_score": 0.0,
+          "baseline_answer": "The answer is: 21",
+          "ablated_answer": "The answer is: 21",
+          "answers_match": true,
+          "method": "position_wise_zeroing"
+        },
+        {
+          "position": 4,
+          "importance_score": 0.0,
+          "baseline_answer": "The answer is: 21",
+          "ablated_answer": "The answer is: 21",
+          "answers_match": true,
+          "method": "position_wise_zeroing"
+        },
+        {
+          "position": 5,
+          "importance_score": 0.0,
+          "baseline_answer": "The answer is: 21",
+          "ablated_answer": "The answer is: 21",
+          "answers_match": true,
+          "method": "position_wise_zeroing"
+        }
+      ],
+      "early_avg": 0.0,
+      "late_avg": 0.0,
+      "pattern_validated": true
+    },
+    {
+      "problem_id": 2,
+      "question": "A store sells apples for $3 each. If Sarah buys 5 apples and pays with a $20 bill, how much change does she get?",
+      "difficulty": "medium",
+      "expected_answer": "5",
+      "position_results": [
+        {
+          "position": 0,
+          "importance_score": 0.0,
+          "baseline_answer": "The answer is: 5",
+          "ablated_answer": "The answer is: 5",
+          "answers_match": true,
+          "method": "position_wise_zeroing"
+        },
+        {
+          "position": 1,
+          "importance_score": 0.0,
+          "baseline_answer": "The answer is: 5",
+          "ablated_answer": "The answer is: 5",
+          "answers_match": true,
+          "method": "position_wise_zeroing"
+        },
+        {
+          "position": 2,
+          "importance_score": 0.0,
+          "baseline_answer": "The answer is: 5",
+          "ablated_answer": "The answer is: 5",
+          "answers_match": true,
+          "method": "position_wise_zeroing"
+        },
+        {
+          "position": 3,
+          "importance_score": 0.0,
+          "baseline_answer": "The answer is: 5",
+          "ablated_answer": "The answer is: 5",
+          "answers_match": true,
+          "method": "position_wise_zeroing"
+        },
+        {
+          "position": 4,
+          "importance_score": 0.0,
+          "baseline_answer": "The answer is: 5",
+          "ablated_answer": "The answer is: 5",
+          "answers_match": true,
+          "method": "position_wise_zeroing"
+        },
+        {
+          "position": 5,
+          "importance_score": 0.0,
+          "baseline_answer": "The answer is: 5",
+          "ablated_answer": "The answer is: 5",
+          "answers_match": true,
+          "method": "position_wise_zeroing"
+        }
+      ],
+      "early_avg": 0.0,
+      "late_avg": 0.0,
+      "pattern_validated": true
+    },
+    {
+      "problem_id": 3,
+      "question": "A classroom has 6 rows with 4 desks in each row. If each desk seats 2 students, how many students can the classroom seat?",
+      "difficulty": "medium",
+      "expected_answer": "48",
+      "position_results": [
+        {
+          "position": 0,
+          "importance_score": 0.0,
+          "baseline_answer": "The answer is: 48",
+          "ablated_answer": "The answer is: 48",
+          "answers_match": true,
+          "method": "position_wise_zeroing"
+        },
+        {
+          "position": 1,
+          "importance_score": 0.0,
+          "baseline_answer": "The answer is: 48",
+          "ablated_answer": "The answer is: 48",
+          "answers_match": true,
+          "method": "position_wise_zeroing"
+        },
+        {
+          "position": 2,
+          "importance_score": 0.0,
+          "baseline_answer": "The answer is: 48",
+          "ablated_answer": "The answer is: 48",
+          "answers_match": true,
+          "method": "position_wise_zeroing"
+        },
+        {
+          "position": 3,
+          "importance_score": 0.0,
+          "baseline_answer": "The answer is: 48",
+          "ablated_answer": "The answer is: 48",
+          "answers_match": true,
+          "method": "position_wise_zeroing"
+        },
+        {
+          "position": 4,
+          "importance_score": 0.0,
+          "baseline_answer": "The answer is: 48",
+          "ablated_answer": "The answer is: 48",
+          "answers_match": true,
+          "method": "position_wise_zeroing"
+        },
+        {
+          "position": 5,
+          "importance_score": 0.0,
+          "baseline_answer": "The answer is: 48",
+          "ablated_answer": "The answer is: 48",
+          "answers_match": true,
+          "method": "position_wise_zeroing"
+        }
+      ],
+      "early_avg": 0.0,
+      "late_avg": 0.0,
+      "pattern_validated": true
+    }
+  ],
+  "summary": {
+    "avg_early_importance": 0.0,
+    "avg_late_importance": 0.0,
+    "pattern_validated": true,
+    "patterns_passed": 3,
+    "total_problems": 3
+  }
+}

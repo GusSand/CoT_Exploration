@@ -1,0 +1,70 @@
+{
+  "n_problems": 1000,
+  "baseline_accuracy": 1.0,
+  "position_importance": {
+    "0": 0.0,
+    "1": 0.145,
+    "2": 0.468,
+    "3": 0.528,
+    "4": 0.556,
+    "5": 0.868
+  },
+  "by_difficulty": {
+    "2": {
+      "n_problems": 223,
+      "baseline_accuracy": 1.0,
+      "early_importance": 0.11210762331838565,
+      "late_importance": 0.44992526158445445,
+      "pattern_validated": false
+    },
+    "1": {
+      "n_problems": 27,
+      "baseline_accuracy": 1.0,
+      "early_importance": 0.1728395061728395,
+      "late_importance": 0.6049382716049383,
+      "pattern_validated": false
+    },
+    "3": {
+      "n_problems": 250,
+      "baseline_accuracy": 1.0,
+      "early_importance": 0.18933333333333333,
+      "late_importance": 0.6586666666666666,
+      "pattern_validated": false
+    },
+    "4": {
+      "n_problems": 250,
+      "baseline_accuracy": 1.0,
+      "early_importance": 0.224,
+      "late_importance": 0.7200000000000001,
+      "pattern_validated": false
+    },
+    "5": {
+      "n_problems": 175,
+      "baseline_accuracy": 1.0,
+      "early_importance": 0.26285714285714284,
+      "late_importance": 0.7580952380952382,
+      "pattern_validated": false
+    },
+    "7": {
+      "n_problems": 16,
+      "baseline_accuracy": 1.0,
+      "early_importance": 0.4166666666666667,
+      "late_importance": 0.75,
+      "pattern_validated": false
+    },
+    "6": {
+      "n_problems": 56,
+      "baseline_accuracy": 1.0,
+      "early_importance": 0.3273809523809524,
+      "late_importance": 0.7738095238095237,
+      "pattern_validated": false
+    },
+    "8": {
+      "n_problems": 3,
+      "baseline_accuracy": 1.0,
+      "early_importance": 0.1111111111111111,
+      "late_importance": 0.4444444444444444,
+      "pattern_validated": false
+    }
+  }
+}

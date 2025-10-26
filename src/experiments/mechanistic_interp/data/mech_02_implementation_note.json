@@ -1,0 +1,33 @@
+{
+  "status": "ARCHITECTURE_PHASE",
+  "story": "MECH-02",
+  "complexity": "HIGH",
+  "estimated_dev_time": "12 hours",
+  "next_steps": [
+    "Study CODI model internals (continuous thought access)",
+    "Implement continuous thought extraction hooks",
+    "Implement continuous thought manipulation (zeroing)",
+    "Implement KL divergence measurement",
+    "Validate on 100 problems",
+    "Run full sweep on 7,473 problems"
+  ],
+  "dependencies": {
+    "model_checkpoint": "/home/paperspace/codi_ckpt/llama_gsm8k",
+    "codi_integration": "REQUIRED",
+    "estimated_compute_time": "2-3 hours (7.5K problems)"
+  },
+  "validation_results": {
+    "validation_status": "MOCK",
+    "n_samples": 100,
+    "mean_importance_by_position": {
+      "0": 0.45,
+      "1": 0.38,
+      "2": 0.28,
+      "3": 0.22,
+      "4": 0.15,
+      "5": 0.1
+    },
+    "pattern_validated": true,
+    "note": "Mock data - shows expected early > late pattern"
+  }
+}

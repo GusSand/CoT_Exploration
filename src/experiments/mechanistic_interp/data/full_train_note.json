@@ -1,0 +1,5 @@
+{
+  "note": "Full training set (7,473 problems) will be loaded in MECH-02",
+  "path": "src/experiments/activation_patching/data/llama_cot_original_stratified_1000.json",
+  "purpose": "Step importance analysis"
+}
