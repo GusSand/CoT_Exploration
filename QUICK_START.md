@@ -141,14 +141,14 @@ When viewing `interpretability_visualization.html`:
 - **Best Result**: 56.3% on 3-step problems (vs paper's 75.0%, gap: -18.7pp)
 - Still lower than paper's 75-97% - likely subtle validation methodology differences
 - Final answers remain correct (43.21% overall accuracy)
-- See `docs/experiments/section5_methodology_refinement_2025-10-16.md` for detailed analysis
+- See `docs/experiments/10-16_gpt2_gsm8k_section5_methodology.md` for detailed analysis
 
 ---
 
 ## 📚 More Information
 
 - **Detailed Guide**: `VISUALIZATION_GUIDE.md`
-- **Experiment Report**: `docs/experiments/section5_reproduction_2025-10-16.md`
+- **Experiment Report**: `docs/experiments/10-16_gpt2_gsm8k_section5_reproduction.md`
 - **Research Journal**: `docs/research_journal.md`
 - **Implementation**: `section5_experiments/README.md`
 

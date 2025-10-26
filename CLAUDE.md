@@ -76,7 +76,21 @@ You must save each conversation in the docs/conversations directory
 Save in doc/research_journal.md a high level documentation of each experiment run along with the results. This is mostly a TLDR. 
 
 ### Detailed results
-Save in `docs/experiments` detailed results with appropiate names. Do not use REPRODCTION_COMPLETE.md or README.md or some other nonsense like that. It's better something like the following and appending the date like: `harm_refuse_reproduction_10_03.md`. 
+Save in `docs/experiments` detailed results with descriptive names following the naming convention:
+**Format**: `MM-DD_<model>_<dataset>_<experiment>.md`
+
+Examples:
+- `10-25_gpt2_gsm8k_attention_visualization.md` - Oct 25, GPT-2, GSM8K, attention viz
+- `10-24_llama_gsm8k_sae_error_analysis.md` - Oct 24, LLaMA, GSM8K, SAE error analysis
+- `10-21_both_gsm8k_cot_necessity_ablation.md` - Oct 21, Both models, GSM8K, CoT ablation
+- `10-25_gpt2_liars_bench_deception_detection.md` - Oct 25, GPT-2, Liars-Bench, deception
+
+**Naming Guidelines**:
+- Start with date (MM-DD) for chronological sorting
+- Model comes SECOND (gpt2, llama, or both) - this is critical for quick scanning
+- Include dataset name (gsm8k, liars_bench, commonsense)
+- Use descriptive experiment name
+- Do NOT use generic names like REPRODUCTION_COMPLETE.md or README.md 
 
 ## CRITICAL: Role Assignment Required
 ⚠️ **STOP** - Before proceeding with ANY task, you MUST ask which role to assume if not specified.
@@ -98,11 +112,18 @@ Remember, the role will be defined at the beginning of each chat. Do not change 
 
 3. Never duplicate code. When writing new code always double check that there's not similar code already. 
 
+
 ## Product Management Process 
 1. Gather requirements
 2. Create user stories
 3. Cost the user stories
 4. Make sure you include stories for tracing/debugging like wandb integration. 
+
+## Architect process
+1. Check that the data is reliable. how many items do we have? is this enough? 
+2. Check that we don't have duplicate data. 
+3. Is the data labeled correctly? All true are true and all false are false? None of them are both? 
+4. We always do a Train/Test split with 20% (aprox) for test, or we need to do k-fold cross validation. 
 
 ## Development Process
 
@@ -126,7 +147,7 @@ When implementing features:
 
 1. **Document Results**:
    - Update `docs/research_journal.md` with high-level summary
-   - Create detailed report in `docs/experiments/[experiment_name]_[YYYY-MM-DD].md`
+   - Create detailed report in `docs/experiments/MM-DD_<model>_<dataset>_<experiment>.md`
    - Include: results, configuration, error analysis, validation of claims
 
 2. **Commit to Version Control**:
@@ -140,6 +161,13 @@ When implementing features:
    - Version control preserves reproducibility
    - Teammates need access to latest results
    - Use proper .gitignore to exclude large model files and logs
+
+4. **Document any new dataset created:
+   - We have a file called DATA_INVENTORY.md where we keep track of all the datasets created. 
+   - Update it **ANY TIME** we create a new dataset
+   - make sure there's a hyperlink to the dataset 
+   - make sure you also document how to recreate it
+   - Document which experiment it was used for and how it was stratified it it was and how many items we have. 
 
 ## Maintaining This Document
 

@@ -102,8 +102,9 @@ output_file = Path(__file__).parent.parent / 'results' / 'attention_importance_c
 plt.savefig(output_file, dpi=300, bbox_inches='tight')
 print(f'✓ Saved correlation scatter plot to {output_file}')
 
-# Create second figure: Per-token analysis at Layer 8
-fig, ax = plt.subplots(figsize=(10, 6))
+# Create second figure: Per-token analysis at Layer 14 (late layer) using SAME SCALE
+layer_for_comparison = 14
+fig, ax = plt.subplots(figsize=(12, 7))
 
 token_stats = []
 for token_pos in range(6):
@@ -119,7 +120,7 @@ for token_pos in range(6):
             importance_scores.append(ccta_prob['corruptions'][f'token_{token_pos}'][corr_type]['importance'])
         token_importance.append(np.mean(importance_scores))
 
-        token_attention.append(attn_prob['attention_by_layer']['layer_8']['continuous_token_attention'][token_pos])
+        token_attention.append(attn_prob['attention_by_layer'][f'layer_{layer_for_comparison}']['continuous_token_attention'][token_pos])
 
     mean_imp = np.mean(token_importance)
     mean_attn = np.mean(token_attention)
@@ -137,39 +138,53 @@ for token_pos in range(6):
         'p_value': p
     })
 
-# Bar plot
+# Bar plot with SAME Y-AXIS for both metrics
 x = np.arange(6)
 width = 0.35
 
-# Normalize for visualization
-max_imp = max([s['importance'] for s in token_stats])
-max_attn = max([s['attention'] for s in token_stats])
+# Get raw values - both as percentages on SAME SCALE
+importance_vals = [s['importance'] * 100 for s in token_stats]  # % failure rate
+total_attention = sum(s['attention'] for s in token_stats)
+attention_pct_of_total = [s['attention'] / total_attention * 100 for s in token_stats]  # % of CoT attention
 
-imp_normalized = [s['importance'] / max_imp for s in token_stats]
-attn_normalized = [s['attention'] / max_attn for s in token_stats]
+# Create bars with SAME Y-AXIS
+bars1 = ax.bar(x - width/2, importance_vals, width,
+               label='Importance (% failure rate when corrupted)',
+               color='#e74c3c', alpha=0.8, edgecolor='black', linewidth=1.5)
 
-bars1 = ax.bar(x - width/2, imp_normalized, width, label='Importance (normalized)', color='#e74c3c', alpha=0.7)
-bars2 = ax.bar(x + width/2, attn_normalized, width, label='Attention (normalized)', color='#3498db', alpha=0.7)
+bars2 = ax.bar(x + width/2, attention_pct_of_total, width,
+               label='Attention (% of attention among 6 CoT tokens)',
+               color='#3498db', alpha=0.8, edgecolor='black', linewidth=1.5)
 
-# Add actual values on top
-for i, (imp, attn, stats_dict) in enumerate(zip(imp_normalized, attn_normalized, token_stats)):
-    ax.text(i - width/2, imp + 0.02, f'{stats_dict["importance"]*100:.1f}%',
-            ha='center', va='bottom', fontsize=9, fontweight='bold')
-    ax.text(i + width/2, attn + 0.02, f'{stats_dict["attention"]:.3f}',
-            ha='center', va='bottom', fontsize=9, fontweight='bold')
+# Add values on top of bars
+for i in range(6):
+    # Importance percentage
+    ax.text(i - width/2, importance_vals[i] + 1.5,
+            f'{importance_vals[i]:.1f}%',
+            ha='center', va='bottom', fontsize=10, fontweight='bold', color='#c0392b')
 
-ax.set_xlabel('Token Position', fontsize=12)
-ax.set_ylabel('Normalized Value', fontsize=12)
-ax.set_title('Token Importance vs Attention (Layer 8)\nToken 5 dominates both metrics', fontsize=13, fontweight='bold')
+    # Attention percentage
+    ax.text(i + width/2, attention_pct_of_total[i] + 1.5,
+            f'{attention_pct_of_total[i]:.1f}%',
+            ha='center', va='bottom', fontsize=10, fontweight='bold', color='#2980b9')
+
+# Single y-axis with SAME SCALE for both metrics
+ax.set_xlabel('Token Position', fontsize=13, fontweight='bold')
+ax.set_ylabel('Percentage (%)', fontsize=13, fontweight='bold')
+ax.set_ylim(0, 50)  # 0-50% range covers both metrics
 ax.set_xticks(x)
-ax.set_xticklabels([f'Token {i}' for i in range(6)])
-ax.legend(fontsize=11)
+ax.set_xticklabels([f'Token {i}' for i in range(6)], fontsize=11)
 ax.grid(True, alpha=0.3, axis='y')
-ax.set_ylim(0, 1.2)
+ax.legend(fontsize=11, loc='upper left', framealpha=0.95)
+
+# Title
+ax.set_title(f'LLaMA CODI: Token Importance vs Attention Distribution (Layer {layer_for_comparison})\n'
+             f'Total attention to CoT tokens: {total_attention*100:.2f}% | Token 5 dominates both metrics',
+             fontsize=14, fontweight='bold', pad=20)
 
 plt.tight_layout()
 
-output_file2 = Path(__file__).parent.parent / 'results' / 'token_importance_attention_comparison.png'
+output_file2 = Path(__file__).parent.parent / 'results' / f'token_importance_attention_comparison_L{layer_for_comparison}.png'
 plt.savefig(output_file2, dpi=300, bbox_inches='tight')
 print(f'✓ Saved token comparison bar chart to {output_file2}')
 

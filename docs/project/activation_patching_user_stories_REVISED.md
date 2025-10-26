@@ -557,7 +557,7 @@ wandb.log({
 ```
 
 **5. Documentation**
-- Update `docs/experiments/activation_patching_causal_analysis_2025-10-18.md` with results
+- Update `docs/experiments/10-18_gpt2_gsm8k_activation_patching_causal.md` with results
 - Add summary to `docs/research_journal.md`
 - Create `src/experiments/activation_patching/README.md` with usage instructions
 - Include all plots in documentation
@@ -715,7 +715,7 @@ This MVP answers the **core question**:
 - Requirements file if needed
 
 ### Results
-- `docs/experiments/activation_patching_results_2025-10-18.md` - Detailed findings
+- `docs/experiments/10-18_gpt2_gsm8k_activation_patching_results.md` - Detailed findings
 - `docs/research_journal.md` - Summary entry
 - Plots saved to `experiments/activation_patching/results/`
 

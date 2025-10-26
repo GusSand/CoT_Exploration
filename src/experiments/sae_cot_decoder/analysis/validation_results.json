@@ -1,0 +1,63 @@
+{
+  "all_positions": {
+    "0": {
+      "final_explained_variance": 0.37360637991324186,
+      "final_feature_death_rate": 0.69580078125,
+      "final_l0_norm": 18.955623626708984,
+      "passes_ev_target": false,
+      "passes_death_target": false,
+      "passes_both_targets": false,
+      "verdict": "WARNING"
+    },
+    "1": {
+      "final_explained_variance": 0.7092811691943988,
+      "final_feature_death_rate": 0.68359375,
+      "final_l0_norm": 51.80031204223633,
+      "passes_ev_target": true,
+      "passes_death_target": false,
+      "passes_both_targets": false,
+      "verdict": "WARNING"
+    },
+    "2": {
+      "final_explained_variance": 0.7104496167635905,
+      "final_feature_death_rate": 0.806640625,
+      "final_l0_norm": 55.409061431884766,
+      "passes_ev_target": true,
+      "passes_death_target": false,
+      "passes_both_targets": false,
+      "verdict": "WARNING"
+    },
+    "3": {
+      "final_explained_variance": 0.7263628006870142,
+      "final_feature_death_rate": 0.556640625,
+      "final_l0_norm": 50.72218704223633,
+      "passes_ev_target": true,
+      "passes_death_target": false,
+      "passes_both_targets": false,
+      "verdict": "WARNING"
+    },
+    "4": {
+      "final_explained_variance": 0.6616136623068535,
+      "final_feature_death_rate": 0.49462890625,
+      "final_l0_norm": 30.292186737060547,
+      "passes_ev_target": false,
+      "passes_death_target": false,
+      "passes_both_targets": false,
+      "verdict": "WARNING"
+    },
+    "5": {
+      "final_explained_variance": 0.7428549628367034,
+      "final_feature_death_rate": 0.73388671875,
+      "final_l0_norm": 55.74374771118164,
+      "passes_ev_target": true,
+      "passes_death_target": false,
+      "passes_both_targets": false,
+      "verdict": "WARNING"
+    }
+  },
+  "summary": {
+    "positions_passing_ev": 4,
+    "positions_passing_death": 0,
+    "positions_passing_both": 0
+  }
+}

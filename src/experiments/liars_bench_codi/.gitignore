@@ -1,0 +1,23 @@
+# Large datasets
+data/raw/*.json
+data/processed/*.json
+
+# Results and checkpoints
+results/*.json
+results/*.png
+results/*.pdf
+
+# Notebooks
+notebooks/*.ipynb_checkpoints/
+
+# Tokens and credentials
+*.token
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Keep directory structure
+!.gitkeep

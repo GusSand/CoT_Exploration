@@ -302,7 +302,7 @@ Should reproduce **43.14% ± 0.5%** on GSM8K test set (from your previous reprod
 
 After running experiments, update:
 - `docs/research_journal.md` with high-level findings
-- `docs/experiments/section5_reproduction_2025-10-16.md` with detailed results
+- `docs/experiments/10-16_gpt2_gsm8k_section5_reproduction.md` with detailed results
 - Compare with original paper's claims
 
 ---

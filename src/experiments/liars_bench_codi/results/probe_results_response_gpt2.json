@@ -1,0 +1,60 @@
+{
+  "model": "gpt2",
+  "probe_type": "response_tokens",
+  "layer": "final_layer",
+  "pooling": "mean_across_tokens",
+  "accuracy": 0.705,
+  "f1_score": 0.6424242424242425,
+  "auroc": 0.77683,
+  "ci_accuracy_lower": 0.677475,
+  "ci_accuracy_upper": 0.73905,
+  "ci_f1_lower": 0.6071785615106914,
+  "ci_f1_upper": 0.6813335313755446,
+  "ci_auroc_lower": 0.7532568716752525,
+  "ci_auroc_upper": 0.8021678444737963,
+  "confusion_matrix": [
+    [
+      440,
+      60
+    ],
+    [
+      235,
+      265
+    ]
+  ],
+  "report": {
+    "0": {
+      "precision": 0.6518518518518519,
+      "recall": 0.88,
+      "f1-score": 0.748936170212766,
+      "support": 500
+    },
+    "1": {
+      "precision": 0.8153846153846154,
+      "recall": 0.53,
+      "f1-score": 0.6424242424242425,
+      "support": 500
+    },
+    "accuracy": 0.705,
+    "macro avg": {
+      "precision": 0.7336182336182336,
+      "recall": 0.7050000000000001,
+      "f1-score": 0.6956802063185042,
+      "support": 1000
+    },
+    "weighted avg": {
+      "precision": 0.7336182336182338,
+      "recall": 0.705,
+      "f1-score": 0.6956802063185042,
+      "support": 1000
+    }
+  },
+  "best_C": 0.001,
+  "comparison": {
+    "continuous_thoughts_accuracy": 0.5973,
+    "continuous_thoughts_auroc": 0.643,
+    "response_vs_continuous_diff": 0.1076999999999999,
+    "apollo_baseline": 0.7,
+    "vs_apollo_diff": 0.0050000000000000044
+  }
+}
