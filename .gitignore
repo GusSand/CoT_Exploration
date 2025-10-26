@@ -155,3 +155,16 @@ src/experiments/sae_cot_decoder/results/*.txt
 !src/experiments/sae_cot_decoder/analysis/*.json
 !src/experiments/sae_cot_decoder/analysis/*.md
 !src/experiments/sae_cot_decoder/analysis/*.png
+
+# Section 5 Experiments - exclude large output directories
+section5_experiments/outputs/
+section5_experiments/*.log
+
+# But keep organized similarity_analysis results
+!section5_experiments/similarity_analysis/
+!section5_experiments/similarity_analysis/**
+
+# Within similarity_analysis, exclude only raw full predictions
+section5_experiments/similarity_analysis/results/**/predictions.json
+section5_experiments/similarity_analysis/results/**/correct_predictions/predictions.json
+section5_experiments/similarity_analysis/results/**/incorrect_predictions/predictions.json

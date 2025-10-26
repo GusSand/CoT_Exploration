@@ -1,0 +1,65 @@
+================================================================================
+CODI vs Vanilla (4 Models): Geometric Similarity Analysis
+================================================================================
+
+## Overview
+
+Comparison of geometric similarity metrics across 4 models:
+1. CODI-GPT2: Continuous thoughts (fine-tuned)
+2. CODI-Llama: Continuous thoughts (fine-tuned)
+3. Vanilla GPT-2: Standard hidden states (no CODI)
+4. Vanilla Llama: Standard hidden states (no CODI)
+
+================================================================================
+RESULTS SUMMARY
+================================================================================
+
+### Task Accuracy
+
+  CODI-GPT2:          39.0%
+  CODI-Llama:         37.0%
+  Vanilla GPT-2:       1.0%
+  Vanilla Llama:       5.0%
+
+### Cosine Similarity (Top-1 Token / Generated Token)
+
+  CODI-GPT2:         0.0033 (±0.0789)
+  CODI-Llama:        0.1532 (±0.0291)
+  Vanilla GPT-2:    -0.0816 (±0.1423)
+  Vanilla Llama:     0.3145 (±0.0604)
+
+### Normalized L2 Distance (Top-1 Token / Generated Token)
+
+  CODI-GPT2:         1.4108 (±0.0559)
+  CODI-Llama:        1.3012 (±0.0221)
+  Vanilla GPT-2:     1.4673 (±0.1005)
+  Vanilla Llama:     1.1701 (±0.0523)
+
+================================================================================
+KEY FINDINGS
+================================================================================
+
+1. BEST GEOMETRIC ALIGNMENT: Vanilla Llama
+
+   Vanilla Llama achieves the highest cosine similarity: 0.3145
+
+2. CODI FINE-TUNING IMPACT
+
+   GPT-2: CODI (0.0033) vs Vanilla (-0.0816)
+          Improvement: +104.0%
+
+   Llama: CODI (0.1532) vs Vanilla (0.3145)
+          Improvement: -51.3%
+
+3. MODEL CAPACITY
+
+   Llama models (1B params) vs GPT-2 (124M params):
+   - CODI: Llama 0.1532 vs GPT-2 0.0033
+   - Vanilla: Llama 0.3145 vs GPT-2 -0.0816
+
+4. VANILLA MODEL BEHAVIOR
+
+   Vanilla GPT-2 shows NEGATIVE similarity (-0.0816)
+   → Hidden states point away from token embeddings
+
+================================================================================
