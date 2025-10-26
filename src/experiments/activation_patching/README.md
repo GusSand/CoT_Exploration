@@ -392,7 +392,7 @@ If you use this code, please cite:
 
 ## Contact & Support
 
-- **Documentation**: `/home/paperspace/dev/CoT_Exploration/docs/experiments/activation_patching_causal_analysis_2025-10-18.md`
+- **Documentation**: `/home/paperspace/dev/CoT_Exploration/docs/experiments/10-18_gpt2_gsm8k_activation_patching_causal.md`
 - **User Stories**: `/home/paperspace/dev/CoT_Exploration/docs/project/activation_patching_user_stories_REVISED.md`
 - **Research Journal**: `/home/paperspace/dev/CoT_Exploration/docs/research_journal.md`
 
