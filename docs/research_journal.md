@@ -3052,3 +3052,71 @@ Actual:
 **Time**: ~30 minutes
 
 **Recommendation**: Do NOT pursue position-specific approaches further. Consider alternative strategies like weighted CoT assignment or position-specific unembedding instead.
+
+---
+
+### 2025-10-26f: TopK SAE Grid Experiment - Quality-Sparsity Tradeoff Analysis
+
+**Objective**: Characterize the quality-sparsity tradeoff for TopK Sparse Autoencoders on CODI continuous thought by training a 2D grid of K values × dictionary sizes.
+
+**Status**: ✅ **COMPLETE** - All 12 configs Pareto-optimal, K dominates quality (not latent_dim)
+
+**Motivation**:
+- Previous L1 SAEs suffered from shrinkage effects and unpredictable sparsity
+- Need exact sparsity control for fair comparisons across experiments
+- Understand how dictionary size and sparsity level affect reconstruction quality
+
+**Approach**:
+1. **TopK SAE Architecture**: Enforce exact K-sparsity by selecting top-K activations by magnitude, zero rest (no L1 penalty)
+2. **Grid Search**: Train 12 SAEs across K={5,10,20,100} × latent_dim={512,1024,2048}
+3. **Parallel Training**: 3 processes on A100 80GB (one per latent_dim) for 3× speedup
+4. **Quality Metrics**: Explained Variance, Feature Death Rate, Activation Magnitudes, Reconstruction Loss
+5. **Pareto Analysis**: Identify configurations on quality-sparsity frontier
+
+**Key Results**:
+
+**Finding 1 - All Configurations Pareto-Optimal**:
+- No configuration strictly dominates another in both quality AND sparsity
+- Each represents unique tradeoff point for different use cases
+
+**Finding 2 - K Dominates Quality (Not Dictionary Size)**:
+- Increasing K: 5→100 improves EV by +17-18% (huge impact)
+- Increasing latent_dim: 512→2048 improves EV by only +0.1-1.7% (marginal)
+- Conclusion: **Sparsity level matters far more than dictionary size**
+
+**Finding 3 - Feature Death Inversely Correlates with K**:
+- K=5: 85.5-95.2% feature death (only 74-98 features active)
+- K=100: 0-7.8% feature death (near-full utilization)
+- Larger dictionaries have higher death rates at same K
+
+**Finding 4 - Activation Magnitude Inversely Correlates with K**:
+- K=5: Mean=17.3, Max=49.5 (strong, concentrated features)
+- K=100: Mean=1.8, Max=10.9 (weak, distributed features)
+- Interpretation: Fewer features must encode more information
+
+**Quality Range**:
+- Best: d=1024, K=100 → EV=0.880, Loss=0.0517
+- Worst: d=512, K=5 → EV=0.702, Loss=0.128
+
+**Recommended Configurations**:
+- **Ultra-sparse (K=5)**: d=2048 for max interpretability (74 active features)
+- **Balanced (K=20)**: d=1024 for quality-sparsity sweet spot (EV=0.813)
+- **High-quality (K=100)**: d=1024 for best reconstruction (EV=0.880)
+
+**Deliverables**:
+- 12 trained SAE checkpoints (226 MB total)
+- 5 heatmap visualizations (EV, death rate, mean/max activation, loss)
+- Pareto frontier analysis with plot
+- Comprehensive experiment report
+
+**Detailed Documentation**: [10-26_llama_gsm8k_topk_sae_grid.md](experiments/10-26_llama_gsm8k_topk_sae_grid.md)
+
+**Time Investment**: ~20 minutes (12 SAEs × 2-5s training + analysis + documentation)
+
+**Cost Efficiency**: Excellent - comprehensive grid search in <30 minutes on A100
+
+**Next Steps**: 
+- Use d=1024, K=20 for downstream task evaluation (balanced config)
+- Consider multi-position analysis (train SAEs for all 6 positions)
+- Test SAE features on error prediction task
+
