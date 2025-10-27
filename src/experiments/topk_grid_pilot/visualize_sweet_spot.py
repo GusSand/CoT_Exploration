@@ -51,12 +51,12 @@ def load_metrics_for_config(k=100, latent_dim=512):
     return metrics, layers, positions
 
 
-def plot_heatmap(data, metric_name, layers, positions, output_path, k, latent_dim):
+def plot_heatmap(data, metric_name, layers, positions, output_path, k, latent_dim, cmap='RdYlGn'):
     """Generate single heatmap for one metric."""
     fig, ax = plt.subplots(figsize=(10, 12))
 
     # Create heatmap
-    im = ax.imshow(data, cmap='RdYlGn', aspect='auto', interpolation='nearest')
+    im = ax.imshow(data, cmap=cmap, aspect='auto', interpolation='nearest')
 
     # Set ticks
     ax.set_xticks(np.arange(len(positions)))
@@ -126,13 +126,14 @@ def main():
         k, latent_dim
     )
 
-    # Feature Death Rate
+    # Feature Death Rate (reversed colormap: 0 death = green, high death = red)
     plot_heatmap(
         metrics['feature_death_rate'],
         'Feature Death Rate',
         layers, positions,
         viz_dir / f'sweetspot_k{k}_d{latent_dim}_feature_death.png',
-        k, latent_dim
+        k, latent_dim,
+        cmap='RdYlGn_r'  # Reversed: green = good (low death), red = bad (high death)
     )
 
     # Mean Activation
