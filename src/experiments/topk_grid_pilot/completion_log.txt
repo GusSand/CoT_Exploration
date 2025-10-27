@@ -175,3 +175,17 @@ Documentation update complete!
 Step 4: Git Commit & Push
 ================================================================================================
 
+[master 0a0d237] feat: Complete TopK SAE multi-layer analysis (1,152 SAEs across 16 layers × 6 positions)
+ 11 files changed, 3169 insertions(+), 2 deletions(-)
+ create mode 100644 docs/experiments/10-26_llama_gsm8k_topk_sae_multilayer.md
+ create mode 100644 src/experiments/topk_grid_pilot/analyze_all_layers.py
+ create mode 100755 src/experiments/topk_grid_pilot/complete_and_shutdown.sh
+ create mode 100644 src/experiments/topk_grid_pilot/completion_log.txt
+ create mode 100644 src/experiments/topk_grid_pilot/monitor_and_analyze.sh
+ create mode 100644 src/experiments/topk_grid_pilot/train_all_layers_positions.py
+ create mode 100644 src/experiments/topk_grid_pilot/training_log.txt
+ create mode 100644 src/experiments/topk_grid_pilot/update_documentation.py
+ create mode 100644 src/experiments/topk_grid_pilot/visualize_all_layers.py
+Pushing to GitHub...
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
