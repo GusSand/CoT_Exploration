@@ -114,6 +114,31 @@
             border-bottom: 2px solid #667eea;
             position: sticky;
             top: 0;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+        }
+
+        th:hover {
+            background: #1a2340;
+        }
+
+        th.sortable::after {
+            content: ' ⇅';
+            opacity: 0.3;
+            font-size: 0.9em;
+        }
+
+        th.sort-asc::after {
+            content: ' ↑';
+            opacity: 1;
+            color: #667eea;
+        }
+
+        th.sort-desc::after {
+            content: ' ↓';
+            opacity: 1;
+            color: #667eea;
         }
 
         td {
@@ -2311,6 +2336,69 @@
             document.getElementById(tabId).classList.add('active');
             clickedButton.classList.add('active');
         }
+
+        function sortTable(table, columnIndex, isNumeric = false) {
+            const tbody = table.querySelector('tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            const headers = table.querySelectorAll('th');
+            const currentHeader = headers[columnIndex];
+
+            // Determine sort direction
+            let isAscending = true;
+            if (currentHeader.classList.contains('sort-asc')) {
+                isAscending = false;
+            }
+
+            // Clear all sort indicators
+            headers.forEach(h => {
+                h.classList.remove('sort-asc', 'sort-desc');
+            });
+
+            // Sort rows
+            rows.sort((a, b) => {
+                let aVal = a.cells[columnIndex].textContent.trim();
+                let bVal = b.cells[columnIndex].textContent.trim();
+
+                if (isNumeric) {
+                    // Extract numbers (handle formats like "169.9×" or "29.3%")
+                    aVal = parseFloat(aVal.replace(/[^0-9.-]/g, '')) || 0;
+                    bVal = parseFloat(bVal.replace(/[^0-9.-]/g, '')) || 0;
+                    return isAscending ? aVal - bVal : bVal - aVal;
+                } else {
+                    return isAscending ?
+                        aVal.localeCompare(bVal) :
+                        bVal.localeCompare(aVal);
+                }
+            });
+
+            // Update display
+            rows.forEach(row => tbody.appendChild(row));
+
+            // Update sort indicator
+            currentHeader.classList.add(isAscending ? 'sort-asc' : 'sort-desc');
+        }
+
+        // Initialize sortable headers
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('table').forEach(table => {
+                const headers = table.querySelectorAll('th');
+                headers.forEach((header, index) => {
+                    header.classList.add('sortable');
+
+                    // Determine if column is numeric based on header text
+                    const headerText = header.textContent.toLowerCase();
+                    const isNumeric = headerText.includes('enrichment') ||
+                                     headerText.includes('activation') ||
+                                     headerText.includes('layer') ||
+                                     headerText.includes('pos') ||
+                                     headerText.includes('rank');
+
+                    header.addEventListener('click', () => {
+                        sortTable(table, index, isNumeric);
+                    });
+                });
+            });
+        });
     </script>
 </body>
 </html>
