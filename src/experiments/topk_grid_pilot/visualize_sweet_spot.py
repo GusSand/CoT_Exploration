@@ -145,13 +145,14 @@ def main():
         k, latent_dim
     )
 
-    # Reconstruction Loss
+    # Reconstruction Loss (reversed colormap: low MSE = green, high MSE = red)
     plot_heatmap(
         metrics['reconstruction_loss'],
         'Reconstruction Loss (MSE)',
         layers, positions,
         viz_dir / f'sweetspot_k{k}_d{latent_dim}_reconstruction_loss.png',
-        k, latent_dim
+        k, latent_dim,
+        cmap='RdYlGn_r'  # Reversed: green = good (low loss), red = bad (high loss)
     )
 
     print()
