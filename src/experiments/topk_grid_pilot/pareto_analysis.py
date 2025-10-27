@@ -145,17 +145,30 @@ def plot_pareto_frontier(pareto_configs, dominated_configs, output_path):
         # Draw Pareto frontier line
         ax.plot(k_sorted, ev_sorted, 'r--', linewidth=2, alpha=0.5, label='Pareto Frontier')
 
-    # Add labels for all points
-    all_configs = pareto_configs + dominated_configs
-    for config in all_configs:
-        label = f"d={config['latent_dim']}, K={config['k']}"
+    # Add labels only for Pareto-optimal points with smart positioning
+    # Create offset strategy to avoid overlaps
+    offsets = {
+        5: (10, -20),    # K=5: below
+        10: (10, 20),    # K=10: above
+        20: (10, -20),   # K=20: below
+        100: (10, 20),   # K=100: above
+    }
+
+    for config in pareto_configs:
+        label = f"d={config['latent_dim']}\nK={config['k']}"
+        offset = offsets.get(config['k'], (10, 10))
+
         ax.annotate(
             label,
             (config['k'], config['explained_variance']),
-            xytext=(5, 5),
+            xytext=offset,
             textcoords='offset points',
-            fontsize=8,
-            alpha=0.7
+            fontsize=9,
+            fontweight='bold',
+            bbox=dict(boxstyle='round,pad=0.4', facecolor='yellow', alpha=0.7, edgecolor='red', linewidth=1.5),
+            ha='left',
+            va='center',
+            arrowprops=dict(arrowstyle='->', connectionstyle='arc3,rad=0', color='red', lw=1.5)
         )
 
     # Colorbar
