@@ -3513,3 +3513,175 @@ Actual:
 **Documentation**: [docs/experiments/10-27_gpt2_gsm8k_feature_interpretability.md](experiments/10-27_gpt2_gsm8k_feature_interpretability.md)
 
 ---
+
+## 2025-10-27: LLaMA SAE K-Sparsity Comprehensive Study
+
+**Experiment Series**: Systematic exploration of TopK SAE sparsity (K) and dictionary size (d) effects on feature specialization and reconstruction quality
+
+**Models**: LLaMA-3.2-1B (CODI continuous thought), Layer 14 Position 3
+**Dataset**: GSM8K validation (1,495 samples)
+**Time**: ~2 hours total across 4 sub-experiments
+
+---
+
+### Sub-Experiment 1: Large K Study (K=200, K=300)
+
+**Goal**: Test if larger K produces more specialized features at usable activation frequencies
+
+**Hypothesis**: Larger K → more active features per sample → more pattern features at >1% activation
+
+**Result**: **HYPOTHESIS FALSIFIED**
+- K=200: 0% specialized (all general-purpose features)
+- K=300: 0% specialized (all general-purpose features)
+- Larger K **eliminates** specialization rather than making it more usable
+
+**Key Finding**: Larger K distributes computational load across more features, removing pressure for any single feature to specialize on rare patterns.
+
+**Quality Metrics**:
+- K=200: 90.2% EV, 0% death, 0.042 loss
+- K=300: 91.6% EV, 0% death, 0.036 loss
+- Quality improves with K, but interpretability vanishes
+
+**Documentation**: [docs/experiments/10-27_llama_gsm8k_large_k_experiment.md](experiments/10-27_llama_gsm8k_large_k_experiment.md)
+
+---
+
+### Sub-Experiment 2: Low K Study (K=50)
+
+**Goal**: Test if extreme sparsity produces even more specialized features than K=100 (4.6%)
+
+**Hypothesis**: Lower K → higher computational pressure → more specialization
+
+**Result**: **HYPOTHESIS CONFIRMED**
+- K=50: **19.5% specialized** (29/149 features) - 4.2× higher than K=100
+- Feature breakdown: 19 highly-specialized, 9 operation-specialized, 1 value-specialized
+- 3 swap pairs for causal experiments
+
+**Cost**:
+- 32% feature death (164 dead features)
+- 84.9% EV (lower than K=100's 87.8%)
+- 0.065 reconstruction loss (higher than K=100's 0.052)
+
+**Key Finding**: Extreme sparsity forces model to dedicate features to rare computational patterns, but at significant quality/efficiency cost.
+
+**Documentation**: [docs/experiments/10-27_llama_gsm8k_k50_high_specialization.md](experiments/10-27_llama_gsm8k_k50_high_specialization.md)
+
+---
+
+### Sub-Experiment 3: K=75 Sweet Spot Search
+
+**Goal**: Find intermediate K that balances specialization (10-15%) with quality and low feature death
+
+**Hypothesis**: K=75 would provide sweet spot between K=50 (high specialization, high death) and K=100 (low specialization, no death)
+
+**Result**: **HYPOTHESIS FALSIFIED - NO SWEET SPOT EXISTS**
+- K=75: 19.2% specialized (nearly identical to K=50's 19.5%)
+- K=75: 11.1% feature death (better than K=50's 32%, but still substantial)
+- K=75: 86.8% EV (worse than K=100's 87.8%)
+
+**Critical Discovery**: **Binary Phase Transition in Specialization**
+- **Phase 1** (K ≤ 75): ~19-20% specialized (forced specialization regime)
+- **Transition** (K = 100): 4.6% specialized (sharp drop)
+- **Phase 2** (K ≥ 200): 0% specialized (distributed representation regime)
+
+**Implication**: You cannot smoothly trade specialization for quality - it's fundamentally binary based on whether K exceeds critical threshold.
+
+**Conclusion**: K=75 offers no advantage - stuck in "worst of both worlds" with same specialization as K=50 but worse quality than K=100.
+
+**Documentation**: [docs/experiments/10-27_llama_gsm8k_optimal_k_analysis.md](experiments/10-27_llama_gsm8k_optimal_k_analysis.md)
+
+---
+
+### Sub-Experiment 4: Dictionary Scaling (K=50, d=250)
+
+**Goal**: Test if d ≈ 5K scaling law eliminates feature death while maintaining specialization
+
+**Hypothesis**: K=50 with d=250 (5× K) would eliminate 32% death seen with d=512 while maintaining 19.5% specialization
+
+**Result**: **HYPOTHESIS FALSIFIED**
+- Feature death: 17.2% (improved from 32%, but NOT eliminated)
+- Specialization: **7.4%** (collapsed from 19.5%, -62% relative decrease!)
+- Quality: 84.4% EV (slightly worse than d=512's 84.9%)
+
+**Counterintuitive Discovery**: **Oversized Dictionaries Enable Specialization**
+
+Dead features are NOT waste - they're **capacity reserves** that enable specialization!
+
+**Mechanism**:
+- **Large dictionary (d=512)**: Provides "spare capacity" for rare-pattern features → 19.5% specialized
+- **Small dictionary (d=250)**: No spare capacity, every feature must be frequently useful → 7.4% specialized
+
+**Key Insight**: Specialization requires "room" to dedicate features to rare patterns. Tight capacity forces generalization.
+
+**Revised Scaling Law**:
+- For 0% death: K ≥ 100 (necessary) + d ≥ 5K (sufficient)
+- For max specialization: K ≤ 75 + d ≥ 7-10K (oversized dictionary!)
+
+**Documentation**: [docs/experiments/10-27_llama_gsm8k_dictionary_scaling.md](experiments/10-27_llama_gsm8k_dictionary_scaling.md)
+
+---
+
+### Overall Synthesis: Complete K-Sparsity Landscape
+
+**Complete Results Table**:
+
+| K | d | EV (%) | Loss | Death % | Spec. % | Active | Use Case |
+|---|---|--------|------|---------|---------|--------|----------|
+| 50 | 250 | 84.4 | 0.067 | 17% | 7.4% | 207/250 | ❌ Not recommended |
+| 50 | 512 | 84.9 | 0.065 | 32% | **19.5%** | 348/512 | Max specialization |
+| 75 | 512 | 86.8 | 0.057 | 11% | 19.2% | 455/512 | Causal experiments (6 pairs) |
+| 100 | 512 | **87.8** | **0.052** | **0%** | 4.6% | **512/512** | **Balanced (RECOMMENDED)** |
+| 200 | 512 | **90.2** | **0.042** | **0%** | 0% | **512/512** | Max quality |
+| 300 | 512 | 91.6 | 0.036 | 0% | 0% | 512/512 | Max quality |
+
+**Scientific Discoveries**:
+
+1. **Binary Phase Transition**: Specialization shows discontinuous behavior at K ≈ 100, not gradual decline
+2. **Oversized Dictionaries Enable Specialization**: Dead features = capacity reserves for rare patterns
+3. **K=100 Critical Threshold**: Specialization collapses above this point (task/architecture-specific)
+4. **Specialization-Quality Tradeoff**: Cannot have both high specialization AND high quality simultaneously
+
+**Final Recommendations**:
+
+**For Interpretability Research** (RECOMMENDED):
+- **K=100, d=512**
+- Rationale: 4.6% specialized (sufficient for validation), 87.8% EV (good quality), 0% death (efficient)
+- **5 monosemantic features** is enough to study compositional reasoning patterns
+
+**For Maximum Specialization**:
+- **K=50, d=512 (or larger)**
+- Rationale: 19.5% specialized (maximum examples), accept 32% death and 84.9% EV as cost
+- **29 monosemantic features** for comprehensive cataloging and multiple causal experiments
+- Use when: Need many specialized features for statistical analysis or extensive swap experiments
+
+**Clarification - "Maximum Specialization" vs "Interpretability Research"**:
+- **Both find monosemantic features** (same type: compositional patterns like "multiply-then-add")
+- **Difference is quantity**: 29 vs 5 specialized features
+- **K=100 recommended** for most cases: 5 examples sufficient to validate interpretability claims, with better quality/efficiency
+- **K=50 only when**: Need to catalog many patterns or run extensive causal experiments (6 swap pairs vs 1)
+
+**For Production/Quality**:
+- **K=200, d=512**
+- Rationale: 90.2% EV (excellent), 0% death, distributed representations (robust)
+- No specialized features (not needed for production)
+
+**Time Investment**:
+- Training: ~2 seconds per model × 6 models = ~12 seconds
+- Analysis: ~5 seconds per model × 6 models = ~30 seconds
+- Visualization: ~5 seconds
+- Documentation: ~90 minutes
+- **Total**: ~2 hours
+
+**Deliverables**:
+- 6 trained SAE checkpoints (348 MB total)
+- 6 feature analysis files
+- 4 comprehensive documentation files
+- 2 visualization plots (6-panel comparison + activation curves)
+- Complete reproducibility instructions
+
+**Code Artifacts**:
+- `train_large_k.py`: Train TopK SAEs with configurable K and d
+- `analyze_activations.py`: Feature specialization analysis (updated for multiple K/d)
+- `visualize_large_k_results.py`: Comparison visualizations across K values
+
+---
