@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "layer": 14,
+    "position": 3,
+    "sae_config": "K=100, d=512",
+    "rank_range": [
+      400,
+      512
+    ],
+    "total_features_analyzed": 0,
+    "specialized_features_found": 0,
+    "swap_pairs_generated": 0,
+    "analysis_date": "2025-10-27"
+  },
+  "all_features": [],
+  "specialized_features": [],
+  "swap_pairs": []
+}
