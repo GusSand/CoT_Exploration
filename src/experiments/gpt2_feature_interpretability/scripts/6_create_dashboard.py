@@ -329,10 +329,10 @@ def create_lightweight_dashboard():
         <div class="section">
             <h2>Feature Categories</h2>
             <div class="tabs">
-                <button class="tab active" onclick="showTab('top100')">Top 100 Overall</button>
-                <button class="tab" onclick="showTab('numbers')">Number Features</button>
-                <button class="tab" onclick="showTab('operators')">Operators</button>
-                <button class="tab" onclick="showTab('composite')">Composite</button>
+                <button class="tab active" onclick="showTab('top100', this)">Top 100 Overall</button>
+                <button class="tab" onclick="showTab('numbers', this)">Number Features</button>
+                <button class="tab" onclick="showTab('operators', this)">Operators</button>
+                <button class="tab" onclick="showTab('composite', this)">Composite</button>
             </div>
 
             <div id="top100" class="tab-content active">
@@ -543,7 +543,7 @@ def create_lightweight_dashboard():
     </div>
 
     <script>
-        function showTab(tabId) {{
+        function showTab(tabId, clickedButton) {{
             // Hide all tabs
             document.querySelectorAll('.tab-content').forEach(content => {{
                 content.classList.remove('active');
@@ -554,7 +554,7 @@ def create_lightweight_dashboard():
 
             // Show selected tab
             document.getElementById(tabId).classList.add('active');
-            event.target.classList.add('active');
+            clickedButton.classList.add('active');
         }}
     </script>
 </body>
