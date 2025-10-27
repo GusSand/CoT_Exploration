@@ -137,6 +137,14 @@ def create_lightweight_dashboard():
         .stat-card p {{
             color: #a0aec0;
             font-size: 0.95em;
+            margin-bottom: 8px;
+        }}
+
+        .stat-card .comparison {{
+            color: #718096;
+            font-size: 0.75em;
+            font-style: italic;
+            line-height: 1.4;
         }}
 
         .section {{
@@ -336,18 +344,22 @@ def create_lightweight_dashboard():
             <div class="stat-card">
                 <h3>{metadata['total_features']:,}</h3>
                 <p>Interpretable Features</p>
+                <div class="comparison">41.8% of total features<br>LLaMA: ~20% expected</div>
             </div>
             <div class="stat-card">
                 <h3>{metadata['monosemantic_rate']*100:.1f}%</h3>
                 <p>Monosemantic Rate</p>
+                <div class="comparison">GPT-2: 72.6% vs LLaMA: ~50% (est.)</div>
             </div>
             <div class="stat-card">
                 <h3>66.4%</h3>
                 <p>Number Features</p>
+                <div class="comparison">GPT-2 specialized for numbers<br>LLaMA: more balanced (est.)</div>
             </div>
             <div class="stat-card">
                 <h3>169.9×</h3>
                 <p>Max Enrichment</p>
+                <div class="comparison">Feature L4_P3_F241 → "50000"<br>Extreme specialization</div>
             </div>
         </div>
 

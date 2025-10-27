@@ -1,6 +1,6 @@
 # Data Inventory - CoT Exploration Project
 
-**Last Updated**: 2025-10-27 (Added Section 19: GPT-2 Feature Interpretability Datasets)
+**Last Updated**: 2025-10-27 (Added Section 21: Attention Flow Analysis Datasets)
 
 This document provides a complete breakdown of all datasets in the project, organized by experiment type and model.
 
@@ -2949,3 +2949,59 @@ python src/experiments/llama_sae_hierarchy/validate_features.py --layer 14 --pos
 **Time to Generate**: ~3 hours (automated)
 
 ---
+
+---
+
+## 21. Attention Flow Analysis Datasets
+
+### 21.1 Attention Flow Training Sample (100 problems)
+**File**: [`src/experiments/codi_attention_flow/data/attention_dataset_100_train.json`](../src/experiments/codi_attention_flow/data/attention_dataset_100_train.json)
+
+**Purpose**: Random sample of 100 GSM8K training problems for attention pattern extraction and critical head identification
+
+**Size**: 100 problems (63 KB)
+
+**Status**: ✅ Generated
+
+**Structure**:
+```json
+[
+  {
+    "gsm8k_id": "train_53",
+    "question": "Problem text from GSM8K...",
+    "answer": "42",
+    "full_solution": "Step-by-step solution with #### 42"
+  }
+]
+```
+
+**Sampling Method**:
+- Source: GSM8K training set (7,473 problems total)
+- Method: Random sampling with seed=42
+- No stratification (pure random sample)
+- Reproducible: same seed produces same sample
+
+**Usage**:
+- Story 1.2: Extract 6×6 attention matrices between continuous thought positions
+- Story 1.3-1.5: Identify hub positions, flow patterns, skip connections
+- Story 2.1-2.6: Rank critical attention heads, compare GPT-2 vs LLaMA
+
+**Recreation**:
+```bash
+cd /home/paperspace/dev/CoT_Exploration
+python src/experiments/codi_attention_flow/scripts/1_sample_dataset.py --seed 42 --n_samples 100
+```
+
+**Related Experiments**:
+- Used in: Attention flow analysis (Phase 1-2)
+- Models: LLaMA-3.2-1B, GPT-2-124M
+- Documented in: `docs/experiments/10-27_llama_gsm8k_attention_flow_analysis.md`
+
+**Validation**:
+- ✅ No duplicates: 100 unique IDs
+- ✅ All questions non-empty (min length: 85 chars)
+- ✅ All answers present
+- ✅ All IDs from training set (train_53 to train_7308)
+
+---
+

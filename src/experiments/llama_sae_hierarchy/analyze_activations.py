@@ -28,11 +28,20 @@ def load_sae_and_data(layer, position, k=100, latent_dim=512):
     print(f"Loading SAE: Layer {layer}, Position {position}, K={k}, d={latent_dim}")
     print(f"{'='*80}\n")
 
-    # Load SAE checkpoint
-    ckpt_path = f'src/experiments/topk_grid_pilot/results/checkpoints/pos{position}_layer{layer}_d{latent_dim}_k{k}.pt'
+    # Load SAE checkpoint - check both locations
+    ckpt_paths = [
+        f'src/experiments/llama_sae_hierarchy/checkpoints/pos{position}_layer{layer}_d{latent_dim}_k{k}.pt',
+        f'src/experiments/topk_grid_pilot/results/checkpoints/pos{position}_layer{layer}_d{latent_dim}_k{k}.pt'
+    ]
 
-    if not Path(ckpt_path).exists():
-        raise FileNotFoundError(f"Checkpoint not found: {ckpt_path}")
+    ckpt_path = None
+    for path in ckpt_paths:
+        if Path(path).exists():
+            ckpt_path = path
+            break
+
+    if ckpt_path is None:
+        raise FileNotFoundError(f"Checkpoint not found in any location: {ckpt_paths}")
 
     ckpt = torch.load(ckpt_path, weights_only=False)
     model = TopKAutoencoder(
@@ -354,9 +363,12 @@ def select_swap_pairs(specialized_features):
     return swap_pairs
 
 
-def save_results(feature_analyses, specialized_features, swap_pairs, layer, position, start_rank, end_rank, output_dir='src/experiments/llama_sae_hierarchy'):
+def save_results(feature_analyses, specialized_features, swap_pairs, layer, position, start_rank, end_rank, k=None, output_dir='src/experiments/llama_sae_hierarchy'):
     """Save activation analysis results."""
-    output_path = Path(output_dir) / f'activation_analysis_layer{layer}_pos{position}_rank{start_rank}-{end_rank}.json'
+    if k and k != 100:
+        output_path = Path(output_dir) / f'activation_analysis_layer{layer}_pos{position}_rank{start_rank}-{end_rank}_k{k}.json'
+    else:
+        output_path = Path(output_dir) / f'activation_analysis_layer{layer}_pos{position}_rank{start_rank}-{end_rank}.json'
 
     output = {
         'metadata': {
@@ -411,7 +423,7 @@ def main():
     # Save results
     output_path = save_results(
         feature_analyses, specialized_features, swap_pairs,
-        args.layer, args.position, args.start_rank, args.end_rank
+        args.layer, args.position, args.start_rank, args.end_rank, k=args.k
     )
 
     print(f"Analysis complete!")
