@@ -68,9 +68,13 @@ open challenges. We aim to provide a struc-
 tured foundation for advancing this emerging
 direction in LLM reasoning.
 
+### Data Dictionary
+- All the data is documented in docs\DATA_INVENTORY.md. 
+- If you need data, first look there. 
+- If you create data update the file. 
 
 ### 💬 Conversation History (`docs/conversations/`)
-You must save each conversation in the docs/conversations directory
+You must save each conversation in the docs/conversations directory. 
 
 ### research journal
 Save in doc/research_journal.md a high level documentation of each experiment run along with the results. This is mostly a TLDR. 
