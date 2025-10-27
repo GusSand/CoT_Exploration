@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "model": "gpt2",
+    "position": 3,
+    "layer": 8,
+    "n_train": 800,
+    "n_val": 200,
+    "input_dim": 768,
+    "epochs": 25,
+    "batch_size": 256
+  },
+  "results": {
+    "d384_k75": {
+      "explained_variance": 0.933012068271637,
+      "reconstruction_loss": 3.4414803981781006,
+      "cosine_similarity": 0.9647773504257202,
+      "l0_mean": 75.0,
+      "l0_std": 0.0,
+      "mean_activation": 23.122196197509766,
+      "max_activation": 57.902137756347656,
+      "median_activation": 23.011747360229492,
+      "feature_death_rate": 0.3645833432674408,
+      "num_dead_features": 140,
+      "num_active_features": 244,
+      "train_time_sec": 2.2613792419433594,
+      "epochs": 25
+    }
+  }
+}

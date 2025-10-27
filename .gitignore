@@ -171,3 +171,11 @@ section5_experiments/*.log
 section5_experiments/similarity_analysis/results/**/predictions.json
 section5_experiments/similarity_analysis/results/**/correct_predictions/predictions.json
 section5_experiments/similarity_analysis/results/**/incorrect_predictions/predictions.json
+src/experiments/gpt2_sae_training/results/sae_features_gpt2.json
+
+# GPT-2 SAE Training - Allow JSON/PNG, exclude PT
+!src/experiments/gpt2_sae_training/results/*.json
+!src/experiments/gpt2_sae_training/results/*.png
+!src/experiments/gpt2_sae_training/results/sweet_spot_all/*.json
+src/experiments/gpt2_sae_training/results/sae_features_gpt2.json
+src/experiments/gpt2_sae_training/data/*.pt

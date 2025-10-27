@@ -1984,3 +1984,186 @@ python extract_position3_data.py
 **Documentation**: Pending in research_journal.md
 
 ---
+
+## 18. GPT-2 TopK SAE Parameter Sweep Datasets
+
+### 18.1 GPT-2 Activation Data (Train/Val)
+**Files**:
+- [`src/experiments/gpt2_sae_training/data/gpt2_full_train_activations.pt`](../src/experiments/gpt2_sae_training/data/gpt2_full_train_activations.pt) (177 MB)
+- [`src/experiments/gpt2_sae_training/data/gpt2_full_val_activations.pt`](../src/experiments/gpt2_sae_training/data/gpt2_full_val_activations.pt) (44 MB)
+
+**Purpose**: Continuous thought activations from GPT-2 CODI for TopK SAE training
+
+**Size**:
+- Train: 57,600 samples (800 problems × 12 layers × 6 positions)
+- Val: 14,400 samples (200 problems × 12 layers × 6 positions)
+
+**Source**: 1,000 GPT-2 predictions from [`gpt2_shared_data/gpt2_predictions_1000.json`](../src/experiments/gpt2_shared_data/gpt2_predictions_1000_checkpoint_1000.json)
+
+**Structure**:
+```python
+{
+  'activations': torch.Tensor,  # (N, 768) - GPT-2 hidden dims
+  'metadata': {
+    'problem_ids': List[int],  # Problem identifiers (0-999)
+    'layers': List[int],       # Layer indices (0-11)
+    'positions': List[int],    # Position indices (0-5)
+  },
+  'config': {
+    'model': 'gpt2',
+    'num_problems': int,       # 800 train / 200 val
+    'num_layers': 12,          # GPT-2 has 12 layers
+    'num_ct_tokens': 6,        # CODI uses 6 continuous thought tokens
+    'hidden_size': 768         # GPT-2 hidden dimension
+  }
+}
+```
+
+**How to Recreate**:
+```bash
+# Convert from existing GPT-2 predictions JSON
+python src/experiments/gpt2_sae_training/scripts/convert_gpt2_data.py
+```
+
+**Used By**:
+- Parameter sweep: 8 configs tested (d × K combinations)
+- Sweet spot training: 72 SAEs (12 layers × 6 positions)
+
+**Created**: 2025-10-27
+
+---
+
+### 18.2 Parameter Sweep Results (8 Configs)
+**Files**: [`src/experiments/gpt2_sae_training/results/gpt2_pos3_layer8_d{192,256,384,512}_k{20,30,40,50,75,100,150}.pt`](../src/experiments/gpt2_sae_training/results/)
+
+**Purpose**: Trained TopK SAE checkpoints for parameter sweep
+
+**Size**: 8 checkpoints (1.2-3.1 MB each)
+
+**Configs Tested**:
+| Latent Dim (d) | K | Sparsity | EV | Death Rate |
+|----------------|---|----------|-----|------------|
+| 512 | 150 | 29.3% | 94.8% | 4.1% |
+| 512 | 100 | 19.5% | 94.1% | 26.0% |
+| 384 | 75 | 19.5% | 93.3% | 36.5% |
+| 256 | 75 | 29.3% | 92.7% | 26.6% |
+| 256 | 50 | 19.5% | 91.4% | 43.8% |
+| 192 | 40 | 20.8% | 90.6% | 39.6% |
+| 256 | 30 | 11.7% | 88.5% | 59.0% |
+| 192 | 20 | 10.4% | 83.3% | 76.6% |
+
+**Training Details**:
+- Position: 3 (middle token)
+- Layer: 8 (middle layer)
+- Epochs: 25
+- Batch size: 256
+- Training time: ~2-3 seconds per config (parallel execution)
+
+**Sweet Spot**: d=512, K=150 (94.8% EV, 4.1% death rate)
+
+**Created**: 2025-10-27
+
+---
+
+### 18.3 Sweet Spot Model (All Layers×Positions)
+**Files**: [`src/experiments/gpt2_sae_training/results/sweet_spot_all/gpt2_sweet_spot_pos{0-5}_layer{0-11}.pt`](../src/experiments/gpt2_sae_training/results/sweet_spot_all/)
+
+**Purpose**: Sweet spot config (d=512, K=150) trained on all 72 layer-position combinations for heatmap visualization
+
+**Size**: 72 checkpoints
+
+**Metrics File**: [`sweet_spot_metrics_all.json`](../src/experiments/gpt2_sae_training/results/sweet_spot_all/sweet_spot_metrics_all.json)
+
+**Key Patterns**:
+- **Layer progression**:
+  - Early layers (L0-L3): High EV (>96%), low death (<20%)
+  - Middle layers (L4-L7): Medium EV (~93-97%), very low death (<10%)
+  - Late layers (L8-L11): Lower EV (~75-95%), near-zero death (<2%)
+
+- **Position specialization**:
+  - Odd positions (1,3,5): Consistently higher EV, lower reconstruction loss
+  - Even positions (0,2,4): Lower EV in late layers, suggesting complex/abstract encoding
+
+**Created**: 2025-10-27
+
+---
+
+### 18.4 Analysis Results
+**File**: [`src/experiments/gpt2_sae_training/results/analysis_summary.json`](../src/experiments/gpt2_sae_training/results/analysis_summary.json)
+
+**Purpose**: Comprehensive analysis of all 8 configs with sweet spot selection rationale
+
+**Contents**:
+- `all_configs`: Metrics for all 8 parameter sweep configs
+- `sweet_spot`: Selected configuration (d=512, K=150)
+- `rationale`: Selection criteria and justification
+- `comparison_table`: Sorted comparison table
+
+**Selection Criteria**:
+1. Explained Variance ≥ 70% (reconstruction quality)
+2. Lowest Feature Death Rate (feature utilization)
+3. Balanced sparsity (not too dense)
+
+**Created**: 2025-10-27
+
+---
+
+### 18.5 Visualizations
+**Files**:
+- [`src/experiments/gpt2_sae_training/results/gpt2_sweet_spot_reconstruction_loss.png`](../src/experiments/gpt2_sae_training/results/gpt2_sweet_spot_reconstruction_loss.png)
+- [`src/experiments/gpt2_sae_training/results/gpt2_sweet_spot_feature_death_rate.png`](../src/experiments/gpt2_sae_training/results/gpt2_sweet_spot_feature_death_rate.png)
+
+**Purpose**: Layer × Position heatmaps for sweet spot config (d=512, K=150)
+
+**Format**: 12 layers × 6 positions heatmaps showing:
+1. Reconstruction Loss (MSE) - lower is better
+2. Feature Death Rate (0-1) - lower is better
+
+**Key Insights**:
+- Position 0 consistently shows higher reconstruction loss in early layers
+- Late layers (L8-L11) show near-zero feature death across all positions
+- Odd positions (1,3,5) reconstruct better than even positions (0,2,4)
+
+**Created**: 2025-10-27
+
+---
+
+### 18.6 Experiment Summary
+
+**Dataset Pipeline**:
+```
+gpt2_predictions_1000.json (1.7 GB)
+  ↓ convert_gpt2_data.py
+gpt2_full_train_activations.pt (177 MB) + gpt2_full_val_activations.pt (44 MB)
+  ↓ train_gpt2_grid.py (8 configs)
+8 parameter sweep checkpoints
+  ↓ analyze_results.py
+Sweet spot identified: d=512, K=150
+  ↓ train_sweet_spot_all_layers_positions.py
+72 sweet spot checkpoints (all layers×positions)
+  ↓ visualize_sweet_spot.py
+2 heatmap visualizations
+```
+
+**Key Statistics**:
+| Metric | Value |
+|--------|-------|
+| Total problems | 1,000 |
+| Train problems | 800 (80%) |
+| Val problems | 200 (20%) |
+| Layers | 12 (GPT-2) |
+| Positions | 6 (CODI) |
+| Train samples | 57,600 |
+| Val samples | 14,400 |
+| Configs tested | 8 |
+| Sweet spot SAEs | 72 (all layers×positions) |
+| Total training time | ~5 minutes |
+
+**Experiment**: GPT-2 TopK SAE Parameter Sweep
+
+**Created**: 2025-10-27
+
+**Documentation**: [`docs/experiments/10-27_gpt2_gsm8k_topk_sae_sweep.md`](experiments/10-27_gpt2_gsm8k_topk_sae_sweep.md)
+
+---
+

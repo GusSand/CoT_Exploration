@@ -2,6 +2,47 @@
 
 ## Experiment Log
 
+### 2025-10-27b: GPT-2 TopK SAE Parameter Sweep
+
+**Objective**: Identify optimal TopK SAE configuration for GPT-2 continuous thought activations via systematic parameter sweep across dictionary size and sparsity.
+
+**Status**: ✅ **COMPLETE** - Sweet spot: d=512, K=150 (94.8% EV, 4.1% death rate)
+
+**Approach**:
+- Tested 8 configs: d ∈ {192, 256, 384, 512}, K ∈ {20, 30, 40, 50, 75, 100, 150}
+- Dataset: 1,000 GPT-2 predictions, 12 layers × 6 positions × 768 dims
+- Focus: Position 3, Layer 8 (middle layer) for parameter sweep
+- Validation: Trained sweet spot on all 72 layer-position combinations
+
+**Key Results**:
+
+| Config | Latent Dim | K | Sparsity | EV | Death Rate |
+|--------|------------|---|----------|-----|------------|
+| **Sweet Spot** | **512** | **150** | **29.3%** | **94.8%** | **4.1%** |
+| Runner-up | 512 | 100 | 19.5% | 94.1% | 26.0% |
+| Baseline | 256 | 50 | 19.5% | 91.4% | 43.8% |
+
+**Major Findings**:
+
+1. **ALL 8 configs exceeded 70% EV threshold** (83.3% - 94.8%) - GPT-2 activations are highly compressible
+2. **Larger dictionaries win**: d=512 significantly outperforms d=192/256/384 in both EV and death rate
+3. **More active features = better utilization**: K=150 achieves 95.9% feature utilization vs 74% for K=100
+4. **Position specialization confirmed**:
+   - Odd positions (1,3,5): Easier to reconstruct across all layers
+   - Even positions (0,2,4): Complex encoding, especially in late layers
+5. **Layer progression**: Early layers (L0-L3) show high EV + low death; late layers (L8-L11) show lower EV + near-zero death
+
+**Comparison to LLaMA Sweet Spot**:
+- GPT-2: d=512, K=150 (29.3% sparsity) for 768 input dims
+- LLaMA: d=512, K=100 (19.5% sparsity) for 2048 input dims
+- **Insight**: Smaller models (GPT-2) require denser representations to capture reasoning
+
+**Time**: ~30 minutes total (5 min training + 25 min documentation)
+
+**Documentation**: [docs/experiments/10-27_gpt2_gsm8k_topk_sae_sweep.md](experiments/10-27_gpt2_gsm8k_topk_sae_sweep.md)
+
+---
+
 ### 2025-10-27a: Matryoshka SAE Pilot - Hierarchical Sparse Autoencoders
 
 **Objective**: Implement and compare hierarchical SAE architectures (Matryoshka and Matryoshka-TopK hybrid) against ReLU and TopK baselines to reduce feature death while maintaining interpretability.
