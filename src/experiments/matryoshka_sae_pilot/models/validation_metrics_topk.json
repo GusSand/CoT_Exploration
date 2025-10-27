@@ -1,0 +1,60 @@
+{
+  "config": {
+    "levels": [
+      128,
+      256,
+      512
+    ],
+    "k_values": [
+      25,
+      35,
+      40
+    ],
+    "level_weights": [
+      0.3,
+      0.3,
+      0.4
+    ],
+    "batch_size": 4096,
+    "num_epochs": 50,
+    "learning_rate": 0.001
+  },
+  "metrics": {
+    "level_1": {
+      "features": 128,
+      "expected_k": 25,
+      "explained_variance": 0.6522632837295532,
+      "l0_norm": 25.0,
+      "active_features": 96,
+      "dead_features": 32,
+      "feature_death_rate": 0.25,
+      "utilization_pct": 75.0,
+      "mean_activation": 2.9992597103118896,
+      "max_activation": 44.86790084838867
+    },
+    "level_2": {
+      "features": 256,
+      "expected_k": 35,
+      "explained_variance": 0.7371646165847778,
+      "l0_norm": 35.0,
+      "active_features": 180,
+      "dead_features": 76,
+      "feature_death_rate": 0.296875,
+      "utilization_pct": 70.3125,
+      "mean_activation": 1.011330008506775,
+      "max_activation": 30.39887046813965
+    },
+    "level_3": {
+      "features": 512,
+      "expected_k": 40,
+      "explained_variance": 0.7794538140296936,
+      "l0_norm": 40.0,
+      "active_features": 297,
+      "dead_features": 215,
+      "feature_death_rate": 0.419921875,
+      "utilization_pct": 58.0078125,
+      "mean_activation": 0.6313855051994324,
+      "max_activation": 25.346630096435547
+    }
+  }
+}

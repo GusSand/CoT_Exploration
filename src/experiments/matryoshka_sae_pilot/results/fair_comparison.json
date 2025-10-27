@@ -1,0 +1,32 @@
+{
+  "relu": {
+    "accuracy": 0.7888656560376373,
+    "n_features": 8192,
+    "n_train": 76518,
+    "n_test": 19130
+  },
+  "matryoshka_level_1": {
+    "accuracy": 0.783533716675379,
+    "n_features": 512,
+    "n_train": 76518,
+    "n_test": 19130
+  },
+  "matryoshka_level_2": {
+    "accuracy": 0.787401986408782,
+    "n_features": 1024,
+    "n_train": 76518,
+    "n_test": 19130
+  },
+  "matryoshka_level_3": {
+    "accuracy": 0.7885520125457397,
+    "n_features": 2048,
+    "n_train": 76518,
+    "n_test": 19130
+  },
+  "matryoshka_concatenated": {
+    "accuracy": 0.7998954521693675,
+    "n_features": 3584,
+    "n_train": 76518,
+    "n_test": 19130
+  }
+}
