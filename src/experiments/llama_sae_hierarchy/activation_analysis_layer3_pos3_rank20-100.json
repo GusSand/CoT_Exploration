@@ -1,0 +1,2125 @@
+{
+  "metadata": {
+    "layer": 3,
+    "position": 3,
+    "sae_config": "K=100, d=512",
+    "rank_range": [
+      20,
+      100
+    ],
+    "total_features_analyzed": 81,
+    "specialized_features_found": 0,
+    "swap_pairs_generated": 0,
+    "analysis_date": "2025-10-27"
+  },
+  "all_features": [
+    {
+      "rank": 20,
+      "feature_id": 133,
+      "activation_freq": 0.8936454653739929,
+      "mean_magnitude": 0.7738475799560547,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 76.0,
+            "subtraction": 52.0,
+            "multiplication": 87.0,
+            "division": 47.0
+          },
+          "values": {
+            "12": 34,
+            "20": 46,
+            "30": 33,
+            "50": 35,
+            "100": 27
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 21,
+      "feature_id": 423,
+      "activation_freq": 0.8889632225036621,
+      "mean_magnitude": 0.7451264262199402,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 60.0,
+            "subtraction": 38.0,
+            "multiplication": 91.0,
+            "division": 25.0
+          },
+          "values": {
+            "12": 44,
+            "20": 27,
+            "30": 15,
+            "50": 13,
+            "100": 7
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 22,
+      "feature_id": 128,
+      "activation_freq": 0.886956512928009,
+      "mean_magnitude": 0.7671470046043396,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 73.0,
+            "subtraction": 53.0,
+            "multiplication": 82.0,
+            "division": 41.0
+          },
+          "values": {
+            "12": 26,
+            "20": 37,
+            "30": 30,
+            "50": 17,
+            "100": 11
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 23,
+      "feature_id": 98,
+      "activation_freq": 0.8775919675827026,
+      "mean_magnitude": 0.7172999978065491,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 71.0,
+            "subtraction": 50.0,
+            "multiplication": 86.0,
+            "division": 58.0
+          },
+          "values": {
+            "12": 30,
+            "20": 48,
+            "30": 35,
+            "50": 32,
+            "100": 30
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 24,
+      "feature_id": 277,
+      "activation_freq": 0.8755852580070496,
+      "mean_magnitude": 0.7339780330657959,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 47.0,
+            "subtraction": 44.0,
+            "multiplication": 71.0,
+            "division": 73.0
+          },
+          "values": {
+            "12": 26,
+            "20": 38,
+            "30": 48,
+            "50": 32,
+            "100": 29
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 25,
+      "feature_id": 216,
+      "activation_freq": 0.8749163746833801,
+      "mean_magnitude": 0.647166907787323,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 43.0,
+            "subtraction": 37.0,
+            "multiplication": 69.0,
+            "division": 55.0
+          },
+          "values": {
+            "12": 28,
+            "20": 42,
+            "30": 22,
+            "50": 35,
+            "100": 30
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 26,
+      "feature_id": 267,
+      "activation_freq": 0.8735786080360413,
+      "mean_magnitude": 0.6952563524246216,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 64.0,
+            "subtraction": 41.0,
+            "multiplication": 81.0,
+            "division": 43.0
+          },
+          "values": {
+            "12": 27,
+            "20": 38,
+            "30": 23,
+            "50": 22,
+            "100": 17
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 27,
+      "feature_id": 73,
+      "activation_freq": 0.8722407817840576,
+      "mean_magnitude": 0.6219729781150818,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 59.0,
+            "subtraction": 45.0,
+            "multiplication": 88.0,
+            "division": 52.0
+          },
+          "values": {
+            "12": 26,
+            "20": 51,
+            "30": 33,
+            "50": 46,
+            "100": 40
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 28,
+      "feature_id": 464,
+      "activation_freq": 0.8662207126617432,
+      "mean_magnitude": 0.600953996181488,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 57.0,
+            "subtraction": 45.0,
+            "multiplication": 77.0,
+            "division": 60.0
+          },
+          "values": {
+            "12": 23,
+            "20": 31,
+            "30": 19,
+            "50": 37,
+            "100": 26
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 29,
+      "feature_id": 243,
+      "activation_freq": 0.8548495173454285,
+      "mean_magnitude": 0.5614321231842041,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 63.0,
+            "subtraction": 43.0,
+            "multiplication": 91.0,
+            "division": 34.0
+          },
+          "values": {
+            "12": 38,
+            "20": 37,
+            "30": 35,
+            "50": 25,
+            "100": 15
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 30,
+      "feature_id": 96,
+      "activation_freq": 0.8541805744171143,
+      "mean_magnitude": 0.607322633266449,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 39.0,
+            "subtraction": 27.0,
+            "multiplication": 68.0,
+            "division": 64.0
+          },
+          "values": {
+            "12": 27,
+            "20": 29,
+            "30": 17,
+            "50": 28,
+            "100": 11
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 31,
+      "feature_id": 485,
+      "activation_freq": 0.8535116910934448,
+      "mean_magnitude": 0.6366444230079651,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 69.0,
+            "subtraction": 55.0,
+            "multiplication": 85.0,
+            "division": 46.0
+          },
+          "values": {
+            "12": 26,
+            "20": 48,
+            "30": 36,
+            "50": 16,
+            "100": 18
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 32,
+      "feature_id": 460,
+      "activation_freq": 0.8494983315467834,
+      "mean_magnitude": 0.6500669717788696,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 57.0,
+            "subtraction": 47.0,
+            "multiplication": 77.0,
+            "division": 59.0
+          },
+          "values": {
+            "12": 24,
+            "20": 67,
+            "30": 27,
+            "50": 39,
+            "100": 52
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 33,
+      "feature_id": 468,
+      "activation_freq": 0.8361204266548157,
+      "mean_magnitude": 0.49909740686416626,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 60.0,
+            "subtraction": 42.0,
+            "multiplication": 74.0,
+            "division": 58.0
+          },
+          "values": {
+            "12": 23,
+            "20": 23,
+            "30": 20,
+            "50": 14,
+            "100": 8
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 34,
+      "feature_id": 348,
+      "activation_freq": 0.8334448337554932,
+      "mean_magnitude": 0.6772176027297974,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 46.0,
+            "subtraction": 33.0,
+            "multiplication": 77.0,
+            "division": 33.0
+          },
+          "values": {
+            "12": 29,
+            "20": 29,
+            "30": 15,
+            "50": 18,
+            "100": 10
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 35,
+      "feature_id": 172,
+      "activation_freq": 0.8321070075035095,
+      "mean_magnitude": 0.47915348410606384,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 75.0,
+            "subtraction": 61.0,
+            "multiplication": 89.0,
+            "division": 42.0
+          },
+          "values": {
+            "12": 37,
+            "20": 35,
+            "30": 36,
+            "50": 16,
+            "100": 13
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 36,
+      "feature_id": 253,
+      "activation_freq": 0.8287625312805176,
+      "mean_magnitude": 0.7917919754981995,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 29.0,
+            "subtraction": 21.0,
+            "multiplication": 32.0,
+            "division": 35.0
+          },
+          "values": {
+            "12": 16,
+            "20": 21,
+            "30": 8,
+            "50": 15,
+            "100": 7
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 37,
+      "feature_id": 435,
+      "activation_freq": 0.8287625312805176,
+      "mean_magnitude": 0.49537819623947144,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 69.0,
+            "subtraction": 54.0,
+            "multiplication": 73.0,
+            "division": 54.0
+          },
+          "values": {
+            "12": 20,
+            "20": 29,
+            "30": 26,
+            "50": 22,
+            "100": 18
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 38,
+      "feature_id": 340,
+      "activation_freq": 0.8260869383811951,
+      "mean_magnitude": 0.5206694006919861,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 70.0,
+            "subtraction": 55.0,
+            "multiplication": 76.0,
+            "division": 48.0
+          },
+          "values": {
+            "12": 19,
+            "20": 38,
+            "30": 27,
+            "50": 25,
+            "100": 11
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 39,
+      "feature_id": 283,
+      "activation_freq": 0.8240802884101868,
+      "mean_magnitude": 0.5111392736434937,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 56.0,
+            "subtraction": 47.0,
+            "multiplication": 70.0,
+            "division": 50.0
+          },
+          "values": {
+            "12": 21,
+            "20": 34,
+            "30": 15,
+            "50": 28,
+            "100": 12
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 40,
+      "feature_id": 497,
+      "activation_freq": 0.8234113454818726,
+      "mean_magnitude": 0.46684756875038147,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 51.0,
+            "subtraction": 45.0,
+            "multiplication": 75.0,
+            "division": 60.0
+          },
+          "values": {
+            "12": 17,
+            "20": 37,
+            "30": 17,
+            "50": 35,
+            "100": 26
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 41,
+      "feature_id": 153,
+      "activation_freq": 0.8234113454818726,
+      "mean_magnitude": 0.612170398235321,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 75.0,
+            "subtraction": 46.0,
+            "multiplication": 79.0,
+            "division": 42.0
+          },
+          "values": {
+            "12": 32,
+            "20": 17,
+            "30": 15,
+            "50": 11,
+            "100": 6
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 42,
+      "feature_id": 179,
+      "activation_freq": 0.8200668692588806,
+      "mean_magnitude": 0.5518113970756531,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 66.0,
+            "subtraction": 49.0,
+            "multiplication": 79.0,
+            "division": 49.0
+          },
+          "values": {
+            "12": 52,
+            "20": 37,
+            "30": 21,
+            "50": 26,
+            "100": 11
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 43,
+      "feature_id": 255,
+      "activation_freq": 0.8153846263885498,
+      "mean_magnitude": 0.5359979867935181,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 20.0,
+            "subtraction": 19.0,
+            "multiplication": 38.0,
+            "division": 43.0
+          },
+          "values": {
+            "12": 9,
+            "20": 19,
+            "30": 30,
+            "50": 19,
+            "100": 9
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 44,
+      "feature_id": 84,
+      "activation_freq": 0.8133779168128967,
+      "mean_magnitude": 0.488818883895874,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 59.0,
+            "subtraction": 56.0,
+            "multiplication": 40.0,
+            "division": 42.0
+          },
+          "values": {
+            "12": 28,
+            "20": 43,
+            "30": 16,
+            "50": 11,
+            "100": 9
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 45,
+      "feature_id": 278,
+      "activation_freq": 0.8100334405899048,
+      "mean_magnitude": 0.4962957501411438,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 50.0,
+            "subtraction": 57.0,
+            "multiplication": 80.0,
+            "division": 45.0
+          },
+          "values": {
+            "12": 24,
+            "20": 36,
+            "30": 20,
+            "50": 34,
+            "100": 15
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 46,
+      "feature_id": 383,
+      "activation_freq": 0.8093645572662354,
+      "mean_magnitude": 0.4951974153518677,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 73.0,
+            "subtraction": 51.0,
+            "multiplication": 78.0,
+            "division": 42.0
+          },
+          "values": {
+            "12": 24,
+            "20": 29,
+            "30": 16,
+            "50": 30,
+            "100": 21
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 47,
+      "feature_id": 298,
+      "activation_freq": 0.8060200810432434,
+      "mean_magnitude": 0.4955052137374878,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 78.0,
+            "subtraction": 44.0,
+            "multiplication": 75.0,
+            "division": 48.0
+          },
+          "values": {
+            "12": 19,
+            "20": 34,
+            "30": 25,
+            "50": 24,
+            "100": 12
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 48,
+      "feature_id": 66,
+      "activation_freq": 0.8046822547912598,
+      "mean_magnitude": 0.45117077231407166,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 78.0,
+            "subtraction": 47.0,
+            "multiplication": 73.0,
+            "division": 54.0
+          },
+          "values": {
+            "12": 25,
+            "20": 43,
+            "30": 16,
+            "50": 19,
+            "100": 15
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 49,
+      "feature_id": 285,
+      "activation_freq": 0.8026756048202515,
+      "mean_magnitude": 0.6019285321235657,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 52.0,
+            "subtraction": 39.0,
+            "multiplication": 57.0,
+            "division": 83.0
+          },
+          "values": {
+            "12": 25,
+            "20": 27,
+            "30": 28,
+            "50": 23,
+            "100": 12
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 50,
+      "feature_id": 309,
+      "activation_freq": 0.8026756048202515,
+      "mean_magnitude": 0.4199451804161072,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 60.0,
+            "subtraction": 44.0,
+            "multiplication": 72.0,
+            "division": 39.0
+          },
+          "values": {
+            "12": 30,
+            "20": 24,
+            "30": 29,
+            "50": 25,
+            "100": 14
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 51,
+      "feature_id": 443,
+      "activation_freq": 0.7979933023452759,
+      "mean_magnitude": 0.623650074005127,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 13.0,
+            "subtraction": 13.0,
+            "multiplication": 33.0,
+            "division": 33.0
+          },
+          "values": {
+            "12": 9,
+            "20": 15,
+            "30": 4,
+            "50": 17,
+            "100": 8
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 52,
+      "feature_id": 415,
+      "activation_freq": 0.7973244190216064,
+      "mean_magnitude": 0.6466073393821716,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 39.0,
+            "subtraction": 52.0,
+            "multiplication": 43.0,
+            "division": 22.0
+          },
+          "values": {
+            "12": 20,
+            "20": 30,
+            "30": 17,
+            "50": 16,
+            "100": 5
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 53,
+      "feature_id": 183,
+      "activation_freq": 0.7939799427986145,
+      "mean_magnitude": 0.44382041692733765,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 71.0,
+            "subtraction": 55.0,
+            "multiplication": 78.0,
+            "division": 48.0
+          },
+          "values": {
+            "12": 29,
+            "20": 49,
+            "30": 32,
+            "50": 32,
+            "100": 21
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 54,
+      "feature_id": 99,
+      "activation_freq": 0.7899665832519531,
+      "mean_magnitude": 0.5386013388633728,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 42.0,
+            "subtraction": 46.0,
+            "multiplication": 39.0,
+            "division": 41.0
+          },
+          "values": {
+            "12": 20,
+            "20": 27,
+            "30": 19,
+            "50": 12,
+            "100": 13
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 55,
+      "feature_id": 432,
+      "activation_freq": 0.7892976403236389,
+      "mean_magnitude": 0.527971088886261,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 74.0,
+            "subtraction": 47.0,
+            "multiplication": 77.0,
+            "division": 45.0
+          },
+          "values": {
+            "12": 13,
+            "20": 29,
+            "30": 22,
+            "50": 24,
+            "100": 13
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 56,
+      "feature_id": 220,
+      "activation_freq": 0.7879598736763,
+      "mean_magnitude": 0.49471598863601685,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 69.0,
+            "subtraction": 49.0,
+            "multiplication": 81.0,
+            "division": 46.0
+          },
+          "values": {
+            "12": 35,
+            "20": 56,
+            "30": 32,
+            "50": 38,
+            "100": 36
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 57,
+      "feature_id": 493,
+      "activation_freq": 0.7839465141296387,
+      "mean_magnitude": 0.4309636056423187,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 52.0,
+            "subtraction": 42.0,
+            "multiplication": 85.0,
+            "division": 58.0
+          },
+          "values": {
+            "12": 21,
+            "20": 48,
+            "30": 31,
+            "50": 45,
+            "100": 37
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 58,
+      "feature_id": 392,
+      "activation_freq": 0.7832775712013245,
+      "mean_magnitude": 0.432015985250473,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 61.0,
+            "subtraction": 71.0,
+            "multiplication": 53.0,
+            "division": 41.0
+          },
+          "values": {
+            "12": 22,
+            "20": 47,
+            "30": 24,
+            "50": 31,
+            "100": 26
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 59,
+      "feature_id": 56,
+      "activation_freq": 0.7785953283309937,
+      "mean_magnitude": 0.4084793031215668,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 60.0,
+            "subtraction": 57.0,
+            "multiplication": 81.0,
+            "division": 43.0
+          },
+          "values": {
+            "12": 24,
+            "20": 36,
+            "30": 21,
+            "50": 28,
+            "100": 20
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 60,
+      "feature_id": 150,
+      "activation_freq": 0.7725752592086792,
+      "mean_magnitude": 0.5321895480155945,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 71.0,
+            "subtraction": 56.0,
+            "multiplication": 80.0,
+            "division": 53.0
+          },
+          "values": {
+            "12": 18,
+            "20": 63,
+            "30": 39,
+            "50": 40,
+            "100": 46
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 61,
+      "feature_id": 144,
+      "activation_freq": 0.7678929567337036,
+      "mean_magnitude": 0.4159351885318756,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 75.0,
+            "subtraction": 51.0,
+            "multiplication": 83.0,
+            "division": 45.0
+          },
+          "values": {
+            "12": 26,
+            "20": 37,
+            "30": 40,
+            "50": 23,
+            "100": 14
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 62,
+      "feature_id": 365,
+      "activation_freq": 0.7625418305397034,
+      "mean_magnitude": 0.37541308999061584,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 71.0,
+            "subtraction": 37.0,
+            "multiplication": 94.0,
+            "division": 24.0
+          },
+          "values": {
+            "12": 26,
+            "20": 35,
+            "30": 27,
+            "50": 19,
+            "100": 15
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 63,
+      "feature_id": 86,
+      "activation_freq": 0.7565217614173889,
+      "mean_magnitude": 0.5742968916893005,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 57.0,
+            "subtraction": 53.0,
+            "multiplication": 76.0,
+            "division": 59.0
+          },
+          "values": {
+            "12": 23,
+            "20": 60,
+            "30": 33,
+            "50": 17,
+            "100": 21
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 64,
+      "feature_id": 25,
+      "activation_freq": 0.7297658920288086,
+      "mean_magnitude": 0.6087832450866699,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 22.0,
+            "subtraction": 14.0,
+            "multiplication": 27.0,
+            "division": 24.0
+          },
+          "values": {
+            "12": 9,
+            "20": 12,
+            "30": 6,
+            "50": 12,
+            "100": 5
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 65,
+      "feature_id": 80,
+      "activation_freq": 0.7264214158058167,
+      "mean_magnitude": 0.17224949598312378,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 60.0,
+            "subtraction": 47.0,
+            "multiplication": 72.0,
+            "division": 52.0
+          },
+          "values": {
+            "12": 11,
+            "20": 29,
+            "30": 18,
+            "50": 23,
+            "100": 15
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 66,
+      "feature_id": 386,
+      "activation_freq": 0.7264214158058167,
+      "mean_magnitude": 0.41061922907829285,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 90.0,
+            "subtraction": 57.0,
+            "multiplication": 60.0,
+            "division": 41.0
+          },
+          "values": {
+            "12": 20,
+            "20": 28,
+            "30": 17,
+            "50": 21,
+            "100": 10
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 67,
+      "feature_id": 159,
+      "activation_freq": 0.7204013466835022,
+      "mean_magnitude": 0.3376844525337219,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 75.0,
+            "subtraction": 51.0,
+            "multiplication": 80.0,
+            "division": 49.0
+          },
+          "values": {
+            "12": 26,
+            "20": 38,
+            "30": 25,
+            "50": 20,
+            "100": 14
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 68,
+      "feature_id": 8,
+      "activation_freq": 0.7190635204315186,
+      "mean_magnitude": 0.49394139647483826,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 63.0,
+            "subtraction": 44.0,
+            "multiplication": 89.0,
+            "division": 43.0
+          },
+          "values": {
+            "12": 38,
+            "20": 54,
+            "30": 31,
+            "50": 53,
+            "100": 47
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 69,
+      "feature_id": 59,
+      "activation_freq": 0.7183946371078491,
+      "mean_magnitude": 0.3486875891685486,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 70.0,
+            "subtraction": 57.0,
+            "multiplication": 85.0,
+            "division": 47.0
+          },
+          "values": {
+            "12": 36,
+            "20": 52,
+            "30": 36,
+            "50": 31,
+            "100": 26
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 70,
+      "feature_id": 22,
+      "activation_freq": 0.7177257537841797,
+      "mean_magnitude": 0.3689989447593689,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 62.0,
+            "subtraction": 51.0,
+            "multiplication": 81.0,
+            "division": 44.0
+          },
+          "values": {
+            "12": 35,
+            "20": 44,
+            "30": 34,
+            "50": 28,
+            "100": 23
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 71,
+      "feature_id": 486,
+      "activation_freq": 0.7063544988632202,
+      "mean_magnitude": 0.343557208776474,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 73.0,
+            "subtraction": 40.0,
+            "multiplication": 84.0,
+            "division": 41.0
+          },
+          "values": {
+            "12": 31,
+            "20": 36,
+            "30": 26,
+            "50": 25,
+            "100": 20
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 72,
+      "feature_id": 371,
+      "activation_freq": 0.7043478488922119,
+      "mean_magnitude": 0.3908085525035858,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 64.0,
+            "subtraction": 58.0,
+            "multiplication": 71.0,
+            "division": 56.0
+          },
+          "values": {
+            "12": 19,
+            "20": 38,
+            "30": 47,
+            "50": 34,
+            "100": 26
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 73,
+      "feature_id": 231,
+      "activation_freq": 0.6963210701942444,
+      "mean_magnitude": 0.3283871114253998,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 53.0,
+            "subtraction": 45.0,
+            "multiplication": 91.0,
+            "division": 51.0
+          },
+          "values": {
+            "12": 29,
+            "20": 54,
+            "30": 30,
+            "50": 47,
+            "100": 49
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 74,
+      "feature_id": 15,
+      "activation_freq": 0.6949833035469055,
+      "mean_magnitude": 0.3593910038471222,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 66.0,
+            "subtraction": 49.0,
+            "multiplication": 79.0,
+            "division": 50.0
+          },
+          "values": {
+            "12": 35,
+            "20": 54,
+            "30": 31,
+            "50": 42,
+            "100": 45
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 75,
+      "feature_id": 428,
+      "activation_freq": 0.6889632344245911,
+      "mean_magnitude": 0.3925758898258209,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 53.0,
+            "subtraction": 53.0,
+            "multiplication": 89.0,
+            "division": 50.0
+          },
+          "values": {
+            "12": 39,
+            "20": 62,
+            "30": 38,
+            "50": 37,
+            "100": 37
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 76,
+      "feature_id": 238,
+      "activation_freq": 0.683612048625946,
+      "mean_magnitude": 0.3263242244720459,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 66.0,
+            "subtraction": 50.0,
+            "multiplication": 79.0,
+            "division": 48.0
+          },
+          "values": {
+            "12": 48,
+            "20": 37,
+            "30": 27,
+            "50": 23,
+            "100": 16
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 77,
+      "feature_id": 446,
+      "activation_freq": 0.6742475032806396,
+      "mean_magnitude": 0.8276863694190979,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 19.0,
+            "subtraction": 31.0,
+            "multiplication": 23.0,
+            "division": 30.0
+          },
+          "values": {
+            "12": 11,
+            "20": 22,
+            "30": 5,
+            "50": 11,
+            "100": 4
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 78,
+      "feature_id": 258,
+      "activation_freq": 0.6655518412590027,
+      "mean_magnitude": 0.3068535029888153,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 56.0,
+            "subtraction": 56.0,
+            "multiplication": 76.0,
+            "division": 49.0
+          },
+          "values": {
+            "12": 24,
+            "20": 33,
+            "30": 21,
+            "50": 29,
+            "100": 16
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 79,
+      "feature_id": 234,
+      "activation_freq": 0.6642140746116638,
+      "mean_magnitude": 0.2879073917865753,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 68.0,
+            "subtraction": 42.0,
+            "multiplication": 100.0,
+            "division": 34.0
+          },
+          "values": {
+            "12": 33,
+            "20": 53,
+            "30": 42,
+            "50": 25,
+            "100": 24
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 80,
+      "feature_id": 53,
+      "activation_freq": 0.6555184125900269,
+      "mean_magnitude": 0.31096360087394714,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 29.0,
+            "subtraction": 32.0,
+            "multiplication": 82.0,
+            "division": 29.0
+          },
+          "values": {
+            "12": 22,
+            "20": 33,
+            "30": 13,
+            "50": 18,
+            "100": 14
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 81,
+      "feature_id": 397,
+      "activation_freq": 0.6468227505683899,
+      "mean_magnitude": 0.25995925068855286,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 75.0,
+            "subtraction": 47.0,
+            "multiplication": 77.0,
+            "division": 35.0
+          },
+          "values": {
+            "12": 42,
+            "20": 26,
+            "30": 17,
+            "50": 14,
+            "100": 5
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 82,
+      "feature_id": 306,
+      "activation_freq": 0.6441471576690674,
+      "mean_magnitude": 0.2533034384250641,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 73.0,
+            "subtraction": 55.0,
+            "multiplication": 87.0,
+            "division": 46.0
+          },
+          "values": {
+            "12": 34,
+            "20": 23,
+            "30": 22,
+            "50": 17,
+            "100": 9
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 83,
+      "feature_id": 370,
+      "activation_freq": 0.643478274345398,
+      "mean_magnitude": 0.3120903968811035,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 43.0,
+            "subtraction": 37.0,
+            "multiplication": 61.0,
+            "division": 48.0
+          },
+          "values": {
+            "12": 17,
+            "20": 27,
+            "30": 14,
+            "50": 19,
+            "100": 10
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 84,
+      "feature_id": 440,
+      "activation_freq": 0.6193979978561401,
+      "mean_magnitude": 0.3284910023212433,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 67.0,
+            "subtraction": 37.0,
+            "multiplication": 81.0,
+            "division": 48.0
+          },
+          "values": {
+            "12": 29,
+            "20": 37,
+            "30": 24,
+            "50": 19,
+            "100": 14
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 85,
+      "feature_id": 378,
+      "activation_freq": 0.6100334525108337,
+      "mean_magnitude": 0.34263259172439575,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 67.0,
+            "subtraction": 52.0,
+            "multiplication": 80.0,
+            "division": 45.0
+          },
+          "values": {
+            "12": 33,
+            "20": 24,
+            "30": 14,
+            "50": 13,
+            "100": 6
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 86,
+      "feature_id": 297,
+      "activation_freq": 0.5933110117912292,
+      "mean_magnitude": 0.36991435289382935,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 55.0,
+            "subtraction": 40.0,
+            "multiplication": 58.0,
+            "division": 38.0
+          },
+          "values": {
+            "12": 24,
+            "20": 24,
+            "30": 19,
+            "50": 25,
+            "100": 25
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 87,
+      "feature_id": 44,
+      "activation_freq": 0.5926421284675598,
+      "mean_magnitude": 0.17705240845680237,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 57.0,
+            "subtraction": 44.0,
+            "multiplication": 73.0,
+            "division": 50.0
+          },
+          "values": {
+            "12": 27,
+            "20": 32,
+            "30": 18,
+            "50": 28,
+            "100": 29
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 88,
+      "feature_id": 506,
+      "activation_freq": 0.5892976522445679,
+      "mean_magnitude": 0.34543946385383606,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 64.0,
+            "subtraction": 47.0,
+            "multiplication": 90.0,
+            "division": 46.0
+          },
+          "values": {
+            "12": 22,
+            "20": 60,
+            "30": 28,
+            "50": 20,
+            "100": 22
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 89,
+      "feature_id": 476,
+      "activation_freq": 0.5779263973236084,
+      "mean_magnitude": 0.3885054588317871,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 35.0,
+            "subtraction": 48.0,
+            "multiplication": 56.0,
+            "division": 44.0
+          },
+          "values": {
+            "12": 14,
+            "20": 29,
+            "30": 15,
+            "50": 14,
+            "100": 9
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 90,
+      "feature_id": 268,
+      "activation_freq": 0.5658862590789795,
+      "mean_magnitude": 0.24394039809703827,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 81.0,
+            "subtraction": 53.0,
+            "multiplication": 69.0,
+            "division": 44.0
+          },
+          "values": {
+            "12": 23,
+            "20": 37,
+            "30": 16,
+            "50": 18,
+            "100": 9
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 91,
+      "feature_id": 131,
+      "activation_freq": 0.5418060421943665,
+      "mean_magnitude": 0.20918011665344238,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 64.0,
+            "subtraction": 55.0,
+            "multiplication": 80.0,
+            "division": 46.0
+          },
+          "values": {
+            "12": 37,
+            "20": 31,
+            "30": 20,
+            "50": 23,
+            "100": 18
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 92,
+      "feature_id": 480,
+      "activation_freq": 0.5230769515037537,
+      "mean_magnitude": 0.15778037905693054,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 67.0,
+            "subtraction": 51.0,
+            "multiplication": 72.0,
+            "division": 40.0
+          },
+          "values": {
+            "12": 23,
+            "20": 25,
+            "30": 23,
+            "50": 20,
+            "100": 8
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 93,
+      "feature_id": 354,
+      "activation_freq": 0.5003344416618347,
+      "mean_magnitude": 0.2239166498184204,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 66.0,
+            "subtraction": 49.0,
+            "multiplication": 90.0,
+            "division": 45.0
+          },
+          "values": {
+            "12": 21,
+            "20": 51,
+            "30": 38,
+            "50": 37,
+            "100": 39
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 94,
+      "feature_id": 382,
+      "activation_freq": 0.4949832856655121,
+      "mean_magnitude": 0.34263303875923157,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 54.0,
+            "subtraction": 56.0,
+            "multiplication": 86.0,
+            "division": 47.0
+          },
+          "values": {
+            "12": 37,
+            "20": 62,
+            "30": 38,
+            "50": 38,
+            "100": 37
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 95,
+      "feature_id": 418,
+      "activation_freq": 0.4909698963165283,
+      "mean_magnitude": 0.27535098791122437,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 62.0,
+            "subtraction": 47.0,
+            "multiplication": 83.0,
+            "division": 46.0
+          },
+          "values": {
+            "12": 23,
+            "20": 37,
+            "30": 26,
+            "50": 43,
+            "100": 20
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 96,
+      "feature_id": 200,
+      "activation_freq": 0.47959867119789124,
+      "mean_magnitude": 0.17187973856925964,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 75.0,
+            "subtraction": 46.0,
+            "multiplication": 81.0,
+            "division": 43.0
+          },
+          "values": {
+            "12": 24,
+            "20": 42,
+            "30": 27,
+            "50": 42,
+            "100": 27
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 97,
+      "feature_id": 275,
+      "activation_freq": 0.4401337802410126,
+      "mean_magnitude": 0.26652395725250244,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 65.0,
+            "subtraction": 52.0,
+            "multiplication": 85.0,
+            "division": 46.0
+          },
+          "values": {
+            "12": 30,
+            "20": 29,
+            "30": 26,
+            "50": 18,
+            "100": 11
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 98,
+      "feature_id": 203,
+      "activation_freq": 0.42274248600006104,
+      "mean_magnitude": 0.35495725274086,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 53.0,
+            "subtraction": 52.0,
+            "multiplication": 88.0,
+            "division": 51.0
+          },
+          "values": {
+            "12": 27,
+            "20": 67,
+            "30": 34,
+            "50": 50,
+            "100": 63
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 99,
+      "feature_id": 113,
+      "activation_freq": 0.4214046895503998,
+      "mean_magnitude": 0.13035054504871368,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 33.0,
+            "subtraction": 59.0,
+            "multiplication": 48.0,
+            "division": 33.0
+          },
+          "values": {
+            "12": 13,
+            "20": 24,
+            "30": 14,
+            "50": 12,
+            "100": 7
+          },
+          "total_samples": 100
+        }
+      }
+    },
+    {
+      "rank": 100,
+      "feature_id": 359,
+      "activation_freq": 0.4200668931007385,
+      "mean_magnitude": 0.19275474548339844,
+      "specialization": {
+        "type": "general",
+        "description": "mixed patterns",
+        "scores": {
+          "operations": {
+            "addition": 33.0,
+            "subtraction": 46.0,
+            "multiplication": 59.0,
+            "division": 43.0
+          },
+          "values": {
+            "12": 16,
+            "20": 30,
+            "30": 15,
+            "50": 16,
+            "100": 12
+          },
+          "total_samples": 100
+        }
+      }
+    }
+  ],
+  "specialized_features": [],
+  "swap_pairs": []
+}

@@ -1,0 +1,1511 @@
+{
+  "metadata": {
+    "layer": 14,
+    "position": 3,
+    "sae_config": "K=100, d=512",
+    "num_features": 20,
+    "analysis_date": "2025-10-27"
+  },
+  "features": [
+    {
+      "rank": 1,
+      "feature_id": 449,
+      "activation_freq": 0.9986622333526611,
+      "mean_magnitude": 5.310129642486572,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_1543",
+          "cot": "20*2=40 | 20+40=60 | 60/2=30 | 30-20=10",
+          "activation": -9.365456581115723
+        },
+        {
+          "problem_id": "train_6350",
+          "cot": "2*10=20 | 1.5*20=30 | 30-10=20",
+          "activation": -9.134940147399902
+        },
+        {
+          "problem_id": "train_5610",
+          "cot": "15*2=30 | 30/3=10 | 10/2=5 | 5-2=3",
+          "activation": -9.052801132202148
+        },
+        {
+          "problem_id": "train_2266",
+          "cot": "25-5=20 | 20/2=10 | 25-10=15",
+          "activation": -8.814200401306152
+        },
+        {
+          "problem_id": "train_7180",
+          "cot": "2*15=30 | 30/6=5 | 3*5=15.00",
+          "activation": -8.811982154846191
+        },
+        {
+          "problem_id": "train_6133",
+          "cot": "15=15 | 2*15=30 | 30+8=38 | 15+30+38=83",
+          "activation": -8.749208450317383
+        },
+        {
+          "problem_id": "train_5058",
+          "cot": "30*2=60 | 60*3=180 | 180-30=150 | 30+60+150=240",
+          "activation": -8.7473726272583
+        },
+        {
+          "problem_id": "train_1606",
+          "cot": "240*0.25=60 | 60+10=70 | 300*0.5=150 | 150-60=90",
+          "activation": -8.714884757995605
+        },
+        {
+          "problem_id": "train_1922",
+          "cot": "3*10=30 | 2*13=26 | 30+26=56 | 80-56=24",
+          "activation": -8.711935043334961
+        },
+        {
+          "problem_id": "train_3782",
+          "cot": "3*10=30 | 5*30=150 | 10+30+150=190",
+          "activation": -8.578701972961426
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "feature_id": 168,
+      "activation_freq": 0.9986622333526611,
+      "mean_magnitude": 5.457884788513184,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_6871",
+          "cot": "6*4=24 | 24/2=12 | 12*7=84",
+          "activation": 9.617441177368164
+        },
+        {
+          "problem_id": "train_701",
+          "cot": "3*12=36 | 72/36=2 | 5*2=10",
+          "activation": 9.193892478942871
+        },
+        {
+          "problem_id": "train_2215",
+          "cot": "80/4=20 | 80-20=60 | 60*2/3=40 | 40*1/5=8 | 60-8=52",
+          "activation": 9.176371574401855
+        },
+        {
+          "problem_id": "train_611",
+          "cot": "1*2=2 | 2*2=4 | 40/4=10 | 10-1=9",
+          "activation": 9.06696891784668
+        },
+        {
+          "problem_id": "train_4201",
+          "cot": "10*2=20 | 20+30=50 | 80-50=30",
+          "activation": 9.021811485290527
+        },
+        {
+          "problem_id": "train_6093",
+          "cot": "30+5=35 | 35+5=40 | 40+5=45",
+          "activation": 8.926545143127441
+        },
+        {
+          "problem_id": "train_7135",
+          "cot": "5*12=60 | 6*60=360 | 360*.8=288",
+          "activation": 8.88068675994873
+        },
+        {
+          "problem_id": "train_2266",
+          "cot": "25-5=20 | 20/2=10 | 25-10=15",
+          "activation": 8.865533828735352
+        },
+        {
+          "problem_id": "train_1543",
+          "cot": "20*2=40 | 20+40=60 | 60/2=30 | 30-20=10",
+          "activation": 8.785462379455566
+        },
+        {
+          "problem_id": "train_1811",
+          "cot": "8*3=24 | 24+6=30 | 30/2=15 | 15+5=20",
+          "activation": 8.733678817749023
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "feature_id": 131,
+      "activation_freq": 0.9979932904243469,
+      "mean_magnitude": 6.4372968673706055,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_6871",
+          "cot": "6*4=24 | 24/2=12 | 12*7=84",
+          "activation": 11.064499855041504
+        },
+        {
+          "problem_id": "train_1747",
+          "cot": "2*12=24 | 2*13=26 | 26-24=2",
+          "activation": 10.723640441894531
+        },
+        {
+          "problem_id": "train_3955",
+          "cot": "2*6=12 | 11+3=14 | 14-12=2",
+          "activation": 10.55927562713623
+        },
+        {
+          "problem_id": "train_476",
+          "cot": "3*8=24 | 2*9=18 | 10*5=50 | 24+18+50=92",
+          "activation": 10.533852577209473
+        },
+        {
+          "problem_id": "train_4328",
+          "cot": "3*8=24 | 2*14=28 | 24+28=52",
+          "activation": 10.488958358764648
+        },
+        {
+          "problem_id": "train_4512",
+          "cot": "4*5=20 | 4/2=2 | 2*8=16 | 16+20=36 | 36*5=180",
+          "activation": 10.428194999694824
+        },
+        {
+          "problem_id": "train_7122",
+          "cot": "2*5=10 | 6*5=30 | 30+10=40",
+          "activation": 10.414619445800781
+        },
+        {
+          "problem_id": "train_5982",
+          "cot": "4*5=20 | 2*6=12 | 20+12=32",
+          "activation": 10.382194519042969
+        },
+        {
+          "problem_id": "train_1295",
+          "cot": "10*2=20 | 4*1.25=5 | 20+5=25",
+          "activation": 10.371213912963867
+        },
+        {
+          "problem_id": "train_755",
+          "cot": "2*2=4 | 2/2=1 | 2*4=8 | 8*1=8 | 8+4=12",
+          "activation": 10.339417457580566
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "feature_id": 261,
+      "activation_freq": 0.9979932904243469,
+      "mean_magnitude": 4.904183864593506,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_2124",
+          "cot": "10*4=40 | 40/2=20 | 40-20=20 | 20/4=5 | 20-5=15",
+          "activation": -10.137466430664062
+        },
+        {
+          "problem_id": "train_324",
+          "cot": "4*10=40 | 40*6=240 | 15*240=3600",
+          "activation": -9.47393798828125
+        },
+        {
+          "problem_id": "train_1438",
+          "cot": "80/2=40 | 40/2=20 | 20/2=10 | 10/2=5",
+          "activation": -9.14262580871582
+        },
+        {
+          "problem_id": "train_3532",
+          "cot": "20*2=40 | 40*2=80 | 80/8=10",
+          "activation": -8.946292877197266
+        },
+        {
+          "problem_id": "train_5335",
+          "cot": "8*5=40 | 40+9=49 | 49-8=41",
+          "activation": -8.906505584716797
+        },
+        {
+          "problem_id": "train_1295",
+          "cot": "10*2=20 | 4*1.25=5 | 20+5=25",
+          "activation": -8.842414855957031
+        },
+        {
+          "problem_id": "train_1543",
+          "cot": "20*2=40 | 20+40=60 | 60/2=30 | 30-20=10",
+          "activation": -8.839961051940918
+        },
+        {
+          "problem_id": "train_2432",
+          "cot": "20/2=10 | 20-10=10 | 10/2=5 | 10-5=5 | 5-2=3",
+          "activation": -8.727434158325195
+        },
+        {
+          "problem_id": "train_5982",
+          "cot": "4*5=20 | 2*6=12 | 20+12=32",
+          "activation": -8.645949363708496
+        },
+        {
+          "problem_id": "train_2338",
+          "cot": "10*2=20 | 5*1=5 | 25+5=30",
+          "activation": -8.613994598388672
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "feature_id": 288,
+      "activation_freq": 0.9979932904243469,
+      "mean_magnitude": 6.337708473205566,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_4680",
+          "cot": "3*12=36 | 2.5*8=20 | 36+20=56",
+          "activation": 11.792818069458008
+        },
+        {
+          "problem_id": "train_866",
+          "cot": "5*6=30 | 60+10=70 | 30+70=100",
+          "activation": 11.575745582580566
+        },
+        {
+          "problem_id": "train_7032",
+          "cot": "2.5*12=30 | 10*.01*30=3 | 30-3=27 | 27-4=23",
+          "activation": 11.361085891723633
+        },
+        {
+          "problem_id": "train_4740",
+          "cot": "3*12=36 | 2*20=40 | 36+40=76",
+          "activation": 11.348992347717285
+        },
+        {
+          "problem_id": "train_7180",
+          "cot": "2*15=30 | 30/6=5 | 3*5=15.00",
+          "activation": 11.334341049194336
+        },
+        {
+          "problem_id": "train_1545",
+          "cot": "3*10=30 | 2*5=10 | 5*6=30 | 30+10+30=70",
+          "activation": 11.330284118652344
+        },
+        {
+          "problem_id": "train_5706",
+          "cot": "10*3=30 | 10*2=20 | 10*1=10 | 30+20+10=60",
+          "activation": 11.294106483459473
+        },
+        {
+          "problem_id": "train_5219",
+          "cot": "60/2=30 | 30-3=27 | 27/3=9",
+          "activation": 11.004095077514648
+        },
+        {
+          "problem_id": "train_5335",
+          "cot": "8*5=40 | 40+9=49 | 49-8=41",
+          "activation": 10.993958473205566
+        },
+        {
+          "problem_id": "train_3782",
+          "cot": "3*10=30 | 5*30=150 | 10+30+150=190",
+          "activation": 10.964061737060547
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "feature_id": 273,
+      "activation_freq": 0.9973244071006775,
+      "mean_magnitude": 4.766874313354492,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_7062",
+          "cot": "60/2=30 | 30/3=10 | 10+30+60=100",
+          "activation": 7.956926345825195
+        },
+        {
+          "problem_id": "train_1438",
+          "cot": "80/2=40 | 40/2=20 | 20/2=10 | 10/2=5",
+          "activation": 7.809732437133789
+        },
+        {
+          "problem_id": "train_3782",
+          "cot": "3*10=30 | 5*30=150 | 10+30+150=190",
+          "activation": 7.669319152832031
+        },
+        {
+          "problem_id": "train_2124",
+          "cot": "10*4=40 | 40/2=20 | 40-20=20 | 20/4=5 | 20-5=15",
+          "activation": 7.656064033508301
+        },
+        {
+          "problem_id": "train_6093",
+          "cot": "30+5=35 | 35+5=40 | 40+5=45",
+          "activation": 7.6261491775512695
+        },
+        {
+          "problem_id": "train_3909",
+          "cot": "5*2=10 | 10*3=30 | 30*5=150 | 10*4=40 | 150-40=110",
+          "activation": 7.575999736785889
+        },
+        {
+          "problem_id": "train_1718",
+          "cot": "13+7=20 | 13+20=33 | 3*33=99 | 99-13=86",
+          "activation": 7.575767517089844
+        },
+        {
+          "problem_id": "train_6133",
+          "cot": "15=15 | 2*15=30 | 30+8=38 | 15+30+38=83",
+          "activation": 7.485279083251953
+        },
+        {
+          "problem_id": "train_3143",
+          "cot": "5*7=35 | 35*6=210 | 5+35+210=250 | 250/10=25",
+          "activation": 7.436496257781982
+        },
+        {
+          "problem_id": "train_1042",
+          "cot": "2*16=32 | 16/4=4 | 32-4=28",
+          "activation": 7.428414821624756
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "feature_id": 286,
+      "activation_freq": 0.9973244071006775,
+      "mean_magnitude": 4.04071569442749,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_6802",
+          "cot": "7*5=35 | 4*9=36 | 35+36=71",
+          "activation": -7.453229904174805
+        },
+        {
+          "problem_id": "train_408",
+          "cot": "140*3=420 | 64*2=128 | 420+128=548 | 600-548=52",
+          "activation": -7.196298599243164
+        },
+        {
+          "problem_id": "train_1662",
+          "cot": "1/4*100=25 | 100-25=75 | 75-20=55 | 20*2=40 | 55-40=15",
+          "activation": -7.13068962097168
+        },
+        {
+          "problem_id": "train_131",
+          "cot": "10*40=400 | 400+20=420 | 2*40=80 | 420+80=500",
+          "activation": -7.12120246887207
+        },
+        {
+          "problem_id": "train_3834",
+          "cot": "11*15=165 | 17*15=255 | 165+255=420 | 50+55=105 | 420-105=315",
+          "activation": -7.097475051879883
+        },
+        {
+          "problem_id": "train_1176",
+          "cot": "1*4=4 | 4*5=20 | 4+20=24",
+          "activation": -7.0928168296813965
+        },
+        {
+          "problem_id": "train_3303",
+          "cot": "500-150=350 | 30/100*350=105 | 350-105=245 | 20/100*245=49 | 245-49=196",
+          "activation": -7.0608015060424805
+        },
+        {
+          "problem_id": "train_3248",
+          "cot": "1/4*180=45 | 180-45=135 | 135/3=45 | 180-45-45-20=70",
+          "activation": -7.045994281768799
+        },
+        {
+          "problem_id": "train_3661",
+          "cot": "12+1=13 | 13*3=39 | 1+13+39=53",
+          "activation": -7.0325212478637695
+        },
+        {
+          "problem_id": "train_3106",
+          "cot": "1000-300=700 | 700-200=500 | 2*1000=2000 | 500+2000=2500",
+          "activation": -7.001093864440918
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "feature_id": 4,
+      "activation_freq": 0.9966555237770081,
+      "mean_magnitude": 5.282751560211182,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_7135",
+          "cot": "5*12=60 | 6*60=360 | 360*.8=288",
+          "activation": -9.141267776489258
+        },
+        {
+          "problem_id": "train_5219",
+          "cot": "60/2=30 | 30-3=27 | 27/3=9",
+          "activation": -9.078668594360352
+        },
+        {
+          "problem_id": "train_1922",
+          "cot": "3*10=30 | 2*13=26 | 30+26=56 | 80-56=24",
+          "activation": -8.924928665161133
+        },
+        {
+          "problem_id": "train_866",
+          "cot": "5*6=30 | 60+10=70 | 30+70=100",
+          "activation": -8.806692123413086
+        },
+        {
+          "problem_id": "train_7032",
+          "cot": "2.5*12=30 | 10*.01*30=3 | 30-3=27 | 27-4=23",
+          "activation": -8.791008949279785
+        },
+        {
+          "problem_id": "train_4740",
+          "cot": "3*12=36 | 2*20=40 | 36+40=76",
+          "activation": -8.761816024780273
+        },
+        {
+          "problem_id": "train_1024",
+          "cot": "8+10=18 | 38=38 | 20*38=760",
+          "activation": -8.719557762145996
+        },
+        {
+          "problem_id": "train_1149",
+          "cot": "6*2=12 | 5*8=40 | 12+8=20 | 3*40=120 | 120*4=480",
+          "activation": -8.50598430633545
+        },
+        {
+          "problem_id": "train_6802",
+          "cot": "7*5=35 | 4*9=36 | 35+36=71",
+          "activation": -8.437677383422852
+        },
+        {
+          "problem_id": "train_324",
+          "cot": "4*10=40 | 40*6=240 | 15*240=3600",
+          "activation": -8.41771125793457
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "feature_id": 152,
+      "activation_freq": 0.9966555237770081,
+      "mean_magnitude": 5.2991228103637695,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_755",
+          "cot": "2*2=4 | 2/2=1 | 2*4=8 | 8*1=8 | 8+4=12",
+          "activation": -10.073042869567871
+        },
+        {
+          "problem_id": "train_2124",
+          "cot": "10*4=40 | 40/2=20 | 40-20=20 | 20/4=5 | 20-5=15",
+          "activation": -10.069709777832031
+        },
+        {
+          "problem_id": "train_5378",
+          "cot": "10*12=120 | 20-10=10 | 12+3=15 | 15*10=150 | 120+150=270",
+          "activation": -9.723047256469727
+        },
+        {
+          "problem_id": "train_7404",
+          "cot": "5*100=500 | 10-5=5 | 5*60=300 | 500+300=800",
+          "activation": -9.630610466003418
+        },
+        {
+          "problem_id": "train_131",
+          "cot": "10*40=400 | 400+20=420 | 2*40=80 | 420+80=500",
+          "activation": -9.60576057434082
+        },
+        {
+          "problem_id": "train_2215",
+          "cot": "80/4=20 | 80-20=60 | 60*2/3=40 | 40*1/5=8 | 60-8=52",
+          "activation": -9.469654083251953
+        },
+        {
+          "problem_id": "train_4163",
+          "cot": "3*20=60 | 10*4=40 | 20-10=10 | 3*2=6 | 10*6=60 | 60+40=100 | 100-60=40",
+          "activation": -9.316760063171387
+        },
+        {
+          "problem_id": "train_1436",
+          "cot": "1+2+1=4 | 2*1=2 | 2/2=1 | 2+1=3 | 4+3=7",
+          "activation": -9.251870155334473
+        },
+        {
+          "problem_id": "train_7425",
+          "cot": "10*6=60 | 30*3=90 | 60+90=150",
+          "activation": -9.210143089294434
+        },
+        {
+          "problem_id": "train_5706",
+          "cot": "10*3=30 | 10*2=20 | 10*1=10 | 30+20+10=60",
+          "activation": -9.209431648254395
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "feature_id": 212,
+      "activation_freq": 0.9966555237770081,
+      "mean_magnitude": 4.846531391143799,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_1108",
+          "cot": "60/6=10 | 3*10=30 | 60-30=30",
+          "activation": 8.809483528137207
+        },
+        {
+          "problem_id": "train_2227",
+          "cot": "5*2=10 | 3*3=9 | 10+9=19",
+          "activation": 8.718968391418457
+        },
+        {
+          "problem_id": "train_4512",
+          "cot": "4*5=20 | 4/2=2 | 2*8=16 | 16+20=36 | 36*5=180",
+          "activation": 8.571454048156738
+        },
+        {
+          "problem_id": "train_7122",
+          "cot": "2*5=10 | 6*5=30 | 30+10=40",
+          "activation": 8.517266273498535
+        },
+        {
+          "problem_id": "train_3955",
+          "cot": "2*6=12 | 11+3=14 | 14-12=2",
+          "activation": 8.464107513427734
+        },
+        {
+          "problem_id": "train_2124",
+          "cot": "10*4=40 | 40/2=20 | 40-20=20 | 20/4=5 | 20-5=15",
+          "activation": 8.40679931640625
+        },
+        {
+          "problem_id": "train_5266",
+          "cot": "35*15=525 | 5*45=225 | 525-225=300 | 300/5=60",
+          "activation": 8.39177131652832
+        },
+        {
+          "problem_id": "train_2432",
+          "cot": "20/2=10 | 20-10=10 | 10/2=5 | 10-5=5 | 5-2=3",
+          "activation": 8.370776176452637
+        },
+        {
+          "problem_id": "train_7404",
+          "cot": "5*100=500 | 10-5=5 | 5*60=300 | 500+300=800",
+          "activation": 8.260887145996094
+        },
+        {
+          "problem_id": "train_7288",
+          "cot": "2*10=20 | 30/60=.5 | 10*.5=5 | 20*5=100",
+          "activation": 8.239079475402832
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "feature_id": 163,
+      "activation_freq": 0.9939799308776855,
+      "mean_magnitude": 4.229307174682617,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_6802",
+          "cot": "7*5=35 | 4*9=36 | 35+36=71",
+          "activation": -8.902969360351562
+        },
+        {
+          "problem_id": "train_4781",
+          "cot": "50*2.5=125 | 62*2=124 | 125-124=1",
+          "activation": -8.179719924926758
+        },
+        {
+          "problem_id": "train_6871",
+          "cot": "6*4=24 | 24/2=12 | 12*7=84",
+          "activation": -8.027721405029297
+        },
+        {
+          "problem_id": "train_1747",
+          "cot": "2*12=24 | 2*13=26 | 26-24=2",
+          "activation": -7.916039943695068
+        },
+        {
+          "problem_id": "train_2024",
+          "cot": "20+15=35 | 35-5=30",
+          "activation": -7.872584342956543
+        },
+        {
+          "problem_id": "train_69",
+          "cot": "7*5=35 | 35+14=49",
+          "activation": -7.823554515838623
+        },
+        {
+          "problem_id": "train_324",
+          "cot": "4*10=40 | 40*6=240 | 15*240=3600",
+          "activation": -7.780689716339111
+        },
+        {
+          "problem_id": "train_4504",
+          "cot": "8*5=40 | 5+1=6 | 2*6=12 | 40*2=80 | 13-12=1",
+          "activation": -7.778069019317627
+        },
+        {
+          "problem_id": "train_5335",
+          "cot": "8*5=40 | 40+9=49 | 49-8=41",
+          "activation": -7.72769832611084
+        },
+        {
+          "problem_id": "train_6435",
+          "cot": "20*2=40 | 40+2=42 | 20+42=62",
+          "activation": -7.690576553344727
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "feature_id": 42,
+      "activation_freq": 0.9886287450790405,
+      "mean_magnitude": 4.372459411621094,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_2534",
+          "cot": "2*8=16 | 16-2=14 | 14*.50=7 | 14-7=7 | 7-2=5",
+          "activation": -8.419760704040527
+        },
+        {
+          "problem_id": "train_1758",
+          "cot": "4+3=7 | 7+4=11 | 11*2=22 | 22+11=33 | 50-33=17",
+          "activation": -8.255669593811035
+        },
+        {
+          "problem_id": "train_3661",
+          "cot": "12+1=13 | 13*3=39 | 1+13+39=53",
+          "activation": -8.198707580566406
+        },
+        {
+          "problem_id": "train_5509",
+          "cot": "10+4=14 | 14-2=12 | 10+14+12=36",
+          "activation": -8.12026309967041
+        },
+        {
+          "problem_id": "train_755",
+          "cot": "2*2=4 | 2/2=1 | 2*4=8 | 8*1=8 | 8+4=12",
+          "activation": -8.104312896728516
+        },
+        {
+          "problem_id": "train_6467",
+          "cot": "90+25=115 | 115+90+80=285 | 285/3=95",
+          "activation": -7.848898410797119
+        },
+        {
+          "problem_id": "train_756",
+          "cot": "1/2*28=14 | 14+37=51 | 51-2=49 | 49+1=50",
+          "activation": -7.818255424499512
+        },
+        {
+          "problem_id": "train_6248",
+          "cot": "5+2=7 | 7*3=21 | 3+2=5 | 21+20=41 | 5+2+4=11 | 41-11=30",
+          "activation": -7.796804904937744
+        },
+        {
+          "problem_id": "train_1436",
+          "cot": "1+2+1=4 | 2*1=2 | 2/2=1 | 2+1=3 | 4+3=7",
+          "activation": -7.763850688934326
+        },
+        {
+          "problem_id": "train_4845",
+          "cot": "30+60=90 | 1/3*90=30 | 30+30+90=150",
+          "activation": -7.762831211090088
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "feature_id": 248,
+      "activation_freq": 0.939130425453186,
+      "mean_magnitude": 4.136484146118164,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_2124",
+          "cot": "10*4=40 | 40/2=20 | 40-20=20 | 20/4=5 | 20-5=15",
+          "activation": -10.433783531188965
+        },
+        {
+          "problem_id": "train_2215",
+          "cot": "80/4=20 | 80-20=60 | 60*2/3=40 | 40*1/5=8 | 60-8=52",
+          "activation": -9.944135665893555
+        },
+        {
+          "problem_id": "train_1543",
+          "cot": "20*2=40 | 20+40=60 | 60/2=30 | 30-20=10",
+          "activation": -9.340723991394043
+        },
+        {
+          "problem_id": "train_5982",
+          "cot": "4*5=20 | 2*6=12 | 20+12=32",
+          "activation": -9.200981140136719
+        },
+        {
+          "problem_id": "train_3450",
+          "cot": "40*2=80 | 8*7=56 | .5*56=28 | 28+80=108",
+          "activation": -9.160820960998535
+        },
+        {
+          "problem_id": "train_3473",
+          "cot": "3*12=36 | 36*1/4=9 | 36-9=27 | 27*2/3=18 | 27-18=9",
+          "activation": -9.13099193572998
+        },
+        {
+          "problem_id": "train_6871",
+          "cot": "6*4=24 | 24/2=12 | 12*7=84",
+          "activation": -9.125800132751465
+        },
+        {
+          "problem_id": "train_324",
+          "cot": "4*10=40 | 40*6=240 | 15*240=3600",
+          "activation": -9.057771682739258
+        },
+        {
+          "problem_id": "train_1747",
+          "cot": "2*12=24 | 2*13=26 | 26-24=2",
+          "activation": -9.010250091552734
+        },
+        {
+          "problem_id": "train_6359",
+          "cot": "4*20=80 | 2*20=40 | 40+80=120",
+          "activation": -8.996368408203125
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "feature_id": 452,
+      "activation_freq": 0.9297658801078796,
+      "mean_magnitude": 3.3714399337768555,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_6802",
+          "cot": "7*5=35 | 4*9=36 | 35+36=71",
+          "activation": 7.792431354522705
+        },
+        {
+          "problem_id": "train_2208",
+          "cot": "6*4=24 | 2*2=4 | 24+4=28",
+          "activation": 7.764538288116455
+        },
+        {
+          "problem_id": "train_4740",
+          "cot": "3*12=36 | 2*20=40 | 36+40=76",
+          "activation": 7.658355712890625
+        },
+        {
+          "problem_id": "train_3977",
+          "cot": "6*8=48 | 5*12=60 | 9*6=54 | 48+60+54=162",
+          "activation": 7.650883674621582
+        },
+        {
+          "problem_id": "train_1747",
+          "cot": "2*12=24 | 2*13=26 | 26-24=2",
+          "activation": 7.6256022453308105
+        },
+        {
+          "problem_id": "train_3128",
+          "cot": "6*10=60 | 4*24=96 | 60+96=156",
+          "activation": 7.59566593170166
+        },
+        {
+          "problem_id": "train_4680",
+          "cot": "3*12=36 | 2.5*8=20 | 36+20=56",
+          "activation": 7.549208641052246
+        },
+        {
+          "problem_id": "train_866",
+          "cot": "5*6=30 | 60+10=70 | 30+70=100",
+          "activation": 7.489518642425537
+        },
+        {
+          "problem_id": "train_6871",
+          "cot": "6*4=24 | 24/2=12 | 12*7=84",
+          "activation": 7.435379505157471
+        },
+        {
+          "problem_id": "train_4328",
+          "cot": "3*8=24 | 2*14=28 | 24+28=52",
+          "activation": 7.355648517608643
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "feature_id": 242,
+      "activation_freq": 0.9270902872085571,
+      "mean_magnitude": 2.3012962341308594,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_6508",
+          "cot": "4*3=12 | 12+2=14 | 10+15=25 | 14+25=39",
+          "activation": 5.490252494812012
+        },
+        {
+          "problem_id": "train_6383",
+          "cot": "2*6=12 | 2*3=6 | 4*6=24 | 12+24=36",
+          "activation": 5.313577651977539
+        },
+        {
+          "problem_id": "train_6473",
+          "cot": "2*5=10 | 1*2=2 | 10+2=12 | 3*12=36",
+          "activation": 5.199692726135254
+        },
+        {
+          "problem_id": "train_6219",
+          "cot": "5*4=20 | 3*4=12 | 2*4*2=16 | 4*3=12 | 20+12+16+12=60",
+          "activation": 5.161706924438477
+        },
+        {
+          "problem_id": "train_547",
+          "cot": "4*.5=2 | 4+2=6 | 3*4=12 | 12+6=18 | 18*2=36 | 18+36=54",
+          "activation": 5.144669532775879
+        },
+        {
+          "problem_id": "train_5693",
+          "cot": "8+2=10 | 10+8=18 | 10-4=6 | 18+6=24 | 24+6=30 | 8*1/2=4 | 30+4=34",
+          "activation": 5.084713459014893
+        },
+        {
+          "problem_id": "train_3937",
+          "cot": "2*4=8 | 8+5=13 | 3+4=7 | 13+7=20",
+          "activation": 4.926747798919678
+        },
+        {
+          "problem_id": "train_1263",
+          "cot": "50*2=100 | 3*12=36 | 100+36+4=140 | 140/4=35 | 140-35=105",
+          "activation": 4.921148777008057
+        },
+        {
+          "problem_id": "train_6992",
+          "cot": "4*2=8 | 5*3=15 | 2*1=2 | 3-2=1 | 1/1=1 | 5*3=15 | 8+15+15=38",
+          "activation": 4.917346954345703
+        },
+        {
+          "problem_id": "train_4163",
+          "cot": "3*20=60 | 10*4=40 | 20-10=10 | 3*2=6 | 10*6=60 | 60+40=100 | 100-60=40",
+          "activation": 4.859099864959717
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "feature_id": 263,
+      "activation_freq": 0.9150501489639282,
+      "mean_magnitude": 2.4257259368896484,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_1731",
+          "cot": "4*2=8 | 8-1=7 | 18+7=25 | 25-24=1",
+          "activation": -6.734141826629639
+        },
+        {
+          "problem_id": "train_3615",
+          "cot": "25/5=5 | 15-5=10 | 10/10=1 | 6*1=6",
+          "activation": -6.385659217834473
+        },
+        {
+          "problem_id": "train_7043",
+          "cot": "40*0.75=30 | 30+5=35 | 40*0.5=20 | 4*5=20 | 60+40+40+25=165 | 60+35+20+20=135 | 165-135=30",
+          "activation": -6.377148151397705
+        },
+        {
+          "problem_id": "train_2770",
+          "cot": "5*10=50 | 10*2=20 | 50+20=70 | 6*3=18 | 18+20=38 | 70+38=108",
+          "activation": -6.234618663787842
+        },
+        {
+          "problem_id": "train_1902",
+          "cot": "80+34=114 | 114+80=194 | 1/2*114=57 | 57+202+152+114+80=605",
+          "activation": -6.138652324676514
+        },
+        {
+          "problem_id": "train_3834",
+          "cot": "11*15=165 | 17*15=255 | 165+255=420 | 50+55=105 | 420-105=315",
+          "activation": -6.1102294921875
+        },
+        {
+          "problem_id": "train_5576",
+          "cot": "5*3=15 | 15*5=75 | 3*2=6 | 6*3=18 | 18*2=36 | 75+36=111",
+          "activation": -6.075379371643066
+        },
+        {
+          "problem_id": "train_1811",
+          "cot": "8*3=24 | 24+6=30 | 30/2=15 | 15+5=20",
+          "activation": -5.842947959899902
+        },
+        {
+          "problem_id": "train_1385",
+          "cot": "3*9=27 | 27*2/3=18 | 3*18=54 | 54/2=27 | 18+27+27=72",
+          "activation": -5.748932838439941
+        },
+        {
+          "problem_id": "train_994",
+          "cot": "2*12=24 | 12/2=6 | 12/3=4 | 6+4+3=13 | 24-13=11",
+          "activation": -5.714343547821045
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "feature_id": 183,
+      "activation_freq": 0.9103679060935974,
+      "mean_magnitude": 3.754289150238037,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_866",
+          "cot": "5*6=30 | 60+10=70 | 30+70=100",
+          "activation": -8.444416046142578
+        },
+        {
+          "problem_id": "train_2124",
+          "cot": "10*4=40 | 40/2=20 | 40-20=20 | 20/4=5 | 20-5=15",
+          "activation": -8.437810897827148
+        },
+        {
+          "problem_id": "train_5819",
+          "cot": "15*4=60 | 60*1/2=30 | 10*4=40 | 20*1/4=5 | 5+40+30=75 | 75/3=25",
+          "activation": -8.34096908569336
+        },
+        {
+          "problem_id": "train_3909",
+          "cot": "5*2=10 | 10*3=30 | 30*5=150 | 10*4=40 | 150-40=110",
+          "activation": -8.303728103637695
+        },
+        {
+          "problem_id": "train_7032",
+          "cot": "2.5*12=30 | 10*.01*30=3 | 30-3=27 | 27-4=23",
+          "activation": -8.191829681396484
+        },
+        {
+          "problem_id": "train_3316",
+          "cot": "50+20=70 | 2*70=140 | 140+50=190 | 190/2=95 | 95-10=85",
+          "activation": -8.177425384521484
+        },
+        {
+          "problem_id": "train_5706",
+          "cot": "10*3=30 | 10*2=20 | 10*1=10 | 30+20+10=60",
+          "activation": -8.098061561584473
+        },
+        {
+          "problem_id": "train_1732",
+          "cot": "3*10=30 | 2*3=6 | 2*(1+1)=4 | 2+6+2+4=14 | 30-14=16",
+          "activation": -8.025741577148438
+        },
+        {
+          "problem_id": "train_1671",
+          "cot": "80-50=30 | (30/2)*10=150 | 150/5=30",
+          "activation": -7.99564266204834
+        },
+        {
+          "problem_id": "train_5219",
+          "cot": "60/2=30 | 30-3=27 | 27/3=9",
+          "activation": -7.969921112060547
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "feature_id": 459,
+      "activation_freq": 0.909699022769928,
+      "mean_magnitude": 2.765305519104004,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_1219",
+          "cot": "2*8=16 | 6*2=12 | 3*3=9 | 16+12+9=37",
+          "activation": 7.418771743774414
+        },
+        {
+          "problem_id": "train_6802",
+          "cot": "7*5=35 | 4*9=36 | 35+36=71",
+          "activation": 7.19494104385376
+        },
+        {
+          "problem_id": "train_4680",
+          "cot": "3*12=36 | 2.5*8=20 | 36+20=56",
+          "activation": 7.115058898925781
+        },
+        {
+          "problem_id": "train_2157",
+          "cot": "8*2=16 | 8/2=4 | 16-4=12",
+          "activation": 7.077478408813477
+        },
+        {
+          "problem_id": "train_4740",
+          "cot": "3*12=36 | 2*20=40 | 36+40=76",
+          "activation": 6.980438232421875
+        },
+        {
+          "problem_id": "train_3661",
+          "cot": "12+1=13 | 13*3=39 | 1+13+39=53",
+          "activation": 6.899839878082275
+        },
+        {
+          "problem_id": "train_1042",
+          "cot": "2*16=32 | 16/4=4 | 32-4=28",
+          "activation": 6.883751392364502
+        },
+        {
+          "problem_id": "train_1965",
+          "cot": "4*4=16 | 28-3=25 | 2*3=6 | 25+6=31",
+          "activation": 6.7195844650268555
+        },
+        {
+          "problem_id": "train_1075",
+          "cot": "80*20/100=16 | 110*10/100=11 | 110-11=99 | 80+16+99=195",
+          "activation": 6.683536529541016
+        },
+        {
+          "problem_id": "train_45",
+          "cot": "9*4=36 | 5*3=15 | 7*5=35 | 13+36+15+35=99",
+          "activation": 6.585692405700684
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "feature_id": 90,
+      "activation_freq": 0.8909698724746704,
+      "mean_magnitude": 3.4718785285949707,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_2124",
+          "cot": "10*4=40 | 40/2=20 | 40-20=20 | 20/4=5 | 20-5=15",
+          "activation": -8.460800170898438
+        },
+        {
+          "problem_id": "train_2215",
+          "cot": "80/4=20 | 80-20=60 | 60*2/3=40 | 40*1/5=8 | 60-8=52",
+          "activation": -8.429010391235352
+        },
+        {
+          "problem_id": "train_1543",
+          "cot": "20*2=40 | 20+40=60 | 60/2=30 | 30-20=10",
+          "activation": -8.180954933166504
+        },
+        {
+          "problem_id": "train_5335",
+          "cot": "8*5=40 | 40+9=49 | 49-8=41",
+          "activation": -8.089695930480957
+        },
+        {
+          "problem_id": "train_866",
+          "cot": "5*6=30 | 60+10=70 | 30+70=100",
+          "activation": -8.065108299255371
+        },
+        {
+          "problem_id": "train_3909",
+          "cot": "5*2=10 | 10*3=30 | 30*5=150 | 10*4=40 | 150-40=110",
+          "activation": -7.957942962646484
+        },
+        {
+          "problem_id": "train_5846",
+          "cot": "200+50=250 | 250*.8=200 | 200*.9=180 | 180*3=540",
+          "activation": -7.862092971801758
+        },
+        {
+          "problem_id": "train_1149",
+          "cot": "6*2=12 | 5*8=40 | 12+8=20 | 3*40=120 | 120*4=480",
+          "activation": -7.84918737411499
+        },
+        {
+          "problem_id": "train_1783",
+          "cot": "15*4=60 | 1/2*80=40 | 15+60+80+40=195",
+          "activation": -7.622596263885498
+        },
+        {
+          "problem_id": "train_1488",
+          "cot": "10*4=40 | 40/2=20 | 10+40+20=70",
+          "activation": -7.537661552429199
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "feature_id": 3,
+      "activation_freq": 0.8782608509063721,
+      "mean_magnitude": 2.897988796234131,
+      "interpretation": {
+        "type": "mixed",
+        "confidence": "medium",
+        "detected_patterns": [
+          "addition",
+          "division",
+          "multiplication",
+          "number_100",
+          "number_12",
+          "number_20",
+          "number_30",
+          "number_50",
+          "round_numbers",
+          "subtraction"
+        ],
+        "description": "Operations: addition, subtraction, multiplication, division; Numbers: 30, 50, 12, 20, 100; Round numbers (100, 200, 500, 1000)"
+      },
+      "top_samples": [
+        {
+          "problem_id": "train_866",
+          "cot": "5*6=30 | 60+10=70 | 30+70=100",
+          "activation": 7.176851749420166
+        },
+        {
+          "problem_id": "train_3909",
+          "cot": "5*2=10 | 10*3=30 | 30*5=150 | 10*4=40 | 150-40=110",
+          "activation": 7.161426067352295
+        },
+        {
+          "problem_id": "train_2124",
+          "cot": "10*4=40 | 40/2=20 | 40-20=20 | 20/4=5 | 20-5=15",
+          "activation": 7.084499835968018
+        },
+        {
+          "problem_id": "train_5846",
+          "cot": "200+50=250 | 250*.8=200 | 200*.9=180 | 180*3=540",
+          "activation": 7.067958831787109
+        },
+        {
+          "problem_id": "train_6871",
+          "cot": "6*4=24 | 24/2=12 | 12*7=84",
+          "activation": 7.008807182312012
+        },
+        {
+          "problem_id": "train_1732",
+          "cot": "3*10=30 | 2*3=6 | 2*(1+1)=4 | 2+6+2+4=14 | 30-14=16",
+          "activation": 6.931084632873535
+        },
+        {
+          "problem_id": "train_7032",
+          "cot": "2.5*12=30 | 10*.01*30=3 | 30-3=27 | 27-4=23",
+          "activation": 6.817601203918457
+        },
+        {
+          "problem_id": "train_3316",
+          "cot": "50+20=70 | 2*70=140 | 140+50=190 | 190/2=95 | 95-10=85",
+          "activation": 6.6392107009887695
+        },
+        {
+          "problem_id": "train_2902",
+          "cot": "5*2=10 | 10+20=30 | 30-10=20 | 20/5=4",
+          "activation": 6.557225227355957
+        },
+        {
+          "problem_id": "train_3006",
+          "cot": "100*.25=25 | 25*2=50 | 25+50=75 | 100-75=25",
+          "activation": 6.493168830871582
+        }
+      ]
+    }
+  ]
+}
