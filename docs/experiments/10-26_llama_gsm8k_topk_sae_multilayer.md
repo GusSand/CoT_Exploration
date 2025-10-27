@@ -1,6 +1,6 @@
 # TopK SAE Multi-Layer Experiment Report
 
-**Date**: 2025-10-26
+**Date**: 2025-10-27
 **Layers**: 0-15 (all 16 layers)
 **Positions**: 0-5 (all continuous thought positions)
 **Dataset**: GSM8K (5,978 train, 1,495 validation)
@@ -192,7 +192,7 @@ visualize_all_layers.py          - Heatmap generation
 
 ---
 
-**Generated**: 2025-10-26
+**Generated**: 2025-10-27
 **Experiment**: TopK SAE Multi-Layer Analysis
 **Status**: Complete ✓
 **Total SAEs**: 1152
