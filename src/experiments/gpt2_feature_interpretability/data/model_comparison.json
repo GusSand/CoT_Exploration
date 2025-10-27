@@ -1,0 +1,196 @@
+{
+  "gpt2_analysis": {
+    "model": "GPT-2",
+    "model_size": "124M parameters",
+    "hidden_dim": 768,
+    "num_layers": 12,
+    "num_positions": 6,
+    "sae_config": {
+      "latent_dim": 512,
+      "k": 150,
+      "sparsity": "29.3%"
+    },
+    "total_features_analyzed": 36864,
+    "interpretable_features": 15399,
+    "interpretability_rate": 0.417724609375,
+    "monosemantic_features": 11187,
+    "monosemantic_rate": 0.7264757451782583,
+    "feature_type_distribution": {
+      "number": 10229,
+      "polysemantic": 4212,
+      "numbers": 874,
+      "operator": 52,
+      "addition": 12,
+      "multiplication": 13,
+      "subtraction": 3,
+      "operators": 1,
+      "division": 1,
+      "parentheses": 2
+    },
+    "layer_distribution": {
+      "0": 968,
+      "1": 1351,
+      "2": 1258,
+      "3": 1204,
+      "4": 1223,
+      "5": 1115,
+      "6": 1018,
+      "7": 1108,
+      "8": 1314,
+      "9": 1446,
+      "10": 1630,
+      "11": 1764
+    },
+    "position_distribution": {
+      "0": 1648,
+      "1": 3618,
+      "2": 2029,
+      "3": 3233,
+      "4": 2018,
+      "5": 2853
+    },
+    "high_enrichment_count": 6596,
+    "top_enrichment_examples": [
+      {
+        "key": "L4_P3_F241",
+        "label": "number_50000",
+        "enrichment": 169.91304347826087,
+        "layer": 4,
+        "position": 3
+      },
+      {
+        "key": "L0_P3_F390",
+        "label": "number_50000",
+        "enrichment": 144.14814814814812,
+        "layer": 0,
+        "position": 3
+      },
+      {
+        "key": "L7_P3_F57",
+        "label": "number_0.50",
+        "enrichment": 133.36363636363635,
+        "layer": 7,
+        "position": 3
+      },
+      {
+        "key": "L7_P3_F129",
+        "label": "number_0.50",
+        "enrichment": 133.36363636363635,
+        "layer": 7,
+        "position": 3
+      },
+      {
+        "key": "L5_P1_F373",
+        "label": "number_7.5",
+        "enrichment": 127.33333333333331,
+        "layer": 5,
+        "position": 1
+      },
+      {
+        "key": "L1_P5_F189",
+        "label": "number_6000",
+        "enrichment": 126.98630136986301,
+        "layer": 1,
+        "position": 5
+      },
+      {
+        "key": "L1_P3_F190",
+        "label": "number_0.50",
+        "enrichment": 122.0,
+        "layer": 1,
+        "position": 3
+      },
+      {
+        "key": "L6_P3_F85",
+        "label": "number_50000",
+        "enrichment": 121.0,
+        "layer": 6,
+        "position": 3
+      },
+      {
+        "key": "L4_P3_F372",
+        "label": "number_6000",
+        "enrichment": 117.12162162162163,
+        "layer": 4,
+        "position": 3
+      },
+      {
+        "key": "L0_P3_F268",
+        "label": "number_2000",
+        "enrichment": 116.71428571428571,
+        "layer": 0,
+        "position": 3
+      }
+    ]
+  },
+  "llama_framework": {
+    "model": "LLaMA",
+    "model_size": "1B parameters",
+    "hidden_dim": 2048,
+    "num_layers": 16,
+    "num_positions": 6,
+    "sae_config": {
+      "latent_dim": 512,
+      "k": 100,
+      "sparsity": "19.5%",
+      "note": "Sweet spot from previous experiment"
+    },
+    "expected_analysis": {
+      "total_features": 49152,
+      "interpretability_hypothesis": "Lower than GPT-2 due to larger model capacity",
+      "expected_interpretability_rate": 0.2,
+      "expected_monosemantic_rate": 0.5,
+      "reasoning": "Larger models use more distributed representations"
+    },
+    "status": "Not yet analyzed - requires running parallel experiments",
+    "next_steps": [
+      "1. Extract features from LLaMA SAEs (96 checkpoints)",
+      "2. Parse CoT tokens from LLaMA predictions",
+      "3. Compute feature-token correlations",
+      "4. Label monosemantic features",
+      "5. Compare with GPT-2 results"
+    ]
+  },
+  "insights": {
+    "model_capacity_hypothesis": {
+      "claim": "Smaller models require more monosemantic features",
+      "evidence": {
+        "gpt2": {
+          "size": "124M params",
+          "monosemantic_rate": "72.6%",
+          "sparsity": "29.3%"
+        },
+        "llama": {
+          "size": "1B params",
+          "expected_monosemantic_rate": "~50% (estimated)",
+          "sparsity": "19.5%"
+        }
+      },
+      "interpretation": "GPT-2 uses denser, more specialized features; LLaMA distributes computation"
+    },
+    "feature_specialization": {
+      "gpt2_dominance": "Numbers (66.4%)",
+      "reasoning": "Math reasoning requires dedicated circuits for numerical processing",
+      "expected_llama_difference": "More balanced distribution across feature types"
+    },
+    "practical_implications": {
+      "interpretability": "Smaller models are more interpretable",
+      "performance_trade_off": "Larger models compensate with redundancy",
+      "sae_design": "Model size should inform SAE hyperparameters (sparsity, dict size)"
+    }
+  },
+  "recommendations": {
+    "for_llama_analysis": [
+      "Use same monosemantic criteria (p < 0.01, enrichment \u2265 2.0)",
+      "Compare feature type distributions",
+      "Analyze layer-wise interpretability patterns",
+      "Test if LLaMA shows more polysemantic features"
+    ],
+    "for_future_work": [
+      "Extend to GPT-2 Medium/Large to test capacity hypothesis",
+      "Analyze cross-model feature alignment",
+      "Study feature evolution across model scales",
+      "Investigate operator representations (currently underrepresented)"
+    ]
+  }
+}
