@@ -1,0 +1,54 @@
+================================================================================
+SPECIALIZED FEATURES FOUND
+================================================================================
+
+Total: 5 specialized features
+
+1. Feature 332 (Rank 496)
+   Type: operation-specialized
+   Description: addition
+   Activation Frequency: 0.268%
+   Mean Impact: N/A
+   
+   Top Activating Samples:
+     1. 20*3=60 | 60+5=65
+     2. 20*2=40 | 40+6=46
+     3. 5*12=60 | 60+16=76
+     4. 6*10=60 | 4*24=96 | 60+96=156
+
+2. Feature 194 (Rank 505)
+   Type: operation-specialized
+   Description: subtraction
+   Activation Frequency: 0.067%
+   Mean Impact: N/A
+   
+   Top Activating Samples:
+     1. 408-113=295 | 295/5=59
+
+3. Feature 392 (Rank 506)
+   Type: highly-specialized
+   Description: addition + number 100
+   Activation Frequency: 0.067%
+   Mean Impact: N/A
+   
+   Top Activating Samples:
+     1. 5*45=225 | 25*31=775 | 225+775=1000 | 1000/100=10
+
+4. Feature 350 (Rank 507)
+   Type: highly-specialized
+   Description: addition + number 50
+   Activation Frequency: 0.067%
+   Mean Impact: N/A
+   
+   Top Activating Samples:
+     1. 500*2=1000 | 500+1000=1500
+
+5. Feature 487 (Rank 508)
+   Type: highly-specialized
+   Description: addition + number 30
+   Activation Frequency: 0.067%
+   Mean Impact: N/A
+   
+   Top Activating Samples:
+     1. 60/2=30 | 30+15=45 | 60-45=15 | 15/3=5 | 60-10=50
+
