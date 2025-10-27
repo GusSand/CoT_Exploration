@@ -96,7 +96,9 @@ evaluation_log.txt
 # Output directories
 outputs/
 results/
-!src/experiments/topk_grid_pilot/results/*.png
+!src/experiments/topk_grid_pilot/results/viz/*.png
+!src/experiments/topk_grid_pilot/results/data/*.json
+src/experiments/topk_grid_pilot/results/checkpoints/*.pt
 
 # Experiment outputs (but keep docs/experiments/ for documentation)
 /experiments/
