@@ -3170,63 +3170,75 @@ Actual:
 
 **Cost Efficiency**: Excellent - full 16×6 grid exploration in <1 hour
 
-**Key Insight**: [To be filled after reviewing layer/position analysis]
+**Key Insight - The Compressibility Paradox**:
+- **Early layers (0-5) dramatically outperform late layers (10-15)**: 96.3% vs 76.3% EV (20pp gap!)
+- **Counterintuitive but correct**: High EV means EASY to compress, not more important
+- **Variance explosion**: Layer 15 has 1,500× higher variance than Layer 0 (5.06 vs 0.003)
+- **Compressibility ≠ Task Importance**: Late layers are HARD to compress because they contain complex, task-critical abstractions
+- **Pattern holds universally**: 100% of 12 K×latent_dim configurations show early > late
+
+**Matryoshka SAE Comparison** (Layer 14, Position 3):
+- **TopK is more efficient**: Achieves +9pp better EV with 2× fewer features
+- **Sweet spot identified**: K=100, d=512 (512 active features, 87.8% EV, 0% death)
+- **All configs Pareto-optimal**: No single config dominates in both quality AND sparsity
+
+**Feature Semantics Analysis** (Layer 3 vs Layer 14):
+- **Both layers equally interpretable**: 8/10 features show clear patterns
+- **Both detect arithmetic operations**: addition, subtraction, multiplication, division
+- **Key difference is signal strength**: Layer 14 has 2-3× stronger activations (4-6 vs 1-2)
+- **Conclusion**: Both early and late layers suitable for mechanistic interpretability
 
 **Next Steps**:
-- Use optimal configs for each layer in downstream interpretability experiments
-- Focus mechanistic analysis on layers with highest EV
-- Investigate why certain (layer, position) pairs excel
+- ✅ Use K=100, d=512 as default config (best efficiency)
+- ✅ Both early and late layers viable for feature extraction
+- Consider layer-specific configs rather than one-size-fits-all
+- Test whether TopK's superior reconstruction translates to better downstream task performance
 
 ---
 
-### 2025-10-26g: TopK SAE Multi-Layer Analysis - Systematic Feature Extraction Across All Layers
+### 2025-10-27: TopK SAE vs Matryoshka Comparison & Feature Semantics Analysis
 
-**Objective**: Map reconstruction quality across all 16 layers × 6 continuous thought positions to identify optimal feature extraction points for each layer.
+**Objective**: Compare TopK SAE with Matryoshka SAE and analyze feature semantic interpretability across layers
 
-**Status**: ✅ **COMPLETE** - 1,152 SAEs trained, layer and position patterns identified
+**Status**: ✅ **COMPLETE** - TopK proven more efficient, both layers equally interpretable
 
 **Motivation**:
-- Understand which layers/positions are best for sparse feature extraction
-- Guide future mechanistic interpretability experiments (which layer to analyze?)
-- Identify whether early/mid/late layers have different optimal configurations
+- Benchmark TopK SAE against published Matryoshka SAE results
+- Determine if early (clean) or late (task-critical) layers produce more interpretable features
+- Validate whether high reconstruction quality translates to semantic interpretability
 
 **Approach**:
-1. **Comprehensive Grid**: Train TopK SAEs for all (layer, position) pairs
-   - 16 layers (0-15) × 6 positions (0-5) = 96 pairs
-   - Each pair: 12 SAEs (K={5,10,20,100} × latent_dim={512,1024,2048})
-   - Total: 1,152 SAEs
-2. **Parallel Training**: 3 processes per (layer, position) for efficient training
-3. **Pattern Analysis**: Identify layer effects, position effects, and interactions
-4. **Visualization**: Generate layer×position heatmaps for quality metrics
+1. **Matryoshka Comparison**: Compare Layer 14, Position 3 results across metrics (EV, death rate, active features)
+2. **Sweet Spot Identification**: Find optimal K×latent_dim configuration balancing quality and sparsity
+3. **Feature Semantics Analysis**: Extract and interpret top features from Layer 3 (early, clean) vs Layer 14 (late, task-critical)
+4. **Pattern Detection**: Use heuristics to identify arithmetic operation features
 
 **Key Results**:
 
-**Overall Quality Range**:
-- Explained Variance: 0.432 - 0.999
-- Feature Death Rate: 0.0% - 99.8%
-- Mean EV: 0.844 ± 0.126
+**Matryoshka Comparison** (Layer 14, Position 3):
+| Config | Death% | Active | EV% | Efficiency |
+|--------|--------|--------|-----|------------|
+| Matryoshka | 62.5% | 769 | 72.1% | 0.094% per feature |
+| TopK K=20, d=1024 | 62.7% | 382 | 81.1% | **0.212%** (2.3× better) |
+| TopK K=100, d=512 | 0.0% | 512 | 87.8% | **0.171%** (1.8× better) |
 
-**Best Configuration**:
-- Layer 0, Position 0, K=20, d=2048
-- EV=0.9994, Death=99.0%
+**Sweet Spot**: K=100, d=512 achieves best balance (512 active, 87.8% EV, 0% death)
 
-**Lowest Feature Death**:
-- Layer 10, Position 0, K=100, d=1024
-- Death=0.0%, EV=0.7875
+**Feature Semantics** (Layer 3 vs Layer 14):
+- **Interpretability**: Both layers 8/10 features with clear patterns (tied)
+- **Activation frequency**: Both ~99.8% (tied)
+- **Activation magnitude**: Layer 14 stronger (4-6 vs 1-2)
+- **Pattern types**: Both detect addition, subtraction, multiplication, division
 
-**Deliverables**:
-- 1,152 trained SAE checkpoints
-- Layer×position quality heatmaps (EV, death rate, activation magnitudes)
-- K-value comparison plots across all layers/positions
-- Comprehensive analysis identifying optimal configs per layer
+**Detailed Documentation**: [10-27_llama_gsm8k_topk_semantics.md](experiments/10-27_llama_gsm8k_topk_semantics.md)
 
-**Detailed Documentation**: [10-26_llama_gsm8k_topk_sae_multilayer.md](experiments/10-26_llama_gsm8k_topk_sae_multilayer.md)
+**Time Investment**: ~10 minutes (analysis only, models already trained)
 
-**Time Investment**: ~30-40 minutes (parallel training on A100 80GB)
-
-**Cost Efficiency**: Excellent - full 16×6 grid exploration in <1 hour
-
-**Key Insight**: [To be filled after reviewing layer/position analysis]
+**Key Insights**:
+- **TopK is 1.8-2.3× more efficient than Matryoshka**: Better reconstruction with fewer features
+- **Both early and late layers suitable for interpretability**: Tied at 8/10 clear features
+- **Layer difference is signal strength, not semantics**: Late layers have stronger but equally interpretable signals
+- **Recommendation**: Use K=100, d=512 as default; choose layer based on analysis goals (early=clean, late=task-critical)
 
 **Next Steps**:
 - Use optimal configs for each layer in downstream interpretability experiments
