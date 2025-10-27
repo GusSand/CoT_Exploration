@@ -1,0 +1,1708 @@
+{
+  "train_loss": [
+    0.4701706327890095,
+    0.33759209199955587,
+    0.29038282601456894,
+    0.2645331244719656,
+    0.2464702960691954,
+    0.23283571632284866,
+    0.22149293046248586,
+    0.2130530860863234,
+    0.20639926822561966,
+    0.19999279630811592,
+    0.19548883406739487,
+    0.19100519152064072,
+    0.1878003125127993,
+    0.18458520032857595,
+    0.18163542057338514,
+    0.17933572358206698,
+    0.17671644295516767,
+    0.1750464164897015,
+    0.17294089496135712,
+    0.17107417238386055,
+    0.1696500927209854,
+    0.1681456707025829,
+    0.16701757907867432,
+    0.16553222897805667,
+    0.1645687598931162,
+    0.1635767135180925,
+    0.16275262675787272,
+    0.16195861838365855,
+    0.16113280230446866,
+    0.16031730959289953,
+    0.15963818603440336,
+    0.15910014039591738,
+    0.15857619047164917,
+    0.15811883383675626,
+    0.15766785411458267,
+    0.1572914547041843,
+    0.15688504513941312,
+    0.15664303538046384,
+    0.15636545419692993,
+    0.15604102140978762,
+    0.1560998574683541,
+    0.15568557930620094,
+    0.15574809908866882,
+    0.1555267682200984,
+    0.1553157073886771,
+    0.15516003809477152,
+    0.15539023985988215,
+    0.1552300547298632,
+    0.15519155483496816,
+    0.15526944791015826
+  ],
+  "val_loss": [
+    0.3669918060302734,
+    0.30439870357513427,
+    0.27152501940727236,
+    0.25163447558879853,
+    0.23663534224033356,
+    0.22491272091865538,
+    0.21571197211742402,
+    0.20840853154659272,
+    0.20244012773036957,
+    0.19752505719661712,
+    0.1933572381734848,
+    0.1898137480020523,
+    0.1867186903953552,
+    0.18394425511360168,
+    0.18147181272506713,
+    0.17925451099872589,
+    0.17731692790985107,
+    0.1755535364151001,
+    0.17396412193775176,
+    0.1725116789340973,
+    0.1711379885673523,
+    0.16992807388305664,
+    0.1687820315361023,
+    0.16778524518013,
+    0.16683495044708252,
+    0.16596630215644836,
+    0.1651998221874237,
+    0.16449296474456787,
+    0.1638421446084976,
+    0.1632354736328125,
+    0.16269344389438628,
+    0.16222168505191803,
+    0.16176063120365142,
+    0.16135377287864686,
+    0.16099704205989837,
+    0.16068306267261506,
+    0.16040998995304107,
+    0.16016331017017366,
+    0.1599592685699463,
+    0.1597852736711502,
+    0.15963844656944276,
+    0.15952264964580537,
+    0.15942456126213073,
+    0.15934945344924928,
+    0.15929449200630189,
+    0.15925675332546235,
+    0.15923154056072236,
+    0.15921630859375,
+    0.15920982658863067,
+    0.15920836925506593
+  ],
+  "val_metrics": [
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.17440107689653916,
+        "l0_norm": 6.4053168296813965,
+        "active_features": 319,
+        "dead_features": 193,
+        "feature_death_rate": 0.376953125,
+        "mean_activation": 0.019532015547156334,
+        "max_activation": 22.794174194335938
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.19578171852399917,
+        "l0_norm": 6.814275741577148,
+        "active_features": 532,
+        "dead_features": 492,
+        "feature_death_rate": 0.48046875,
+        "mean_activation": 0.01093667559325695,
+        "max_activation": 21.394161224365234
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.2593756657690449,
+        "l0_norm": 16.16788101196289,
+        "active_features": 800,
+        "dead_features": 1248,
+        "feature_death_rate": 0.609375,
+        "mean_activation": 0.010110226459801197,
+        "max_activation": 26.36179542541504
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.28358306723366666,
+        "l0_norm": 7.620174884796143,
+        "active_features": 194,
+        "dead_features": 318,
+        "feature_death_rate": 0.62109375,
+        "mean_activation": 0.03055856004357338,
+        "max_activation": 23.244871139526367
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.2973765541369465,
+        "l0_norm": 8.09177017211914,
+        "active_features": 318,
+        "dead_features": 706,
+        "feature_death_rate": 0.689453125,
+        "mean_activation": 0.01538526825606823,
+        "max_activation": 22.952611923217773
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.3669876498769916,
+        "l0_norm": 16.00619125366211,
+        "active_features": 483,
+        "dead_features": 1565,
+        "feature_death_rate": 0.76416015625,
+        "mean_activation": 0.010449521243572235,
+        "max_activation": 18.06885528564453
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.3570650982148733,
+        "l0_norm": 7.759286403656006,
+        "active_features": 163,
+        "dead_features": 349,
+        "feature_death_rate": 0.681640625,
+        "mean_activation": 0.03193306922912598,
+        "max_activation": 21.484500885009766
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.367400017280752,
+        "l0_norm": 7.919883728027344,
+        "active_features": 266,
+        "dead_features": 758,
+        "feature_death_rate": 0.740234375,
+        "mean_activation": 0.01565777137875557,
+        "max_activation": 22.977458953857422
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.43447483513881835,
+        "l0_norm": 16.699199676513672,
+        "active_features": 413,
+        "dead_features": 1635,
+        "feature_death_rate": 0.79833984375,
+        "mean_activation": 0.010949322022497654,
+        "max_activation": 20.484132766723633
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.4035469289389899,
+        "l0_norm": 7.8397674560546875,
+        "active_features": 153,
+        "dead_features": 359,
+        "feature_death_rate": 0.701171875,
+        "mean_activation": 0.032341454178094864,
+        "max_activation": 24.720687866210938
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.415019640479257,
+        "l0_norm": 8.25236701965332,
+        "active_features": 247,
+        "dead_features": 777,
+        "feature_death_rate": 0.7587890625,
+        "mean_activation": 0.01629023253917694,
+        "max_activation": 26.63064193725586
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.48308821855098083,
+        "l0_norm": 17.158048629760742,
+        "active_features": 386,
+        "dead_features": 1662,
+        "feature_death_rate": 0.8115234375,
+        "mean_activation": 0.011475376784801483,
+        "max_activation": 21.82186508178711
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.4389359361348323,
+        "l0_norm": 8.177349090576172,
+        "active_features": 147,
+        "dead_features": 365,
+        "feature_death_rate": 0.712890625,
+        "mean_activation": 0.03327679634094238,
+        "max_activation": 27.192771911621094
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.45099612306016545,
+        "l0_norm": 8.792061805725098,
+        "active_features": 221,
+        "dead_features": 803,
+        "feature_death_rate": 0.7841796875,
+        "mean_activation": 0.01687036082148552,
+        "max_activation": 27.798152923583984
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.5242022546702481,
+        "l0_norm": 17.837583541870117,
+        "active_features": 367,
+        "dead_features": 1681,
+        "feature_death_rate": 0.82080078125,
+        "mean_activation": 0.0122186578810215,
+        "max_activation": 24.62006187438965
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.46621425824243523,
+        "l0_norm": 8.472323417663574,
+        "active_features": 141,
+        "dead_features": 371,
+        "feature_death_rate": 0.724609375,
+        "mean_activation": 0.03390742093324661,
+        "max_activation": 26.370201110839844
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.4795809901122282,
+        "l0_norm": 9.380918502807617,
+        "active_features": 209,
+        "dead_features": 815,
+        "feature_death_rate": 0.7958984375,
+        "mean_activation": 0.017362937331199646,
+        "max_activation": 27.4117374420166
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.5575092665693246,
+        "l0_norm": 18.4555721282959,
+        "active_features": 355,
+        "dead_features": 1693,
+        "feature_death_rate": 0.82666015625,
+        "mean_activation": 0.012831119820475578,
+        "max_activation": 25.81039047241211
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.4886027357863475,
+        "l0_norm": 8.833211898803711,
+        "active_features": 131,
+        "dead_features": 381,
+        "feature_death_rate": 0.744140625,
+        "mean_activation": 0.03523898497223854,
+        "max_activation": 28.06703758239746
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.5030492807120918,
+        "l0_norm": 9.838674545288086,
+        "active_features": 196,
+        "dead_features": 828,
+        "feature_death_rate": 0.80859375,
+        "mean_activation": 0.017962496727705002,
+        "max_activation": 26.63057518005371
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.5816068307631075,
+        "l0_norm": 18.886381149291992,
+        "active_features": 338,
+        "dead_features": 1710,
+        "feature_death_rate": 0.8349609375,
+        "mean_activation": 0.012988277710974216,
+        "max_activation": 27.82508659362793
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.5059777677198671,
+        "l0_norm": 9.027676582336426,
+        "active_features": 125,
+        "dead_features": 387,
+        "feature_death_rate": 0.755859375,
+        "mean_activation": 0.03587827831506729,
+        "max_activation": 29.70327377319336
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.5228944230271948,
+        "l0_norm": 10.241442680358887,
+        "active_features": 191,
+        "dead_features": 833,
+        "feature_death_rate": 0.8134765625,
+        "mean_activation": 0.018670404329895973,
+        "max_activation": 26.512537002563477
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.5990137572253975,
+        "l0_norm": 19.24654197692871,
+        "active_features": 330,
+        "dead_features": 1718,
+        "feature_death_rate": 0.8388671875,
+        "mean_activation": 0.012811998836696148,
+        "max_activation": 28.736949920654297
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.5210526504587354,
+        "l0_norm": 9.298616409301758,
+        "active_features": 121,
+        "dead_features": 391,
+        "feature_death_rate": 0.763671875,
+        "mean_activation": 0.03663517162203789,
+        "max_activation": 29.6366024017334
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.5392985044039404,
+        "l0_norm": 10.565914154052734,
+        "active_features": 186,
+        "dead_features": 838,
+        "feature_death_rate": 0.818359375,
+        "mean_activation": 0.019144387915730476,
+        "max_activation": 25.737133026123047
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6125608218526026,
+        "l0_norm": 19.819374084472656,
+        "active_features": 328,
+        "dead_features": 1720,
+        "feature_death_rate": 0.83984375,
+        "mean_activation": 0.012688281014561653,
+        "max_activation": 28.926471710205078
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.533325805496714,
+        "l0_norm": 9.474872589111328,
+        "active_features": 121,
+        "dead_features": 391,
+        "feature_death_rate": 0.763671875,
+        "mean_activation": 0.036929480731487274,
+        "max_activation": 29.161937713623047
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.5521346485628434,
+        "l0_norm": 10.718500137329102,
+        "active_features": 179,
+        "dead_features": 845,
+        "feature_death_rate": 0.8251953125,
+        "mean_activation": 0.01924799010157585,
+        "max_activation": 26.143878936767578
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6230780622100834,
+        "l0_norm": 20.212308883666992,
+        "active_features": 325,
+        "dead_features": 1723,
+        "feature_death_rate": 0.84130859375,
+        "mean_activation": 0.012511965818703175,
+        "max_activation": 28.908998489379883
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.5441886219036963,
+        "l0_norm": 9.831027030944824,
+        "active_features": 117,
+        "dead_features": 395,
+        "feature_death_rate": 0.771484375,
+        "mean_activation": 0.037258997559547424,
+        "max_activation": 28.225994110107422
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.562942526838973,
+        "l0_norm": 11.067007064819336,
+        "active_features": 177,
+        "dead_features": 847,
+        "feature_death_rate": 0.8271484375,
+        "mean_activation": 0.019413195550441742,
+        "max_activation": 24.491483688354492
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6315271880192609,
+        "l0_norm": 20.52658462524414,
+        "active_features": 322,
+        "dead_features": 1726,
+        "feature_death_rate": 0.8427734375,
+        "mean_activation": 0.012279286980628967,
+        "max_activation": 28.853227615356445
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.5525463921127404,
+        "l0_norm": 9.981063842773438,
+        "active_features": 114,
+        "dead_features": 398,
+        "feature_death_rate": 0.77734375,
+        "mean_activation": 0.03692108020186424,
+        "max_activation": 26.9135799407959
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.5703239267608041,
+        "l0_norm": 11.228696823120117,
+        "active_features": 179,
+        "dead_features": 845,
+        "feature_death_rate": 0.8251953125,
+        "mean_activation": 0.019083483144640923,
+        "max_activation": 24.83664894104004
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6391326294598143,
+        "l0_norm": 20.82155990600586,
+        "active_features": 323,
+        "dead_features": 1725,
+        "feature_death_rate": 0.84228515625,
+        "mean_activation": 0.012116878293454647,
+        "max_activation": 29.164133071899414
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.5606835130084449,
+        "l0_norm": 10.316460609436035,
+        "active_features": 114,
+        "dead_features": 398,
+        "feature_death_rate": 0.77734375,
+        "mean_activation": 0.036869119852781296,
+        "max_activation": 26.124286651611328
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.5776119045665791,
+        "l0_norm": 11.674072265625,
+        "active_features": 182,
+        "dead_features": 842,
+        "feature_death_rate": 0.822265625,
+        "mean_activation": 0.019086455926299095,
+        "max_activation": 25.263120651245117
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6465552037366351,
+        "l0_norm": 21.445375442504883,
+        "active_features": 324,
+        "dead_features": 1724,
+        "feature_death_rate": 0.841796875,
+        "mean_activation": 0.01210095826536417,
+        "max_activation": 28.506793975830078
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.567088386679597,
+        "l0_norm": 10.571012496948242,
+        "active_features": 111,
+        "dead_features": 401,
+        "feature_death_rate": 0.783203125,
+        "mean_activation": 0.036339495331048965,
+        "max_activation": 24.737524032592773
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.582834458193837,
+        "l0_norm": 11.828842163085938,
+        "active_features": 179,
+        "dead_features": 845,
+        "feature_death_rate": 0.8251953125,
+        "mean_activation": 0.018673252314329147,
+        "max_activation": 26.302520751953125
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6522521982270697,
+        "l0_norm": 21.60269546508789,
+        "active_features": 324,
+        "dead_features": 1724,
+        "feature_death_rate": 0.841796875,
+        "mean_activation": 0.011900650337338448,
+        "max_activation": 28.303699493408203
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.572803667886405,
+        "l0_norm": 10.851056098937988,
+        "active_features": 109,
+        "dead_features": 403,
+        "feature_death_rate": 0.787109375,
+        "mean_activation": 0.036069005727767944,
+        "max_activation": 24.383058547973633
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.5879568052942734,
+        "l0_norm": 12.103424072265625,
+        "active_features": 180,
+        "dead_features": 844,
+        "feature_death_rate": 0.82421875,
+        "mean_activation": 0.018461234867572784,
+        "max_activation": 26.702741622924805
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6578216146024226,
+        "l0_norm": 22.043701171875,
+        "active_features": 321,
+        "dead_features": 1727,
+        "feature_death_rate": 0.84326171875,
+        "mean_activation": 0.011797865852713585,
+        "max_activation": 27.424285888671875
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.5785572381240839,
+        "l0_norm": 11.170065879821777,
+        "active_features": 110,
+        "dead_features": 402,
+        "feature_death_rate": 0.78515625,
+        "mean_activation": 0.036056142300367355,
+        "max_activation": 24.065460205078125
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.5929986362554545,
+        "l0_norm": 12.474872589111328,
+        "active_features": 176,
+        "dead_features": 848,
+        "feature_death_rate": 0.828125,
+        "mean_activation": 0.01841507852077484,
+        "max_activation": 27.396215438842773
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6625709360833644,
+        "l0_norm": 22.274581909179688,
+        "active_features": 323,
+        "dead_features": 1725,
+        "feature_death_rate": 0.84228515625,
+        "mean_activation": 0.011669834144413471,
+        "max_activation": 26.569448471069336
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.5821228358899384,
+        "l0_norm": 11.379825592041016,
+        "active_features": 111,
+        "dead_features": 401,
+        "feature_death_rate": 0.783203125,
+        "mean_activation": 0.035320475697517395,
+        "max_activation": 23.95380210876465
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.5969348811979491,
+        "l0_norm": 12.734159469604492,
+        "active_features": 179,
+        "dead_features": 845,
+        "feature_death_rate": 0.8251953125,
+        "mean_activation": 0.018188409507274628,
+        "max_activation": 27.418310165405273
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6668154428161512,
+        "l0_norm": 22.731246948242188,
+        "active_features": 320,
+        "dead_features": 1728,
+        "feature_death_rate": 0.84375,
+        "mean_activation": 0.011566081084311008,
+        "max_activation": 26.007482528686523
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.586174415815444,
+        "l0_norm": 11.607065200805664,
+        "active_features": 110,
+        "dead_features": 402,
+        "feature_death_rate": 0.78515625,
+        "mean_activation": 0.03522526100277901,
+        "max_activation": 25.44420051574707
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6009210734403887,
+        "l0_norm": 13.110342979431152,
+        "active_features": 180,
+        "dead_features": 844,
+        "feature_death_rate": 0.82421875,
+        "mean_activation": 0.018170848488807678,
+        "max_activation": 27.362228393554688
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6705108801673425,
+        "l0_norm": 22.947561264038086,
+        "active_features": 328,
+        "dead_features": 1720,
+        "feature_death_rate": 0.83984375,
+        "mean_activation": 0.011440249159932137,
+        "max_activation": 25.408737182617188
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.5896137611556769,
+        "l0_norm": 11.825565338134766,
+        "active_features": 111,
+        "dead_features": 401,
+        "feature_death_rate": 0.783203125,
+        "mean_activation": 0.034888967871665955,
+        "max_activation": 25.482563018798828
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.604526012990509,
+        "l0_norm": 13.329206466674805,
+        "active_features": 180,
+        "dead_features": 844,
+        "feature_death_rate": 0.82421875,
+        "mean_activation": 0.018074367195367813,
+        "max_activation": 27.683897018432617
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6747884901457604,
+        "l0_norm": 23.51820945739746,
+        "active_features": 327,
+        "dead_features": 1721,
+        "feature_death_rate": 0.84033203125,
+        "mean_activation": 0.011481624096632004,
+        "max_activation": 24.864906311035156
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.59266015654365,
+        "l0_norm": 12.037873268127441,
+        "active_features": 112,
+        "dead_features": 400,
+        "feature_death_rate": 0.78125,
+        "mean_activation": 0.034629594534635544,
+        "max_activation": 25.57670021057129
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6078460072884847,
+        "l0_norm": 13.588129043579102,
+        "active_features": 182,
+        "dead_features": 842,
+        "feature_death_rate": 0.822265625,
+        "mean_activation": 0.017972031608223915,
+        "max_activation": 27.860910415649414
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6776087774990884,
+        "l0_norm": 23.73088264465332,
+        "active_features": 327,
+        "dead_features": 1721,
+        "feature_death_rate": 0.84033203125,
+        "mean_activation": 0.011372651904821396,
+        "max_activation": 24.514345169067383
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.5955934394280009,
+        "l0_norm": 12.292790412902832,
+        "active_features": 114,
+        "dead_features": 398,
+        "feature_death_rate": 0.77734375,
+        "mean_activation": 0.034439876675605774,
+        "max_activation": 25.398679733276367
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6108844095488319,
+        "l0_norm": 13.904953002929688,
+        "active_features": 183,
+        "dead_features": 841,
+        "feature_death_rate": 0.8212890625,
+        "mean_activation": 0.01786617375910282,
+        "max_activation": 28.081140518188477
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6808679850362412,
+        "l0_norm": 24.077932357788086,
+        "active_features": 328,
+        "dead_features": 1720,
+        "feature_death_rate": 0.83984375,
+        "mean_activation": 0.011320123448967934,
+        "max_activation": 23.918262481689453
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.5977669852792323,
+        "l0_norm": 12.412236213684082,
+        "active_features": 115,
+        "dead_features": 397,
+        "feature_death_rate": 0.775390625,
+        "mean_activation": 0.03398195281624794,
+        "max_activation": 24.934452056884766
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6134350360696708,
+        "l0_norm": 14.014203071594238,
+        "active_features": 183,
+        "dead_features": 841,
+        "feature_death_rate": 0.8212890625,
+        "mean_activation": 0.017663834616541862,
+        "max_activation": 28.216693878173828
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6830833680871924,
+        "l0_norm": 24.190824508666992,
+        "active_features": 327,
+        "dead_features": 1721,
+        "feature_death_rate": 0.84033203125,
+        "mean_activation": 0.011200454086065292,
+        "max_activation": 23.374128341674805
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.5995547554976342,
+        "l0_norm": 12.522214889526367,
+        "active_features": 114,
+        "dead_features": 398,
+        "feature_death_rate": 0.77734375,
+        "mean_activation": 0.03355615213513374,
+        "max_activation": 24.57327651977539
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6163217638594595,
+        "l0_norm": 14.304079055786133,
+        "active_features": 185,
+        "dead_features": 839,
+        "feature_death_rate": 0.8193359375,
+        "mean_activation": 0.01761624962091446,
+        "max_activation": 28.57402992248535
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6856751689630207,
+        "l0_norm": 24.48798370361328,
+        "active_features": 327,
+        "dead_features": 1721,
+        "feature_death_rate": 0.84033203125,
+        "mean_activation": 0.011131920851767063,
+        "max_activation": 22.720138549804688
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6020255677148139,
+        "l0_norm": 12.797524452209473,
+        "active_features": 116,
+        "dead_features": 396,
+        "feature_death_rate": 0.7734375,
+        "mean_activation": 0.033531516790390015,
+        "max_activation": 24.812660217285156
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6183761146318998,
+        "l0_norm": 14.483613014221191,
+        "active_features": 186,
+        "dead_features": 838,
+        "feature_death_rate": 0.818359375,
+        "mean_activation": 0.017485057935118675,
+        "max_activation": 28.28270149230957
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6879042767989684,
+        "l0_norm": 24.92498207092285,
+        "active_features": 334,
+        "dead_features": 1714,
+        "feature_death_rate": 0.8369140625,
+        "mean_activation": 0.01112121157348156,
+        "max_activation": 22.59062957763672
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.604096255660304,
+        "l0_norm": 12.967225074768066,
+        "active_features": 116,
+        "dead_features": 396,
+        "feature_death_rate": 0.7734375,
+        "mean_activation": 0.03346248343586922,
+        "max_activation": 25.10929298400879
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6208238052652642,
+        "l0_norm": 14.767298698425293,
+        "active_features": 189,
+        "dead_features": 835,
+        "feature_death_rate": 0.8154296875,
+        "mean_activation": 0.017494885250926018,
+        "max_activation": 28.730985641479492
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6900944132638818,
+        "l0_norm": 25.19337272644043,
+        "active_features": 336,
+        "dead_features": 1712,
+        "feature_death_rate": 0.8359375,
+        "mean_activation": 0.011059272103011608,
+        "max_activation": 22.510934829711914
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.605587032448823,
+        "l0_norm": 13.096504211425781,
+        "active_features": 118,
+        "dead_features": 394,
+        "feature_death_rate": 0.76953125,
+        "mean_activation": 0.033128902316093445,
+        "max_activation": 25.217086791992188
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6226187108122296,
+        "l0_norm": 14.892207145690918,
+        "active_features": 191,
+        "dead_features": 833,
+        "feature_death_rate": 0.8134765625,
+        "mean_activation": 0.017358511686325073,
+        "max_activation": 28.50739288330078
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6917784482820468,
+        "l0_norm": 25.361982345581055,
+        "active_features": 336,
+        "dead_features": 1712,
+        "feature_death_rate": 0.8359375,
+        "mean_activation": 0.011004415340721607,
+        "max_activation": 22.434009552001953
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6072002405580498,
+        "l0_norm": 13.25673770904541,
+        "active_features": 118,
+        "dead_features": 394,
+        "feature_death_rate": 0.76953125,
+        "mean_activation": 0.03300849720835686,
+        "max_activation": 25.8219051361084
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6243122401063795,
+        "l0_norm": 15.02003002166748,
+        "active_features": 194,
+        "dead_features": 830,
+        "feature_death_rate": 0.810546875,
+        "mean_activation": 0.017262663692235947,
+        "max_activation": 28.71671485900879
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6930009679092692,
+        "l0_norm": 25.442462921142578,
+        "active_features": 340,
+        "dead_features": 1708,
+        "feature_death_rate": 0.833984375,
+        "mean_activation": 0.010903429239988327,
+        "max_activation": 22.07524299621582
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6082602462538356,
+        "l0_norm": 13.319738388061523,
+        "active_features": 121,
+        "dead_features": 391,
+        "feature_death_rate": 0.763671875,
+        "mean_activation": 0.0327371209859848,
+        "max_activation": 25.463228225708008
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6256194478955693,
+        "l0_norm": 15.102331161499023,
+        "active_features": 196,
+        "dead_features": 828,
+        "feature_death_rate": 0.80859375,
+        "mean_activation": 0.017109626904129982,
+        "max_activation": 28.902023315429688
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6944403352403505,
+        "l0_norm": 25.607065200805664,
+        "active_features": 341,
+        "dead_features": 1707,
+        "feature_death_rate": 0.83349609375,
+        "mean_activation": 0.01086159236729145,
+        "max_activation": 22.216665267944336
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6097962914383231,
+        "l0_norm": 13.49817943572998,
+        "active_features": 122,
+        "dead_features": 390,
+        "feature_death_rate": 0.76171875,
+        "mean_activation": 0.03270500898361206,
+        "max_activation": 25.410709381103516
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6274936608649297,
+        "l0_norm": 15.377276420593262,
+        "active_features": 197,
+        "dead_features": 827,
+        "feature_death_rate": 0.8076171875,
+        "mean_activation": 0.017146632075309753,
+        "max_activation": 28.883920669555664
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6955050783264122,
+        "l0_norm": 25.76948356628418,
+        "active_features": 340,
+        "dead_features": 1708,
+        "feature_death_rate": 0.833984375,
+        "mean_activation": 0.010785924270749092,
+        "max_activation": 21.820959091186523
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6109759211124313,
+        "l0_norm": 13.625273704528809,
+        "active_features": 122,
+        "dead_features": 390,
+        "feature_death_rate": 0.76171875,
+        "mean_activation": 0.03251000493764877,
+        "max_activation": 25.36514663696289
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6285973753220255,
+        "l0_norm": 15.420976638793945,
+        "active_features": 197,
+        "dead_features": 827,
+        "feature_death_rate": 0.8076171875,
+        "mean_activation": 0.01700964942574501,
+        "max_activation": 28.537296295166016
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6971557176674479,
+        "l0_norm": 26.06154441833496,
+        "active_features": 341,
+        "dead_features": 1707,
+        "feature_death_rate": 0.83349609375,
+        "mean_activation": 0.010813126340508461,
+        "max_activation": 22.295272827148438
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6122425394096284,
+        "l0_norm": 13.766205787658691,
+        "active_features": 123,
+        "dead_features": 389,
+        "feature_death_rate": 0.759765625,
+        "mean_activation": 0.03248453140258789,
+        "max_activation": 25.744436264038086
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6298473055283746,
+        "l0_norm": 15.532047271728516,
+        "active_features": 198,
+        "dead_features": 826,
+        "feature_death_rate": 0.806640625,
+        "mean_activation": 0.016959473490715027,
+        "max_activation": 28.831649780273438
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6981255374890942,
+        "l0_norm": 26.151857376098633,
+        "active_features": 342,
+        "dead_features": 1706,
+        "feature_death_rate": 0.8330078125,
+        "mean_activation": 0.01076060626655817,
+        "max_activation": 22.71290397644043
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6130733567923181,
+        "l0_norm": 13.819374084472656,
+        "active_features": 123,
+        "dead_features": 389,
+        "feature_death_rate": 0.759765625,
+        "mean_activation": 0.03229689970612526,
+        "max_activation": 25.718460083007812
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6313750066674382,
+        "l0_norm": 15.758193969726562,
+        "active_features": 199,
+        "dead_features": 825,
+        "feature_death_rate": 0.8056640625,
+        "mean_activation": 0.01700264774262905,
+        "max_activation": 28.505836486816406
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.6988312136858565,
+        "l0_norm": 26.201385498046875,
+        "active_features": 343,
+        "dead_features": 1705,
+        "feature_death_rate": 0.83251953125,
+        "mean_activation": 0.010690773837268353,
+        "max_activation": 22.539241790771484
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6141473602091657,
+        "l0_norm": 13.913329124450684,
+        "active_features": 123,
+        "dead_features": 389,
+        "feature_death_rate": 0.759765625,
+        "mean_activation": 0.03222516179084778,
+        "max_activation": 25.933643341064453
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6323080191111392,
+        "l0_norm": 15.83466911315918,
+        "active_features": 198,
+        "dead_features": 826,
+        "feature_death_rate": 0.806640625,
+        "mean_activation": 0.016953371465206146,
+        "max_activation": 28.60319709777832
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.7000537528085121,
+        "l0_norm": 26.522214889526367,
+        "active_features": 344,
+        "dead_features": 1704,
+        "feature_death_rate": 0.83203125,
+        "mean_activation": 0.010717750526964664,
+        "max_activation": 22.877174377441406
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6150894185338873,
+        "l0_norm": 13.985069274902344,
+        "active_features": 125,
+        "dead_features": 387,
+        "feature_death_rate": 0.755859375,
+        "mean_activation": 0.03214909881353378,
+        "max_activation": 25.651811599731445
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6334372335949048,
+        "l0_norm": 15.993081092834473,
+        "active_features": 200,
+        "dead_features": 824,
+        "feature_death_rate": 0.8046875,
+        "mean_activation": 0.016957582905888557,
+        "max_activation": 28.794677734375
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.701009107018699,
+        "l0_norm": 26.6970157623291,
+        "active_features": 345,
+        "dead_features": 1703,
+        "feature_death_rate": 0.83154296875,
+        "mean_activation": 0.010700494050979614,
+        "max_activation": 23.100984573364258
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6159366900622263,
+        "l0_norm": 14.092134475708008,
+        "active_features": 126,
+        "dead_features": 386,
+        "feature_death_rate": 0.75390625,
+        "mean_activation": 0.032112739980220795,
+        "max_activation": 25.770877838134766
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6342202091844389,
+        "l0_norm": 16.060087203979492,
+        "active_features": 200,
+        "dead_features": 824,
+        "feature_death_rate": 0.8046875,
+        "mean_activation": 0.01691514439880848,
+        "max_activation": 28.50155258178711
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.7013831464007219,
+        "l0_norm": 26.67880630493164,
+        "active_features": 346,
+        "dead_features": 1702,
+        "feature_death_rate": 0.8310546875,
+        "mean_activation": 0.010636846534907818,
+        "max_activation": 23.34539222717285
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6166910853466397,
+        "l0_norm": 14.213037490844727,
+        "active_features": 127,
+        "dead_features": 385,
+        "feature_death_rate": 0.751953125,
+        "mean_activation": 0.03209063410758972,
+        "max_activation": 25.487573623657227
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6350141412074504,
+        "l0_norm": 16.157684326171875,
+        "active_features": 200,
+        "dead_features": 824,
+        "feature_death_rate": 0.8046875,
+        "mean_activation": 0.016898371279239655,
+        "max_activation": 28.44819450378418
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.7020201986725014,
+        "l0_norm": 26.799345016479492,
+        "active_features": 346,
+        "dead_features": 1702,
+        "feature_death_rate": 0.8310546875,
+        "mean_activation": 0.010622937232255936,
+        "max_activation": 23.201629638671875
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6171755468624985,
+        "l0_norm": 14.19155216217041,
+        "active_features": 127,
+        "dead_features": 385,
+        "feature_death_rate": 0.751953125,
+        "mean_activation": 0.031960468739271164,
+        "max_activation": 25.553367614746094
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6355738161047251,
+        "l0_norm": 16.20903205871582,
+        "active_features": 200,
+        "dead_features": 824,
+        "feature_death_rate": 0.8046875,
+        "mean_activation": 0.01685134321451187,
+        "max_activation": 28.5052490234375
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.7027449414029663,
+        "l0_norm": 26.96868324279785,
+        "active_features": 346,
+        "dead_features": 1702,
+        "feature_death_rate": 0.8310546875,
+        "mean_activation": 0.010625208728015423,
+        "max_activation": 23.460250854492188
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6178061071550112,
+        "l0_norm": 14.288419723510742,
+        "active_features": 128,
+        "dead_features": 384,
+        "feature_death_rate": 0.75,
+        "mean_activation": 0.03198540583252907,
+        "max_activation": 25.454484939575195
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6360929015100071,
+        "l0_norm": 16.24763298034668,
+        "active_features": 201,
+        "dead_features": 823,
+        "feature_death_rate": 0.8037109375,
+        "mean_activation": 0.0168183334171772,
+        "max_activation": 28.42745590209961
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.7032119545060809,
+        "l0_norm": 26.995630264282227,
+        "active_features": 347,
+        "dead_features": 1701,
+        "feature_death_rate": 0.83056640625,
+        "mean_activation": 0.010610014200210571,
+        "max_activation": 23.451671600341797
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6182571924891738,
+        "l0_norm": 14.344865798950195,
+        "active_features": 128,
+        "dead_features": 384,
+        "feature_death_rate": 0.75,
+        "mean_activation": 0.031940169632434845,
+        "max_activation": 25.566028594970703
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6367372645692492,
+        "l0_norm": 16.34195327758789,
+        "active_features": 202,
+        "dead_features": 822,
+        "feature_death_rate": 0.802734375,
+        "mean_activation": 0.016837898641824722,
+        "max_activation": 28.356277465820312
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.7036298001265799,
+        "l0_norm": 27.134014129638672,
+        "active_features": 347,
+        "dead_features": 1701,
+        "feature_death_rate": 0.83056640625,
+        "mean_activation": 0.010603824630379677,
+        "max_activation": 23.614065170288086
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6186457364735225,
+        "l0_norm": 14.372178077697754,
+        "active_features": 127,
+        "dead_features": 385,
+        "feature_death_rate": 0.751953125,
+        "mean_activation": 0.0319063663482666,
+        "max_activation": 25.360292434692383
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6370658795918374,
+        "l0_norm": 16.396577835083008,
+        "active_features": 201,
+        "dead_features": 823,
+        "feature_death_rate": 0.8037109375,
+        "mean_activation": 0.016807109117507935,
+        "max_activation": 28.382869720458984
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.7039320183325697,
+        "l0_norm": 27.163511276245117,
+        "active_features": 347,
+        "dead_features": 1701,
+        "feature_death_rate": 0.83056640625,
+        "mean_activation": 0.010579929687082767,
+        "max_activation": 23.64424705505371
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6189646427703603,
+        "l0_norm": 14.416970252990723,
+        "active_features": 127,
+        "dead_features": 385,
+        "feature_death_rate": 0.751953125,
+        "mean_activation": 0.031877610832452774,
+        "max_activation": 25.463394165039062
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6374694740506426,
+        "l0_norm": 16.442462921142578,
+        "active_features": 202,
+        "dead_features": 822,
+        "feature_death_rate": 0.802734375,
+        "mean_activation": 0.016809580847620964,
+        "max_activation": 28.482046127319336
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.704262231980683,
+        "l0_norm": 27.241443634033203,
+        "active_features": 349,
+        "dead_features": 1699,
+        "feature_death_rate": 0.82958984375,
+        "mean_activation": 0.010577104054391384,
+        "max_activation": 23.76302146911621
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6192673678576142,
+        "l0_norm": 14.461763381958008,
+        "active_features": 127,
+        "dead_features": 385,
+        "feature_death_rate": 0.751953125,
+        "mean_activation": 0.03188210353255272,
+        "max_activation": 25.34898567199707
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6377601119692915,
+        "l0_norm": 16.494173049926758,
+        "active_features": 203,
+        "dead_features": 821,
+        "feature_death_rate": 0.8017578125,
+        "mean_activation": 0.016808856278657913,
+        "max_activation": 28.342992782592773
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.7045041898025471,
+        "l0_norm": 27.308086395263672,
+        "active_features": 349,
+        "dead_features": 1699,
+        "feature_death_rate": 0.82958984375,
+        "mean_activation": 0.010575300082564354,
+        "max_activation": 23.741613388061523
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6194047326801791,
+        "l0_norm": 14.470502853393555,
+        "active_features": 128,
+        "dead_features": 384,
+        "feature_death_rate": 0.75,
+        "mean_activation": 0.03183978050947189,
+        "max_activation": 25.359819412231445
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6379783828397765,
+        "l0_norm": 16.502914428710938,
+        "active_features": 203,
+        "dead_features": 821,
+        "feature_death_rate": 0.8017578125,
+        "mean_activation": 0.01679176650941372,
+        "max_activation": 28.41656494140625
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.7047577669026186,
+        "l0_norm": 27.335397720336914,
+        "active_features": 349,
+        "dead_features": 1699,
+        "feature_death_rate": 0.82958984375,
+        "mean_activation": 0.01057327538728714,
+        "max_activation": 23.841297149658203
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6195972305879293,
+        "l0_norm": 14.484341621398926,
+        "active_features": 128,
+        "dead_features": 384,
+        "feature_death_rate": 0.75,
+        "mean_activation": 0.03182109072804451,
+        "max_activation": 25.35772132873535
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6381543096292779,
+        "l0_norm": 16.524036407470703,
+        "active_features": 203,
+        "dead_features": 821,
+        "feature_death_rate": 0.8017578125,
+        "mean_activation": 0.016778213903307915,
+        "max_activation": 28.348323822021484
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.7047777302262499,
+        "l0_norm": 27.328115463256836,
+        "active_features": 350,
+        "dead_features": 1698,
+        "feature_death_rate": 0.8291015625,
+        "mean_activation": 0.010550731793045998,
+        "max_activation": 23.869197845458984
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6196864416904069,
+        "l0_norm": 14.490531921386719,
+        "active_features": 128,
+        "dead_features": 384,
+        "feature_death_rate": 0.75,
+        "mean_activation": 0.03179948031902313,
+        "max_activation": 25.321266174316406
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.638281497835695,
+        "l0_norm": 16.53423309326172,
+        "active_features": 204,
+        "dead_features": 820,
+        "feature_death_rate": 0.80078125,
+        "mean_activation": 0.01677713729441166,
+        "max_activation": 28.377487182617188
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.7049491340752412,
+        "l0_norm": 27.342317581176758,
+        "active_features": 349,
+        "dead_features": 1699,
+        "feature_death_rate": 0.82958984375,
+        "mean_activation": 0.010556863620877266,
+        "max_activation": 23.865053176879883
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6197914440938039,
+        "l0_norm": 14.505099296569824,
+        "active_features": 128,
+        "dead_features": 384,
+        "feature_death_rate": 0.75,
+        "mean_activation": 0.03180231899023056,
+        "max_activation": 25.32364273071289
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6383483281808203,
+        "l0_norm": 16.544429779052734,
+        "active_features": 204,
+        "dead_features": 820,
+        "feature_death_rate": 0.80078125,
+        "mean_activation": 0.016771046444773674,
+        "max_activation": 28.400875091552734
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.7049590377553239,
+        "l0_norm": 27.321195602416992,
+        "active_features": 349,
+        "dead_features": 1699,
+        "feature_death_rate": 0.82958984375,
+        "mean_activation": 0.010542646050453186,
+        "max_activation": 23.885679244995117
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6198312537684673,
+        "l0_norm": 14.501457214355469,
+        "active_features": 128,
+        "dead_features": 384,
+        "feature_death_rate": 0.75,
+        "mean_activation": 0.031782012432813644,
+        "max_activation": 25.338871002197266
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6384257250507583,
+        "l0_norm": 16.55571746826172,
+        "active_features": 205,
+        "dead_features": 819,
+        "feature_death_rate": 0.7998046875,
+        "mean_activation": 0.01677103154361248,
+        "max_activation": 28.372041702270508
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.7050274667259744,
+        "l0_norm": 27.358341217041016,
+        "active_features": 350,
+        "dead_features": 1698,
+        "feature_death_rate": 0.8291015625,
+        "mean_activation": 0.010544082149863243,
+        "max_activation": 23.887523651123047
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6198832675843349,
+        "l0_norm": 14.51529598236084,
+        "active_features": 128,
+        "dead_features": 384,
+        "feature_death_rate": 0.75,
+        "mean_activation": 0.03179614990949631,
+        "max_activation": 25.332111358642578
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6384811310720087,
+        "l0_norm": 16.568099975585938,
+        "active_features": 205,
+        "dead_features": 819,
+        "feature_death_rate": 0.7998046875,
+        "mean_activation": 0.01677650399506092,
+        "max_activation": 28.357563018798828
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.7050773165487532,
+        "l0_norm": 27.37108612060547,
+        "active_features": 350,
+        "dead_features": 1698,
+        "feature_death_rate": 0.8291015625,
+        "mean_activation": 0.01054641604423523,
+        "max_activation": 23.89190101623535
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6199066621042154,
+        "l0_norm": 14.51529598236084,
+        "active_features": 128,
+        "dead_features": 384,
+        "feature_death_rate": 0.75,
+        "mean_activation": 0.031796738505363464,
+        "max_activation": 25.33448600769043
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6385002365965777,
+        "l0_norm": 16.574291229248047,
+        "active_features": 205,
+        "dead_features": 819,
+        "feature_death_rate": 0.7998046875,
+        "mean_activation": 0.016776371747255325,
+        "max_activation": 28.3576717376709
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.7051070080935681,
+        "l0_norm": 27.37837028503418,
+        "active_features": 350,
+        "dead_features": 1698,
+        "feature_death_rate": 0.8291015625,
+        "mean_activation": 0.01054853294044733,
+        "max_activation": 23.896886825561523
+      }
+    },
+    {
+      "level_1": {
+        "features": 512,
+        "explained_variance": 0.6199061162320849,
+        "l0_norm": 14.512746810913086,
+        "active_features": 128,
+        "dead_features": 384,
+        "feature_death_rate": 0.75,
+        "mean_activation": 0.0317947119474411,
+        "max_activation": 25.333423614501953
+      },
+      "level_2": {
+        "features": 1024,
+        "explained_variance": 0.6385026540302987,
+        "l0_norm": 16.575382232666016,
+        "active_features": 205,
+        "dead_features": 819,
+        "feature_death_rate": 0.7998046875,
+        "mean_activation": 0.016776306554675102,
+        "max_activation": 28.362159729003906
+      },
+      "level_3": {
+        "features": 2048,
+        "explained_variance": 0.7051063062579717,
+        "l0_norm": 27.377277374267578,
+        "active_features": 350,
+        "dead_features": 1698,
+        "feature_death_rate": 0.8291015625,
+        "mean_activation": 0.010547913610935211,
+        "max_activation": 23.897354125976562
+      }
+    }
+  ]
+}

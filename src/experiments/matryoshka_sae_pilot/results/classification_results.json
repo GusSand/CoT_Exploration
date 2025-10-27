@@ -1,0 +1,33 @@
+{
+  "relu_baseline": {
+    "accuracy": 0.7,
+    "n_features": 8192,
+    "architecture": "ReLU SAE"
+  },
+  "matryoshka": {
+    "level_1": {
+      "accuracy": 0.548855461085677,
+      "n_features": 512,
+      "n_train": 61158,
+      "n_test": 15290
+    },
+    "level_2": {
+      "accuracy": 0.5479398299542184,
+      "n_features": 1024,
+      "n_train": 61158,
+      "n_test": 15290
+    },
+    "level_3": {
+      "accuracy": 0.568541530412034,
+      "n_features": 2048,
+      "n_train": 61158,
+      "n_test": 15290
+    },
+    "concatenated": {
+      "accuracy": 0.5846304774362329,
+      "n_features": 3584,
+      "n_train": 61158,
+      "n_test": 15290
+    }
+  }
+}

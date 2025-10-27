@@ -1,0 +1,45 @@
+{
+  "relu_baseline": {
+    "explained_variance": 0.7862,
+    "feature_death_rate": 0.9697,
+    "l0_norm": 23.34,
+    "n_features": 8192
+  },
+  "matryoshka": {
+    "level_1": {
+      "features": 512,
+      "explained_variance": 0.6228885144815413,
+      "l0_norm": 14.623138427734375,
+      "active_features": 276,
+      "dead_features": 236,
+      "feature_death_rate": 0.4609375,
+      "mean_activation": 0.03235970064997673,
+      "max_activation": 43.53013229370117
+    },
+    "level_2": {
+      "features": 1024,
+      "explained_variance": 0.6459897916690545,
+      "l0_norm": 16.787443161010742,
+      "active_features": 437,
+      "dead_features": 587,
+      "feature_death_rate": 0.5732421875,
+      "mean_activation": 0.01711689867079258,
+      "max_activation": 45.06944274902344
+    },
+    "level_3": {
+      "features": 2048,
+      "explained_variance": 0.7208902871857175,
+      "l0_norm": 27.4888916015625,
+      "active_features": 769,
+      "dead_features": 1279,
+      "feature_death_rate": 0.62451171875,
+      "mean_activation": 0.010766234248876572,
+      "max_activation": 47.28516387939453
+    }
+  },
+  "improvements": {
+    "feature_death_reduction_pct": 34.518828125,
+    "ev_change_pct": -6.530971281428255,
+    "active_features_increase": 521
+  }
+}
