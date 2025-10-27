@@ -96,6 +96,7 @@ evaluation_log.txt
 # Output directories
 outputs/
 results/
+!src/experiments/topk_grid_pilot/results/*.png
 
 # Experiment outputs (but keep docs/experiments/ for documentation)
 /experiments/
