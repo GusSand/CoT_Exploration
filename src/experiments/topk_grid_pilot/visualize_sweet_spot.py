@@ -30,7 +30,7 @@ def load_metrics_for_config(k=100, latent_dim=512):
     # Load data for each (layer, position) pair
     for layer in layers:
         for position in positions:
-            json_path = results_dir / f'grid_metrics_pos{position}_layer{layer}_latent{latent_dim}.json'
+            json_path = results_dir / 'data' / f'grid_metrics_pos{position}_layer{layer}_latent{latent_dim}.json'
 
             if not json_path.exists():
                 print(f"Warning: Missing {json_path}")
@@ -40,8 +40,9 @@ def load_metrics_for_config(k=100, latent_dim=512):
                 data = json.load(f)
 
             # Extract metrics for specific K value
-            if str(k) in data['results']:
-                config_metrics = data['results'][str(k)]
+            # JSON structure: results -> latent_dim -> k -> metrics
+            if str(latent_dim) in data['results'] and str(k) in data['results'][str(latent_dim)]:
+                config_metrics = data['results'][str(latent_dim)][str(k)]
                 metrics['explained_variance'][layer, position] = config_metrics['explained_variance']
                 metrics['feature_death_rate'][layer, position] = config_metrics['feature_death_rate']
                 metrics['mean_activation'][layer, position] = config_metrics['mean_activation']
@@ -114,13 +115,14 @@ def main():
     # Generate heatmaps
     print("Generating heatmaps...")
     results_dir = Path('src/experiments/topk_grid_pilot/results')
+    viz_dir = results_dir / 'viz'
 
     # Explained Variance
     plot_heatmap(
         metrics['explained_variance'],
         'Explained Variance',
         layers, positions,
-        results_dir / f'sweetspot_k{k}_d{latent_dim}_explained_variance.png',
+        viz_dir / f'sweetspot_k{k}_d{latent_dim}_explained_variance.png',
         k, latent_dim
     )
 
@@ -129,7 +131,7 @@ def main():
         metrics['feature_death_rate'],
         'Feature Death Rate',
         layers, positions,
-        results_dir / f'sweetspot_k{k}_d{latent_dim}_feature_death.png',
+        viz_dir / f'sweetspot_k{k}_d{latent_dim}_feature_death.png',
         k, latent_dim
     )
 
@@ -138,7 +140,7 @@ def main():
         metrics['mean_activation'],
         'Mean Activation Magnitude',
         layers, positions,
-        results_dir / f'sweetspot_k{k}_d{latent_dim}_mean_activation.png',
+        viz_dir / f'sweetspot_k{k}_d{latent_dim}_mean_activation.png',
         k, latent_dim
     )
 
@@ -147,7 +149,7 @@ def main():
         metrics['reconstruction_loss'],
         'Reconstruction Loss (MSE)',
         layers, positions,
-        results_dir / f'sweetspot_k{k}_d{latent_dim}_reconstruction_loss.png',
+        viz_dir / f'sweetspot_k{k}_d{latent_dim}_reconstruction_loss.png',
         k, latent_dim
     )
 
