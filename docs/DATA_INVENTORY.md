@@ -1,6 +1,6 @@
 # Data Inventory - CoT Exploration Project
 
-**Last Updated**: 2025-10-26
+**Last Updated**: 2025-10-27
 
 This document provides a complete breakdown of all datasets in the project, organized by experiment type and model.
 
@@ -1795,5 +1795,192 @@ python 01_validate_data.py
 - Universal pattern: Late > Early for ALL 8 difficulty levels (3.1× ratio)
 
 **Created**: 2025-10-26
+
+---
+
+## 17. Matryoshka SAE Pilot Datasets
+
+### 17.1 Position 3 Activations
+**File**: [`src/experiments/matryoshka_sae_pilot/data/position_3_activations.pt`](../src/experiments/matryoshka_sae_pilot/data/position_3_activations.pt)
+
+**Purpose**: Position 3 continuous thought activations for training hierarchical SAE architectures
+
+**Size**: 95,648 vectors (748 MB)
+
+**Structure**:
+- **Activations**: [95,648, 2048] tensor
+- **Metadata**: Problem IDs for each activation
+
+**Breakdown**:
+- Source: 5,978 unique GSM8K problems
+- Layers: 16 layers per problem
+- 5,978 problems × 16 layers = 95,648 total activations
+
+**Stratification**: None (all available Position 3 data from sae_cot_decoder)
+
+**Source**: Extracted from [`sae_cot_decoder/data/`](../src/experiments/sae_cot_decoder/data/) experiment
+
+**Generation Command**:
+```bash
+cd src/experiments/matryoshka_sae_pilot
+python extract_position3_data.py
+```
+
+**How to Recreate**:
+1. Load all activation files from sae_cot_decoder/data/ (16 layers)
+2. Filter to Position 3 only (from 6 positions)
+3. Concatenate all layers
+4. Save as position_3_activations.pt with metadata
+
+**Used By**:
+- Vanilla Matryoshka SAE training
+- Matryoshka-TopK SAE training
+- Feature extraction and classification
+
+**Train/Val Split**: 80/20 split (76,518 train / 19,130 val)
+
+**Experiment**: Matryoshka SAE Pilot
+
+**Created**: 2025-10-27
+
+---
+
+### 17.2 Vanilla Matryoshka SAE Model
+**File**: [`src/experiments/matryoshka_sae_pilot/models/pos3_hierarchical.pt`](../src/experiments/matryoshka_sae_pilot/models/pos3_hierarchical.pt)
+
+**Purpose**: Trained Matryoshka SAE with 3 hierarchical levels for continuous thought interpretation
+
+**Architecture**:
+- **Levels**: [512, 1024, 2048] features (nested hierarchy)
+- **Activation**: ReLU + L1 penalty (λ=0.0005)
+- **Level weights**: [0.3, 0.3, 0.4] (prioritize fine level)
+- **Parameters**: 3.7M
+
+**Training Config**:
+- **Data**: 76,518 Position 3 activations
+- **Epochs**: 50
+- **Batch size**: 4096
+- **Optimizer**: AdamW with CosineAnnealingLR
+- **Training time**: 1.6 minutes
+
+**Performance** (Level 3):
+- **Explained Variance**: 72.1%
+- **L0 Norm**: 27.5 active features/sample
+- **Feature Death**: 62.5% (769/2048 active)
+- **Utilization**: 37.5%
+
+**Improvements over ReLU SAE**:
+- Feature death: 97.0% → 62.5% (-34.5 pts)
+- Active features: 248 → 769 (+3.1×)
+- Classification: 78.9% → 80.0% (+1.1 pts)
+
+**Experiment**: Matryoshka SAE Pilot
+
+**Created**: 2025-10-27
+
+---
+
+### 17.3 Matryoshka-TopK Hybrid SAE Model
+**File**: [`src/experiments/matryoshka_sae_pilot/models/pos3_hierarchical_topk.pt`](../src/experiments/matryoshka_sae_pilot/models/pos3_hierarchical_topk.pt)
+
+**Purpose**: Hybrid SAE combining hierarchical structure (Matryoshka) with TopK activation for better efficiency
+
+**Architecture**:
+- **Levels**: [128, 256, 512] features (total: 896)
+- **K values**: [25, 35, 40] TopK per level (total: 100 active/sample)
+- **Activation**: TopK (no L1 penalty)
+- **Level weights**: [0.3, 0.3, 0.4]
+- **Parameters**: 3.7M
+
+**Training Config**:
+- **Data**: 76,518 Position 3 activations
+- **Epochs**: 50
+- **Batch size**: 4096
+- **Optimizer**: AdamW with CosineAnnealingLR
+- **Training time**: 1.1 minutes
+
+**Performance** (Level 3):
+- **Explained Variance**: 77.9%
+- **L0 Norm**: 40.0 active features/sample (enforced by TopK)
+- **Feature Death**: 42.0% (297/512 active)
+- **Utilization**: 58.0%
+
+**Comparison to Baselines**:
+- vs Vanilla Matryoshka: +5.8 pts EV, -20.5 pts feature death
+- vs TopK SAE: -9.9 pts EV, +42 pts feature death
+- vs ReLU SAE: -0.7 pts EV, -55 pts feature death
+
+**Experiment**: Matryoshka SAE Pilot
+
+**Created**: 2025-10-27
+
+---
+
+### 17.4 Fair Comparison Results
+**File**: [`src/experiments/matryoshka_sae_pilot/results/fair_comparison.json`](../src/experiments/matryoshka_sae_pilot/results/fair_comparison.json)
+
+**Purpose**: Fair classification comparison between ReLU and Vanilla Matryoshka SAEs using identical test sets
+
+**Test Protocol**:
+- **Test set**: 19,130 samples (same for both models)
+- **Train/test split**: 80/20 with random_state=42
+- **Classifier**: Logistic Regression (max_iter=1000)
+- **Task**: Operation detection (multiplication/addition/division)
+
+**Results**:
+| Model | Features | Accuracy | vs ReLU |
+|-------|----------|----------|---------|
+| ReLU SAE | 8,192 | 78.9% | baseline |
+| Matryoshka L1 | 512 | 78.4% | -0.5 pts |
+| Matryoshka L2 | 1,024 | 78.7% | -0.1 pts |
+| Matryoshka L3 | 2,048 | 78.9% | 0.0 pts |
+| **Matryoshka Concat** | **3,584** | **80.0%** | **+1.1 pts** |
+
+**Key Finding**: Concatenating hierarchical features outperforms ReLU baseline
+
+**Experiment**: Matryoshka SAE Pilot
+
+**Created**: 2025-10-27
+
+---
+
+### 17.5 Comprehensive Comparison
+**File**: [`src/experiments/matryoshka_sae_pilot/results/comprehensive_comparison.json`](../src/experiments/matryoshka_sae_pilot/results/comprehensive_comparison.json)
+
+**Purpose**: Complete comparison of all SAE architectures across reconstruction and classification metrics
+
+**Models Compared**:
+1. ReLU SAE (8,192 features)
+2. TopK SAE (512 features, K=100)
+3. Vanilla Matryoshka SAE (3,584 concat features)
+4. Matryoshka-TopK Hybrid (896 features)
+
+**Reconstruction Metrics** (Explained Variance):
+| Model | EV | Utilization | Feature Death |
+|-------|-----|-------------|---------------|
+| TopK SAE | **87.8%** | **100%** | **0%** |
+| ReLU SAE | 78.6% | 3.0% | 97% |
+| Matryoshka-TopK | 77.9% | 58.0% | 42% |
+| Vanilla Matryoshka | 72.1% | 37.5% | 62.5% |
+
+**Classification Metrics** (Operation Detection):
+| Model | Accuracy |
+|-------|----------|
+| Vanilla Matryoshka (concat) | **80.0%** |
+| ReLU SAE | 78.9% |
+| Matryoshka-TopK | Pending |
+| TopK SAE | No model available |
+
+**Key Findings**:
+- **Reconstruction winner**: TopK SAE (87.8% EV, perfect utilization)
+- **Classification winner**: Vanilla Matryoshka (80.0% accuracy)
+- **Efficiency winner**: TopK SAE (0.171 EV per feature)
+- **Feature death loser**: ReLU SAE (97% waste)
+
+**Experiment**: Matryoshka SAE Pilot
+
+**Created**: 2025-10-27
+
+**Documentation**: Pending in research_journal.md
 
 ---
