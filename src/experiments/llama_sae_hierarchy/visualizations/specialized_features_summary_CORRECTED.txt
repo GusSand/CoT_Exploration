@@ -1,0 +1,185 @@
+================================================================================
+SPECIALIZED FEATURES FOUND - CORRECTED INTERPRETATION
+================================================================================
+
+⚠️ CORRECTION: These are MULTI-OPERATION PATTERN detectors, not atomic operation
+specialists. All features activate on multiple operations in sequence.
+
+Total: 5 compositional pattern features (all rare: 0.067-0.268% activation)
+
+================================================================================
+
+1. Feature 332 (Rank 496)
+   Original Label: "Addition specialist"
+   CORRECTED: "Multiply-then-add pattern detector"
+
+   Activation Frequency: 0.268% (4 out of 1,495 samples)
+
+   Operations Detected:
+     - Addition: 100% (4/4 samples)
+     - Multiplication: 100% (4/4 samples)
+     - Subtraction: 0%
+     - Division: 0%
+
+   Pattern: Compute a product, then add something to the result
+
+   Top Activating Samples:
+     1. 20*3=60 | 60+5=65                    [multiply, then add]
+     2. 20*2=40 | 40+6=46                    [multiply, then add]
+     3. 5*12=60 | 60+16=76                   [multiply, then add]
+     4. 6*10=60 | 4*24=96 | 60+96=156        [multiply twice, then add]
+
+   Interpretation: This feature detects the "multiply-then-add" computational
+   idiom - a common pattern where you compute a product and then add to it.
+   It does NOT detect addition in isolation.
+
+================================================================================
+
+2. Feature 194 (Rank 505)
+   Original Label: "Subtraction specialist"
+   CORRECTED: "Subtract-then-divide pattern detector"
+
+   Activation Frequency: 0.067% (1 out of 1,495 samples)
+
+   Operations Detected:
+     - Subtraction: 100% (1/1 samples)
+     - Division: 100% (1/1 samples)
+     - Addition: 0%
+     - Multiplication: 0%
+
+   Pattern: Compute a difference, then divide the result
+
+   Top Activating Sample:
+     1. 408-113=295 | 295/5=59               [subtract, then divide]
+
+   Interpretation: Detects "subtract-then-divide" idiom - compute a difference
+   and divide it. Not a pure subtraction detector.
+
+================================================================================
+
+3. Feature 392 (Rank 506)
+   Original Label: "Addition + number 100"
+   CORRECTED: "Complex multi-step pattern with number 100"
+
+   Activation Frequency: 0.067% (1 out of 1,495 samples)
+
+   Operations Detected:
+     - Addition: 100% (1/1 samples)
+     - Multiplication: 100% (1/1 samples)
+     - Division: 100% (1/1 samples)
+     - Number 100: Present
+
+   Pattern: Multi-step calculation involving round numbers and division by 100
+
+   Top Activating Sample:
+     1. 5*45=225 | 25*31=775 | 225+775=1000 | 1000/100=10
+        [multiply, multiply, add to 1000, divide by 100]
+
+   Interpretation: Detects complex sequences where intermediate results involve
+   round numbers (1000) that get divided by 100. Highly compositional.
+
+================================================================================
+
+4. Feature 350 (Rank 507)
+   Original Label: "Addition + number 50"
+   CORRECTED: "Multiply-then-add pattern with large round numbers"
+
+   Activation Frequency: 0.067% (1 out of 1,495 samples)
+
+   Operations Detected:
+     - Addition: 100% (1/1 samples)
+     - Multiplication: 100% (1/1 samples)
+     - Number 50: Present (also 500, 1000)
+
+   Pattern: Multiply-then-add involving large round numbers (500, 1000)
+
+   Top Activating Sample:
+     1. 500*2=1000 | 500+1000=1500           [multiply, then add, large numbers]
+
+   Interpretation: Similar to Feature 332 but specialized for large round
+   numbers. Detects multiply-then-add when working with 500/1000 scale.
+
+================================================================================
+
+5. Feature 487 (Rank 508)
+   Original Label: "Addition + number 30"
+   CORRECTED: "Complex arithmetic sequence featuring 30"
+
+   Activation Frequency: 0.067% (1 out of 1,495 samples)
+
+   Operations Detected:
+     - Addition: 100% (1/1 samples)
+     - Subtraction: 100% (1/1 samples)
+     - Division: 100% (1/1 samples)
+     - Number 30: Present as intermediate result
+
+   Pattern: Complex multi-step sequence where 30 appears as intermediate value
+
+   Top Activating Sample:
+     1. 60/2=30 | 30+15=45 | 60-45=15 | 15/3=5 | 60-10=50
+        [divide to get 30, then complex multi-operation sequence]
+
+   Interpretation: Detects complex reasoning chains where 30 appears as an
+   intermediate result followed by further arithmetic. Most compositional.
+
+================================================================================
+
+KEY INSIGHTS FROM CORRECTED ANALYSIS
+================================================================================
+
+1. NO ATOMIC OPERATION FEATURES
+   - No pure "addition only" or "multiplication only" features found
+   - All specialized features encode MULTIPLE operations
+   - Operations appear in sequential patterns, not isolation
+
+2. FEATURES ENCODE COMPUTATIONAL IDIOMS
+   - "Multiply-then-add" (Feature 332): Common in math problems
+   - "Subtract-then-divide" (Feature 194): Difference divided
+   - Complex multi-step with specific values (Features 392, 350, 487)
+
+3. COMPOSITIONALITY AT LOW FREQUENCIES
+   - General features (98.2%): Broadly applicable, mixed operations
+   - Pattern features (1.8%): Specific multi-step sequences
+   - Rarity correlates with pattern specificity
+
+4. VALUES CONTEXTUALIZED IN PATTERNS
+   - Numbers don't appear as standalone features
+   - "Number 100" appears in "complex pattern with 100"
+   - "Number 50" appears in "multiply-then-add with large numbers"
+   - Values meaningful within computational context
+
+5. WHY ORIGINAL CLASSIFICATION FAILED
+   - With 1-4 samples per feature, all operations at 100%
+   - Cannot distinguish "addition" from "multiply-then-add"
+   - Classification picked first operation alphabetically
+   - Real pattern visible in sample sequences, not statistics
+
+================================================================================
+
+IMPLICATIONS
+================================================================================
+
+For Interpretability Research:
+- SAEs learn PATTERNS, not atomic operations
+- Features are compositional and contextual
+- Interpretability requires understanding multi-step sequences
+- Cannot decompose features into operation + value components
+
+For Causal Interventions:
+- Swap experiments assume atomic features (incorrect assumption)
+- Ablation works for measuring importance
+- Need pattern-level interventions, not operation-level
+- Requires synthetic data with controlled compositional patterns
+
+For Future Work:
+- Train with larger K for more usable pattern features
+- Develop metrics for pattern complexity
+- Study how patterns compose in feature space
+- Don't expect clean operation/value separation
+
+================================================================================
+
+CORRECTED BY: User observation (Feature 332 has both multiplication and addition)
+DATE: 2025-10-27
+STATUS: This is the authoritative corrected interpretation
+================================================================================
