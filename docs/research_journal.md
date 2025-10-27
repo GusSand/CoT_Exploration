@@ -2,6 +2,60 @@
 
 ## Experiment Log
 
+### 2025-10-27c: LLaMA SAE Feature Hierarchy Investigation
+
+**Objective**: Investigate whether LLaMA TopK SAEs learn hierarchical features (operation-level vs value-level) and validate interpretations via causal interventions.
+
+**Status**: ✅ **COMPLETE** - Feature hierarchy exists but is rare; ablation validation successful
+
+**Research Questions**:
+1. Do SAEs learn higher-level features (e.g., "multiplication" vs specific numbers)?
+2. Can we validate interpretations with causal interventions (swap, ablation)?
+
+**Approach**:
+- Analyzed 361 features across activation frequency spectrum (top-20, mid-frequency, rare features)
+- Implemented FeatureInterventionEngine for causal experiments (swap, ablate, amplify)
+- Validated features via ablation experiments on 1,495 validation samples
+- Layer 14, Position 3, optimal config (K=100, d=512)
+
+**Key Results**:
+
+**Answer 1: Feature Hierarchy Exists But Is Rare**
+- Found 6 specialized features out of 361 analyzed (1.8%)
+- Types: 3 operation-specialized (multiplication, addition, subtraction), 3 highly-specialized (operation+value)
+- Specialization inversely correlated with activation frequency:
+  - Top 200 features (>20% activation): 0.7% specialized
+  - Bottom 112 features (<3% activation): 4.6% specialized
+- Only 1 feature (multiplication, 24.1%) has practical activation rate; others extremely rare (0.1-0.3%)
+
+**Answer 2: Validation Partially Successful**
+- ✅ General features validated: Top 10 show measurable impact (0.075-0.118 mean abs diff)
+- ✅ Ablation reliable: All sanity checks passed
+- ❌ Specialized features too rare: 0.1-0.3% activation → insufficient samples for swap experiments
+- ❌ Swap experiments infeasible: Only 1-5 active samples per specialized feature
+
+**Major Findings**:
+
+1. **Long-tail distribution**: TopK SAE creates power-law with ~20 general features (>99% activation), ~150 semi-general (10-60%), ~340 rare features (<10%)
+2. **Early layers more general**: Layer 3 (99% EV) has 0% specialized features - specialization emerges in late layers
+3. **No pure value features**: Found "addition+100", "addition+50" but no standalone "number 12" detectors - values contextualized within operations
+4. **Specialization vs utility tradeoff**: Specialized features minimal practical impact due to rarity
+
+**Time**: 4.0 hours (26% of 11-15.5h estimate)
+- Story 1: Feature Taxonomy (1h vs 2-3h estimated)
+- Story 2: Activation Analysis (1.5h vs 1-2h estimated)
+- Story 3: Intervention Infrastructure (0.7h vs 1.5-2.5h estimated)
+- Story 4+5: Validation Experiments (0.8h vs 5-6h estimated)
+
+**Deliverables**:
+- 1,400 lines of production code (4 Python scripts)
+- 361 features analyzed with complete metadata (5 JSON files)
+- Comprehensive documentation (5 markdown files)
+
+**Documentation**: [docs/experiments/10-27_llama_gsm8k_feature_hierarchy.md](experiments/10-27_llama_gsm8k_feature_hierarchy.md)
+
+---
+
 ### 2025-10-27b: GPT-2 TopK SAE Parameter Sweep
 
 **Objective**: Identify optimal TopK SAE configuration for GPT-2 continuous thought activations via systematic parameter sweep across dictionary size and sparsity.
@@ -3202,6 +3256,8 @@ Actual:
 
 ### 2025-10-26f: TopK SAE Grid Experiment - Quality-Sparsity Tradeoff Analysis
 
+**Directory**: `src/experiments/topk_grid_pilot/`
+
 **Objective**: Characterize the quality-sparsity tradeoff for TopK Sparse Autoencoders on CODI continuous thought by training a 2D grid of K values × dictionary sizes.
 
 **Status**: ✅ **COMPLETE** - All 12 configs Pareto-optimal, K dominates quality (not latent_dim)
@@ -3269,6 +3325,8 @@ Actual:
 ---
 
 ### 2025-10-26g: TopK SAE Multi-Layer Analysis - Systematic Feature Extraction Across All Layers
+
+**Directory**: `src/experiments/topk_grid_pilot/`
 
 **Objective**: Map reconstruction quality across all 16 layers × 6 continuous thought positions to identify optimal feature extraction points for each layer.
 
@@ -3342,6 +3400,8 @@ Actual:
 ---
 
 ### 2025-10-27: TopK SAE vs Matryoshka Comparison & Feature Semantics Analysis
+
+**Directory**: `src/experiments/topk_grid_pilot/`
 
 **Objective**: Compare TopK SAE with Matryoshka SAE and analyze feature semantic interpretability across layers
 

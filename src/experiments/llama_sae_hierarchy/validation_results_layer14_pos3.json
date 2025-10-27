@@ -1,0 +1,137 @@
+{
+  "metadata": {
+    "layer": 14,
+    "position": 3,
+    "num_samples": 1495,
+    "sanity_checks": {
+      "identity_swap": true,
+      "null_ablation": true,
+      "reconstruction_fidelity": 1.0
+    },
+    "validation_date": "2025-10-27"
+  },
+  "general_features": [
+    {
+      "rank": 1,
+      "feature_id": 449,
+      "activation_freq": 0.9986622333526611,
+      "mean_impact": 0.09788799285888672,
+      "max_impact": 1.052734375,
+      "classification": "\u25cb MEDIUM"
+    },
+    {
+      "rank": 2,
+      "feature_id": 168,
+      "activation_freq": 0.9986622333526611,
+      "mean_impact": 0.10058742016553879,
+      "max_impact": 1.0623207092285156,
+      "classification": "\u2713 HIGH"
+    },
+    {
+      "rank": 3,
+      "feature_id": 131,
+      "activation_freq": 0.9979932904243469,
+      "mean_impact": 0.11796653270721436,
+      "max_impact": 1.2063522338867188,
+      "classification": "\u2713 HIGH"
+    },
+    {
+      "rank": 4,
+      "feature_id": 261,
+      "activation_freq": 0.9979932904243469,
+      "mean_impact": 0.08963898569345474,
+      "max_impact": 1.030923843383789,
+      "classification": "\u25cb MEDIUM"
+    },
+    {
+      "rank": 5,
+      "feature_id": 288,
+      "activation_freq": 0.9979932904243469,
+      "mean_impact": 0.11622743308544159,
+      "max_impact": 1.302633285522461,
+      "classification": "\u2713 HIGH"
+    },
+    {
+      "rank": 6,
+      "feature_id": 273,
+      "activation_freq": 0.9973244071006775,
+      "mean_impact": 0.08983316272497177,
+      "max_impact": 0.8993797302246094,
+      "classification": "\u25cb MEDIUM"
+    },
+    {
+      "rank": 7,
+      "feature_id": 286,
+      "activation_freq": 0.9973244071006775,
+      "mean_impact": 0.07514714449644089,
+      "max_impact": 0.7298583984375,
+      "classification": "\u25cb MEDIUM"
+    },
+    {
+      "rank": 8,
+      "feature_id": 4,
+      "activation_freq": 0.9966555237770081,
+      "mean_impact": 0.09993697702884674,
+      "max_impact": 0.9832420349121094,
+      "classification": "\u25cb MEDIUM"
+    },
+    {
+      "rank": 9,
+      "feature_id": 152,
+      "activation_freq": 0.9966555237770081,
+      "mean_impact": 0.09696803241968155,
+      "max_impact": 1.1121902465820312,
+      "classification": "\u25cb MEDIUM"
+    },
+    {
+      "rank": 10,
+      "feature_id": 212,
+      "activation_freq": 0.9966555237770081,
+      "mean_impact": 0.09083512425422668,
+      "max_impact": 0.9090175628662109,
+      "classification": "\u25cb MEDIUM"
+    }
+  ],
+  "specialized_features": [
+    {
+      "feature_id": 332,
+      "specialization_type": "operation-specialized",
+      "description": "addition",
+      "activation_freq": 0.002675585215911269,
+      "mean_impact": 3.561827907105908e-05,
+      "classification": "\u25cb MINIMAL"
+    },
+    {
+      "feature_id": 194,
+      "specialization_type": "operation-specialized",
+      "description": "subtraction",
+      "activation_freq": 0.0006688963039778173,
+      "mean_impact": 9.591372872819193e-06,
+      "classification": "\u25cb MINIMAL"
+    },
+    {
+      "feature_id": 392,
+      "specialization_type": "highly-specialized",
+      "description": "addition + number 100",
+      "activation_freq": 0.0006688963039778173,
+      "mean_impact": 7.345296126004541e-06,
+      "classification": "\u25cb MINIMAL"
+    },
+    {
+      "feature_id": 350,
+      "specialization_type": "highly-specialized",
+      "description": "addition + number 50",
+      "activation_freq": 0.0006688963039778173,
+      "mean_impact": 6.520830993395066e-06,
+      "classification": "\u25cb MINIMAL"
+    },
+    {
+      "feature_id": 487,
+      "specialization_type": "highly-specialized",
+      "description": "addition + number 30",
+      "activation_freq": 0.0006688963039778173,
+      "mean_impact": 6.487797236331971e-06,
+      "classification": "\u25cb MINIMAL"
+    }
+  ]
+}
