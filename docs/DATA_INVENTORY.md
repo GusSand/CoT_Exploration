@@ -1,6 +1,6 @@
 # Data Inventory - CoT Exploration Project
 
-**Last Updated**: 2025-10-28 (Added Section 14.7: Proper Question-Level Held-Out Splits for Sprint 1 & 4)
+**Last Updated**: 2025-10-28 (Updated Section 21.1: Added Stories 4-5 attention pattern ablation experiments)
 
 This document provides a complete breakdown of all datasets in the project, organized by experiment type and model.
 
@@ -3095,9 +3095,12 @@ python src/experiments/llama_sae_hierarchy/validate_features.py --layer 14 --pos
 - Reproducible: same seed produces same sample
 
 **Usage**:
-- Story 1.2: Extract 6×6 attention matrices between continuous thought positions
-- Story 1.3-1.5: Identify hub positions, flow patterns, skip connections
-- Story 2.1-2.6: Rank critical attention heads, compare GPT-2 vs LLaMA
+- Story 0: Extract 6×6 attention matrices between continuous thought positions, identify hub patterns
+- Story 1: Rank critical attention heads by composite score
+- Story 2: Establish baseline accuracy (59% on 100 problems, 59% on full 1,319 test set)
+- Story 3: Individual head ablation (all top 10 heads cause 100% failure - method artifact)
+- Story 4: Score-stratified head ablation (40 heads across 4 strata - all cause 100% failure)
+- Story 5: Attention pattern ablation (9 patterns on full 1,319 test set)
 
 **Recreation**:
 ```bash
@@ -3106,9 +3109,11 @@ python src/experiments/codi_attention_flow/scripts/1_sample_dataset.py --seed 42
 ```
 
 **Related Experiments**:
-- Used in: Attention flow analysis (Phase 1-2)
-- Models: LLaMA-3.2-1B, GPT-2-124M
-- Documented in: `docs/experiments/10-27_llama_gsm8k_attention_flow_analysis.md`
+- Used in: Attention flow analysis and ablation experiments (Stories 0-5)
+- Models: LLaMA-3.2-1B CODI
+- Documented in:
+  - `docs/experiments/10-28_llama_gsm8k_attention_flow_analysis.md` (Stories 0-3)
+  - `docs/experiments/10-28_llama_gsm8k_attention_pattern_ablation.md` (Stories 4-5)
 
 **Validation**:
 - ✅ No duplicates: 100 unique IDs
