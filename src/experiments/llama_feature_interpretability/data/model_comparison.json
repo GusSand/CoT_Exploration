@@ -1,0 +1,323 @@
+{
+  "gpt2_analysis": {
+    "model": "GPT-2",
+    "model_size": "124M parameters",
+    "hidden_dim": 768,
+    "num_layers": 12,
+    "num_positions": 6,
+    "sae_config": {
+      "latent_dim": 512,
+      "k": 150,
+      "sparsity": "29.3%"
+    },
+    "total_features_analyzed": 36864,
+    "interpretable_features": 15399,
+    "interpretability_rate": 0.417724609375,
+    "monosemantic_features": 11187,
+    "monosemantic_rate": 0.7264757451782583,
+    "number_features": 15175,
+    "number_features_pct": 98.54536008831742,
+    "max_enrichment": 169.91304347826087,
+    "feature_type_distribution": {
+      "number": 10229,
+      "polysemantic": 4212,
+      "numbers": 874,
+      "operator": 52,
+      "addition": 12,
+      "multiplication": 13,
+      "subtraction": 3,
+      "operators": 1,
+      "division": 1,
+      "parentheses": 2
+    },
+    "layer_distribution": {
+      "0": 968,
+      "1": 1351,
+      "2": 1258,
+      "3": 1204,
+      "4": 1223,
+      "5": 1115,
+      "6": 1018,
+      "7": 1108,
+      "8": 1314,
+      "9": 1446,
+      "10": 1630,
+      "11": 1764
+    },
+    "position_distribution": {
+      "0": 1648,
+      "1": 3618,
+      "2": 2029,
+      "3": 3233,
+      "4": 2018,
+      "5": 2853
+    },
+    "high_enrichment_count": 6596,
+    "top_enrichment_examples": [
+      {
+        "key": "L4_P3_F241",
+        "label": "number_50000",
+        "enrichment": 169.91304347826087,
+        "layer": 4,
+        "position": 3
+      },
+      {
+        "key": "L0_P3_F390",
+        "label": "number_50000",
+        "enrichment": 144.14814814814812,
+        "layer": 0,
+        "position": 3
+      },
+      {
+        "key": "L7_P3_F57",
+        "label": "number_0.50",
+        "enrichment": 133.36363636363635,
+        "layer": 7,
+        "position": 3
+      },
+      {
+        "key": "L7_P3_F129",
+        "label": "number_0.50",
+        "enrichment": 133.36363636363635,
+        "layer": 7,
+        "position": 3
+      },
+      {
+        "key": "L5_P1_F373",
+        "label": "number_7.5",
+        "enrichment": 127.33333333333331,
+        "layer": 5,
+        "position": 1
+      },
+      {
+        "key": "L1_P5_F189",
+        "label": "number_6000",
+        "enrichment": 126.98630136986301,
+        "layer": 1,
+        "position": 5
+      },
+      {
+        "key": "L1_P3_F190",
+        "label": "number_0.50",
+        "enrichment": 122.0,
+        "layer": 1,
+        "position": 3
+      },
+      {
+        "key": "L6_P3_F85",
+        "label": "number_50000",
+        "enrichment": 121.0,
+        "layer": 6,
+        "position": 3
+      },
+      {
+        "key": "L4_P3_F372",
+        "label": "number_6000",
+        "enrichment": 117.12162162162163,
+        "layer": 4,
+        "position": 3
+      },
+      {
+        "key": "L0_P3_F268",
+        "label": "number_2000",
+        "enrichment": 116.71428571428571,
+        "layer": 0,
+        "position": 3
+      }
+    ]
+  },
+  "llama_analysis": {
+    "model": "LLaMA-3.2-1B",
+    "model_size": "1B parameters",
+    "hidden_dim": 2048,
+    "num_layers": 16,
+    "num_positions": 6,
+    "sae_config": {
+      "latent_dim": 512,
+      "k": 100,
+      "sparsity": "19.5%"
+    },
+    "total_features_analyzed": 49152,
+    "interpretable_features": 18551,
+    "interpretability_rate": 0.3774210611979167,
+    "monosemantic_features": 13890,
+    "monosemantic_rate": 0.7487466982911972,
+    "number_features": 18344,
+    "number_features_pct": 98.88415718829174,
+    "max_enrichment": 195.0,
+    "feature_type_distribution": {
+      "number": 12888,
+      "polysemantic": 4661,
+      "numbers": 869,
+      "operator": 67,
+      "addition": 26,
+      "parentheses": 6,
+      "subtraction": 23,
+      "division": 5,
+      "multiplication": 4,
+      "operators": 2
+    },
+    "layer_distribution": {
+      "0": 601,
+      "1": 633,
+      "2": 670,
+      "3": 687,
+      "4": 774,
+      "5": 796,
+      "6": 809,
+      "7": 870,
+      "8": 1215,
+      "9": 1318,
+      "10": 1350,
+      "11": 1485,
+      "12": 1622,
+      "13": 1629,
+      "14": 1912,
+      "15": 2180
+    },
+    "position_distribution": {
+      "0": 2482,
+      "1": 3323,
+      "2": 3121,
+      "3": 3129,
+      "4": 3172,
+      "5": 3324
+    },
+    "high_enrichment_count": 9387,
+    "top_enrichment_examples": [
+      {
+        "key": "L9_P1_F355",
+        "label": "number_210",
+        "enrichment": 195.0,
+        "layer": 9,
+        "position": 1
+      },
+      {
+        "key": "L9_P5_F1",
+        "label": "number_230",
+        "enrichment": 186.47619047619045,
+        "layer": 9,
+        "position": 5
+      },
+      {
+        "key": "L12_P1_F174",
+        "label": "number_130",
+        "enrichment": 133.93103448275863,
+        "layer": 12,
+        "position": 1
+      },
+      {
+        "key": "L3_P1_F267",
+        "label": "number_121",
+        "enrichment": 133.36363636363635,
+        "layer": 3,
+        "position": 1
+      },
+      {
+        "key": "L4_P3_F64",
+        "label": "number_4.5",
+        "enrichment": 127.43478260869564,
+        "layer": 4,
+        "position": 3
+      },
+      {
+        "key": "L11_P3_F257",
+        "label": "number_4.5",
+        "enrichment": 122.0,
+        "layer": 11,
+        "position": 3
+      },
+      {
+        "key": "L12_P2_F27",
+        "label": "number_4.5",
+        "enrichment": 117.0,
+        "layer": 12,
+        "position": 2
+      },
+      {
+        "key": "L12_P3_F102",
+        "label": "number_1350",
+        "enrichment": 117.0,
+        "layer": 12,
+        "position": 3
+      },
+      {
+        "key": "L2_P5_F16",
+        "label": "number_1350",
+        "enrichment": 112.38461538461539,
+        "layer": 2,
+        "position": 5
+      },
+      {
+        "key": "L5_P2_F435",
+        "label": "number_162",
+        "enrichment": 112.38461538461539,
+        "layer": 5,
+        "position": 2
+      }
+    ]
+  },
+  "research_questions": {
+    "q1_monosemantic_rate": {
+      "question": "What is LLaMA's monosemantic rate?",
+      "gpt2": "72.6%",
+      "llama": "74.9%",
+      "finding": "LLaMA: 74.9% vs GPT-2: 72.6%"
+    },
+    "q2_number_features": {
+      "question": "What % are number features?",
+      "gpt2": "98.5%",
+      "llama": "98.9%",
+      "finding": "LLaMA: 98.9% vs GPT-2: 98.5%"
+    },
+    "q3_max_enrichment": {
+      "question": "What is max enrichment?",
+      "gpt2": "169.9\u00d7",
+      "llama": "195.0\u00d7",
+      "finding": "LLaMA: 195.0\u00d7 vs GPT-2: 169.9\u00d7"
+    },
+    "q4_capacity_hypothesis": {
+      "question": "Does larger model = lower monosemantic rate?",
+      "hypothesis": "Larger models use more distributed representations",
+      "gpt2_size": "124M params",
+      "llama_size": "1B params",
+      "gpt2_mono": "72.6%",
+      "llama_mono": "74.9%",
+      "result": "NO",
+      "finding": "Rejected: LLaMA (1B) has higher monosemantic rate than GPT-2 (124M)"
+    }
+  },
+  "insights": {
+    "model_capacity": {
+      "claim": "Larger models use more distributed representations",
+      "evidence": {
+        "question": "Does larger model = lower monosemantic rate?",
+        "hypothesis": "Larger models use more distributed representations",
+        "gpt2_size": "124M params",
+        "llama_size": "1B params",
+        "gpt2_mono": "72.6%",
+        "llama_mono": "74.9%",
+        "result": "NO",
+        "finding": "Rejected: LLaMA (1B) has higher monosemantic rate than GPT-2 (124M)"
+      },
+      "interpretation": "LLaMA's 74.9% monosemantic rate vs GPT-2's 72.6% contradicts the hypothesis"
+    },
+    "feature_specialization": {
+      "gpt2_number_dominance": "98.5%",
+      "llama_number_dominance": "98.9%",
+      "finding": "Both models heavily rely on number-specific features for math reasoning"
+    },
+    "enrichment_comparison": {
+      "gpt2_max": "169.9\u00d7",
+      "llama_max": "195.0\u00d7",
+      "finding": "LLaMA has stronger feature specialization"
+    }
+  },
+  "methodology_verification": {
+    "criteria_identical": true,
+    "p_value_threshold": 0.01,
+    "enrichment_threshold": 2.0,
+    "min_activations": 20,
+    "labeling_logic": "Copied exactly from GPT-2 (enrichment \u2265 5.0 OR top 3 same category)"
+  }
+}

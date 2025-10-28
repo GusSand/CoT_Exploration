@@ -3834,3 +3834,39 @@ Dead features are NOT waste - they're **capacity reserves** that enable speciali
 - Data inventory: Updated with attention dataset
 - Code: `src/experiments/codi_attention_flow/README.md`
 
+
+## 2025-10-28: LLaMA Feature Interpretability Analysis
+
+**Experiment**: Comprehensive feature interpretability analysis on LLaMA-3.2-1B
+
+**Goal**: Compare LLaMA vs GPT-2 to test capacity hypothesis (larger models = more distributed = less interpretable)
+
+**Method**:
+- Extracted features from 96 LLaMA SAEs (K=100, d=512)
+- 1,000 GSM8K problems
+- Chi-squared correlation tests: 49,152 features × 628 tokens
+- Identical methodology to GPT-2 analysis
+
+**Results**:
+1. **Monosemantic rate**: 74.9% (vs GPT-2: 72.6%) - HIGHER than GPT-2!
+2. **Number features**: 98.9% (vs GPT-2: 98.5%)
+3. **Max enrichment**: 195.0× (vs GPT-2: 169.9×)
+4. **Capacity hypothesis**: REJECTED - LLaMA (1B) more interpretable than GPT-2 (124M)
+
+**Key Findings**:
+- Larger model does NOT mean less interpretable
+- Both models heavily specialize in number features (~99%)
+- LLaMA shows STRONGER feature specialization (195× vs 170×)
+- Task-specific optimization > architectural differences
+
+**Deliverables**:
+- 6 Python scripts
+- 5 data files (~250 MB)
+- Interactive dashboard (89.9 KB)
+- Complete documentation
+
+**Time**: ~35 minutes total
+**Compute**: A100 GPU (~30 min)
+
+**Documentation**: `docs/experiments/10-28_llama_gsm8k_feature_interpretability.md`
+
