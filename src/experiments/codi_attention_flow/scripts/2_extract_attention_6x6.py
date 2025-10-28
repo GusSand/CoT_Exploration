@@ -30,11 +30,12 @@ sys.path.insert(0, str(project_root / 'codi'))
 sys.path.insert(0, str(Path(__file__).parent.parent.parent / 'activation_patching' / 'core'))
 
 from cache_activations_llama import ActivationCacherLLaMA
+from cache_activations import ActivationCacher
 
 
 def extract_6x6_attention(
     problem: dict,
-    cacher: ActivationCacherLLaMA
+    cacher  # ActivationCacherLLaMA or ActivationCacher
 ) -> tuple[np.ndarray, bool]:
     """
     Extract 6×6 attention matrix between continuous thought positions.
@@ -189,6 +190,7 @@ def extract_dataset(
     dataset_path: Path,
     model_path: str,
     output_dir: Path,
+    model_name: str = 'llama',
     n_problems: int = None
 ) -> None:
     """
@@ -196,6 +198,7 @@ def extract_dataset(
 
     Args:
         dataset_path: Path to dataset JSON
+        model_name: 'llama' or 'gpt2'
         model_path: Path to CODI model checkpoint
         output_dir: Output directory for results
         n_problems: Limit number of problems (None = all)
@@ -216,8 +219,14 @@ def extract_dataset(
 
     # Load model
     print(f"\nLoading CODI model from {model_path}...")
-    cacher = ActivationCacherLLaMA(model_path)
-    model = cacher.model
+    if model_name == 'llama':
+        print("Loading CODI LLaMA model from", model_path)
+        cacher = ActivationCacherLLaMA(model_path)
+    else:  # gpt2
+        print("Loading CODI GPT-2 model from", model_path)
+        cacher = ActivationCacher(model_path)
+
+    codi_model = cacher.model
     print(f"✓ Model loaded")
 
     # We'll get dimensions from first successful extraction
@@ -344,6 +353,7 @@ def main():
         dataset_path=dataset_path,
         model_path=model_paths[args.model],
         output_dir=output_dir,
+        model_name=args.model,
         n_problems=args.n_problems
     )
 
