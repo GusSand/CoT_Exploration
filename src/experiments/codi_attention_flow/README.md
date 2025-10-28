@@ -2,7 +2,7 @@
 
 Extract and analyze 6×6 attention patterns between continuous thought token positions to understand information flow during CODI's compressed reasoning.
 
-**Status**: ✅ Phase 1 Complete (LLaMA analysis)
+**Status**: ✅ Phase 1 & 2 Complete (LLaMA + GPT-2 comparison)
 
 ---
 
@@ -32,20 +32,55 @@ python src/experiments/codi_attention_flow/scripts/5_analyze_hubs_and_flow.py --
 
 **Total time**: ~2 minutes (mostly extraction)
 
-### Phase 2: GPT-2 Comparison (planned)
+### Phase 2: GPT-2 Analysis & Model Comparison
 
 ```bash
-# Same pipeline, just change --model flag
+# Run GPT-2 pipeline
 PYTHONPATH=/home/paperspace/dev/CoT_Exploration/codi:$PYTHONPATH \
     python src/experiments/codi_attention_flow/scripts/2_extract_attention_6x6.py --model gpt2
 python src/experiments/codi_attention_flow/scripts/3_aggregate_attention.py --model gpt2
 python src/experiments/codi_attention_flow/scripts/4_visualize_heatmaps.py --model gpt2
 python src/experiments/codi_attention_flow/scripts/5_analyze_hubs_and_flow.py --model gpt2
+
+# Compute head metrics for both models
+python src/experiments/codi_attention_flow/scripts/6_compute_head_metrics.py --model llama
+python src/experiments/codi_attention_flow/scripts/6_compute_head_metrics.py --model gpt2
+
+# Visualize critical heads
+python src/experiments/codi_attention_flow/scripts/7_visualize_critical_heads.py --model llama
+python src/experiments/codi_attention_flow/scripts/7_visualize_critical_heads.py --model gpt2
+
+# Compare models
+python src/experiments/codi_attention_flow/scripts/8_compare_models.py
 ```
+
+**Total time**: ~3 minutes
 
 ---
 
-## Key Findings (Phase 1)
+## Key Findings
+
+### Phase 1: LLaMA Hub-Centric Architecture
+
+**Finding**: Position 0 acts as a **working memory hub** that accumulates information from all other positions.
+
+### Phase 2: Model Comparison - Different Hub Strategies
+
+**Key Discovery**: LLaMA and GPT-2 use **different hub positions** for continuous thought aggregation:
+
+- **LLaMA (1B)**: Hub at Position 0 (1.18× uniform baseline)
+  - Critical head: L4H5 (Hub Aggregator, composite=0.528)
+  - Prefers middle layers (13/20 top heads)
+  - Hub Aggregators: 9/20, Skip Connections: 11/20
+
+- **GPT-2 (124M)**: Hub at Position 1 (1.63× uniform baseline)
+  - Critical head: L0H3 (Multi-Purpose, composite=0.600)
+  - Balanced early/middle (9/9 in top heads)
+  - Hub Aggregators: 10/20, Skip Connections: 9/20
+
+**Interpretation**: Both models use hub-centric reasoning, but GPT-2 shows stronger hub concentration (1.63× vs 1.18×) despite being a smaller model. This suggests different architectural strategies for information aggregation during compressed reasoning.
+
+### Original Phase 1 Details
 
 ### Hub-Centric Architecture Discovered
 

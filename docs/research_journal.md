@@ -2,6 +2,71 @@
 
 ## Experiment Log
 
+### 2025-10-28: CODI Critical Heads Analysis - LLaMA vs GPT-2 Comparison
+
+**Objective**: Identify critical attention heads responsible for information flow during continuous thought reasoning and compare strategies between LLaMA (1B) and GPT-2 (124M).
+
+**Status**: ✅ **COMPLETE** - Phase 1 & 2 finished (Stories 1.1-2.6)
+
+**Research Questions**:
+1. Which attention heads are most critical for continuous thought reasoning?
+2. Do LLaMA and GPT-2 use the same hub positions for information aggregation?
+3. What functional roles do critical heads serve?
+4. How does model size affect information flow architecture?
+
+**Approach**:
+- Extracted 6×6 attention matrices during continuous thought generation (100 GSM8K problems)
+- Computed 3 metrics per head: Flow (forward info), Hub (aggregation), Skip (long-range)
+- Composite ranking: 0.4*flow + 0.4*hub + 0.2*skip
+- Compared 512 LLaMA heads vs 144 GPT-2 heads
+
+**Key Results**:
+
+**Critical Heads Identified**:
+- **LLaMA Top**: L4H5 (Hub Aggregator, composite=0.528, hub at Position 0)
+- **GPT-2 Top**: L0H3 (Multi-Purpose, composite=0.600, hub at Position 1)
+
+**Hub Architecture Differences**:
+- LLaMA: Hub at Position 0 (1.18× uniform baseline) - weak concentration
+- GPT-2: Hub at Position 1 (1.63× uniform baseline) - 38% stronger despite being 8× smaller
+
+**Layer Strategy Differences**:
+- LLaMA: Concentrates critical heads in middle layers (13/20 in layers 5-10)
+- GPT-2: Balances early and middle layers (9 early + 9 middle out of top 20)
+
+**Functional Type Distribution (Top 20)**:
+- LLaMA: 9 Hub Aggregators, 11 Skip Connections
+- GPT-2: 10 Hub Aggregators, 9 Skip Connections, 1 Multi-Purpose
+
+**Major Findings**:
+
+1. **Hub-Centric Architecture is Universal**: Both models use hub-based aggregation (not sequential flow). No evidence of sequential processing (i→i-1 < 0.06 << 0.3 threshold)
+
+2. **Size-Performance Tradeoff**: Smaller model (GPT-2) compensates with:
+   - Stronger hub concentration (1.63× vs 1.18×)
+   - Multi-purpose head (L0H3 handles hub + skip)
+   - Earlier processing (L0-L1 vs L4-L5)
+
+3. **Different Hub Positions**: LLaMA uses CT0, GPT-2 uses CT1 - suggests flexibility in which continuous thought serves as aggregator
+
+4. **Depth Enables Specialization**: LLaMA's larger model distributes processing across middle layers with specialized heads; GPT-2 relies on versatile early-layer heads
+
+**Time**: ~1.5 hours total
+- Phase 1 (LLaMA): 30 minutes (extraction + analysis + commit)
+- Phase 2 (GPT-2 + comparison): 1 hour (extraction + head metrics + visualization + comparison)
+
+**Deliverables**:
+- 8 analysis scripts (~1,200 lines total)
+- 656 heads ranked (512 LLaMA + 144 GPT-2)
+- 13 visualizations (6 per model + 1 comparison)
+- 2 comprehensive reports (Phase 1 + Phase 2)
+
+**Documentation**:
+- [docs/experiments/10-28_llama_gsm8k_attention_flow_analysis.md](experiments/10-28_llama_gsm8k_attention_flow_analysis.md) (Phase 1)
+- [docs/experiments/10-28_both_gsm8k_critical_heads_comparison.md](experiments/10-28_both_gsm8k_critical_heads_comparison.md) (Phase 2)
+
+---
+
 ### 2025-10-27c: LLaMA SAE Feature Hierarchy Investigation
 
 **Objective**: Investigate whether LLaMA TopK SAEs learn hierarchical features (operation-level vs value-level) and validate interpretations via causal interventions.
