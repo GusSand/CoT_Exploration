@@ -1,6 +1,6 @@
 # Data Inventory - CoT Exploration Project
 
-**Last Updated**: 2025-10-28 (Added Section 22: Step-by-Step SAE Intervention Datasets)
+**Last Updated**: 2025-10-28 (Added Section 24: Liars-Bench Deception Detection Datasets)
 
 This document provides a complete breakdown of all datasets in the project, organized by experiment type and model.
 
@@ -3654,5 +3654,80 @@ python src/experiments/llama_feature_interpretability/scripts/6_create_dashboard
 | dashboard.html | 89.9 KB | Top 100 features | Visualization |
 
 **Total**: ~241 MB
+
+---
+
+## 24. Liars-Bench Deception Detection Datasets
+
+###Overview
+**Experiment**: Sprint 1 & 4 - Cross-scale deception detection analysis (Oct 25-28, 2025)
+**Models**: GPT-2 (124M) and LLaMA-3.2-3B (3B)
+**Purpose**: Test if continuous thoughts can detect deception; compare to response tokens; test scale effects
+**Key Finding**: Continuous thoughts CANNOT detect deception (50% = random) at any scale; response tokens achieve 70.49%
+
+**Location**: `src/experiments/liars_bench_codi/`
+
+---
+
+### 24.1 Proper Question-Level Splits (ZERO Overlap)
+
+**Base Dataset**: Liars-Bench Instructed Deception
+- **Source**: 960 unique questions, 20,798 total examples (honest + deceptive pairs)
+- **Split methodology**: 70% CODI train / 15% probe train / 15% probe test (question-level, zero overlap)
+
+#### CODI Training Set
+**File**: [`src/experiments/liars_bench_codi/data/processed/liars_bench_instructed_deception/train_proper.json`](../src/experiments/liars_bench_codi/data/processed/liars_bench_instructed_deception/train_proper.json) ✅
+
+**Purpose**: Train CODI models (GPT-2 and LLaMA-3.2-3B)
+
+**Size**:
+- 672 unique questions
+- 13,440 examples (6,720 honest + 6,720 deceptive)
+- Balanced 50/50 distribution
+
+**Generation**:
+```bash
+cd src/experiments/liars_bench_codi
+python scripts/create_proper_splits.py
+```
+
+---
+
+#### Probe Training Set
+**File**: [`src/experiments/liars_bench_codi/data/processed/liars_bench_instructed_deception/probe_train_proper.json`](../src/experiments/liars_bench_codi/data/processed/liars_bench_instructed_deception/probe_train_proper.json) ✅
+
+**Purpose**: Train linear probes to classify honest vs deceptive from activations
+
+**Size**:
+- 144 unique questions (DISJOINT from CODI train and probe test)
+- 288 examples (144 honest + 144 deceptive)
+
+---
+
+#### Probe Test Set
+**File**: [`src/experiments/liars_bench_codi/data/processed/liars_bench_instructed_deception/probe_test_proper.json`](../src/experiments/liars_bench_codi/data/processed/liars_bench_instructed_deception/probe_test_proper.json) ✅
+
+**Purpose**: Evaluate probes on completely unseen questions (true generalization test)
+
+**Size**:
+- 144 unique questions (DISJOINT from all training data)
+- 288 examples (144 honest + 144 deceptive)
+
+---
+
+### 24.2 Activation & Results Files
+
+| File | Size | Purpose | Key Result |
+|------|------|---------|------------|
+| probe_activations_gpt2_proper.json | ~15 MB | GPT-2 continuous thoughts | 50% accuracy |
+| probe_activations_response_proper.json | ~3 MB | GPT-2 response tokens | 70.49% accuracy |
+| probe_activations_llama3b_proper.json | ~45 MB | LLaMA continuous thoughts | 50% accuracy |
+| probe_results_gpt2_proper_v2.json | ~20 KB | GPT-2 probe results | Random chance |
+| probe_results_response_proper.json | ~5 KB | Response probe results | Superior |
+| probe_results_llama3b_proper.json | ~30 KB | LLaMA probe results | Scale doesn't help |
+
+**Total**: ~147 MB
+
+**Key Takeaway**: Continuous thoughts (50% accuracy) cannot detect deception at any scale. Response tokens (70.49%) are superior. This is a fundamental encoding limitation, not a capacity issue.
 
 ---
