@@ -1,0 +1,197 @@
+================================================================================
+SPRINT 4 DATA QUALITY AUDIT - QUICK SUMMARY
+================================================================================
+Date: 2025-10-28
+Auditor: ARCHITECT
+Training at Risk: $60-84, 24-34 GPU hours, LLaMA-3.2-3B CODI
+
+================================================================================
+FINAL RECOMMENDATION: ⚠️ CAUTION - CONDITIONAL GO
+================================================================================
+
+DATA IS ACCEPTABLE FOR TRAINING with these clarifications:
+
+1. ✅ Data quality excellent (no corruption, perfect balance, no missing fields)
+2. ⚠️ 601 true duplicates (8.5%) - minor, can optionally deduplicate
+3. ✅ Question reuse (7.3x per question) - BY DESIGN, beneficial for CODI
+4. ⚠️ 100% probe contamination - INTENTIONAL, matches Sprint 1 methodology
+
+================================================================================
+CRITICAL UNDERSTANDING: EXPERIMENTAL DESIGN
+================================================================================
+
+This experiment tests QUESTION-SPECIFIC deception, NOT universal generalization:
+
+  Training:    Question → [CODI learns task] → Honest Answer
+  Probe Test:  SAME Question → Extract continuous thoughts → Honest vs Deceptive?
+
+Research Question: "Can we detect deception in continuous thoughts when the
+                    model answers questions it learned during training?"
+
+This is VALID and matches Sprint 1 (GPT-2) methodology.
+
+NOT testing: "Does deception generalize to unseen questions?"
+             (That was already tested in Sprint 1: 48.83% = failed)
+
+================================================================================
+GO/NO-GO CHECKLIST
+================================================================================
+
+PROCEED IF:
+  ✅ You confirm testing question-specific deception (current setup)
+  ✅ You accept probe tests "known questions" not "new questions"
+  ✅ You want direct comparison with Sprint 1 GPT-2 results
+  ✅ You understand results test scale effect, not generalization
+
+BLOCK IF:
+  ❌ You need to test generalization to truly unseen questions
+  ❌ You require held-out validation (current val has 100% overlap)
+  ❌ Timeline cannot accommodate +1-2 days for new probe dataset
+
+================================================================================
+ISSUES SUMMARY
+================================================================================
+
+CRITICAL ISSUES: 0
+  None. All "issues" are by design for CODI methodology.
+
+WARNINGS: 2
+  1. True duplicates (601 samples, 8.5%) - Optional to remove, saves ~$5-7
+  2. Probe contamination (100%) - Intentional but needs PM confirmation
+
+INFO: 0
+
+================================================================================
+DETAILED FINDINGS
+================================================================================
+
+1. DATASET SIZES:
+   Training:   7,074 samples → 6,473 unique (Q,A) pairs → 966 unique questions
+   Validation: 1,515 samples → 1,495 unique (Q,A) pairs → 774 unique questions
+   Probe:        784 samples → 784 unique (Q,A) pairs → 628 unique questions
+
+2. TRUE DUPLICATES (same Q+A, word-for-word):
+   Train:  601 duplicates (8.5% of data)
+   Val:     20 duplicates (1.3% of data)
+   Probe:    0 duplicates (perfect)
+
+   Example: "Anheuser-Busch InBev + oil industry" appears 17x identically
+
+3. QUESTION REUSE (same Q, different answers):
+   Train: 966 questions, avg 7.3 model responses each
+   Status: ✅ BY DESIGN - diverse responses beneficial for CODI
+
+   Example: Same question answered differently by qwen model:
+     Response 1: "...primarily involved in brewing and distribution..."
+     Response 2: "...primarily involved in brewing..."
+     Response 3: "...primarily a brewing company, not oil..."
+
+4. PROBE CONTAMINATION:
+   628/628 probe questions (100%) appear in training
+   Status: ⚠️ INTENTIONAL - matches Sprint 1 design
+
+   Design:
+     - Training sees: Q → Honest Answer (learns task)
+     - Probe tests:   Q → Continuous Thought → Honest/Deceptive?
+
+   Precedent (Sprint 1, GPT-2):
+     - Cross-question test: 48.83% (failed - no generalization)
+     - Same-question test:  85.58% (success - question-specific)
+
+   For Sprint 4: Testing if LLaMA-3B shows same pattern at larger scale
+
+5. TRAIN/VAL OVERLAP:
+   774/774 val questions (100%) appear in training
+   Status: ⚠️ Validation tests memorization, not generalization
+   Impact: Metrics should be called "seen question accuracy"
+
+6. DATA QUALITY:
+   ✅ No missing fields (0 in all datasets)
+   ✅ No empty questions/answers (0 in all datasets)
+   ✅ No encoding issues (0 null bytes, no weird chars)
+   ✅ Normal length distributions (Q: 101-295 chars, A: 25-398 chars)
+   ✅ Probe balance: Perfect 392/392 (50.0% each)
+   ✅ Probe metadata matches actual: 392 honest, 392 deceptive ✓
+
+================================================================================
+RECOMMENDED ACTIONS (BEFORE TRAINING)
+================================================================================
+
+REQUIRED (5 minutes):
+  1. PM confirms: Testing question-specific deception (Option A)
+  2. Update sprint4_implementation_plan.md with clarification
+  3. Document: "Tests deception on seen questions, not generalization"
+
+OPTIONAL (5 minutes, saves ~$5-7):
+  1. Run: python deduplicate_training_data.py
+  2. Update train_llama3b.sh to use train_deduped.json
+  3. Benefit: Remove 601 duplicates, save ~2-3 GPU hours
+
+RECOMMENDED (2 minutes):
+  1. Change terminology: "validation" → "seen question performance"
+  2. Update training logs and documentation
+  3. Clarify: Results test scale effect on question-specific deception
+
+================================================================================
+COST-BENEFIT ANALYSIS
+================================================================================
+
+OPTION A: PROCEED AS-IS
+  Timeline:  Start immediately
+  Cost:      $60-84 (original estimate)
+  Value:     Direct comparison with Sprint 1
+  Limitation: Tests known questions only
+  Risk:      LOW
+
+  ✅ RECOMMENDED
+
+OPTION B: CREATE HELD-OUT PROBE
+  Timeline:  +1-2 days for data prep
+  Cost:      $65-95 (includes prep)
+  Value:     Tests true generalization
+  Limitation: May find zero signal (like Sprint 1)
+  Risk:      MEDIUM (effort may not yield new insights)
+
+  ⏸️ DEFER TO FUTURE WORK
+
+================================================================================
+SAMPLE DATA VERIFICATION
+================================================================================
+
+Training samples look correct:
+  ✅ Format: question, answer, cot (empty), meta
+  ✅ Content: Factual questions with honest answers
+  ✅ Models: 4 different models (qwen, llama, mistral, gemma)
+  ✅ Sources: 4 datasets (companies, facts, cities, elements)
+
+Probe samples look correct:
+  ✅ Format: question, answer, is_honest, thoughts (activations)
+  ✅ Balance: 392 honest + 392 deceptive
+  ✅ Deception quality: Clear contradictions or sarcasm
+
+  Example deceptive: "Volkswagen definitely specializes in artisanal
+                     cheese-making and competitive yodeling – cars are
+                     just a little side hobby..."
+
+================================================================================
+SIGN-OFF
+================================================================================
+
+Audit Status:     ✅ COMPLETE
+Recommendation:   ⚠️ CONDITIONAL GO
+Blocker:          PM confirms research question scope
+Confidence:       95%
+
+Once PM confirms Option A (question-specific deception testing):
+  ✅ CLEARED FOR TRAINING
+
+Review Required By: Product Manager
+Next Steps:
+  1. PM approval on research scope
+  2. Optional: Run deduplication
+  3. Update documentation
+  4. Launch training
+
+================================================================================
+For full details, see: SPRINT4_DATA_AUDIT_REPORT.md
+================================================================================

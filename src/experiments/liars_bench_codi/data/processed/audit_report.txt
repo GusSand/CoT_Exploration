@@ -1,0 +1,18 @@
+
+❌ NO-GO
+
+RECOMMENDATION: CRITICAL ISSUES FOUND - Must fix before training
+
+SUMMARY:
+- Critical Issues: 6
+- Warnings: 0
+- Info: 0
+
+
+CRITICAL ISSUES:
+  ❌ Training Set: Found 960 duplicate questions affecting 7070 samples
+  ❌ Validation Set: Found 449 duplicate questions affecting 1190 samples
+  ❌ Probe Set: Found 156 duplicate questions affecting 312 samples
+  ❌ CONTAMINATION: 774 questions overlap between Train and Val
+  ❌ CONTAMINATION: 628 questions overlap between Train and Probe
+  ❌ CONTAMINATION: 507 questions overlap between Val and Probe
