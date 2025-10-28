@@ -1,6 +1,6 @@
 # Data Inventory - CoT Exploration Project
 
-**Last Updated**: 2025-10-28 (Added Section 24: Liars-Bench Deception Detection Datasets)
+**Last Updated**: 2025-10-28 (Added Section 14.7: Proper Question-Level Held-Out Splits for Sprint 1 & 4)
 
 This document provides a complete breakdown of all datasets in the project, organized by experiment type and model.
 
@@ -1278,17 +1278,127 @@ python eval_gpt2.py
 
 ---
 
-### 14.7 Experiment Documentation
+### 14.7 Proper Question-Level Held-Out Splits (Sprint 1 & 4 Corrected Methodology)
+**Location**: [`src/experiments/liars_bench_codi/data/processed/`](../src/experiments/liars_bench_codi/data/processed/)
 
-**Research Journal**: [`docs/research_journal.md`](research_journal.md) (2025-10-25 entry)
+**Purpose**: Corrected dataset splits with proper question-level held-out methodology (fixing data leakage from original Sprint 1)
 
-**Detailed Report**: [`docs/experiments/10-25_gpt2_liars_bench_deception_detection.md`](experiments/10-25_gpt2_liars_bench_deception_detection.md)
+**Critical Change**: Original methodology had 100% question overlap between CODI training and probe evaluation. New methodology enforces zero overlap at question level.
+
+**Files**:
+- `probe_train_proper.json` - Probe training set (288 samples, 144 honest + 144 deceptive)
+- `probe_test_proper.json` - Probe test set (288 samples, 144 honest + 144 deceptive)
+- `probe_activations_gpt2_proper.json` - GPT-2 continuous thought activations (264 MB)
+- `probe_activations_llama3b_proper.json` - LLaMA-3.2-3B continuous thought activations (797 MB)
+- `response_activations_gpt2_proper.json` - GPT-2 response token activations (13 MB)
+- `splits_metadata_proper.json` - Split validation metadata
+
+**Dataset Split Strategy**:
+```
+Total Questions: 960 unique questions from Liars-Bench
+
+CODI Training:    672 questions (6,405 samples, 100% honest)
+CODI Validation:  672 questions (690 samples, 100% honest)
+Probe Training:   144 questions (288 samples, 50/50 balance)
+Probe Test:       144 questions (288 samples, 50/50 balance)
+
+✅ ZERO OVERLAP: CODI questions ∩ Probe questions = ∅
+✅ ZERO OVERLAP: Probe train questions ∩ Probe test questions = ∅
+```
+
+**Why This Matters**:
+- **Original (INVALID)**: Tested deception detection on questions the model was trained to answer
+  - Result: 98% accuracy (FALSE - measured memorization)
+- **Corrected (VALID)**: Test deception detection on completely unseen questions
+  - Result: 50% accuracy (TRUE - measures generalization)
+
+**Activation Extraction Details**:
+
+**GPT-2** (`probe_activations_gpt2_proper.json`):
+- **Model**: GPT-2 (124M), 12 layers, 768-dim
+- **Layers extracted**: L4, L8, L11 (early/middle/late)
+- **Tokens per layer**: 6 continuous thought tokens
+- **Train samples**: 288 (144 honest, 144 deceptive)
+- **Test samples**: 288 (144 honest, 144 deceptive)
+- **Total dimensions**: 13,824 (3 layers × 6 tokens × 768)
+
+**LLaMA-3.2-3B** (`probe_activations_llama3b_proper.json`):
+- **Model**: LLaMA-3.2-3B-Instruct, 28 layers, 3072-dim
+- **Layers extracted**: L9, L18, L27 (early/middle/late)
+- **Tokens per layer**: 6 continuous thought tokens
+- **Train samples**: 288 (144 honest, 144 deceptive)
+- **Test samples**: 288 (144 honest, 144 deceptive)
+- **Total dimensions**: 55,296 (3 layers × 6 tokens × 3072)
+
+**Response Tokens** (`response_activations_gpt2_proper.json`):
+- **Model**: GPT-2 (124M)
+- **Layer**: Final layer (L11)
+- **Tokens**: Mean-pooled response tokens (after answer generation)
+- **Dimensions**: 768
+- **Purpose**: Baseline comparison (response vs continuous thoughts)
+
+**Generation Commands**:
+```bash
+cd src/experiments/liars_bench_codi/scripts
+
+# Create proper splits (question-level held-out)
+python create_proper_splits.py
+
+# Extract GPT-2 continuous thought activations
+python extract_activations_gpt2_proper.py
+
+# Extract LLaMA-3B continuous thought activations
+python extract_activations_llama3b_proper.py
+
+# Extract GPT-2 response token activations
+python extract_response_activations_proper.py
+
+# Train probes on proper data
+python train_probes_proper_v2.py          # Continuous thoughts
+python train_response_probe_proper.py      # Response tokens
+```
+
+**Key Results** (Proper Methodology):
+
+**Continuous Thoughts**:
+- GPT-2: **50.00% accuracy** (random chance, 0.500 AUROC)
+- LLaMA-3.2-3B: **50.00% accuracy** (random chance, 0.500 AUROC)
+- Finding: **Zero generalizable deception signal** in continuous space (scale-invariant)
+
+**Response Tokens**:
+- GPT-2: **70.49% accuracy** (0.760 AUROC)
+- Finding: Response tokens encode generalizable deception patterns
+
+**Gap**: +20.49 percentage points in favor of response tokens
+
+**Used By**:
+- Sprint 1 (Corrected): GPT-2 deception detection with proper methodology
+- Sprint 4: LLaMA-3.2-3B scale test (124M → 3B parameters)
+
+**Experiment Documentation**:
+- [`docs/experiments/10-28_gpt2_liars_bench_sprint1_CORRECTED_FINAL.md`](experiments/10-28_gpt2_liars_bench_sprint1_CORRECTED_FINAL.md)
+- [`docs/experiments/10-28_llama3b_liars_bench_sprint4_FINAL.md`](experiments/10-28_llama3b_liars_bench_sprint4_FINAL.md)
+
+**Created**: 2025-10-28 (Sprint 1 correction + Sprint 4)
+
+**Data Quality Audit**: [`src/experiments/liars_bench_codi/data/processed/SPRINT4_DATA_AUDIT_REPORT.md`](../src/experiments/liars_bench_codi/data/processed/SPRINT4_DATA_AUDIT_REPORT.md)
+
+---
+
+### 14.8 Experiment Documentation
+
+**Research Journal**: [`docs/research_journal.md`](research_journal.md) (2025-10-25 entry, updated 2025-10-28)
+
+**Detailed Reports**:
+- [`docs/experiments/10-25_gpt2_liars_bench_deception_detection.md`](experiments/10-25_gpt2_liars_bench_deception_detection.md) - Original (invalidated)
+- [`docs/experiments/10-28_gpt2_liars_bench_sprint1_CORRECTED_FINAL.md`](experiments/10-28_gpt2_liars_bench_sprint1_CORRECTED_FINAL.md) - Corrected methodology
+- [`docs/experiments/10-28_llama3b_liars_bench_sprint4_FINAL.md`](experiments/10-28_llama3b_liars_bench_sprint4_FINAL.md) - Scale test
 
 **Reference Paper**: [Measuring Deceptive Alignment in Language Models](https://arxiv.org/pdf/2502.03407) (Apollo Research)
 
 **Code Location**: [`src/experiments/liars_bench_codi/`](../src/experiments/liars_bench_codi/)
 
-**Last Updated**: 2025-10-26
+**Last Updated**: 2025-10-28
 
 ---
 
