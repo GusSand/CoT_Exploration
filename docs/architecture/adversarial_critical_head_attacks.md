@@ -1,14 +1,29 @@
 # Adversarial Attacks on Critical Attention Heads
 
-**Context**: Our ablation experiments demonstrated that CODI models have a single point of failure - Layer 4 Head 5 (L4H5) for LLaMA. Ablating this single head causes 100% accuracy drop (59% → 0%). This raises important security questions about adversarial robustness.
+**Context**: Our ablation experiments demonstrated that CODI models have critical single points of failure:
+- **LLaMA (1B)**: Layer 4 Head 5 (L4H5) → 100% accuracy drop (59% → 0%)
+- **GPT-2 (124M)**: Layer 0 Head 3 (L0H3) - predicted based on Phase 2 analysis
 
-**Research Question**: How can an attacker exploit this critical head bottleneck to degrade model reasoning capability?
+This raises important security questions about adversarial robustness across different model sizes and architectures.
+
+**Research Question**: How can an attacker exploit these critical head bottlenecks to degrade model reasoning capability?
 
 ## Executive Summary
 
-We identified that CODI's hub-centric architecture creates a **critical computational bottleneck** at specific attention heads. While our ablation used direct weight manipulation (requiring model access), real-world attacks would target the **inputs or intermediate representations** that flow through these heads.
+We identified that CODI's hub-centric architecture creates **critical computational bottlenecks** at specific attention heads, but the architecture differs between models:
+
+| Model | Critical Head | Hub Position | Composite Score | Layer Depth |
+|-------|--------------|--------------|-----------------|-------------|
+| **LLaMA 1B** | L4H5 | CT0 | 0.528 | Middle (25%) |
+| **GPT-2 124M** | L0H3 | CT1 | 0.600 | Early (0%) |
+
+While our ablation used direct weight manipulation (requiring model access), real-world attacks would target the **inputs or intermediate representations** that flow through these heads.
 
 **Key Finding**: Attacking critical heads is fundamentally different from typical adversarial examples. Instead of manipulating the final prediction, attackers can **disrupt the reasoning process itself** by corrupting information flow through hub positions.
+
+**Model-Specific Considerations**:
+- LLaMA attacks target **middle-layer, CT0 hub** (more computation before critical point)
+- GPT-2 attacks target **early-layer, CT1 hub** (immediate vulnerability after first thought)
 
 ## Threat Model
 
@@ -38,13 +53,46 @@ We identified that CODI's hub-centric architecture creates a **critical computat
 3. **Covert Manipulation**: Corrupt reasoning without obvious signs (no gibberish)
 4. **Transferable Attacks**: Work across different CODI checkpoints
 
+## Attack Vector Comparison: LLaMA vs GPT-2
+
+### Architectural Differences
+
+| Aspect | LLaMA (1B) | GPT-2 (124M) | Security Implication |
+|--------|-----------|--------------|---------------------|
+| **Critical Head** | L4H5 | L0H3 | Different attack targets |
+| **Hub Position** | CT0 (first thought) | CT1 (second thought) | Different temporal vulnerability |
+| **Layer Depth** | 25% through model | 0% (first layer) | GPT-2 more immediately vulnerable |
+| **Composite Score** | 0.528 | 0.600 | GPT-2 has stronger critical head |
+| **Hub Strength** | 1.18× baseline | 1.63× baseline | GPT-2 hub is 38% stronger concentration |
+| **Model Size** | 1B parameters | 124M parameters | Smaller model = less redundancy |
+
+### Attack Difficulty Comparison
+
+**GPT-2 is MORE vulnerable**:
+1. **Layer 0 attack surface**: No layers to "protect" the critical head
+2. **Stronger hub dependency**: 1.63× concentration means more centralized bottleneck
+3. **Smaller model**: Less capacity for alternative reasoning paths
+4. **CT1 hub**: Attacker can observe/corrupt CT0 first, then target CT1
+
+**LLaMA is MORE resilient** (relatively):
+1. **Deeper critical layer**: 4 layers of processing provide some robustness
+2. **Weaker hub**: 1.18× concentration means less extreme bottleneck
+3. **Larger model**: More parameters = potentially more redundancy
+4. **CT0 hub**: Immediate aggregation may be harder to manipulate
+
+**Overall Assessment**: GPT-2's early-layer, strong-hub architecture makes it **more susceptible** to adversarial attacks on critical heads.
+
+---
+
 ## Attack Vectors
 
 ### 1. Input-Level Adversarial Perturbations
 
 **Concept**: Craft input perturbations that specifically corrupt hub position activations.
 
-**Method**:
+**Method** (model-specific):
+
+**LLaMA Attack** (Target: L4H5, Hub: CT0):
 ```
 Objective: Maximize corruption at L4H5 hub position (CT0)
 
@@ -57,16 +105,46 @@ Where:
 - Constraint: Keep input semantically similar (small L2/Linf norm)
 ```
 
+**GPT-2 Attack** (Target: L0H3, Hub: CT1):
+```
+Objective: Maximize corruption at L0H3 hub position (CT1)
+
+Loss = -similarity(hub_activation_clean, hub_activation_perturbed)
+      + λ * input_perturbation_norm
+
+Where:
+- hub_activation = hidden_states[layer=0, position=CT1]
+- EARLIER intervention (layer 0 vs layer 4)
+- May require SMALLER perturbations (less processing depth)
+- CT1 (not CT0) means second continuous thought
+```
+
+**Key Differences**:
+- **LLaMA**: 4 layers of processing before critical point → harder to perturb early
+- **GPT-2**: Layer 0 means immediate vulnerability → easier to attack but also easier to defend (can add robustness early)
+
 **Example Research Protocol**:
 ```python
-def generate_hub_attack(model, tokenizer, question, target_layer=4, hub_pos=0):
+def generate_hub_attack(model, tokenizer, question, model_name='llama'):
     """
     Generate adversarial perturbation targeting hub position.
+
+    Args:
+        model_name: 'llama' (L4, CT0) or 'gpt2' (L0, CT1)
 
     Returns:
         perturbed_question: Modified input that corrupts hub activation
         attack_success: Whether reasoning was disrupted
     """
+    # Model-specific parameters
+    if model_name == 'llama':
+        target_layer = 4
+        hub_pos = 0
+        perturbation_budget = 0.1  # Larger budget (deeper layer)
+    else:  # gpt2
+        target_layer = 0
+        hub_pos = 1
+        perturbation_budget = 0.05  # Smaller budget (earlier layer)
     # 1. Get clean hub activation
     clean_activation = extract_hub_activation(model, question, target_layer, hub_pos)
 
@@ -470,27 +548,89 @@ This mirrors best practices from computer security: "Assume attackers will find 
 
 ---
 
+## Model-Specific Experimental Priorities
+
+### For LLaMA (1B)
+
+**Priority Experiments** (in order):
+1. ✅ **Ablation validation** - COMPLETE (100% accuracy drop confirmed)
+2. **Input perturbation attacks** - Test L4 robustness
+3. **Prompt injection** - Target CT0 problem encoding
+4. **Adversarial training** - Add noise at Layer 4
+
+**Unique Considerations**:
+- Deeper layer means gradient-based attacks have more computation to work with
+- CT0 hub may be harder to manipulate (immediate aggregation)
+- 1B parameters provide more capacity for defenses
+
+### For GPT-2 (124M)
+
+**Priority Experiments** (in order):
+1. **Ablation validation** - Test L0H3 (predict 100% drop like LLaMA)
+2. **Early-layer attacks** - Exploit Layer 0 vulnerability
+3. **CT1 sequential attack** - Corrupt CT0, then target CT1 hub
+4. **Lightweight defenses** - Small model requires efficient protection
+
+**Unique Considerations**:
+- Layer 0 means attacks work with minimal computation
+- CT1 hub allows two-stage attack (corrupt CT0 → corrupt CT1)
+- 124M parameters = limited defensive capacity (can't add much redundancy)
+- Stronger hub (1.63×) means more extreme bottleneck
+
+**Comparative Experiment**:
+```bash
+# Test if GPT-2 is more vulnerable (as predicted)
+python test_comparative_attacks.py \
+  --models llama,gpt2 \
+  --attack_type input_perturbation \
+  --measure_budget  # How much perturbation needed?
+
+Expected: GPT-2 requires LESS perturbation to break
+```
+
+---
+
 ## Implementation Checklist for Security Researchers
 
-- [ ] **Phase 1: Attack Characterization** (2-3 weeks)
-  - [ ] Implement input perturbation attacks
-  - [ ] Test prompt injection variants
-  - [ ] Measure transfer across checkpoints
-  - [ ] Quantify attack success rates
+### Phase 1: Attack Characterization (2-3 weeks)
 
-- [ ] **Phase 2: Defense Development** (3-4 weeks)
-  - [ ] Design redundant hub architecture
-  - [ ] Implement adversarial training
-  - [ ] Build attention monitoring system
-  - [ ] Evaluate defense effectiveness
+**LLaMA-Specific**:
+- [x] Ablation validation (COMPLETE: L4H5 → 100% drop)
+- [ ] Input perturbation attacks on Layer 4
+- [ ] Prompt injection targeting CT0
+- [ ] Measure minimum perturbation budget
+- [ ] Test transfer to other LLaMA checkpoints
 
-- [ ] **Phase 3: Deployment Guidance** (1-2 weeks)
-  - [ ] Create security guidelines for CODI deployment
-  - [ ] Develop attack detection toolkit
-  - [ ] Write responsible disclosure report
-  - [ ] Coordinate with model developers
+**GPT-2-Specific**:
+- [ ] **Ablation validation** (Priority 1: Predict L0H3 → 100% drop)
+- [ ] Input perturbation attacks on Layer 0 (expect easier than LLaMA)
+- [ ] Prompt injection targeting CT1
+- [ ] Two-stage attack (CT0 → CT1)
+- [ ] Test transfer to other GPT-2 checkpoints
 
-**Total Estimated Time**: 6-9 weeks for comprehensive security analysis
+**Comparative Analysis**:
+- [ ] Compare perturbation budgets (LLaMA vs GPT-2)
+- [ ] Compare attack transferability
+- [ ] Identify model-size vs vulnerability relationship
+
+### Phase 2: Defense Development (3-4 weeks)
+
+**Universal Defenses**:
+- [ ] Redundant hub architecture (test on both models)
+- [ ] Adversarial training (layer-specific for each model)
+- [ ] Attention monitoring system (adapt for L4 vs L0)
+
+**Model-Specific Defenses**:
+- [ ] **LLaMA**: Leverage deeper layers for robustness
+- [ ] **GPT-2**: Add early-layer protection (critical for L0)
+
+### Phase 3: Deployment Guidance (1-2 weeks)
+- [ ] Create security guidelines (model-specific recommendations)
+- [ ] Develop attack detection toolkit (configurable for both models)
+- [ ] Write responsible disclosure report
+- [ ] Coordinate with model developers
+
+**Total Estimated Time**: 6-9 weeks for comprehensive security analysis covering both models
 
 ---
 
