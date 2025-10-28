@@ -101,18 +101,34 @@ def extract_answer(answer_str):
     """
     Extract numeric answer from GSM8K format.
 
+    Handles two formats:
+    1. Gold answer format: "...#### 42"
+    2. Generated answer format: "The answer is: 42" or "...42..." (any number)
+
     Args:
-        answer_str: GSM8K answer string (format: "...#### 42")
+        answer_str: Answer string
 
     Returns:
         int: Numeric answer
     """
+    import re
     try:
-        # Answer format: "#### 42"
-        answer = answer_str.split('####')[1].strip()
-        # Remove commas from numbers
-        answer = answer.replace(',', '')
-        return int(answer)
+        # Try gold answer format first: "#### 42"
+        if '####' in answer_str:
+            answer = answer_str.split('####')[1].strip()
+            answer = answer.replace(',', '')
+            return int(answer)
+
+        # Try generated answer format: extract numbers
+        # Remove commas first
+        answer_str = answer_str.replace(',', '')
+        # Find all numbers (including negative)
+        pred = [s for s in re.findall(r'-?\d+\.?\d*', answer_str)]
+        if pred:
+            # Return the last number found (usually the final answer)
+            return int(float(pred[-1]))
+
+        return None
     except (IndexError, ValueError) as e:
         print(f"Warning: Failed to parse answer '{answer_str}': {e}")
         return None
