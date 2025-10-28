@@ -23,7 +23,7 @@ This document provides a complete breakdown of all datasets in the project, orga
 | **GPT-2 Steering** | Activation steering | 344 train / 86 test | GPT-2 | [`results/steering_dataset_gpt2.json`](../src/experiments/activation_patching/results/steering_dataset_gpt2.json) |
 | **LLaMA Steering (Full)** | Activation steering | 425 train / 107 test | LLaMA | [`results/steering_dataset_llama_full.json`](../src/experiments/activation_patching/results/steering_dataset_llama_full.json) |
 | **SAE Error Analysis** | Error classification | 914 solutions (1.07 GB) | LLaMA | [`sae_error_analysis/data/error_analysis_dataset.json`](../src/experiments/sae_error_analysis/data/error_analysis_dataset.json) ⚠️ |
-| **CODI50 Dataset** | SAE intervention pilot | 50 problems (25 easy, 25 decompose) | GPT-2 or LLaMA | [`data/step_by_step/gsm8k_codi50.csv`](../data/step_by_step/gsm8k_codi50.csv) ⚠️ |
+| **CODI450 Dataset** | SAE intervention pilot | 450 problems (400 train, 50 test) | GPT-2 or LLaMA | [`data/step_by_step/gsm8k_codi450.manifest.json`](../data/step_by_step/) ⚠️ |
 | **Step-by-Step SAE Models** | Per-step feature dictionaries | 6 models (~96 MB) | GPT-2 or LLaMA | [`models/step_by_step/sae_step{k}/sae.pt`](../models/step_by_step/) ⚠️ |
 | **Intervention Results** | Smoke test feature interventions | ~450 rows | GPT-2 or LLaMA | [`results/step_by_step/smoke_test_results.csv`](../results/step_by_step/smoke_test_results.csv) ⚠️ |
 
@@ -3010,16 +3010,18 @@ python src/experiments/codi_attention_flow/scripts/1_sample_dataset.py --seed 42
 
 ## 22. Step-by-Step SAE Intervention Datasets
 
-### 22.1 CODI50 Dataset (Frozen GSM8K Subset)
-**File**: [`data/step_by_step/gsm8k_codi50.csv`](../data/step_by_step/gsm8k_codi50.csv)
+### 22.1 CODI450 Dataset (Frozen GSM8K Train/Test Splits)
+**Files**:
+- [`data/step_by_step/gsm8k_codi400_train.csv`](../data/step_by_step/gsm8k_codi400_train.csv)
+- [`data/step_by_step/gsm8k_codi50_test.csv`](../data/step_by_step/gsm8k_codi50_test.csv)
 
-**Purpose**: Deterministic 50-item GSM8K subset for reproducible SAE training and intervention experiments
+**Purpose**: Deterministic GSM8K subsets for high-quality SAE training (400 items) and stable intervention testing (50 items)
 
-**Size**: 50 problems (25 easy, 25 decompose)
+**Size**: 450 problems total (400 train, 50 test)
 
 **Status**: ⚠️ To be generated (Story 1)
 
-**Structure**:
+**Structure** (same for both train and test):
 ```csv
 id,question,answer,split,difficulty,baseline_rank
 gsm8k_test_042,"Question text...",42,test,easy,1
@@ -3038,30 +3040,33 @@ gsm8k_test_157,"Question text...",157,test,decompose,5
 **Sampling Method**:
 - Source: GSM8K test set (1,319 problems total)
 - Method: Deterministic sampling with seed=42
-- Stratification: 25 easy (baseline_rank=1, simple arithmetic) + 25 decompose (baseline_rank>1, requires reasoning)
+- Stratification:
+  - **Train (400)**: 200 easy (baseline_rank=1) + 200 decompose (baseline_rank>1)
+  - **Test (50)**: 25 easy + 25 decompose
 - Tagging heuristic: CODI baseline rank (primary) or arithmetic operation count (fallback)
 
 **Recreation**:
 ```bash
 cd /home/paperspace/dev/CoT_Exploration
-python src/experiments/step_by_step/scripts/create_codi50_dataset.py --seed 42
+python src/experiments/step_by_step/scripts/create_codi450_dataset.py --seed 42
 ```
 
 **Used By**:
-- SAE training (Story 2): Training data for per-step SAEs
-- Intervention smoke test (Story 4): Test set for feature interventions
+- SAE training (Story 2): 400-item train set for high-quality per-step SAEs
+- Intervention smoke test (Story 4): 50-item test set for feature interventions
 - Feature analysis (Story 5): Visualization and attribution
 
 **Validation**:
-- 50 unique items (no duplicates)
-- Exactly 25 easy + 25 decompose
+- 450 unique items total (no duplicates)
+- Train: Exactly 200 easy + 200 decompose
+- Test: Exactly 25 easy + 25 decompose
 - All items from GSM8K test split (no train leakage)
-- Manifest SHA256 hash matches dataset content
+- Manifest SHA256 hashes match both CSVs
 
 ---
 
-### 22.2 CODI50 Manifest
-**File**: [`data/step_by_step/gsm8k_codi50.manifest.json`](../data/step_by_step/gsm8k_codi50.manifest.json)
+### 22.2 CODI450 Manifest
+**File**: [`data/step_by_step/gsm8k_codi450.manifest.json`](../data/step_by_step/gsm8k_codi450.manifest.json)
 
 **Purpose**: Metadata for reproducibility and validation
 
@@ -3072,21 +3077,28 @@ python src/experiments/step_by_step/scripts/create_codi50_dataset.py --seed 42
 {
   "created": "2025-10-28",
   "seed": 42,
-  "total_items": 50,
-  "splits": {
+  "total_items": 450,
+  "train_items": 400,
+  "test_items": 50,
+  "train_splits": {
+    "easy": 200,
+    "decompose": 200
+  },
+  "test_splits": {
     "easy": 25,
     "decompose": 25
   },
   "heuristic": "codi_baseline_rank",
-  "baseline_checkpoint": "path/to/codi_checkpoint.pt",
-  "sha256": "abc123...",
+  "baseline_checkpoint": "/home/paperspace/codi_ckpt/gpt2_gsm8k/pytorch_model.bin",
+  "sha256_train": "abc123...",
+  "sha256_test": "def456...",
   "gsm8k_version": "1.0",
   "source_split": "test"
 }
 ```
 
 **Validation Fields**:
-- `sha256`: Hash of CSV content (for integrity checks)
+- `sha256_train`, `sha256_test`: Hash of CSV content (for integrity checks)
 - `seed`: Random seed (42)
 - `baseline_checkpoint`: Path to CODI model used for tagging
 
@@ -3094,12 +3106,12 @@ python src/experiments/step_by_step/scripts/create_codi50_dataset.py --seed 42
 
 ---
 
-### 22.3 CODI50 Baseline Cache
-**File**: [`data/step_by_step/gsm8k_codi50_baseline_cache.pt`](../data/step_by_step/gsm8k_codi50_baseline_cache.pt)
+### 22.3 CODI450 Baseline Cache
+**File**: [`data/step_by_step/gsm8k_codi450_baseline_cache.pt`](../data/step_by_step/gsm8k_codi450_baseline_cache.pt)
 
-**Purpose**: Cached CODI model outputs (logits, ranks) for 50 items to avoid recomputation
+**Purpose**: Cached CODI model outputs (logits, ranks) for 450 items to avoid recomputation
 
-**Size**: ~5 MB (50 items × vocab_size logits)
+**Size**: ~22 MB (450 items × vocab_size logits)
 
 **Status**: ⚠️ To be generated (Story 1)
 
@@ -3112,20 +3124,21 @@ python src/experiments/step_by_step/scripts/create_codi50_dataset.py --seed 42
     "top5_tokens": ["42", "43", "41", ...],
     "probs": torch.Tensor([vocab_size])  # Softmax probabilities
   },
-  ...
+  # ... 450 items total
 }
 ```
 
 **Usage**:
-- Story 1: Difficulty tagging (easy vs decompose)
+- Story 1: Difficulty tagging (easy vs decompose) for all 450 items
 - Story 4: Pre-intervention baseline comparison
 - Story 5: Visualization (rank improvement calculations)
 
 **Recreation**:
 ```bash
 python src/experiments/step_by_step/scripts/create_baseline_cache.py \
-  --dataset data/step_by_step/gsm8k_codi50.csv \
-  --checkpoint path/to/codi_checkpoint.pt
+  --train data/step_by_step/gsm8k_codi400_train.csv \
+  --test data/step_by_step/gsm8k_codi50_test.csv \
+  --checkpoint /home/paperspace/codi_ckpt/gpt2_gsm8k/pytorch_model.bin
 ```
 
 ---
@@ -3155,8 +3168,8 @@ SparseAutoencoder(
 ```
 
 **Training Configuration**:
-- Dataset: CODI50 (50 items)
-- L1 coefficient: 0.001–0.01 (tuned)
+- Dataset: CODI400 train (400 items)
+- L1 coefficient: 0.005 (validated from Section 18 experiments)
 - Optimizer: Adam (lr=1e-4)
 - Epochs: 100 (early stopping on validation MSE)
 - Seed: 42
@@ -3165,7 +3178,7 @@ SparseAutoencoder(
 **Quality Thresholds**:
 - Reconstruction MSE: <0.2 (normalized activations)
 - Sparsity: 10–80 active features/sample (L0 norm)
-- Dead features: <30% of dictionary
+- Dead features: <20% of dictionary (improved with 400 training samples)
 
 **Used By**:
 - Story 3: Intervention hook (loads SAE for feature editing)
@@ -3175,7 +3188,7 @@ SparseAutoencoder(
 **Recreation**:
 ```bash
 python src/experiments/step_by_step/scripts/train_step_saes.py \
-  --dataset data/step_by_step/gsm8k_codi50.csv \
+  --dataset data/step_by_step/gsm8k_codi400_train.csv \
   --config configs/step_by_step/sae_training.yaml
 ```
 
@@ -3397,20 +3410,25 @@ feature_id,step,mean_rank_improvement,flip_to_correct_rate,flip_to_wrong_rate,n_
 
 ```
 GSM8K Test (1,319)
-       ↓ sample(seed=42, n=50)
-CODI50 Dataset (50)
-       ↓ tag(baseline_rank)
-25 Easy + 25 Decompose
-       ↓ extract_activations(K=6 steps)
-Activation Tensors × 6
-       ↓ train_sae(dict_size=8192)
-SAE Models × 6
-       ↓ select_top_features(k=3/step)
-9 Features (3 per step)
-       ↓ intervene(deltas=5, items=10)
-450 Intervention Results
-       ↓ aggregate()
-Summary Statistics + Visualizations
+       ↓ sample(seed=42, n=450)
+CODI450 Dataset (450)
+       ├─ CODI400 Train (400)
+       │    ↓ tag(baseline_rank)
+       │  200 Easy + 200 Decompose
+       │    ↓ extract_activations(K=6 steps)
+       │  Activation Tensors × 6 × 400
+       │    ↓ train_sae(dict_size=8192)
+       │  SAE Models × 6
+       │    ↓ select_top_features(k=3/step)
+       │  9 Features (3 per step)
+       │
+       └─ CODI50 Test (50)
+            ↓ tag(baseline_rank)
+          25 Easy + 25 Decompose
+            ↓ intervene(features=9, deltas=5, items=50)
+          450 Intervention Results (9×5×10 target items)
+            ↓ aggregate()
+          Summary Statistics + Visualizations
 ```
 
 ---
@@ -3447,30 +3465,34 @@ Summary Statistics + Visualizations
 
 | Dataset | Size | Git Tracked |
 |---------|------|-------------|
-| CODI50 CSV | <100 KB | ✅ Yes |
-| CODI50 Manifest | <5 KB | ✅ Yes |
-| Baseline Cache | ~5 MB | ❌ No (.gitignore) |
+| CODI400 Train CSV | <200 KB | ✅ Yes |
+| CODI50 Test CSV | <25 KB | ✅ Yes |
+| CODI450 Manifest | <5 KB | ✅ Yes |
+| Baseline Cache | ~22 MB | ❌ No (.gitignore) |
 | SAE Models (6×) | ~96 MB | ❌ No (.gitignore) |
 | Feature Exemplars (6×) | ~12 MB | ❌ No (.gitignore) |
 | Intervention Results | <1 MB | ✅ Yes |
 | Visualizations | <5 MB | ✅ Yes (PNGs) |
-| **Total** | **~120 MB** | **~6 MB tracked** |
+| **Total** | **~136 MB** | **~6 MB tracked** |
 
 ---
 
 ## Validation Checklist (Step-by-Step)
 
 ### Dataset Integrity
-- [ ] CODI50 has exactly 50 items (25 easy, 25 decompose)
-- [ ] Manifest SHA256 matches CSV content
+- [ ] CODI400 train has exactly 400 items (200 easy, 200 decompose)
+- [ ] CODI50 test has exactly 50 items (25 easy, 25 decompose)
+- [ ] Manifest SHA256 hashes match both CSVs
 - [ ] All items from GSM8K test split (no train leakage)
-- [ ] Baseline cache has entries for all 50 items
+- [ ] Baseline cache has entries for all 450 items
+- [ ] No duplicate questions across train and test
+- [ ] Difficulty split validated (easy=rank1, decompose>rank1)
 
 ### SAE Quality
-- [ ] All 6 SAE models trained successfully
+- [ ] All 6 SAE models trained successfully on 400 samples
 - [ ] Reconstruction MSE <0.2 for all steps
 - [ ] Sparsity 0.80–0.95 for all steps
-- [ ] Dead features <30% for all steps
+- [ ] Dead features <20% for all steps (improved threshold)
 - [ ] Feature exemplars extracted for all 8192 features/step
 
 ### Intervention Validity
@@ -3488,3 +3510,149 @@ Summary Statistics + Visualizations
 
 ---
 
+
+---
+
+## 23. LLaMA Feature Interpretability Datasets
+
+**Purpose**: Comprehensive feature interpretability analysis on LLaMA-3.2-1B to compare with GPT-2 and test capacity hypothesis
+
+**Experiment**: Feature-token correlation analysis using chi-squared tests
+
+**Status**: ✅ Complete (2025-10-28)
+
+### 23.1 LLaMA Extracted Features
+**File**: [`src/experiments/llama_feature_interpretability/data/llama_extracted_features.pt`](../src/experiments/llama_feature_interpretability/data/llama_extracted_features.pt)
+
+**Purpose**: Features extracted from all 96 LLaMA SAEs (16 layers × 6 positions)
+
+**Size**: 195.9 MB
+
+**Samples**: 96,000 (1,000 problems × 96 SAEs)
+
+**Config**:
+- SAE: K=100, d=512 (sweet spot)
+- Sparsity: 19.5%
+- Source: `src/experiments/topk_grid_pilot/results/checkpoints/`
+
+**Generation**:
+```bash
+python src/experiments/llama_feature_interpretability/scripts/1_extract_features.py
+```
+
+---
+
+### 23.2 LLaMA CoT Tokens
+**File**: [`src/experiments/llama_feature_interpretability/data/llama_cot_tokens.json`](../src/experiments/llama_feature_interpretability/data/llama_cot_tokens.json)
+
+**Purpose**: Parsed calculation tokens from LLaMA's CoT sequences
+
+**Size**: 436.7 KB
+
+**Tokens**: 628 unique tokens
+
+**Avg per problem**: 16.9 tokens
+
+**Generation**:
+```bash
+python src/experiments/llama_feature_interpretability/scripts/2_parse_cot_tokens.py
+```
+
+---
+
+### 23.3 LLaMA Feature-Token Correlations
+**File**: [`src/experiments/llama_feature_interpretability/data/llama_feature_token_correlations.json`](../src/experiments/llama_feature_interpretability/data/llama_feature_token_correlations.json)
+
+**Purpose**: Statistical correlations between features and CoT tokens
+
+**Size**: 23.7 MB
+
+**Features analyzed**: 31,057 (63.2% of 49,152 total)
+
+**Interpretable features**: 18,551 (37.7%)
+
+**Total correlations**: 60,296
+
+**Criteria**: p < 0.01, enrichment ≥ 2.0, min 20 activations
+
+**Runtime**: ~24.5 minutes on A100
+
+**Generation**:
+```bash
+python src/experiments/llama_feature_interpretability/scripts/3_compute_correlations.py
+```
+
+---
+
+### 23.4 LLaMA Labeled Features
+**File**: [`src/experiments/llama_feature_interpretability/data/llama_labeled_features.json`](../src/experiments/llama_feature_interpretability/data/llama_labeled_features.json)
+
+**Purpose**: Human-readable labels for monosemantic features
+
+**Size**: 21.4 MB
+
+**Labeled features**: 18,551
+
+**Monosemantic**: 13,890 (74.9%)
+
+**Polysemantic**: 4,661 (25.1%)
+
+**Labeling criteria**: Enrichment ≥ 5.0 OR top 3 correlations same category
+
+**Generation**:
+```bash
+python src/experiments/llama_feature_interpretability/scripts/4_label_features.py
+```
+
+---
+
+### 23.5 Model Comparison
+**File**: [`src/experiments/llama_feature_interpretability/data/model_comparison.json`](../src/experiments/llama_feature_interpretability/data/model_comparison.json)
+
+**Purpose**: Direct comparison of LLaMA vs GPT-2 feature interpretability
+
+**Size**: 7.9 KB
+
+**Key findings**:
+- LLaMA monosemantic rate: 74.9% (vs GPT-2: 72.6%)
+- Number features: 98.9% (vs GPT-2: 98.5%)
+- Max enrichment: 195.0× (vs GPT-2: 169.9×)
+- **Capacity hypothesis**: REJECTED
+
+**Generation**:
+```bash
+python src/experiments/llama_feature_interpretability/scripts/5_compare_models.py
+```
+
+---
+
+### 23.6 Interactive Dashboard
+**File**: [`src/experiments/llama_feature_interpretability/visualizations/dashboard.html`](../src/experiments/llama_feature_interpretability/visualizations/dashboard.html)
+
+**Purpose**: Interactive exploration of top features
+
+**Size**: 89.9 KB
+
+**Features shown**: Top 100 by enrichment + category breakdowns
+
+**Generation**:
+```bash
+python src/experiments/llama_feature_interpretability/scripts/6_create_dashboard.py
+```
+
+---
+
+### Dataset Summary
+
+| File | Size | Samples/Features | Purpose |
+|------|------|-----------------|---------|
+| llama_extracted_features.pt | 195.9 MB | 96,000 samples | Feature extraction |
+| llama_cot_tokens.json | 436.7 KB | 628 tokens | Token vocabulary |
+| llama_feature_token_correlations.json | 23.7 MB | 18,551 features | Correlations |
+| llama_labeled_features.json | 21.4 MB | 13,890 monosemantic | Labels |
+| model_comparison.json | 7.9 KB | 2 models | Comparison |
+| dashboard.html | 89.9 KB | Top 100 features | Visualization |
+
+**Total**: ~241 MB
+
+---
