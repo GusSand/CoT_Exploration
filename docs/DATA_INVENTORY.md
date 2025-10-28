@@ -1,6 +1,6 @@
 # Data Inventory - CoT Exploration Project
 
-**Last Updated**: 2025-10-27 (Added Section 21: Attention Flow Analysis Datasets)
+**Last Updated**: 2025-10-28 (Added Section 22: Step-by-Step SAE Intervention Datasets)
 
 This document provides a complete breakdown of all datasets in the project, organized by experiment type and model.
 
@@ -23,6 +23,9 @@ This document provides a complete breakdown of all datasets in the project, orga
 | **GPT-2 Steering** | Activation steering | 344 train / 86 test | GPT-2 | [`results/steering_dataset_gpt2.json`](../src/experiments/activation_patching/results/steering_dataset_gpt2.json) |
 | **LLaMA Steering (Full)** | Activation steering | 425 train / 107 test | LLaMA | [`results/steering_dataset_llama_full.json`](../src/experiments/activation_patching/results/steering_dataset_llama_full.json) |
 | **SAE Error Analysis** | Error classification | 914 solutions (1.07 GB) | LLaMA | [`sae_error_analysis/data/error_analysis_dataset.json`](../src/experiments/sae_error_analysis/data/error_analysis_dataset.json) ⚠️ |
+| **CODI50 Dataset** | SAE intervention pilot | 50 problems (25 easy, 25 decompose) | GPT-2 or LLaMA | [`data/step_by_step/gsm8k_codi50.csv`](../data/step_by_step/gsm8k_codi50.csv) ⚠️ |
+| **Step-by-Step SAE Models** | Per-step feature dictionaries | 6 models (~96 MB) | GPT-2 or LLaMA | [`models/step_by_step/sae_step{k}/sae.pt`](../models/step_by_step/) ⚠️ |
+| **Intervention Results** | Smoke test feature interventions | ~450 rows | GPT-2 or LLaMA | [`results/step_by_step/smoke_test_results.csv`](../results/step_by_step/smoke_test_results.csv) ⚠️ |
 
 ---
 
@@ -3002,6 +3005,486 @@ python src/experiments/codi_attention_flow/scripts/1_sample_dataset.py --seed 42
 - ✅ All questions non-empty (min length: 85 chars)
 - ✅ All answers present
 - ✅ All IDs from training set (train_53 to train_7308)
+
+---
+
+## 22. Step-by-Step SAE Intervention Datasets
+
+### 22.1 CODI50 Dataset (Frozen GSM8K Subset)
+**File**: [`data/step_by_step/gsm8k_codi50.csv`](../data/step_by_step/gsm8k_codi50.csv)
+
+**Purpose**: Deterministic 50-item GSM8K subset for reproducible SAE training and intervention experiments
+
+**Size**: 50 problems (25 easy, 25 decompose)
+
+**Status**: ⚠️ To be generated (Story 1)
+
+**Structure**:
+```csv
+id,question,answer,split,difficulty,baseline_rank
+gsm8k_test_042,"Question text...",42,test,easy,1
+gsm8k_test_157,"Question text...",157,test,decompose,5
+...
+```
+
+**Columns**:
+- `id`: Unique GSM8K test item ID
+- `question`: Problem text
+- `answer`: Numerical answer
+- `split`: Always "test" (from GSM8K test set)
+- `difficulty`: "easy" | "decompose" (tagged via CODI baseline rank)
+- `baseline_rank`: Rank of correct answer in CODI baseline logits (1=top)
+
+**Sampling Method**:
+- Source: GSM8K test set (1,319 problems total)
+- Method: Deterministic sampling with seed=42
+- Stratification: 25 easy (baseline_rank=1, simple arithmetic) + 25 decompose (baseline_rank>1, requires reasoning)
+- Tagging heuristic: CODI baseline rank (primary) or arithmetic operation count (fallback)
+
+**Recreation**:
+```bash
+cd /home/paperspace/dev/CoT_Exploration
+python src/experiments/step_by_step/scripts/create_codi50_dataset.py --seed 42
+```
+
+**Used By**:
+- SAE training (Story 2): Training data for per-step SAEs
+- Intervention smoke test (Story 4): Test set for feature interventions
+- Feature analysis (Story 5): Visualization and attribution
+
+**Validation**:
+- 50 unique items (no duplicates)
+- Exactly 25 easy + 25 decompose
+- All items from GSM8K test split (no train leakage)
+- Manifest SHA256 hash matches dataset content
+
+---
+
+### 22.2 CODI50 Manifest
+**File**: [`data/step_by_step/gsm8k_codi50.manifest.json`](../data/step_by_step/gsm8k_codi50.manifest.json)
+
+**Purpose**: Metadata for reproducibility and validation
+
+**Status**: ⚠️ To be generated (Story 1)
+
+**Structure**:
+```json
+{
+  "created": "2025-10-28",
+  "seed": 42,
+  "total_items": 50,
+  "splits": {
+    "easy": 25,
+    "decompose": 25
+  },
+  "heuristic": "codi_baseline_rank",
+  "baseline_checkpoint": "path/to/codi_checkpoint.pt",
+  "sha256": "abc123...",
+  "gsm8k_version": "1.0",
+  "source_split": "test"
+}
+```
+
+**Validation Fields**:
+- `sha256`: Hash of CSV content (for integrity checks)
+- `seed`: Random seed (42)
+- `baseline_checkpoint`: Path to CODI model used for tagging
+
+**Usage**: Dataset versioning, reproducibility validation, citation in papers
+
+---
+
+### 22.3 CODI50 Baseline Cache
+**File**: [`data/step_by_step/gsm8k_codi50_baseline_cache.pt`](../data/step_by_step/gsm8k_codi50_baseline_cache.pt)
+
+**Purpose**: Cached CODI model outputs (logits, ranks) for 50 items to avoid recomputation
+
+**Size**: ~5 MB (50 items × vocab_size logits)
+
+**Status**: ⚠️ To be generated (Story 1)
+
+**Structure** (PyTorch dict):
+```python
+{
+  "gsm8k_test_042": {
+    "logits": torch.Tensor([vocab_size]),  # Raw logits
+    "rank": 1,  # Rank of correct answer
+    "top5_tokens": ["42", "43", "41", ...],
+    "probs": torch.Tensor([vocab_size])  # Softmax probabilities
+  },
+  ...
+}
+```
+
+**Usage**:
+- Story 1: Difficulty tagging (easy vs decompose)
+- Story 4: Pre-intervention baseline comparison
+- Story 5: Visualization (rank improvement calculations)
+
+**Recreation**:
+```bash
+python src/experiments/step_by_step/scripts/create_baseline_cache.py \
+  --dataset data/step_by_step/gsm8k_codi50.csv \
+  --checkpoint path/to/codi_checkpoint.pt
+```
+
+---
+
+### 22.4 Per-Step SAE Models (6 models)
+**Files**:
+- [`models/step_by_step/sae_step0/sae.pt`](../models/step_by_step/sae_step0/sae.pt)
+- [`models/step_by_step/sae_step1/sae.pt`](../models/step_by_step/sae_step1/sae.pt)
+- [`models/step_by_step/sae_step2/sae.pt`](../models/step_by_step/sae_step2/sae.pt)
+- [`models/step_by_step/sae_step3/sae.pt`](../models/step_by_step/sae_step3/sae.pt)
+- [`models/step_by_step/sae_step4/sae.pt`](../models/step_by_step/sae_step4/sae.pt)
+- [`models/step_by_step/sae_step5/sae.pt`](../models/step_by_step/sae_step5/sae.pt)
+
+**Purpose**: Sparse autoencoder dictionaries trained on CODI latent representations at each reasoning step
+
+**Size**: ~16 MB per model (512 input × 8192 dictionary × 2 matrices)
+
+**Status**: ⚠️ To be generated (Story 2)
+
+**Architecture**:
+```python
+SparseAutoencoder(
+  input_dim=512,      # CODI latent dimension
+  dict_size=8192,     # 16× expansion
+  tied_weights=False
+)
+```
+
+**Training Configuration**:
+- Dataset: CODI50 (50 items)
+- L1 coefficient: 0.001–0.01 (tuned)
+- Optimizer: Adam (lr=1e-4)
+- Epochs: 100 (early stopping on validation MSE)
+- Seed: 42
+- Batch size: 64
+
+**Quality Thresholds**:
+- Reconstruction MSE: <0.2 (normalized activations)
+- Sparsity: 10–80 active features/sample (L0 norm)
+- Dead features: <30% of dictionary
+
+**Used By**:
+- Story 3: Intervention hook (loads SAE for feature editing)
+- Story 4: Smoke test sweep (applies interventions)
+- Story 5: Feature attribution (identifies top features)
+
+**Recreation**:
+```bash
+python src/experiments/step_by_step/scripts/train_step_saes.py \
+  --dataset data/step_by_step/gsm8k_codi50.csv \
+  --config configs/step_by_step/sae_training.yaml
+```
+
+---
+
+### 22.5 SAE Training Statistics
+**Files**:
+- `models/step_by_step/sae_step{k}/train_stats.json` (k=0 to 5)
+- `models/step_by_step/sae_summary.csv`
+
+**Purpose**: Training metrics and quality validation for each SAE
+
+**Status**: ⚠️ To be generated (Story 2)
+
+**Structure** (train_stats.json):
+```json
+{
+  "step": 3,
+  "final_recon_mse": 0.152,
+  "final_sparsity": 0.92,
+  "dead_features": 1200,
+  "dead_feature_pct": 14.6,
+  "training_time_sec": 1234,
+  "epochs_trained": 87,
+  "early_stopped": true,
+  "config": {
+    "l1_coeff": 0.001,
+    "dict_size": 8192,
+    "learning_rate": 0.0001
+  }
+}
+```
+
+**Summary CSV**:
+```csv
+step,recon_mse,sparsity,dead_features,dead_pct,training_time
+0,0.145,0.91,1150,14.0,1205
+1,0.158,0.89,1300,15.9,1187
+...
+```
+
+**Usage**: Quality validation, model selection, paper reporting
+
+---
+
+### 22.6 SAE Feature Exemplars
+**Files**: `models/step_by_step/sae_step{k}/feature_exemplars.parquet` (k=0 to 5)
+
+**Purpose**: Max-activating examples for each SAE feature (for interpretability)
+
+**Size**: ~2 MB per step (8192 features × 5 exemplars)
+
+**Status**: ⚠️ To be generated (Story 2)
+
+**Structure**:
+```
+feature_id | item_id         | activation | question
+------------------------------------------------------
+0          | gsm8k_test_042  | 3.45       | "Question..."
+0          | gsm8k_test_157  | 2.87       | "Question..."
+...
+8191       | gsm8k_test_999  | 0.12       | "Question..."
+```
+
+**Columns**:
+- `feature_id`: SAE dictionary feature (0 to 8191)
+- `item_id`: GSM8K problem ID
+- `activation`: Feature activation magnitude
+- `question`: Problem text (for human inspection)
+
+**Usage**:
+- Story 2: Feature analysis (what does feature X respond to?)
+- Story 5: Visualization (show exemplars for top causal features)
+- Future: Manual feature labeling
+
+---
+
+### 22.7 Top Features by Step
+**Files**: `models/step_by_step/sae_step{k}/top_features.json` (k=0 to 5)
+
+**Purpose**: Ranked list of most important features per step (by max activation)
+
+**Status**: ⚠️ To be generated (Story 2)
+
+**Structure**:
+```json
+{
+  "step": 3,
+  "top_features": [
+    {"feature_id": 1547, "max_activation": 4.23, "mean_activation": 1.12},
+    {"feature_id": 892, "max_activation": 3.87, "mean_activation": 0.98},
+    ...
+  ]
+}
+```
+
+**Usage**:
+- Story 4: Feature selection for smoke test (pick top-K features)
+- Story 5: Feature importance visualization
+
+---
+
+### 22.8 Intervention Results (Smoke Test)
+**File**: [`results/step_by_step/smoke_test_results.csv`](../results/step_by_step/smoke_test_results.csv)
+
+**Purpose**: Raw intervention experiment results (feature × Δ × item grid)
+
+**Size**: ~450 rows (3 features × 3 steps × 5 Δ values × 10 items)
+
+**Status**: ⚠️ To be generated (Story 4)
+
+**Structure**:
+```csv
+item_id,step,feature_id,delta,pre_rank,post_rank,rank_delta,answer_changed,answer_correct
+gsm8k_test_042,2,1547,0.5,5,1,-4,True,True
+gsm8k_test_042,2,1547,0.3,5,3,-2,True,False
+gsm8k_test_042,2,1547,0.0,5,5,0,False,False
+...
+```
+
+**Columns**:
+- `item_id`: GSM8K problem ID
+- `step`: CODI latent step (0-5)
+- `feature_id`: SAE feature intervened on
+- `delta`: Intervention magnitude (-0.6 to +0.6)
+- `pre_rank`: Answer rank before intervention
+- `post_rank`: Answer rank after intervention
+- `rank_delta`: post_rank - pre_rank (negative = improvement)
+- `answer_changed`: Boolean (rank changed)
+- `answer_correct`: Boolean (post_rank == 1)
+
+**Usage**:
+- Story 4: Identify promising features
+- Story 5: Heatmap visualizations, statistical analysis
+
+**Recreation**:
+```bash
+python src/experiments/step_by_step/scripts/run_smoke_test.py \
+  --dataset data/step_by_step/gsm8k_codi50.csv \
+  --config configs/step_by_step/intervention.yaml
+```
+
+---
+
+### 22.9 Intervention Summary Statistics
+**File**: [`results/step_by_step/smoke_test_summary.csv`](../results/step_by_step/smoke_test_summary.csv)
+
+**Purpose**: Aggregated intervention effects per feature
+
+**Status**: ⚠️ To be generated (Story 4)
+
+**Structure**:
+```csv
+feature_id,step,mean_rank_improvement,flip_to_correct_rate,flip_to_wrong_rate,n_interventions
+1547,2,2.4,0.35,0.05,50
+892,3,1.8,0.22,0.08,50
+...
+```
+
+**Columns**:
+- `mean_rank_improvement`: Average rank improvement (negative delta)
+- `flip_to_correct_rate`: % interventions that moved answer to rank 1
+- `flip_to_wrong_rate`: % interventions that moved correct answer down
+- `n_interventions`: Number of tests run
+
+**Usage**: Identify top-3 most impactful features for future experiments
+
+---
+
+### 22.10 Intervention Logs (JSONL)
+**File**: [`logs/step_by_step/interventions.jsonl`](../logs/step_by_step/interventions.jsonl)
+
+**Purpose**: Structured log of all interventions (richer than CSV)
+
+**Size**: ~500 KB (450 interventions with metadata)
+
+**Status**: ⚠️ To be generated (Story 4)
+
+**Structure** (one JSON object per line):
+```json
+{"item_id": "gsm8k_test_042", "step": 2, "feature_id": 1547, "delta": 0.5, "mode": "direction_space", "edit_norm": 0.23, "pre_rank": 5, "post_rank": 1, "rank_delta": -4, "answer_changed": true, "answer_correct": true, "timestamp": "2025-10-28T14:32:01"}
+```
+
+**Additional Fields**:
+- `mode`: "feature_space" | "direction_space"
+- `edit_norm`: L2 norm of applied intervention
+- `timestamp`: ISO 8601 timestamp
+
+**Usage**: Debugging, reproducibility, audit trail
+
+---
+
+### 22.11 Visualizations
+**Files**:
+- `results/step_by_step/visualizations/heatmap_feature_{id}.png`
+- `results/step_by_step/visualizations/step_comparison.png`
+- `results/step_by_step/visualizations/feature_importance.png`
+- `results/step_by_step/visualizations/control_validation.png`
+- `results/step_by_step/visualizations/sae_quality.png`
+- `results/step_by_step/visualizations/dashboard.html`
+
+**Purpose**: Publication-ready plots and interactive dashboard
+
+**Status**: ⚠️ To be generated (Story 5)
+
+**Plots**:
+1. **Heatmap**: Feature × Δ → rank improvement (color-coded)
+2. **Step Comparison**: Box plots of rank deltas across steps
+3. **Feature Importance**: Bar chart of top-10 features by mean |rank_delta|
+4. **Control Validation**: Wrong-step vs target-step effect sizes
+5. **SAE Quality**: Reconstruction MSE vs sparsity per step
+6. **Dashboard**: Lightweight HTML with all plots embedded
+
+**Usage**: Papers, presentations, exploratory analysis
+
+---
+
+## Dataset Relationships (Step-by-Step)
+
+```
+GSM8K Test (1,319)
+       ↓ sample(seed=42, n=50)
+CODI50 Dataset (50)
+       ↓ tag(baseline_rank)
+25 Easy + 25 Decompose
+       ↓ extract_activations(K=6 steps)
+Activation Tensors × 6
+       ↓ train_sae(dict_size=8192)
+SAE Models × 6
+       ↓ select_top_features(k=3/step)
+9 Features (3 per step)
+       ↓ intervene(deltas=5, items=10)
+450 Intervention Results
+       ↓ aggregate()
+Summary Statistics + Visualizations
+```
+
+---
+
+## Critical Configuration Files
+
+### Dataset Config
+**File**: [`configs/step_by_step/dataset.yaml`](../configs/step_by_step/dataset.yaml)
+**Status**: ⚠️ To be created (Story 0)
+
+### SAE Training Config
+**File**: [`configs/step_by_step/sae_training.yaml`](../configs/step_by_step/sae_training.yaml)
+**Status**: ⚠️ To be created (Story 0)
+
+### Intervention Config
+**File**: [`configs/step_by_step/intervention.yaml`](../configs/step_by_step/intervention.yaml)
+**Status**: ⚠️ To be created (Story 0)
+
+### Main Pipeline Config
+**File**: [`configs/step_by_step/main.yaml`](../configs/step_by_step/main.yaml)
+**Status**: ⚠️ To be created (Story 0)
+
+---
+
+## Experiments Using Step-by-Step Datasets
+
+| Experiment | Datasets Used | Models | Documented In |
+|------------|---------------|--------|---------------|
+| SAE Intervention Pilot | CODI50, SAE models, Intervention results | GPT-2 or LLaMA | `docs/experiments/MM-DD_model_gsm8k_sae_intervention.md` (future) |
+
+---
+
+## Storage Estimates
+
+| Dataset | Size | Git Tracked |
+|---------|------|-------------|
+| CODI50 CSV | <100 KB | ✅ Yes |
+| CODI50 Manifest | <5 KB | ✅ Yes |
+| Baseline Cache | ~5 MB | ❌ No (.gitignore) |
+| SAE Models (6×) | ~96 MB | ❌ No (.gitignore) |
+| Feature Exemplars (6×) | ~12 MB | ❌ No (.gitignore) |
+| Intervention Results | <1 MB | ✅ Yes |
+| Visualizations | <5 MB | ✅ Yes (PNGs) |
+| **Total** | **~120 MB** | **~6 MB tracked** |
+
+---
+
+## Validation Checklist (Step-by-Step)
+
+### Dataset Integrity
+- [ ] CODI50 has exactly 50 items (25 easy, 25 decompose)
+- [ ] Manifest SHA256 matches CSV content
+- [ ] All items from GSM8K test split (no train leakage)
+- [ ] Baseline cache has entries for all 50 items
+
+### SAE Quality
+- [ ] All 6 SAE models trained successfully
+- [ ] Reconstruction MSE <0.2 for all steps
+- [ ] Sparsity 0.80–0.95 for all steps
+- [ ] Dead features <30% for all steps
+- [ ] Feature exemplars extracted for all 8192 features/step
+
+### Intervention Validity
+- [ ] 450+ interventions logged
+- [ ] Zero-delta controls show rank_delta ≈ 0
+- [ ] Wrong-step controls show |rank_delta| < target-step
+- [ ] At least 1 feature shows mean rank improvement >2
+- [ ] Flip-to-correct rate >20% for at least 1 feature
+
+### Reproducibility
+- [ ] All configs version-controlled (git)
+- [ ] Seeds documented in manifest
+- [ ] WandB run IDs logged
+- [ ] Recreation scripts tested
 
 ---
 

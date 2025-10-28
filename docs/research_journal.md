@@ -3685,3 +3685,87 @@ Dead features are NOT waste - they're **capacity reserves** that enable speciali
 - `visualize_large_k_results.py`: Comparison visualizations across K values
 
 ---
+
+---
+
+### 2025-10-28: CODI Attention Flow Analysis - Phase 1 (LLaMA)
+
+**Objective**: Extract and analyze 6×6 attention patterns between continuous thought token positions to understand information flow during CODI reasoning.
+
+**Status**: ✅ **PHASE 1 COMPLETE** - Hub-centric attention pattern discovered
+
+**Research Questions**:
+1. Which continuous thought position serves as a hub?
+2. Is there sequential flow (position i → i-1)?
+3. Are there skip connections (position 5 → early positions)?
+
+**Approach**:
+- Extracted 6×6 attention matrices during continuous thought generation (NOT from answer token)
+- Analyzed 100 GSM8K training problems with LLaMA-3.2-1B CODI model
+- Computed hub scores, sequential flow, and skip connections
+- Identified top 20 attention heads by strength
+
+**Key Results**:
+
+**Answer 1: Position 0 is the Hub**
+- Hub score: 0.197 (1.18× uniform baseline of 0.167)
+- All top heads show strong pattern: Position 1 → Position 0 (max attention 0.804)
+- **Interpretation**: First continuous thought acts as "working memory" accumulator
+
+**Answer 2: NO Sequential Flow**
+- Average attention to previous position: 0.038 (threshold: 0.3)
+- Position 5 → Position 4: 0.039 (very weak)
+- **Conclusion**: NOT a sequential chain, but hub-and-spoke architecture
+
+**Answer 3: NO Skip Connections**
+- Average attention from position 5 to positions 0-2: 0.029 (threshold: 0.1)
+- **Conclusion**: No long-range shortcuts detected
+
+**Major Findings**:
+
+1. **Hub-Centric Architecture**: Unlike expected sequential flow, CODI uses Position 0 as central aggregator
+   - Position 0 receives most incoming attention (0.197)
+   - Positions 1-5 receive progressively less: [0.137, 0.077, 0.057, 0.039, 0.000]
+   - All top 3 heads have max attention at [1→0]
+
+2. **Excellent Pattern Consistency**: Mean std = 0.0113 across 100 problems
+   - Patterns are highly stable and reproducible
+   - Not noise - clear structural patterns
+
+3. **Top Attention Heads**:
+   - L0H9: max=0.804 (early layer, very strong)
+   - L4H26: max=0.781 
+   - L6H2: max=0.756
+   - Top 20 heads all show max > 0.5
+
+4. **Architectural Insight**: 
+   - Position 0 = working memory/accumulator
+   - Positions 1-5 = incremental computation steps that write to Position 0
+   - This differs from sequential chains seen in other transformer architectures
+
+**Time**: 2.0 hours (44% of 4.5h Phase 1 estimate) ✅ Under budget
+- Story 1.1: Dataset sampling (0.2h)
+- Story 1.2: Attention extraction (0.5h including debugging)
+- Story 1.3: Aggregation (0.2h)
+- Story 1.4: Visualization (0.3h)
+- Story 1.5: Hub analysis (0.3h)
+- Overhead: Documentation setup (0.5h)
+
+**Deliverables**:
+- Dataset: 100 GSM8K training problems (`data/attention_dataset_100_train.json`)
+- Raw attention: [100, 16, 32, 6, 6] tensor (3.5 MB)
+- Aggregated attention: [16, 32, 6, 6] (36 KB)
+- Statistics: Hub scores, top heads, flow metrics
+- Visualizations: 3 figures (top heads, by-layer, hub analysis)
+- Code: 5 scripts (~800 LOC) in `src/experiments/codi_attention_flow/`
+
+**Next Steps**:
+- Phase 2: Compute flow/hub/skip metrics per head (Stories 2.1-2.6)
+- Phase 2: Compare LLaMA vs GPT-2 attention strategies
+- Phase 4 (Optional): Scale to full 7,473 training set for validation
+
+**Documentation**:
+- Detailed report: `docs/experiments/10-28_llama_gsm8k_attention_flow_analysis.md`
+- Data inventory: Updated with attention dataset
+- Code: `src/experiments/codi_attention_flow/README.md`
+
