@@ -1,0 +1,220 @@
+/workspace/CoT_Exploration/env/lib/python3.12/site-packages/huggingface_hub/file_download.py:943: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+/workspace/CoT_Exploration/env/lib/python3.12/site-packages/peft/tuners/lora/layer.py:1768: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+  warnings.warn(
+Passing a tuple of `past_key_values` is deprecated and will be removed in Transformers v4.53.0. You should pass an instance of `Cache` instead, e.g. `past_key_values=DynamicCache.from_legacy_cache(past_key_values)`.
+====================================================================================================
+SEMANTIC ACCURACY EVALUATION
+====================================================================================================
+====================================================================================================
+LOADING CODI MODEL
+====================================================================================================
+trainable params: 20057088 || all params: 144499200 || trainable%: 13.880414562848792
+Model loaded: n_layer=12, has_prj=True
+====================================================================================================
+
+Probe loaded from: outputs/probe_hybrid/probe_L10_to_L11_HYBRID_20251028_141404.pt
+
+====================================================================================================
+SEMANTIC ACCURACY EVALUATION
+====================================================================================================
+Probe: outputs/probe_hybrid/probe_L10_to_L11_HYBRID_20251028_141404.pt
+Test examples: 100
+====================================================================================================
+
+Semantic Equivalence Rules:
+  - Numbers: '9' = ' 9', '40' = ' 40', etc.
+  - Operators: '-' = ' -', '+' = ' +', etc.
+  - Other tokens: Require exact match
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+Example 1: Janet’s ducks lay 16 eggs per day. She eats three for breakfast every ...
+  Iter 1: Probe='>' vs Target='9' | Hard=✗ Semantic=✗ [number]
+  Iter 2: Probe='-' vs Target='-' | Hard=✓ Semantic=✓ [operator]
+  Iter 3: Probe=' 7' vs Target=' 5' | Hard=✗ Semantic=✗ [number]
+  Iter 4: Probe='-' vs Target='-' | Hard=✓ Semantic=✓ [operator]
+  Iter 5: Probe=' 3' vs Target=' 5' | Hard=✗ Semantic=✗ [number]
+  Iter 6: Probe='-' vs Target='-' | Hard=✓ Semantic=✓ [operator]
+
+----------------------------------------------------------------------------------------------------
+Example 2: A robe takes 2 bolts of blue fiber and half that much white fiber.  Ho...
+  Iter 1: Probe='1' vs Target='1' | Hard=✓ Semantic=✓ [number]
+  Iter 2: Probe=' almost' vs Target='>>' | Hard=✗ Semantic=✗ [operator]
+  Iter 3: Probe='1' vs Target='1' | Hard=✓ Semantic=✓ [number]
+  Iter 4: Probe='st' vs Target='>>' | Hard=✗ Semantic=✗ [operator]
+  Iter 5: Probe='1' vs Target='1' | Hard=✓ Semantic=✓ [number]
+  Iter 6: Probe=')' vs Target='>>' | Hard=✗ Semantic=✗ [operator]
+
+----------------------------------------------------------------------------------------------------
+Example 3: Josh decides to try flipping a house.  He buys a house for $80,000 and...
+  Iter 1: Probe=':' vs Target='live' | Hard=✗ Semantic=✗ [other]
+  Iter 2: Probe=' every' vs Target=' <<' | Hard=✗ Semantic=✗ [operator]
+  Iter 3: Probe='mental' vs Target=' answer' | Hard=✗ Semantic=✗ [other]
+  Iter 4: Probe=' resulting' vs Target=' <<' | Hard=✗ Semantic=✗ [operator]
+  Iter 5: Probe='ST' vs Target=' Raise' | Hard=✗ Semantic=✗ [other]
+  Iter 6: Probe='666' vs Target=' <<' | Hard=✗ Semantic=✗ [operator]
+
+----------------------------------------------------------------------------------------------------
+Example 4: James decides to run 3 sprints 3 times a week.  He runs 60 meters each...
+  Iter 1: Probe='180' vs Target='180' | Hard=✓ Semantic=✓ [number]
+  Iter 2: Probe='?"' vs Target='*' | Hard=✗ Semantic=✗ [operator]
+  Iter 3: Probe=' 9' vs Target='9' | Hard=✗ Semantic=✓ [number] (SEMANTIC RESCUE)
+  Iter 4: Probe='>>' vs Target='>>' | Hard=✓ Semantic=✓ [operator]
+  Iter 5: Probe='ris' vs Target='9' | Hard=✗ Semantic=✗ [number]
+  Iter 6: Probe='>>' vs Target='>>' | Hard=✓ Semantic=✓ [operator]
+
+----------------------------------------------------------------------------------------------------
+Example 5: Every day, Wendi feeds each of her chickens three cups of mixed chicke...
+  Iter 1: Probe=' 60' vs Target=' 60' | Hard=✓ Semantic=✓ [number]
+  Iter 2: Probe='~' vs Target=',' | Hard=✗ Semantic=✗ [other]
+  Iter 3: Probe='40' vs Target=' 40' | Hard=✗ Semantic=✓ [number] (SEMANTIC RESCUE)
+  Iter 4: Probe='+' vs Target=',' | Hard=✗ Semantic=✗ [other]
+  Iter 5: Probe='40' vs Target=' 40' | Hard=✗ Semantic=✓ [number] (SEMANTIC RESCUE)
+  Iter 6: Probe='~' vs Target=',' | Hard=✗ Semantic=✗ [other]
+
+----------------------------------------------------------------------------------------------------
+Processed 50/100 examples...
+  Running Hard Accuracy: 32.00%
+  Running Semantic Accuracy: 38.33%
+
+----------------------------------------------------------------------------------------------------
+Processed 100/100 examples...
+  Running Hard Accuracy: 32.67%
+  Running Semantic Accuracy: 37.83%
+
+====================================================================================================
+FINAL RESULTS
+====================================================================================================
+
+Overall Metrics (600 samples):
+  Hard Top-1 Accuracy (exact match):     196/600 = 32.67%
+  Semantic Top-1 Accuracy (normalized):  227/600 = 37.83%
+  Semantic Gain:                         +5.17%
+  Semantic Rescues:                      31 samples
+
+====================================================================================================
+ACCURACY BY TOKEN CATEGORY
+====================================================================================================
+
+Numbers (256 samples):
+  Hard Accuracy:     84/256 = 32.81%
+  Semantic Accuracy: 112/256 = 43.75%
+  Semantic Gain:     +10.94%
+
+Operators (226 samples):
+  Hard Accuracy:     95/226 = 42.04%
+  Semantic Accuracy: 98/226 = 43.36%
+  Semantic Gain:     +1.33%
+
+Other Tokens (118 samples):
+  Hard Accuracy:     17/118 = 14.41%
+  Semantic Accuracy: 17/118 = 14.41%
+  Semantic Gain:     +0.00%
+
+====================================================================================================
+PER-ITERATION ACCURACY
+====================================================================================================
+
+Overall (all token types):
+  Iteration 1: Hard=29.00%  Semantic=33.00%  Gain=+4.00%
+  Iteration 2: Hard=37.00%  Semantic=38.00%  Gain=+1.00%
+  Iteration 3: Hard=32.00%  Semantic=43.00%  Gain=+11.00%
+  Iteration 4: Hard=35.00%  Semantic=36.00%  Gain=+1.00%
+  Iteration 5: Hard=26.00%  Semantic=40.00%  Gain=+14.00%
+  Iteration 6: Hard=37.00%  Semantic=37.00%  Gain=+0.00%
+
+Numbers only:
+  Iteration 1: Hard=38.03%  Semantic=43.66%  Gain=+5.63%  (71 samples)
+  Iteration 2: Hard=50.00%  Semantic=75.00%  Gain=+25.00%  (4 samples)
+  Iteration 3: Hard=32.56%  Semantic=44.19%  Gain=+11.63%  (86 samples)
+  Iteration 4: Hard=40.00%  Semantic=40.00%  Gain=+0.00%  (5 samples)
+  Iteration 5: Hard=27.06%  Semantic=42.35%  Gain=+15.29%  (85 samples)
+  Iteration 6: Hard=40.00%  Semantic=40.00%  Gain=+0.00%  (5 samples)
+
+====================================================================================================
+SEMANTIC RESCUE EXAMPLES (first 20)
+====================================================================================================
+
+1. Example 4, Iteration 3 [number]:
+   Question: James decides to run 3 sprints 3 times a week.  He runs 60 meters each...
+   Probed: ' 9' vs Target: '9'
+
+2. Example 5, Iteration 3 [number]:
+   Question: Every day, Wendi feeds each of her chickens three cups of mixed chicke...
+   Probed: '40' vs Target: ' 40'
+
+3. Example 5, Iteration 5 [number]:
+   Question: Every day, Wendi feeds each of her chickens three cups of mixed chicke...
+   Probed: '40' vs Target: ' 40'
+
+4. Example 17, Iteration 1 [number]:
+   Question: Two trains leave San Rafael at the same time. They begin traveling wes...
+   Probed: ' 230' vs Target: '230'
+
+5. Example 22, Iteration 5 [number]:
+   Question: Raymond and Samantha are cousins. Raymond was born 6 years before Sama...
+   Probed: ' 23' vs Target: '23'
+
+6. Example 23, Iteration 1 [number]:
+   Question: Billy sells DVDs. He has 8 customers on Tuesday. His first 3 customers...
+   Probed: ' 4' vs Target: '4'
+
+7. Example 23, Iteration 5 [number]:
+   Question: Billy sells DVDs. He has 8 customers on Tuesday. His first 3 customers...
+   Probed: ' 3' vs Target: '3'
+
+8. Example 27, Iteration 3 [number]:
+   Question: Mishka bought 3 pairs of shorts, 3 pairs of pants, and 3 pairs of shoe...
+   Probed: ' 126' vs Target: '126'
+
+9. Example 33, Iteration 3 [number]:
+   Question: John takes care of 10 dogs.  Each dog takes .5 hours a day to walk and...
+   Probed: ' 5' vs Target: '5'
+
+10. Example 33, Iteration 5 [number]:
+   Question: John takes care of 10 dogs.  Each dog takes .5 hours a day to walk and...
+   Probed: ' 5' vs Target: '5'
+
+11. Example 35, Iteration 3 [number]:
+   Question: Siobhan has 2 fewer jewels than Aaron. Aaron has 5 more jewels than ha...
+   Probed: '25' vs Target: ' 25'
+
+12. Example 40, Iteration 3 [operator]:
+   Question: Dana can run at a rate of speed four times faster than she can walk, b...
+   Probed: ' <<' vs Target: '<<'
+
+13. Example 40, Iteration 5 [operator]:
+   Question: Dana can run at a rate of speed four times faster than she can walk, b...
+   Probed: ' <<' vs Target: '<<'
+
+14. Example 41, Iteration 5 [number]:
+   Question: Brandon's iPhone is four times as old as Ben's iPhone. Ben's iPhone is...
+   Probed: ' 2' vs Target: '2'
+
+15. Example 42, Iteration 3 [number]:
+   Question: The great dragon, Perg, sat high atop mount Farbo, breathing fire upon...
+   Probed: ' 1200' vs Target: '1200'
+
+16. Example 42, Iteration 5 [number]:
+   Question: The great dragon, Perg, sat high atop mount Farbo, breathing fire upon...
+   Probed: ' 1200' vs Target: '1200'
+
+17. Example 46, Iteration 4 [operator]:
+   Question: Meredith is a freelance blogger who writes about health topics and sub...
+   Probed: ' <<' vs Target: '<<'
+
+18. Example 50, Iteration 3 [number]:
+   Question: Richard lives in an apartment building with 15 floors. Each floor cont...
+   Probed: ' 90' vs Target: '90'
+
+19. Example 50, Iteration 5 [number]:
+   Question: Richard lives in an apartment building with 15 floors. Each floor cont...
+   Probed: ' 90' vs Target: '90'
+
+20. Example 56, Iteration 3 [number]:
+   Question: Jean has 30 lollipops. Jean eats 2 of the lollipops. With the remainin...
+   Probed: ' 28' vs Target: '28'
+
+====================================================================================================

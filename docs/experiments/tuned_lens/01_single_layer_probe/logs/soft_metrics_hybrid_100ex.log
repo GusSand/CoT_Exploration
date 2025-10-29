@@ -1,0 +1,1502 @@
+/workspace/CoT_Exploration/env/lib/python3.12/site-packages/huggingface_hub/file_download.py:943: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+/workspace/CoT_Exploration/env/lib/python3.12/site-packages/peft/tuners/lora/layer.py:1768: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+  warnings.warn(
+Passing a tuple of `past_key_values` is deprecated and will be removed in Transformers v4.53.0. You should pass an instance of `Cache` instead, e.g. `past_key_values=DynamicCache.from_legacy_cache(past_key_values)`.
+====================================================================================================
+SOFT METRICS PROBE EVALUATION
+====================================================================================================
+====================================================================================================
+LOADING CODI MODEL
+====================================================================================================
+trainable params: 20057088 || all params: 144499200 || trainable%: 13.880414562848792
+Model loaded: n_layer=12, has_prj=True
+====================================================================================================
+
+Probe loaded from: outputs/probe_hybrid/probe_L10_to_L11_HYBRID_20251028_141404.pt
+
+====================================================================================================
+SOFT METRICS EVALUATION
+====================================================================================================
+Probe: outputs/probe_hybrid/probe_L10_to_L11_HYBRID_20251028_141404.pt
+Test examples: 100
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+Example 1: Janet’s ducks lay 16 eggs per day. She eats three for breakfast every ...
+
+  Iteration 1:
+    Top-1 Match: ✗
+    Top-5 Overlap: 0/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.0773
+    Hidden Cosine Sim: 0.9683
+    Rank Correlation: -0.6970
+
+    Probed top-5:
+        '>': 13.89%
+        'all': 7.65%
+        'liquid': 3.51%
+        'lo': 3.09%
+        'Liquid': 2.73%
+
+    Target top-5:
+      ★ '9': 19.86%
+        '5': 9.06%
+        '-': 6.78%
+        ' 9': 6.57%
+        '8': 5.88%
+
+  Iteration 2:
+    Top-1 Match: ✓
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.9998
+    Hidden Cosine Sim: -0.5074
+    Rank Correlation: 0.2143
+
+    Probed top-5:
+      ★ '-': 99.99%
+        '‑': 0.00%
+      ★ '>>': 0.00%
+        ' SU': 0.00%
+        ' online': 0.00%
+
+    Target top-5:
+      ★ '-': 87.08%
+        '>>': 1.35%
+        ' <<': 0.60%
+        'd': 0.39%
+        ' instead': 0.36%
+
+  Iteration 3:
+    Top-1 Match: ✗
+    Top-5 Overlap: 4/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.7006
+    Hidden Cosine Sim: 0.9420
+    Rank Correlation: -0.4286
+
+    Probed top-5:
+      ★ ' 7': 35.10%
+      ★ ' 3': 13.33%
+      ★ ' 8': 12.40%
+        ' 6': 11.76%
+      ★ ' 5': 8.47%
+
+    Target top-5:
+      ★ ' 5': 13.17%
+        ' 9': 10.56%
+        ' 7': 9.48%
+        ' 8': 7.80%
+        ' 3': 6.92%
+
+  Iteration 4:
+    Top-1 Match: ✓
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.9985
+    Hidden Cosine Sim: -0.5114
+    Rank Correlation: -0.0952
+
+    Probed top-5:
+      ★ '-': 99.95%
+        '‑': 0.02%
+        ' online': 0.01%
+      ★ '>>': 0.01%
+        '>': 0.00%
+
+    Target top-5:
+      ★ '-': 82.40%
+        '>>': 4.27%
+        'd': 0.73%
+        ' <<': 0.66%
+        'maker': 0.41%
+
+  Iteration 5:
+    Top-1 Match: ✗
+    Top-5 Overlap: 3/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.6239
+    Hidden Cosine Sim: 0.9456
+    Rank Correlation: -0.5000
+
+    Probed top-5:
+      ★ ' 3': 21.25%
+        ' 2': 13.27%
+        ' 7': 11.92%
+      ★ ' 4': 11.40%
+      ★ ' 5': 11.15%
+
+    Target top-5:
+      ★ ' 5': 16.35%
+        '5': 13.04%
+        ' 3': 9.50%
+        '3': 5.65%
+        ' 4': 5.40%
+
+  Iteration 6:
+    Top-1 Match: ✓
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.9997
+    Hidden Cosine Sim: -0.4947
+    Rank Correlation: 0.2857
+
+    Probed top-5:
+      ★ '-': 99.97%
+      ★ '>>': 0.01%
+        '>': 0.01%
+        '‑': 0.00%
+        'ier': 0.00%
+
+    Target top-5:
+      ★ '-': 88.24%
+        '>>': 2.08%
+        'd': 0.32%
+        'chan': 0.29%
+        ' <<': 0.28%
+
+----------------------------------------------------------------------------------------------------
+Example 2: A robe takes 2 bolts of blue fiber and half that much white fiber.  Ho...
+
+  Iteration 1:
+    Top-1 Match: ✓
+    Top-5 Overlap: 4/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.9991
+    Hidden Cosine Sim: 0.7916
+    Rank Correlation: 0.3143
+
+    Probed top-5:
+      ★ '1': 94.99%
+      ★ '2': 4.06%
+      ★ '0': 0.51%
+        '100': 0.17%
+      ★ '.': 0.13%
+
+    Target top-5:
+      ★ '1': 99.47%
+        ' 1': 0.17%
+        '0': 0.11%
+        '2': 0.08%
+        '.': 0.05%
+
+  Iteration 2:
+    Top-1 Match: ✗
+    Top-5 Overlap: 1/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.0710
+    Hidden Cosine Sim: 0.8055
+    Rank Correlation: -0.4833
+
+    Probed top-5:
+        ' almost': 22.04%
+      ★ '
+': 13.48%
+        ' usually': 9.25%
+        ' always': 7.50%
+        'st': 4.59%
+
+    Target top-5:
+      ★ '>>': 68.55%
+        '
+': 10.06%
+        '/': 8.36%
+        '<|endoftext|>': 2.81%
+        '.': 1.18%
+
+  Iteration 3:
+    Top-1 Match: ✓
+    Top-5 Overlap: 4/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.9938
+    Hidden Cosine Sim: 0.0098
+    Rank Correlation: 0.9429
+
+    Probed top-5:
+      ★ '1': 86.06%
+      ★ ' 1': 10.33%
+      ★ '0': 3.12%
+      ★ ' 0': 0.42%
+        '100': 0.01%
+
+    Target top-5:
+      ★ '1': 81.35%
+        ' 1': 18.59%
+        '0': 0.02%
+        ' 0': 0.01%
+        '>>': 0.01%
+
+  Iteration 4:
+    Top-1 Match: ✗
+    Top-5 Overlap: 1/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.0028
+    Hidden Cosine Sim: 0.8357
+    Rank Correlation: -0.4833
+
+    Probed top-5:
+        'st': 60.78%
+      ★ ')': 10.04%
+        ' obvious': 5.71%
+        ' almost': 3.39%
+        ' always': 3.32%
+
+    Target top-5:
+      ★ '>>': 99.21%
+        '/': 0.26%
+        ')': 0.20%
+        '
+': 0.07%
+        '.': 0.04%
+
+  Iteration 5:
+    Top-1 Match: ✓
+    Top-5 Overlap: 4/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.9845
+    Hidden Cosine Sim: 0.0513
+    Rank Correlation: 0.7714
+
+    Probed top-5:
+      ★ '1': 89.68%
+      ★ '0': 7.10%
+      ★ ' 1': 2.71%
+        '100': 0.22%
+      ★ ' 0': 0.15%
+
+    Target top-5:
+      ★ '1': 83.90%
+        ' 1': 15.98%
+        '0': 0.05%
+        ' 0': 0.02%
+        '>>': 0.02%
+
+  Iteration 6:
+    Top-1 Match: ✗
+    Top-5 Overlap: 1/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0002
+    Prob Cosine Sim: 0.0064
+    Hidden Cosine Sim: 0.8250
+    Rank Correlation: -0.3500
+
+    Probed top-5:
+      ★ ')': 80.59%
+        'st': 12.37%
+        ' obvious': 1.45%
+        ' always': 0.71%
+        ' usually': 0.61%
+
+    Target top-5:
+      ★ '>>': 99.02%
+        ')': 0.58%
+        '/': 0.20%
+        ',': 0.03%
+        '
+': 0.01%
+
+----------------------------------------------------------------------------------------------------
+Example 3: Josh decides to try flipping a house.  He buys a house for $80,000 and...
+
+  Iteration 1:
+    Top-1 Match: ✗
+    Top-5 Overlap: 1/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0002
+    Prob Cosine Sim: 0.3190
+    Hidden Cosine Sim: -0.0713
+    Rank Correlation: -0.7167
+
+    Probed top-5:
+      ★ ':': 69.53%
+        'air': 5.20%
+        'ANT': 3.25%
+        'uo': 3.21%
+        'SH': 2.47%
+
+    Target top-5:
+      ★ 'live': 12.41%
+        'Ex': 11.52%
+        'Live': 10.98%
+        ' Live': 9.69%
+        ':': 8.17%
+
+  Iteration 2:
+    Top-1 Match: ✗
+    Top-5 Overlap: 0/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.0487
+    Hidden Cosine Sim: 0.7645
+    Rank Correlation: -0.6727
+
+    Probed top-5:
+        ' every': 56.27%
+        '000': 8.21%
+        '.': 6.74%
+        ' any': 5.52%
+        '<': 4.22%
+
+    Target top-5:
+      ★ ' <<': 45.45%
+        '*': 27.47%
+        '>>': 13.73%
+        '*.': 3.30%
+        '<<': 2.26%
+
+  Iteration 3:
+    Top-1 Match: ✗
+    Top-5 Overlap: 0/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0002
+    Prob Cosine Sim: 0.0039
+    Hidden Cosine Sim: 0.2178
+    Rank Correlation: -0.8061
+
+    Probed top-5:
+        'mental': 34.03%
+        ' profit': 17.53%
+        '200000': 13.56%
+        ' saving': 5.48%
+        ' charge': 4.34%
+
+    Target top-5:
+      ★ ' answer': 17.01%
+        ' raise': 11.38%
+        ' Secret': 4.90%
+        ' Raise': 4.19%
+        ' solvent': 3.69%
+
+  Iteration 4:
+    Top-1 Match: ✗
+    Top-5 Overlap: 1/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0002
+    Prob Cosine Sim: 0.0009
+    Hidden Cosine Sim: 0.7529
+    Rank Correlation: -0.8667
+
+    Probed top-5:
+        ' resulting': 94.10%
+        ' quality': 1.11%
+        ' how': 0.73%
+        ' degrees': 0.46%
+      ★ '?': 0.33%
+
+    Target top-5:
+      ★ ' <<': 23.83%
+        '>>': 17.25%
+        '......': 6.18%
+        '..': 3.65%
+        '?': 3.42%
+
+  Iteration 5:
+    Top-1 Match: ✗
+    Top-5 Overlap: 0/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0002
+    Prob Cosine Sim: 0.0127
+    Hidden Cosine Sim: 0.0448
+    Rank Correlation: -0.6606
+
+    Probed top-5:
+        'ST': 39.14%
+        ' FREE': 13.80%
+        ' cheap': 9.32%
+        ' inexpensive': 8.78%
+        ' free': 6.28%
+
+    Target top-5:
+      ★ ' Raise': 25.18%
+        ' raise': 14.36%
+        ' Secret': 11.73%
+        ' Star': 4.81%
+        ' Live': 4.24%
+
+  Iteration 6:
+    Top-1 Match: ✗
+    Top-5 Overlap: 1/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0002
+    Prob Cosine Sim: 0.1337
+    Hidden Cosine Sim: 0.4526
+    Rank Correlation: -0.7500
+
+    Probed top-5:
+      ★ '666': 49.21%
+        ' resulting': 41.66%
+        '3333': 1.08%
+        ' degrees': 0.92%
+        '684': 0.92%
+
+    Target top-5:
+      ★ ' <<': 19.55%
+        '......': 6.25%
+        '..': 6.04%
+        '000': 4.74%
+        '666': 4.11%
+
+----------------------------------------------------------------------------------------------------
+Example 4: James decides to run 3 sprints 3 times a week.  He runs 60 meters each...
+
+  Iteration 1:
+    Top-1 Match: ✓
+    Top-5 Overlap: 4/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.9996
+    Hidden Cosine Sim: 0.9120
+    Rank Correlation: 0.4286
+
+    Probed top-5:
+      ★ '180': 97.07%
+      ★ '60': 1.01%
+        'Left': 0.28%
+      ★ ' 180': 0.26%
+      ★ '3': 0.16%
+
+    Target top-5:
+      ★ '180': 91.54%
+        '3': 2.33%
+        '60': 1.67%
+        ' 180': 0.84%
+        '1': 0.67%
+
+  Iteration 2:
+    Top-1 Match: ✗
+    Top-5 Overlap: 1/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.0485
+    Hidden Cosine Sim: 0.7784
+    Rank Correlation: -0.7667
+
+    Probed top-5:
+        '?"': 59.57%
+        '"-': 9.89%
+        '~': 8.10%
+        '!"': 5.20%
+      ★ '"': 3.78%
+
+    Target top-5:
+      ★ '*': 27.48%
+        '>>': 21.18%
+        '--': 6.41%
+        '"': 4.57%
+        '-': 4.21%
+
+  Iteration 3:
+    Top-1 Match: ✗
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.2857
+    Hidden Cosine Sim: -0.7238
+    Rank Correlation: 0.1429
+
+    Probed top-5:
+      ★ ' 9': 98.14%
+        'ris': 1.46%
+      ★ '9': 0.16%
+        ' 3': 0.08%
+        ' 10': 0.06%
+
+    Target top-5:
+      ★ '9': 64.63%
+        ' 9': 19.18%
+        'it': 2.71%
+        '3': 1.61%
+        ' formation': 1.21%
+
+  Iteration 4:
+    Top-1 Match: ✓
+    Top-5 Overlap: 3/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.9438
+    Hidden Cosine Sim: 0.8851
+    Rank Correlation: 0.3214
+
+    Probed top-5:
+      ★ '>>': 69.23%
+      ★ '9999': 23.05%
+        '999': 7.65%
+      ★ '*': 0.03%
+        '>>>': 0.02%
+
+    Target top-5:
+      ★ '>>': 81.80%
+        '*': 7.53%
+        '"': 1.19%
+        '9999': 1.07%
+        '·': 0.69%
+
+  Iteration 5:
+    Top-1 Match: ✗
+    Top-5 Overlap: 3/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.1857
+    Hidden Cosine Sim: -0.7022
+    Rank Correlation: -0.0714
+
+    Probed top-5:
+        'ris': 50.87%
+      ★ ' 9': 35.62%
+      ★ '3': 3.18%
+        'ri': 2.09%
+      ★ '9': 2.05%
+
+    Target top-5:
+      ★ '9': 38.47%
+        ' 9': 8.77%
+        '3': 6.94%
+        'it': 3.14%
+        '1': 1.90%
+
+  Iteration 6:
+    Top-1 Match: ✓
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.7880
+    Hidden Cosine Sim: 0.8745
+    Rank Correlation: -0.0238
+
+    Probed top-5:
+      ★ '>>': 36.96%
+        '999': 23.61%
+        '9999': 19.02%
+      ★ '*': 18.81%
+        '>>>': 0.87%
+
+    Target top-5:
+      ★ '>>': 69.64%
+        '*': 17.29%
+        '""': 1.17%
+        '·': 1.07%
+        '"': 0.73%
+
+----------------------------------------------------------------------------------------------------
+Example 5: Every day, Wendi feeds each of her chickens three cups of mixed chicke...
+
+  Iteration 1:
+    Top-1 Match: ✓
+    Top-5 Overlap: 3/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.9633
+    Hidden Cosine Sim: 0.2861
+    Rank Correlation: 0.6071
+
+    Probed top-5:
+      ★ ' 60': 64.64%
+      ★ '60': 16.39%
+      ★ ' 30': 3.37%
+        ' 45': 2.43%
+        '30': 1.41%
+
+    Target top-5:
+      ★ ' 60': 37.78%
+        '60': 20.67%
+        ' 40': 2.30%
+        ' 30': 2.30%
+        ' 20': 2.06%
+
+  Iteration 2:
+    Top-1 Match: ✗
+    Top-5 Overlap: 3/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.4404
+    Hidden Cosine Sim: 0.6447
+    Rank Correlation: -0.6071
+
+    Probed top-5:
+      ★ '~': 54.75%
+        ' seconds': 17.66%
+      ★ '<|endoftext|>': 5.83%
+        '!': 5.55%
+      ★ '+': 2.71%
+
+    Target top-5:
+      ★ ',': 15.14%
+        '*': 10.43%
+        '~': 10.29%
+        '+': 8.88%
+        '<|endoftext|>': 6.77%
+
+  Iteration 3:
+    Top-1 Match: ✗
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.2893
+    Hidden Cosine Sim: 0.7025
+    Rank Correlation: 0.1905
+
+    Probed top-5:
+      ★ '40': 92.69%
+      ★ ' 40': 7.29%
+        'model': 0.00%
+        ' look': 0.00%
+        ' 45': 0.00%
+
+    Target top-5:
+      ★ ' 40': 80.07%
+        '40': 17.48%
+        'ings': 0.71%
+        ' Rad': 0.15%
+        ' Water': 0.11%
+
+  Iteration 4:
+    Top-1 Match: ✗
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.5735
+    Hidden Cosine Sim: 0.8383
+    Rank Correlation: 0.0000
+
+    Probed top-5:
+      ★ '+': 22.68%
+      ★ '~': 18.01%
+        '"': 12.92%
+        'Y': 6.37%
+        ' begin': 4.28%
+
+    Target top-5:
+      ★ ',': 10.73%
+        '+': 7.62%
+        '~': 5.08%
+        'ish': 4.47%
+        '-': 3.70%
+
+  Iteration 5:
+    Top-1 Match: ✗
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.6865
+    Hidden Cosine Sim: 0.7508
+    Rank Correlation: 0.2381
+
+    Probed top-5:
+      ★ '40': 55.09%
+      ★ ' 40': 44.84%
+        ' 45': 0.03%
+        ' 42': 0.01%
+        'inder': 0.01%
+
+    Target top-5:
+      ★ ' 40': 91.89%
+        '40': 6.76%
+        'ings': 0.26%
+        ' Rad': 0.07%
+        ' is': 0.06%
+
+  Iteration 6:
+    Top-1 Match: ✗
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.5483
+    Hidden Cosine Sim: 0.8032
+    Rank Correlation: -0.1429
+
+    Probed top-5:
+        '~': 30.46%
+      ★ '+': 20.97%
+      ★ '"': 11.80%
+        '=': 6.74%
+        ' gets': 3.82%
+
+    Target top-5:
+      ★ ',': 10.62%
+        '+': 9.69%
+        '"': 4.07%
+        '>>': 3.80%
+        '-': 3.66%
+
+----------------------------------------------------------------------------------------------------
+Example 6: Kylar went to the store to buy glasses for his new apartment. One glas...
+
+  Iteration 1:
+    Top-1 Match: ✗
+    Top-5 Overlap: 1/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.0880
+    Hidden Cosine Sim: 0.7955
+    Rank Correlation: -0.4833
+
+    Probed top-5:
+        '24': 62.45%
+        '30': 10.14%
+        '32': 5.18%
+      ★ '40': 3.79%
+        '16': 3.69%
+
+    Target top-5:
+      ★ '40': 41.66%
+        '20': 20.85%
+        '80': 6.14%
+        '0': 3.69%
+        '10': 2.46%
+
+  Iteration 2:
+    Top-1 Match: ✗
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.3737
+    Hidden Cosine Sim: 0.4202
+    Rank Correlation: -0.1905
+
+    Probed top-5:
+      ★ '-': 35.40%
+      ★ '*': 19.60%
+        '
+': 13.31%
+        ' [': 6.91%
+        '|': 4.16%
+
+    Target top-5:
+      ★ '>>': 34.76%
+        '*': 20.33%
+        '/': 9.18%
+        '-': 6.00%
+        '<<': 3.28%
+
+  Iteration 3:
+    Top-1 Match: ✗
+    Top-5 Overlap: 0/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.0327
+    Hidden Cosine Sim: 0.2630
+    Rank Correlation: -0.7818
+
+    Probed top-5:
+        ' «': 43.10%
+        '>>': 11.95%
+        ' [': 10.02%
+        '>': 6.32%
+        '|': 3.47%
+
+    Target top-5:
+      ★ ' 32': 51.40%
+        ' 24': 15.56%
+        '32': 5.78%
+        '40': 3.21%
+        ' 40': 2.69%
+
+  Iteration 4:
+    Top-1 Match: ✗
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.4051
+    Hidden Cosine Sim: 0.1268
+    Rank Correlation: -0.3571
+
+    Probed top-5:
+        ' (': 31.40%
+      ★ '.': 27.63%
+        ' [': 14.85%
+      ★ '-': 9.65%
+        '?': 5.38%
+
+    Target top-5:
+      ★ '
+': 16.02%
+        ',': 7.09%
+        '.': 6.38%
+        '-': 5.83%
+        '/': 5.72%
+
+  Iteration 5:
+    Top-1 Match: ✗
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.4762
+    Hidden Cosine Sim: -0.0043
+    Rank Correlation: 0.0000
+
+    Probed top-5:
+        ' [': 18.00%
+      ★ ' 32': 10.27%
+      ★ ' 24': 7.38%
+        '~': 5.96%
+        ' ch': 5.35%
+
+    Target top-5:
+      ★ ' 32': 50.16%
+        ' 24': 16.35%
+        ' 48': 5.21%
+        '32': 3.87%
+        '40': 2.53%
+
+  Iteration 6:
+    Top-1 Match: ✗
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.2596
+    Hidden Cosine Sim: 0.0509
+    Rank Correlation: -0.4286
+
+    Probed top-5:
+      ★ ' (': 48.26%
+        'ic': 11.66%
+      ★ '-': 9.20%
+        '.': 8.66%
+        ' [': 8.25%
+
+    Target top-5:
+      ★ ',': 22.07%
+        '
+': 11.08%
+        ' (': 4.69%
+        '(': 4.58%
+        '-': 4.39%
+
+----------------------------------------------------------------------------------------------------
+Example 7: Toulouse has twice as many sheep as Charleston. Charleston has 4 times...
+
+  Iteration 1:
+    Top-1 Match: ✗
+    Top-5 Overlap: 1/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0004
+    Prob Cosine Sim: 0.0042
+    Hidden Cosine Sim: 0.1518
+    Rank Correlation: -0.6333
+
+    Probed top-5:
+        '=': 50.41%
+        '|': 8.55%
+        '
+': 8.17%
+      ★ ':': 7.67%
+        '_': 5.54%
+
+    Target top-5:
+      ★ '>>': 96.54%
+        ':': 1.36%
+        '--': 0.40%
+        '—': 0.31%
+        '.': 0.31%
+
+  Iteration 2:
+    Top-1 Match: ✓
+    Top-5 Overlap: 3/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: inf
+    Prob Cosine Sim: 0.9909
+    Hidden Cosine Sim: 0.3325
+    Rank Correlation: 0.5357
+
+    Probed top-5:
+      ★ ' 160': 97.30%
+      ★ '160': 2.69%
+        ' 320': 0.01%
+      ★ ' 170': 0.00%
+        ' 165': 0.00%
+
+    Target top-5:
+      ★ ' 160': 85.90%
+        '160': 14.07%
+        ' dest': 0.01%
+        ' 170': 0.00%
+        ' mix': 0.00%
+
+  Iteration 3:
+    Top-1 Match: ✓
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.6386
+    Hidden Cosine Sim: -0.1380
+    Rank Correlation: -0.1429
+
+    Probed top-5:
+      ★ '—': 32.44%
+        '=': 19.94%
+        '}': 11.26%
+        '
+': 9.96%
+      ★ '--': 8.41%
+
+    Target top-5:
+      ★ '—': 26.82%
+        ' was': 19.16%
+        '--': 15.91%
+        '>>': 15.70%
+        ')': 3.82%
+
+  Iteration 4:
+    Top-1 Match: ✗
+    Top-5 Overlap: 4/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: inf
+    Prob Cosine Sim: 0.1492
+    Hidden Cosine Sim: -0.1616
+    Rank Correlation: 0.6000
+
+    Probed top-5:
+      ★ ' 320': 87.09%
+      ★ ' 160': 11.74%
+      ★ '160': 1.15%
+        ' 240': 0.01%
+      ★ '320': 0.00%
+
+    Target top-5:
+      ★ ' 160': 90.89%
+        '160': 7.49%
+        ' 320': 1.38%
+        ' dest': 0.07%
+        '320': 0.03%
+
+  Iteration 5:
+    Top-1 Match: ✗
+    Top-5 Overlap: 3/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.6615
+    Hidden Cosine Sim: -0.0758
+    Rank Correlation: 0.1786
+
+    Probed top-5:
+      ★ ']': 32.74%
+      ★ ')': 31.13%
+        '}': 27.77%
+        '
+': 3.64%
+      ★ '—': 0.91%
+
+    Target top-5:
+      ★ ')': 26.09%
+        '--': 14.89%
+        ']': 14.77%
+        '—': 12.79%
+        '>>': 8.92%
+
+  Iteration 6:
+    Top-1 Match: ✗
+    Top-5 Overlap: 5/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.2705
+    Hidden Cosine Sim: -0.2632
+    Rank Correlation: 0.6000
+
+    Probed top-5:
+      ★ ' 320': 99.64%
+      ★ ' 160': 0.25%
+      ★ ' 240': 0.04%
+      ★ '160': 0.03%
+      ★ '320': 0.03%
+
+    Target top-5:
+      ★ ' 160': 63.50%
+        ' 320': 18.21%
+        '160': 15.73%
+        '320': 2.06%
+        ' 240': 0.05%
+
+----------------------------------------------------------------------------------------------------
+Example 8: Carla is downloading a 200 GB file. Normally she can download 2 GB/min...
+
+  Iteration 1:
+    Top-1 Match: ✗
+    Top-5 Overlap: 1/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.3619
+    Hidden Cosine Sim: 0.6430
+    Rank Correlation: -0.4667
+
+    Probed top-5:
+        '60': 8.31%
+      ★ '40': 7.90%
+        '168': 7.89%
+        'il': 7.09%
+        '160': 5.56%
+
+    Target top-5:
+      ★ '0': 22.54%
+        '40': 10.51%
+        '1': 9.23%
+        '120': 8.43%
+        '80': 6.62%
+
+  Iteration 2:
+    Top-1 Match: ✓
+    Top-5 Overlap: 3/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.9998
+    Hidden Cosine Sim: 0.8025
+    Rank Correlation: 0.6786
+
+    Probed top-5:
+      ★ '/': 94.23%
+      ★ '-': 4.35%
+      ★ '.': 0.98%
+        '
+': 0.18%
+        '|': 0.05%
+
+    Target top-5:
+      ★ '/': 94.20%
+        '-': 2.80%
+        '.': 0.54%
+        '/(': 0.47%
+        '=': 0.30%
+
+  Iteration 3:
+    Top-1 Match: ✓
+    Top-5 Overlap: 1/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.8215
+    Hidden Cosine Sim: 0.7923
+    Rank Correlation: -0.2167
+
+    Probed top-5:
+      ★ ' 40': 59.18%
+        ' 50': 23.35%
+        ' 42': 1.93%
+        ' 32': 1.36%
+        ' 35': 1.25%
+
+    Target top-5:
+      ★ ' 40': 33.42%
+        ' 80': 16.85%
+        ' 100': 8.18%
+        ' 60': 6.22%
+        '40': 4.86%
+
+  Iteration 4:
+    Top-1 Match: ✓
+    Top-5 Overlap: 3/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.8463
+    Hidden Cosine Sim: 0.8357
+    Rank Correlation: 0.4286
+
+    Probed top-5:
+      ★ '/': 40.84%
+        '
+': 22.58%
+      ★ '.': 16.30%
+      ★ '-': 3.96%
+        'apest': 1.20%
+
+    Target top-5:
+      ★ '/': 77.78%
+        '.': 4.63%
+        '-': 3.27%
+        '>>': 1.86%
+        '=': 1.59%
+
+  Iteration 5:
+    Top-1 Match: ✓
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.9333
+    Hidden Cosine Sim: 0.7336
+    Rank Correlation: 0.1429
+
+    Probed top-5:
+      ★ ' 40': 57.69%
+      ★ ' 50': 23.31%
+        ' 42': 2.88%
+        ' 32': 2.35%
+        ' Int': 1.28%
+
+    Target top-5:
+      ★ ' 40': 42.06%
+        ' 80': 6.89%
+        ' 50': 6.20%
+        '40': 6.01%
+        ' 100': 4.93%
+
+  Iteration 6:
+    Top-1 Match: ✗
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.3447
+    Hidden Cosine Sim: 0.8240
+    Rank Correlation: -0.0952
+
+    Probed top-5:
+        '
+': 23.82%
+      ★ '.': 23.25%
+        ' mL': 7.10%
+      ★ '/': 7.09%
+        ' Q': 3.00%
+
+    Target top-5:
+      ★ '/': 55.20%
+        '.': 10.78%
+        '-': 3.69%
+        '>>': 2.65%
+        '=': 1.99%
+
+----------------------------------------------------------------------------------------------------
+Example 9: John drives for 3 hours at a speed of 60 mph and then turns around bec...
+
+  Iteration 1:
+    Top-1 Match: ✓
+    Top-5 Overlap: 1/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.7039
+    Hidden Cosine Sim: 0.6337
+    Rank Correlation: -0.2500
+
+    Probed top-5:
+      ★ '80': 44.28%
+        '320': 12.13%
+        '270': 10.41%
+        '180': 6.06%
+        '30': 5.46%
+
+    Target top-5:
+      ★ '80': 26.41%
+        '60': 19.24%
+        '120': 7.45%
+        '*': 6.36%
+        '2': 5.26%
+
+  Iteration 2:
+    Top-1 Match: ✗
+    Top-5 Overlap: 1/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.2218
+    Hidden Cosine Sim: 0.7882
+    Rank Correlation: -0.4333
+
+    Probed top-5:
+        ' ALL': 25.79%
+        '|': 24.21%
+      ★ '*': 10.09%
+        ' All': 4.60%
+        '''': 4.30%
+
+    Target top-5:
+      ★ '*': 12.18%
+        '>>': 12.06%
+        '
+': 7.28%
+        '<|endoftext|>': 6.09%
+        '/': 3.79%
+
+  Iteration 3:
+    Top-1 Match: ✗
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.0524
+    Hidden Cosine Sim: -0.3311
+    Rank Correlation: -0.2857
+
+    Probed top-5:
+        ' additional': 80.18%
+      ★ ' 30': 6.77%
+        '<<': 2.43%
+      ★ '30': 1.56%
+        ' <': 1.49%
+
+    Target top-5:
+      ★ ' 120': 27.09%
+        ' 30': 17.18%
+        '30': 17.07%
+        '120': 12.18%
+        ' 60': 10.68%
+
+  Iteration 4:
+    Top-1 Match: ✓
+    Top-5 Overlap: 1/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.6415
+    Hidden Cosine Sim: 0.6339
+    Rank Correlation: -0.2167
+
+    Probed top-5:
+      ★ '
+': 27.18%
+        '+': 16.37%
+        ' usually': 9.71%
+        ' or': 8.12%
+        ' 3': 5.97%
+
+    Target top-5:
+      ★ '
+': 17.57%
+        '.': 8.99%
+        '>>': 8.87%
+        '<|endoftext|>': 5.45%
+        '*': 5.25%
+
+  Iteration 5:
+    Top-1 Match: ✓
+    Top-5 Overlap: 3/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: inf
+    Prob Cosine Sim: 0.9999
+    Hidden Cosine Sim: 0.1600
+    Rank Correlation: 0.4643
+
+    Probed top-5:
+      ★ ' 320': 95.37%
+      ★ '320': 4.63%
+        ' output': 0.00%
+      ★ ' 330': 0.00%
+        ' ED': 0.00%
+
+    Target top-5:
+      ★ ' 320': 89.04%
+        '320': 4.64%
+        ' 240': 0.78%
+        ' 330': 0.44%
+        ' 360': 0.39%
+
+  Iteration 6:
+    Top-1 Match: ✗
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0002
+    Prob Cosine Sim: 0.1101
+    Hidden Cosine Sim: 0.2376
+    Rank Correlation: -0.2143
+
+    Probed top-5:
+        '+': 92.15%
+      ★ '
+': 5.63%
+        ' or': 0.92%
+      ★ '<|endoftext|>': 0.29%
+        ' may': 0.18%
+
+    Target top-5:
+      ★ '.': 16.67%
+        '<|endoftext|>': 12.92%
+        '
+': 8.12%
+        '}}': 7.16%
+        '>>': 4.94%
+
+----------------------------------------------------------------------------------------------------
+Example 10: Eliza's rate per hour for the first 40 hours she works each week is $1...
+
+  Iteration 1:
+    Top-1 Match: ✓
+    Top-5 Overlap: 3/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.9910
+    Hidden Cosine Sim: -0.1133
+    Rank Correlation: 0.6071
+
+    Probed top-5:
+      ★ '5': 55.01%
+      ★ '4': 16.61%
+        '510': 4.34%
+      ★ '3': 4.11%
+        '460': 3.42%
+
+    Target top-5:
+      ★ '5': 72.31%
+        '4': 25.23%
+        '3': 0.96%
+        '1': 0.17%
+        '<': 0.16%
+
+  Iteration 2:
+    Top-1 Match: ✗
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.2114
+    Hidden Cosine Sim: 0.2534
+    Rank Correlation: -0.6190
+
+    Probed top-5:
+        '*': 51.94%
+        '/': 17.85%
+      ★ '.': 11.64%
+      ★ '?': 4.58%
+        ' Lat': 4.38%
+
+    Target top-5:
+      ★ '>>': 23.51%
+        ' <<': 9.93%
+        '?': 8.38%
+        '.': 4.74%
+        '<|endoftext|>': 4.70%
+
+  Iteration 3:
+    Top-1 Match: ✗
+    Top-5 Overlap: 0/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0002
+    Prob Cosine Sim: 0.0001
+    Hidden Cosine Sim: -0.0965
+    Rank Correlation: -0.8424
+
+    Probed top-5:
+        '''': 62.01%
+        ' 1440': 12.07%
+        ' 480': 5.92%
+        '</': 5.62%
+        ' 420': 4.69%
+
+    Target top-5:
+      ★ '12': 66.45%
+        ' 12': 28.40%
+        '1200': 1.39%
+        ' 4': 0.72%
+        '>>': 0.38%
+
+  Iteration 4:
+    Top-1 Match: ✓
+    Top-5 Overlap: 3/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0001
+    Prob Cosine Sim: 0.7235
+    Hidden Cosine Sim: 0.6774
+    Rank Correlation: 0.6429
+
+    Probed top-5:
+      ★ '.': 76.94%
+      ★ '-': 21.19%
+      ★ '?': 1.23%
+        ' .': 0.11%
+        ',': 0.09%
+
+    Target top-5:
+      ★ '.': 14.76%
+        '?': 13.55%
+        '-': 13.03%
+        'ry': 3.46%
+        '>>': 3.33%
+
+  Iteration 5:
+    Top-1 Match: ✗
+    Top-5 Overlap: 2/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0002
+    Prob Cosine Sim: 0.2778
+    Hidden Cosine Sim: -0.5427
+    Rank Correlation: -0.1190
+
+    Probed top-5:
+      ★ '60': 96.57%
+        ' release': 0.95%
+        ' 540': 0.68%
+        ' 60': 0.43%
+      ★ '720': 0.43%
+
+    Target top-5:
+      ★ '720': 33.46%
+        '60': 9.97%
+        ' 720': 6.17%
+        '560': 6.09%
+        'ged': 4.70%
+
+  Iteration 6:
+    Top-1 Match: ✗
+    Top-5 Overlap: 3/5 tokens
+    JS Divergence: 0.0000
+    KL Divergence: 0.0000
+    Prob Cosine Sim: 0.4699
+    Hidden Cosine Sim: -0.4615
+    Rank Correlation: 0.3571
+
+    Probed top-5:
+      ★ '
+': 38.71%
+      ★ '.': 36.69%
+      ★ '?': 6.88%
+        ' [': 3.45%
+        ' (': 1.97%
+
+    Target top-5:
+      ★ '?': 33.94%
+        '.': 14.33%
+        ',': 10.65%
+        '
+': 5.38%
+        '<|endoftext|>': 3.79%
+
+----------------------------------------------------------------------------------------------------
+Processed 50/100 examples...
+  Running Top-1 Accuracy: 32.00%
+  Running Avg Top-5 Overlap: 1.87/5
+
+----------------------------------------------------------------------------------------------------
+Processed 100/100 examples...
+  Running Top-1 Accuracy: 32.67%
+  Running Avg Top-5 Overlap: 1.81/5
+
+====================================================================================================
+FINAL RESULTS
+====================================================================================================
+
+Overall Metrics (600 samples):
+  Top-1 Exact Match: 196/600 = 32.67%
+  Top-5 Overlap: 1.81/5 tokens (36.2%)
+  Jensen-Shannon Divergence: 0.0000
+  KL Divergence: inf
+  Probability Cosine Similarity: 0.4608
+  Hidden State Cosine Similarity: 0.4134
+  Rank Correlation (Spearman): -0.1684
+
+Per-Iteration Top-1 Accuracy:
+  Iteration 1: 29/100 = 29.00%
+  Iteration 2: 37/100 = 37.00%
+  Iteration 3: 32/100 = 32.00%
+  Iteration 4: 35/100 = 35.00%
+  Iteration 5: 26/100 = 26.00%
+  Iteration 6: 37/100 = 37.00%
+
+Per-Iteration Top-5 Overlap:
+  Iteration 1: 1.57/5 (31.4%)
+  Iteration 2: 1.93/5 (38.6%)
+  Iteration 3: 1.67/5 (33.4%)
+  Iteration 4: 1.90/5 (38.0%)
+  Iteration 5: 1.95/5 (39.0%)
+  Iteration 6: 1.83/5 (36.6%)
+
+Top-5 Overlap Distribution:
+  0/5 overlap: 89 samples (14.8%)
+  1/5 overlap: 147 samples (24.5%)
+  2/5 overlap: 208 samples (34.7%)
+  3/5 overlap: 109 samples (18.2%)
+  4/5 overlap: 40 samples (6.7%)
+  5/5 overlap: 7 samples (1.2%)
+====================================================================================================
