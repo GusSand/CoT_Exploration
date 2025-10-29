@@ -1,6 +1,6 @@
 # Data Inventory - CoT Exploration Project
 
-**Last Updated**: 2025-10-29 (Added Section 23: Adversarial Attack Results - CODI vs Plain LLaMA under 9 input manipulation attacks)
+**Last Updated**: 2025-10-29 (Added Section 25: Adversarial Attack Case Studies - Qualitative analysis demonstrating CODI vulnerabilities and robustness)
 
 This document provides a complete breakdown of all datasets in the project, organized by experiment type and model.
 
@@ -4569,3 +4569,152 @@ python 2_analyze_problem_sensitivity.py
 
 ---
 
+
+## 25. Adversarial Attack Case Studies (Qualitative Analysis)
+
+### Overview
+Qualitative analysis of adversarial attacks on CODI vs Plain LLaMA, demonstrating vulnerability patterns and robustness advantages through concrete examples.
+
+**Location**: [`src/experiments/qualitative_analysis/adversarial_attack_case_studies/`](../src/experiments/qualitative_analysis/adversarial_attack_case_studies/)
+
+---
+
+### 25.1 Case Study Document
+**File**: [`src/experiments/qualitative_analysis/adversarial_attack_case_studies/case_studies.md`](../src/experiments/qualitative_analysis/adversarial_attack_case_studies/case_studies.md)
+
+**Purpose**: Detailed qualitative analysis with concrete examples showing:
+1. Attacks that succeed vs fail on both models
+2. CODI's critical vulnerability (Number Perturbation Moderate)
+3. CODI's robustness advantage (Structure Disruption)
+4. Plain LLaMA's response to the same attacks
+
+**Size**: 6 detailed case studies
+
+**Case Study Examples**:
+
+**1. Number Perturbation (Mild)** - Both models handle gracefully
+- Problem: Birthday Candles (gsm8k_test_563)
+- Attack: Add `(note: 6)` after first sentence
+- CODI: 12 ✓ (correct)
+- Plain LLaMA: 3 ✗ (wrong)
+- **Outcome**: CODI filters single injected number
+
+**2. Number Perturbation (Moderate)** - CODI's CRITICAL VULNERABILITY
+- Problem: Fundraising Carnival (gsm8k_test_1309)
+- Attack: Add `(30 total)`, `(note: 76)`, `(costs $89)` throughout
+- Gold Answer: 2280
+- CODI: 1860 ✗ (wrong, -18% error)
+- Plain LLaMA: 320 ✗ (wrong, -86% error)
+- **Impact**: 0% CODI accuracy across full test set (-54pp drop)
+- **Mechanism**: 3-5 contextually plausible numbers overwhelm CT0 aggregation
+
+**3. Number Perturbation (Moderate)** - Second example
+- Problem: Puzzle Assembly (gsm8k_test_228)
+- Attack: Add `(69 total)`, `(note: 142)`, `(costs $187)`
+- Gold Answer: 1 hour
+- CODI: 2 hours ✗ (2× off)
+- Plain LLaMA: 23 hours ✗ (23× off)
+- **Analysis**: Both models incorporate irrelevant numbers into calculations
+
+**4. Structure Disruption (Severe)** - CODI's ADVANTAGE
+- Problem: TV and Reading Time (gsm8k_test_65)
+- Attack: Completely shuffle sentences, move question to middle
+- Gold Answer: 36 hours
+- CODI Baseline: 36 ✓
+- CODI Under Attack: 36 ✓ (NO DEGRADATION)
+- Plain LLaMA Baseline: 384 ✗
+- Plain LLaMA Under Attack: 84 ✗
+- **Impact**: CODI maintains 34% accuracy vs Plain 10% under severe shuffling (+24pp advantage)
+
+**5. Structure Disruption (Severe)** - Second example
+- Problem: Jewelry Brooch (gsm8k_test_61)
+- Attack: Shuffle sentences, move question to middle
+- Gold Answer: 1430
+- CODI: 1430 ✓ (perfect)
+- Plain LLaMA: 1300 ✗ (confused by question placement)
+- **Mechanism**: CODI's latent reasoning is order-independent
+
+**6. Distractor Injection (Severe)** - Both models fail
+- Both CODI and Plain LLaMA struggle with 5+ irrelevant math facts
+- CODI: 8% accuracy
+- Plain LLaMA: 12% accuracy (slightly better)
+
+**Key Findings**:
+- **Critical Vulnerability**: Number Perturbation Moderate causes CODI complete collapse (0% accuracy, -54pp)
+- **Robustness Advantage**: Structure Disruption shows CODI is MORE robust (+24pp over Plain LLaMA)
+- **Plain LLaMA Comparison**: More resilient to number attacks (-26pp vs CODI's -54pp) but fails on structure
+- **Mechanism**: CT0 hub cannot distinguish relevant from irrelevant numbers but handles non-sequential information well
+
+**Structure**:
+Each case study includes:
+- Original question (full text)
+- Adversarial question (with injection highlighted)
+- Gold answer and solution steps
+- Model predictions (CODI and Plain LLaMA)
+- Correctness indicators
+- Detailed mechanism analysis
+
+**Related Data**:
+- **Quantitative Results**: [`docs/experiments/10-29_llama_gsm8k_adversarial_attacks_codi.md`](../docs/experiments/10-29_llama_gsm8k_adversarial_attacks_codi.md)
+- **Raw Attack Results**: [`data/adversarial_attacks/attack_results.json`](../data/adversarial_attacks/attack_results.json)
+- **Baseline Results**: [`data/adversarial_attacks/baseline_results.json`](../data/adversarial_attacks/baseline_results.json)
+- **Attack Implementations**: [`src/experiments/adversarial_attacks/strategies/`](../src/experiments/adversarial_attacks/strategies/)
+
+**Used By**:
+- Understanding attack mechanisms
+- Developing defense strategies
+- Identifying deployment risks
+- Designing adversarial training data
+- Security threat assessment
+
+**Source Data**: 
+- GSM8K test set (50 problems sampled)
+- 9 attack variants (3 strategies × 3 strengths)
+- Baseline results from both models
+
+**Experiment**: `docs/experiments/10-29_llama_gsm8k_adversarial_attacks_codi.md`
+**Model**: LLaMA-3.2-1B-Instruct (CODI vs Plain)
+**Dataset**: GSM8K test set (n=50)
+**Purpose**: Assess CODI vulnerability to input manipulation attacks
+**Key Result**: Paradoxical robustness - CODI is both more robust (structure) AND more vulnerable (numbers) than Plain LLaMA
+
+---
+
+### 25.2 Directory README
+**File**: [`src/experiments/qualitative_analysis/adversarial_attack_case_studies/README.md`](../src/experiments/qualitative_analysis/adversarial_attack_case_studies/README.md)
+
+**Purpose**: Navigation and quick reference for the adversarial attack case studies directory
+
+**Contents**:
+- Directory structure overview
+- Links to related experiments
+- Summary of key findings
+- Usage guidelines
+
+---
+
+### Experiment Usage Summary
+
+**Experiment**: Adversarial Attacks on CODI (October 29, 2025)
+**Documentation**: `docs/experiments/10-29_llama_gsm8k_adversarial_attacks_codi.md`
+**Qualitative Analysis**: `src/experiments/qualitative_analysis/adversarial_attack_case_studies/case_studies.md`
+
+**Quantitative Results** (50 problems):
+| Attack | CODI Accuracy | Plain Accuracy | CODI Advantage |
+|--------|---------------|----------------|----------------|
+| Baseline | 54% | 32% | +22pp |
+| Number Perturb (Moderate) | **0%** ⚠️ | 6% | -28pp (VULNERABILITY) |
+| Structure Disrupt (Severe) | 34% | 10% | **+24pp** (ADVANTAGE) |
+| Distractor (Severe) | 8% | 12% | -4pp |
+
+**Security Assessment**: MEDIUM-HIGH RISK
+- One critical vulnerability (number perturbation moderate)
+- But superior general robustness in most scenarios
+
+**Defense Recommendations**:
+1. Input validation for numerical perturbations
+2. CT0 regularization during training
+3. Attention masking for question-relevant numbers
+4. Adversarial training with number injection examples
+
+---
