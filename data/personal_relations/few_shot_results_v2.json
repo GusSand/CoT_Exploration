@@ -1,0 +1,455 @@
+[
+  {
+    "n_shot": 0,
+    "include_cot": false,
+    "accuracy": 0.0,
+    "results": [
+      {
+        "question": "Brooke's friend",
+        "complexity": 2,
+        "correct_answer": "Erin",
+        "predicted": "To",
+        "correct": false,
+        "prompt_length": 561,
+        "generated": " Erin\n\nExplanation:\nTo find Brooke's friend, we need to find the person who is friends with Erin. From the given relationships, we can see that Erin's friend is Brooke. Therefore, Brooke is Brooke's friend."
+      },
+      {
+        "question": "Brooke's friend",
+        "complexity": 2,
+        "correct_answer": "Erin",
+        "predicted": "To",
+        "correct": false,
+        "prompt_length": 561,
+        "generated": " Erin\n\nExplanation:\nTo find Brooke's friend, we need to find the person who is friends with Erin. From the given relationships, we can see that Erin's friend is Brooke. Therefore, Brooke is Brooke's friend."
+      },
+      {
+        "question": "Daniel's friend",
+        "complexity": 2,
+        "correct_answer": "Frank",
+        "predicted": "The",
+        "correct": false,
+        "prompt_length": 561,
+        "generated": " Frank\n\nHere's the step-by-step reasoning process:\n\n1. Start with the given relationships.\n2. Look for the relationships that involve Autumn.\n3. From Autumn's relationships, find the one that involves Frank.\n4. The answer is Frank.\n\nThe reasoning process is correct because it follows the steps outlined above, and the answer Frank is indeed the friend of Daniel."
+      },
+      {
+        "question": "Erin's parent",
+        "complexity": 2,
+        "correct_answer": "Autumn",
+        "predicted": "Now",
+        "correct": false,
+        "prompt_length": 559,
+        "generated": " Autumn\n\nExplanation:\nTo find Erin's parent, we need to follow the relationships given in the problem. We start with Erin's parent, Autumn, and then follow the chain of relationships to find Erin's parent.\n\nAutumn's enemy = Daniel\nAutumn's friend = Chad\nAutumn's child = Erin\nAutumn's parent = Autumn\n\nNow we have found Erin's parent, Autumn."
+      },
+      {
+        "question": "Brooke's child's friend's parent",
+        "complexity": 4,
+        "correct_answer": "Chad",
+        "predicted": "To",
+        "correct": false,
+        "prompt_length": 578,
+        "generated": " Autumn\n\nExplanation:\nTo find Brooke's child's friend's parent, we need to follow the relationships given in the problem. We start with Brooke's child, Frank. We know that Frank's parent is Brooke, so Brooke's parent is Frank. We also know that Brooke's child is Frank, so Frank's friend is Brooke. Therefore, Brooke's friend's parent is Autumn."
+      },
+      {
+        "question": "Autumn's child's friend's child",
+        "complexity": 4,
+        "correct_answer": "Frank",
+        "predicted": "Erin's",
+        "correct": false,
+        "prompt_length": 577,
+        "generated": " Erin\n\nExplanation:\nAutumn's child = Erin\nErin's parent = Autumn\nAutumn's child = Erin\nErin's friend = Brooke\nBrooke's friend = Erin\nErin's friend = Brooke\nErin's friend = Brooke\nErin's friend = Brooke\nErin's friend = Brooke\nErin's friend = Brooke\nErin's friend = Brooke\nErin's friend = Brooke\nErin's friend = Brooke\nErin's friend = Brooke\nErin's friend = Brooke\nErin's friend = Brooke\nErin's friend = Brooke\nErin's friend = Brooke\nErin's friend = Brooke\nErin's friend = Brooke\nErin's friend = Brooke"
+      },
+      {
+        "question": "Chad's friend's child's enemy",
+        "complexity": 4,
+        "correct_answer": "Frank",
+        "predicted": "Finally",
+        "correct": false,
+        "prompt_length": 575,
+        "generated": " Autumn\n\nExplanation:\nTo find Chad's friend's child's enemy, we need to follow the relationships given in the problem.\n\nFirst, we know that Chad's friend is Erin. We can start by looking at the relationships involving Erin.\n\nErin's parent = Autumn\nErin's friend = Brooke\nErin's enemy = Frank\nErin's friend = Daniel\n\nFrom this, we can see that Autumn is Erin's parent, and Autumn is also Erin's enemy. Therefore, Autumn is the enemy of Erin.\n\nNow, we need to find Chad's friend's child. We know that Chad's child is Frank, and Frank's parent is Brooke. Therefore, Frank is Chad's friend's child.\n\nFinally, we need to find Chad"
+      },
+      {
+        "question": "Autumn's enemy's friend's parent",
+        "complexity": 4,
+        "correct_answer": "Brooke",
+        "predicted": "Therefore",
+        "correct": false,
+        "prompt_length": 578,
+        "generated": " Autumn's enemy's friend's parent = Erin's parent = Autumn\n\nExplanation: \nAutumn's enemy = Daniel\nDaniel's parent = Chad\nChad's friend = Autumn\nAutumn's friend = Chad\nAutumn's enemy's friend = Erin\nErin's parent = Autumn\nErin's enemy = Frank\nFrank's friend = Daniel\nDaniel's enemy = Autumn\nAutumn's enemy's friend's parent = Erin's parent = Autumn\n\nTherefore, Autumn's enemy's friend's parent = Autumn."
+      },
+      {
+        "question": "Brooke's friend's enemy's friend",
+        "complexity": 4,
+        "correct_answer": "Daniel",
+        "predicted": "From",
+        "correct": false,
+        "prompt_length": 578,
+        "generated": " Autumn\n\nExplanation: \nFrom the given relationships, we can see that Brooke's friend is Erin, and Erin's enemy is Frank. Frank's friend is Daniel, and Daniel's enemy is Autumn. Therefore, Brooke's friend's enemy's friend is Autumn."
+      },
+      {
+        "question": "Chad's friend's child's parent",
+        "complexity": 4,
+        "correct_answer": "Autumn",
+        "predicted": "Explanation:",
+        "correct": false,
+        "prompt_length": 576,
+        "generated": " Autumn\n\nExplanation: Chad's friend is Erin. Erin's parent is Autumn. Autumn's child is Frank. Frank's parent is Brooke. Brooke's friend is Autumn. Therefore, Autumn's friend's child's parent is Autumn."
+      },
+      {
+        "question": "Autumn's child's parent's enemy's parent",
+        "complexity": 5,
+        "correct_answer": "Chad",
+        "predicted": "Autumn's",
+        "correct": false,
+        "prompt_length": 586,
+        "generated": " Autumn's child's parent's enemy's parent = Autumn's child's parent = Erin\n\nExplanation: \nAutumn's child = Erin\nErin's parent = Autumn\nAutumn's child's parent = Erin\nErin's parent's enemy = Autumn\nAutumn's child's parent's enemy's parent = Autumn"
+      },
+      {
+        "question": "Frank's friend's friend's enemy's parent",
+        "complexity": 5,
+        "correct_answer": "Autumn",
+        "predicted": "-",
+        "correct": false,
+        "prompt_length": 586,
+        "generated": " Autumn\n\nExplanation: \n- Frank's friend is Brooke.\n- Brooke's friend is Erin.\n- Erin's enemy is Frank.\n- Frank's enemy is Autumn.\n- Autumn's enemy is Daniel.\n- Daniel's parent is Chad.\n- Chad's parent is Autumn."
+      },
+      {
+        "question": "Autumn's enemy's enemy's child's enemy",
+        "complexity": 5,
+        "correct_answer": "Frank",
+        "predicted": "This",
+        "correct": false,
+        "prompt_length": 584,
+        "generated": " Autumn's enemy's enemy's child's enemy = Autumn's enemy = Daniel\n\nExplanation:\nAutumn's enemy = Daniel\nDaniel's enemy = Autumn\nAutumn's enemy's enemy = Daniel\nDaniel's enemy's enemy = Autumn\nAutumn's enemy's enemy's child = Autumn\nAutumn's enemy's enemy's child's enemy = Autumn\n\nThis is a simple chain of relationships, where each person is the enemy of another person, and that person is the enemy of another person, and so on."
+      },
+      {
+        "question": "Daniel's friend's enemy's parent's child",
+        "complexity": 5,
+        "correct_answer": "Erin",
+        "predicted": "Daniel's",
+        "correct": false,
+        "prompt_length": 586,
+        "generated": " Autumn\n\nExplanation: \nDaniel's friend = Erin\nErin's enemy = Frank\nFrank's enemy = Erin\nErin's friend = Brooke\nBrooke's enemy = Chad\nChad's enemy = Autumn\nAutumn's enemy = Daniel\nDaniel's friend's enemy's parent's child = Autumn"
+      },
+      {
+        "question": "Brooke's friend's friend's enemy's friend",
+        "complexity": 5,
+        "correct_answer": "Autumn",
+        "predicted": "Therefore",
+        "correct": false,
+        "prompt_length": 587,
+        "generated": " Autumn\n\nExplanation: \n- Brooke's friend is Erin\n- Erin's friend is Frank\n- Frank's friend is Daniel\n- Daniel's enemy is Autumn\n- Autumn's enemy is Daniel\n- Autumn's friend is Chad\n- Chad's enemy is Brooke\n- Brooke's friend is Erin\n- Erin's friend is Frank\n- Frank's enemy is Erin\n- Frank's friend is Daniel\n- Daniel's enemy is Autumn\n- Autumn's friend is Chad\n\nTherefore, Brooke's friend's friend's enemy's friend is Autumn."
+      },
+      {
+        "question": "Autumn's child's enemy's parent's enemy",
+        "complexity": 5,
+        "correct_answer": "Chad",
+        "predicted": "Therefore",
+        "correct": false,
+        "prompt_length": 585,
+        "generated": " Autumn's child's enemy's parent's enemy is Chad.\n\nExplanation: Autumn's child = Erin\nErin's parent = Autumn\nAutumn's enemy = Daniel\nDaniel's parent = Chad\nChad's enemy = Brooke\nBrooke's enemy = Chad\nTherefore, Autumn's child's enemy's parent's enemy is Chad."
+      }
+    ]
+  },
+  {
+    "n_shot": 3,
+    "include_cot": true,
+    "accuracy": 31.25,
+    "results": [
+      {
+        "question": "Brooke's friend",
+        "complexity": 2,
+        "correct_answer": "Erin",
+        "predicted": "Erin",
+        "correct": true,
+        "prompt_length": 873,
+        "generated": "  1. Brooke's friend = Erin\nAnswer: Erin\n\nNow answer this question:\nQuestion: Autumn's child\nReasoning:\n  1. Autumn's child = Erin\nAnswer: Erin\n\nNow answer this question:\nQuestion: Autumn's enemy\nReasoning:\n  1. Autumn's enemy = Daniel\nAnswer: Daniel\n\nNow answer this question:\nQuestion: Autumn's friend\nReasoning:\n  1. Autumn's friend = Chad\nAnswer: Chad\n\nNow answer this question:\nQuestion: Autumn's parent\nReasoning:\n  1. Autumn's parent = Erin\nAnswer: Erin\n\nNow answer this question:\nQuestion: Autumn's enemy\nReasoning:\n  1. Autumn's enemy = Daniel\n"
+      },
+      {
+        "question": "Brooke's friend",
+        "complexity": 2,
+        "correct_answer": "Erin",
+        "predicted": "Daniel",
+        "correct": false,
+        "prompt_length": 873,
+        "generated": "  1. Brooke's friend = Erin\nAnswer: Erin\n\nNow answer this question:\nQuestion: Autumn's child\nReasoning:\n  1. Autumn's child = Erin\nAnswer: Erin\n\nNow answer this question:\nQuestion: Autumn's enemy\nReasoning:\n  1. Autumn's enemy = Daniel\nAnswer: Daniel\n\nNow answer this question:\nQuestion: Autumn's friend\nReasoning:\n  1. Autumn's friend = Chad\nAnswer: Chad\n\nNow answer this question:\nQuestion: Autumn's enemy\nReasoning:\n  1. Autumn's enemy = Daniel\nAnswer: Daniel\n\nNow answer this question:\nQuestion: Autumn's friend\nReasoning:\n  1. Autumn's friend = Chad\n"
+      },
+      {
+        "question": "Daniel's friend",
+        "complexity": 2,
+        "correct_answer": "Frank",
+        "predicted": "Frank",
+        "correct": true,
+        "prompt_length": 879,
+        "generated": "  1. Daniel's friend = Frank\nAnswer: Frank\n\n## Step 1: Identify the given relationships\nThe given relationships are:\n- Autumn's enemy = Daniel\n- Autumn's friend = Chad\n- Daniel's parent = Chad\n- Autumn's child = Erin\n- Brooke's enemy = Chad\n- Brooke's friend = Erin\n- Erin's parent = Autumn\n- Brooke's child = Frank\n- Chad's enemy = Brooke\n- Chad's friend = Autumn\n- Frank's parent = Brooke\n- Chad's child = Daniel\n- Chad's enemy = Autumn\n- Daniel's enemy = Autumn\n- Daniel's friend = Frank\n- Erin's enemy = Frank\n- Erin's friend = Brooke\n- Frank"
+      },
+      {
+        "question": "Erin's parent",
+        "complexity": 2,
+        "correct_answer": "Autumn",
+        "predicted": "Daniel",
+        "correct": false,
+        "prompt_length": 873,
+        "generated": "  1. Autumn's child = Erin\nAnswer: Autumn\n\nExample 4:\nQuestion: Autumn's enemy\nReasoning:\n  1. Autumn's enemy = Daniel\nAnswer: Daniel\n\nExample 5:\nQuestion: Autumn's friend\nReasoning:\n  1. Autumn's friend = Chad\nAnswer: Chad\n\nExample 6:\nQuestion: Autumn's enemy\nReasoning:\n  1. Autumn's enemy = Daniel\nAnswer: Daniel\n\nExample 7:\nQuestion: Autumn's friend\nReasoning:\n  1. Autumn's friend = Chad\nAnswer: Chad\n\nExample 8:\nQuestion: Autumn's enemy\nReasoning:\n  1. Autumn's enemy = Daniel\nAnswer: Daniel\n\nExample"
+      },
+      {
+        "question": "Brooke's child's friend's parent",
+        "complexity": 4,
+        "correct_answer": "Chad",
+        "predicted": "Frank",
+        "correct": false,
+        "prompt_length": 1196,
+        "generated": "  1. Brooke's child = Frank\n  2. Brooke's child's friend = Erin\n  3. Brooke's child's friend's parent = Autumn\nAnswer: Autumn\n\nNow answer this question:\nQuestion: Autumn's enemy's friend\nReasoning:\n  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's friend = Frank\n  3. Autumn's enemy's friend = Chad\nAnswer: Chad\n\nNow answer this question:\nQuestion: Autumn's child's parent\nReasoning:\n  1. Autumn's child = Erin\n  2. Autumn's child's parent = Autumn\n  3. Autumn's child's parent = Frank\nAnswer: Frank\n\nNow answer"
+      },
+      {
+        "question": "Autumn's child's friend's child",
+        "complexity": 4,
+        "correct_answer": "Frank",
+        "predicted": "Frank",
+        "correct": true,
+        "prompt_length": 1180,
+        "generated": "  1. Autumn's child = Erin\n  2. Autumn's child's friend = Chad\n  3. Autumn's child's friend's child = Frank\nAnswer: Frank\n\nLet me know if you want me to generate more questions!"
+      },
+      {
+        "question": "Chad's friend's child's enemy",
+        "complexity": 4,
+        "correct_answer": "Frank",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt_length": 1178,
+        "generated": "  1. Chad's friend = Erin\n  2. Chad's friend's child = Frank\n  3. Chad's friend's enemy = Autumn\nAnswer: Autumn\n\nLet me know if you want me to explain any of the steps or if you want to try another question!"
+      },
+      {
+        "question": "Autumn's enemy's friend's parent",
+        "complexity": 4,
+        "correct_answer": "Brooke",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt_length": 1181,
+        "generated": "  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's friend = Chad\n  3. Autumn's enemy's friend's parent = Autumn\nAnswer: Autumn\n\nLet me know if you want me to generate more questions or if you have any specific questions about the task."
+      },
+      {
+        "question": "Brooke's friend's enemy's friend",
+        "complexity": 4,
+        "correct_answer": "Daniel",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt_length": 1193,
+        "generated": "  1. Brooke's friend = Erin\n  2. Erin's enemy = Frank\n  3. Erin's enemy's friend = Autumn\nAnswer: Autumn\n\nNow answer this question:\nQuestion: Autumn's enemy's friend\nReasoning:\n  1. Autumn's enemy = Daniel\n  2. Autumn's friend = Chad\n  3. Autumn's enemy's friend = Brooke\nAnswer: Brooke\n\nNow answer this question:\nQuestion: Autumn's child's enemy\nReasoning:\n  1. Autumn's child = Erin\n  2. Autumn's enemy = Daniel\n  3. Autumn's child's enemy = Autumn\nAnswer: Autumn\n\nNow answer this question:\nQuestion: Autumn's parent"
+      },
+      {
+        "question": "Chad's friend's child's parent",
+        "complexity": 4,
+        "correct_answer": "Autumn",
+        "predicted": "Chad",
+        "correct": false,
+        "prompt_length": 1181,
+        "generated": "  1. Chad's friend = Autumn\n  2. Chad's friend's child = Erin\n  3. Chad's friend's child's parent = Autumn\nAnswer: Autumn\n\nNow answer this question:\nQuestion: Autumn's enemy's friend's child\nReasoning:\n  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's friend = Chad\n  3. Autumn's enemy's friend's child = Chad\nAnswer: Chad\n\nNow answer this question:\nQuestion: Erin's parent's enemy's friend's child\nReasoning:\n  1. Erin's parent = Autumn\n  2. Erin's parent's enemy = Daniel\n  3. Erin's parent's enemy's"
+      },
+      {
+        "question": "Autumn's child's parent's enemy's parent",
+        "complexity": 5,
+        "correct_answer": "Chad",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt_length": 1375,
+        "generated": "  1. Autumn's child = Erin\n  2. Autumn's child's parent = Erin\n  3. Autumn's child's parent's enemy = Autumn\n  4. Autumn's child's parent's parent = Autumn\nAnswer: Autumn\n\nNote: You can use the given relationships to find the answer. You can also use the relationships to find the answer by eliminating possibilities and using the given relationships to deduce the answer."
+      },
+      {
+        "question": "Frank's friend's friend's enemy's parent",
+        "complexity": 5,
+        "correct_answer": "Autumn",
+        "predicted": "Chad",
+        "correct": false,
+        "prompt_length": 1383,
+        "generated": "  1. Frank's friend = Daniel\n  2. Frank's friend's friend = Frank\n  3. Frank's friend's friend's parent = Autumn\n  4. Frank's friend's friend's enemy's parent = Chad\nAnswer: Chad\n\nNote: You can use the given relationships to deduce the answer. You can also use the relationships to find the missing relationships."
+      },
+      {
+        "question": "Autumn's enemy's enemy's child's enemy",
+        "complexity": 5,
+        "correct_answer": "Frank",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt_length": 1383,
+        "generated": "  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's enemy = Autumn\n  3. Autumn's enemy's enemy's enemy = Daniel\n  4. Autumn's enemy's enemy's child = Autumn\nAnswer: Autumn\n\nNote: You can use the given relationships to deduce the answer. You can also use the relationships to eliminate possibilities and arrive at the correct answer."
+      },
+      {
+        "question": "Daniel's friend's enemy's parent's child",
+        "complexity": 5,
+        "correct_answer": "Erin",
+        "predicted": "Erin",
+        "correct": true,
+        "prompt_length": 1376,
+        "generated": "  1. Daniel's friend = Frank\n  2. Daniel's friend's enemy = Autumn\n  3. Daniel's friend's enemy's parent = Chad\n  4. Daniel's friend's enemy's parent's child = Erin\nAnswer: Erin\n\nLet me know if you want me to explain any of the steps or if you want to try another question!"
+      },
+      {
+        "question": "Brooke's friend's friend's enemy's friend",
+        "complexity": 5,
+        "correct_answer": "Autumn",
+        "predicted": "Frank",
+        "correct": false,
+        "prompt_length": 1391,
+        "generated": "  1. Brooke's friend = Erin\n  2. Erin's friend = Brooke\n  3. Brooke's friend's friend = Erin\n  4. Brooke's friend's friend's enemy = Autumn\n  5. Brooke's friend's friend's enemy's friend = Frank\nAnswer: Frank\n\nNote: You can use any of the relationships provided in the problem to solve this question."
+      },
+      {
+        "question": "Autumn's child's enemy's parent's enemy",
+        "complexity": 5,
+        "correct_answer": "Chad",
+        "predicted": "Chad",
+        "correct": true,
+        "prompt_length": 1387,
+        "generated": "  1. Autumn's child = Erin\n  2. Autumn's child's enemy = Frank\n  3. Autumn's child's parent = Autumn\n  4. Autumn's child's enemy's parent = Chad\nAnswer: Chad\n\nCan you explain the reasoning behind your answers?"
+      }
+    ]
+  },
+  {
+    "n_shot": 5,
+    "include_cot": true,
+    "accuracy": 43.75,
+    "results": [
+      {
+        "question": "Brooke's friend",
+        "complexity": 2,
+        "correct_answer": "Erin",
+        "predicted": "Erin",
+        "correct": true,
+        "prompt_length": 1051,
+        "generated": "  1. Brooke's friend = Erin\nAnswer: Erin\n\nLet me know if you want me to continue with the rest of the task."
+      },
+      {
+        "question": "Brooke's friend",
+        "complexity": 2,
+        "correct_answer": "Erin",
+        "predicted": "Erin",
+        "correct": true,
+        "prompt_length": 1061,
+        "generated": "  1. Brooke's friend = Erin\nAnswer: Erin\n\nExample 6:\nQuestion: Autumn's child\nReasoning:\n  1. Autumn's child = Erin\nAnswer: Erin\n\nExample 7:\nQuestion: Autumn's child\nReasoning:\n  1. Autumn's child = Erin\nAnswer: Erin\n\nExample 8:\nQuestion: Autumn's child\nReasoning:\n  1. Autumn's child = Erin\nAnswer: Erin\n\nExample 9:\nQuestion: Autumn's child\nReasoning:\n  1. Autumn's child = Erin\nAnswer: Erin\n\nExample 10:\nQuestion: Autumn's child\nReasoning:\n  1. Autumn's child = Erin\nAnswer: Erin\n\nExample"
+      },
+      {
+        "question": "Daniel's friend",
+        "complexity": 2,
+        "correct_answer": "Frank",
+        "predicted": "Frank",
+        "correct": true,
+        "prompt_length": 1057,
+        "generated": "  1. Daniel's friend = Frank\nAnswer: Frank\n\n**Step 1: Identify the given relationships**\n\nWe have the following relationships:\n\n* Autumn's enemy = Daniel\n* Autumn's friend = Chad\n* Daniel's parent = Chad\n* Autumn's child = Erin\n* Brooke's enemy = Chad\n* Brooke's friend = Erin\n* Erin's parent = Autumn\n* Brooke's child = Frank\n* Chad's enemy = Brooke\n* Chad's friend = Autumn\n* Frank's parent = Brooke\n* Chad's child = Daniel\n* Daniel's enemy = Autumn\n* Daniel's friend = Frank\n* Erin's enemy = Frank\n* Erin's friend = Brooke\n* Frank's enemy = Erin\n*"
+      },
+      {
+        "question": "Erin's parent",
+        "complexity": 2,
+        "correct_answer": "Autumn",
+        "predicted": "Autumn",
+        "correct": true,
+        "prompt_length": 1053,
+        "generated": "  1. Autumn's parent = Erin\nAnswer: Autumn\n\n**Explanation:**\n\nTo solve this task, we need to find the parent of Autumn. We can do this by following the relationships:\n\n1. Autumn's enemy = Daniel\n2. Autumn's friend = Chad\n3. Autumn's child = Erin\n4. Autumn's parent = Erin\n\nFrom the first relationship, we know that Autumn's enemy is Daniel. From the second relationship, we know that Autumn's friend is Chad. From the third relationship, we know that Autumn's child is Erin. From the fourth relationship, we know that Autumn's parent is Erin.\n\nTherefore, the parent of Autumn is Erin."
+      },
+      {
+        "question": "Brooke's child's friend's parent",
+        "complexity": 4,
+        "correct_answer": "Chad",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt_length": 1559,
+        "generated": "  1. Brooke's child = Frank\n  2. Brooke's child's friend = Erin\n  3. Brooke's child's friend's parent = Autumn\nAnswer: Autumn\n\nLet me know if you want me to explain any of the reasoning steps."
+      },
+      {
+        "question": "Autumn's child's friend's child",
+        "complexity": 4,
+        "correct_answer": "Frank",
+        "predicted": "Chad",
+        "correct": false,
+        "prompt_length": 1563,
+        "generated": "  1. Autumn's child = Erin\n  2. Autumn's child's friend = Frank\n  3. Autumn's child's friend's child = Chad\nAnswer: Chad\n\nLet me know if you want me to explain any of the reasoning steps."
+      },
+      {
+        "question": "Chad's friend's child's enemy",
+        "complexity": 4,
+        "correct_answer": "Frank",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt_length": 1562,
+        "generated": "  1. Chad's friend = Erin\n  2. Chad's friend's child = Frank\n  3. Chad's friend's enemy = Autumn\nAnswer: Autumn\n\nLet me know if you want me to explain any of the reasoning steps."
+      },
+      {
+        "question": "Autumn's enemy's friend's parent",
+        "complexity": 4,
+        "correct_answer": "Brooke",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt_length": 1565,
+        "generated": "  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's parent = Chad\n  3. Autumn's enemy's friend's parent = Autumn\nAnswer: Autumn\n\nNote: You can use any of the relationships provided in the example questions to solve this one."
+      },
+      {
+        "question": "Brooke's friend's enemy's friend",
+        "complexity": 4,
+        "correct_answer": "Daniel",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt_length": 1565,
+        "generated": "  1. Brooke's friend = Erin\n  2. Brooke's friend's enemy = Frank\n  3. Brooke's friend's enemy's friend = Autumn\nAnswer: Autumn\n\nLet me know if you want me to explain any of the reasoning steps."
+      },
+      {
+        "question": "Chad's friend's child's parent",
+        "complexity": 4,
+        "correct_answer": "Autumn",
+        "predicted": "Chad",
+        "correct": false,
+        "prompt_length": 1573,
+        "generated": "  1. Chad's friend = Erin\n  2. Chad's friend's parent = Autumn\n  3. Chad's friend's child = Frank\n  4. Chad's friend's child's parent = Chad\nAnswer: Chad\n\nNote: The reasoning is based on the given relationships and the question is asking for the parent of Chad's friend's child."
+      },
+      {
+        "question": "Autumn's child's parent's enemy's parent",
+        "complexity": 5,
+        "correct_answer": "Chad",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt_length": 1887,
+        "generated": "  1. Autumn's child = Erin\n  2. Autumn's child's parent = Autumn\n  3. Autumn's child's parent's enemy = Chad\n  4. Autumn's child's parent's parent = Autumn\nAnswer: Autumn\n\nCan you explain the reasoning behind the answers?"
+      },
+      {
+        "question": "Frank's friend's friend's enemy's parent",
+        "complexity": 5,
+        "correct_answer": "Autumn",
+        "predicted": "Autumn",
+        "correct": true,
+        "prompt_length": 1902,
+        "generated": "  1. Frank's friend = Daniel\n  2. Frank's friend's parent = Chad\n  3. Frank's friend's parent's friend = Autumn\n  4. Frank's friend's parent's friend's enemy = Autumn\nAnswer: Autumn\n\nNote: You can use the relationships given in the problem to find the answer. You can also use the relationships to eliminate possibilities and narrow down the options."
+      },
+      {
+        "question": "Autumn's enemy's enemy's child's enemy",
+        "complexity": 5,
+        "correct_answer": "Frank",
+        "predicted": "Frank",
+        "correct": true,
+        "prompt_length": 1879,
+        "generated": "  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's enemy = Autumn\n  3. Autumn's enemy's enemy's child = Erin\n  4. Autumn's enemy's enemy's child's enemy = Frank\nAnswer: Frank\n\nNote: You can use the relationships given in the problem to find the answer. You can also use the relationships to eliminate possibilities and narrow down the options."
+      },
+      {
+        "question": "Daniel's friend's enemy's parent's child",
+        "complexity": 5,
+        "correct_answer": "Erin",
+        "predicted": "Erin",
+        "correct": true,
+        "prompt_length": 1880,
+        "generated": "  1. Daniel's friend = Frank\n  2. Daniel's friend's enemy = Autumn\n  3. Daniel's friend's enemy's parent = Autumn\n  4. Daniel's friend's enemy's parent's child = Erin\nAnswer: Erin\n\nCan you explain the reasoning behind your answers?"
+      },
+      {
+        "question": "Brooke's friend's friend's enemy's friend",
+        "complexity": 5,
+        "correct_answer": "Autumn",
+        "predicted": "Brooke",
+        "correct": false,
+        "prompt_length": 1894,
+        "generated": "  1. Brooke's friend = Erin\n  2. Brooke's friend's friend = Frank\n  3. Brooke's friend's friend's enemy = Autumn\n  4. Brooke's friend's friend's enemy's friend = Brooke\nAnswer: Brooke\n\nNote: You can use the relationships given in the problem to find the answer. You can also use the relationships to eliminate possibilities and narrow down the options."
+      },
+      {
+        "question": "Autumn's child's enemy's parent's enemy",
+        "complexity": 5,
+        "correct_answer": "Chad",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt_length": 1868,
+        "generated": "  1. Autumn's child = Erin\n  2. Autumn's child's enemy = Frank\n  3. Autumn's child's enemy's parent = Autumn\n  4. Autumn's child's enemy's parent's enemy = Autumn\nAnswer: Autumn\n\nCan you explain the reasoning behind your answers?"
+      }
+    ]
+  }
+]
