@@ -4132,3 +4132,160 @@ Dead features are NOT waste - they're **capacity reserves** that enable speciali
 
 **Documentation**: `docs/experiments/10-28_llama_gsm8k_feature_interpretability.md`
 
+
+## 2025-10-28: GPT-2 Step 3 Intervention Analysis
+
+**Experiment**: Systematic intervention analysis to identify critical reasoning bottlenecks in CODI's 6-step continuous thought process
+
+**Goal**: Determine which step(s) are most vulnerable to feature-space interventions and demonstrate causal impact on reasoning
+
+**Method**:
+- 12,000 interventions across 6 steps × 10 features × 10 deltas × 20 problems
+- SAE-based feature interventions (Top-K SAE: k=200, d=1024, R²=0.94)
+- Features selected by activation frequency
+- Delta magnitudes: ±0.2, ±0.4, ±0.8, ±1.6, ±2.4
+
+**Key Finding**: **Step 3 is the Critical Bottleneck**
+- Step 3: 187/2000 flips (9.3% flip rate) ⚠️
+- All other steps: 0/10,000 flips (0% flip rate)
+- Interpretation: Step 3 is where CODI "commits" to a problem-solving approach
+
+**Results**:
+1. **Only 2 flip-sensitive problems found** (out of 20 tested):
+   - test_345: 100/100 flips (100%) - robust to all deltas
+   - test_96: 87/100 flips (87%) - sensitive to small deltas only
+2. **Feature universality**: All 10 tested features cause flips on sensitive problems
+3. **18 problems are robust**: 0% flip rate despite 100 interventions each
+4. **Directional effects**: test_96 only flips with small deltas (−2.4 to +0.4), NOT large positive deltas
+
+**Deliverables**:
+- Interactive web demo with smart problem selection
+- 12,000 intervention records (3.7 MB JSON)
+- Statistical analysis and visualizations
+- Bug fix: Delta=0 SAE noise handling
+
+**Time**: ~2 hours (experiment) + ~1 hour (demo implementation)
+**Compute**: RTX A4000 (~38 minutes @ 5.2 it/s)
+
+**Documentation**: `docs/experiments/10-28_gpt2_gsm8k_step3_intervention.md`
+
+
+## 2025-10-28: L4H5 Attention Head Ablation - Method Artifact Discovery
+
+**Objective**: Clarify claims about L4H5 attention head causing "complete collapse" and assess true security implications
+
+**Background**: Initial experiments (Story 3) showed ablating L4H5 caused 100% accuracy drop (59% → 0%), suggesting a critical single point of failure
+
+**What We Actually Found**:
+
+**Story 3 (Initial Finding)**:
+- L4H5 ablation alone → 100% collapse (59% → 0%)
+- Top 10 heads ablation → 100% collapse
+- **Concerning claim**: L4H5 is a critical bottleneck
+
+**Story 4 (Control Experiment - The Debunking)** ✅:
+- Tested 40 random heads stratified across ALL score ranges:
+  - Ranks 11-20 (high but not top): 0% accuracy
+  - Ranks 50-60 (mid-tier): 0% accuracy
+  - Ranks 100-110 (lower-mid): 0% accuracy
+  - **Ranks 500-510 (bottom tier)**: **0% accuracy**
+
+**Critical Discovery**: Even bottom-tier heads with near-zero composite scores caused complete failure when zeroed
+
+**Conclusion**: **Zero-ablation is too destructive** - this was a method artifact, NOT evidence of head criticality
+
+**Story 5 (Correct Method - Attention Pattern Ablation)**:
+- Switched from head output zeroing to attention pattern manipulation
+- Tested on full GSM8K test set (1,319 problems)
+- Results showed **graded effects** (not binary collapse):
+  - **CT0 (hub) blocked**: 18.7% drop (59% → 40.3%) ⚠️
+  - CT1 blocked: 12.8% drop
+  - CT2 blocked: 14.6% drop
+  - CT3 blocked: 15.0% drop
+  - CT4 blocked: 3.8% drop
+  - CT5 blocked: 3.0% drop
+  - Future attention only: 3.0% drop
+
+**Key Findings**:
+
+1. **L4H5 collapse claim DEBUNKED**:
+   - Was a methodological artifact from destructive zeroing
+   - Any head (even low-ranked) caused collapse with zero-ablation
+   - NOT evidence of unique criticality
+
+2. **True vulnerability is CT0 position**:
+   - 18.7% accuracy drop when blocked
+   - Largest single impact, but NOT catastrophic
+   - Classification: **Moderate security risk** (not critical)
+
+3. **Hub architecture confirmed causally**:
+   - CT0 acts as information hub (18.7% impact)
+   - Sequential reasoning flow (future attention minimal: 3.0%)
+   - Importance gradient: CT0-CT3 critical, CT4-CT5 refinement only
+
+**Security Risk Assessment**:
+
+| Risk Level | Threshold | CT0 Result |
+|------------|-----------|------------|
+| Critical | >50% drop | ❌ No |
+| High | 25-50% drop | ❌ No |
+| **Moderate** | **10-25% drop** | ✅ **18.7%** |
+| Low | <10% drop | ❌ No |
+
+**Security Implications**:
+- ✅ **Not a kill switch**: Model retains 40% accuracy when CT0 blocked
+- ⚠️ **Moderate degradation**: 18.7% drop is significant for safety-critical applications
+- ❓ **Exploitability unclear**: No evidence real attacks can target CT0 attention patterns
+- 📊 **Multi-position risk unknown**: Combined ablation (CT0+CT1+CT2+CT3) not tested
+
+**Unanswered Questions**:
+1. What happens with combined position ablation (CT0+CT1+CT2+CT3)?
+2. Can adversarial inputs actually manipulate CT0 attention?
+3. Can partial reduction (50% instead of 100%) cause proportional degradation?
+4. Are there defensive mechanisms to make CT0 more robust?
+
+**Deliverables**:
+- Story 4: `4_ablate_score_stratified_heads.py` (424 lines) - stratified random head control
+- Story 5: `5_ablate_attention_patterns_v2.py` (243 lines) - attention mask manipulation
+- Results: 9 pattern ablation files on 1,319 problems
+- Visualization: `llama_pattern_comparison.png`
+
+**Time**:
+- Story 4: ~40 minutes (40 heads × 100 problems)
+- Story 5: ~70 minutes (9 patterns × 1,319 problems)
+
+**Documentation**:
+- `docs/experiments/10-28_llama_gsm8k_critical_heads_ablation.md` (Stories 0-3)
+- `docs/experiments/10-28_llama_gsm8k_attention_pattern_ablation.md` (Stories 4-5)
+
+---
+
+## October 29, 2025 - Personal Relations Task Baseline Evaluation (NOT RECOMMENDED)
+
+**Model**: LLaMA-3.2-1B-Instruct
+**Dataset**: Personal Relations Task (Extensional, English) - 100 examples
+**Result**: 43.8% accuracy (5-shot + CoT) vs 88.4% paper baseline (70B)
+**Status**: ❌ NOT RECOMMENDED for CODI training
+
+**Key Findings**:
+1. **Dataset too small**: 100 examples (75x smaller than GSM8K) - high overfitting risk
+2. **Model capacity bottleneck**: Performance cliff at complexity 4 (C2: 100%, C4: 0%, C5: 50%)
+3. **Critical bug fixed**: V1 evaluation lacked universe context (37.5% → 43.8% after fix)
+4. **Poor ROI**: Expected CODI improvement ≤2-6pp for $40-50 cost
+
+**Deliverables**:
+- `extract_cot.py` - CoT generation (100% validation)
+- `few_shot_eval_v2.py` - Corrected evaluation with universe context
+- Train/val/test splits (69/15/16) with universe context
+- Full results: `few_shot_results_v2.json`
+
+**Recommendation**: Three-phase approach instead:
+1. Phase 1: Test 8B few-shot baseline ($10-15, expect 60-70%)
+2. Phase 2: Generate 1,000-5,000 examples (proper dataset size)
+3. Phase 3: Train 8B CODI only if Phase 1 shows promise ($100-150, target 80%)
+
+**Alternative**: Document and move to higher-priority experiments
+
+**Time**: ~4 hours (investigation complete)
+
+**Documentation**: `docs/experiments/10-29_llama1b_personal_relations_baseline_eval.md`

@@ -1,6 +1,6 @@
 # Data Inventory - CoT Exploration Project
 
-**Last Updated**: 2025-10-28 (Updated Section 21.1: Added Stories 4-5 attention pattern ablation experiments)
+**Last Updated**: 2025-10-28 (Added Section 22.8b: Step 3 Extended Intervention Results - 12,000 interventions revealing Step 3 as critical bottleneck)
 
 This document provides a complete breakdown of all datasets in the project, organized by experiment type and model.
 
@@ -25,7 +25,8 @@ This document provides a complete breakdown of all datasets in the project, orga
 | **SAE Error Analysis** | Error classification | 914 solutions (1.07 GB) | LLaMA | [`sae_error_analysis/data/error_analysis_dataset.json`](../src/experiments/sae_error_analysis/data/error_analysis_dataset.json) ⚠️ |
 | **CODI450 Dataset** | SAE intervention pilot | 450 problems (400 train, 50 test) | GPT-2 or LLaMA | [`data/step_by_step/gsm8k_codi450.manifest.json`](../data/step_by_step/) ⚠️ |
 | **Step-by-Step SAE Models** | Per-step feature dictionaries | 6 models (~96 MB) | GPT-2 or LLaMA | [`models/step_by_step/sae_step{k}/sae.pt`](../models/step_by_step/) ⚠️ |
-| **Intervention Results** | Smoke test feature interventions | ~450 rows | GPT-2 or LLaMA | [`results/step_by_step/smoke_test_results.csv`](../results/step_by_step/smoke_test_results.csv) ⚠️ |
+| **Intervention Results (Smoke Test)** | Smoke test feature interventions | ~450 rows | GPT-2 or LLaMA | [`results/step_by_step/smoke_test_results.csv`](../results/step_by_step/smoke_test_results.csv) ⚠️ |
+| **Step 3 Intervention Results** | Extended systematic intervention search | 12,000 interventions (3.7 MB) | GPT-2 | [`data/step_by_step/intervention_results/`](../data/step_by_step/intervention_results/) ✅ |
 
 ---
 
@@ -3448,6 +3449,85 @@ python src/experiments/step_by_step/scripts/run_smoke_test.py \
 
 ---
 
+### 22.8b Step 3 Extended Intervention Results ✅
+**Directory**: [`data/step_by_step/intervention_results/`](../data/step_by_step/intervention_results/)
+
+**Purpose**: Comprehensive systematic intervention analysis across all 6 CODI steps to identify critical reasoning bottlenecks
+
+**Date Generated**: 2025-10-28
+
+**Status**: ✅ Complete (12,000 interventions)
+
+**Files**:
+- `intervention_results.json` (3.7 MB) - Complete intervention dataset
+- `intervention_analysis.json` (2.4 KB) - Statistical summary by step
+- `EXTENDED_SEARCH_SUMMARY.md` (3.7 KB) - Human-readable report
+
+**Experiment Scale**: 12,000 interventions
+- **Steps**: 0, 1, 2, 3, 4, 5 (all 6 CODI reasoning steps)
+- **Features per step**: 10 (selected by activation frequency)
+- **Delta values**: [-2.4, -1.6, -0.8, -0.4, -0.2, 0.2, 0.4, 0.8, 1.6, 2.4]
+- **Problems**: First 20 from `gsm8k_codi_test_correct.csv`
+- **Model**: GPT-2 CODI (`/home/paperspace/codi_ckpt/gpt2_gsm8k`)
+- **SAE**: Top-K (k=200, d=1024, untied weights, R²=0.94)
+
+**Key Findings**:
+- **Step 3 is the ONLY critical step**: 187/2000 flips (9.3% flip rate)
+- **All other steps**: 0/10,000 flips (0% flip rate)
+- **Flip-sensitive problems**: 2/20 (10%)
+  - test_345: 100% flip rate (100/100 interventions)
+  - test_96: 87% flip rate (87/100 interventions)
+- **Robust problems**: 18/20 (90%) showed 0% flip rate
+
+**Structure** (`intervention_results.json`):
+```json
+{
+  "gsm8k_id": "test_345",
+  "step": 3,
+  "feature_idx": 189,
+  "delta": 0.8,
+  "baseline_answer": 310.0,
+  "intervened_answer": 150.0,
+  "ground_truth": 310.0,
+  "baseline_correct": true,
+  "intervened_correct": false,
+  "answer_flipped": true,
+  "activation_change_norm": 16.77
+}
+```
+
+**Columns**:
+- `gsm8k_id`: Problem identifier
+- `step`: CODI reasoning step (0-5)
+- `feature_idx`: SAE feature index (0-1023)
+- `delta`: Intervention magnitude
+- `baseline_answer`: Answer without intervention
+- `intervened_answer`: Answer with intervention
+- `ground_truth`: Correct answer
+- `baseline_correct`: Whether baseline was correct
+- `intervened_correct`: Whether intervention produced correct answer
+- `answer_flipped`: Whether correct answer became incorrect
+- `activation_change_norm`: L2 norm of activation change
+
+**Usage**:
+- Interactive web demo: `src/experiments/step_by_step/scripts/demo_web_server.py`
+- Detailed analysis: `docs/experiments/10-28_gpt2_gsm8k_step3_intervention.md`
+- Research journal: `docs/research_journal.md` (2025-10-28 entry)
+
+**Recreation**:
+```bash
+python src/experiments/step_by_step/scripts/run_interventions_with_metrics.py \
+  --model-path /home/paperspace/codi_ckpt/gpt2_gsm8k \
+  --max-problems 20 \
+  --top-features 10
+```
+
+**Runtime**: ~38 minutes on NVIDIA RTX A4000 (5.2 interventions/second)
+
+**Experiment Documentation**: See `docs/experiments/10-28_gpt2_gsm8k_step3_intervention.md` for complete methodology, bug fixes, and implications.
+
+---
+
 ### 22.9 Intervention Summary Statistics
 **File**: [`results/step_by_step/smoke_test_summary.csv`](../results/step_by_step/smoke_test_summary.csv)
 
@@ -3844,5 +3924,238 @@ python scripts/create_proper_splits.py
 **Total**: ~147 MB
 
 **Key Takeaway**: Continuous thoughts (50% accuracy) cannot detect deception at any scale. Response tokens (70.49%) are superior. This is a fundamental encoding limitation, not a capacity issue.
+
+---
+
+## 25. Personal Relations Task Datasets
+
+### Overview
+**Experiment**: Few-shot baseline evaluation (Oct 29, 2025)
+**Model**: LLaMA-3.2-1B-Instruct
+**Purpose**: Evaluate CODI training viability on compositional reasoning task
+**Key Finding**: Dataset too small (100 examples, 75x smaller than GSM8K); NOT RECOMMENDED for CODI training
+**Status**: ✅ Complete - Investigation phase only
+
+**Location**: `/home/paperspace/dev/CoT_Exploration/data/personal_relations/`
+
+---
+
+### 25.1 Source Dataset
+
+**File**: `universe_questions_grouped.csv`
+**Size**: 356 KB
+**Samples**: 400 total rows
+**Source**: GitHub repository for Personal Relations Task paper
+
+**Filtering**:
+- Task type: Extensional (identify actual person)
+- Language: English only
+- Result: **100 examples** extracted
+  - 20 complexity-2 (1-hop reasoning)
+  - 40 complexity-4 (3-hop reasoning)
+  - 40 complexity-5 (4-hop reasoning)
+
+---
+
+### 25.2 Dataset with Generated CoT
+
+**File**: [`personal_relations_with_cot.json`](../../data/personal_relations/personal_relations_with_cot.json)
+
+**Purpose**: Full dataset with validated Chain-of-Thought reasoning
+
+**Size**: 45 KB
+**Samples**: 100 examples
+
+**CoT Generation**: Parsed universe relationships to generate step-by-step reasoning
+**Validation**: 100% of generated CoT leads to correct answers
+
+**Example**:
+```json
+{
+  "question": "David's parent's friend's child",
+  "universe": "David's parent = Alice;; Alice's friend = Bob;; Bob's child = Charlie",
+  "cot_steps": [
+    "1. David's parent = Alice",
+    "2. David's parent's friend = Bob",
+    "3. David's parent's friend's child = Charlie"
+  ],
+  "answer": "Charlie",
+  "complexity": 4
+}
+```
+
+**Generation**:
+```bash
+cd /home/paperspace/dev/CoT_Exploration/data/personal_relations
+python extract_cot.py
+```
+
+---
+
+### 25.3 Train/Val/Test Splits (Basic)
+
+**Split Methodology**: By universe (not questions) to prevent leakage
+- Train: 12 universes → 69 examples
+- Val: 3 universes → 15 examples
+- Test: 3 universes → 16 examples
+
+#### Training Set
+**File**: [`train.json`](../../data/personal_relations/train.json)
+**Size**: 31 KB
+**Samples**: 69 examples
+**Purpose**: Training data (if CODI training proceeds)
+
+#### Validation Set
+**File**: [`val.json`](../../data/personal_relations/val.json)
+**Size**: 6.7 KB
+**Samples**: 15 examples
+**Purpose**: Hyperparameter tuning
+
+#### Test Set
+**File**: [`test.json`](../../data/personal_relations/test.json)
+**Size**: 7.0 KB
+**Samples**: 16 examples
+**Purpose**: Final evaluation
+
+**Generation**: Automatic split during CoT extraction
+
+---
+
+### 25.4 Splits with Universe Context (CRITICAL)
+
+**Critical Addition**: Universe relationship graph included in each example for proper evaluation
+
+#### Training Set with Universe
+**File**: [`train_with_universe.json`](../../data/personal_relations/train_with_universe.json)
+**Size**: 64 KB
+**Samples**: 69 examples
+**Purpose**: Few-shot prompt construction
+
+#### Test Set with Universe
+**File**: [`test_with_universe.json`](../../data/personal_relations/test_with_universe.json)
+**Size**: 15 KB
+**Samples**: 16 examples
+**Purpose**: Few-shot evaluation
+
+**Why Critical**: Initial evaluation V1 lacked universe context and achieved only 37.5%. V2 with context achieved 43.8%.
+
+**Generation**:
+```bash
+# Automatic during split creation
+python extract_cot.py  # creates both versions
+```
+
+---
+
+### 25.5 Evaluation Results
+
+#### Few-Shot Results V1 (FLAWED)
+**File**: [`few_shot_results.json`](../../data/personal_relations/few_shot_results.json)
+**Size**: 56 KB
+**Issue**: Prompts lacked universe context
+**Results**: 0-shot: 0%, 3-shot: 31.2%, 5-shot: 37.5%
+
+#### Few-Shot Results V2 (CORRECTED)
+**File**: [`few_shot_results_v2.json`](../../data/personal_relations/few_shot_results_v2.json)
+**Size**: 28 KB
+**Fix**: Includes universe context in all prompts
+**Results**: 0-shot: 0%, 3-shot: 31.2%, 5-shot: 43.8%
+
+**Breakdown by Complexity (5-shot + CoT)**:
+- Complexity 2: 4/4 = 100.0%
+- Complexity 4: 0/6 = 0.0%
+- Complexity 5: 3/6 = 50.0%
+
+**Key Insight**: Performance cliff at complexity 4 indicates model capacity bottleneck
+
+**Comparison to Paper**:
+- Our result (1B): 43.8%
+- Paper baseline (70B): 88.4%
+- Gap: 44.6 percentage points
+
+---
+
+### 25.6 Scripts
+
+#### CoT Generation
+**File**: [`extract_cot.py`](../../data/personal_relations/extract_cot.py)
+**Size**: 6.7 KB
+**Purpose**: Generate Chain-of-Thought reasoning from universe relationships
+
+**Key Functions**:
+- `parse_universe()` - Parse relationship graph
+- `generate_cot()` - Generate step-by-step reasoning
+- `validate_answer()` - Verify CoT leads to correct answer
+
+**Validation Rate**: 100% (all 100 examples validated)
+
+#### Few-Shot Evaluation V1 (FLAWED)
+**File**: [`few_shot_eval.py`](../../data/personal_relations/few_shot_eval.py)
+**Size**: 7.6 KB
+**Issue**: Missing universe context
+**Output**: `few_shot_results.json`, `few_shot_eval.log`
+
+#### Few-Shot Evaluation V2 (CORRECTED)
+**File**: [`few_shot_eval_v2.py`](../../data/personal_relations/few_shot_eval_v2.py)
+**Size**: 8.4 KB
+**Fix**: Includes universe context in prompts
+**Output**: `few_shot_results_v2.json`, `few_shot_eval_v2.log`
+
+**Usage**:
+```bash
+cd /home/paperspace/dev/CoT_Exploration/data/personal_relations
+python3 few_shot_eval_v2.py 2>&1 | tee few_shot_eval_v2.log
+```
+
+---
+
+### Dataset Summary
+
+| File | Size | Samples | Purpose |
+|------|------|---------|---------|
+| universe_questions_grouped.csv | 356 KB | 400 (100 filtered) | Source |
+| personal_relations_with_cot.json | 45 KB | 100 | Full dataset + CoT |
+| train.json | 31 KB | 69 | Training split |
+| val.json | 6.7 KB | 15 | Validation split |
+| test.json | 7.0 KB | 16 | Test split |
+| train_with_universe.json | 64 KB | 69 | Train + universe |
+| test_with_universe.json | 15 KB | 16 | Test + universe |
+| few_shot_results.json | 56 KB | 16 evals | V1 results (flawed) |
+| few_shot_results_v2.json | 28 KB | 16 evals | V2 results (corrected) |
+
+**Total Dataset Size**: ~600 KB
+
+**Key Limitation**: Only 100 examples (75x smaller than GSM8K's 7,500)
+**Risk**: High overfitting potential, insufficient for robust CODI training
+**Recommendation**: Generate 1,000-5,000 additional examples before training
+
+---
+
+### Reproduction
+
+**Step 1: Extract and Generate CoT**
+```bash
+cd /home/paperspace/dev/CoT_Exploration/data/personal_relations
+python extract_cot.py
+```
+**Output**: All dataset files with CoT and splits
+
+**Step 2: Run Few-Shot Evaluation**
+```bash
+python3 few_shot_eval_v2.py 2>&1 | tee few_shot_eval_v2.log
+```
+**Output**: `few_shot_results_v2.json` with 43.8% accuracy
+
+**Time**: ~4 hours total (30 min setup + 3.5 hours evaluation)
+
+---
+
+### Experiment Usage
+
+**Used in**: `docs/experiments/10-29_llama1b_personal_relations_baseline_eval.md`
+**Model**: LLaMA-3.2-1B-Instruct
+**Result**: 43.8% accuracy (5-shot + CoT)
+**Status**: ❌ NOT RECOMMENDED for CODI training
+**Reason**: Dataset too small, model capacity bottleneck
 
 ---

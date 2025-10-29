@@ -1,0 +1,1039 @@
+[
+  {
+    "questionId": "0_L_e2",
+    "question": "Frank's enemy",
+    "answer": "Erin",
+    "complexity": 2,
+    "group": 0,
+    "cot_steps": [
+      "1. Frank's enemy = Erin"
+    ],
+    "cot_text": "1. Frank's enemy = Erin",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_f0",
+    "question": "Daniel's friend",
+    "answer": "Frank",
+    "complexity": 2,
+    "group": 1,
+    "cot_steps": [
+      "1. Daniel's friend = Frank"
+    ],
+    "cot_text": "1. Daniel's friend = Frank",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_e2",
+    "question": "Frank's enemy",
+    "answer": "Erin",
+    "complexity": 2,
+    "group": 2,
+    "cot_steps": [
+      "1. Frank's enemy = Erin"
+    ],
+    "cot_text": "1. Frank's enemy = Erin",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_e2",
+    "question": "Frank's enemy",
+    "answer": "Erin",
+    "complexity": 2,
+    "group": 3,
+    "cot_steps": [
+      "1. Frank's enemy = Erin"
+    ],
+    "cot_text": "1. Frank's enemy = Erin",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_e3",
+    "question": "Chad's enemy",
+    "answer": "Brooke",
+    "complexity": 2,
+    "group": 5,
+    "cot_steps": [
+      "1. Chad's enemy = Brooke"
+    ],
+    "cot_text": "1. Chad's enemy = Brooke",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_p4",
+    "question": "Erin's parent",
+    "answer": "Autumn",
+    "complexity": 2,
+    "group": 7,
+    "cot_steps": [
+      "1. Erin's parent = Autumn"
+    ],
+    "cot_text": "1. Erin's parent = Autumn",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_p4",
+    "question": "Erin's parent",
+    "answer": "Autumn",
+    "complexity": 2,
+    "group": 8,
+    "cot_steps": [
+      "1. Erin's parent = Autumn"
+    ],
+    "cot_text": "1. Erin's parent = Autumn",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_p4",
+    "question": "Erin's parent",
+    "answer": "Autumn",
+    "complexity": 2,
+    "group": 10,
+    "cot_steps": [
+      "1. Erin's parent = Autumn"
+    ],
+    "cot_text": "1. Erin's parent = Autumn",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_e2",
+    "question": "Frank's enemy",
+    "answer": "Erin",
+    "complexity": 2,
+    "group": 11,
+    "cot_steps": [
+      "1. Frank's enemy = Erin"
+    ],
+    "cot_text": "1. Frank's enemy = Erin",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_e3",
+    "question": "Chad's enemy",
+    "answer": "Brooke",
+    "complexity": 2,
+    "group": 13,
+    "cot_steps": [
+      "1. Chad's enemy = Brooke"
+    ],
+    "cot_text": "1. Chad's enemy = Brooke",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_f0",
+    "question": "Daniel's friend",
+    "answer": "Frank",
+    "complexity": 2,
+    "group": 14,
+    "cot_steps": [
+      "1. Daniel's friend = Frank"
+    ],
+    "cot_text": "1. Daniel's friend = Frank",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_e3",
+    "question": "Chad's enemy",
+    "answer": "Brooke",
+    "complexity": 2,
+    "group": 17,
+    "cot_steps": [
+      "1. Chad's enemy = Brooke"
+    ],
+    "cot_text": "1. Chad's enemy = Brooke",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_e3",
+    "question": "Chad's enemy",
+    "answer": "Brooke",
+    "complexity": 2,
+    "group": 18,
+    "cot_steps": [
+      "1. Chad's enemy = Brooke"
+    ],
+    "cot_text": "1. Chad's enemy = Brooke",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_epf1",
+    "question": "Brooke's friend's parent's enemy",
+    "answer": "Daniel",
+    "complexity": 4,
+    "group": 0,
+    "cot_steps": [
+      "1. Brooke's friend = Erin",
+      "2. Brooke's friend's parent = Autumn",
+      "3. Brooke's friend's parent's enemy = Daniel"
+    ],
+    "cot_text": "1. Brooke's friend = Erin\n2. Brooke's friend's parent = Autumn\n3. Brooke's friend's parent's enemy = Daniel",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_fep4",
+    "question": "Erin's parent's enemy's friend",
+    "answer": "Frank",
+    "complexity": 4,
+    "group": 1,
+    "cot_steps": [
+      "1. Erin's parent = Autumn",
+      "2. Erin's parent's enemy = Daniel",
+      "3. Erin's parent's enemy's friend = Frank"
+    ],
+    "cot_text": "1. Erin's parent = Autumn\n2. Erin's parent's enemy = Daniel\n3. Erin's parent's enemy's friend = Frank",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_cfe2",
+    "question": "Frank's enemy's friend's child",
+    "answer": "Frank",
+    "complexity": 4,
+    "group": 2,
+    "cot_steps": [
+      "1. Frank's enemy = Erin",
+      "2. Frank's enemy's friend = Brooke",
+      "3. Frank's enemy's friend's child = Frank"
+    ],
+    "cot_text": "1. Frank's enemy = Erin\n2. Frank's enemy's friend = Brooke\n3. Frank's enemy's friend's child = Frank",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_fec5",
+    "question": "Autumn's child's enemy's friend",
+    "answer": "Daniel",
+    "complexity": 4,
+    "group": 3,
+    "cot_steps": [
+      "1. Autumn's child = Erin",
+      "2. Autumn's child's enemy = Frank",
+      "3. Autumn's child's enemy's friend = Daniel"
+    ],
+    "cot_text": "1. Autumn's child = Erin\n2. Autumn's child's enemy = Frank\n3. Autumn's child's enemy's friend = Daniel",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_fcp2",
+    "question": "Frank's parent's child's friend",
+    "answer": "Daniel",
+    "complexity": 4,
+    "group": 5,
+    "cot_steps": [
+      "1. Frank's parent = Brooke",
+      "2. Frank's parent's child = Frank",
+      "3. Frank's parent's child's friend = Daniel"
+    ],
+    "cot_text": "1. Frank's parent = Brooke\n2. Frank's parent's child = Frank\n3. Frank's parent's child's friend = Daniel",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_pef1",
+    "question": "Brooke's friend's enemy's parent",
+    "answer": "Brooke",
+    "complexity": 4,
+    "group": 7,
+    "cot_steps": [
+      "1. Brooke's friend = Erin",
+      "2. Brooke's friend's enemy = Frank",
+      "3. Brooke's friend's enemy's parent = Brooke"
+    ],
+    "cot_text": "1. Brooke's friend = Erin\n2. Brooke's friend's enemy = Frank\n3. Brooke's friend's enemy's parent = Brooke",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_epc1",
+    "question": "Brooke's child's parent's enemy",
+    "answer": "Chad",
+    "complexity": 4,
+    "group": 8,
+    "cot_steps": [
+      "1. Brooke's child = Frank",
+      "2. Brooke's child's parent = Brooke",
+      "3. Brooke's child's parent's enemy = Chad"
+    ],
+    "cot_text": "1. Brooke's child = Frank\n2. Brooke's child's parent = Brooke\n3. Brooke's child's parent's enemy = Chad",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_pff0",
+    "question": "Daniel's friend's friend's parent",
+    "answer": "Chad",
+    "complexity": 4,
+    "group": 10,
+    "cot_steps": [
+      "1. Daniel's friend = Frank",
+      "2. Daniel's friend's friend = Daniel",
+      "3. Daniel's friend's friend's parent = Chad"
+    ],
+    "cot_text": "1. Daniel's friend = Frank\n2. Daniel's friend's friend = Daniel\n3. Daniel's friend's friend's parent = Chad",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_pce1",
+    "question": "Brooke's enemy's child's parent",
+    "answer": "Chad",
+    "complexity": 4,
+    "group": 11,
+    "cot_steps": [
+      "1. Brooke's enemy = Chad",
+      "2. Brooke's enemy's child = Daniel",
+      "3. Brooke's enemy's child's parent = Chad"
+    ],
+    "cot_text": "1. Brooke's enemy = Chad\n2. Brooke's enemy's child = Daniel\n3. Brooke's enemy's child's parent = Chad",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_cec3",
+    "question": "Chad's child's enemy's child",
+    "answer": "Erin",
+    "complexity": 4,
+    "group": 13,
+    "cot_steps": [
+      "1. Chad's child = Daniel",
+      "2. Chad's child's enemy = Autumn",
+      "3. Chad's child's enemy's child = Erin"
+    ],
+    "cot_text": "1. Chad's child = Daniel\n2. Chad's child's enemy = Autumn\n3. Chad's child's enemy's child = Erin",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_pff4",
+    "question": "Erin's friend's friend's parent",
+    "answer": "Autumn",
+    "complexity": 4,
+    "group": 14,
+    "cot_steps": [
+      "1. Erin's friend = Brooke",
+      "2. Erin's friend's friend = Erin",
+      "3. Erin's friend's friend's parent = Autumn"
+    ],
+    "cot_text": "1. Erin's friend = Brooke\n2. Erin's friend's friend = Erin\n3. Erin's friend's friend's parent = Autumn",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_fcf3",
+    "question": "Chad's friend's child's friend",
+    "answer": "Brooke",
+    "complexity": 4,
+    "group": 17,
+    "cot_steps": [
+      "1. Chad's friend = Autumn",
+      "2. Chad's friend's child = Erin",
+      "3. Chad's friend's child's friend = Brooke"
+    ],
+    "cot_text": "1. Chad's friend = Autumn\n2. Chad's friend's child = Erin\n3. Chad's friend's child's friend = Brooke",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_cpe2",
+    "question": "Frank's enemy's parent's child",
+    "answer": "Erin",
+    "complexity": 4,
+    "group": 18,
+    "cot_steps": [
+      "1. Frank's enemy = Erin",
+      "2. Frank's enemy's parent = Autumn",
+      "3. Frank's enemy's parent's child = Erin"
+    ],
+    "cot_text": "1. Frank's enemy = Erin\n2. Frank's enemy's parent = Autumn\n3. Frank's enemy's parent's child = Erin",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_pee2",
+    "question": "Frank's enemy's enemy's parent",
+    "answer": "Brooke",
+    "complexity": 4,
+    "group": 20,
+    "cot_steps": [
+      "1. Frank's enemy = Erin",
+      "2. Frank's enemy's enemy = Frank",
+      "3. Frank's enemy's enemy's parent = Brooke"
+    ],
+    "cot_text": "1. Frank's enemy = Erin\n2. Frank's enemy's enemy = Frank\n3. Frank's enemy's enemy's parent = Brooke",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_efc3",
+    "question": "Chad's child's friend's enemy",
+    "answer": "Erin",
+    "complexity": 4,
+    "group": 21,
+    "cot_steps": [
+      "1. Chad's child = Daniel",
+      "2. Chad's child's friend = Frank",
+      "3. Chad's child's friend's enemy = Erin"
+    ],
+    "cot_text": "1. Chad's child = Daniel\n2. Chad's child's friend = Frank\n3. Chad's child's friend's enemy = Erin",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_eef1",
+    "question": "Brooke's friend's enemy's enemy",
+    "answer": "Erin",
+    "complexity": 4,
+    "group": 22,
+    "cot_steps": [
+      "1. Brooke's friend = Erin",
+      "2. Brooke's friend's enemy = Frank",
+      "3. Brooke's friend's enemy's enemy = Erin"
+    ],
+    "cot_text": "1. Brooke's friend = Erin\n2. Brooke's friend's enemy = Frank\n3. Brooke's friend's enemy's enemy = Erin",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_fpe5",
+    "question": "Autumn's enemy's parent's friend",
+    "answer": "Autumn",
+    "complexity": 4,
+    "group": 23,
+    "cot_steps": [
+      "1. Autumn's enemy = Daniel",
+      "2. Autumn's enemy's parent = Chad",
+      "3. Autumn's enemy's parent's friend = Autumn"
+    ],
+    "cot_text": "1. Autumn's enemy = Daniel\n2. Autumn's enemy's parent = Chad\n3. Autumn's enemy's parent's friend = Autumn",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_fpf2",
+    "question": "Frank's friend's parent's friend",
+    "answer": "Autumn",
+    "complexity": 4,
+    "group": 24,
+    "cot_steps": [
+      "1. Frank's friend = Daniel",
+      "2. Frank's friend's parent = Chad",
+      "3. Frank's friend's parent's friend = Autumn"
+    ],
+    "cot_text": "1. Frank's friend = Daniel\n2. Frank's friend's parent = Chad\n3. Frank's friend's parent's friend = Autumn",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_cfp0",
+    "question": "Daniel's parent's friend's child",
+    "answer": "Erin",
+    "complexity": 4,
+    "group": 28,
+    "cot_steps": [
+      "1. Daniel's parent = Chad",
+      "2. Daniel's parent's friend = Autumn",
+      "3. Daniel's parent's friend's child = Erin"
+    ],
+    "cot_text": "1. Daniel's parent = Chad\n2. Daniel's parent's friend = Autumn\n3. Daniel's parent's friend's child = Erin",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_eff4",
+    "question": "Erin's friend's friend's enemy",
+    "answer": "Frank",
+    "complexity": 4,
+    "group": 29,
+    "cot_steps": [
+      "1. Erin's friend = Brooke",
+      "2. Erin's friend's friend = Erin",
+      "3. Erin's friend's friend's enemy = Frank"
+    ],
+    "cot_text": "1. Erin's friend = Brooke\n2. Erin's friend's friend = Erin\n3. Erin's friend's friend's enemy = Frank",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_cff1",
+    "question": "Brooke's friend's friend's child",
+    "answer": "Frank",
+    "complexity": 4,
+    "group": 30,
+    "cot_steps": [
+      "1. Brooke's friend = Erin",
+      "2. Brooke's friend's friend = Brooke",
+      "3. Brooke's friend's friend's child = Frank"
+    ],
+    "cot_text": "1. Brooke's friend = Erin\n2. Brooke's friend's friend = Brooke\n3. Brooke's friend's friend's child = Frank",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_eep4",
+    "question": "Erin's parent's enemy's enemy",
+    "answer": "Autumn",
+    "complexity": 4,
+    "group": 31,
+    "cot_steps": [
+      "1. Erin's parent = Autumn",
+      "2. Erin's parent's enemy = Daniel",
+      "3. Erin's parent's enemy's enemy = Autumn"
+    ],
+    "cot_text": "1. Erin's parent = Autumn\n2. Erin's parent's enemy = Daniel\n3. Erin's parent's enemy's enemy = Autumn",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_efp2",
+    "question": "Frank's parent's friend's enemy",
+    "answer": "Frank",
+    "complexity": 4,
+    "group": 32,
+    "cot_steps": [
+      "1. Frank's parent = Brooke",
+      "2. Frank's parent's friend = Erin",
+      "3. Frank's parent's friend's enemy = Frank"
+    ],
+    "cot_text": "1. Frank's parent = Brooke\n2. Frank's parent's friend = Erin\n3. Frank's parent's friend's enemy = Frank",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_eee4",
+    "question": "Erin's enemy's enemy's enemy",
+    "answer": "Frank",
+    "complexity": 4,
+    "group": 33,
+    "cot_steps": [
+      "1. Erin's enemy = Frank",
+      "2. Erin's enemy's enemy = Erin",
+      "3. Erin's enemy's enemy's enemy = Frank"
+    ],
+    "cot_text": "1. Erin's enemy = Frank\n2. Erin's enemy's enemy = Erin\n3. Erin's enemy's enemy's enemy = Frank",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_cpf1",
+    "question": "Brooke's friend's parent's child",
+    "answer": "Erin",
+    "complexity": 4,
+    "group": 34,
+    "cot_steps": [
+      "1. Brooke's friend = Erin",
+      "2. Brooke's friend's parent = Autumn",
+      "3. Brooke's friend's parent's child = Erin"
+    ],
+    "cot_text": "1. Brooke's friend = Erin\n2. Brooke's friend's parent = Autumn\n3. Brooke's friend's parent's child = Erin",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_efe5",
+    "question": "Autumn's enemy's friend's enemy",
+    "answer": "Erin",
+    "complexity": 4,
+    "group": 35,
+    "cot_steps": [
+      "1. Autumn's enemy = Daniel",
+      "2. Autumn's enemy's friend = Frank",
+      "3. Autumn's enemy's friend's enemy = Erin"
+    ],
+    "cot_text": "1. Autumn's enemy = Daniel\n2. Autumn's enemy's friend = Frank\n3. Autumn's enemy's friend's enemy = Erin",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_pec1",
+    "question": "Brooke's child's enemy's parent",
+    "answer": "Autumn",
+    "complexity": 4,
+    "group": 36,
+    "cot_steps": [
+      "1. Brooke's child = Frank",
+      "2. Brooke's child's enemy = Erin",
+      "3. Brooke's child's enemy's parent = Autumn"
+    ],
+    "cot_text": "1. Brooke's child = Frank\n2. Brooke's child's enemy = Erin\n3. Brooke's child's enemy's parent = Autumn",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_ffc5",
+    "question": "Autumn's child's friend's friend",
+    "answer": "Erin",
+    "complexity": 4,
+    "group": 38,
+    "cot_steps": [
+      "1. Autumn's child = Erin",
+      "2. Autumn's child's friend = Brooke",
+      "3. Autumn's child's friend's friend = Erin"
+    ],
+    "cot_text": "1. Autumn's child = Erin\n2. Autumn's child's friend = Brooke\n3. Autumn's child's friend's friend = Erin",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_ffpc1",
+    "question": "Brooke's child's parent's friend's friend",
+    "answer": "Brooke",
+    "complexity": 5,
+    "group": 0,
+    "cot_steps": [
+      "1. Brooke's child = Frank",
+      "2. Brooke's child's parent = Brooke",
+      "3. Brooke's child's parent's friend = Erin",
+      "4. Brooke's child's parent's friend's friend = Brooke"
+    ],
+    "cot_text": "1. Brooke's child = Frank\n2. Brooke's child's parent = Brooke\n3. Brooke's child's parent's friend = Erin\n4. Brooke's child's parent's friend's friend = Brooke",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_cece1",
+    "question": "Brooke's enemy's child's enemy's child",
+    "answer": "Erin",
+    "complexity": 5,
+    "group": 1,
+    "cot_steps": [
+      "1. Brooke's enemy = Chad",
+      "2. Brooke's enemy's child = Daniel",
+      "3. Brooke's enemy's child's enemy = Autumn",
+      "4. Brooke's enemy's child's enemy's child = Erin"
+    ],
+    "cot_text": "1. Brooke's enemy = Chad\n2. Brooke's enemy's child = Daniel\n3. Brooke's enemy's child's enemy = Autumn\n4. Brooke's enemy's child's enemy's child = Erin",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_ffee0",
+    "question": "Daniel's enemy's enemy's friend's friend",
+    "answer": "Daniel",
+    "complexity": 5,
+    "group": 2,
+    "cot_steps": [
+      "1. Daniel's enemy = Autumn",
+      "2. Daniel's enemy's enemy = Daniel",
+      "3. Daniel's enemy's enemy's friend = Frank",
+      "4. Daniel's enemy's enemy's friend's friend = Daniel"
+    ],
+    "cot_text": "1. Daniel's enemy = Autumn\n2. Daniel's enemy's enemy = Daniel\n3. Daniel's enemy's enemy's friend = Frank\n4. Daniel's enemy's enemy's friend's friend = Daniel",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_pffe5",
+    "question": "Autumn's enemy's friend's friend's parent",
+    "answer": "Chad",
+    "complexity": 5,
+    "group": 3,
+    "cot_steps": [
+      "1. Autumn's enemy = Daniel",
+      "2. Autumn's enemy's friend = Frank",
+      "3. Autumn's enemy's friend's friend = Daniel",
+      "4. Autumn's enemy's friend's friend's parent = Chad"
+    ],
+    "cot_text": "1. Autumn's enemy = Daniel\n2. Autumn's enemy's friend = Frank\n3. Autumn's enemy's friend's friend = Daniel\n4. Autumn's enemy's friend's friend's parent = Chad",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_eeee0",
+    "question": "Daniel's enemy's enemy's enemy's enemy",
+    "answer": "Daniel",
+    "complexity": 5,
+    "group": 5,
+    "cot_steps": [
+      "1. Daniel's enemy = Autumn",
+      "2. Daniel's enemy's enemy = Daniel",
+      "3. Daniel's enemy's enemy's enemy = Autumn",
+      "4. Daniel's enemy's enemy's enemy's enemy = Daniel"
+    ],
+    "cot_text": "1. Daniel's enemy = Autumn\n2. Daniel's enemy's enemy = Daniel\n3. Daniel's enemy's enemy's enemy = Autumn\n4. Daniel's enemy's enemy's enemy's enemy = Daniel",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_feee5",
+    "question": "Autumn's enemy's enemy's enemy's friend",
+    "answer": "Frank",
+    "complexity": 5,
+    "group": 7,
+    "cot_steps": [
+      "1. Autumn's enemy = Daniel",
+      "2. Autumn's enemy's enemy = Autumn",
+      "3. Autumn's enemy's enemy's enemy = Daniel",
+      "4. Autumn's enemy's enemy's enemy's friend = Frank"
+    ],
+    "cot_text": "1. Autumn's enemy = Daniel\n2. Autumn's enemy's enemy = Autumn\n3. Autumn's enemy's enemy's enemy = Daniel\n4. Autumn's enemy's enemy's enemy's friend = Frank",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_pcef4",
+    "question": "Erin's friend's enemy's child's parent",
+    "answer": "Chad",
+    "complexity": 5,
+    "group": 8,
+    "cot_steps": [
+      "1. Erin's friend = Brooke",
+      "2. Erin's friend's enemy = Chad",
+      "3. Erin's friend's enemy's child = Daniel",
+      "4. Erin's friend's enemy's child's parent = Chad"
+    ],
+    "cot_text": "1. Erin's friend = Brooke\n2. Erin's friend's enemy = Chad\n3. Erin's friend's enemy's child = Daniel\n4. Erin's friend's enemy's child's parent = Chad",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_ffcf4",
+    "question": "Erin's friend's child's friend's friend",
+    "answer": "Frank",
+    "complexity": 5,
+    "group": 10,
+    "cot_steps": [
+      "1. Erin's friend = Brooke",
+      "2. Erin's friend's child = Frank",
+      "3. Erin's friend's child's friend = Daniel",
+      "4. Erin's friend's child's friend's friend = Frank"
+    ],
+    "cot_text": "1. Erin's friend = Brooke\n2. Erin's friend's child = Frank\n3. Erin's friend's child's friend = Daniel\n4. Erin's friend's child's friend's friend = Frank",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_pepf1",
+    "question": "Brooke's friend's parent's enemy's parent",
+    "answer": "Chad",
+    "complexity": 5,
+    "group": 11,
+    "cot_steps": [
+      "1. Brooke's friend = Erin",
+      "2. Brooke's friend's parent = Autumn",
+      "3. Brooke's friend's parent's enemy = Daniel",
+      "4. Brooke's friend's parent's enemy's parent = Chad"
+    ],
+    "cot_text": "1. Brooke's friend = Erin\n2. Brooke's friend's parent = Autumn\n3. Brooke's friend's parent's enemy = Daniel\n4. Brooke's friend's parent's enemy's parent = Chad",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_cpfc3",
+    "question": "Chad's child's friend's parent's child",
+    "answer": "Frank",
+    "complexity": 5,
+    "group": 13,
+    "cot_steps": [
+      "1. Chad's child = Daniel",
+      "2. Chad's child's friend = Frank",
+      "3. Chad's child's friend's parent = Brooke",
+      "4. Chad's child's friend's parent's child = Frank"
+    ],
+    "cot_text": "1. Chad's child = Daniel\n2. Chad's child's friend = Frank\n3. Chad's child's friend's parent = Brooke\n4. Chad's child's friend's parent's child = Frank",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_peee5",
+    "question": "Autumn's enemy's enemy's enemy's parent",
+    "answer": "Chad",
+    "complexity": 5,
+    "group": 14,
+    "cot_steps": [
+      "1. Autumn's enemy = Daniel",
+      "2. Autumn's enemy's enemy = Autumn",
+      "3. Autumn's enemy's enemy's enemy = Daniel",
+      "4. Autumn's enemy's enemy's enemy's parent = Chad"
+    ],
+    "cot_text": "1. Autumn's enemy = Daniel\n2. Autumn's enemy's enemy = Autumn\n3. Autumn's enemy's enemy's enemy = Daniel\n4. Autumn's enemy's enemy's enemy's parent = Chad",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_eeef0",
+    "question": "Daniel's friend's enemy's enemy's enemy",
+    "answer": "Erin",
+    "complexity": 5,
+    "group": 17,
+    "cot_steps": [
+      "1. Daniel's friend = Frank",
+      "2. Daniel's friend's enemy = Erin",
+      "3. Daniel's friend's enemy's enemy = Frank",
+      "4. Daniel's friend's enemy's enemy's enemy = Erin"
+    ],
+    "cot_text": "1. Daniel's friend = Frank\n2. Daniel's friend's enemy = Erin\n3. Daniel's friend's enemy's enemy = Frank\n4. Daniel's friend's enemy's enemy's enemy = Erin",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_fcec3",
+    "question": "Chad's child's enemy's child's friend",
+    "answer": "Brooke",
+    "complexity": 5,
+    "group": 18,
+    "cot_steps": [
+      "1. Chad's child = Daniel",
+      "2. Chad's child's enemy = Autumn",
+      "3. Chad's child's enemy's child = Erin",
+      "4. Chad's child's enemy's child's friend = Brooke"
+    ],
+    "cot_text": "1. Chad's child = Daniel\n2. Chad's child's enemy = Autumn\n3. Chad's child's enemy's child = Erin\n4. Chad's child's enemy's child's friend = Brooke",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_eefe5",
+    "question": "Autumn's enemy's friend's enemy's enemy",
+    "answer": "Frank",
+    "complexity": 5,
+    "group": 20,
+    "cot_steps": [
+      "1. Autumn's enemy = Daniel",
+      "2. Autumn's enemy's friend = Frank",
+      "3. Autumn's enemy's friend's enemy = Erin",
+      "4. Autumn's enemy's friend's enemy's enemy = Frank"
+    ],
+    "cot_text": "1. Autumn's enemy = Daniel\n2. Autumn's enemy's friend = Frank\n3. Autumn's enemy's friend's enemy = Erin\n4. Autumn's enemy's friend's enemy's enemy = Frank",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_pfcp0",
+    "question": "Daniel's parent's child's friend's parent",
+    "answer": "Brooke",
+    "complexity": 5,
+    "group": 21,
+    "cot_steps": [
+      "1. Daniel's parent = Chad",
+      "2. Daniel's parent's child = Daniel",
+      "3. Daniel's parent's child's friend = Frank",
+      "4. Daniel's parent's child's friend's parent = Brooke"
+    ],
+    "cot_text": "1. Daniel's parent = Chad\n2. Daniel's parent's child = Daniel\n3. Daniel's parent's child's friend = Frank\n4. Daniel's parent's child's friend's parent = Brooke",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_efec5",
+    "question": "Autumn's child's enemy's friend's enemy",
+    "answer": "Autumn",
+    "complexity": 5,
+    "group": 22,
+    "cot_steps": [
+      "1. Autumn's child = Erin",
+      "2. Autumn's child's enemy = Frank",
+      "3. Autumn's child's enemy's friend = Daniel",
+      "4. Autumn's child's enemy's friend's enemy = Autumn"
+    ],
+    "cot_text": "1. Autumn's child = Erin\n2. Autumn's child's enemy = Frank\n3. Autumn's child's enemy's friend = Daniel\n4. Autumn's child's enemy's friend's enemy = Autumn",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_pecf4",
+    "question": "Erin's friend's child's enemy's parent",
+    "answer": "Autumn",
+    "complexity": 5,
+    "group": 23,
+    "cot_steps": [
+      "1. Erin's friend = Brooke",
+      "2. Erin's friend's child = Frank",
+      "3. Erin's friend's child's enemy = Erin",
+      "4. Erin's friend's child's enemy's parent = Autumn"
+    ],
+    "cot_text": "1. Erin's friend = Brooke\n2. Erin's friend's child = Frank\n3. Erin's friend's child's enemy = Erin\n4. Erin's friend's child's enemy's parent = Autumn",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_fpee0",
+    "question": "Daniel's enemy's enemy's parent's friend",
+    "answer": "Autumn",
+    "complexity": 5,
+    "group": 24,
+    "cot_steps": [
+      "1. Daniel's enemy = Autumn",
+      "2. Daniel's enemy's enemy = Daniel",
+      "3. Daniel's enemy's enemy's parent = Chad",
+      "4. Daniel's enemy's enemy's parent's friend = Autumn"
+    ],
+    "cot_text": "1. Daniel's enemy = Autumn\n2. Daniel's enemy's enemy = Daniel\n3. Daniel's enemy's enemy's parent = Chad\n4. Daniel's enemy's enemy's parent's friend = Autumn",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_fcpc5",
+    "question": "Autumn's child's parent's child's friend",
+    "answer": "Brooke",
+    "complexity": 5,
+    "group": 28,
+    "cot_steps": [
+      "1. Autumn's child = Erin",
+      "2. Autumn's child's parent = Autumn",
+      "3. Autumn's child's parent's child = Erin",
+      "4. Autumn's child's parent's child's friend = Brooke"
+    ],
+    "cot_text": "1. Autumn's child = Erin\n2. Autumn's child's parent = Autumn\n3. Autumn's child's parent's child = Erin\n4. Autumn's child's parent's child's friend = Brooke",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_efpc3",
+    "question": "Chad's child's parent's friend's enemy",
+    "answer": "Daniel",
+    "complexity": 5,
+    "group": 29,
+    "cot_steps": [
+      "1. Chad's child = Daniel",
+      "2. Chad's child's parent = Chad",
+      "3. Chad's child's parent's friend = Autumn",
+      "4. Chad's child's parent's friend's enemy = Daniel"
+    ],
+    "cot_text": "1. Chad's child = Daniel\n2. Chad's child's parent = Chad\n3. Chad's child's parent's friend = Autumn\n4. Chad's child's parent's friend's enemy = Daniel",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_epff2",
+    "question": "Frank's friend's friend's parent's enemy",
+    "answer": "Chad",
+    "complexity": 5,
+    "group": 30,
+    "cot_steps": [
+      "1. Frank's friend = Daniel",
+      "2. Frank's friend's friend = Frank",
+      "3. Frank's friend's friend's parent = Brooke",
+      "4. Frank's friend's friend's parent's enemy = Chad"
+    ],
+    "cot_text": "1. Frank's friend = Daniel\n2. Frank's friend's friend = Frank\n3. Frank's friend's friend's parent = Brooke\n4. Frank's friend's friend's parent's enemy = Chad",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_cpep4",
+    "question": "Erin's parent's enemy's parent's child",
+    "answer": "Daniel",
+    "complexity": 5,
+    "group": 31,
+    "cot_steps": [
+      "1. Erin's parent = Autumn",
+      "2. Erin's parent's enemy = Daniel",
+      "3. Erin's parent's enemy's parent = Chad",
+      "4. Erin's parent's enemy's parent's child = Daniel"
+    ],
+    "cot_text": "1. Erin's parent = Autumn\n2. Erin's parent's enemy = Daniel\n3. Erin's parent's enemy's parent = Chad\n4. Erin's parent's enemy's parent's child = Daniel",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_effc3",
+    "question": "Chad's child's friend's friend's enemy",
+    "answer": "Autumn",
+    "complexity": 5,
+    "group": 32,
+    "cot_steps": [
+      "1. Chad's child = Daniel",
+      "2. Chad's child's friend = Frank",
+      "3. Chad's child's friend's friend = Daniel",
+      "4. Chad's child's friend's friend's enemy = Autumn"
+    ],
+    "cot_text": "1. Chad's child = Daniel\n2. Chad's child's friend = Frank\n3. Chad's child's friend's friend = Daniel\n4. Chad's child's friend's friend's enemy = Autumn",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_efpf2",
+    "question": "Frank's friend's parent's friend's enemy",
+    "answer": "Daniel",
+    "complexity": 5,
+    "group": 33,
+    "cot_steps": [
+      "1. Frank's friend = Daniel",
+      "2. Frank's friend's parent = Chad",
+      "3. Frank's friend's parent's friend = Autumn",
+      "4. Frank's friend's parent's friend's enemy = Daniel"
+    ],
+    "cot_text": "1. Frank's friend = Daniel\n2. Frank's friend's parent = Chad\n3. Frank's friend's parent's friend = Autumn\n4. Frank's friend's parent's friend's enemy = Daniel",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_pcee5",
+    "question": "Autumn's enemy's enemy's child's parent",
+    "answer": "Autumn",
+    "complexity": 5,
+    "group": 34,
+    "cot_steps": [
+      "1. Autumn's enemy = Daniel",
+      "2. Autumn's enemy's enemy = Autumn",
+      "3. Autumn's enemy's enemy's child = Erin",
+      "4. Autumn's enemy's enemy's child's parent = Autumn"
+    ],
+    "cot_text": "1. Autumn's enemy = Daniel\n2. Autumn's enemy's enemy = Autumn\n3. Autumn's enemy's enemy's child = Erin\n4. Autumn's enemy's enemy's child's parent = Autumn",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_ceep4",
+    "question": "Erin's parent's enemy's enemy's child",
+    "answer": "Erin",
+    "complexity": 5,
+    "group": 35,
+    "cot_steps": [
+      "1. Erin's parent = Autumn",
+      "2. Erin's parent's enemy = Daniel",
+      "3. Erin's parent's enemy's enemy = Autumn",
+      "4. Erin's parent's enemy's enemy's child = Erin"
+    ],
+    "cot_text": "1. Erin's parent = Autumn\n2. Erin's parent's enemy = Daniel\n3. Erin's parent's enemy's enemy = Autumn\n4. Erin's parent's enemy's enemy's child = Erin",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_efcf4",
+    "question": "Erin's friend's child's friend's enemy",
+    "answer": "Autumn",
+    "complexity": 5,
+    "group": 36,
+    "cot_steps": [
+      "1. Erin's friend = Brooke",
+      "2. Erin's friend's child = Frank",
+      "3. Erin's friend's child's friend = Daniel",
+      "4. Erin's friend's child's friend's enemy = Autumn"
+    ],
+    "cot_text": "1. Erin's friend = Brooke\n2. Erin's friend's child = Frank\n3. Erin's friend's child's friend = Daniel\n4. Erin's friend's child's friend's enemy = Autumn",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  },
+  {
+    "questionId": "0_L_fepe2",
+    "question": "Frank's enemy's parent's enemy's friend",
+    "answer": "Frank",
+    "complexity": 5,
+    "group": 38,
+    "cot_steps": [
+      "1. Frank's enemy = Erin",
+      "2. Frank's enemy's parent = Autumn",
+      "3. Frank's enemy's parent's enemy = Daniel",
+      "4. Frank's enemy's parent's enemy's friend = Frank"
+    ],
+    "cot_text": "1. Frank's enemy = Erin\n2. Frank's enemy's parent = Autumn\n3. Frank's enemy's parent's enemy = Daniel\n4. Frank's enemy's parent's enemy's friend = Frank",
+    "validated": true,
+    "universe": "Autumn's enemy = Daniel  Autumn's friend = Chad   Daniel's parent = Chad   Autumn's child = Erin   ;;Brooke's enemy = Chad    Brooke's friend = Erin   Erin's parent = Autumn   Brooke's child = Frank  ;;Chad's enemy = Brooke    Chad's friend = Autumn   Frank's parent = Brooke  Chad's child = Daniel   ;;Daniel's enemy = Autumn  Daniel's friend = Frank  ;;Erin's enemy = Frank     Erin's friend = Brooke   ;;Frank's enemy = Erin     Frank's friend = Daniel  "
+  }
+]

@@ -1,0 +1,455 @@
+[
+  {
+    "n_shot": 0,
+    "include_cot": false,
+    "accuracy": 0.0,
+    "results": [
+      {
+        "question": "Brooke's friend",
+        "complexity": 2,
+        "correct_answer": "Erin",
+        "predicted": "The best answer is  Brooke's friend is her sister",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nNow answer this question:\nQuestion: Brooke's friend\nAnswer:",
+        "generated": " \nThe best answer is  Brooke's friend is her sister."
+      },
+      {
+        "question": "Brooke's friend",
+        "complexity": 2,
+        "correct_answer": "Erin",
+        "predicted": "The best answer is  Brooke's friend is her sister",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nNow answer this question:\nQuestion: Brooke's friend\nAnswer:",
+        "generated": " \nThe best answer is  Brooke's friend is her sister."
+      },
+      {
+        "question": "Daniel's friend",
+        "complexity": 2,
+        "correct_answer": "Frank",
+        "predicted": "Daniel's friend is his brother",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nNow answer this question:\nQuestion: Daniel's friend\nAnswer:",
+        "generated": " Daniel's friend is his brother.\n\nReasoning Skill: \nThis question requires the application of the concept of \"brother\" as a familial relationship. The correct answer is based on the understanding that a brother is a sibling, which is a type of familial relationship. The reasoning skill required to answer this question involves recognizing the definition of a brother and applying it to the given scenario. \n\nNote: This question is designed to test the ability to apply a specific concept to a given scenario, which is a key aspect of personal relations reasoning. It requires the test-taker to think critically and make connections between the concept of brother and the given information. \n\nIn terms of the reasoning skill, this question assesses the ability to:\n\n* Recognize the definition"
+      },
+      {
+        "question": "Erin's parent",
+        "complexity": 2,
+        "correct_answer": "Autumn",
+        "predicted": "Erin's parents are not mentioned in the text",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nNow answer this question:\nQuestion: Erin's parent\nAnswer:",
+        "generated": " Erin's parents are not mentioned in the text."
+      },
+      {
+        "question": "Brooke's child's friend's parent",
+        "complexity": 4,
+        "correct_answer": "Chad",
+        "predicted": "I am not sure about the answer to this question Could you provide more context or information about the situation?",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nNow answer this question:\nQuestion: Brooke's child's friend's parent\nAnswer:",
+        "generated": " \nI am not sure about the answer to this question. Could you provide more context or information about the situation?"
+      },
+      {
+        "question": "Autumn's child's friend's child",
+        "complexity": 4,
+        "correct_answer": "Frank",
+        "predicted": "Autumn's child's friend's child is Autumn's child",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nNow answer this question:\nQuestion: Autumn's child's friend's child\nAnswer:",
+        "generated": " Autumn's child's friend's child is Autumn's child.\n\nExplanation: Autumn's child is Autumn's child."
+      },
+      {
+        "question": "Chad's friend's child's enemy",
+        "complexity": 4,
+        "correct_answer": "Frank",
+        "predicted": "Chad's friend's child's enemy is Chad",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nNow answer this question:\nQuestion: Chad's friend's child's enemy\nAnswer:",
+        "generated": " Chad's friend's child's enemy is Chad.\n\nExplanation: Chad's friend's child is Chad's friend's child. Therefore, Chad's friend's child's enemy is Chad."
+      },
+      {
+        "question": "Autumn's enemy's friend's parent",
+        "complexity": 4,
+        "correct_answer": "Brooke",
+        "predicted": "Autumn's enemy's friend's parent is Autumn's enemy",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nNow answer this question:\nQuestion: Autumn's enemy's friend's parent\nAnswer:",
+        "generated": " Autumn's enemy's friend's parent is Autumn's enemy.\n\nThis is a classic example of a \"paradox\" in logic, where the conclusion is the opposite of what is expected. The question is trying to trick you into thinking that Autumn's enemy's friend's parent is Autumn's enemy, but the correct answer is actually the opposite."
+      },
+      {
+        "question": "Brooke's friend's enemy's friend",
+        "complexity": 4,
+        "correct_answer": "Daniel",
+        "predicted": "The question is asking for a relationship between two people The friend of a friend of an enemy is a person who is related to the enemy Therefore the answer is:",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nNow answer this question:\nQuestion: Brooke's friend's enemy's friend\nAnswer:",
+        "generated": " \nThe question is asking for a relationship between two people. The friend of a friend of an enemy is a person who is related to the enemy. Therefore, the answer is: \nBrooke's friend's enemy's friend = Brooke's enemy."
+      },
+      {
+        "question": "Chad's friend's child's parent",
+        "complexity": 4,
+        "correct_answer": "Autumn",
+        "predicted": "Chad's friend's child's parent is Chad's friend",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nNow answer this question:\nQuestion: Chad's friend's child's parent\nAnswer:",
+        "generated": " Chad's friend's child's parent is Chad's friend.\n\nThis is a classic example of a \"chain of causality\" or \"hierarchical causality\" in the context of personal relations. The parent of Chad's friend's child is Chad's friend. This is an example of a causal relationship where the parent of Chad's friend's child is the cause of Chad's friend's relationship with Chad's friend's child."
+      },
+      {
+        "question": "Autumn's child's parent's enemy's parent",
+        "complexity": 5,
+        "correct_answer": "Chad",
+        "predicted": "Autumn's child's parent's enemy's parent is Autumn's child's parent",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nNow answer this question:\nQuestion: Autumn's child's parent's enemy's parent\nAnswer:",
+        "generated": " Autumn's child's parent's enemy's parent is Autumn's child's parent.\n\nExplanation: Autumn's child is Autumn's child's parent. Autumn's child's parent's enemy is Autumn's child's parent. Autumn's child's parent's enemy's parent is Autumn's child's parent."
+      },
+      {
+        "question": "Frank's friend's friend's enemy's parent",
+        "complexity": 5,
+        "correct_answer": "Autumn",
+        "predicted": "Frank's friend's friend's enemy's parent is Frank's friend",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nNow answer this question:\nQuestion: Frank's friend's friend's enemy's parent\nAnswer:",
+        "generated": " Frank's friend's friend's enemy's parent is Frank's friend.\n\nExplanation: The question is asking for a chain of relationships, starting from Frank's friend's friend's enemy's parent. The correct answer is Frank's friend, as the question is asking for a person who is Frank's friend's friend's enemy's parent."
+      },
+      {
+        "question": "Autumn's enemy's enemy's child's enemy",
+        "complexity": 5,
+        "correct_answer": "Frank",
+        "predicted": "Autumn's enemy's enemy's child's enemy is the person who is Autumn's enemy's enemy's child",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nNow answer this question:\nQuestion: Autumn's enemy's enemy's child's enemy\nAnswer:",
+        "generated": " Autumn's enemy's enemy's child's enemy is the person who is Autumn's enemy's enemy's child.\n\nExplanation: Autumn's enemy is Autumn. Autumn's enemy's enemy is Autumn's enemy. Autumn's enemy's enemy's child is Autumn's enemy's enemy's child."
+      },
+      {
+        "question": "Daniel's friend's enemy's parent's child",
+        "complexity": 5,
+        "correct_answer": "Erin",
+        "predicted": "Daniel's friend's enemy's parent's child = Daniel's friend's enemy's parent",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nNow answer this question:\nQuestion: Daniel's friend's enemy's parent's child\nAnswer:",
+        "generated": "  Daniel's friend's enemy's parent's child = Daniel's friend's enemy's parent\n\nExplanation: \n- Daniel's friend's enemy's parent is the parent of the enemy's friend's parent.\n- The enemy's friend's parent is the parent of the enemy's friend.\n- Therefore, the enemy's friend's parent is the parent of Daniel's friend's enemy's parent."
+      },
+      {
+        "question": "Brooke's friend's friend's enemy's friend",
+        "complexity": 5,
+        "correct_answer": "Autumn",
+        "predicted": "The question is asking for the relationship between Brooke's friend's friend's enemy's friend This is a classic example of a \"chain\" or \"sequence\" of relationships The question is asking for the relationship between the friend and the enemy The friend is the first in the chain and the enemy is the last in the chain Therefore the correct answer is:",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nNow answer this question:\nQuestion: Brooke's friend's friend's enemy's friend\nAnswer:",
+        "generated": " \nThe question is asking for the relationship between Brooke's friend's friend's enemy's friend. This is a classic example of a \"chain\" or \"sequence\" of relationships. The question is asking for the relationship between the friend and the enemy. The friend is the first in the chain, and the enemy is the last in the chain. Therefore, the correct answer is: \nFriend - Enemy."
+      },
+      {
+        "question": "Autumn's child's enemy's parent's enemy",
+        "complexity": 5,
+        "correct_answer": "Chad",
+        "predicted": "Autumn's child's enemy's parent's enemy is Autumn's child's enemy's parent",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nNow answer this question:\nQuestion: Autumn's child's enemy's parent's enemy\nAnswer:",
+        "generated": " Autumn's child's enemy's parent's enemy is Autumn's child's enemy's parent.\n\nExplanation: Autumn's child's enemy is Autumn's child. Autumn's child's enemy's parent is Autumn's child. Autumn's child's enemy's parent's enemy is Autumn's child's enemy's parent."
+      }
+    ]
+  },
+  {
+    "n_shot": 3,
+    "include_cot": true,
+    "accuracy": 31.25,
+    "results": [
+      {
+        "question": "Brooke's friend",
+        "complexity": 2,
+        "correct_answer": "Erin",
+        "predicted": "Emily",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Frank's enemy\nReasoning:\n  1. Frank's enemy = Erin\nAnswer: Erin\n\nExample 2:\nQuestion: Erin's parent\nReasoning:\n  1. Erin's parent = Autumn\nAnswer: Autumn\n\nExample 3:\nQuestion: Erin's parent\nReasoning:\n  1. Erin's parent = Autumn\nAnswer: Autumn\n\nNow answer this question:\nQuestion: Brooke's friend\nReasoning:\n",
+        "generated": "  1. Brooke's friend = Emily\nAnswer: Emily\n\nIn the reasoning process, you used the following rules:\n- If A is Frank's enemy, then A is Erin.\n- If Erin's parent is Autumn, then Erin is Autumn.\n- If Erin is Autumn, then Erin is Brooke's friend.\n\nYou used the rules to arrive at the answer, Emily."
+      },
+      {
+        "question": "Brooke's friend",
+        "complexity": 2,
+        "correct_answer": "Erin",
+        "predicted": "Alex",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Frank's enemy\nReasoning:\n  1. Frank's enemy = Erin\nAnswer: Erin\n\nExample 2:\nQuestion: Frank's enemy\nReasoning:\n  1. Frank's enemy = Erin\nAnswer: Erin\n\nExample 3:\nQuestion: Chad's enemy\nReasoning:\n  1. Chad's enemy = Brooke\nAnswer: Brooke\n\nNow answer this question:\nQuestion: Brooke's friend\nReasoning:\n",
+        "generated": "  1. Brooke's friend = Alex\nAnswer: Alex\n\nLet me know if you want me to generate more examples!"
+      },
+      {
+        "question": "Daniel's friend",
+        "complexity": 2,
+        "correct_answer": "Frank",
+        "predicted": "Frank",
+        "correct": true,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Chad's enemy\nReasoning:\n  1. Chad's enemy = Brooke\nAnswer: Brooke\n\nExample 2:\nQuestion: Daniel's friend\nReasoning:\n  1. Daniel's friend = Frank\nAnswer: Frank\n\nExample 3:\nQuestion: Frank's enemy\nReasoning:\n  1. Frank's enemy = Erin\nAnswer: Erin\n\nNow answer this question:\nQuestion: Daniel's friend\nReasoning:\n",
+        "generated": "  1. Daniel's friend = Frank\nAnswer: Frank\n\nThis is a simple example of a personal relations reasoning task. The task is to identify the friend of a person based on some given information. In this case, the information is that Daniel's friend is Frank. The reasoning is to identify the friend of Daniel based on the given information."
+      },
+      {
+        "question": "Erin's parent",
+        "complexity": 2,
+        "correct_answer": "Autumn",
+        "predicted": "Chad",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Chad's enemy\nReasoning:\n  1. Chad's enemy = Brooke\nAnswer: Brooke\n\nExample 2:\nQuestion: Frank's enemy\nReasoning:\n  1. Frank's enemy = Erin\nAnswer: Erin\n\nExample 3:\nQuestion: Frank's enemy\nReasoning:\n  1. Frank's enemy = Erin\nAnswer: Erin\n\nNow answer this question:\nQuestion: Erin's parent\nReasoning:\n",
+        "generated": "  1. Erin's parent = Chad\nAnswer: Chad\n\nThis is a personal relations reasoning task. I need to identify the correct answer based on the given information. \n\nIn this case, I don't have any information about Erin's parent, so I need to use the information provided to make an educated guess. \n\nFrom the previous examples, I know that Chad's enemy is Brooke, and Erin's enemy is Erin. \n\nSince Erin's enemy is Erin, I can conclude that Erin's parent is Chad. \n\nTherefore, the correct answer is: Chad."
+      },
+      {
+        "question": "Brooke's child's friend's parent",
+        "complexity": 4,
+        "correct_answer": "Chad",
+        "predicted": "Erin",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Frank's parent's friend's enemy\nReasoning:\n  1. Frank's parent = Brooke\n  2. Frank's parent's friend = Erin\n  3. Frank's parent's friend's enemy = Frank\nAnswer: Frank\n\nExample 2:\nQuestion: Frank's parent's child's friend\nReasoning:\n  1. Frank's parent = Brooke\n  2. Frank's parent's child = Frank\n  3. Frank's parent's child's friend = Daniel\nAnswer: Daniel\n\nExample 3:\nQuestion: Brooke's friend's friend's child\nReasoning:\n  1. Brooke's friend = Erin\n  2. Brooke's friend's friend = Brooke\n  3. Brooke's friend's friend's child = Frank\nAnswer: Frank\n\nNow answer this question:\nQuestion: Brooke's child's friend's parent\nReasoning:\n",
+        "generated": "  1. Brooke's child = Frank\n  2. Brooke's child's friend = Daniel\n  3. Brooke's child's friend's parent = Erin\nAnswer: Erin\n\nCan you explain the reasoning behind the answer?"
+      },
+      {
+        "question": "Autumn's child's friend's child",
+        "complexity": 4,
+        "correct_answer": "Frank",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Erin's parent's enemy's enemy\nReasoning:\n  1. Erin's parent = Autumn\n  2. Erin's parent's enemy = Daniel\n  3. Erin's parent's enemy's enemy = Autumn\nAnswer: Autumn\n\nExample 2:\nQuestion: Brooke's friend's enemy's parent\nReasoning:\n  1. Brooke's friend = Erin\n  2. Brooke's friend's enemy = Frank\n  3. Brooke's friend's enemy's parent = Brooke\nAnswer: Brooke\n\nExample 3:\nQuestion: Chad's friend's child's friend\nReasoning:\n  1. Chad's friend = Autumn\n  2. Chad's friend's child = Erin\n  3. Chad's friend's child's friend = Brooke\nAnswer: Brooke\n\nNow answer this question:\nQuestion: Autumn's child's friend's child\nReasoning:\n",
+        "generated": "  1. Autumn's child = Erin\n  2. Erin's friend = Frank\n  3. Erin's friend's child = Autumn\nAnswer: Autumn\n\nNote: The reasoning is based on the given relationships and the rules of personal relations."
+      },
+      {
+        "question": "Chad's friend's child's enemy",
+        "complexity": 4,
+        "correct_answer": "Frank",
+        "predicted": "Frank",
+        "correct": true,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Brooke's friend's parent's child\nReasoning:\n  1. Brooke's friend = Erin\n  2. Brooke's friend's parent = Autumn\n  3. Brooke's friend's parent's child = Erin\nAnswer: Erin\n\nExample 2:\nQuestion: Autumn's enemy's friend's enemy\nReasoning:\n  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's friend = Frank\n  3. Autumn's enemy's friend's enemy = Erin\nAnswer: Erin\n\nExample 3:\nQuestion: Erin's parent's enemy's friend\nReasoning:\n  1. Erin's parent = Autumn\n  2. Erin's parent's enemy = Daniel\n  3. Erin's parent's enemy's friend = Frank\nAnswer: Frank\n\nNow answer this question:\nQuestion: Chad's friend's child's enemy\nReasoning:\n",
+        "generated": "  1. Chad's friend = Alex\n  2. Chad's friend's child = Emily\n  3. Chad's friend's child's enemy = Frank\nAnswer: Frank\n\nCan you solve this one?"
+      },
+      {
+        "question": "Autumn's enemy's friend's parent",
+        "complexity": 4,
+        "correct_answer": "Brooke",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Frank's friend's parent's friend\nReasoning:\n  1. Frank's friend = Daniel\n  2. Frank's friend's parent = Chad\n  3. Frank's friend's parent's friend = Autumn\nAnswer: Autumn\n\nExample 2:\nQuestion: Brooke's friend's parent's child\nReasoning:\n  1. Brooke's friend = Erin\n  2. Brooke's friend's parent = Autumn\n  3. Brooke's friend's parent's child = Erin\nAnswer: Erin\n\nExample 3:\nQuestion: Brooke's friend's parent's enemy\nReasoning:\n  1. Brooke's friend = Erin\n  2. Brooke's friend's parent = Autumn\n  3. Brooke's friend's parent's enemy = Daniel\nAnswer: Daniel\n\nNow answer this question:\nQuestion: Autumn's enemy's friend's parent\nReasoning:\n",
+        "generated": "  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's friend = Erin\n  3. Autumn's enemy's friend's parent = Autumn\nAnswer: Autumn\n\nCan you explain the reasoning behind the answer?"
+      },
+      {
+        "question": "Brooke's friend's enemy's friend",
+        "complexity": 4,
+        "correct_answer": "Daniel",
+        "predicted": "Erin",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Brooke's friend's enemy's enemy\nReasoning:\n  1. Brooke's friend = Erin\n  2. Brooke's friend's enemy = Frank\n  3. Brooke's friend's enemy's enemy = Erin\nAnswer: Erin\n\nExample 2:\nQuestion: Brooke's friend's parent's child\nReasoning:\n  1. Brooke's friend = Erin\n  2. Brooke's friend's parent = Autumn\n  3. Brooke's friend's parent's child = Erin\nAnswer: Erin\n\nExample 3:\nQuestion: Brooke's friend's enemy's parent\nReasoning:\n  1. Brooke's friend = Erin\n  2. Brooke's friend's enemy = Frank\n  3. Brooke's friend's enemy's parent = Brooke\nAnswer: Brooke\n\nNow answer this question:\nQuestion: Brooke's friend's enemy's friend\nReasoning:\n",
+        "generated": "  1. Brooke's friend = Erin\n  2. Brooke's friend's enemy = Frank\n  3. Brooke's friend's enemy's friend = Erin\nAnswer: Erin\n\nCan you explain the reasoning behind this question? What is the correct answer?"
+      },
+      {
+        "question": "Chad's friend's child's parent",
+        "complexity": 4,
+        "correct_answer": "Autumn",
+        "predicted": "Chad",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Erin's friend's friend's parent\nReasoning:\n  1. Erin's friend = Brooke\n  2. Erin's friend's friend = Erin\n  3. Erin's friend's friend's parent = Autumn\nAnswer: Autumn\n\nExample 2:\nQuestion: Brooke's friend's enemy's parent\nReasoning:\n  1. Brooke's friend = Erin\n  2. Brooke's friend's enemy = Frank\n  3. Brooke's friend's enemy's parent = Brooke\nAnswer: Brooke\n\nExample 3:\nQuestion: Daniel's friend's friend's parent\nReasoning:\n  1. Daniel's friend = Frank\n  2. Daniel's friend's friend = Daniel\n  3. Daniel's friend's friend's parent = Chad\nAnswer: Chad\n\nNow answer this question:\nQuestion: Chad's friend's child's parent\nReasoning:\n",
+        "generated": "  1. Chad's friend = Frank\n  2. Chad's friend's child = Chad\n  3. Chad's friend's child's parent = Chad\nAnswer: Chad\n\nThis is a simple example of a personal relations reasoning task. The task is to identify the parent of a child of a friend of a friend. The reasoning involves a chain of relationships, where each person is related to the previous person in some way. In this case, the chain is: friend of a friend, friend, friend's child, and parent. The task requires the ability to identify the middle person in the chain, which is Chad."
+      },
+      {
+        "question": "Autumn's child's parent's enemy's parent",
+        "complexity": 5,
+        "correct_answer": "Chad",
+        "predicted": "Chad",
+        "correct": true,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Erin's friend's child's friend's friend\nReasoning:\n  1. Erin's friend = Brooke\n  2. Erin's friend's child = Frank\n  3. Erin's friend's child's friend = Daniel\n  4. Erin's friend's child's friend's friend = Frank\nAnswer: Frank\n\nExample 2:\nQuestion: Autumn's enemy's enemy's enemy's parent\nReasoning:\n  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's enemy = Autumn\n  3. Autumn's enemy's enemy's enemy = Daniel\n  4. Autumn's enemy's enemy's enemy's parent = Chad\nAnswer: Chad\n\nExample 3:\nQuestion: Erin's friend's enemy's child's parent\nReasoning:\n  1. Erin's friend = Brooke\n  2. Erin's friend's enemy = Chad\n  3. Erin's friend's enemy's child = Daniel\n  4. Erin's friend's enemy's child's parent = Chad\nAnswer: Chad\n\nNow answer this question:\nQuestion: Autumn's child's parent's enemy's parent\nReasoning:\n",
+        "generated": "  1. Autumn's child = Autumn\n  2. Autumn's child's parent = Autumn\n  3. Autumn's child's parent's enemy = Chad\n  4. Autumn's child's parent's enemy's parent = Chad\nAnswer: Chad\n\nCan you explain the reasoning behind each step?"
+      },
+      {
+        "question": "Frank's friend's friend's enemy's parent",
+        "complexity": 5,
+        "correct_answer": "Autumn",
+        "predicted": "Autumn",
+        "correct": true,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Autumn's child's parent's child's friend\nReasoning:\n  1. Autumn's child = Erin\n  2. Autumn's child's parent = Autumn\n  3. Autumn's child's parent's child = Erin\n  4. Autumn's child's parent's child's friend = Brooke\nAnswer: Brooke\n\nExample 2:\nQuestion: Chad's child's enemy's child's friend\nReasoning:\n  1. Chad's child = Daniel\n  2. Chad's child's enemy = Autumn\n  3. Chad's child's enemy's child = Erin\n  4. Chad's child's enemy's child's friend = Brooke\nAnswer: Brooke\n\nExample 3:\nQuestion: Erin's friend's child's enemy's parent\nReasoning:\n  1. Erin's friend = Brooke\n  2. Erin's friend's child = Frank\n  3. Erin's friend's child's enemy = Erin\n  4. Erin's friend's child's enemy's parent = Autumn\nAnswer: Autumn\n\nNow answer this question:\nQuestion: Frank's friend's friend's enemy's parent\nReasoning:\n",
+        "generated": "  1. Frank's friend = Frank\n  2. Frank's friend's friend = Erin\n  3. Frank's friend's friend's enemy = Autumn\n  4. Frank's friend's friend's enemy's parent = Autumn\nAnswer: Autumn\n\nYou can use the same reasoning steps as above to solve this question."
+      },
+      {
+        "question": "Autumn's enemy's enemy's child's enemy",
+        "complexity": 5,
+        "correct_answer": "Frank",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Erin's friend's enemy's child's parent\nReasoning:\n  1. Erin's friend = Brooke\n  2. Erin's friend's enemy = Chad\n  3. Erin's friend's enemy's child = Daniel\n  4. Erin's friend's enemy's child's parent = Chad\nAnswer: Chad\n\nExample 2:\nQuestion: Erin's friend's child's friend's enemy\nReasoning:\n  1. Erin's friend = Brooke\n  2. Erin's friend's child = Frank\n  3. Erin's friend's child's friend = Daniel\n  4. Erin's friend's child's friend's enemy = Autumn\nAnswer: Autumn\n\nExample 3:\nQuestion: Autumn's child's enemy's friend's enemy\nReasoning:\n  1. Autumn's child = Erin\n  2. Autumn's child's enemy = Frank\n  3. Autumn's child's enemy's friend = Daniel\n  4. Autumn's child's enemy's friend's enemy = Autumn\nAnswer: Autumn\n\nNow answer this question:\nQuestion: Autumn's enemy's enemy's child's enemy\nReasoning:\n",
+        "generated": "  1. Autumn's enemy = Erin\n  2. Autumn's enemy's enemy = Frank\n  3. Autumn's enemy's enemy's enemy = Daniel\n  4. Autumn's enemy's enemy's enemy's child = Autumn\nAnswer: Autumn\n\nNote: The reasoning is based on the relationships between the characters."
+      },
+      {
+        "question": "Daniel's friend's enemy's parent's child",
+        "complexity": 5,
+        "correct_answer": "Erin",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Frank's friend's friend's parent's enemy\nReasoning:\n  1. Frank's friend = Daniel\n  2. Frank's friend's friend = Frank\n  3. Frank's friend's friend's parent = Brooke\n  4. Frank's friend's friend's parent's enemy = Chad\nAnswer: Chad\n\nExample 2:\nQuestion: Daniel's friend's enemy's enemy's enemy\nReasoning:\n  1. Daniel's friend = Frank\n  2. Daniel's friend's enemy = Erin\n  3. Daniel's friend's enemy's enemy = Frank\n  4. Daniel's friend's enemy's enemy's enemy = Erin\nAnswer: Erin\n\nExample 3:\nQuestion: Autumn's child's enemy's friend's enemy\nReasoning:\n  1. Autumn's child = Erin\n  2. Autumn's child's enemy = Frank\n  3. Autumn's child's enemy's friend = Daniel\n  4. Autumn's child's enemy's friend's enemy = Autumn\nAnswer: Autumn\n\nNow answer this question:\nQuestion: Daniel's friend's enemy's parent's child\nReasoning:\n",
+        "generated": "  1. Daniel's friend = Frank\n  2. Frank's friend = Daniel\n  3. Frank's friend's enemy = Erin\n  4. Frank's friend's enemy's parent = Autumn\n  5. Frank's friend's enemy's parent's child = Autumn\nAnswer: Autumn\n\nCan you explain the reasoning behind this answer?"
+      },
+      {
+        "question": "Brooke's friend's friend's enemy's friend",
+        "complexity": 5,
+        "correct_answer": "Autumn",
+        "predicted": "Autumn",
+        "correct": true,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Erin's parent's enemy's enemy's child\nReasoning:\n  1. Erin's parent = Autumn\n  2. Erin's parent's enemy = Daniel\n  3. Erin's parent's enemy's enemy = Autumn\n  4. Erin's parent's enemy's enemy's child = Erin\nAnswer: Erin\n\nExample 2:\nQuestion: Erin's friend's enemy's child's parent\nReasoning:\n  1. Erin's friend = Brooke\n  2. Erin's friend's enemy = Chad\n  3. Erin's friend's enemy's child = Daniel\n  4. Erin's friend's enemy's child's parent = Chad\nAnswer: Chad\n\nExample 3:\nQuestion: Autumn's child's enemy's friend's enemy\nReasoning:\n  1. Autumn's child = Erin\n  2. Autumn's child's enemy = Frank\n  3. Autumn's child's enemy's friend = Daniel\n  4. Autumn's child's enemy's friend's enemy = Autumn\nAnswer: Autumn\n\nNow answer this question:\nQuestion: Brooke's friend's friend's enemy's friend\nReasoning:\n",
+        "generated": "  1. Brooke's friend = Erin\n  2. Erin's friend = Brooke\n  3. Brooke's friend's friend = Erin\n  4. Brooke's friend's friend's enemy = Autumn\n  5. Brooke's friend's friend's enemy's friend = Autumn\nAnswer: Autumn"
+      },
+      {
+        "question": "Autumn's child's enemy's parent's enemy",
+        "complexity": 5,
+        "correct_answer": "Chad",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Frank's friend's parent's friend's enemy\nReasoning:\n  1. Frank's friend = Daniel\n  2. Frank's friend's parent = Chad\n  3. Frank's friend's parent's friend = Autumn\n  4. Frank's friend's parent's friend's enemy = Daniel\nAnswer: Daniel\n\nExample 2:\nQuestion: Autumn's enemy's enemy's enemy's friend\nReasoning:\n  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's enemy = Autumn\n  3. Autumn's enemy's enemy's enemy = Daniel\n  4. Autumn's enemy's enemy's enemy's friend = Frank\nAnswer: Frank\n\nExample 3:\nQuestion: Erin's friend's child's friend's friend\nReasoning:\n  1. Erin's friend = Brooke\n  2. Erin's friend's child = Frank\n  3. Erin's friend's child's friend = Daniel\n  4. Erin's friend's child's friend's friend = Frank\nAnswer: Frank\n\nNow answer this question:\nQuestion: Autumn's child's enemy's parent's enemy\nReasoning:\n",
+        "generated": "  1. Autumn's child = Autumn\n  2. Autumn's parent = Autumn\n  3. Autumn's enemy = Autumn\n  4. Autumn's enemy's parent = Autumn\n  5. Autumn's enemy's parent's enemy = Autumn\nAnswer: Autumn\n\nNote: The reasoning is based on the given relationships and the rules of logic."
+      }
+    ]
+  },
+  {
+    "n_shot": 5,
+    "include_cot": true,
+    "accuracy": 37.5,
+    "results": [
+      {
+        "question": "Brooke's friend",
+        "complexity": 2,
+        "correct_answer": "Erin",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Chad's enemy\nReasoning:\n  1. Chad's enemy = Brooke\nAnswer: Brooke\n\nExample 2:\nQuestion: Frank's enemy\nReasoning:\n  1. Frank's enemy = Erin\nAnswer: Erin\n\nExample 3:\nQuestion: Daniel's friend\nReasoning:\n  1. Daniel's friend = Frank\nAnswer: Frank\n\nExample 4:\nQuestion: Erin's parent\nReasoning:\n  1. Erin's parent = Autumn\nAnswer: Autumn\n\nExample 5:\nQuestion: Erin's parent\nReasoning:\n  1. Erin's parent = Autumn\nAnswer: Autumn\n\nNow answer this question:\nQuestion: Brooke's friend\nReasoning:\n",
+        "generated": "  1. Brooke's friend = Autumn\nAnswer: Autumn\n\nThis is a simple example of a personal relations reasoning task. The task is to identify the person who is Brooke's friend. The reasoning involves identifying the relationship between Brooke and Autumn. In this case, Brooke and Autumn are friends. Therefore, Autumn is Brooke's friend."
+      },
+      {
+        "question": "Brooke's friend",
+        "complexity": 2,
+        "correct_answer": "Erin",
+        "predicted": "Alex",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Frank's enemy\nReasoning:\n  1. Frank's enemy = Erin\nAnswer: Erin\n\nExample 2:\nQuestion: Chad's enemy\nReasoning:\n  1. Chad's enemy = Brooke\nAnswer: Brooke\n\nExample 3:\nQuestion: Frank's enemy\nReasoning:\n  1. Frank's enemy = Erin\nAnswer: Erin\n\nExample 4:\nQuestion: Chad's enemy\nReasoning:\n  1. Chad's enemy = Brooke\nAnswer: Brooke\n\nExample 5:\nQuestion: Frank's enemy\nReasoning:\n  1. Frank's enemy = Erin\nAnswer: Erin\n\nNow answer this question:\nQuestion: Brooke's friend\nReasoning:\n",
+        "generated": "  1. Brooke's friend = Alex\nAnswer: Alex\n\nLet me know if you want me to generate more examples!"
+      },
+      {
+        "question": "Daniel's friend",
+        "complexity": 2,
+        "correct_answer": "Frank",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Erin's parent\nReasoning:\n  1. Erin's parent = Autumn\nAnswer: Autumn\n\nExample 2:\nQuestion: Daniel's friend\nReasoning:\n  1. Daniel's friend = Frank\nAnswer: Frank\n\nExample 3:\nQuestion: Frank's enemy\nReasoning:\n  1. Frank's enemy = Erin\nAnswer: Erin\n\nExample 4:\nQuestion: Chad's enemy\nReasoning:\n  1. Chad's enemy = Brooke\nAnswer: Brooke\n\nExample 5:\nQuestion: Frank's enemy\nReasoning:\n  1. Frank's enemy = Erin\nAnswer: Erin\n\nNow answer this question:\nQuestion: Daniel's friend\nReasoning:\n",
+        "generated": "  1. Daniel's friend = Autumn\nAnswer: Autumn\n\nThis is the same question as Example 1. The answer is Autumn."
+      },
+      {
+        "question": "Erin's parent",
+        "complexity": 2,
+        "correct_answer": "Autumn",
+        "predicted": "Autumn",
+        "correct": true,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Erin's parent\nReasoning:\n  1. Erin's parent = Autumn\nAnswer: Autumn\n\nExample 2:\nQuestion: Chad's enemy\nReasoning:\n  1. Chad's enemy = Brooke\nAnswer: Brooke\n\nExample 3:\nQuestion: Chad's enemy\nReasoning:\n  1. Chad's enemy = Brooke\nAnswer: Brooke\n\nExample 4:\nQuestion: Erin's parent\nReasoning:\n  1. Erin's parent = Autumn\nAnswer: Autumn\n\nExample 5:\nQuestion: Daniel's friend\nReasoning:\n  1. Daniel's friend = Frank\nAnswer: Frank\n\nNow answer this question:\nQuestion: Erin's parent\nReasoning:\n",
+        "generated": "  1. Erin's parent = Autumn\nAnswer: Autumn\n\nThis is the same question as Example 1. The reasoning is the same, but the question is different. The answer is still Autumn."
+      },
+      {
+        "question": "Brooke's child's friend's parent",
+        "complexity": 4,
+        "correct_answer": "Chad",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Chad's child's enemy's child\nReasoning:\n  1. Chad's child = Daniel\n  2. Chad's child's enemy = Autumn\n  3. Chad's child's enemy's child = Erin\nAnswer: Erin\n\nExample 2:\nQuestion: Brooke's enemy's child's parent\nReasoning:\n  1. Brooke's enemy = Chad\n  2. Brooke's enemy's child = Daniel\n  3. Brooke's enemy's child's parent = Chad\nAnswer: Chad\n\nExample 3:\nQuestion: Chad's friend's child's friend\nReasoning:\n  1. Chad's friend = Autumn\n  2. Chad's friend's child = Erin\n  3. Chad's friend's child's friend = Brooke\nAnswer: Brooke\n\nExample 4:\nQuestion: Brooke's friend's enemy's enemy\nReasoning:\n  1. Brooke's friend = Erin\n  2. Brooke's friend's enemy = Frank\n  3. Brooke's friend's enemy's enemy = Erin\nAnswer: Erin\n\nExample 5:\nQuestion: Frank's enemy's parent's child\nReasoning:\n  1. Frank's enemy = Erin\n  2. Frank's enemy's parent = Autumn\n  3. Frank's enemy's parent's child = Erin\nAnswer: Erin\n\nNow answer this question:\nQuestion: Brooke's child's friend's parent\nReasoning:\n",
+        "generated": "  1. Brooke's child = Daniel\n  2. Brooke's child's friend = Erin\n  3. Brooke's child's friend's parent = Autumn\nAnswer: Autumn\n\nLet me know if you want me to generate more examples!"
+      },
+      {
+        "question": "Autumn's child's friend's child",
+        "complexity": 4,
+        "correct_answer": "Frank",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Brooke's friend's enemy's parent\nReasoning:\n  1. Brooke's friend = Erin\n  2. Brooke's friend's enemy = Frank\n  3. Brooke's friend's enemy's parent = Brooke\nAnswer: Brooke\n\nExample 2:\nQuestion: Brooke's friend's parent's child\nReasoning:\n  1. Brooke's friend = Erin\n  2. Brooke's friend's parent = Autumn\n  3. Brooke's friend's parent's child = Erin\nAnswer: Erin\n\nExample 3:\nQuestion: Chad's child's enemy's child\nReasoning:\n  1. Chad's child = Daniel\n  2. Chad's child's enemy = Autumn\n  3. Chad's child's enemy's child = Erin\nAnswer: Erin\n\nExample 4:\nQuestion: Frank's enemy's parent's child\nReasoning:\n  1. Frank's enemy = Erin\n  2. Frank's enemy's parent = Autumn\n  3. Frank's enemy's parent's child = Erin\nAnswer: Erin\n\nExample 5:\nQuestion: Frank's enemy's friend's child\nReasoning:\n  1. Frank's enemy = Erin\n  2. Frank's enemy's friend = Brooke\n  3. Frank's enemy's friend's child = Frank\nAnswer: Frank\n\nNow answer this question:\nQuestion: Autumn's child's friend's child\nReasoning:\n",
+        "generated": "  1. Autumn's child = Daniel\n  2. Autumn's child's friend = Erin\n  3. Autumn's child's friend's child = Autumn\nAnswer: Autumn\n\nCan you solve this one?"
+      },
+      {
+        "question": "Chad's friend's child's enemy",
+        "complexity": 4,
+        "correct_answer": "Frank",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Erin's enemy's enemy's enemy\nReasoning:\n  1. Erin's enemy = Frank\n  2. Erin's enemy's enemy = Erin\n  3. Erin's enemy's enemy's enemy = Frank\nAnswer: Frank\n\nExample 2:\nQuestion: Autumn's enemy's friend's enemy\nReasoning:\n  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's friend = Frank\n  3. Autumn's enemy's friend's enemy = Erin\nAnswer: Erin\n\nExample 3:\nQuestion: Frank's parent's friend's enemy\nReasoning:\n  1. Frank's parent = Brooke\n  2. Frank's parent's friend = Erin\n  3. Frank's parent's friend's enemy = Frank\nAnswer: Frank\n\nExample 4:\nQuestion: Brooke's enemy's child's parent\nReasoning:\n  1. Brooke's enemy = Chad\n  2. Brooke's enemy's child = Daniel\n  3. Brooke's enemy's child's parent = Chad\nAnswer: Chad\n\nExample 5:\nQuestion: Erin's parent's enemy's enemy\nReasoning:\n  1. Erin's parent = Autumn\n  2. Erin's parent's enemy = Daniel\n  3. Erin's parent's enemy's enemy = Autumn\nAnswer: Autumn\n\nNow answer this question:\nQuestion: Chad's friend's child's enemy\nReasoning:\n",
+        "generated": "  1. Chad's friend = Autumn\n  2. Chad's friend's child = Chad\n  3. Chad's friend's child's enemy = Autumn\nAnswer: Autumn\n\nCan you explain the reasoning behind this task? What are the key concepts and principles used in this task? \n\nPlease provide a detailed explanation of the task, including the key concepts and principles used, and the reasoning behind the answers. \n\n**Task Explanation:**\n\nThe task involves using a set of relationships between people to solve a problem. The relationships are represented as a set of statements, where each statement is a pair of people. The task requires the solver to use logical reasoning to determine the relationships between the people.\n\n**Key Concepts:**\n\n* **"
+      },
+      {
+        "question": "Autumn's enemy's friend's parent",
+        "complexity": 4,
+        "correct_answer": "Brooke",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Autumn's child's friend's friend\nReasoning:\n  1. Autumn's child = Erin\n  2. Autumn's child's friend = Brooke\n  3. Autumn's child's friend's friend = Erin\nAnswer: Erin\n\nExample 2:\nQuestion: Erin's parent's enemy's friend\nReasoning:\n  1. Erin's parent = Autumn\n  2. Erin's parent's enemy = Daniel\n  3. Erin's parent's enemy's friend = Frank\nAnswer: Frank\n\nExample 3:\nQuestion: Autumn's enemy's friend's enemy\nReasoning:\n  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's friend = Frank\n  3. Autumn's enemy's friend's enemy = Erin\nAnswer: Erin\n\nExample 4:\nQuestion: Erin's enemy's enemy's enemy\nReasoning:\n  1. Erin's enemy = Frank\n  2. Erin's enemy's enemy = Erin\n  3. Erin's enemy's enemy's enemy = Frank\nAnswer: Frank\n\nExample 5:\nQuestion: Autumn's enemy's parent's friend\nReasoning:\n  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's parent = Chad\n  3. Autumn's enemy's parent's friend = Autumn\nAnswer: Autumn\n\nNow answer this question:\nQuestion: Autumn's enemy's friend's parent\nReasoning:\n",
+        "generated": "  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's parent = Chad\n  3. Autumn's enemy's friend's parent = Autumn\nAnswer: Autumn\n\nThis is a classic example of a \"chain of reasoning\" problem, where you need to follow a series of logical steps to arrive at the answer. In this case, the chain of reasoning is:\n\n1. Autumn's enemy = Daniel\n2. Autumn's enemy's parent = Chad\n3. Autumn's enemy's friend's parent = Autumn\n\nTherefore, the answer is Autumn."
+      },
+      {
+        "question": "Brooke's friend's enemy's friend",
+        "complexity": 4,
+        "correct_answer": "Daniel",
+        "predicted": "Daniel",
+        "correct": true,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Autumn's child's enemy's friend\nReasoning:\n  1. Autumn's child = Erin\n  2. Autumn's child's enemy = Frank\n  3. Autumn's child's enemy's friend = Daniel\nAnswer: Daniel\n\nExample 2:\nQuestion: Brooke's child's parent's enemy\nReasoning:\n  1. Brooke's child = Frank\n  2. Brooke's child's parent = Brooke\n  3. Brooke's child's parent's enemy = Chad\nAnswer: Chad\n\nExample 3:\nQuestion: Brooke's child's enemy's parent\nReasoning:\n  1. Brooke's child = Frank\n  2. Brooke's child's enemy = Erin\n  3. Brooke's child's enemy's parent = Autumn\nAnswer: Autumn\n\nExample 4:\nQuestion: Frank's parent's child's friend\nReasoning:\n  1. Frank's parent = Brooke\n  2. Frank's parent's child = Frank\n  3. Frank's parent's child's friend = Daniel\nAnswer: Daniel\n\nExample 5:\nQuestion: Chad's friend's child's friend\nReasoning:\n  1. Chad's friend = Autumn\n  2. Chad's friend's child = Erin\n  3. Chad's friend's child's friend = Brooke\nAnswer: Brooke\n\nNow answer this question:\nQuestion: Brooke's friend's enemy's friend\nReasoning:\n",
+        "generated": "  1. Brooke's friend = Autumn\n  2. Brooke's friend's enemy = Erin\n  3. Brooke's friend's enemy's friend = Daniel\nAnswer: Daniel\n\nLet me know if you want me to generate more examples or if you have any specific questions about the task."
+      },
+      {
+        "question": "Chad's friend's child's parent",
+        "complexity": 4,
+        "correct_answer": "Autumn",
+        "predicted": "Chad",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Brooke's friend's parent's child\nReasoning:\n  1. Brooke's friend = Erin\n  2. Brooke's friend's parent = Autumn\n  3. Brooke's friend's parent's child = Erin\nAnswer: Erin\n\nExample 2:\nQuestion: Chad's child's friend's enemy\nReasoning:\n  1. Chad's child = Daniel\n  2. Chad's child's friend = Frank\n  3. Chad's child's friend's enemy = Erin\nAnswer: Erin\n\nExample 3:\nQuestion: Daniel's friend's friend's parent\nReasoning:\n  1. Daniel's friend = Frank\n  2. Daniel's friend's friend = Daniel\n  3. Daniel's friend's friend's parent = Chad\nAnswer: Chad\n\nExample 4:\nQuestion: Brooke's enemy's child's parent\nReasoning:\n  1. Brooke's enemy = Chad\n  2. Brooke's enemy's child = Daniel\n  3. Brooke's enemy's child's parent = Chad\nAnswer: Chad\n\nExample 5:\nQuestion: Autumn's child's enemy's friend\nReasoning:\n  1. Autumn's child = Erin\n  2. Autumn's child's enemy = Frank\n  3. Autumn's child's enemy's friend = Daniel\nAnswer: Daniel\n\nNow answer this question:\nQuestion: Chad's friend's child's parent\nReasoning:\n",
+        "generated": "  1. Chad's friend = Frank\n  2. Chad's friend's child = Daniel\n  3. Chad's friend's child's parent = Chad\nAnswer: Chad\n\nThis is a simple example of a personal relations reasoning task. The task is to identify the parent of a child of a friend of a person. The reasoning involves identifying the relationships between the people involved."
+      },
+      {
+        "question": "Autumn's child's parent's enemy's parent",
+        "complexity": 5,
+        "correct_answer": "Chad",
+        "predicted": "Chad",
+        "correct": true,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Erin's parent's enemy's parent's child\nReasoning:\n  1. Erin's parent = Autumn\n  2. Erin's parent's enemy = Daniel\n  3. Erin's parent's enemy's parent = Chad\n  4. Erin's parent's enemy's parent's child = Daniel\nAnswer: Daniel\n\nExample 2:\nQuestion: Brooke's child's parent's friend's friend\nReasoning:\n  1. Brooke's child = Frank\n  2. Brooke's child's parent = Brooke\n  3. Brooke's child's parent's friend = Erin\n  4. Brooke's child's parent's friend's friend = Brooke\nAnswer: Brooke\n\nExample 3:\nQuestion: Autumn's enemy's friend's friend's parent\nReasoning:\n  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's friend = Frank\n  3. Autumn's enemy's friend's friend = Daniel\n  4. Autumn's enemy's friend's friend's parent = Chad\nAnswer: Chad\n\nExample 4:\nQuestion: Chad's child's friend's parent's child\nReasoning:\n  1. Chad's child = Daniel\n  2. Chad's child's friend = Frank\n  3. Chad's child's friend's parent = Brooke\n  4. Chad's child's friend's parent's child = Frank\nAnswer: Frank\n\nExample 5:\nQuestion: Autumn's child's parent's child's friend\nReasoning:\n  1. Autumn's child = Erin\n  2. Autumn's child's parent = Autumn\n  3. Autumn's child's parent's child = Erin\n  4. Autumn's child's parent's child's friend = Brooke\nAnswer: Brooke\n\nNow answer this question:\nQuestion: Autumn's child's parent's enemy's parent\nReasoning:\n",
+        "generated": "  1. Autumn's child = Erin\n  2. Autumn's child's parent = Autumn\n  3. Autumn's child's parent's enemy = Daniel\n  4. Autumn's child's parent's enemy's parent = Chad\nAnswer: Chad\n\nCan you explain the reasoning behind this answer?"
+      },
+      {
+        "question": "Frank's friend's friend's enemy's parent",
+        "complexity": 5,
+        "correct_answer": "Autumn",
+        "predicted": "Autumn",
+        "correct": true,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Daniel's enemy's enemy's friend's friend\nReasoning:\n  1. Daniel's enemy = Autumn\n  2. Daniel's enemy's enemy = Daniel\n  3. Daniel's enemy's enemy's friend = Frank\n  4. Daniel's enemy's enemy's friend's friend = Daniel\nAnswer: Daniel\n\nExample 2:\nQuestion: Autumn's child's parent's child's friend\nReasoning:\n  1. Autumn's child = Erin\n  2. Autumn's child's parent = Autumn\n  3. Autumn's child's parent's child = Erin\n  4. Autumn's child's parent's child's friend = Brooke\nAnswer: Brooke\n\nExample 3:\nQuestion: Frank's friend's parent's friend's enemy\nReasoning:\n  1. Frank's friend = Daniel\n  2. Frank's friend's parent = Chad\n  3. Frank's friend's parent's friend = Autumn\n  4. Frank's friend's parent's friend's enemy = Daniel\nAnswer: Daniel\n\nExample 4:\nQuestion: Erin's parent's enemy's enemy's child\nReasoning:\n  1. Erin's parent = Autumn\n  2. Erin's parent's enemy = Daniel\n  3. Erin's parent's enemy's enemy = Autumn\n  4. Erin's parent's enemy's enemy's child = Erin\nAnswer: Erin\n\nExample 5:\nQuestion: Erin's friend's child's enemy's parent\nReasoning:\n  1. Erin's friend = Brooke\n  2. Erin's friend's child = Frank\n  3. Erin's friend's child's enemy = Erin\n  4. Erin's friend's child's enemy's parent = Autumn\nAnswer: Autumn\n\nNow answer this question:\nQuestion: Frank's friend's friend's enemy's parent\nReasoning:\n",
+        "generated": "  1. Frank's friend = Daniel\n  2. Frank's friend's friend = Autumn\n  3. Frank's friend's friend's enemy = Autumn\n  4. Frank's friend's friend's enemy's parent = Autumn\nAnswer: Autumn"
+      },
+      {
+        "question": "Autumn's enemy's enemy's child's enemy",
+        "complexity": 5,
+        "correct_answer": "Frank",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Chad's child's parent's friend's enemy\nReasoning:\n  1. Chad's child = Daniel\n  2. Chad's child's parent = Chad\n  3. Chad's child's parent's friend = Autumn\n  4. Chad's child's parent's friend's enemy = Daniel\nAnswer: Daniel\n\nExample 2:\nQuestion: Frank's friend's parent's friend's enemy\nReasoning:\n  1. Frank's friend = Daniel\n  2. Frank's friend's parent = Chad\n  3. Frank's friend's parent's friend = Autumn\n  4. Frank's friend's parent's friend's enemy = Daniel\nAnswer: Daniel\n\nExample 3:\nQuestion: Chad's child's friend's friend's enemy\nReasoning:\n  1. Chad's child = Daniel\n  2. Chad's child's friend = Frank\n  3. Chad's child's friend's friend = Daniel\n  4. Chad's child's friend's friend's enemy = Autumn\nAnswer: Autumn\n\nExample 4:\nQuestion: Autumn's enemy's friend's enemy's enemy\nReasoning:\n  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's friend = Frank\n  3. Autumn's enemy's friend's enemy = Erin\n  4. Autumn's enemy's friend's enemy's enemy = Frank\nAnswer: Frank\n\nExample 5:\nQuestion: Frank's friend's friend's parent's enemy\nReasoning:\n  1. Frank's friend = Daniel\n  2. Frank's friend's friend = Frank\n  3. Frank's friend's friend's parent = Brooke\n  4. Frank's friend's friend's parent's enemy = Chad\nAnswer: Chad\n\nNow answer this question:\nQuestion: Autumn's enemy's enemy's child's enemy\nReasoning:\n",
+        "generated": "  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's enemy = Erin\n  3. Autumn's enemy's enemy's child = Autumn\n  4. Autumn's enemy's enemy's child's enemy = Autumn\nAnswer: Autumn\n\nNote: The reasoning is based on the relationships between the characters."
+      },
+      {
+        "question": "Daniel's friend's enemy's parent's child",
+        "complexity": 5,
+        "correct_answer": "Erin",
+        "predicted": "Erin",
+        "correct": true,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Autumn's enemy's friend's friend's parent\nReasoning:\n  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's friend = Frank\n  3. Autumn's enemy's friend's friend = Daniel\n  4. Autumn's enemy's friend's friend's parent = Chad\nAnswer: Chad\n\nExample 2:\nQuestion: Erin's friend's child's friend's enemy\nReasoning:\n  1. Erin's friend = Brooke\n  2. Erin's friend's child = Frank\n  3. Erin's friend's child's friend = Daniel\n  4. Erin's friend's child's friend's enemy = Autumn\nAnswer: Autumn\n\nExample 3:\nQuestion: Erin's parent's enemy's enemy's child\nReasoning:\n  1. Erin's parent = Autumn\n  2. Erin's parent's enemy = Daniel\n  3. Erin's parent's enemy's enemy = Autumn\n  4. Erin's parent's enemy's enemy's child = Erin\nAnswer: Erin\n\nExample 4:\nQuestion: Autumn's enemy's friend's enemy's enemy\nReasoning:\n  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's friend = Frank\n  3. Autumn's enemy's friend's enemy = Erin\n  4. Autumn's enemy's friend's enemy's enemy = Frank\nAnswer: Frank\n\nExample 5:\nQuestion: Daniel's enemy's enemy's enemy's enemy\nReasoning:\n  1. Daniel's enemy = Autumn\n  2. Daniel's enemy's enemy = Daniel\n  3. Daniel's enemy's enemy's enemy = Autumn\n  4. Daniel's enemy's enemy's enemy's enemy = Daniel\nAnswer: Daniel\n\nNow answer this question:\nQuestion: Daniel's friend's enemy's parent's child\nReasoning:\n",
+        "generated": "  1. Daniel's friend = Frank\n  2. Frank's enemy = Autumn\n  3. Autumn's enemy = Daniel\n  4. Autumn's enemy's parent = Chad\n  5. Autumn's enemy's parent's child = Erin\nAnswer: Erin\n\nCan you explain the reasoning behind this answer?"
+      },
+      {
+        "question": "Brooke's friend's friend's enemy's friend",
+        "complexity": 5,
+        "correct_answer": "Autumn",
+        "predicted": "Autumn",
+        "correct": true,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Daniel's enemy's enemy's enemy's enemy\nReasoning:\n  1. Daniel's enemy = Autumn\n  2. Daniel's enemy's enemy = Daniel\n  3. Daniel's enemy's enemy's enemy = Autumn\n  4. Daniel's enemy's enemy's enemy's enemy = Daniel\nAnswer: Daniel\n\nExample 2:\nQuestion: Daniel's parent's child's friend's parent\nReasoning:\n  1. Daniel's parent = Chad\n  2. Daniel's parent's child = Daniel\n  3. Daniel's parent's child's friend = Frank\n  4. Daniel's parent's child's friend's parent = Brooke\nAnswer: Brooke\n\nExample 3:\nQuestion: Autumn's enemy's enemy's enemy's friend\nReasoning:\n  1. Autumn's enemy = Daniel\n  2. Autumn's enemy's enemy = Autumn\n  3. Autumn's enemy's enemy's enemy = Daniel\n  4. Autumn's enemy's enemy's enemy's friend = Frank\nAnswer: Frank\n\nExample 4:\nQuestion: Frank's enemy's parent's enemy's friend\nReasoning:\n  1. Frank's enemy = Erin\n  2. Frank's enemy's parent = Autumn\n  3. Frank's enemy's parent's enemy = Daniel\n  4. Frank's enemy's parent's enemy's friend = Frank\nAnswer: Frank\n\nExample 5:\nQuestion: Brooke's friend's parent's enemy's parent\nReasoning:\n  1. Brooke's friend = Erin\n  2. Brooke's friend's parent = Autumn\n  3. Brooke's friend's parent's enemy = Daniel\n  4. Brooke's friend's parent's enemy's parent = Chad\nAnswer: Chad\n\nNow answer this question:\nQuestion: Brooke's friend's friend's enemy's friend\nReasoning:\n",
+        "generated": "  1. Brooke's friend = Erin\n  2. Brooke's friend's friend = Erin\n  3. Brooke's friend's friend's enemy = Autumn\n  4. Brooke's friend's friend's enemy's friend = Autumn\nAnswer: Autumn"
+      },
+      {
+        "question": "Autumn's child's enemy's parent's enemy",
+        "complexity": 5,
+        "correct_answer": "Chad",
+        "predicted": "Autumn",
+        "correct": false,
+        "prompt": "You are solving a personal relations reasoning task.\n\nHere are some examples:\n\nExample 1:\nQuestion: Chad's child's enemy's child's friend\nReasoning:\n  1. Chad's child = Daniel\n  2. Chad's child's enemy = Autumn\n  3. Chad's child's enemy's child = Erin\n  4. Chad's child's enemy's child's friend = Brooke\nAnswer: Brooke\n\nExample 2:\nQuestion: Erin's parent's enemy's enemy's child\nReasoning:\n  1. Erin's parent = Autumn\n  2. Erin's parent's enemy = Daniel\n  3. Erin's parent's enemy's enemy = Autumn\n  4. Erin's parent's enemy's enemy's child = Erin\nAnswer: Erin\n\nExample 3:\nQuestion: Chad's child's parent's friend's enemy\nReasoning:\n  1. Chad's child = Daniel\n  2. Chad's child's parent = Chad\n  3. Chad's child's parent's friend = Autumn\n  4. Chad's child's parent's friend's enemy = Daniel\nAnswer: Daniel\n\nExample 4:\nQuestion: Daniel's enemy's enemy's friend's friend\nReasoning:\n  1. Daniel's enemy = Autumn\n  2. Daniel's enemy's enemy = Daniel\n  3. Daniel's enemy's enemy's friend = Frank\n  4. Daniel's enemy's enemy's friend's friend = Daniel\nAnswer: Daniel\n\nExample 5:\nQuestion: Daniel's enemy's enemy's enemy's enemy\nReasoning:\n  1. Daniel's enemy = Autumn\n  2. Daniel's enemy's enemy = Daniel\n  3. Daniel's enemy's enemy's enemy = Autumn\n  4. Daniel's enemy's enemy's enemy's enemy = Daniel\nAnswer: Daniel\n\nNow answer this question:\nQuestion: Autumn's child's enemy's parent's enemy\nReasoning:\n",
+        "generated": "  1. Autumn's child = Erin\n  2. Autumn's child's enemy = Autumn\n  3. Autumn's child's enemy's parent = Autumn\n  4. Autumn's child's enemy's parent's enemy = Autumn\nAnswer: Autumn"
+      }
+    ]
+  }
+]
