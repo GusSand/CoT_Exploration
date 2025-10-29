@@ -2,6 +2,128 @@
 
 ## Experiment Log
 
+### 2025-10-29: CT0 Mechanistic Analysis - PASSIVE HUB WITH CASCADING DIVERGENCE
+
+**Objective**: Understand CT0's mechanistic role through bidirectional blocking and hidden state divergence analysis.
+
+**Status**: ✅ **COMPLETE** - CT0 is a passive hub that encodes question info; blocking causes cascading divergence
+
+**Model**: LLaMA-3.2-1B-Instruct CODI | **Task**: GSM8K | **Method**: Attention blocking + hidden state analysis
+
+**Experiments Run**:
+1. **Bidirectional Blocking** (100 problems, 4 conditions)
+2. **CT0 Writers/Readers Analysis** (100 problems, attention flow)
+3. **Hidden State Divergence** (100 problems, cosine similarity tracking)
+
+**Key Results**:
+
+**1. Bidirectional Blocking** → CT0 is a **PASSIVE HUB**
+- **Output blocked** (others can't see CT0): **-16% accuracy** (58% → 42%)
+- **Input blocked** (CT0 can't see question): **0% drop** (58% → 58%)
+- **Both blocked**: -16% (same as output-only)
+- **Conclusion**: CT0 doesn't need to "see" question during generation; it stores info that others read
+
+**2. CT0 Writers/Readers** → Information flow pattern identified
+- **CT0 reads FROM question**: 100% attention weight (step 0 only)
+- **CT1-CT5 write TO CT0**: Average 3.66% attention (4.77% → 2.76% decreasing)
+- **Flow**: Question → CT0 (encodes) → CT1-CT5 (read from CT0) → Answer
+
+**3. Hidden State Divergence** → **EARLY & CASCADING divergence**
+- **CT1**: 0.6962 similarity (30% diverged immediately!)
+- **CT2**: 0.5352 similarity (cascading effect)
+- **CT3**: 0.4714 similarity
+- **CT4**: 0.3775 similarity (most diverged - 62% different!)
+- **CT5**: 0.5159 similarity (slight recovery)
+- **Pattern**: Divergence accumulates ~9.8% per step
+- **Critical**: Intermediate CT tokens DO change, not just final answer
+
+**Mechanistic Model**:
+```
+Step 0: CT0 encodes question (100% attention to question tokens)
+Step 1: CT1 reads from CT0 (4.77% attention) → generates reasoning
+Step 2: CT2 reads from CT0 (4.21% attention) → continues reasoning
+...
+Answer: Uses accumulated reasoning from CT0-CT5
+```
+
+**When CT0 attention blocked**:
+```
+CT0 still encodes (hidden state exists in residual stream)
+BUT CT1 can't read via attention → diverges (70% similarity)
+CT2 reads from diverged CT1 → diverges more (54% similarity)
+Cascading failure through entire reasoning chain
+```
+
+**Key Insights**:
+
+1. ✅ **CT0 is passive storage, not active coordinator**: Doesn't need question input after encoding
+2. ✅ **Information flows through attention, not just residual**: Blocking attention causes immediate divergence
+3. ✅ **Reasoning is sequential and dependent**: Each CT token depends on reading from CT0
+4. ✅ **Failures cascade**: CT1 divergence → CT2 divergence → ... → wrong answer
+5. ✅ **Decreasing attention pattern**: CT1 reads most (4.77%), CT4 reads least (2.76%)
+
+**Research Implications**:
+- CT0 acts as "question encoding cache" - stores numerical/contextual info from question
+- Later CT tokens coordinate by reading from this cache rather than re-processing question
+- Attention mechanism is critical for information flow, even with residual connections
+- CODI reasoning is fragile - early divergence cascades through entire chain
+
+**Deliverables**:
+- Code: `11_ct0_bidirectional_blocking.py`, `12_identify_ct0_writers_readers.py`, `13_analyze_ct_hidden_state_divergence.py`
+- Results: 3 JSON files with full analysis data
+- Visualizations: 5 figures showing attention patterns and divergence
+- Documentation: `10-29_llama_gsm8k_ct0_mechanistic_analysis.md` (to be created)
+
+**Time**: ~4 hours | **Cost**: $0 (used existing data) | **Next**: Qualitative case studies showing step-by-step divergence
+
+---
+
+### 2025-10-29: Personal Relations CODI v2 - SUCCESS WITH UNIVERSE CONTEXT
+
+**Objective**: Retry Personal Relations CODI training with universe context included to test if v1 failure (14.8%) was due to missing context.
+
+**Status**: ✅ **SUCCESS** - Achieved 67.2% accuracy (near-baseline performance)
+
+**Model**: LLaMA-3.2-3B-Instruct | **Task**: Personal Relations (Graph Traversal) | **Method**: CODI with 6 latent tokens
+
+**Results**:
+- **CODI v2 (with universe)**: 67.2% accuracy (504/750 correct)
+- **Baseline (5-shot + explicit CoT)**: 68.8% accuracy
+- **CODI v1 (no universe)**: 14.8% accuracy
+- **Improvement over v1**: +52.4 percentage points
+- **Performance retention**: 97.7% of baseline (only -1.6pp gap)
+- **Compression rate**: 5-7x (6 tokens vs 30-40 explicit CoT tokens)
+
+**Key Findings**:
+
+1. ✅ **Root cause validated**: Missing universe context was the entire problem with v1
+2. ✅ **CODI works for structural reasoning**: Graph traversal compressed as effectively as arithmetic (GSM8K)
+3. ✅ **Graceful degradation**: Performance drops with reasoning chain length (1-hop: 95-100%, 5-hop: 50-60%)
+4. ✅ **Compression-performance tradeoff**: -1.6pp for 5-7x compression is excellent
+
+**Data Format Fix**:
+- **v1 (failed)**: Question only, no universe context
+- **v2 (success)**: "Given the following relationships:\n[22 relationships]\n\nQuestion: [query]"
+
+**Training**:
+- Duration: 3h 10min | Batch: 16 (grad accum 8, effective 128) | Loss: 0.11-0.39 (converged)
+- Data: 3,500 train / 750 val / 750 test across 200 synthetic universes
+- Sequence length: ~162 tokens (vs 32 in v1)
+
+**Research Implications**:
+- CODI compresses **both** computational (GSM8K: 70% vs 75%) and structural (PR: 67.2% vs 68.8%) reasoning
+- Both show ~97-98% performance retention with 5-7x compression
+- Critical lesson: Training format must include ALL information needed for task (no implicit knowledge)
+
+**Next Steps**:
+- ⚠️ **Model size mismatch issue**: GSM8K used 1B, Personal Relations used 3B
+- **Solution**: Retrain Personal Relations on LLaMA 1B for clean mechanistic comparison
+- **Then**: Compare attention patterns, token specialization, activation patching across reasoning types
+
+**Time**: ~5 hours | **Cost**: ~$10-15 | **Deliverables**: `docs/experiments/10-29_llama3b_personal_relations_codi_v2_success.md`
+
+---
+
 ### 2025-10-29: Multi-Position Interventions - STRONG SUB-ADDITIVE EFFECTS
 
 **Objective**: Test what happens when multiple CT positions are blocked simultaneously.
