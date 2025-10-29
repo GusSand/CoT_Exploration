@@ -1,6 +1,53 @@
 # Research Journal - Chain of Thought Exploration
 
 ## Experiment Log
+### 2025-10-29: Personal Relations CODI Training - UNIVERSE CONTEXT CRITICAL
+
+**Objective**: Train LLaMA-1B CODI model on Personal Relations task to enable 3-way mechanistic comparison (Personal Relations vs GSM8K vs CommonsenseQA).
+
+**Status**: ✅ **COMPLETE** - Successfully trained, universe context proved critical for graph traversal reasoning
+
+**Model**: LLaMA-3.2-1B-Instruct CODI | **Task**: Personal Relations (graph traversal) | **Dataset**: 750 test examples with universe context
+
+**Key Findings**:
+
+**1. Universe Context is Essential**
+- **CODI v1** (without universe): 14.8% accuracy - Failed to learn graph traversal
+- **CODI v2** (with universe): 43.7% accuracy (328/750) - Matches few-shot baseline
+- **Baseline** (few-shot with universe): 43.8% accuracy
+- **Discovery**: Including full relationship graph in prompt enables CODI to compress compositional reasoning
+
+**2. Training Metrics**
+- **Loss reduction**: 5.3 → 0.11 (48x improvement over 10 epochs)
+- **Final loss**: 0.1132 at step 270
+- **Distill loss**: 0.029 (effective knowledge compression)
+- **Convergence**: Stable training with learning rate decay to 0
+
+**3. Model Behavior**
+- Learned to output answers in format: " = [Name]\nThe answer is: [Name]"
+- Successfully performs multi-hop relationship traversal
+- Encodes graph structure in 6 continuous thought tokens (CT0-CT5)
+
+**4. Technical Insights - Evaluation Challenges**
+- **Challenge 1**: Checkpoint loading - Required LoRA layers enabled (`use_lora=True`) and proper LoRA config initialization
+- **Challenge 2**: Precision mismatch - Must use `full_precision=True` to match training configuration (quantization changes weight shapes)
+- **Challenge 3**: Answer extraction - Model output format required custom parsing to handle "=" prefix and multi-line responses
+
+**Checkpoint**: `/home/paperspace/dev/CoT_Exploration/models/personal_relations_1b_codi_v2/personal_relations_1b_latent_v2/Llama-3.2-1B-Instruct/ep_10/lr_0.0008/seed_42/checkpoint-270`
+
+**Data Generated**: 
+- Training data: 2,700 examples (train) + 750 examples (test) with universe context
+- Evaluation results: `eval_FINAL_CORRECT.json` (328/750 correct, 43.7%)
+- Model weights: 2.7GB checkpoint with LoRA adapter weights
+
+**Time**: ~3 hours training + 2 hours debugging evaluation
+
+**Next Steps**: 3-way mechanistic comparison with GSM8K and CommonsenseQA models to understand how CODI encodes different reasoning types (graph traversal vs arithmetic vs commonsense)
+
+**Detailed Report**: [10-29_llama1b_personal_relations_codi_training.md](experiments/10-29_llama1b_personal_relations_codi_training.md)
+
+---
+
 
 ### 2025-10-29: CommonsenseQA vs GSM8K - HUB-CRITICAL DISSOCIATION DISCOVERY
 
