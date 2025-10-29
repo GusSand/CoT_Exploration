@@ -4718,3 +4718,36 @@ Each case study includes:
 4. Adversarial training with number injection examples
 
 ---
+
+## Personal Relations CODI Training (2025-10-29)
+
+### Training Data - Personal Relations v2 (with universe context)
+- **Location**: `/home/paperspace/dev/CoT_Exploration/data/personal_relations/personal_relations_train_codi_v2.json`
+- **Size**: 2,700 examples
+- **Format**: Each example includes full relationship universe + query
+- **Purpose**: Train CODI model on graph traversal reasoning
+- **Creation**: Generated with universe context included
+- **Stratification**: N/A (all examples include full universe)
+- **Used in**: [10-29_llama1b_personal_relations_codi_training.md](experiments/10-29_llama1b_personal_relations_codi_training.md)
+
+### Test Data - Personal Relations v2 (with universe context)
+- **Location**: `/home/paperspace/dev/CoT_Exploration/data/personal_relations/personal_relations_test_codi_v2.json`
+- **Size**: 750 examples
+- **Format**: Each example includes full relationship universe + query
+- **Purpose**: Evaluate trained CODI model
+- **Creation**: Test split with universe context
+- **Results**: 43.7% accuracy (328/750 correct)
+- **Used in**: [10-29_llama1b_personal_relations_codi_training.md](experiments/10-29_llama1b_personal_relations_codi_training.md)
+
+### Model Checkpoint - Personal Relations CODI LLaMA-1B
+- **Location**: `/home/paperspace/dev/CoT_Exploration/models/personal_relations_1b_codi_v2/personal_relations_1b_latent_v2/Llama-3.2-1B-Instruct/ep_10/lr_0.0008/seed_42/checkpoint-270`
+- **Size**: 2.7GB
+- **Contents**: LoRA weights (224 keys) + Projection weights (6 keys) + Base model state
+- **Performance**: 43.7% accuracy on test set
+- **Training**: 10 epochs, loss 5.3 → 0.11 (48x reduction)
+- **Purpose**: Enable 3-way mechanistic comparison (Personal Relations vs GSM8K vs CommonsenseQA)
+
+### Evaluation Results
+- **Location**: `/home/paperspace/dev/CoT_Exploration/models/personal_relations_1b_codi_v2/evaluation_results/personal_relations_1b_eval_FINAL_CORRECT.json`
+- **Metrics**: 328/750 correct (43.7% accuracy)
+- **Comparison**: Matches few-shot baseline (43.8%), 3x better than CODI v1 (14.8%)
