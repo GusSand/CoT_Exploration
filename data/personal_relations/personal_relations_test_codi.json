@@ -1,0 +1,3752 @@
+[
+  {
+    "question": "Amber's friend",
+    "cot": "Amber's friend = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Mia's parent",
+    "cot": "Mia's parent = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Mia's enemy",
+    "cot": "Mia's enemy = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Uma's parent",
+    "cot": "Uma's parent = Mia",
+    "answer": "Mia"
+  },
+  {
+    "question": "Chloe's friend",
+    "cot": "Chloe's friend = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Amber's enemy's child",
+    "cot": "Amber's enemy = Uma Amber's enemy's child = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Uma's child's enemy",
+    "cot": "Uma's child = Paul Uma's child's enemy = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Uma's parent's enemy",
+    "cot": "Uma's parent = Mia Uma's parent's enemy = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Uma's child's parent",
+    "cot": "Uma's child = Paul Uma's child's parent = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "Chloe's friend's parent",
+    "cot": "Chloe's friend = Paul Chloe's friend's parent = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "Mia's parent's child's friend",
+    "cot": "Mia's parent = Amber Mia's parent's child = Mia Mia's parent's child's friend = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Chloe's enemy's child's parent",
+    "cot": "Chloe's enemy = Mia Chloe's enemy's child = Amber Chloe's enemy's child's parent = Mia",
+    "answer": "Mia"
+  },
+  {
+    "question": "Uma's enemy's parent's friend",
+    "cot": "Uma's enemy = Chloe Uma's enemy's parent = Amber Uma's enemy's parent's friend = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Chloe's parent's parent's enemy",
+    "cot": "Chloe's parent = Amber Chloe's parent's parent = Mia Chloe's parent's parent's enemy = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Uma's enemy's friend's child",
+    "cot": "Uma's enemy = Chloe Uma's enemy's friend = Paul Uma's enemy's friend's child = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Mia's enemy's friend's enemy's parent",
+    "cot": "Mia's enemy = Chloe Mia's enemy's friend = Paul Mia's enemy's friend's enemy = Tina Mia's enemy's friend's enemy's parent = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Mia's child's parent's parent's friend",
+    "cot": "Mia's child = Amber Mia's child's parent = Mia Mia's child's parent's parent = Amber Mia's child's parent's parent's friend = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Mia's parent's enemy's enemy's friend",
+    "cot": "Mia's parent = Amber Mia's parent's enemy = Uma Mia's parent's enemy's enemy = Chloe Mia's parent's enemy's enemy's friend = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Mia's parent's friend's enemy's parent",
+    "cot": "Mia's parent = Amber Mia's parent's friend = Paul Mia's parent's friend's enemy = Tina Mia's parent's friend's enemy's parent = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Chloe's parent's child's enemy's friend",
+    "cot": "Chloe's parent = Amber Chloe's parent's child = Mia Chloe's parent's child's enemy = Chloe Chloe's parent's child's enemy's friend = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Amber's enemy's child's enemy's enemy's enemy",
+    "cot": "Amber's enemy = Uma Amber's enemy's child = Paul Amber's enemy's child's enemy = Tina Amber's enemy's child's enemy's enemy = Paul Amber's enemy's child's enemy's enemy's enemy = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Chloe's parent's friend's parent's friend's child",
+    "cot": "Chloe's parent = Amber Chloe's parent's friend = Paul Chloe's parent's friend's parent = Uma Chloe's parent's friend's parent's friend = Paul Chloe's parent's friend's parent's friend's child = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Chloe's parent's friend's parent's enemy's parent",
+    "cot": "Chloe's parent = Amber Chloe's parent's friend = Paul Chloe's parent's friend's parent = Uma Chloe's parent's friend's parent's enemy = Chloe Chloe's parent's friend's parent's enemy's parent = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Uma's enemy's enemy's child's friend's parent",
+    "cot": "Uma's enemy = Chloe Uma's enemy's enemy = Mia Uma's enemy's enemy's child = Amber Uma's enemy's enemy's child's friend = Paul Uma's enemy's enemy's child's friend's parent = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "Mia's enemy's friend's enemy's enemy's child",
+    "cot": "Mia's enemy = Chloe Mia's enemy's friend = Paul Mia's enemy's friend's enemy = Tina Mia's enemy's friend's enemy's enemy = Paul Mia's enemy's friend's enemy's enemy's child = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Alice's enemy",
+    "cot": "Alice's enemy = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Charlie's enemy",
+    "cot": "Charlie's enemy = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Charlie's friend",
+    "cot": "Charlie's friend = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Victor's enemy",
+    "cot": "Victor's enemy = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Sam's enemy",
+    "cot": "Sam's enemy = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Charlie's enemy's parent",
+    "cot": "Charlie's enemy = Victor Charlie's enemy's parent = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Alice's friend's child",
+    "cot": "Alice's friend = Sam Alice's friend's child = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Charlie's friend's enemy",
+    "cot": "Charlie's friend = Frank Charlie's friend's enemy = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Bob's child's parent",
+    "cot": "Bob's child = Alice Bob's child's parent = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Alice's child's child",
+    "cot": "Alice's child = Bob Alice's child's child = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "Victor's enemy's parent's enemy",
+    "cot": "Victor's enemy = Charlie Victor's enemy's parent = Frank Victor's enemy's parent's enemy = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Frank's parent's parent's parent",
+    "cot": "Frank's parent = Bob Frank's parent's parent = Alice Frank's parent's parent's parent = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Bob's parent's friend's friend",
+    "cot": "Bob's parent = Alice Bob's parent's friend = Sam Bob's parent's friend's friend = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Alice's friend's enemy's parent",
+    "cot": "Alice's friend = Sam Alice's friend's enemy = Charlie Alice's friend's enemy's parent = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Sam's parent's parent's enemy",
+    "cot": "Sam's parent = Victor Sam's parent's parent = Sam Sam's parent's parent's enemy = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Victor's parent's friend's child's enemy",
+    "cot": "Victor's parent = Sam Victor's parent's friend = Victor Victor's parent's friend's child = Sam Victor's parent's friend's child's enemy = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Frank's parent's friend's parent's child",
+    "cot": "Frank's parent = Bob Frank's parent's friend = Sam Frank's parent's friend's parent = Victor Frank's parent's friend's parent's child = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Victor's parent's parent's friend's enemy",
+    "cot": "Victor's parent = Sam Victor's parent's parent = Victor Victor's parent's parent's friend = Sam Victor's parent's parent's friend's enemy = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Frank's enemy's friend's enemy's parent",
+    "cot": "Frank's enemy = Sam Frank's enemy's friend = Victor Frank's enemy's friend's enemy = Charlie Frank's enemy's friend's enemy's parent = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Sam's friend's friend's enemy's friend",
+    "cot": "Sam's friend = Victor Sam's friend's friend = Sam Sam's friend's friend's enemy = Charlie Sam's friend's friend's enemy's friend = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Victor's friend's enemy's enemy's parent's enemy",
+    "cot": "Victor's friend = Sam Victor's friend's enemy = Charlie Victor's friend's enemy's enemy = Victor Victor's friend's enemy's enemy's parent = Sam Victor's friend's enemy's enemy's parent's enemy = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Frank's enemy's friend's friend's parent's friend",
+    "cot": "Frank's enemy = Sam Frank's enemy's friend = Victor Frank's enemy's friend's friend = Sam Frank's enemy's friend's friend's parent = Victor Frank's enemy's friend's friend's parent's friend = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Sam's enemy's enemy's parent's enemy's friend",
+    "cot": "Sam's enemy = Charlie Sam's enemy's enemy = Victor Sam's enemy's enemy's parent = Sam Sam's enemy's enemy's parent's enemy = Charlie Sam's enemy's enemy's parent's enemy's friend = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Sam's enemy's parent's enemy's parent's enemy",
+    "cot": "Sam's enemy = Charlie Sam's enemy's parent = Frank Sam's enemy's parent's enemy = Sam Sam's enemy's parent's enemy's parent = Victor Sam's enemy's parent's enemy's parent's enemy = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Frank's enemy's friend's parent's parent's child",
+    "cot": "Frank's enemy = Sam Frank's enemy's friend = Victor Frank's enemy's friend's parent = Sam Frank's enemy's friend's parent's parent = Victor Frank's enemy's friend's parent's parent's child = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Xavier's child",
+    "cot": "Xavier's child = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Victor's parent",
+    "cot": "Victor's parent = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Uma's parent",
+    "cot": "Uma's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Victor's friend",
+    "cot": "Victor's friend = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Noah's enemy",
+    "cot": "Noah's enemy = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Victor's parent's enemy",
+    "cot": "Victor's parent = Grace Victor's parent's enemy = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Uma's enemy's child",
+    "cot": "Uma's enemy = Xavier Uma's enemy's child = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Uma's friend's child",
+    "cot": "Uma's friend = Noah Uma's friend's child = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Grace's friend's parent",
+    "cot": "Grace's friend = Kate Grace's friend's parent = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Kate's friend's enemy",
+    "cot": "Kate's friend = Grace Kate's friend's enemy = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Grace's child's parent's friend",
+    "cot": "Grace's child = Victor Grace's child's parent = Grace Grace's child's parent's friend = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Xavier's parent's enemy's parent",
+    "cot": "Xavier's parent = Noah Xavier's parent's enemy = Grace Xavier's parent's enemy's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Xavier's child's child's parent",
+    "cot": "Xavier's child = Noah Xavier's child's child = Kate Xavier's child's child's parent = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Xavier's enemy's parent's parent",
+    "cot": "Xavier's enemy = Uma Xavier's enemy's parent = Kate Xavier's enemy's parent's parent = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Kate's child's enemy's friend",
+    "cot": "Kate's child = Uma Kate's child's enemy = Xavier Kate's child's enemy's friend = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Victor's parent's parent's enemy's parent",
+    "cot": "Victor's parent = Grace Victor's parent's parent = Kate Victor's parent's parent's enemy = Uma Victor's parent's parent's enemy's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Uma's enemy's enemy's parent's child",
+    "cot": "Uma's enemy = Xavier Uma's enemy's enemy = Uma Uma's enemy's enemy's parent = Kate Uma's enemy's enemy's parent's child = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "Uma's enemy's child's enemy's parent",
+    "cot": "Uma's enemy = Xavier Uma's enemy's child = Noah Uma's enemy's child's enemy = Grace Uma's enemy's child's enemy's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Kate's parent's parent's friend's child",
+    "cot": "Kate's parent = Noah Kate's parent's parent = Xavier Kate's parent's parent's friend = Grace Kate's parent's parent's friend's child = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Xavier's child's enemy's enemy's child",
+    "cot": "Xavier's child = Noah Xavier's child's enemy = Grace Xavier's child's enemy's enemy = Noah Xavier's child's enemy's enemy's child = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Kate's friend's enemy's child's parent's enemy",
+    "cot": "Kate's friend = Grace Kate's friend's enemy = Noah Kate's friend's enemy's child = Kate Kate's friend's enemy's child's parent = Noah Kate's friend's enemy's child's parent's enemy = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Xavier's friend's enemy's enemy's child's parent",
+    "cot": "Xavier's friend = Grace Xavier's friend's enemy = Noah Xavier's friend's enemy's enemy = Grace Xavier's friend's enemy's enemy's child = Victor Xavier's friend's enemy's enemy's child's parent = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Grace's child's parent's enemy's friend's friend",
+    "cot": "Grace's child = Victor Grace's child's parent = Grace Grace's child's parent's enemy = Noah Grace's child's parent's enemy's friend = Uma Grace's child's parent's enemy's friend's friend = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Noah's child's child's enemy's child's enemy",
+    "cot": "Noah's child = Kate Noah's child's child = Uma Noah's child's child's enemy = Xavier Noah's child's child's enemy's child = Noah Noah's child's child's enemy's child's enemy = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Xavier's parent's child's parent's enemy's child",
+    "cot": "Xavier's parent = Noah Xavier's parent's child = Kate Xavier's parent's child's parent = Noah Xavier's parent's child's parent's enemy = Grace Xavier's parent's child's parent's enemy's child = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Olivia's friend",
+    "cot": "Olivia's friend = Mia",
+    "answer": "Mia"
+  },
+  {
+    "question": "Xavier's enemy",
+    "cot": "Xavier's enemy = Mia",
+    "answer": "Mia"
+  },
+  {
+    "question": "Olivia's enemy",
+    "cot": "Olivia's enemy = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Xavier's parent",
+    "cot": "Xavier's parent = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "Alice's child",
+    "cot": "Alice's child = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Mia's enemy's child",
+    "cot": "Mia's enemy = Alice Mia's enemy's child = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Alice's child's enemy",
+    "cot": "Alice's child = Chloe Alice's child's enemy = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Mia's enemy's parent",
+    "cot": "Mia's enemy = Alice Mia's enemy's parent = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Olivia's child's enemy",
+    "cot": "Olivia's child = Alice Olivia's child's enemy = Mia",
+    "answer": "Mia"
+  },
+  {
+    "question": "Olivia's parent's enemy",
+    "cot": "Olivia's parent = Alice Olivia's parent's enemy = Mia",
+    "answer": "Mia"
+  },
+  {
+    "question": "Olivia's enemy's parent's friend",
+    "cot": "Olivia's enemy = Yara Olivia's enemy's parent = Xavier Olivia's enemy's parent's friend = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Xavier's friend's enemy's child",
+    "cot": "Xavier's friend = Yara Xavier's friend's enemy = Olivia Xavier's friend's enemy's child = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "Alice's enemy's parent's enemy",
+    "cot": "Alice's enemy = Mia Alice's enemy's parent = Chloe Alice's enemy's parent's enemy = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Xavier's parent's child's enemy",
+    "cot": "Xavier's parent = Alice Xavier's parent's child = Chloe Xavier's parent's child's enemy = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Mia's parent's friend's parent",
+    "cot": "Mia's parent = Chloe Mia's parent's friend = Alice Mia's parent's friend's parent = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Olivia's parent's friend's child's parent",
+    "cot": "Olivia's parent = Alice Olivia's parent's friend = Chloe Olivia's parent's friend's child = Mia Olivia's parent's friend's child's parent = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Mia's friend's friend's friend's parent",
+    "cot": "Mia's friend = Olivia Mia's friend's friend = Mia Mia's friend's friend's friend = Olivia Mia's friend's friend's friend's parent = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "Mia's enemy's enemy's friend's parent",
+    "cot": "Mia's enemy = Alice Mia's enemy's enemy = Mia Mia's enemy's enemy's friend = Olivia Mia's enemy's enemy's friend's parent = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "Chloe's child's enemy's friend's enemy",
+    "cot": "Chloe's child = Mia Chloe's child's enemy = Alice Chloe's child's enemy's friend = Chloe Chloe's child's enemy's friend's enemy = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Olivia's child's parent's parent's child",
+    "cot": "Olivia's child = Alice Olivia's child's parent = Olivia Olivia's child's parent's parent = Alice Olivia's child's parent's parent's child = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Mia's parent's friend's friend's friend's child",
+    "cot": "Mia's parent = Chloe Mia's parent's friend = Alice Mia's parent's friend's friend = Chloe Mia's parent's friend's friend's friend = Alice Mia's parent's friend's friend's friend's child = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Xavier's friend's friend's friend's enemy's parent",
+    "cot": "Xavier's friend = Yara Xavier's friend's friend = Alice Xavier's friend's friend's friend = Chloe Xavier's friend's friend's friend's enemy = Yara Xavier's friend's friend's friend's enemy's parent = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Alice's enemy's parent's parent's parent's parent",
+    "cot": "Alice's enemy = Mia Alice's enemy's parent = Chloe Alice's enemy's parent's parent = Alice Alice's enemy's parent's parent's parent = Olivia Alice's enemy's parent's parent's parent's parent = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "Xavier's enemy's friend's parent's enemy's parent",
+    "cot": "Xavier's enemy = Mia Xavier's enemy's friend = Olivia Xavier's enemy's friend's parent = Alice Xavier's enemy's friend's parent's enemy = Mia Xavier's enemy's friend's parent's enemy's parent = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Xavier's friend's parent's parent's parent's friend",
+    "cot": "Xavier's friend = Yara Xavier's friend's parent = Xavier Xavier's friend's parent's parent = Alice Xavier's friend's parent's parent's parent = Olivia Xavier's friend's parent's parent's parent's friend = Mia",
+    "answer": "Mia"
+  },
+  {
+    "question": "Ruby's child",
+    "cot": "Ruby's child = Jack",
+    "answer": "Jack"
+  },
+  {
+    "question": "Chloe's parent",
+    "cot": "Chloe's parent = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Ruby's friend",
+    "cot": "Ruby's friend = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Jack's parent",
+    "cot": "Jack's parent = Ruby",
+    "answer": "Ruby"
+  },
+  {
+    "question": "Chloe's friend",
+    "cot": "Chloe's friend = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Chloe's enemy's friend",
+    "cot": "Chloe's enemy = Jack Chloe's enemy's friend = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Sam's parent's enemy",
+    "cot": "Sam's parent = Victor Sam's parent's enemy = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Charlie's enemy's enemy",
+    "cot": "Charlie's enemy = Jack Charlie's enemy's enemy = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Victor's child's friend",
+    "cot": "Victor's child = Sam Victor's child's friend = Ruby",
+    "answer": "Ruby"
+  },
+  {
+    "question": "Charlie's friend's enemy",
+    "cot": "Charlie's friend = Chloe Charlie's friend's enemy = Jack",
+    "answer": "Jack"
+  },
+  {
+    "question": "Ruby's child's friend's friend",
+    "cot": "Ruby's child = Jack Ruby's child's friend = Chloe Ruby's child's friend's friend = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Victor's friend's parent's child",
+    "cot": "Victor's friend = Chloe Victor's friend's parent = Sam Victor's friend's parent's child = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Ruby's parent's enemy's child",
+    "cot": "Ruby's parent = Charlie Ruby's parent's enemy = Jack Ruby's parent's enemy's child = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Victor's enemy's friend's child",
+    "cot": "Victor's enemy = Chloe Victor's enemy's friend = Charlie Victor's enemy's friend's child = Ruby",
+    "answer": "Ruby"
+  },
+  {
+    "question": "Chloe's parent's enemy's enemy",
+    "cot": "Chloe's parent = Sam Chloe's parent's enemy = Victor Chloe's parent's enemy's enemy = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Sam's child's parent's friend's child",
+    "cot": "Sam's child = Chloe Sam's child's parent = Sam Sam's child's parent's friend = Ruby Sam's child's parent's friend's child = Jack",
+    "answer": "Jack"
+  },
+  {
+    "question": "Jack's parent's enemy's child's child",
+    "cot": "Jack's parent = Ruby Jack's parent's enemy = Charlie Jack's parent's enemy's child = Ruby Jack's parent's enemy's child's child = Jack",
+    "answer": "Jack"
+  },
+  {
+    "question": "Chloe's parent's child's parent's child",
+    "cot": "Chloe's parent = Sam Chloe's parent's child = Chloe Chloe's parent's child's parent = Sam Chloe's parent's child's parent's child = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Sam's child's parent's friend's friend",
+    "cot": "Sam's child = Chloe Sam's child's parent = Sam Sam's child's parent's friend = Ruby Sam's child's parent's friend's friend = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Victor's child's child's parent's enemy",
+    "cot": "Victor's child = Sam Victor's child's child = Chloe Victor's child's child's parent = Sam Victor's child's child's parent's enemy = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Victor's parent's parent's child's child's child",
+    "cot": "Victor's parent = Ruby Victor's parent's parent = Charlie Victor's parent's parent's child = Ruby Victor's parent's parent's child's child = Jack Victor's parent's parent's child's child's child = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Victor's parent's parent's child's friend's enemy",
+    "cot": "Victor's parent = Ruby Victor's parent's parent = Charlie Victor's parent's parent's child = Ruby Victor's parent's parent's child's friend = Sam Victor's parent's parent's child's friend's enemy = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Ruby's friend's enemy's parent's friend's friend",
+    "cot": "Ruby's friend = Sam Ruby's friend's enemy = Victor Ruby's friend's enemy's parent = Ruby Ruby's friend's enemy's parent's friend = Sam Ruby's friend's enemy's parent's friend's friend = Ruby",
+    "answer": "Ruby"
+  },
+  {
+    "question": "Sam's friend's parent's enemy's child's child",
+    "cot": "Sam's friend = Ruby Sam's friend's parent = Charlie Sam's friend's parent's enemy = Jack Sam's friend's parent's enemy's child = Charlie Sam's friend's parent's enemy's child's child = Ruby",
+    "answer": "Ruby"
+  },
+  {
+    "question": "Victor's friend's friend's child's child's child",
+    "cot": "Victor's friend = Chloe Victor's friend's friend = Charlie Victor's friend's friend's child = Ruby Victor's friend's friend's child's child = Jack Victor's friend's friend's child's child's child = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "David's child",
+    "cot": "David's child = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Mia's parent",
+    "cot": "Mia's parent = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Bob's friend",
+    "cot": "Bob's friend = David",
+    "answer": "David"
+  },
+  {
+    "question": "Mia's friend",
+    "cot": "Mia's friend = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Bob's child",
+    "cot": "Bob's child = David",
+    "answer": "David"
+  },
+  {
+    "question": "Sam's enemy's child",
+    "cot": "Sam's enemy = David Sam's enemy's child = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Mia's enemy's parent",
+    "cot": "Mia's enemy = Sam Mia's enemy's parent = Mia",
+    "answer": "Mia"
+  },
+  {
+    "question": "Bob's parent's child",
+    "cot": "Bob's parent = Sam Bob's parent's child = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Bob's friend's friend",
+    "cot": "Bob's friend = David Bob's friend's friend = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Sam's enemy's enemy",
+    "cot": "Sam's enemy = David Sam's enemy's enemy = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "David's parent's child's parent",
+    "cot": "David's parent = Bob David's parent's child = David David's parent's child's parent = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Paul's enemy's child's child",
+    "cot": "Paul's enemy = Sam Paul's enemy's child = Bob Paul's enemy's child's child = David",
+    "answer": "David"
+  },
+  {
+    "question": "Olivia's enemy's enemy's friend",
+    "cot": "Olivia's enemy = Sam Olivia's enemy's enemy = David Olivia's enemy's enemy's friend = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Sam's child's parent's enemy",
+    "cot": "Sam's child = Bob Sam's child's parent = Sam Sam's child's parent's enemy = David",
+    "answer": "David"
+  },
+  {
+    "question": "Olivia's friend's parent's friend",
+    "cot": "Olivia's friend = David Olivia's friend's parent = Bob Olivia's friend's parent's friend = David",
+    "answer": "David"
+  },
+  {
+    "question": "Sam's enemy's parent's child's friend",
+    "cot": "Sam's enemy = David Sam's enemy's parent = Bob Sam's enemy's parent's child = David Sam's enemy's parent's child's friend = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "David's parent's enemy's friend's parent",
+    "cot": "David's parent = Bob David's parent's enemy = Olivia David's parent's enemy's friend = David David's parent's enemy's friend's parent = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Olivia's parent's parent's child's enemy",
+    "cot": "Olivia's parent = Mia Olivia's parent's parent = Paul Olivia's parent's parent's child = Mia Olivia's parent's parent's child's enemy = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Sam's friend's parent's child's friend",
+    "cot": "Sam's friend = Olivia Sam's friend's parent = Mia Sam's friend's parent's child = Olivia Sam's friend's parent's child's friend = David",
+    "answer": "David"
+  },
+  {
+    "question": "Olivia's friend's friend's child's enemy",
+    "cot": "Olivia's friend = David Olivia's friend's friend = Bob Olivia's friend's friend's child = David Olivia's friend's friend's child's enemy = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Mia's parent's parent's enemy's child's enemy",
+    "cot": "Mia's parent = Paul Mia's parent's parent = David Mia's parent's parent's enemy = Sam Mia's parent's parent's enemy's child = Bob Mia's parent's parent's enemy's child's enemy = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Olivia's friend's friend's friend's enemy's enemy",
+    "cot": "Olivia's friend = David Olivia's friend's friend = Bob Olivia's friend's friend's friend = David Olivia's friend's friend's friend's enemy = Sam Olivia's friend's friend's friend's enemy's enemy = David",
+    "answer": "David"
+  },
+  {
+    "question": "Olivia's friend's friend's child's parent's enemy",
+    "cot": "Olivia's friend = David Olivia's friend's friend = Bob Olivia's friend's friend's child = David Olivia's friend's friend's child's parent = Bob Olivia's friend's friend's child's parent's enemy = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Sam's friend's enemy's child's enemy's friend",
+    "cot": "Sam's friend = Olivia Sam's friend's enemy = Sam Sam's friend's enemy's child = Bob Sam's friend's enemy's child's enemy = Olivia Sam's friend's enemy's child's enemy's friend = David",
+    "answer": "David"
+  },
+  {
+    "question": "Paul's parent's parent's parent's enemy's parent",
+    "cot": "Paul's parent = David Paul's parent's parent = Bob Paul's parent's parent's parent = Sam Paul's parent's parent's parent's enemy = David Paul's parent's parent's parent's enemy's parent = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Tina's parent",
+    "cot": "Tina's parent = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Noah's parent",
+    "cot": "Noah's parent = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Xavier's friend",
+    "cot": "Xavier's friend = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Xavier's child",
+    "cot": "Xavier's child = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "Alice's child",
+    "cot": "Alice's child = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Ivy's enemy's parent",
+    "cot": "Ivy's enemy = Chloe Ivy's enemy's parent = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Ivy's child's enemy",
+    "cot": "Ivy's child = Noah Ivy's child's enemy = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Chloe's enemy's parent",
+    "cot": "Chloe's enemy = Alice Chloe's enemy's parent = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Alice's child's child",
+    "cot": "Alice's child = Xavier Alice's child's child = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "Xavier's friend's friend",
+    "cot": "Xavier's friend = Ivy Xavier's friend's friend = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Noah's parent's enemy's friend",
+    "cot": "Noah's parent = Ivy Noah's parent's enemy = Chloe Noah's parent's enemy's friend = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Chloe's parent's child's friend",
+    "cot": "Chloe's parent = Noah Chloe's parent's child = Chloe Chloe's parent's child's friend = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Alice's parent's parent's enemy",
+    "cot": "Alice's parent = Xavier Alice's parent's parent = Alice Alice's parent's parent's enemy = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Alice's parent's child's friend",
+    "cot": "Alice's parent = Xavier Alice's parent's child = Alice Alice's parent's child's friend = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Alice's parent's enemy's enemy",
+    "cot": "Alice's parent = Xavier Alice's parent's enemy = Tina Alice's parent's enemy's enemy = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "Xavier's enemy's enemy's parent's child",
+    "cot": "Xavier's enemy = Tina Xavier's enemy's enemy = Alice Xavier's enemy's enemy's parent = Xavier Xavier's enemy's enemy's parent's child = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "Chloe's friend's parent's parent's enemy",
+    "cot": "Chloe's friend = Tina Chloe's friend's parent = Noah Chloe's friend's parent's parent = Ivy Chloe's friend's parent's parent's enemy = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Tina's friend's enemy's parent's child",
+    "cot": "Tina's friend = Chloe Tina's friend's enemy = Alice Tina's friend's enemy's parent = Xavier Tina's friend's enemy's parent's child = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "Alice's child's enemy's enemy's friend",
+    "cot": "Alice's child = Xavier Alice's child's enemy = Tina Alice's child's enemy's enemy = Alice Alice's child's enemy's enemy's friend = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Alice's enemy's friend's parent's friend",
+    "cot": "Alice's enemy = Chloe Alice's enemy's friend = Tina Alice's enemy's friend's parent = Noah Alice's enemy's friend's parent's friend = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "Alice's friend's friend's parent's parent's parent",
+    "cot": "Alice's friend = Noah Alice's friend's friend = Alice Alice's friend's friend's parent = Xavier Alice's friend's friend's parent's parent = Alice Alice's friend's friend's parent's parent's parent = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Noah's child's child's parent's enemy's friend",
+    "cot": "Noah's child = Chloe Noah's child's child = Ivy Noah's child's child's parent = Chloe Noah's child's child's parent's enemy = Alice Noah's child's child's parent's enemy's friend = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Ivy's enemy's parent's friend's parent's parent",
+    "cot": "Ivy's enemy = Chloe Ivy's enemy's parent = Noah Ivy's enemy's parent's friend = Alice Ivy's enemy's parent's friend's parent = Xavier Ivy's enemy's parent's friend's parent's parent = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "Tina's parent's enemy's parent's child's enemy",
+    "cot": "Tina's parent = Noah Tina's parent's enemy = Tina Tina's parent's enemy's parent = Noah Tina's parent's enemy's parent's child = Chloe Tina's parent's enemy's parent's child's enemy = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "Xavier's friend's friend's friend's parent's enemy",
+    "cot": "Xavier's friend = Ivy Xavier's friend's friend = Chloe Xavier's friend's friend's friend = Tina Xavier's friend's friend's friend's parent = Noah Xavier's friend's friend's friend's parent's enemy = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Tina's parent",
+    "cot": "Tina's parent = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Amber's child",
+    "cot": "Amber's child = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Amber's friend",
+    "cot": "Amber's friend = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Mia's enemy",
+    "cot": "Mia's enemy = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Paul's parent",
+    "cot": "Paul's parent = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Paul's parent's friend",
+    "cot": "Paul's parent = Tina Paul's parent's friend = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Paul's child's enemy",
+    "cot": "Paul's child = Mia Paul's child's enemy = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Amber's friend's enemy",
+    "cot": "Amber's friend = Tina Amber's friend's enemy = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Xavier's parent's parent",
+    "cot": "Xavier's parent = Amber Xavier's parent's parent = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Amber's child's friend",
+    "cot": "Amber's child = Tina Amber's child's friend = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Amber's friend's child's parent",
+    "cot": "Amber's friend = Tina Amber's friend's child = Paul Amber's friend's child's parent = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Mia's parent's friend's enemy",
+    "cot": "Mia's parent = Paul Mia's parent's friend = Mia Mia's parent's friend's enemy = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Amber's friend's child's enemy",
+    "cot": "Amber's friend = Tina Amber's friend's child = Paul Amber's friend's child's enemy = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Xavier's friend's enemy's parent",
+    "cot": "Xavier's friend = Amber Xavier's friend's enemy = Mia Xavier's friend's enemy's parent = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Amber's child's child's child",
+    "cot": "Amber's child = Tina Amber's child's child = Paul Amber's child's child's child = Mia",
+    "answer": "Mia"
+  },
+  {
+    "question": "Paul's enemy's parent's friend's parent",
+    "cot": "Paul's enemy = Zach Paul's enemy's parent = Paul Paul's enemy's parent's friend = Mia Paul's enemy's parent's friend's parent = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Xavier's enemy's enemy's parent's enemy",
+    "cot": "Xavier's enemy = Tina Xavier's enemy's enemy = Xavier Xavier's enemy's enemy's parent = Amber Xavier's enemy's enemy's parent's enemy = Mia",
+    "answer": "Mia"
+  },
+  {
+    "question": "Tina's parent's child's child's friend",
+    "cot": "Tina's parent = Amber Tina's parent's child = Tina Tina's parent's child's child = Paul Tina's parent's child's child's friend = Mia",
+    "answer": "Mia"
+  },
+  {
+    "question": "Tina's enemy's enemy's parent's child",
+    "cot": "Tina's enemy = Xavier Tina's enemy's enemy = Tina Tina's enemy's enemy's parent = Amber Tina's enemy's enemy's parent's child = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Zach's friend's child's child's enemy",
+    "cot": "Zach's friend = Amber Zach's friend's child = Tina Zach's friend's child's child = Paul Zach's friend's child's child's enemy = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Tina's enemy's parent's parent's enemy's friend",
+    "cot": "Tina's enemy = Xavier Tina's enemy's parent = Amber Tina's enemy's parent's parent = Xavier Tina's enemy's parent's parent's enemy = Tina Tina's enemy's parent's parent's enemy's friend = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Tina's friend's enemy's friend's child's friend",
+    "cot": "Tina's friend = Amber Tina's friend's enemy = Mia Tina's friend's enemy's friend = Paul Tina's friend's enemy's friend's child = Mia Tina's friend's enemy's friend's child's friend = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Amber's child's parent's friend's parent's enemy",
+    "cot": "Amber's child = Tina Amber's child's parent = Amber Amber's child's parent's friend = Tina Amber's child's parent's friend's parent = Amber Amber's child's parent's friend's parent's enemy = Mia",
+    "answer": "Mia"
+  },
+  {
+    "question": "Tina's friend's friend's friend's enemy's friend",
+    "cot": "Tina's friend = Amber Tina's friend's friend = Tina Tina's friend's friend's friend = Amber Tina's friend's friend's friend's enemy = Mia Tina's friend's friend's friend's enemy's friend = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Zach's friend's friend's child's enemy's friend",
+    "cot": "Zach's friend = Amber Zach's friend's friend = Tina Zach's friend's friend's child = Paul Zach's friend's friend's child's enemy = Zach Zach's friend's friend's child's enemy's friend = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Xavier's enemy",
+    "cot": "Xavier's enemy = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Dylan's enemy",
+    "cot": "Dylan's enemy = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Amber's enemy",
+    "cot": "Amber's enemy = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Frank's enemy",
+    "cot": "Frank's enemy = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Xavier's friend",
+    "cot": "Xavier's friend = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Jack's friend's enemy",
+    "cot": "Jack's friend = Amber Jack's friend's enemy = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Dylan's enemy's enemy",
+    "cot": "Dylan's enemy = Xavier Dylan's enemy's enemy = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Xavier's child's enemy",
+    "cot": "Xavier's child = Frank Xavier's child's enemy = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Bob's child's parent",
+    "cot": "Bob's child = Amber Bob's child's parent = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Frank's child's child",
+    "cot": "Frank's child = Bob Frank's child's child = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Bob's parent's child's enemy",
+    "cot": "Bob's parent = Frank Bob's parent's child = Bob Bob's parent's child's enemy = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Xavier's enemy's friend's child",
+    "cot": "Xavier's enemy = Dylan Xavier's enemy's friend = Frank Xavier's enemy's friend's child = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Frank's parent's parent's friend",
+    "cot": "Frank's parent = Xavier Frank's parent's parent = Amber Frank's parent's parent's friend = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Xavier's child's parent's parent",
+    "cot": "Xavier's child = Frank Xavier's child's parent = Xavier Xavier's child's parent's parent = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Dylan's parent's enemy's enemy",
+    "cot": "Dylan's parent = Amber Dylan's parent's enemy = Dylan Dylan's parent's enemy's enemy = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Bob's parent's enemy's friend's enemy",
+    "cot": "Bob's parent = Frank Bob's parent's enemy = Bob Bob's parent's enemy's friend = Amber Bob's parent's enemy's friend's enemy = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Dylan's friend's enemy's friend's enemy",
+    "cot": "Dylan's friend = Frank Dylan's friend's enemy = Bob Dylan's friend's enemy's friend = Amber Dylan's friend's enemy's friend's enemy = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Dylan's parent's friend's child's child",
+    "cot": "Dylan's parent = Amber Dylan's parent's friend = Bob Dylan's parent's friend's child = Amber Dylan's parent's friend's child's child = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Xavier's enemy's parent's parent's friend",
+    "cot": "Xavier's enemy = Dylan Xavier's enemy's parent = Amber Xavier's enemy's parent's parent = Bob Xavier's enemy's parent's parent's friend = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Dylan's enemy's friend's enemy's friend",
+    "cot": "Dylan's enemy = Xavier Dylan's enemy's friend = Dylan Dylan's enemy's friend's enemy = Xavier Dylan's enemy's friend's enemy's friend = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Dylan's parent's parent's parent's enemy's parent",
+    "cot": "Dylan's parent = Amber Dylan's parent's parent = Bob Dylan's parent's parent's parent = Frank Dylan's parent's parent's parent's enemy = Bob Dylan's parent's parent's parent's enemy's parent = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Frank's enemy's child's enemy's parent's enemy",
+    "cot": "Frank's enemy = Bob Frank's enemy's child = Amber Frank's enemy's child's enemy = Dylan Frank's enemy's child's enemy's parent = Amber Frank's enemy's child's enemy's parent's enemy = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Dylan's friend's enemy's child's enemy's parent",
+    "cot": "Dylan's friend = Frank Dylan's friend's enemy = Bob Dylan's friend's enemy's child = Amber Dylan's friend's enemy's child's enemy = Dylan Dylan's friend's enemy's child's enemy's parent = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Xavier's child's parent's enemy's parent's enemy",
+    "cot": "Xavier's child = Frank Xavier's child's parent = Xavier Xavier's child's parent's enemy = Dylan Xavier's child's parent's enemy's parent = Amber Xavier's child's parent's enemy's parent's enemy = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Amber's child's enemy's parent's child's parent",
+    "cot": "Amber's child = Dylan Amber's child's enemy = Xavier Amber's child's enemy's parent = Amber Amber's child's enemy's parent's child = Dylan Amber's child's enemy's parent's child's parent = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Grace's parent",
+    "cot": "Grace's parent = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Amber's friend",
+    "cot": "Amber's friend = Emma",
+    "answer": "Emma"
+  },
+  {
+    "question": "Amber's enemy",
+    "cot": "Amber's enemy = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Amber's child",
+    "cot": "Amber's child = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Grace's enemy",
+    "cot": "Grace's enemy = Emma",
+    "answer": "Emma"
+  },
+  {
+    "question": "Dylan's parent's parent",
+    "cot": "Dylan's parent = Amber Dylan's parent's parent = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Amber's friend's parent",
+    "cot": "Amber's friend = Emma Amber's friend's parent = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Xavier's parent's enemy",
+    "cot": "Xavier's parent = Emma Xavier's parent's enemy = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Emma's friend's enemy",
+    "cot": "Emma's friend = Ivy Emma's friend's enemy = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Grace's friend's enemy",
+    "cot": "Grace's friend = Ivy Grace's friend's enemy = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Ivy's friend's friend's friend",
+    "cot": "Ivy's friend = Xavier Ivy's friend's friend = Ivy Ivy's friend's friend's friend = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Xavier's friend's enemy's enemy",
+    "cot": "Xavier's friend = Ivy Xavier's friend's enemy = Amber Xavier's friend's enemy's enemy = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Emma's parent's friend's friend",
+    "cot": "Emma's parent = Xavier Emma's parent's friend = Ivy Emma's parent's friend's friend = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Amber's parent's enemy's enemy",
+    "cot": "Amber's parent = Grace Amber's parent's enemy = Emma Amber's parent's enemy's enemy = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Grace's enemy's enemy's child",
+    "cot": "Grace's enemy = Emma Grace's enemy's enemy = Grace Grace's enemy's enemy's child = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Amber's friend's parent's friend's parent",
+    "cot": "Amber's friend = Emma Amber's friend's parent = Xavier Amber's friend's parent's friend = Ivy Amber's friend's parent's friend's parent = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Dylan's friend's enemy's child's enemy",
+    "cot": "Dylan's friend = Emma Dylan's friend's enemy = Grace Dylan's friend's enemy's child = Amber Dylan's friend's enemy's child's enemy = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Grace's parent's friend's enemy's enemy",
+    "cot": "Grace's parent = Xavier Grace's parent's friend = Ivy Grace's parent's friend's enemy = Amber Grace's parent's friend's enemy's enemy = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Amber's friend's enemy's child's enemy",
+    "cot": "Amber's friend = Emma Amber's friend's enemy = Grace Amber's friend's enemy's child = Amber Amber's friend's enemy's child's enemy = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Amber's enemy's child's child's child",
+    "cot": "Amber's enemy = Xavier Amber's enemy's child = Grace Amber's enemy's child's child = Amber Amber's enemy's child's child's child = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Xavier's parent's parent's enemy's parent's child",
+    "cot": "Xavier's parent = Emma Xavier's parent's parent = Xavier Xavier's parent's parent's enemy = Dylan Xavier's parent's parent's enemy's parent = Amber Xavier's parent's parent's enemy's parent's child = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Ivy's enemy's friend's child's friend's enemy",
+    "cot": "Ivy's enemy = Amber Ivy's enemy's friend = Emma Ivy's enemy's friend's child = Xavier Ivy's enemy's friend's child's friend = Ivy Ivy's enemy's friend's child's friend's enemy = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Dylan's parent's child's enemy's parent's friend",
+    "cot": "Dylan's parent = Amber Dylan's parent's child = Dylan Dylan's parent's child's enemy = Xavier Dylan's parent's child's enemy's parent = Emma Dylan's parent's child's enemy's parent's friend = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Xavier's parent's friend's enemy's enemy's enemy",
+    "cot": "Xavier's parent = Emma Xavier's parent's friend = Ivy Xavier's parent's friend's enemy = Amber Xavier's parent's friend's enemy's enemy = Xavier Xavier's parent's friend's enemy's enemy's enemy = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Xavier's child's friend's parent's friend's parent",
+    "cot": "Xavier's child = Grace Xavier's child's friend = Ivy Xavier's child's friend's parent = Amber Xavier's child's friend's parent's friend = Emma Xavier's child's friend's parent's friend's parent = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Victor's friend",
+    "cot": "Victor's friend = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Paul's child",
+    "cot": "Paul's child = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Amber's enemy",
+    "cot": "Amber's enemy = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Olivia's friend",
+    "cot": "Olivia's friend = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Victor's parent",
+    "cot": "Victor's parent = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Amber's parent's enemy",
+    "cot": "Amber's parent = Olivia Amber's parent's enemy = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Frank's parent's child",
+    "cot": "Frank's parent = Paul Frank's parent's child = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Olivia's enemy's child",
+    "cot": "Olivia's enemy = Paul Olivia's enemy's child = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Olivia's friend's child",
+    "cot": "Olivia's friend = Amber Olivia's friend's child = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Olivia's parent's friend",
+    "cot": "Olivia's parent = Paul Olivia's parent's friend = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Paul's enemy's parent's enemy",
+    "cot": "Paul's enemy = Frank Paul's enemy's parent = Paul Paul's enemy's parent's enemy = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Charlie's friend's parent's friend",
+    "cot": "Charlie's friend = Frank Charlie's friend's parent = Paul Charlie's friend's parent's friend = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Amber's parent's parent's child",
+    "cot": "Amber's parent = Olivia Amber's parent's parent = Paul Amber's parent's parent's child = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Amber's child's friend's friend",
+    "cot": "Amber's child = Charlie Amber's child's friend = Frank Amber's child's friend's friend = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Frank's friend's parent's child",
+    "cot": "Frank's friend = Charlie Frank's friend's parent = Amber Frank's friend's parent's child = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Frank's parent's parent's enemy's parent",
+    "cot": "Frank's parent = Paul Frank's parent's parent = Frank Frank's parent's parent's enemy = Paul Frank's parent's parent's enemy's parent = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Victor's enemy's parent's child's enemy",
+    "cot": "Victor's enemy = Frank Victor's enemy's parent = Paul Victor's enemy's parent's child = Frank Victor's enemy's parent's child's enemy = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Frank's parent's enemy's parent's parent",
+    "cot": "Frank's parent = Paul Frank's parent's enemy = Frank Frank's parent's enemy's parent = Paul Frank's parent's enemy's parent's parent = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Frank's child's parent's child's parent",
+    "cot": "Frank's child = Paul Frank's child's parent = Frank Frank's child's parent's child = Paul Frank's child's parent's child's parent = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Paul's enemy's parent's parent's parent",
+    "cot": "Paul's enemy = Frank Paul's enemy's parent = Paul Paul's enemy's parent's parent = Frank Paul's enemy's parent's parent's parent = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Victor's parent's parent's child's friend's enemy",
+    "cot": "Victor's parent = Paul Victor's parent's parent = Frank Victor's parent's parent's child = Paul Victor's parent's parent's child's friend = Frank Victor's parent's parent's child's friend's enemy = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Amber's child's parent's enemy's parent's enemy",
+    "cot": "Amber's child = Charlie Amber's child's parent = Amber Amber's child's parent's enemy = Paul Amber's child's parent's enemy's parent = Frank Amber's child's parent's enemy's parent's enemy = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Olivia's enemy's parent's parent's enemy's child",
+    "cot": "Olivia's enemy = Paul Olivia's enemy's parent = Frank Olivia's enemy's parent's parent = Paul Olivia's enemy's parent's parent's enemy = Frank Olivia's enemy's parent's parent's enemy's child = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Victor's parent's friend's parent's friend's enemy",
+    "cot": "Victor's parent = Paul Victor's parent's friend = Frank Victor's parent's friend's parent = Paul Victor's parent's friend's parent's friend = Frank Victor's parent's friend's parent's friend's enemy = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Paul's friend's friend's parent's parent's parent",
+    "cot": "Paul's friend = Frank Paul's friend's friend = Charlie Paul's friend's friend's parent = Amber Paul's friend's friend's parent's parent = Olivia Paul's friend's friend's parent's parent's parent = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Emma's parent",
+    "cot": "Emma's parent = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Emma's enemy",
+    "cot": "Emma's enemy = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Ivy's parent",
+    "cot": "Ivy's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Frank's parent",
+    "cot": "Frank's parent = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Uma's friend",
+    "cot": "Uma's friend = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Kate's enemy's parent",
+    "cot": "Kate's enemy = Frank Kate's enemy's parent = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Emma's enemy's parent",
+    "cot": "Emma's enemy = Ivy Emma's enemy's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Ivy's enemy's enemy",
+    "cot": "Ivy's enemy = Wendy Ivy's enemy's enemy = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Wendy's parent's child",
+    "cot": "Wendy's parent = Kate Wendy's parent's child = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Uma's enemy's enemy",
+    "cot": "Uma's enemy = Ivy Uma's enemy's enemy = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Ivy's enemy's friend's parent",
+    "cot": "Ivy's enemy = Wendy Ivy's enemy's friend = Frank Ivy's enemy's friend's parent = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Kate's enemy's child's parent",
+    "cot": "Kate's enemy = Frank Kate's enemy's child = Kate Kate's enemy's child's parent = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Kate's friend's friend's parent",
+    "cot": "Kate's friend = Uma Kate's friend's friend = Kate Kate's friend's friend's parent = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Frank's parent's parent's parent",
+    "cot": "Frank's parent = Ivy Frank's parent's parent = Kate Frank's parent's parent's parent = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Wendy's friend's parent's enemy",
+    "cot": "Wendy's friend = Frank Wendy's friend's parent = Ivy Wendy's friend's parent's enemy = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Uma's parent's enemy's parent's enemy",
+    "cot": "Uma's parent = Wendy Uma's parent's enemy = Ivy Uma's parent's enemy's parent = Kate Uma's parent's enemy's parent's enemy = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Frank's parent's friend's child's parent",
+    "cot": "Frank's parent = Ivy Frank's parent's friend = Frank Frank's parent's friend's child = Kate Frank's parent's friend's child's parent = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Frank's enemy's parent's parent's enemy",
+    "cot": "Frank's enemy = Kate Frank's enemy's parent = Frank Frank's enemy's parent's parent = Ivy Frank's enemy's parent's parent's enemy = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Frank's friend's enemy's enemy's enemy",
+    "cot": "Frank's friend = Ivy Frank's friend's enemy = Wendy Frank's friend's enemy's enemy = Ivy Frank's friend's enemy's enemy's enemy = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Emma's parent's friend's parent's parent",
+    "cot": "Emma's parent = Ivy Emma's parent's friend = Frank Emma's parent's friend's parent = Ivy Emma's parent's friend's parent's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Uma's parent's parent's enemy's parent's parent",
+    "cot": "Uma's parent = Wendy Uma's parent's parent = Kate Uma's parent's parent's enemy = Frank Uma's parent's parent's enemy's parent = Ivy Uma's parent's parent's enemy's parent's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Frank's friend's parent's child's parent's friend",
+    "cot": "Frank's friend = Ivy Frank's friend's parent = Kate Frank's friend's parent's child = Ivy Frank's friend's parent's child's parent = Kate Frank's friend's parent's child's parent's friend = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "Emma's enemy's friend's child's enemy's friend",
+    "cot": "Emma's enemy = Ivy Emma's enemy's friend = Frank Emma's enemy's friend's child = Kate Emma's enemy's friend's child's enemy = Frank Emma's enemy's friend's child's enemy's friend = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Wendy's enemy's friend's friend's child's friend",
+    "cot": "Wendy's enemy = Ivy Wendy's enemy's friend = Frank Wendy's enemy's friend's friend = Ivy Wendy's enemy's friend's friend's child = Frank Wendy's enemy's friend's friend's child's friend = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Kate's enemy's friend's child's parent's friend",
+    "cot": "Kate's enemy = Frank Kate's enemy's friend = Ivy Kate's enemy's friend's child = Frank Kate's enemy's friend's child's parent = Ivy Kate's enemy's friend's child's parent's friend = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Uma's friend",
+    "cot": "Uma's friend = Jack",
+    "answer": "Jack"
+  },
+  {
+    "question": "Olivia's friend",
+    "cot": "Olivia's friend = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Ivy's child",
+    "cot": "Ivy's child = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Grace's friend",
+    "cot": "Grace's friend = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Chloe's child",
+    "cot": "Chloe's child = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Chloe's friend's enemy",
+    "cot": "Chloe's friend = Ivy Chloe's friend's enemy = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Chloe's enemy's parent",
+    "cot": "Chloe's enemy = Jack Chloe's enemy's parent = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Chloe's child's parent",
+    "cot": "Chloe's child = Ivy Chloe's child's parent = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Ivy's enemy's friend",
+    "cot": "Ivy's enemy = Olivia Ivy's enemy's friend = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Jack's friend's enemy",
+    "cot": "Jack's friend = Uma Jack's friend's enemy = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Chloe's enemy's parent's parent",
+    "cot": "Chloe's enemy = Jack Chloe's enemy's parent = Olivia Chloe's enemy's parent's parent = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Uma's friend's parent's parent",
+    "cot": "Uma's friend = Jack Uma's friend's parent = Olivia Uma's friend's parent's parent = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Jack's parent's parent's enemy",
+    "cot": "Jack's parent = Olivia Jack's parent's parent = Ivy Jack's parent's parent's enemy = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Uma's parent's friend's enemy",
+    "cot": "Uma's parent = Chloe Uma's parent's friend = Ivy Uma's parent's friend's enemy = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Grace's friend's enemy's parent",
+    "cot": "Grace's friend = Ivy Grace's friend's enemy = Olivia Grace's friend's enemy's parent = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Chloe's enemy's friend's enemy's enemy",
+    "cot": "Chloe's enemy = Jack Chloe's enemy's friend = Uma Chloe's enemy's friend's enemy = Chloe Chloe's enemy's friend's enemy's enemy = Jack",
+    "answer": "Jack"
+  },
+  {
+    "question": "Uma's parent's enemy's parent's child",
+    "cot": "Uma's parent = Chloe Uma's parent's enemy = Jack Uma's parent's enemy's parent = Olivia Uma's parent's enemy's parent's child = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Ivy's parent's parent's child's child",
+    "cot": "Ivy's parent = Chloe Ivy's parent's parent = Olivia Ivy's parent's parent's child = Chloe Ivy's parent's parent's child's child = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Jack's enemy's parent's enemy's enemy",
+    "cot": "Jack's enemy = Chloe Jack's enemy's parent = Olivia Jack's enemy's parent's enemy = Jack Jack's enemy's parent's enemy's enemy = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Jack's parent's child's enemy's friend",
+    "cot": "Jack's parent = Olivia Jack's parent's child = Chloe Jack's parent's child's enemy = Jack Jack's parent's child's enemy's friend = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "Chloe's child's child's friend's enemy's parent",
+    "cot": "Chloe's child = Ivy Chloe's child's child = Grace Chloe's child's child's friend = Ivy Chloe's child's child's friend's enemy = Olivia Chloe's child's child's friend's enemy's parent = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Jack's friend's enemy's child's parent's parent",
+    "cot": "Jack's friend = Uma Jack's friend's enemy = Chloe Jack's friend's enemy's child = Ivy Jack's friend's enemy's child's parent = Chloe Jack's friend's enemy's child's parent's parent = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Olivia's child's child's parent's enemy's parent",
+    "cot": "Olivia's child = Chloe Olivia's child's child = Ivy Olivia's child's child's parent = Chloe Olivia's child's child's parent's enemy = Jack Olivia's child's child's parent's enemy's parent = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Olivia's child's friend's friend's child's enemy",
+    "cot": "Olivia's child = Chloe Olivia's child's friend = Ivy Olivia's child's friend's friend = Chloe Olivia's child's friend's friend's child = Ivy Olivia's child's friend's friend's child's enemy = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Grace's parent's enemy's friend's friend's friend",
+    "cot": "Grace's parent = Ivy Grace's parent's enemy = Olivia Grace's parent's enemy's friend = Grace Grace's parent's enemy's friend's friend = Ivy Grace's parent's enemy's friend's friend's friend = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Victor's child",
+    "cot": "Victor's child = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Chloe's enemy",
+    "cot": "Chloe's enemy = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Liam's enemy",
+    "cot": "Liam's enemy = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Chloe's parent",
+    "cot": "Chloe's parent = Jack",
+    "answer": "Jack"
+  },
+  {
+    "question": "Kate's enemy",
+    "cot": "Kate's enemy = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Chloe's friend's parent",
+    "cot": "Chloe's friend = Grace Chloe's friend's parent = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Kate's parent's parent",
+    "cot": "Kate's parent = Grace Kate's parent's parent = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Victor's friend's parent",
+    "cot": "Victor's friend = Grace Victor's friend's parent = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Jack's enemy's enemy",
+    "cot": "Jack's enemy = Kate Jack's enemy's enemy = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Chloe's enemy's enemy",
+    "cot": "Chloe's enemy = Victor Chloe's enemy's enemy = Liam",
+    "answer": "Liam"
+  },
+  {
+    "question": "Grace's parent's enemy's parent",
+    "cot": "Grace's parent = Victor Grace's parent's enemy = Liam Grace's parent's enemy's parent = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Liam's parent's parent's parent",
+    "cot": "Liam's parent = Grace Liam's parent's parent = Victor Liam's parent's parent's parent = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Chloe's parent's friend's parent",
+    "cot": "Chloe's parent = Jack Chloe's parent's friend = Grace Chloe's parent's friend's parent = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Grace's friend's parent's friend",
+    "cot": "Grace's friend = Victor Grace's friend's parent = Grace Grace's friend's parent's friend = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Jack's enemy's enemy's parent",
+    "cot": "Jack's enemy = Kate Jack's enemy's enemy = Grace Jack's enemy's enemy's parent = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Liam's friend's child's friend's friend",
+    "cot": "Liam's friend = Jack Liam's friend's child = Chloe Liam's friend's child's friend = Grace Liam's friend's child's friend's friend = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Liam's enemy's parent's friend's child",
+    "cot": "Liam's enemy = Kate Liam's enemy's parent = Grace Liam's enemy's parent's friend = Victor Liam's enemy's parent's friend's child = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Victor's child's child's friend's child",
+    "cot": "Victor's child = Grace Victor's child's child = Liam Victor's child's child's friend = Jack Victor's child's child's friend's child = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Grace's parent's friend's parent's child",
+    "cot": "Grace's parent = Victor Grace's parent's friend = Grace Grace's parent's friend's parent = Victor Grace's parent's friend's parent's child = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Chloe's enemy's friend's friend's child",
+    "cot": "Chloe's enemy = Victor Chloe's enemy's friend = Grace Chloe's enemy's friend's friend = Victor Chloe's enemy's friend's friend's child = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Grace's enemy's enemy's friend's friend's child",
+    "cot": "Grace's enemy = Kate Grace's enemy's enemy = Grace Grace's enemy's enemy's friend = Victor Grace's enemy's enemy's friend's friend = Grace Grace's enemy's enemy's friend's friend's child = Liam",
+    "answer": "Liam"
+  },
+  {
+    "question": "Victor's friend's enemy's enemy's enemy's friend",
+    "cot": "Victor's friend = Grace Victor's friend's enemy = Kate Victor's friend's enemy's enemy = Grace Victor's friend's enemy's enemy's enemy = Kate Victor's friend's enemy's enemy's enemy's friend = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Grace's enemy's parent's child's parent's friend",
+    "cot": "Grace's enemy = Kate Grace's enemy's parent = Grace Grace's enemy's parent's child = Liam Grace's enemy's parent's child's parent = Grace Grace's enemy's parent's child's parent's friend = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Victor's child's friend's parent's parent's parent",
+    "cot": "Victor's child = Grace Victor's child's friend = Victor Victor's child's friend's parent = Grace Victor's child's friend's parent's parent = Victor Victor's child's friend's parent's parent's parent = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Liam's friend's child's enemy's parent's enemy",
+    "cot": "Liam's friend = Jack Liam's friend's child = Chloe Liam's friend's child's enemy = Victor Liam's friend's child's enemy's parent = Grace Liam's friend's child's enemy's parent's enemy = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Grace's parent",
+    "cot": "Grace's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Quinn's parent",
+    "cot": "Quinn's parent = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Sam's friend",
+    "cot": "Sam's friend = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Sam's child",
+    "cot": "Sam's child = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Quinn's friend",
+    "cot": "Quinn's friend = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Kate's enemy's parent",
+    "cot": "Kate's enemy = Zach Kate's enemy's parent = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Quinn's enemy's parent",
+    "cot": "Quinn's enemy = Grace Quinn's enemy's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Zach's parent's child",
+    "cot": "Zach's parent = Sam Zach's parent's child = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Zach's parent's friend",
+    "cot": "Zach's parent = Sam Zach's parent's friend = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Kate's parent's child",
+    "cot": "Kate's parent = Sam Kate's parent's child = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Grace's parent's enemy's enemy",
+    "cot": "Grace's parent = Kate Grace's parent's enemy = Zach Grace's parent's enemy's enemy = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Sam's enemy's friend's parent",
+    "cot": "Sam's enemy = Kate Sam's enemy's friend = Sam Sam's enemy's friend's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Grace's enemy's parent's parent",
+    "cot": "Grace's enemy = Quinn Grace's enemy's parent = Zach Grace's enemy's parent's parent = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Sam's parent's child's parent",
+    "cot": "Sam's parent = Kate Sam's parent's child = Grace Sam's parent's child's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Grace's friend's parent's enemy",
+    "cot": "Grace's friend = Paul Grace's friend's parent = Sam Grace's friend's parent's enemy = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Paul's enemy's parent's child's parent",
+    "cot": "Paul's enemy = Quinn Paul's enemy's parent = Zach Paul's enemy's parent's child = Quinn Paul's enemy's parent's child's parent = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Kate's enemy's parent's parent's parent",
+    "cot": "Kate's enemy = Zach Kate's enemy's parent = Sam Kate's enemy's parent's parent = Kate Kate's enemy's parent's parent's parent = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Kate's child's friend's friend's enemy",
+    "cot": "Kate's child = Grace Kate's child's friend = Paul Kate's child's friend's friend = Grace Kate's child's friend's friend's enemy = Quinn",
+    "answer": "Quinn"
+  },
+  {
+    "question": "Zach's parent's friend's friend's enemy",
+    "cot": "Zach's parent = Sam Zach's parent's friend = Paul Zach's parent's friend's friend = Grace Zach's parent's friend's friend's enemy = Quinn",
+    "answer": "Quinn"
+  },
+  {
+    "question": "Quinn's parent's parent's enemy's parent",
+    "cot": "Quinn's parent = Zach Quinn's parent's parent = Sam Quinn's parent's parent's enemy = Kate Quinn's parent's parent's enemy's parent = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Quinn's enemy's parent's friend's friend's parent",
+    "cot": "Quinn's enemy = Grace Quinn's enemy's parent = Kate Quinn's enemy's parent's friend = Sam Quinn's enemy's parent's friend's friend = Paul Quinn's enemy's parent's friend's friend's parent = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Zach's enemy's parent's parent's enemy's friend",
+    "cot": "Zach's enemy = Grace Zach's enemy's parent = Kate Zach's enemy's parent's parent = Sam Zach's enemy's parent's parent's enemy = Kate Zach's enemy's parent's parent's enemy's friend = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Kate's parent's friend's friend's enemy's parent",
+    "cot": "Kate's parent = Sam Kate's parent's friend = Paul Kate's parent's friend's friend = Grace Kate's parent's friend's friend's enemy = Quinn Kate's parent's friend's friend's enemy's parent = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Quinn's parent's enemy's parent's friend's parent",
+    "cot": "Quinn's parent = Zach Quinn's parent's enemy = Grace Quinn's parent's enemy's parent = Kate Quinn's parent's enemy's parent's friend = Sam Quinn's parent's enemy's parent's friend's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Paul's friend's parent's enemy's parent's friend",
+    "cot": "Paul's friend = Grace Paul's friend's parent = Kate Paul's friend's parent's enemy = Zach Paul's friend's parent's enemy's parent = Sam Paul's friend's parent's enemy's parent's friend = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Zach's parent",
+    "cot": "Zach's parent = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Zach's child",
+    "cot": "Zach's child = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Wendy's parent",
+    "cot": "Wendy's parent = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Amber's enemy",
+    "cot": "Amber's enemy = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Frank's friend",
+    "cot": "Frank's friend = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Frank's friend's parent",
+    "cot": "Frank's friend = Zach Frank's friend's parent = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Ivy's friend's enemy",
+    "cot": "Ivy's friend = Wendy Ivy's friend's enemy = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Charlie's child's parent",
+    "cot": "Charlie's child = Wendy Charlie's child's parent = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Amber's friend's enemy",
+    "cot": "Amber's friend = Ivy Amber's friend's enemy = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Ivy's child's enemy",
+    "cot": "Ivy's child = Frank Ivy's child's enemy = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Frank's parent's parent's friend",
+    "cot": "Frank's parent = Ivy Frank's parent's parent = Zach Frank's parent's parent's friend = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Zach's enemy's enemy's friend",
+    "cot": "Zach's enemy = Ivy Zach's enemy's enemy = Zach Zach's enemy's enemy's friend = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Frank's child's parent's child",
+    "cot": "Frank's child = Zach Frank's child's parent = Frank Frank's child's parent's child = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Wendy's enemy's parent's enemy",
+    "cot": "Wendy's enemy = Charlie Wendy's enemy's parent = Ivy Wendy's enemy's parent's enemy = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Charlie's friend's friend's child",
+    "cot": "Charlie's friend = Zach Charlie's friend's friend = Frank Charlie's friend's friend's child = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Zach's parent's friend's enemy's child",
+    "cot": "Zach's parent = Frank Zach's parent's friend = Zach Zach's parent's friend's enemy = Ivy Zach's parent's friend's enemy's child = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Zach's child's enemy's parent's enemy",
+    "cot": "Zach's child = Ivy Zach's child's enemy = Zach Zach's child's enemy's parent = Frank Zach's child's enemy's parent's enemy = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Amber's parent's friend's friend's enemy",
+    "cot": "Amber's parent = Charlie Amber's parent's friend = Zach Amber's parent's friend's friend = Frank Amber's parent's friend's friend's enemy = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Ivy's parent's friend's friend's parent",
+    "cot": "Ivy's parent = Zach Ivy's parent's friend = Frank Ivy's parent's friend's friend = Zach Ivy's parent's friend's friend's parent = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Charlie's enemy's parent's parent's friend",
+    "cot": "Charlie's enemy = Ivy Charlie's enemy's parent = Zach Charlie's enemy's parent's parent = Frank Charlie's enemy's parent's parent's friend = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Amber's parent's enemy's enemy's enemy's child",
+    "cot": "Amber's parent = Charlie Amber's parent's enemy = Ivy Amber's parent's enemy's enemy = Zach Amber's parent's enemy's enemy's enemy = Ivy Amber's parent's enemy's enemy's enemy's child = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Frank's parent's parent's enemy's child's enemy",
+    "cot": "Frank's parent = Ivy Frank's parent's parent = Zach Frank's parent's parent's enemy = Ivy Frank's parent's parent's enemy's child = Frank Frank's parent's parent's enemy's child's enemy = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Amber's friend's child's parent's enemy's friend",
+    "cot": "Amber's friend = Ivy Amber's friend's child = Frank Amber's friend's child's parent = Ivy Amber's friend's child's parent's enemy = Zach Amber's friend's child's parent's enemy's friend = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Ivy's friend's parent's friend's child's friend",
+    "cot": "Ivy's friend = Wendy Ivy's friend's parent = Charlie Ivy's friend's parent's friend = Zach Ivy's friend's parent's friend's child = Ivy Ivy's friend's parent's friend's child's friend = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Zach's friend's parent's child's parent's child",
+    "cot": "Zach's friend = Frank Zach's friend's parent = Ivy Zach's friend's parent's child = Frank Zach's friend's parent's child's parent = Ivy Zach's friend's parent's child's parent's child = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Uma's child",
+    "cot": "Uma's child = Ruby",
+    "answer": "Ruby"
+  },
+  {
+    "question": "Ruby's child",
+    "cot": "Ruby's child = David",
+    "answer": "David"
+  },
+  {
+    "question": "Henry's enemy",
+    "cot": "Henry's enemy = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "David's friend",
+    "cot": "David's friend = Ruby",
+    "answer": "Ruby"
+  },
+  {
+    "question": "Uma's enemy",
+    "cot": "Uma's enemy = Emma",
+    "answer": "Emma"
+  },
+  {
+    "question": "Emma's enemy's enemy",
+    "cot": "Emma's enemy = David Emma's enemy's enemy = Emma",
+    "answer": "Emma"
+  },
+  {
+    "question": "Alice's enemy's friend",
+    "cot": "Alice's enemy = Henry Alice's enemy's friend = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "David's friend's parent",
+    "cot": "David's friend = Ruby David's friend's parent = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "Uma's friend's friend",
+    "cot": "Uma's friend = Alice Uma's friend's friend = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "David's parent's parent",
+    "cot": "David's parent = Ruby David's parent's parent = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "Alice's child's child's enemy",
+    "cot": "Alice's child = Henry Alice's child's child = Emma Alice's child's child's enemy = David",
+    "answer": "David"
+  },
+  {
+    "question": "Ruby's enemy's enemy's child",
+    "cot": "Ruby's enemy = Emma Ruby's enemy's enemy = David Ruby's enemy's enemy's child = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "David's friend's parent's child",
+    "cot": "David's friend = Ruby David's friend's parent = Uma David's friend's parent's child = Ruby",
+    "answer": "Ruby"
+  },
+  {
+    "question": "Ruby's child's child's enemy",
+    "cot": "Ruby's child = David Ruby's child's child = Uma Ruby's child's child's enemy = Emma",
+    "answer": "Emma"
+  },
+  {
+    "question": "David's friend's friend's parent",
+    "cot": "David's friend = Ruby David's friend's friend = David David's friend's friend's parent = Ruby",
+    "answer": "Ruby"
+  },
+  {
+    "question": "Ruby's parent's friend's parent's enemy",
+    "cot": "Ruby's parent = Uma Ruby's parent's friend = Alice Ruby's parent's friend's parent = Uma Ruby's parent's friend's parent's enemy = Emma",
+    "answer": "Emma"
+  },
+  {
+    "question": "David's enemy's friend's parent's enemy",
+    "cot": "David's enemy = Emma David's enemy's friend = Uma David's enemy's friend's parent = David David's enemy's friend's parent's enemy = Emma",
+    "answer": "Emma"
+  },
+  {
+    "question": "David's parent's friend's friend's parent",
+    "cot": "David's parent = Ruby David's parent's friend = David David's parent's friend's friend = Ruby David's parent's friend's friend's parent = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "Alice's friend's parent's enemy's enemy",
+    "cot": "Alice's friend = Uma Alice's friend's parent = David Alice's friend's parent's enemy = Emma Alice's friend's parent's enemy's enemy = David",
+    "answer": "David"
+  },
+  {
+    "question": "Henry's child's enemy's friend's child",
+    "cot": "Henry's child = Emma Henry's child's enemy = David Henry's child's enemy's friend = Ruby Henry's child's enemy's friend's child = David",
+    "answer": "David"
+  },
+  {
+    "question": "Henry's parent's parent's friend's child's enemy",
+    "cot": "Henry's parent = Alice Henry's parent's parent = Uma Henry's parent's parent's friend = Alice Henry's parent's parent's friend's child = Henry Henry's parent's parent's friend's child's enemy = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "Ruby's enemy's enemy's parent's parent's friend",
+    "cot": "Ruby's enemy = Emma Ruby's enemy's enemy = David Ruby's enemy's enemy's parent = Ruby Ruby's enemy's enemy's parent's parent = Uma Ruby's enemy's enemy's parent's parent's friend = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "Ruby's friend's friend's friend's enemy's friend",
+    "cot": "Ruby's friend = David Ruby's friend's friend = Ruby Ruby's friend's friend's friend = David Ruby's friend's friend's friend's enemy = Emma Ruby's friend's friend's friend's enemy's friend = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "Henry's enemy's child's enemy's friend's parent",
+    "cot": "Henry's enemy = Alice Henry's enemy's child = Henry Henry's enemy's child's enemy = Alice Henry's enemy's child's enemy's friend = Uma Henry's enemy's child's enemy's friend's parent = David",
+    "answer": "David"
+  },
+  {
+    "question": "Ruby's enemy's enemy's enemy's parent's parent",
+    "cot": "Ruby's enemy = Emma Ruby's enemy's enemy = David Ruby's enemy's enemy's enemy = Emma Ruby's enemy's enemy's enemy's parent = Henry Ruby's enemy's enemy's enemy's parent's parent = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "Tina's enemy",
+    "cot": "Tina's enemy = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Charlie's friend",
+    "cot": "Charlie's friend = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Wendy's friend",
+    "cot": "Wendy's friend = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Tina's child",
+    "cot": "Tina's child = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "David's friend",
+    "cot": "David's friend = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Tina's child's child",
+    "cot": "Tina's child = Wendy Tina's child's child = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "David's enemy's enemy",
+    "cot": "David's enemy = Charlie David's enemy's enemy = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Kate's friend's parent",
+    "cot": "Kate's friend = Tina Kate's friend's parent = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Kate's enemy's enemy",
+    "cot": "Kate's enemy = Tina Kate's enemy's enemy = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Wendy's friend's parent",
+    "cot": "Wendy's friend = Tina Wendy's friend's parent = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Tina's child's friend's parent",
+    "cot": "Tina's child = Wendy Tina's child's friend = Tina Tina's child's friend's parent = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Charlie's friend's enemy's child",
+    "cot": "Charlie's friend = Wendy Charlie's friend's enemy = Charlie Charlie's friend's enemy's child = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Charlie's friend's enemy's friend",
+    "cot": "Charlie's friend = Wendy Charlie's friend's enemy = Charlie Charlie's friend's enemy's friend = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Charlie's parent's child's friend",
+    "cot": "Charlie's parent = Kate Charlie's parent's child = Charlie Charlie's parent's child's friend = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "David's enemy's enemy's parent",
+    "cot": "David's enemy = Charlie David's enemy's enemy = Tina David's enemy's enemy's parent = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Kate's parent's enemy's parent's friend",
+    "cot": "Kate's parent = Charlie Kate's parent's enemy = Tina Kate's parent's enemy's parent = Charlie Kate's parent's enemy's parent's friend = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Wendy's enemy's friend's parent's friend",
+    "cot": "Wendy's enemy = Charlie Wendy's enemy's friend = Wendy Wendy's enemy's friend's parent = Tina Wendy's enemy's friend's parent's friend = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Kate's friend's enemy's friend's child",
+    "cot": "Kate's friend = Tina Kate's friend's enemy = Kate Kate's friend's enemy's friend = Tina Kate's friend's enemy's friend's child = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Charlie's enemy's parent's enemy's friend",
+    "cot": "Charlie's enemy = Tina Charlie's enemy's parent = Charlie Charlie's enemy's parent's enemy = Tina Charlie's enemy's parent's enemy's friend = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Charlie's parent's parent's child's enemy",
+    "cot": "Charlie's parent = Kate Charlie's parent's parent = Charlie Charlie's parent's parent's child = Tina Charlie's parent's parent's child's enemy = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Kate's parent's child's child's parent's child",
+    "cot": "Kate's parent = Charlie Kate's parent's child = Tina Kate's parent's child's child = Wendy Kate's parent's child's child's parent = Tina Kate's parent's child's child's parent's child = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Tina's child's parent's friend's friend's friend",
+    "cot": "Tina's child = Wendy Tina's child's parent = Tina Tina's child's parent's friend = Wendy Tina's child's parent's friend's friend = Tina Tina's child's parent's friend's friend's friend = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Kate's enemy's friend's parent's enemy's enemy",
+    "cot": "Kate's enemy = Tina Kate's enemy's friend = Wendy Kate's enemy's friend's parent = Tina Kate's enemy's friend's parent's enemy = Kate Kate's enemy's friend's parent's enemy's enemy = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Wendy's parent's enemy's enemy's child's parent",
+    "cot": "Wendy's parent = Tina Wendy's parent's enemy = Kate Wendy's parent's enemy's enemy = Tina Wendy's parent's enemy's enemy's child = Wendy Wendy's parent's enemy's enemy's child's parent = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "David's enemy's child's parent's friend's child",
+    "cot": "David's enemy = Charlie David's enemy's child = Tina David's enemy's child's parent = Charlie David's enemy's child's parent's friend = Wendy David's enemy's child's parent's friend's child = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Wendy's friend",
+    "cot": "Wendy's friend = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Wendy's child",
+    "cot": "Wendy's child = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Quinn's enemy",
+    "cot": "Quinn's enemy = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Olivia's enemy",
+    "cot": "Olivia's enemy = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Amber's enemy",
+    "cot": "Amber's enemy = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Amber's parent's friend",
+    "cot": "Amber's parent = Olivia Amber's parent's friend = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Wendy's enemy's child",
+    "cot": "Wendy's enemy = Amber Wendy's enemy's child = Quinn",
+    "answer": "Quinn"
+  },
+  {
+    "question": "Quinn's enemy's enemy",
+    "cot": "Quinn's enemy = Amber Quinn's enemy's enemy = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Amber's parent's parent",
+    "cot": "Amber's parent = Olivia Amber's parent's parent = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Amber's child's friend",
+    "cot": "Amber's child = Quinn Amber's child's friend = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Charlie's friend's friend's enemy",
+    "cot": "Charlie's friend = Quinn Charlie's friend's friend = Charlie Charlie's friend's friend's enemy = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Wendy's friend's enemy's parent",
+    "cot": "Wendy's friend = Olivia Wendy's friend's enemy = Dylan Wendy's friend's enemy's parent = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Olivia's parent's enemy's enemy",
+    "cot": "Olivia's parent = Dylan Olivia's parent's enemy = Charlie Olivia's parent's enemy's enemy = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Amber's child's parent's friend",
+    "cot": "Amber's child = Quinn Amber's child's parent = Amber Amber's child's parent's friend = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Charlie's friend's friend's parent",
+    "cot": "Charlie's friend = Quinn Charlie's friend's friend = Charlie Charlie's friend's friend's parent = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Dylan's parent's friend's enemy's child",
+    "cot": "Dylan's parent = Wendy Dylan's parent's friend = Olivia Dylan's parent's friend's enemy = Dylan Dylan's parent's friend's enemy's child = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Quinn's enemy's friend's enemy's enemy",
+    "cot": "Quinn's enemy = Amber Quinn's enemy's friend = Dylan Quinn's enemy's friend's enemy = Charlie Quinn's enemy's friend's enemy's enemy = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Olivia's enemy's friend's parent's enemy",
+    "cot": "Olivia's enemy = Dylan Olivia's enemy's friend = Quinn Olivia's enemy's friend's parent = Amber Olivia's enemy's friend's parent's enemy = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Amber's child's enemy's enemy's enemy",
+    "cot": "Amber's child = Quinn Amber's child's enemy = Amber Amber's child's enemy's enemy = Wendy Amber's child's enemy's enemy's enemy = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Wendy's enemy's parent's parent's enemy",
+    "cot": "Wendy's enemy = Amber Wendy's enemy's parent = Olivia Wendy's enemy's parent's parent = Dylan Wendy's enemy's parent's parent's enemy = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Dylan's child's child's child's parent's child",
+    "cot": "Dylan's child = Olivia Dylan's child's child = Amber Dylan's child's child's child = Quinn Dylan's child's child's child's parent = Amber Dylan's child's child's child's parent's child = Quinn",
+    "answer": "Quinn"
+  },
+  {
+    "question": "Olivia's child's parent's child's enemy's child",
+    "cot": "Olivia's child = Amber Olivia's child's parent = Olivia Olivia's child's parent's child = Amber Olivia's child's parent's child's enemy = Wendy Olivia's child's parent's child's enemy's child = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Dylan's friend's enemy's child's enemy's friend",
+    "cot": "Dylan's friend = Quinn Dylan's friend's enemy = Amber Dylan's friend's enemy's child = Quinn Dylan's friend's enemy's child's enemy = Amber Dylan's friend's enemy's child's enemy's friend = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Olivia's friend's enemy's child's parent's enemy",
+    "cot": "Olivia's friend = Wendy Olivia's friend's enemy = Amber Olivia's friend's enemy's child = Quinn Olivia's friend's enemy's child's parent = Amber Olivia's friend's enemy's child's parent's enemy = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Dylan's enemy's parent's friend's friend's child",
+    "cot": "Dylan's enemy = Charlie Dylan's enemy's parent = Wendy Dylan's enemy's parent's friend = Olivia Dylan's enemy's parent's friend's friend = Wendy Dylan's enemy's parent's friend's friend's child = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "David's friend",
+    "cot": "David's friend = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Grace's child",
+    "cot": "Grace's child = Henry",
+    "answer": "Henry"
+  },
+  {
+    "question": "Uma's enemy",
+    "cot": "Uma's enemy = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "David's child",
+    "cot": "David's child = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "David's parent",
+    "cot": "David's parent = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Grace's enemy's friend",
+    "cot": "Grace's enemy = Henry Grace's enemy's friend = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Blake's enemy's child",
+    "cot": "Blake's enemy = Grace Blake's enemy's child = Henry",
+    "answer": "Henry"
+  },
+  {
+    "question": "Blake's child's friend",
+    "cot": "Blake's child = Grace Blake's child's friend = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "David's enemy's friend",
+    "cot": "David's enemy = Grace David's enemy's friend = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "Blake's child's parent",
+    "cot": "Blake's child = Grace Blake's child's parent = Blake",
+    "answer": "Blake"
+  },
+  {
+    "question": "Blake's child's enemy's friend",
+    "cot": "Blake's child = Grace Blake's child's enemy = Henry Blake's child's enemy's friend = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "David's friend's enemy's parent",
+    "cot": "David's friend = Victor David's friend's enemy = Uma David's friend's enemy's parent = Henry",
+    "answer": "Henry"
+  },
+  {
+    "question": "Henry's enemy's child's parent",
+    "cot": "Henry's enemy = Grace Henry's enemy's child = Henry Henry's enemy's child's parent = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Blake's friend's child's friend",
+    "cot": "Blake's friend = Victor Blake's friend's child = David Blake's friend's child's friend = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Henry's parent's enemy's child",
+    "cot": "Henry's parent = Grace Henry's parent's enemy = Henry Henry's parent's enemy's child = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "Blake's enemy's child's friend's friend",
+    "cot": "Blake's enemy = Grace Blake's enemy's child = Henry Blake's enemy's child's friend = Victor Blake's enemy's child's friend's friend = Henry",
+    "answer": "Henry"
+  },
+  {
+    "question": "Grace's friend's parent's parent's parent",
+    "cot": "Grace's friend = Uma Grace's friend's parent = Henry Grace's friend's parent's parent = Grace Grace's friend's parent's parent's parent = Blake",
+    "answer": "Blake"
+  },
+  {
+    "question": "Uma's enemy's child's parent's parent",
+    "cot": "Uma's enemy = Victor Uma's enemy's child = David Uma's enemy's child's parent = Victor Uma's enemy's child's parent's parent = David",
+    "answer": "David"
+  },
+  {
+    "question": "Blake's enemy's enemy's friend's parent",
+    "cot": "Blake's enemy = Grace Blake's enemy's enemy = Henry Blake's enemy's enemy's friend = Victor Blake's enemy's enemy's friend's parent = David",
+    "answer": "David"
+  },
+  {
+    "question": "David's child's parent's parent's child",
+    "cot": "David's child = Victor David's child's parent = David David's child's parent's parent = Victor David's child's parent's parent's child = David",
+    "answer": "David"
+  },
+  {
+    "question": "Henry's enemy's parent's enemy's parent's friend",
+    "cot": "Henry's enemy = Grace Henry's enemy's parent = Blake Henry's enemy's parent's enemy = Grace Henry's enemy's parent's enemy's parent = Blake Henry's enemy's parent's enemy's parent's friend = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Blake's enemy's friend's parent's friend's parent",
+    "cot": "Blake's enemy = Grace Blake's enemy's friend = Uma Blake's enemy's friend's parent = Henry Blake's enemy's friend's parent's friend = Victor Blake's enemy's friend's parent's friend's parent = David",
+    "answer": "David"
+  },
+  {
+    "question": "Henry's parent's friend's parent's child's parent",
+    "cot": "Henry's parent = Grace Henry's parent's friend = Uma Henry's parent's friend's parent = Henry Henry's parent's friend's parent's child = Uma Henry's parent's friend's parent's child's parent = Henry",
+    "answer": "Henry"
+  },
+  {
+    "question": "Blake's child's enemy's parent's friend's enemy",
+    "cot": "Blake's child = Grace Blake's child's enemy = Henry Blake's child's enemy's parent = Grace Blake's child's enemy's parent's friend = Uma Blake's child's enemy's parent's friend's enemy = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Henry's enemy's parent's child's child's enemy",
+    "cot": "Henry's enemy = Grace Henry's enemy's parent = Blake Henry's enemy's parent's child = Grace Henry's enemy's parent's child's child = Henry Henry's enemy's parent's child's child's enemy = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Kate's parent",
+    "cot": "Kate's parent = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Tina's friend",
+    "cot": "Tina's friend = Quinn",
+    "answer": "Quinn"
+  },
+  {
+    "question": "Frank's child",
+    "cot": "Frank's child = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Victor's friend",
+    "cot": "Victor's friend = Ruby",
+    "answer": "Ruby"
+  },
+  {
+    "question": "Frank's friend",
+    "cot": "Frank's friend = Ruby",
+    "answer": "Ruby"
+  },
+  {
+    "question": "Victor's parent's enemy",
+    "cot": "Victor's parent = Frank Victor's parent's enemy = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Ruby's friend's enemy",
+    "cot": "Ruby's friend = Tina Ruby's friend's enemy = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Frank's enemy's parent",
+    "cot": "Frank's enemy = Tina Frank's enemy's parent = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Quinn's friend's parent",
+    "cot": "Quinn's friend = Tina Quinn's friend's parent = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Ruby's enemy's parent",
+    "cot": "Ruby's enemy = Victor Ruby's enemy's parent = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Kate's friend's friend's enemy",
+    "cot": "Kate's friend = Tina Kate's friend's friend = Quinn Kate's friend's friend's enemy = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Tina's parent's child's parent",
+    "cot": "Tina's parent = Victor Tina's parent's child = Tina Tina's parent's child's parent = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Ruby's enemy's parent's friend",
+    "cot": "Ruby's enemy = Victor Ruby's enemy's parent = Frank Ruby's enemy's parent's friend = Ruby",
+    "answer": "Ruby"
+  },
+  {
+    "question": "Quinn's parent's friend's child",
+    "cot": "Quinn's parent = Ruby Quinn's parent's friend = Tina Quinn's parent's friend's child = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Victor's child's child's parent",
+    "cot": "Victor's child = Tina Victor's child's child = Frank Victor's child's child's parent = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Ruby's enemy's enemy's parent's child",
+    "cot": "Ruby's enemy = Victor Ruby's enemy's enemy = Ruby Ruby's enemy's enemy's parent = Victor Ruby's enemy's enemy's parent's child = Tina",
+    "answer": "Tina"
+  },
+  {
+    "question": "Tina's friend's enemy's child's child",
+    "cot": "Tina's friend = Quinn Tina's friend's enemy = Victor Tina's friend's enemy's child = Tina Tina's friend's enemy's child's child = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Victor's parent's enemy's parent's enemy",
+    "cot": "Victor's parent = Frank Victor's parent's enemy = Tina Victor's parent's enemy's parent = Victor Victor's parent's enemy's parent's enemy = Ruby",
+    "answer": "Ruby"
+  },
+  {
+    "question": "Victor's parent's enemy's enemy's child",
+    "cot": "Victor's parent = Frank Victor's parent's enemy = Tina Victor's parent's enemy's enemy = Frank Victor's parent's enemy's enemy's child = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Frank's enemy's child's enemy's enemy",
+    "cot": "Frank's enemy = Tina Frank's enemy's child = Frank Frank's enemy's child's enemy = Tina Frank's enemy's child's enemy's enemy = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Tina's friend's parent's parent's enemy's enemy",
+    "cot": "Tina's friend = Quinn Tina's friend's parent = Ruby Tina's friend's parent's parent = Victor Tina's friend's parent's parent's enemy = Ruby Tina's friend's parent's parent's enemy's enemy = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Victor's friend's child's friend's friend's parent",
+    "cot": "Victor's friend = Ruby Victor's friend's child = Quinn Victor's friend's child's friend = Tina Victor's friend's child's friend's friend = Quinn Victor's friend's child's friend's friend's parent = Ruby",
+    "answer": "Ruby"
+  },
+  {
+    "question": "Victor's child's friend's enemy's child's enemy",
+    "cot": "Victor's child = Tina Victor's child's friend = Quinn Victor's child's friend's enemy = Victor Victor's child's friend's enemy's child = Tina Victor's child's friend's enemy's child's enemy = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Kate's parent's child's child's friend's parent",
+    "cot": "Kate's parent = Frank Kate's parent's child = Victor Kate's parent's child's child = Tina Kate's parent's child's child's friend = Quinn Kate's parent's child's child's friend's parent = Ruby",
+    "answer": "Ruby"
+  },
+  {
+    "question": "Victor's parent's friend's enemy's enemy's parent",
+    "cot": "Victor's parent = Frank Victor's parent's friend = Ruby Victor's parent's friend's enemy = Victor Victor's parent's friend's enemy's enemy = Ruby Victor's parent's friend's enemy's enemy's parent = Victor",
+    "answer": "Victor"
+  },
+  {
+    "question": "Amber's parent",
+    "cot": "Amber's parent = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Xavier's friend",
+    "cot": "Xavier's friend = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Xavier's child",
+    "cot": "Xavier's child = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Yara's enemy",
+    "cot": "Yara's enemy = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Dylan's enemy",
+    "cot": "Dylan's enemy = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Amber's enemy's enemy",
+    "cot": "Amber's enemy = Xavier Amber's enemy's enemy = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Amber's parent's parent",
+    "cot": "Amber's parent = Dylan Amber's parent's parent = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Dylan's enemy's friend",
+    "cot": "Dylan's enemy = Charlie Dylan's enemy's friend = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Charlie's enemy's enemy",
+    "cot": "Charlie's enemy = Yara Charlie's enemy's enemy = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Dylan's parent's parent",
+    "cot": "Dylan's parent = Yara Dylan's parent's parent = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Xavier's enemy's friend's parent",
+    "cot": "Xavier's enemy = Amber Xavier's enemy's friend = Dylan Xavier's enemy's friend's parent = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Amber's enemy's child's friend",
+    "cot": "Amber's enemy = Xavier Amber's enemy's child = Yara Amber's enemy's child's friend = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Paul's parent's parent's parent",
+    "cot": "Paul's parent = Xavier Paul's parent's parent = Paul Paul's parent's parent's parent = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Xavier's child's child's enemy",
+    "cot": "Xavier's child = Yara Xavier's child's child = Dylan Xavier's child's child's enemy = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Charlie's enemy's child's enemy",
+    "cot": "Charlie's enemy = Yara Charlie's enemy's child = Dylan Charlie's enemy's child's enemy = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Xavier's child's enemy's parent's enemy",
+    "cot": "Xavier's child = Yara Xavier's child's enemy = Charlie Xavier's child's enemy's parent = Yara Xavier's child's enemy's parent's enemy = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Yara's enemy's friend's enemy's enemy",
+    "cot": "Yara's enemy = Charlie Yara's enemy's friend = Dylan Yara's enemy's friend's enemy = Charlie Yara's enemy's friend's enemy's enemy = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Paul's parent's friend's parent's parent",
+    "cot": "Paul's parent = Xavier Paul's parent's friend = Yara Paul's parent's friend's parent = Xavier Paul's parent's friend's parent's parent = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Amber's parent's parent's child's enemy",
+    "cot": "Amber's parent = Dylan Amber's parent's parent = Yara Amber's parent's parent's child = Dylan Amber's parent's parent's child's enemy = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Xavier's child's parent's parent's enemy",
+    "cot": "Xavier's child = Yara Xavier's child's parent = Xavier Xavier's child's parent's parent = Paul Xavier's child's parent's parent's enemy = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Dylan's friend's friend's child's friend's child",
+    "cot": "Dylan's friend = Yara Dylan's friend's friend = Paul Dylan's friend's friend's child = Xavier Dylan's friend's friend's child's friend = Yara Dylan's friend's friend's child's friend's child = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Xavier's parent's enemy's parent's parent's child",
+    "cot": "Xavier's parent = Paul Xavier's parent's enemy = Charlie Xavier's parent's enemy's parent = Yara Xavier's parent's enemy's parent's parent = Xavier Xavier's parent's enemy's parent's parent's child = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Paul's friend's child's friend's parent's child",
+    "cot": "Paul's friend = Yara Paul's friend's child = Dylan Paul's friend's child's friend = Yara Paul's friend's child's friend's parent = Xavier Paul's friend's child's friend's parent's child = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Yara's friend's child's enemy's friend's parent",
+    "cot": "Yara's friend = Paul Yara's friend's child = Xavier Yara's friend's child's enemy = Amber Yara's friend's child's enemy's friend = Dylan Yara's friend's child's enemy's friend's parent = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Dylan's friend's parent's child's friend's parent",
+    "cot": "Dylan's friend = Yara Dylan's friend's parent = Xavier Dylan's friend's parent's child = Yara Dylan's friend's parent's child's friend = Paul Dylan's friend's parent's child's friend's parent = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Mia's friend",
+    "cot": "Mia's friend = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Frank's parent",
+    "cot": "Frank's parent = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Olivia's friend",
+    "cot": "Olivia's friend = Henry",
+    "answer": "Henry"
+  },
+  {
+    "question": "David's parent",
+    "cot": "David's parent = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Mia's enemy",
+    "cot": "Mia's enemy = Henry",
+    "answer": "Henry"
+  },
+  {
+    "question": "Mia's parent's enemy",
+    "cot": "Mia's parent = David Mia's parent's enemy = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Henry's parent's friend",
+    "cot": "Henry's parent = Frank Henry's parent's friend = David",
+    "answer": "David"
+  },
+  {
+    "question": "Henry's enemy's child",
+    "cot": "Henry's enemy = Mia Henry's enemy's child = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Henry's friend's friend",
+    "cot": "Henry's friend = Olivia Henry's friend's friend = Henry",
+    "answer": "Henry"
+  },
+  {
+    "question": "Olivia's enemy's child",
+    "cot": "Olivia's enemy = David Olivia's enemy's child = Mia",
+    "answer": "Mia"
+  },
+  {
+    "question": "Olivia's parent's child's enemy",
+    "cot": "Olivia's parent = Frank Olivia's parent's child = Henry Olivia's parent's child's enemy = Mia",
+    "answer": "Mia"
+  },
+  {
+    "question": "Mia's friend's enemy's enemy",
+    "cot": "Mia's friend = Olivia Mia's friend's enemy = David Mia's friend's enemy's enemy = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "David's friend's parent's child",
+    "cot": "David's friend = Frank David's friend's parent = Noah David's friend's parent's child = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Noah's enemy's child's friend",
+    "cot": "Noah's enemy = David Noah's enemy's child = Mia Noah's enemy's child's friend = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "David's friend's enemy's parent",
+    "cot": "David's friend = Frank David's friend's enemy = Noah David's friend's enemy's parent = Mia",
+    "answer": "Mia"
+  },
+  {
+    "question": "Noah's enemy's child's enemy's enemy",
+    "cot": "Noah's enemy = David Noah's enemy's child = Mia Noah's enemy's child's enemy = Henry Noah's enemy's child's enemy's enemy = Mia",
+    "answer": "Mia"
+  },
+  {
+    "question": "Henry's friend's parent's enemy's enemy",
+    "cot": "Henry's friend = Olivia Henry's friend's parent = Frank Henry's friend's parent's enemy = Noah Henry's friend's parent's enemy's enemy = David",
+    "answer": "David"
+  },
+  {
+    "question": "Mia's parent's parent's enemy's friend",
+    "cot": "Mia's parent = David Mia's parent's parent = Frank Mia's parent's parent's enemy = Noah Mia's parent's parent's enemy's friend = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Olivia's enemy's friend's friend's friend",
+    "cot": "Olivia's enemy = David Olivia's enemy's friend = Frank Olivia's enemy's friend's friend = David Olivia's enemy's friend's friend's friend = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Mia's friend's parent's child's friend",
+    "cot": "Mia's friend = Olivia Mia's friend's parent = Frank Mia's friend's parent's child = Henry Mia's friend's parent's child's friend = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Frank's enemy's enemy's child's friend's enemy",
+    "cot": "Frank's enemy = Noah Frank's enemy's enemy = David Frank's enemy's enemy's child = Mia Frank's enemy's enemy's child's friend = Olivia Frank's enemy's enemy's child's friend's enemy = David",
+    "answer": "David"
+  },
+  {
+    "question": "Noah's parent's friend's friend's friend's parent",
+    "cot": "Noah's parent = Mia Noah's parent's friend = Olivia Noah's parent's friend's friend = Henry Noah's parent's friend's friend's friend = Olivia Noah's parent's friend's friend's friend's parent = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Frank's parent's child's enemy's child's enemy",
+    "cot": "Frank's parent = Noah Frank's parent's child = Frank Frank's parent's child's enemy = Noah Frank's parent's child's enemy's child = Frank Frank's parent's child's enemy's child's enemy = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Frank's enemy's enemy's friend's parent's parent",
+    "cot": "Frank's enemy = Noah Frank's enemy's enemy = David Frank's enemy's enemy's friend = Frank Frank's enemy's enemy's friend's parent = Noah Frank's enemy's enemy's friend's parent's parent = Mia",
+    "answer": "Mia"
+  },
+  {
+    "question": "David's parent's child's parent's friend's enemy",
+    "cot": "David's parent = Frank David's parent's child = Henry David's parent's child's parent = Frank David's parent's child's parent's friend = David David's parent's child's parent's friend's enemy = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Alice's friend",
+    "cot": "Alice's friend = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Alice's parent",
+    "cot": "Alice's parent = Quinn",
+    "answer": "Quinn"
+  },
+  {
+    "question": "Mia's child",
+    "cot": "Mia's child = Quinn",
+    "answer": "Quinn"
+  },
+  {
+    "question": "Amber's child",
+    "cot": "Amber's child = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Mia's enemy",
+    "cot": "Mia's enemy = Alice",
+    "answer": "Alice"
+  },
+  {
+    "question": "Bob's friend's enemy",
+    "cot": "Bob's friend = Quinn Bob's friend's enemy = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Ivy's child's parent",
+    "cot": "Ivy's child = Amber Ivy's child's parent = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Ivy's parent's child",
+    "cot": "Ivy's parent = Bob Ivy's parent's child = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Ivy's enemy's child",
+    "cot": "Ivy's enemy = Amber Ivy's enemy's child = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Amber's friend's friend",
+    "cot": "Amber's friend = Alice Amber's friend's friend = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Amber's child's child's parent",
+    "cot": "Amber's child = Bob Amber's child's child = Ivy Amber's child's child's parent = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Amber's parent's parent's enemy",
+    "cot": "Amber's parent = Ivy Amber's parent's parent = Bob Amber's parent's parent's enemy = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Ivy's friend's enemy's enemy",
+    "cot": "Ivy's friend = Alice Ivy's friend's enemy = Bob Ivy's friend's enemy's enemy = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Ivy's parent's parent's parent",
+    "cot": "Ivy's parent = Bob Ivy's parent's parent = Amber Ivy's parent's parent's parent = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Mia's parent's parent's friend",
+    "cot": "Mia's parent = Quinn Mia's parent's parent = Mia Mia's parent's parent's friend = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Amber's enemy's parent's parent's parent",
+    "cot": "Amber's enemy = Ivy Amber's enemy's parent = Bob Amber's enemy's parent's parent = Amber Amber's enemy's parent's parent's parent = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Ivy's enemy's enemy's parent's enemy",
+    "cot": "Ivy's enemy = Amber Ivy's enemy's enemy = Ivy Ivy's enemy's enemy's parent = Bob Ivy's enemy's enemy's parent's enemy = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Amber's friend's friend's parent's enemy",
+    "cot": "Amber's friend = Alice Amber's friend's friend = Ivy Amber's friend's friend's parent = Bob Amber's friend's friend's parent's enemy = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Alice's friend's enemy's child's parent",
+    "cot": "Alice's friend = Ivy Alice's friend's enemy = Amber Alice's friend's enemy's child = Bob Alice's friend's enemy's child's parent = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Alice's parent's parent's child's enemy",
+    "cot": "Alice's parent = Quinn Alice's parent's parent = Mia Alice's parent's parent's child = Quinn Alice's parent's parent's child's enemy = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Amber's parent's parent's friend's parent's friend",
+    "cot": "Amber's parent = Ivy Amber's parent's parent = Bob Amber's parent's parent's friend = Quinn Amber's parent's parent's friend's parent = Mia Amber's parent's parent's friend's parent's friend = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Quinn's friend's friend's child's friend's child",
+    "cot": "Quinn's friend = Bob Quinn's friend's friend = Quinn Quinn's friend's friend's child = Alice Quinn's friend's friend's child's friend = Ivy Quinn's friend's friend's child's friend's child = Amber",
+    "answer": "Amber"
+  },
+  {
+    "question": "Amber's child's friend's parent's parent's friend",
+    "cot": "Amber's child = Bob Amber's child's friend = Quinn Amber's child's friend's parent = Mia Amber's child's friend's parent's parent = Quinn Amber's child's friend's parent's parent's friend = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Amber's enemy's friend's enemy's friend's friend",
+    "cot": "Amber's enemy = Ivy Amber's enemy's friend = Alice Amber's enemy's friend's enemy = Bob Amber's enemy's friend's enemy's friend = Quinn Amber's enemy's friend's enemy's friend's friend = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Mia's friend's enemy's enemy's enemy's child",
+    "cot": "Mia's friend = Bob Mia's friend's enemy = Amber Mia's friend's enemy's enemy = Ivy Mia's friend's enemy's enemy's enemy = Amber Mia's friend's enemy's enemy's enemy's child = Bob",
+    "answer": "Bob"
+  },
+  {
+    "question": "Xavier's enemy",
+    "cot": "Xavier's enemy = Mia",
+    "answer": "Mia"
+  },
+  {
+    "question": "Sam's parent",
+    "cot": "Sam's parent = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Frank's enemy",
+    "cot": "Frank's enemy = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Mia's friend",
+    "cot": "Mia's friend = David",
+    "answer": "David"
+  },
+  {
+    "question": "Frank's friend",
+    "cot": "Frank's friend = David",
+    "answer": "David"
+  },
+  {
+    "question": "Mia's parent's parent",
+    "cot": "Mia's parent = Wendy Mia's parent's parent = David",
+    "answer": "David"
+  },
+  {
+    "question": "Sam's enemy's enemy",
+    "cot": "Sam's enemy = Wendy Sam's enemy's enemy = David",
+    "answer": "David"
+  },
+  {
+    "question": "Frank's friend's enemy",
+    "cot": "Frank's friend = David Frank's friend's enemy = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Wendy's friend's friend",
+    "cot": "Wendy's friend = Frank Wendy's friend's friend = David",
+    "answer": "David"
+  },
+  {
+    "question": "Wendy's parent's enemy",
+    "cot": "Wendy's parent = David Wendy's parent's enemy = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Wendy's friend's enemy's enemy",
+    "cot": "Wendy's friend = Frank Wendy's friend's enemy = Sam Wendy's friend's enemy's enemy = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Wendy's parent's parent's child",
+    "cot": "Wendy's parent = David Wendy's parent's parent = Sam Wendy's parent's parent's child = David",
+    "answer": "David"
+  },
+  {
+    "question": "Mia's friend's child's enemy",
+    "cot": "Mia's friend = David Mia's friend's child = Wendy Mia's friend's child's enemy = David",
+    "answer": "David"
+  },
+  {
+    "question": "Wendy's child's friend's enemy",
+    "cot": "Wendy's child = Xavier Wendy's child's friend = Frank Wendy's child's friend's enemy = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Wendy's parent's enemy's enemy",
+    "cot": "Wendy's parent = David Wendy's parent's enemy = Wendy Wendy's parent's enemy's enemy = David",
+    "answer": "David"
+  },
+  {
+    "question": "Wendy's child's parent's enemy's friend",
+    "cot": "Wendy's child = Xavier Wendy's child's parent = Wendy Wendy's child's parent's enemy = David Wendy's child's parent's enemy's friend = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Wendy's enemy's friend's friend's friend",
+    "cot": "Wendy's enemy = David Wendy's enemy's friend = Frank Wendy's enemy's friend's friend = David Wendy's enemy's friend's friend's friend = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Xavier's parent's parent's child's friend",
+    "cot": "Xavier's parent = Wendy Xavier's parent's parent = David Xavier's parent's parent's child = Wendy Xavier's parent's parent's child's friend = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "David's parent's friend's enemy's parent",
+    "cot": "David's parent = Sam David's parent's friend = David David's parent's friend's enemy = Wendy David's parent's friend's enemy's parent = David",
+    "answer": "David"
+  },
+  {
+    "question": "Wendy's friend's friend's enemy's friend",
+    "cot": "Wendy's friend = Frank Wendy's friend's friend = David Wendy's friend's friend's enemy = Wendy Wendy's friend's friend's enemy's friend = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Xavier's friend's parent's enemy's enemy's enemy",
+    "cot": "Xavier's friend = Frank Xavier's friend's parent = Xavier Xavier's friend's parent's enemy = Mia Xavier's friend's parent's enemy's enemy = Xavier Xavier's friend's parent's enemy's enemy's enemy = Mia",
+    "answer": "Mia"
+  },
+  {
+    "question": "David's parent's enemy's parent's friend's enemy",
+    "cot": "David's parent = Sam David's parent's enemy = Wendy David's parent's enemy's parent = David David's parent's enemy's parent's friend = Frank David's parent's enemy's parent's friend's enemy = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Mia's enemy's friend's parent's enemy's parent",
+    "cot": "Mia's enemy = Xavier Mia's enemy's friend = Frank Mia's enemy's friend's parent = Xavier Mia's enemy's friend's parent's enemy = Mia Mia's enemy's friend's parent's enemy's parent = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Sam's child's friend's enemy's friend's child",
+    "cot": "Sam's child = David Sam's child's friend = Frank Sam's child's friend's enemy = Sam Sam's child's friend's enemy's friend = David Sam's child's friend's enemy's friend's child = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Mia's friend's friend's enemy's child's enemy",
+    "cot": "Mia's friend = David Mia's friend's friend = Frank Mia's friend's friend's enemy = Sam Mia's friend's friend's enemy's child = David Mia's friend's friend's enemy's child's enemy = Wendy",
+    "answer": "Wendy"
+  },
+  {
+    "question": "Kate's parent",
+    "cot": "Kate's parent = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Yara's friend",
+    "cot": "Yara's friend = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Kate's enemy",
+    "cot": "Kate's enemy = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Yara's parent",
+    "cot": "Yara's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Chloe's parent",
+    "cot": "Chloe's parent = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Chloe's friend's child",
+    "cot": "Chloe's friend = Yara Chloe's friend's child = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Yara's parent's child",
+    "cot": "Yara's parent = Kate Yara's parent's child = Olivia",
+    "answer": "Olivia"
+  },
+  {
+    "question": "Quinn's parent's parent",
+    "cot": "Quinn's parent = Chloe Quinn's parent's parent = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Quinn's friend's enemy",
+    "cot": "Quinn's friend = Noah Quinn's friend's enemy = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Kate's parent's parent",
+    "cot": "Kate's parent = Olivia Kate's parent's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Yara's child's parent's parent",
+    "cot": "Yara's child = Chloe Yara's child's parent = Yara Yara's child's parent's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Quinn's parent's parent's friend",
+    "cot": "Quinn's parent = Chloe Quinn's parent's parent = Yara Quinn's parent's parent's friend = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Yara's parent's child's parent",
+    "cot": "Yara's parent = Kate Yara's parent's child = Olivia Yara's parent's child's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Chloe's child's child's parent",
+    "cot": "Chloe's child = Quinn Chloe's child's child = Noah Chloe's child's child's parent = Quinn",
+    "answer": "Quinn"
+  },
+  {
+    "question": "Quinn's parent's friend's friend",
+    "cot": "Quinn's parent = Chloe Quinn's parent's friend = Yara Quinn's parent's friend's friend = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Olivia's child's child's enemy's enemy",
+    "cot": "Olivia's child = Kate Olivia's child's child = Olivia Olivia's child's child's enemy = Quinn Olivia's child's child's enemy's enemy = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Kate's child's child's parent's friend",
+    "cot": "Kate's child = Olivia Kate's child's child = Kate Kate's child's child's parent = Olivia Kate's child's child's parent's friend = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Kate's friend's friend's parent's parent",
+    "cot": "Kate's friend = Yara Kate's friend's friend = Kate Kate's friend's friend's parent = Olivia Kate's friend's friend's parent's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Yara's enemy's friend's enemy's parent",
+    "cot": "Yara's enemy = Noah Yara's enemy's friend = Quinn Yara's enemy's friend's enemy = Yara Yara's enemy's friend's enemy's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Chloe's child's friend's parent's friend",
+    "cot": "Chloe's child = Quinn Chloe's child's friend = Noah Chloe's child's friend's parent = Quinn Chloe's child's friend's parent's friend = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Chloe's enemy's child's friend's child's friend",
+    "cot": "Chloe's enemy = Kate Chloe's enemy's child = Olivia Chloe's enemy's child's friend = Yara Chloe's enemy's child's friend's child = Chloe Chloe's enemy's child's friend's child's friend = Yara",
+    "answer": "Yara"
+  },
+  {
+    "question": "Chloe's enemy's parent's friend's parent's enemy",
+    "cot": "Chloe's enemy = Kate Chloe's enemy's parent = Olivia Chloe's enemy's parent's friend = Yara Chloe's enemy's parent's friend's parent = Kate Chloe's enemy's parent's friend's parent's enemy = Noah",
+    "answer": "Noah"
+  },
+  {
+    "question": "Quinn's child's parent's child's parent's parent",
+    "cot": "Quinn's child = Noah Quinn's child's parent = Quinn Quinn's child's parent's child = Noah Quinn's child's parent's child's parent = Quinn Quinn's child's parent's child's parent's parent = Chloe",
+    "answer": "Chloe"
+  },
+  {
+    "question": "Quinn's child's parent's child's enemy's friend",
+    "cot": "Quinn's child = Noah Quinn's child's parent = Quinn Quinn's child's parent's child = Noah Quinn's child's parent's child's enemy = Yara Quinn's child's parent's child's enemy's friend = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Yara's friend's friend's parent's enemy's friend",
+    "cot": "Yara's friend = Kate Yara's friend's friend = Yara Yara's friend's friend's parent = Kate Yara's friend's friend's parent's enemy = Noah Yara's friend's friend's parent's enemy's friend = Quinn",
+    "answer": "Quinn"
+  },
+  {
+    "question": "Ivy's child",
+    "cot": "Ivy's child = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Dylan's parent",
+    "cot": "Dylan's parent = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "David's friend",
+    "cot": "David's friend = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "Uma's friend",
+    "cot": "Uma's friend = Blake",
+    "answer": "Blake"
+  },
+  {
+    "question": "Quinn's child",
+    "cot": "Quinn's child = David",
+    "answer": "David"
+  },
+  {
+    "question": "Uma's child's friend",
+    "cot": "Uma's child = Blake Uma's child's friend = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "David's friend's parent",
+    "cot": "David's friend = Uma David's friend's parent = Blake",
+    "answer": "Blake"
+  },
+  {
+    "question": "Quinn's child's parent",
+    "cot": "Quinn's child = David Quinn's child's parent = Quinn",
+    "answer": "Quinn"
+  },
+  {
+    "question": "Ivy's friend's child",
+    "cot": "Ivy's friend = Blake Ivy's friend's child = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "Blake's friend's friend",
+    "cot": "Blake's friend = Uma Blake's friend's friend = Blake",
+    "answer": "Blake"
+  },
+  {
+    "question": "Blake's enemy's enemy's child",
+    "cot": "Blake's enemy = Quinn Blake's enemy's enemy = Ivy Blake's enemy's enemy's child = Dylan",
+    "answer": "Dylan"
+  },
+  {
+    "question": "Dylan's parent's parent's friend",
+    "cot": "Dylan's parent = Ivy Dylan's parent's parent = Blake Dylan's parent's parent's friend = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "David's parent's friend's friend",
+    "cot": "David's parent = Quinn David's parent's friend = Dylan David's parent's friend's friend = Quinn",
+    "answer": "Quinn"
+  },
+  {
+    "question": "Ivy's parent's child's friend",
+    "cot": "Ivy's parent = Blake Ivy's parent's child = Uma Ivy's parent's child's friend = Blake",
+    "answer": "Blake"
+  },
+  {
+    "question": "Ivy's enemy's friend's child",
+    "cot": "Ivy's enemy = David Ivy's enemy's friend = Uma Ivy's enemy's friend's child = Blake",
+    "answer": "Blake"
+  },
+  {
+    "question": "Uma's parent's child's enemy's enemy",
+    "cot": "Uma's parent = Blake Uma's parent's child = Uma Uma's parent's child's enemy = Ivy Uma's parent's child's enemy's enemy = David",
+    "answer": "David"
+  },
+  {
+    "question": "Uma's parent's friend's parent's enemy",
+    "cot": "Uma's parent = Blake Uma's parent's friend = Uma Uma's parent's friend's parent = Blake Uma's parent's friend's parent's enemy = Quinn",
+    "answer": "Quinn"
+  },
+  {
+    "question": "Ivy's parent's enemy's child's enemy",
+    "cot": "Ivy's parent = Blake Ivy's parent's enemy = Quinn Ivy's parent's enemy's child = David Ivy's parent's enemy's child's enemy = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Ivy's parent's child's enemy's parent",
+    "cot": "Ivy's parent = Blake Ivy's parent's child = Uma Ivy's parent's child's enemy = Ivy Ivy's parent's child's enemy's parent = Blake",
+    "answer": "Blake"
+  },
+  {
+    "question": "David's enemy's child's enemy's enemy",
+    "cot": "David's enemy = Ivy David's enemy's child = Dylan David's enemy's child's enemy = Ivy David's enemy's child's enemy's enemy = David",
+    "answer": "David"
+  },
+  {
+    "question": "Blake's parent's parent's friend's child's enemy",
+    "cot": "Blake's parent = Uma Blake's parent's parent = Blake Blake's parent's parent's friend = Uma Blake's parent's parent's friend's child = Blake Blake's parent's parent's friend's child's enemy = Quinn",
+    "answer": "Quinn"
+  },
+  {
+    "question": "Blake's parent's enemy's friend's friend's parent",
+    "cot": "Blake's parent = Uma Blake's parent's enemy = Ivy Blake's parent's enemy's friend = Blake Blake's parent's enemy's friend's friend = Uma Blake's parent's enemy's friend's friend's parent = Blake",
+    "answer": "Blake"
+  },
+  {
+    "question": "Uma's parent's child's parent's child's enemy",
+    "cot": "Uma's parent = Blake Uma's parent's child = Uma Uma's parent's child's parent = Blake Uma's parent's child's parent's child = Uma Uma's parent's child's parent's child's enemy = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Quinn's child's enemy's parent's child's friend",
+    "cot": "Quinn's child = David Quinn's child's enemy = Ivy Quinn's child's enemy's parent = Blake Quinn's child's enemy's parent's child = Uma Quinn's child's enemy's parent's child's friend = Blake",
+    "answer": "Blake"
+  },
+  {
+    "question": "Quinn's friend's parent's child's friend's enemy",
+    "cot": "Quinn's friend = Dylan Quinn's friend's parent = Ivy Quinn's friend's parent's child = Dylan Quinn's friend's parent's child's friend = Quinn Quinn's friend's parent's child's friend's enemy = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Grace's parent",
+    "cot": "Grace's parent = Emma",
+    "answer": "Emma"
+  },
+  {
+    "question": "Charlie's parent",
+    "cot": "Charlie's parent = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Chloe's friend",
+    "cot": "Chloe's friend = Emma",
+    "answer": "Emma"
+  },
+  {
+    "question": "Charlie's friend",
+    "cot": "Charlie's friend = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Chloe's parent",
+    "cot": "Chloe's parent = Emma",
+    "answer": "Emma"
+  },
+  {
+    "question": "Grace's enemy's child",
+    "cot": "Grace's enemy = Emma Grace's enemy's child = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Chloe's enemy's child",
+    "cot": "Chloe's enemy = Grace Chloe's enemy's child = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Frank's parent's parent",
+    "cot": "Frank's parent = Grace Frank's parent's parent = Emma",
+    "answer": "Emma"
+  },
+  {
+    "question": "Emma's parent's enemy",
+    "cot": "Emma's parent = Grace Emma's parent's enemy = Emma",
+    "answer": "Emma"
+  },
+  {
+    "question": "Ivy's parent's parent",
+    "cot": "Ivy's parent = Emma Ivy's parent's parent = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Charlie's enemy's parent's friend",
+    "cot": "Charlie's enemy = Ivy Charlie's enemy's parent = Emma Charlie's enemy's parent's friend = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Chloe's friend's child's enemy",
+    "cot": "Chloe's friend = Emma Chloe's friend's child = Ivy Chloe's friend's child's enemy = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Emma's enemy's friend's friend",
+    "cot": "Emma's enemy = Grace Emma's enemy's friend = Emma Emma's enemy's friend's friend = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Chloe's enemy's parent's parent",
+    "cot": "Chloe's enemy = Grace Chloe's enemy's parent = Emma Chloe's enemy's parent's parent = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Grace's child's child's parent",
+    "cot": "Grace's child = Frank Grace's child's child = Charlie Grace's child's child's parent = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Grace's enemy's enemy's child's enemy",
+    "cot": "Grace's enemy = Emma Grace's enemy's enemy = Grace Grace's enemy's enemy's child = Frank Grace's enemy's enemy's child's enemy = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Grace's friend's enemy's child's child",
+    "cot": "Grace's friend = Emma Grace's friend's enemy = Grace Grace's friend's enemy's child = Frank Grace's friend's enemy's child's child = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Grace's parent's parent's friend's parent",
+    "cot": "Grace's parent = Emma Grace's parent's parent = Grace Grace's parent's parent's friend = Emma Grace's parent's parent's friend's parent = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Emma's parent's parent's friend's friend",
+    "cot": "Emma's parent = Grace Emma's parent's parent = Emma Emma's parent's parent's friend = Charlie Emma's parent's parent's friend's friend = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Chloe's parent's parent's parent's child",
+    "cot": "Chloe's parent = Emma Chloe's parent's parent = Grace Chloe's parent's parent's parent = Emma Chloe's parent's parent's parent's child = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Emma's parent's enemy's child's parent's child",
+    "cot": "Emma's parent = Grace Emma's parent's enemy = Emma Emma's parent's enemy's child = Ivy Emma's parent's enemy's child's parent = Emma Emma's parent's enemy's child's parent's child = Ivy",
+    "answer": "Ivy"
+  },
+  {
+    "question": "Frank's child's enemy's friend's friend's child",
+    "cot": "Frank's child = Charlie Frank's child's enemy = Ivy Frank's child's enemy's friend = Charlie Frank's child's enemy's friend's friend = Frank Frank's child's enemy's friend's friend's child = Charlie",
+    "answer": "Charlie"
+  },
+  {
+    "question": "Emma's enemy's child's parent's child's enemy",
+    "cot": "Emma's enemy = Grace Emma's enemy's child = Frank Emma's enemy's child's parent = Grace Emma's enemy's child's parent's child = Frank Emma's enemy's child's parent's child's enemy = Grace",
+    "answer": "Grace"
+  },
+  {
+    "question": "Grace's enemy's parent's friend's parent's enemy",
+    "cot": "Grace's enemy = Emma Grace's enemy's parent = Grace Grace's enemy's parent's friend = Emma Grace's enemy's parent's friend's parent = Grace Grace's enemy's parent's friend's parent's enemy = Emma",
+    "answer": "Emma"
+  },
+  {
+    "question": "Grace's parent's parent's enemy's parent's child",
+    "cot": "Grace's parent = Emma Grace's parent's parent = Grace Grace's parent's parent's enemy = Emma Grace's parent's parent's enemy's parent = Grace Grace's parent's parent's enemy's parent's child = Frank",
+    "answer": "Frank"
+  },
+  {
+    "question": "Jack's parent",
+    "cot": "Jack's parent = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Sam's friend",
+    "cot": "Sam's friend = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Xavier's friend",
+    "cot": "Xavier's friend = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "Paul's enemy",
+    "cot": "Paul's enemy = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Uma's parent",
+    "cot": "Uma's parent = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Sam's parent's friend",
+    "cot": "Sam's parent = Paul Sam's parent's friend = Uma",
+    "answer": "Uma"
+  },
+  {
+    "question": "Uma's parent's enemy",
+    "cot": "Uma's parent = Sam Uma's parent's enemy = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Sam's friend's enemy",
+    "cot": "Sam's friend = Xavier Sam's friend's enemy = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Xavier's enemy's enemy",
+    "cot": "Xavier's enemy = Zach Xavier's enemy's enemy = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Xavier's friend's child",
+    "cot": "Xavier's friend = Uma Xavier's friend's child = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Paul's enemy's child's child",
+    "cot": "Paul's enemy = Sam Paul's enemy's child = Uma Paul's enemy's child's child = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Xavier's enemy's child's parent",
+    "cot": "Xavier's enemy = Zach Xavier's enemy's child = Paul Xavier's enemy's child's parent = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Jack's parent's friend's parent",
+    "cot": "Jack's parent = Paul Jack's parent's friend = Uma Jack's parent's friend's parent = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Xavier's parent's parent's enemy",
+    "cot": "Xavier's parent = Uma Xavier's parent's parent = Sam Xavier's parent's parent's enemy = Paul",
+    "answer": "Paul"
+  },
+  {
+    "question": "Uma's friend's enemy's friend",
+    "cot": "Uma's friend = Xavier Uma's friend's enemy = Zach Uma's friend's enemy's friend = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Paul's parent's parent's parent's friend",
+    "cot": "Paul's parent = Zach Paul's parent's parent = Paul Paul's parent's parent's parent = Zach Paul's parent's parent's parent's friend = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Sam's friend's enemy's enemy's enemy",
+    "cot": "Sam's friend = Xavier Sam's friend's enemy = Zach Sam's friend's enemy's enemy = Xavier Sam's friend's enemy's enemy's enemy = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Paul's child's enemy's friend's parent",
+    "cot": "Paul's child = Zach Paul's child's enemy = Xavier Paul's child's enemy's friend = Uma Paul's child's enemy's friend's parent = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Sam's parent's enemy's friend's enemy",
+    "cot": "Sam's parent = Paul Sam's parent's enemy = Sam Sam's parent's enemy's friend = Xavier Sam's parent's enemy's friend's enemy = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Paul's parent's friend's friend's child",
+    "cot": "Paul's parent = Zach Paul's parent's friend = Xavier Paul's parent's friend's friend = Uma Paul's parent's friend's friend's child = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Paul's enemy's child's friend's friend's friend",
+    "cot": "Paul's enemy = Sam Paul's enemy's child = Uma Paul's enemy's child's friend = Xavier Paul's enemy's child's friend's friend = Uma Paul's enemy's child's friend's friend's friend = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Paul's enemy's child's parent's enemy's enemy",
+    "cot": "Paul's enemy = Sam Paul's enemy's child = Uma Paul's enemy's child's parent = Sam Paul's enemy's child's parent's enemy = Paul Paul's enemy's child's parent's enemy's enemy = Sam",
+    "answer": "Sam"
+  },
+  {
+    "question": "Sam's enemy's parent's friend's friend's child",
+    "cot": "Sam's enemy = Paul Sam's enemy's parent = Zach Sam's enemy's parent's friend = Xavier Sam's enemy's parent's friend's friend = Uma Sam's enemy's parent's friend's friend's child = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Xavier's parent's enemy's child's friend's friend",
+    "cot": "Xavier's parent = Uma Xavier's parent's enemy = Zach Xavier's parent's enemy's child = Paul Xavier's parent's enemy's child's friend = Uma Xavier's parent's enemy's child's friend's friend = Xavier",
+    "answer": "Xavier"
+  },
+  {
+    "question": "Zach's parent's child's child's friend's enemy",
+    "cot": "Zach's parent = Paul Zach's parent's child = Zach Zach's parent's child's child = Paul Zach's parent's child's child's friend = Uma Zach's parent's child's child's friend's enemy = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Zach's parent",
+    "cot": "Zach's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Kate's child",
+    "cot": "Kate's child = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Jack's enemy",
+    "cot": "Jack's enemy = Henry",
+    "answer": "Henry"
+  },
+  {
+    "question": "Zach's friend",
+    "cot": "Zach's friend = Jack",
+    "answer": "Jack"
+  },
+  {
+    "question": "Tina's friend",
+    "cot": "Tina's friend = Henry",
+    "answer": "Henry"
+  },
+  {
+    "question": "Tina's parent's friend",
+    "cot": "Tina's parent = Zach Tina's parent's friend = Jack",
+    "answer": "Jack"
+  },
+  {
+    "question": "Kate's parent's enemy",
+    "cot": "Kate's parent = Jack Kate's parent's enemy = Henry",
+    "answer": "Henry"
+  },
+  {
+    "question": "Henry's parent's enemy",
+    "cot": "Henry's parent = Kate Henry's parent's enemy = Henry",
+    "answer": "Henry"
+  },
+  {
+    "question": "Tina's child's friend",
+    "cot": "Tina's child = Jack Tina's child's friend = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Zach's enemy's friend",
+    "cot": "Zach's enemy = Kate Zach's enemy's friend = Jack",
+    "answer": "Jack"
+  },
+  {
+    "question": "Frank's friend's friend's enemy",
+    "cot": "Frank's friend = Zach Frank's friend's friend = Jack Frank's friend's friend's enemy = Henry",
+    "answer": "Henry"
+  },
+  {
+    "question": "Jack's child's friend's friend",
+    "cot": "Jack's child = Kate Jack's child's friend = Jack Jack's child's friend's friend = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Kate's child's enemy's child",
+    "cot": "Kate's child = Zach Kate's child's enemy = Kate Kate's child's enemy's child = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Zach's parent's child's parent",
+    "cot": "Zach's parent = Kate Zach's parent's child = Zach Zach's parent's child's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Jack's child's child's parent",
+    "cot": "Jack's child = Kate Jack's child's child = Zach Jack's child's child's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Frank's friend's friend's child's enemy",
+    "cot": "Frank's friend = Zach Frank's friend's friend = Jack Frank's friend's friend's child = Kate Frank's friend's friend's child's enemy = Henry",
+    "answer": "Henry"
+  },
+  {
+    "question": "Jack's enemy's parent's friend's child",
+    "cot": "Jack's enemy = Henry Jack's enemy's parent = Kate Jack's enemy's parent's friend = Jack Jack's enemy's parent's friend's child = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Kate's friend's parent's parent's parent",
+    "cot": "Kate's friend = Jack Kate's friend's parent = Tina Kate's friend's parent's parent = Zach Kate's friend's parent's parent's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Frank's enemy's child's enemy's enemy",
+    "cot": "Frank's enemy = Tina Frank's enemy's child = Jack Frank's enemy's child's enemy = Henry Frank's enemy's child's enemy's enemy = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Kate's friend's enemy's parent's enemy",
+    "cot": "Kate's friend = Jack Kate's friend's enemy = Henry Kate's friend's enemy's parent = Kate Kate's friend's enemy's parent's enemy = Henry",
+    "answer": "Henry"
+  },
+  {
+    "question": "Henry's friend's friend's friend's friend's parent",
+    "cot": "Henry's friend = Tina Henry's friend's friend = Henry Henry's friend's friend's friend = Tina Henry's friend's friend's friend's friend = Henry Henry's friend's friend's friend's friend's parent = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Henry's friend's enemy's child's enemy's parent",
+    "cot": "Henry's friend = Tina Henry's friend's enemy = Zach Henry's friend's enemy's child = Frank Henry's friend's enemy's child's enemy = Tina Henry's friend's enemy's child's enemy's parent = Zach",
+    "answer": "Zach"
+  },
+  {
+    "question": "Jack's friend's enemy's parent's friend's friend",
+    "cot": "Jack's friend = Kate Jack's friend's enemy = Henry Jack's friend's enemy's parent = Kate Jack's friend's enemy's parent's friend = Jack Jack's friend's enemy's parent's friend's friend = Kate",
+    "answer": "Kate"
+  },
+  {
+    "question": "Zach's enemy's parent's enemy's enemy's enemy",
+    "cot": "Zach's enemy = Kate Zach's enemy's parent = Jack Zach's enemy's parent's enemy = Henry Zach's enemy's parent's enemy's enemy = Kate Zach's enemy's parent's enemy's enemy's enemy = Henry",
+    "answer": "Henry"
+  },
+  {
+    "question": "Tina's child's friend's child's enemy's friend",
+    "cot": "Tina's child = Jack Tina's child's friend = Kate Tina's child's friend's child = Zach Tina's child's friend's child's enemy = Kate Tina's child's friend's child's enemy's friend = Jack",
+    "answer": "Jack"
+  }
+]
