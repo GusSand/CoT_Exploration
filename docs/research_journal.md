@@ -2,31 +2,33 @@
 
 ## Experiment Log
 
-### 2025-10-29: CommonsenseQA vs GSM8K - CT0 DOMINANCE IN COMMONSENSE REASONING
+### 2025-10-29: CommonsenseQA vs GSM8K - HUB-CRITICAL DISSOCIATION DISCOVERY
 
 **Objective**: Compare mechanistic differences between commonsense and mathematical reasoning in CODI models.
 
-**Status**: ✅ **COMPLETE** - CommonsenseQA shows CT0 dominance (13% importance) vs GSM8K's distributed pattern
+**Status**: ✅ **COMPLETE** - Discovered hub-critical dissociation: GSM8K separates storage (CT0) from computation (CT5); CommonsenseQA unifies both in CT0
 
 **Models**: LLaMA-3.2-1B CODI (CommonsenseQA) vs LLaMA-3.2-1B CODI (GSM8K) | **Dataset**: 100 examples each
 
 **Key Findings**:
 
-**1. Token Importance Difference**
-- **CommonsenseQA CT0**: 13% accuracy drop when ablated (14/100 problems break)
-- **CommonsenseQA CT1-CT5**: 4-5% accuracy drop each (distributed)
-- **GSM8K**: More uniform distribution across all tokens
-- **Conclusion**: Commonsense reasoning uses hub architecture; math uses sequential
+**1. Hub vs Critical Token Dissociation**
+- **GSM8K**: CT0 = Attention hub (4% avg), CT5 = Critical token (26% ablation impact) → DISSOCIATED
+- **CommonsenseQA**: CT0 = Both hub AND critical (13% ablation impact) → UNIFIED
+- **Discovery**: Attention flow ≠ Causal importance in sequential tasks
+- **Conclusion**: Task type determines whether hub and critical token are same or different
 
 **2. Task-Specific Architectures**
-- **Commonsense** (Hub): CT0 encodes semantic knowledge → CT1-CT5 refine → Answer
-- **Math** (Sequential): CT0 → CT1 → CT2 → ... → CT5 → Answer (step-by-step)
-- **Implication**: Task characteristics determine continuous thought structure
+- **Math (GSM8K)**: CT0 [Store] → CT1-CT4 [Build] → CT5 [Compute] → Answer (sequential)
+  - Hub (CT0): 7% impact, Critical (CT5): 26% impact
+- **Commonsense**: CT0 [Encode+Decide] → CT1-CT5 [Refine] → Answer (front-loaded)
+  - Hub+Critical (CT0): 13% impact, Others: 4-5% impact
+- **Implication**: Sequential tasks separate storage from computation; parallel tasks unify them
 
-**3. Robustness Trade-off**
-- CommonsenseQA: Higher baseline (75%) but vulnerable to CT0 loss (→62%)
-- GSM8K: Lower baseline (~45%) but more graceful degradation
-- Distributed reasoning = more fault-tolerant
+**3. Robustness Trade-offs**
+- GSM8K: Vulnerable at final step (CT5: 26%) but redundant storage
+- CommonsenseQA: Vulnerable at initial step (CT0: 13%) but less catastrophic
+- Front-loading (commonsense) more robust than back-loading (math)
 
 **Data Generated**: 451KB attention patterns, token importance scores, 100-example analysis
 
