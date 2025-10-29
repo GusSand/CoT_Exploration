@@ -1,0 +1,68 @@
+{
+  "model_name": "L10_to_L11_Hybrid_Probe",
+  "version": "1.0",
+  "created": "2024-10-28",
+  "created_timestamp": "20251028_141404",
+  "description": "Linear probe trained to transform Layer 10 hidden states to Layer 11 space in CODI-GPT2 continuous thought",
+  "architecture": {
+    "type": "LinearProbe",
+    "class": "torch.nn.Linear",
+    "input_dim": 768,
+    "output_dim": 768,
+    "has_bias": true,
+    "total_parameters": 590592,
+    "parameter_breakdown": {
+      "weight": 589824,
+      "bias": 768
+    }
+  },
+  "training": {
+    "strategy": "hybrid_balancing",
+    "scan_examples": 20000,
+    "balanced_samples": 70000,
+    "epochs": 100,
+    "learning_rate": 0.001,
+    "batch_size": 256,
+    "optimizer": "Adam",
+    "loss_function": "KL_divergence",
+    "temperature": 1.0
+  },
+  "base_model": {
+    "name": "CODI-GPT2",
+    "base_architecture": "openai-community/gpt2",
+    "checkpoint": "../models/CODI-gpt2",
+    "hidden_dim": 768,
+    "num_layers": 12,
+    "lora_config": {
+      "r": 128,
+      "alpha": 32,
+      "target_modules": ["c_attn", "c_proj", "c_fc"],
+      "dropout": 0.05
+    }
+  },
+  "dataset": {
+    "name": "zen-E/GSM8k-Aug",
+    "split": "train",
+    "task": "grade_school_math"
+  },
+  "performance": {
+    "hard_accuracy": 0.3267,
+    "evaluation_examples": 100,
+    "metrics_description": "Hard accuracy = exact token match between probe output and Layer 11 ground truth"
+  },
+  "usage": {
+    "source_layer": 10,
+    "target_layer": 11,
+    "intended_use": "Transform hidden states from Layer 10 to predict Layer 11 outputs during continuous thought iterations"
+  },
+  "files": {
+    "weights": "probe_L10_to_L11_HYBRID_20251028_141404.pt",
+    "training_log": "../../../docs/experiments/tuned_lens/01_single_layer_probe/logs/train_hybrid_70K.log",
+    "evaluation_logs": [
+      "../../../docs/experiments/tuned_lens/01_single_layer_probe/logs/test_hybrid_100ex.log",
+      "../../../docs/experiments/tuned_lens/01_single_layer_probe/logs/soft_metrics_hybrid_100ex.log",
+      "../../../docs/experiments/tuned_lens/01_single_layer_probe/logs/semantic_accuracy_hybrid.log"
+    ],
+    "training_script": "../../../src/experiments/tuned_lens/single_probe/train_probe_HYBRID.py"
+  }
+}
