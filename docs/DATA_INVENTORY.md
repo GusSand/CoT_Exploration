@@ -1,6 +1,6 @@
 # Data Inventory - CoT Exploration Project
 
-**Last Updated**: 2025-10-27 (Added Section 19: GPT-2 Feature Interpretability Datasets)
+**Last Updated**: 2025-10-28 (Added Section 22.8b: Step 3 Extended Intervention Results - 12,000 interventions revealing Step 3 as critical bottleneck)
 
 This document provides a complete breakdown of all datasets in the project, organized by experiment type and model.
 
@@ -23,6 +23,10 @@ This document provides a complete breakdown of all datasets in the project, orga
 | **GPT-2 Steering** | Activation steering | 344 train / 86 test | GPT-2 | [`results/steering_dataset_gpt2.json`](../src/experiments/activation_patching/results/steering_dataset_gpt2.json) |
 | **LLaMA Steering (Full)** | Activation steering | 425 train / 107 test | LLaMA | [`results/steering_dataset_llama_full.json`](../src/experiments/activation_patching/results/steering_dataset_llama_full.json) |
 | **SAE Error Analysis** | Error classification | 914 solutions (1.07 GB) | LLaMA | [`sae_error_analysis/data/error_analysis_dataset.json`](../src/experiments/sae_error_analysis/data/error_analysis_dataset.json) ⚠️ |
+| **CODI450 Dataset** | SAE intervention pilot | 450 problems (400 train, 50 test) | GPT-2 or LLaMA | [`data/step_by_step/gsm8k_codi450.manifest.json`](../data/step_by_step/) ⚠️ |
+| **Step-by-Step SAE Models** | Per-step feature dictionaries | 6 models (~96 MB) | GPT-2 or LLaMA | [`models/step_by_step/sae_step{k}/sae.pt`](../models/step_by_step/) ⚠️ |
+| **Intervention Results (Smoke Test)** | Smoke test feature interventions | ~450 rows | GPT-2 or LLaMA | [`results/step_by_step/smoke_test_results.csv`](../results/step_by_step/smoke_test_results.csv) ⚠️ |
+| **Step 3 Intervention Results** | Extended systematic intervention search | 12,000 interventions (3.7 MB) | GPT-2 | [`data/step_by_step/intervention_results/`](../data/step_by_step/intervention_results/) ✅ |
 
 ---
 
@@ -1275,17 +1279,127 @@ python eval_gpt2.py
 
 ---
 
-### 14.7 Experiment Documentation
+### 14.7 Proper Question-Level Held-Out Splits (Sprint 1 & 4 Corrected Methodology)
+**Location**: [`src/experiments/liars_bench_codi/data/processed/`](../src/experiments/liars_bench_codi/data/processed/)
 
-**Research Journal**: [`docs/research_journal.md`](research_journal.md) (2025-10-25 entry)
+**Purpose**: Corrected dataset splits with proper question-level held-out methodology (fixing data leakage from original Sprint 1)
 
-**Detailed Report**: [`docs/experiments/10-25_gpt2_liars_bench_deception_detection.md`](experiments/10-25_gpt2_liars_bench_deception_detection.md)
+**Critical Change**: Original methodology had 100% question overlap between CODI training and probe evaluation. New methodology enforces zero overlap at question level.
+
+**Files**:
+- `probe_train_proper.json` - Probe training set (288 samples, 144 honest + 144 deceptive)
+- `probe_test_proper.json` - Probe test set (288 samples, 144 honest + 144 deceptive)
+- `probe_activations_gpt2_proper.json` - GPT-2 continuous thought activations (264 MB)
+- `probe_activations_llama3b_proper.json` - LLaMA-3.2-3B continuous thought activations (797 MB)
+- `response_activations_gpt2_proper.json` - GPT-2 response token activations (13 MB)
+- `splits_metadata_proper.json` - Split validation metadata
+
+**Dataset Split Strategy**:
+```
+Total Questions: 960 unique questions from Liars-Bench
+
+CODI Training:    672 questions (6,405 samples, 100% honest)
+CODI Validation:  672 questions (690 samples, 100% honest)
+Probe Training:   144 questions (288 samples, 50/50 balance)
+Probe Test:       144 questions (288 samples, 50/50 balance)
+
+✅ ZERO OVERLAP: CODI questions ∩ Probe questions = ∅
+✅ ZERO OVERLAP: Probe train questions ∩ Probe test questions = ∅
+```
+
+**Why This Matters**:
+- **Original (INVALID)**: Tested deception detection on questions the model was trained to answer
+  - Result: 98% accuracy (FALSE - measured memorization)
+- **Corrected (VALID)**: Test deception detection on completely unseen questions
+  - Result: 50% accuracy (TRUE - measures generalization)
+
+**Activation Extraction Details**:
+
+**GPT-2** (`probe_activations_gpt2_proper.json`):
+- **Model**: GPT-2 (124M), 12 layers, 768-dim
+- **Layers extracted**: L4, L8, L11 (early/middle/late)
+- **Tokens per layer**: 6 continuous thought tokens
+- **Train samples**: 288 (144 honest, 144 deceptive)
+- **Test samples**: 288 (144 honest, 144 deceptive)
+- **Total dimensions**: 13,824 (3 layers × 6 tokens × 768)
+
+**LLaMA-3.2-3B** (`probe_activations_llama3b_proper.json`):
+- **Model**: LLaMA-3.2-3B-Instruct, 28 layers, 3072-dim
+- **Layers extracted**: L9, L18, L27 (early/middle/late)
+- **Tokens per layer**: 6 continuous thought tokens
+- **Train samples**: 288 (144 honest, 144 deceptive)
+- **Test samples**: 288 (144 honest, 144 deceptive)
+- **Total dimensions**: 55,296 (3 layers × 6 tokens × 3072)
+
+**Response Tokens** (`response_activations_gpt2_proper.json`):
+- **Model**: GPT-2 (124M)
+- **Layer**: Final layer (L11)
+- **Tokens**: Mean-pooled response tokens (after answer generation)
+- **Dimensions**: 768
+- **Purpose**: Baseline comparison (response vs continuous thoughts)
+
+**Generation Commands**:
+```bash
+cd src/experiments/liars_bench_codi/scripts
+
+# Create proper splits (question-level held-out)
+python create_proper_splits.py
+
+# Extract GPT-2 continuous thought activations
+python extract_activations_gpt2_proper.py
+
+# Extract LLaMA-3B continuous thought activations
+python extract_activations_llama3b_proper.py
+
+# Extract GPT-2 response token activations
+python extract_response_activations_proper.py
+
+# Train probes on proper data
+python train_probes_proper_v2.py          # Continuous thoughts
+python train_response_probe_proper.py      # Response tokens
+```
+
+**Key Results** (Proper Methodology):
+
+**Continuous Thoughts**:
+- GPT-2: **50.00% accuracy** (random chance, 0.500 AUROC)
+- LLaMA-3.2-3B: **50.00% accuracy** (random chance, 0.500 AUROC)
+- Finding: **Zero generalizable deception signal** in continuous space (scale-invariant)
+
+**Response Tokens**:
+- GPT-2: **70.49% accuracy** (0.760 AUROC)
+- Finding: Response tokens encode generalizable deception patterns
+
+**Gap**: +20.49 percentage points in favor of response tokens
+
+**Used By**:
+- Sprint 1 (Corrected): GPT-2 deception detection with proper methodology
+- Sprint 4: LLaMA-3.2-3B scale test (124M → 3B parameters)
+
+**Experiment Documentation**:
+- [`docs/experiments/10-28_gpt2_liars_bench_sprint1_CORRECTED_FINAL.md`](experiments/10-28_gpt2_liars_bench_sprint1_CORRECTED_FINAL.md)
+- [`docs/experiments/10-28_llama3b_liars_bench_sprint4_FINAL.md`](experiments/10-28_llama3b_liars_bench_sprint4_FINAL.md)
+
+**Created**: 2025-10-28 (Sprint 1 correction + Sprint 4)
+
+**Data Quality Audit**: [`src/experiments/liars_bench_codi/data/processed/SPRINT4_DATA_AUDIT_REPORT.md`](../src/experiments/liars_bench_codi/data/processed/SPRINT4_DATA_AUDIT_REPORT.md)
+
+---
+
+### 14.8 Experiment Documentation
+
+**Research Journal**: [`docs/research_journal.md`](research_journal.md) (2025-10-25 entry, updated 2025-10-28)
+
+**Detailed Reports**:
+- [`docs/experiments/10-25_gpt2_liars_bench_deception_detection.md`](experiments/10-25_gpt2_liars_bench_deception_detection.md) - Original (invalidated)
+- [`docs/experiments/10-28_gpt2_liars_bench_sprint1_CORRECTED_FINAL.md`](experiments/10-28_gpt2_liars_bench_sprint1_CORRECTED_FINAL.md) - Corrected methodology
+- [`docs/experiments/10-28_llama3b_liars_bench_sprint4_FINAL.md`](experiments/10-28_llama3b_liars_bench_sprint4_FINAL.md) - Scale test
 
 **Reference Paper**: [Measuring Deceptive Alignment in Language Models](https://arxiv.org/pdf/2502.03407) (Apollo Research)
 
 **Code Location**: [`src/experiments/liars_bench_codi/`](../src/experiments/liars_bench_codi/)
 
-**Last Updated**: 2025-10-26
+**Last Updated**: 2025-10-28
 
 ---
 
@@ -2947,5 +3061,1101 @@ python src/experiments/llama_sae_hierarchy/validate_features.py --layer 14 --pos
 ```
 
 **Time to Generate**: ~3 hours (automated)
+
+---
+
+---
+
+## 21. Attention Flow Analysis Datasets
+
+### 21.1 Attention Flow Training Sample (100 problems)
+**File**: [`src/experiments/codi_attention_flow/data/attention_dataset_100_train.json`](../src/experiments/codi_attention_flow/data/attention_dataset_100_train.json)
+
+**Purpose**: Random sample of 100 GSM8K training problems for attention pattern extraction and critical head identification
+
+**Size**: 100 problems (63 KB)
+
+**Status**: ✅ Generated
+
+**Structure**:
+```json
+[
+  {
+    "gsm8k_id": "train_53",
+    "question": "Problem text from GSM8K...",
+    "answer": "42",
+    "full_solution": "Step-by-step solution with #### 42"
+  }
+]
+```
+
+**Sampling Method**:
+- Source: GSM8K training set (7,473 problems total)
+- Method: Random sampling with seed=42
+- No stratification (pure random sample)
+- Reproducible: same seed produces same sample
+
+**Usage**:
+- Story 0: Extract 6×6 attention matrices between continuous thought positions, identify hub patterns
+- Story 1: Rank critical attention heads by composite score
+- Story 2: Establish baseline accuracy (59% on 100 problems, 59% on full 1,319 test set)
+- Story 3: Individual head ablation (all top 10 heads cause 100% failure - method artifact)
+- Story 4: Score-stratified head ablation (40 heads across 4 strata - all cause 100% failure)
+- Story 5: Attention pattern ablation (9 patterns on full 1,319 test set)
+
+**Recreation**:
+```bash
+cd /home/paperspace/dev/CoT_Exploration
+python src/experiments/codi_attention_flow/scripts/1_sample_dataset.py --seed 42 --n_samples 100
+```
+
+**Related Experiments**:
+- Used in: Attention flow analysis and ablation experiments (Stories 0-5)
+- Models: LLaMA-3.2-1B CODI
+- Documented in:
+  - `docs/experiments/10-28_llama_gsm8k_attention_flow_analysis.md` (Stories 0-3)
+  - `docs/experiments/10-28_llama_gsm8k_attention_pattern_ablation.md` (Stories 4-5)
+
+**Validation**:
+- ✅ No duplicates: 100 unique IDs
+- ✅ All questions non-empty (min length: 85 chars)
+- ✅ All answers present
+- ✅ All IDs from training set (train_53 to train_7308)
+
+---
+
+## 22. Step-by-Step SAE Intervention Datasets
+
+### 22.1 CODI450 Dataset (Frozen GSM8K Train/Test Splits)
+**Files**:
+- [`data/step_by_step/gsm8k_codi400_train.csv`](../data/step_by_step/gsm8k_codi400_train.csv)
+- [`data/step_by_step/gsm8k_codi50_test.csv`](../data/step_by_step/gsm8k_codi50_test.csv)
+
+**Purpose**: Deterministic GSM8K subsets for high-quality SAE training (400 items) and stable intervention testing (50 items)
+
+**Size**: 450 problems total (400 train, 50 test)
+
+**Status**: ⚠️ To be generated (Story 1)
+
+**Structure** (same for both train and test):
+```csv
+id,question,answer,split,difficulty,baseline_rank
+gsm8k_test_042,"Question text...",42,test,easy,1
+gsm8k_test_157,"Question text...",157,test,decompose,5
+...
+```
+
+**Columns**:
+- `id`: Unique GSM8K test item ID
+- `question`: Problem text
+- `answer`: Numerical answer
+- `split`: Always "test" (from GSM8K test set)
+- `difficulty`: "easy" | "decompose" (tagged via CODI baseline rank)
+- `baseline_rank`: Rank of correct answer in CODI baseline logits (1=top)
+
+**Sampling Method**:
+- Source: GSM8K test set (1,319 problems total)
+- Method: Deterministic sampling with seed=42
+- Stratification:
+  - **Train (400)**: 200 easy (baseline_rank=1) + 200 decompose (baseline_rank>1)
+  - **Test (50)**: 25 easy + 25 decompose
+- Tagging heuristic: CODI baseline rank (primary) or arithmetic operation count (fallback)
+
+**Recreation**:
+```bash
+cd /home/paperspace/dev/CoT_Exploration
+python src/experiments/step_by_step/scripts/create_codi450_dataset.py --seed 42
+```
+
+**Used By**:
+- SAE training (Story 2): 400-item train set for high-quality per-step SAEs
+- Intervention smoke test (Story 4): 50-item test set for feature interventions
+- Feature analysis (Story 5): Visualization and attribution
+
+**Validation**:
+- 450 unique items total (no duplicates)
+- Train: Exactly 200 easy + 200 decompose
+- Test: Exactly 25 easy + 25 decompose
+- All items from GSM8K test split (no train leakage)
+- Manifest SHA256 hashes match both CSVs
+
+---
+
+### 22.2 CODI450 Manifest
+**File**: [`data/step_by_step/gsm8k_codi450.manifest.json`](../data/step_by_step/gsm8k_codi450.manifest.json)
+
+**Purpose**: Metadata for reproducibility and validation
+
+**Status**: ⚠️ To be generated (Story 1)
+
+**Structure**:
+```json
+{
+  "created": "2025-10-28",
+  "seed": 42,
+  "total_items": 450,
+  "train_items": 400,
+  "test_items": 50,
+  "train_splits": {
+    "easy": 200,
+    "decompose": 200
+  },
+  "test_splits": {
+    "easy": 25,
+    "decompose": 25
+  },
+  "heuristic": "codi_baseline_rank",
+  "baseline_checkpoint": "/home/paperspace/codi_ckpt/gpt2_gsm8k/pytorch_model.bin",
+  "sha256_train": "abc123...",
+  "sha256_test": "def456...",
+  "gsm8k_version": "1.0",
+  "source_split": "test"
+}
+```
+
+**Validation Fields**:
+- `sha256_train`, `sha256_test`: Hash of CSV content (for integrity checks)
+- `seed`: Random seed (42)
+- `baseline_checkpoint`: Path to CODI model used for tagging
+
+**Usage**: Dataset versioning, reproducibility validation, citation in papers
+
+---
+
+### 22.3 CODI450 Baseline Cache
+**File**: [`data/step_by_step/gsm8k_codi450_baseline_cache.pt`](../data/step_by_step/gsm8k_codi450_baseline_cache.pt)
+
+**Purpose**: Cached CODI model outputs (logits, ranks) for 450 items to avoid recomputation
+
+**Size**: ~22 MB (450 items × vocab_size logits)
+
+**Status**: ⚠️ To be generated (Story 1)
+
+**Structure** (PyTorch dict):
+```python
+{
+  "gsm8k_test_042": {
+    "logits": torch.Tensor([vocab_size]),  # Raw logits
+    "rank": 1,  # Rank of correct answer
+    "top5_tokens": ["42", "43", "41", ...],
+    "probs": torch.Tensor([vocab_size])  # Softmax probabilities
+  },
+  # ... 450 items total
+}
+```
+
+**Usage**:
+- Story 1: Difficulty tagging (easy vs decompose) for all 450 items
+- Story 4: Pre-intervention baseline comparison
+- Story 5: Visualization (rank improvement calculations)
+
+**Recreation**:
+```bash
+python src/experiments/step_by_step/scripts/create_baseline_cache.py \
+  --train data/step_by_step/gsm8k_codi400_train.csv \
+  --test data/step_by_step/gsm8k_codi50_test.csv \
+  --checkpoint /home/paperspace/codi_ckpt/gpt2_gsm8k/pytorch_model.bin
+```
+
+---
+
+### 22.4 Per-Step SAE Models (6 models)
+**Files**:
+- [`models/step_by_step/sae_step0/sae.pt`](../models/step_by_step/sae_step0/sae.pt)
+- [`models/step_by_step/sae_step1/sae.pt`](../models/step_by_step/sae_step1/sae.pt)
+- [`models/step_by_step/sae_step2/sae.pt`](../models/step_by_step/sae_step2/sae.pt)
+- [`models/step_by_step/sae_step3/sae.pt`](../models/step_by_step/sae_step3/sae.pt)
+- [`models/step_by_step/sae_step4/sae.pt`](../models/step_by_step/sae_step4/sae.pt)
+- [`models/step_by_step/sae_step5/sae.pt`](../models/step_by_step/sae_step5/sae.pt)
+
+**Purpose**: Sparse autoencoder dictionaries trained on CODI latent representations at each reasoning step
+
+**Size**: ~16 MB per model (512 input × 8192 dictionary × 2 matrices)
+
+**Status**: ⚠️ To be generated (Story 2)
+
+**Architecture**:
+```python
+SparseAutoencoder(
+  input_dim=512,      # CODI latent dimension
+  dict_size=8192,     # 16× expansion
+  tied_weights=False
+)
+```
+
+**Training Configuration**:
+- Dataset: CODI400 train (400 items)
+- L1 coefficient: 0.005 (validated from Section 18 experiments)
+- Optimizer: Adam (lr=1e-4)
+- Epochs: 100 (early stopping on validation MSE)
+- Seed: 42
+- Batch size: 64
+
+**Quality Thresholds**:
+- Reconstruction MSE: <0.2 (normalized activations)
+- Sparsity: 10–80 active features/sample (L0 norm)
+- Dead features: <20% of dictionary (improved with 400 training samples)
+
+**Used By**:
+- Story 3: Intervention hook (loads SAE for feature editing)
+- Story 4: Smoke test sweep (applies interventions)
+- Story 5: Feature attribution (identifies top features)
+
+**Recreation**:
+```bash
+python src/experiments/step_by_step/scripts/train_step_saes.py \
+  --dataset data/step_by_step/gsm8k_codi400_train.csv \
+  --config configs/step_by_step/sae_training.yaml
+```
+
+---
+
+### 22.5 SAE Training Statistics
+**Files**:
+- `models/step_by_step/sae_step{k}/train_stats.json` (k=0 to 5)
+- `models/step_by_step/sae_summary.csv`
+
+**Purpose**: Training metrics and quality validation for each SAE
+
+**Status**: ⚠️ To be generated (Story 2)
+
+**Structure** (train_stats.json):
+```json
+{
+  "step": 3,
+  "final_recon_mse": 0.152,
+  "final_sparsity": 0.92,
+  "dead_features": 1200,
+  "dead_feature_pct": 14.6,
+  "training_time_sec": 1234,
+  "epochs_trained": 87,
+  "early_stopped": true,
+  "config": {
+    "l1_coeff": 0.001,
+    "dict_size": 8192,
+    "learning_rate": 0.0001
+  }
+}
+```
+
+**Summary CSV**:
+```csv
+step,recon_mse,sparsity,dead_features,dead_pct,training_time
+0,0.145,0.91,1150,14.0,1205
+1,0.158,0.89,1300,15.9,1187
+...
+```
+
+**Usage**: Quality validation, model selection, paper reporting
+
+---
+
+### 22.6 SAE Feature Exemplars
+**Files**: `models/step_by_step/sae_step{k}/feature_exemplars.parquet` (k=0 to 5)
+
+**Purpose**: Max-activating examples for each SAE feature (for interpretability)
+
+**Size**: ~2 MB per step (8192 features × 5 exemplars)
+
+**Status**: ⚠️ To be generated (Story 2)
+
+**Structure**:
+```
+feature_id | item_id         | activation | question
+------------------------------------------------------
+0          | gsm8k_test_042  | 3.45       | "Question..."
+0          | gsm8k_test_157  | 2.87       | "Question..."
+...
+8191       | gsm8k_test_999  | 0.12       | "Question..."
+```
+
+**Columns**:
+- `feature_id`: SAE dictionary feature (0 to 8191)
+- `item_id`: GSM8K problem ID
+- `activation`: Feature activation magnitude
+- `question`: Problem text (for human inspection)
+
+**Usage**:
+- Story 2: Feature analysis (what does feature X respond to?)
+- Story 5: Visualization (show exemplars for top causal features)
+- Future: Manual feature labeling
+
+---
+
+### 22.7 Top Features by Step
+**Files**: `models/step_by_step/sae_step{k}/top_features.json` (k=0 to 5)
+
+**Purpose**: Ranked list of most important features per step (by max activation)
+
+**Status**: ⚠️ To be generated (Story 2)
+
+**Structure**:
+```json
+{
+  "step": 3,
+  "top_features": [
+    {"feature_id": 1547, "max_activation": 4.23, "mean_activation": 1.12},
+    {"feature_id": 892, "max_activation": 3.87, "mean_activation": 0.98},
+    ...
+  ]
+}
+```
+
+**Usage**:
+- Story 4: Feature selection for smoke test (pick top-K features)
+- Story 5: Feature importance visualization
+
+---
+
+### 22.8 Intervention Results (Smoke Test)
+**File**: [`results/step_by_step/smoke_test_results.csv`](../results/step_by_step/smoke_test_results.csv)
+
+**Purpose**: Raw intervention experiment results (feature × Δ × item grid)
+
+**Size**: ~450 rows (3 features × 3 steps × 5 Δ values × 10 items)
+
+**Status**: ⚠️ To be generated (Story 4)
+
+**Structure**:
+```csv
+item_id,step,feature_id,delta,pre_rank,post_rank,rank_delta,answer_changed,answer_correct
+gsm8k_test_042,2,1547,0.5,5,1,-4,True,True
+gsm8k_test_042,2,1547,0.3,5,3,-2,True,False
+gsm8k_test_042,2,1547,0.0,5,5,0,False,False
+...
+```
+
+**Columns**:
+- `item_id`: GSM8K problem ID
+- `step`: CODI latent step (0-5)
+- `feature_id`: SAE feature intervened on
+- `delta`: Intervention magnitude (-0.6 to +0.6)
+- `pre_rank`: Answer rank before intervention
+- `post_rank`: Answer rank after intervention
+- `rank_delta`: post_rank - pre_rank (negative = improvement)
+- `answer_changed`: Boolean (rank changed)
+- `answer_correct`: Boolean (post_rank == 1)
+
+**Usage**:
+- Story 4: Identify promising features
+- Story 5: Heatmap visualizations, statistical analysis
+
+**Recreation**:
+```bash
+python src/experiments/step_by_step/scripts/run_smoke_test.py \
+  --dataset data/step_by_step/gsm8k_codi50.csv \
+  --config configs/step_by_step/intervention.yaml
+```
+
+---
+
+### 22.8b Step 3 Extended Intervention Results ✅
+**Directory**: [`data/step_by_step/intervention_results/`](../data/step_by_step/intervention_results/)
+
+**Purpose**: Comprehensive systematic intervention analysis across all 6 CODI steps to identify critical reasoning bottlenecks
+
+**Date Generated**: 2025-10-28
+
+**Status**: ✅ Complete (12,000 interventions)
+
+**Files**:
+- `intervention_results.json` (3.7 MB) - Complete intervention dataset
+- `intervention_analysis.json` (2.4 KB) - Statistical summary by step
+- `EXTENDED_SEARCH_SUMMARY.md` (3.7 KB) - Human-readable report
+
+**Experiment Scale**: 12,000 interventions
+- **Steps**: 0, 1, 2, 3, 4, 5 (all 6 CODI reasoning steps)
+- **Features per step**: 10 (selected by activation frequency)
+- **Delta values**: [-2.4, -1.6, -0.8, -0.4, -0.2, 0.2, 0.4, 0.8, 1.6, 2.4]
+- **Problems**: First 20 from `gsm8k_codi_test_correct.csv`
+- **Model**: GPT-2 CODI (`/home/paperspace/codi_ckpt/gpt2_gsm8k`)
+- **SAE**: Top-K (k=200, d=1024, untied weights, R²=0.94)
+
+**Key Findings**:
+- **Step 3 is the ONLY critical step**: 187/2000 flips (9.3% flip rate)
+- **All other steps**: 0/10,000 flips (0% flip rate)
+- **Flip-sensitive problems**: 2/20 (10%)
+  - test_345: 100% flip rate (100/100 interventions)
+  - test_96: 87% flip rate (87/100 interventions)
+- **Robust problems**: 18/20 (90%) showed 0% flip rate
+
+**Structure** (`intervention_results.json`):
+```json
+{
+  "gsm8k_id": "test_345",
+  "step": 3,
+  "feature_idx": 189,
+  "delta": 0.8,
+  "baseline_answer": 310.0,
+  "intervened_answer": 150.0,
+  "ground_truth": 310.0,
+  "baseline_correct": true,
+  "intervened_correct": false,
+  "answer_flipped": true,
+  "activation_change_norm": 16.77
+}
+```
+
+**Columns**:
+- `gsm8k_id`: Problem identifier
+- `step`: CODI reasoning step (0-5)
+- `feature_idx`: SAE feature index (0-1023)
+- `delta`: Intervention magnitude
+- `baseline_answer`: Answer without intervention
+- `intervened_answer`: Answer with intervention
+- `ground_truth`: Correct answer
+- `baseline_correct`: Whether baseline was correct
+- `intervened_correct`: Whether intervention produced correct answer
+- `answer_flipped`: Whether correct answer became incorrect
+- `activation_change_norm`: L2 norm of activation change
+
+**Usage**:
+- Interactive web demo: `src/experiments/step_by_step/scripts/demo_web_server.py`
+- Detailed analysis: `docs/experiments/10-28_gpt2_gsm8k_step3_intervention.md`
+- Research journal: `docs/research_journal.md` (2025-10-28 entry)
+
+**Recreation**:
+```bash
+python src/experiments/step_by_step/scripts/run_interventions_with_metrics.py \
+  --model-path /home/paperspace/codi_ckpt/gpt2_gsm8k \
+  --max-problems 20 \
+  --top-features 10
+```
+
+**Runtime**: ~38 minutes on NVIDIA RTX A4000 (5.2 interventions/second)
+
+**Experiment Documentation**: See `docs/experiments/10-28_gpt2_gsm8k_step3_intervention.md` for complete methodology, bug fixes, and implications.
+
+---
+
+### 22.9 Intervention Summary Statistics
+**File**: [`results/step_by_step/smoke_test_summary.csv`](../results/step_by_step/smoke_test_summary.csv)
+
+**Purpose**: Aggregated intervention effects per feature
+
+**Status**: ⚠️ To be generated (Story 4)
+
+**Structure**:
+```csv
+feature_id,step,mean_rank_improvement,flip_to_correct_rate,flip_to_wrong_rate,n_interventions
+1547,2,2.4,0.35,0.05,50
+892,3,1.8,0.22,0.08,50
+...
+```
+
+**Columns**:
+- `mean_rank_improvement`: Average rank improvement (negative delta)
+- `flip_to_correct_rate`: % interventions that moved answer to rank 1
+- `flip_to_wrong_rate`: % interventions that moved correct answer down
+- `n_interventions`: Number of tests run
+
+**Usage**: Identify top-3 most impactful features for future experiments
+
+---
+
+### 22.10 Intervention Logs (JSONL)
+**File**: [`logs/step_by_step/interventions.jsonl`](../logs/step_by_step/interventions.jsonl)
+
+**Purpose**: Structured log of all interventions (richer than CSV)
+
+**Size**: ~500 KB (450 interventions with metadata)
+
+**Status**: ⚠️ To be generated (Story 4)
+
+**Structure** (one JSON object per line):
+```json
+{"item_id": "gsm8k_test_042", "step": 2, "feature_id": 1547, "delta": 0.5, "mode": "direction_space", "edit_norm": 0.23, "pre_rank": 5, "post_rank": 1, "rank_delta": -4, "answer_changed": true, "answer_correct": true, "timestamp": "2025-10-28T14:32:01"}
+```
+
+**Additional Fields**:
+- `mode`: "feature_space" | "direction_space"
+- `edit_norm`: L2 norm of applied intervention
+- `timestamp`: ISO 8601 timestamp
+
+**Usage**: Debugging, reproducibility, audit trail
+
+---
+
+### 22.11 Visualizations
+**Files**:
+- `results/step_by_step/visualizations/heatmap_feature_{id}.png`
+- `results/step_by_step/visualizations/step_comparison.png`
+- `results/step_by_step/visualizations/feature_importance.png`
+- `results/step_by_step/visualizations/control_validation.png`
+- `results/step_by_step/visualizations/sae_quality.png`
+- `results/step_by_step/visualizations/dashboard.html`
+
+**Purpose**: Publication-ready plots and interactive dashboard
+
+**Status**: ⚠️ To be generated (Story 5)
+
+**Plots**:
+1. **Heatmap**: Feature × Δ → rank improvement (color-coded)
+2. **Step Comparison**: Box plots of rank deltas across steps
+3. **Feature Importance**: Bar chart of top-10 features by mean |rank_delta|
+4. **Control Validation**: Wrong-step vs target-step effect sizes
+5. **SAE Quality**: Reconstruction MSE vs sparsity per step
+6. **Dashboard**: Lightweight HTML with all plots embedded
+
+**Usage**: Papers, presentations, exploratory analysis
+
+---
+
+## Dataset Relationships (Step-by-Step)
+
+```
+GSM8K Test (1,319)
+       ↓ sample(seed=42, n=450)
+CODI450 Dataset (450)
+       ├─ CODI400 Train (400)
+       │    ↓ tag(baseline_rank)
+       │  200 Easy + 200 Decompose
+       │    ↓ extract_activations(K=6 steps)
+       │  Activation Tensors × 6 × 400
+       │    ↓ train_sae(dict_size=8192)
+       │  SAE Models × 6
+       │    ↓ select_top_features(k=3/step)
+       │  9 Features (3 per step)
+       │
+       └─ CODI50 Test (50)
+            ↓ tag(baseline_rank)
+          25 Easy + 25 Decompose
+            ↓ intervene(features=9, deltas=5, items=50)
+          450 Intervention Results (9×5×10 target items)
+            ↓ aggregate()
+          Summary Statistics + Visualizations
+```
+
+---
+
+## Critical Configuration Files
+
+### Dataset Config
+**File**: [`configs/step_by_step/dataset.yaml`](../configs/step_by_step/dataset.yaml)
+**Status**: ⚠️ To be created (Story 0)
+
+### SAE Training Config
+**File**: [`configs/step_by_step/sae_training.yaml`](../configs/step_by_step/sae_training.yaml)
+**Status**: ⚠️ To be created (Story 0)
+
+### Intervention Config
+**File**: [`configs/step_by_step/intervention.yaml`](../configs/step_by_step/intervention.yaml)
+**Status**: ⚠️ To be created (Story 0)
+
+### Main Pipeline Config
+**File**: [`configs/step_by_step/main.yaml`](../configs/step_by_step/main.yaml)
+**Status**: ⚠️ To be created (Story 0)
+
+---
+
+## Experiments Using Step-by-Step Datasets
+
+| Experiment | Datasets Used | Models | Documented In |
+|------------|---------------|--------|---------------|
+| SAE Intervention Pilot | CODI50, SAE models, Intervention results | GPT-2 or LLaMA | `docs/experiments/MM-DD_model_gsm8k_sae_intervention.md` (future) |
+
+---
+
+## Storage Estimates
+
+| Dataset | Size | Git Tracked |
+|---------|------|-------------|
+| CODI400 Train CSV | <200 KB | ✅ Yes |
+| CODI50 Test CSV | <25 KB | ✅ Yes |
+| CODI450 Manifest | <5 KB | ✅ Yes |
+| Baseline Cache | ~22 MB | ❌ No (.gitignore) |
+| SAE Models (6×) | ~96 MB | ❌ No (.gitignore) |
+| Feature Exemplars (6×) | ~12 MB | ❌ No (.gitignore) |
+| Intervention Results | <1 MB | ✅ Yes |
+| Visualizations | <5 MB | ✅ Yes (PNGs) |
+| **Total** | **~136 MB** | **~6 MB tracked** |
+
+---
+
+## Validation Checklist (Step-by-Step)
+
+### Dataset Integrity
+- [ ] CODI400 train has exactly 400 items (200 easy, 200 decompose)
+- [ ] CODI50 test has exactly 50 items (25 easy, 25 decompose)
+- [ ] Manifest SHA256 hashes match both CSVs
+- [ ] All items from GSM8K test split (no train leakage)
+- [ ] Baseline cache has entries for all 450 items
+- [ ] No duplicate questions across train and test
+- [ ] Difficulty split validated (easy=rank1, decompose>rank1)
+
+### SAE Quality
+- [ ] All 6 SAE models trained successfully on 400 samples
+- [ ] Reconstruction MSE <0.2 for all steps
+- [ ] Sparsity 0.80–0.95 for all steps
+- [ ] Dead features <20% for all steps (improved threshold)
+- [ ] Feature exemplars extracted for all 8192 features/step
+
+### Intervention Validity
+- [ ] 450+ interventions logged
+- [ ] Zero-delta controls show rank_delta ≈ 0
+- [ ] Wrong-step controls show |rank_delta| < target-step
+- [ ] At least 1 feature shows mean rank improvement >2
+- [ ] Flip-to-correct rate >20% for at least 1 feature
+
+### Reproducibility
+- [ ] All configs version-controlled (git)
+- [ ] Seeds documented in manifest
+- [ ] WandB run IDs logged
+- [ ] Recreation scripts tested
+
+---
+
+
+---
+
+## 23. LLaMA Feature Interpretability Datasets
+
+**Purpose**: Comprehensive feature interpretability analysis on LLaMA-3.2-1B to compare with GPT-2 and test capacity hypothesis
+
+**Experiment**: Feature-token correlation analysis using chi-squared tests
+
+**Status**: ✅ Complete (2025-10-28)
+
+### 23.1 LLaMA Extracted Features
+**File**: [`src/experiments/llama_feature_interpretability/data/llama_extracted_features.pt`](../src/experiments/llama_feature_interpretability/data/llama_extracted_features.pt)
+
+**Purpose**: Features extracted from all 96 LLaMA SAEs (16 layers × 6 positions)
+
+**Size**: 195.9 MB
+
+**Samples**: 96,000 (1,000 problems × 96 SAEs)
+
+**Config**:
+- SAE: K=100, d=512 (sweet spot)
+- Sparsity: 19.5%
+- Source: `src/experiments/topk_grid_pilot/results/checkpoints/`
+
+**Generation**:
+```bash
+python src/experiments/llama_feature_interpretability/scripts/1_extract_features.py
+```
+
+---
+
+### 23.2 LLaMA CoT Tokens
+**File**: [`src/experiments/llama_feature_interpretability/data/llama_cot_tokens.json`](../src/experiments/llama_feature_interpretability/data/llama_cot_tokens.json)
+
+**Purpose**: Parsed calculation tokens from LLaMA's CoT sequences
+
+**Size**: 436.7 KB
+
+**Tokens**: 628 unique tokens
+
+**Avg per problem**: 16.9 tokens
+
+**Generation**:
+```bash
+python src/experiments/llama_feature_interpretability/scripts/2_parse_cot_tokens.py
+```
+
+---
+
+### 23.3 LLaMA Feature-Token Correlations
+**File**: [`src/experiments/llama_feature_interpretability/data/llama_feature_token_correlations.json`](../src/experiments/llama_feature_interpretability/data/llama_feature_token_correlations.json)
+
+**Purpose**: Statistical correlations between features and CoT tokens
+
+**Size**: 23.7 MB
+
+**Features analyzed**: 31,057 (63.2% of 49,152 total)
+
+**Interpretable features**: 18,551 (37.7%)
+
+**Total correlations**: 60,296
+
+**Criteria**: p < 0.01, enrichment ≥ 2.0, min 20 activations
+
+**Runtime**: ~24.5 minutes on A100
+
+**Generation**:
+```bash
+python src/experiments/llama_feature_interpretability/scripts/3_compute_correlations.py
+```
+
+---
+
+### 23.4 LLaMA Labeled Features
+**File**: [`src/experiments/llama_feature_interpretability/data/llama_labeled_features.json`](../src/experiments/llama_feature_interpretability/data/llama_labeled_features.json)
+
+**Purpose**: Human-readable labels for monosemantic features
+
+**Size**: 21.4 MB
+
+**Labeled features**: 18,551
+
+**Monosemantic**: 13,890 (74.9%)
+
+**Polysemantic**: 4,661 (25.1%)
+
+**Labeling criteria**: Enrichment ≥ 5.0 OR top 3 correlations same category
+
+**Generation**:
+```bash
+python src/experiments/llama_feature_interpretability/scripts/4_label_features.py
+```
+
+---
+
+### 23.5 Model Comparison
+**File**: [`src/experiments/llama_feature_interpretability/data/model_comparison.json`](../src/experiments/llama_feature_interpretability/data/model_comparison.json)
+
+**Purpose**: Direct comparison of LLaMA vs GPT-2 feature interpretability
+
+**Size**: 7.9 KB
+
+**Key findings**:
+- LLaMA monosemantic rate: 74.9% (vs GPT-2: 72.6%)
+- Number features: 98.9% (vs GPT-2: 98.5%)
+- Max enrichment: 195.0× (vs GPT-2: 169.9×)
+- **Capacity hypothesis**: REJECTED
+
+**Generation**:
+```bash
+python src/experiments/llama_feature_interpretability/scripts/5_compare_models.py
+```
+
+---
+
+### 23.6 Interactive Dashboard
+**File**: [`src/experiments/llama_feature_interpretability/visualizations/dashboard.html`](../src/experiments/llama_feature_interpretability/visualizations/dashboard.html)
+
+**Purpose**: Interactive exploration of top features
+
+**Size**: 89.9 KB
+
+**Features shown**: Top 100 by enrichment + category breakdowns
+
+**Generation**:
+```bash
+python src/experiments/llama_feature_interpretability/scripts/6_create_dashboard.py
+```
+
+---
+
+### Dataset Summary
+
+| File | Size | Samples/Features | Purpose |
+|------|------|-----------------|---------|
+| llama_extracted_features.pt | 195.9 MB | 96,000 samples | Feature extraction |
+| llama_cot_tokens.json | 436.7 KB | 628 tokens | Token vocabulary |
+| llama_feature_token_correlations.json | 23.7 MB | 18,551 features | Correlations |
+| llama_labeled_features.json | 21.4 MB | 13,890 monosemantic | Labels |
+| model_comparison.json | 7.9 KB | 2 models | Comparison |
+| dashboard.html | 89.9 KB | Top 100 features | Visualization |
+
+**Total**: ~241 MB
+
+---
+
+## 24. Liars-Bench Deception Detection Datasets
+
+###Overview
+**Experiment**: Sprint 1 & 4 - Cross-scale deception detection analysis (Oct 25-28, 2025)
+**Models**: GPT-2 (124M) and LLaMA-3.2-3B (3B)
+**Purpose**: Test if continuous thoughts can detect deception; compare to response tokens; test scale effects
+**Key Finding**: Continuous thoughts CANNOT detect deception (50% = random) at any scale; response tokens achieve 70.49%
+
+**Location**: `src/experiments/liars_bench_codi/`
+
+---
+
+### 24.1 Proper Question-Level Splits (ZERO Overlap)
+
+**Base Dataset**: Liars-Bench Instructed Deception
+- **Source**: 960 unique questions, 20,798 total examples (honest + deceptive pairs)
+- **Split methodology**: 70% CODI train / 15% probe train / 15% probe test (question-level, zero overlap)
+
+#### CODI Training Set
+**File**: [`src/experiments/liars_bench_codi/data/processed/liars_bench_instructed_deception/train_proper.json`](../src/experiments/liars_bench_codi/data/processed/liars_bench_instructed_deception/train_proper.json) ✅
+
+**Purpose**: Train CODI models (GPT-2 and LLaMA-3.2-3B)
+
+**Size**:
+- 672 unique questions
+- 13,440 examples (6,720 honest + 6,720 deceptive)
+- Balanced 50/50 distribution
+
+**Generation**:
+```bash
+cd src/experiments/liars_bench_codi
+python scripts/create_proper_splits.py
+```
+
+---
+
+#### Probe Training Set
+**File**: [`src/experiments/liars_bench_codi/data/processed/liars_bench_instructed_deception/probe_train_proper.json`](../src/experiments/liars_bench_codi/data/processed/liars_bench_instructed_deception/probe_train_proper.json) ✅
+
+**Purpose**: Train linear probes to classify honest vs deceptive from activations
+
+**Size**:
+- 144 unique questions (DISJOINT from CODI train and probe test)
+- 288 examples (144 honest + 144 deceptive)
+
+---
+
+#### Probe Test Set
+**File**: [`src/experiments/liars_bench_codi/data/processed/liars_bench_instructed_deception/probe_test_proper.json`](../src/experiments/liars_bench_codi/data/processed/liars_bench_instructed_deception/probe_test_proper.json) ✅
+
+**Purpose**: Evaluate probes on completely unseen questions (true generalization test)
+
+**Size**:
+- 144 unique questions (DISJOINT from all training data)
+- 288 examples (144 honest + 144 deceptive)
+
+---
+
+### 24.2 Activation & Results Files
+
+| File | Size | Purpose | Key Result |
+|------|------|---------|------------|
+| probe_activations_gpt2_proper.json | ~15 MB | GPT-2 continuous thoughts | 50% accuracy |
+| probe_activations_response_proper.json | ~3 MB | GPT-2 response tokens | 70.49% accuracy |
+| probe_activations_llama3b_proper.json | ~45 MB | LLaMA continuous thoughts | 50% accuracy |
+| probe_results_gpt2_proper_v2.json | ~20 KB | GPT-2 probe results | Random chance |
+| probe_results_response_proper.json | ~5 KB | Response probe results | Superior |
+| probe_results_llama3b_proper.json | ~30 KB | LLaMA probe results | Scale doesn't help |
+
+**Total**: ~147 MB
+
+**Key Takeaway**: Continuous thoughts (50% accuracy) cannot detect deception at any scale. Response tokens (70.49%) are superior. This is a fundamental encoding limitation, not a capacity issue.
+
+---
+
+## 25. Personal Relations Task Datasets
+
+### Overview
+**Experiment**: Few-shot baseline evaluation (Oct 29, 2025)
+**Model**: LLaMA-3.2-1B-Instruct
+**Purpose**: Evaluate CODI training viability on compositional reasoning task
+**Key Finding**: Dataset too small (100 examples, 75x smaller than GSM8K); NOT RECOMMENDED for CODI training
+**Status**: ✅ Complete - Investigation phase only
+
+**Location**: `/home/paperspace/dev/CoT_Exploration/data/personal_relations/`
+
+---
+
+### 25.1 Source Dataset
+
+**File**: `universe_questions_grouped.csv`
+**Size**: 356 KB
+**Samples**: 400 total rows
+**Source**: GitHub repository for Personal Relations Task paper
+
+**Filtering**:
+- Task type: Extensional (identify actual person)
+- Language: English only
+- Result: **100 examples** extracted
+  - 20 complexity-2 (1-hop reasoning)
+  - 40 complexity-4 (3-hop reasoning)
+  - 40 complexity-5 (4-hop reasoning)
+
+---
+
+### 25.2 Dataset with Generated CoT
+
+**File**: [`personal_relations_with_cot.json`](../../data/personal_relations/personal_relations_with_cot.json)
+
+**Purpose**: Full dataset with validated Chain-of-Thought reasoning
+
+**Size**: 45 KB
+**Samples**: 100 examples
+
+**CoT Generation**: Parsed universe relationships to generate step-by-step reasoning
+**Validation**: 100% of generated CoT leads to correct answers
+
+**Example**:
+```json
+{
+  "question": "David's parent's friend's child",
+  "universe": "David's parent = Alice;; Alice's friend = Bob;; Bob's child = Charlie",
+  "cot_steps": [
+    "1. David's parent = Alice",
+    "2. David's parent's friend = Bob",
+    "3. David's parent's friend's child = Charlie"
+  ],
+  "answer": "Charlie",
+  "complexity": 4
+}
+```
+
+**Generation**:
+```bash
+cd /home/paperspace/dev/CoT_Exploration/data/personal_relations
+python extract_cot.py
+```
+
+---
+
+### 25.3 Train/Val/Test Splits (Basic)
+
+**Split Methodology**: By universe (not questions) to prevent leakage
+- Train: 12 universes → 69 examples
+- Val: 3 universes → 15 examples
+- Test: 3 universes → 16 examples
+
+#### Training Set
+**File**: [`train.json`](../../data/personal_relations/train.json)
+**Size**: 31 KB
+**Samples**: 69 examples
+**Purpose**: Training data (if CODI training proceeds)
+
+#### Validation Set
+**File**: [`val.json`](../../data/personal_relations/val.json)
+**Size**: 6.7 KB
+**Samples**: 15 examples
+**Purpose**: Hyperparameter tuning
+
+#### Test Set
+**File**: [`test.json`](../../data/personal_relations/test.json)
+**Size**: 7.0 KB
+**Samples**: 16 examples
+**Purpose**: Final evaluation
+
+**Generation**: Automatic split during CoT extraction
+
+---
+
+### 25.4 Splits with Universe Context (CRITICAL)
+
+**Critical Addition**: Universe relationship graph included in each example for proper evaluation
+
+#### Training Set with Universe
+**File**: [`train_with_universe.json`](../../data/personal_relations/train_with_universe.json)
+**Size**: 64 KB
+**Samples**: 69 examples
+**Purpose**: Few-shot prompt construction
+
+#### Test Set with Universe
+**File**: [`test_with_universe.json`](../../data/personal_relations/test_with_universe.json)
+**Size**: 15 KB
+**Samples**: 16 examples
+**Purpose**: Few-shot evaluation
+
+**Why Critical**: Initial evaluation V1 lacked universe context and achieved only 37.5%. V2 with context achieved 43.8%.
+
+**Generation**:
+```bash
+# Automatic during split creation
+python extract_cot.py  # creates both versions
+```
+
+---
+
+### 25.5 Evaluation Results
+
+#### Few-Shot Results V1 (FLAWED)
+**File**: [`few_shot_results.json`](../../data/personal_relations/few_shot_results.json)
+**Size**: 56 KB
+**Issue**: Prompts lacked universe context
+**Results**: 0-shot: 0%, 3-shot: 31.2%, 5-shot: 37.5%
+
+#### Few-Shot Results V2 (CORRECTED)
+**File**: [`few_shot_results_v2.json`](../../data/personal_relations/few_shot_results_v2.json)
+**Size**: 28 KB
+**Fix**: Includes universe context in all prompts
+**Results**: 0-shot: 0%, 3-shot: 31.2%, 5-shot: 43.8%
+
+**Breakdown by Complexity (5-shot + CoT)**:
+- Complexity 2: 4/4 = 100.0%
+- Complexity 4: 0/6 = 0.0%
+- Complexity 5: 3/6 = 50.0%
+
+**Key Insight**: Performance cliff at complexity 4 indicates model capacity bottleneck
+
+**Comparison to Paper**:
+- Our result (1B): 43.8%
+- Paper baseline (70B): 88.4%
+- Gap: 44.6 percentage points
+
+---
+
+### 25.6 Scripts
+
+#### CoT Generation
+**File**: [`extract_cot.py`](../../data/personal_relations/extract_cot.py)
+**Size**: 6.7 KB
+**Purpose**: Generate Chain-of-Thought reasoning from universe relationships
+
+**Key Functions**:
+- `parse_universe()` - Parse relationship graph
+- `generate_cot()` - Generate step-by-step reasoning
+- `validate_answer()` - Verify CoT leads to correct answer
+
+**Validation Rate**: 100% (all 100 examples validated)
+
+#### Few-Shot Evaluation V1 (FLAWED)
+**File**: [`few_shot_eval.py`](../../data/personal_relations/few_shot_eval.py)
+**Size**: 7.6 KB
+**Issue**: Missing universe context
+**Output**: `few_shot_results.json`, `few_shot_eval.log`
+
+#### Few-Shot Evaluation V2 (CORRECTED)
+**File**: [`few_shot_eval_v2.py`](../../data/personal_relations/few_shot_eval_v2.py)
+**Size**: 8.4 KB
+**Fix**: Includes universe context in prompts
+**Output**: `few_shot_results_v2.json`, `few_shot_eval_v2.log`
+
+**Usage**:
+```bash
+cd /home/paperspace/dev/CoT_Exploration/data/personal_relations
+python3 few_shot_eval_v2.py 2>&1 | tee few_shot_eval_v2.log
+```
+
+---
+
+### Dataset Summary
+
+| File | Size | Samples | Purpose |
+|------|------|---------|---------|
+| universe_questions_grouped.csv | 356 KB | 400 (100 filtered) | Source |
+| personal_relations_with_cot.json | 45 KB | 100 | Full dataset + CoT |
+| train.json | 31 KB | 69 | Training split |
+| val.json | 6.7 KB | 15 | Validation split |
+| test.json | 7.0 KB | 16 | Test split |
+| train_with_universe.json | 64 KB | 69 | Train + universe |
+| test_with_universe.json | 15 KB | 16 | Test + universe |
+| few_shot_results.json | 56 KB | 16 evals | V1 results (flawed) |
+| few_shot_results_v2.json | 28 KB | 16 evals | V2 results (corrected) |
+
+**Total Dataset Size**: ~600 KB
+
+**Key Limitation**: Only 100 examples (75x smaller than GSM8K's 7,500)
+**Risk**: High overfitting potential, insufficient for robust CODI training
+**Recommendation**: Generate 1,000-5,000 additional examples before training
+
+---
+
+### Reproduction
+
+**Step 1: Extract and Generate CoT**
+```bash
+cd /home/paperspace/dev/CoT_Exploration/data/personal_relations
+python extract_cot.py
+```
+**Output**: All dataset files with CoT and splits
+
+**Step 2: Run Few-Shot Evaluation**
+```bash
+python3 few_shot_eval_v2.py 2>&1 | tee few_shot_eval_v2.log
+```
+**Output**: `few_shot_results_v2.json` with 43.8% accuracy
+
+**Time**: ~4 hours total (30 min setup + 3.5 hours evaluation)
+
+---
+
+### Experiment Usage
+
+**Used in**: `docs/experiments/10-29_llama1b_personal_relations_baseline_eval.md`
+**Model**: LLaMA-3.2-1B-Instruct
+**Result**: 43.8% accuracy (5-shot + CoT)
+**Status**: ❌ NOT RECOMMENDED for CODI training
+**Reason**: Dataset too small, model capacity bottleneck
 
 ---
