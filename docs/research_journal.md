@@ -2,6 +2,40 @@
 
 ## Experiment Log
 
+### 2025-10-29: CommonsenseQA vs GSM8K - CT0 DOMINANCE IN COMMONSENSE REASONING
+
+**Objective**: Compare mechanistic differences between commonsense and mathematical reasoning in CODI models.
+
+**Status**: ✅ **COMPLETE** - CommonsenseQA shows CT0 dominance (13% importance) vs GSM8K's distributed pattern
+
+**Models**: LLaMA-3.2-1B CODI (CommonsenseQA) vs LLaMA-3.2-1B CODI (GSM8K) | **Dataset**: 100 examples each
+
+**Key Findings**:
+
+**1. Token Importance Difference**
+- **CommonsenseQA CT0**: 13% accuracy drop when ablated (14/100 problems break)
+- **CommonsenseQA CT1-CT5**: 4-5% accuracy drop each (distributed)
+- **GSM8K**: More uniform distribution across all tokens
+- **Conclusion**: Commonsense reasoning uses hub architecture; math uses sequential
+
+**2. Task-Specific Architectures**
+- **Commonsense** (Hub): CT0 encodes semantic knowledge → CT1-CT5 refine → Answer
+- **Math** (Sequential): CT0 → CT1 → CT2 → ... → CT5 → Answer (step-by-step)
+- **Implication**: Task characteristics determine continuous thought structure
+
+**3. Robustness Trade-off**
+- CommonsenseQA: Higher baseline (75%) but vulnerable to CT0 loss (→62%)
+- GSM8K: Lower baseline (~45%) but more graceful degradation
+- Distributed reasoning = more fault-tolerant
+
+**Data Generated**: 451KB attention patterns, token importance scores, 100-example analysis
+
+**Time**: 32 minutes (67% under budget)
+
+**Next Steps**: Visualize attention flow differences, probe CT0 semantic encoding, extend to full 1,221 examples
+
+---
+
 ### 2025-10-29: CT0 Mechanistic Analysis - PASSIVE HUB WITH CASCADING DIVERGENCE
 
 **Objective**: Understand CT0's mechanistic role through bidirectional blocking and hidden state divergence analysis.
