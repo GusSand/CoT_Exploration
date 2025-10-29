@@ -1,0 +1,149 @@
+================================================================================
+EXAMPLES WHERE INTERVENTION CHANGED THE ANSWER
+================================================================================
+
+Example 1:
+Question: John drives for 3 hours at a speed of 60 mph and then turns around because he realizes he forgot something very important at home.  He tries to get ho...
+Ground Truth: 45.0
+
+WITHOUT Intervention:
+  Answer: The answer is: 635
+  Predicted: 635.0
+  Correct: ✗
+
+WITH Intervention:
+  Answer: The answer is: 305
+  Predicted: 305.0
+  Correct: ✗
+
+Number positions: [1, 2, 4, 5]
+Intervened positions: [1, 2, 4, 5]
+
+--------------------------------------------------------------------------------
+
+Example 2:
+Question: A merchant wants to make a choice of purchase between 2 purchase plans: jewelry worth $5,000 or electronic gadgets worth $8,000. His financial advisor...
+Ground Truth: 125.0
+
+WITHOUT Intervention:
+  Answer: The answer is: 301
+  Predicted: 301.0
+  Correct: ✗
+
+WITH Intervention:
+  Answer: The answer is: 165
+  Predicted: 165.0
+  Correct: ✗
+
+Number positions: [1, 2, 4]
+Intervened positions: [1, 2, 4]
+
+--------------------------------------------------------------------------------
+
+Example 3:
+Question: Two trains leave San Rafael at the same time. They begin traveling westward, both traveling for 80 miles. The next day, they travel northwards, coveri...
+Ground Truth: 230.0
+
+WITHOUT Intervention:
+  Answer: The answer is: 115
+  Predicted: 115.0
+  Correct: ✗
+
+WITH Intervention:
+  Answer: The answer is: 230
+  Predicted: 230.0
+  Correct: ✓
+
+Number positions: [0, 1, 2, 4, 5]
+Intervened positions: [0, 1, 2, 4, 5]
+
+--------------------------------------------------------------------------------
+
+Example 4:
+Question: Jill gets paid $20 per hour to teach and $30 to be a cheerleading coach. If she works 50 weeks a year, 35 hours a week as a teacher and 15 hours a wee...
+Ground Truth: 57500.0
+
+WITHOUT Intervention:
+  Answer: The answer is: 570
+  Predicted: 570.0
+  Correct: ✗
+
+WITH Intervention:
+  Answer: The answer is: 127
+  Predicted: 127.0
+  Correct: ✗
+
+Number positions: [0, 1, 2, 4, 5]
+Intervened positions: [0, 1, 2, 4, 5]
+
+--------------------------------------------------------------------------------
+
+Example 5:
+Question: Mishka bought 3 pairs of shorts, 3 pairs of pants, and 3 pairs of shoes. One pair of shorts costs $16.50. One pair of pants costs $22.50 and one pair ...
+Ground Truth: 243.0
+
+WITHOUT Intervention:
+  Answer: The answer is: 247
+  Predicted: 247.0
+  Correct: ✗
+
+WITH Intervention:
+  Answer: The answer is: 245
+  Predicted: 245.0
+  Correct: ✗
+
+Number positions: [1, 2, 4]
+Intervened positions: [1, 2, 4]
+
+--------------------------------------------------------------------------------
+
+
+================================================================================
+EXAMPLES WHERE INTERVENTION DID NOT CHANGE THE ANSWER
+================================================================================
+
+Example 1:
+Question: Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the rem...
+Ground Truth: 18.0
+Predicted (both): 18.0
+Correct: ✓
+Number positions: [0, 1, 4, 5]
+
+--------------------------------------------------------------------------------
+
+Example 2:
+Question: A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?...
+Ground Truth: 3.0
+Predicted (both): 3.0
+Correct: ✓
+Number positions: [0, 1, 4, 5]
+
+--------------------------------------------------------------------------------
+
+Example 3:
+Question: Josh decides to try flipping a house.  He buys a house for $80,000 and then puts in $50,000 in repairs.  This increased the value of the house by 150%...
+Ground Truth: 70000.0
+Predicted (both): 400.0
+Correct: ✗
+Number positions: [0, 1, 2, 3, 4, 5, 6]
+
+--------------------------------------------------------------------------------
+
+Example 4:
+Question: James decides to run 3 sprints 3 times a week.  He runs 60 meters each sprint.  How many total meters does he run a week?...
+Ground Truth: 540.0
+Predicted (both): 540.0
+Correct: ✓
+Number positions: [1, 4, 5]
+
+--------------------------------------------------------------------------------
+
+Example 5:
+Question: Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  S...
+Ground Truth: 20.0
+Predicted (both): 10.0
+Correct: ✗
+Number positions: [0, 1]
+
+--------------------------------------------------------------------------------
+
