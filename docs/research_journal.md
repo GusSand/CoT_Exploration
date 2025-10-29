@@ -2,6 +2,72 @@
 
 ## Experiment Log
 
+### 2025-10-29: Adversarial Attacks on CODI - Input Manipulation Vulnerability
+
+**Objective**: Test CODI's robustness to adversarial input perturbations targeting CT0 numerical aggregation.
+
+**Status**: ✅ **COMPLETE** - Paradoxical result: CODI generally MORE robust, but one critical vulnerability
+
+**Research Question**: Can adversarial inputs exploit CT0 hub position to degrade CODI performance? How does CODI compare to Plain LLaMA?
+
+**Approach**:
+- 3 attack strategies × 3 strengths = 9 attacks on GSM8K (n=50)
+- Number Perturbation: Inject confusing numbers to disrupt CT0 aggregation
+- Distractor Injection: Add irrelevant math facts to pollute reasoning
+- Structure Disruption: Shuffle sentences to break reasoning flow
+- Compare CODI vs Plain LLaMA under identical attacks
+
+**Key Results**:
+
+**Baseline Performance**:
+- CODI: **54% accuracy** (27/50)
+- Plain: **32% accuracy** (16/50)
+- CODI advantage: +22pp
+
+**Critical Finding - Number Perturbation Moderate**: ⚠️
+- CODI: **0% accuracy** (-54pp drop) - COMPLETE COLLAPSE
+- Plain: 6% accuracy (-26pp drop)
+- **CODI-specific vulnerability**: -28pp worse than Plain
+
+**Unexpected Robustness - Structure Disruption**:
+- CODI: 34-44% accuracy (-10 to -20pp drops)
+- Plain: 10-16% accuracy (-16 to -22pp drops)
+- **CODI advantage**: +22-28pp absolute, MORE ROBUST than Plain
+
+**Major Findings**:
+
+1. **CODI is generally MORE ROBUST** than Plain LLaMA:
+   - Structure disruption: +22-28pp better (latent reasoning is order-independent)
+   - Mild perturbations: Comparable or better performance
+   - Continuous reasoning less sensitive to surface-level changes
+
+2. **Critical CT0 vulnerability exists**:
+   - Number Perturbation Moderate: 100% failure rate (0% accuracy)
+   - 3-5 additional numbers with plausible context overwhelm CT0
+   - Easily exploitable black-box attack
+   - Security risk: HIGH
+
+3. **Paradoxical robustness profile**:
+   - Advantage: Order-independent reasoning (doesn't need sequential flow)
+   - Weakness: CT0 cannot filter irrelevant numerical information
+   - NOT vulnerable to structure manipulation
+   - IS vulnerable to information pollution
+
+4. **Distractor injection moderate vulnerability**:
+   - CODI: -42pp drop (more vulnerable than Plain)
+   - Heavy distractor injection (5 facts) pollutes latent reasoning
+   - Plain's explicit reasoning provides better selectivity
+
+**Implications**:
+- Contrary to hypothesis: CODI is NOT broadly vulnerable
+- Specific exploit found: numerical aggregation overload
+- Defense needed: Input validation for numerical patterns
+- Security assessment: Medium-high risk (one critical flaw, otherwise robust)
+
+**Detailed Results**: See `/docs/experiments/10-29_llama_gsm8k_adversarial_attacks_codi.md`
+
+---
+
 ### 2025-10-28: Liars-Bench Deception Detection - Cross-Scale Analysis (Sprint 1 & 4)
 
 **Objective**: Test if continuous thoughts can detect deception and whether scale (GPT-2 → LLaMA-3B) enables this capability.
@@ -4289,3 +4355,97 @@ Dead features are NOT waste - they're **capacity reserves** that enable speciali
 **Time**: ~4 hours (investigation complete)
 
 **Documentation**: `docs/experiments/10-29_llama1b_personal_relations_baseline_eval.md`
+
+---
+
+## October 29, 2025 - Qualitative Analysis of CT0 Attention Interventions
+
+**Model**: LLaMA-3.2-1B-Instruct CODI
+**Dataset**: GSM8K test set (1,319 problems)
+**Task**: Explain CT0's mechanistic role through qualitative behavioral analysis
+**Result**: ✅ CT0 acts as "calculation coordination hub" - blocking causes +13.4% calculation errors
+
+**Key Findings**:
+1. **CT0 blocking**: -15.24% accuracy drop (55.57% → 40.33%), +13.4% calculation errors
+2. **CT4 blocking**: -0.38% accuracy drop (55.57% → 55.19%), minimal error changes
+3. **40x impact difference**: CT0 is critical hub, CT4 is non-critical
+4. **Multi-step sensitivity**: Multi-step problems (n=1,304) show 0.155 impact vs single-step (n=15) -0.067 impact
+
+**Error Taxonomy Results**:
+- CT0 blocked: CALC_ERROR 34.3% → 47.7% (+13.4%), CORRECT 55.6% → 40.3% (-15.2%)
+- CT4 blocked: CALC_ERROR 34.3% → 35.5% (+1.2%), minimal other changes
+- Primary failure mode: Systematic calculation mistakes when CT0 is blocked
+
+**Problem Sensitivity Results**:
+- No significant correlations with n_tokens, n_operations, or max_number
+- Multi-step problems more affected (+0.222 difference)
+- 230 high-impact problems identified (CT0 impact > 0.5)
+
+**Mechanistic Interpretation**:
+> CT0 functions as a **calculation coordination hub** that integrates numerical inputs and coordinates arithmetic operation execution. When blocked, the model loses reliable calculation sequencing ability, causing systematic calculation errors. Effect scales with problem complexity (multi-step > single-step).
+
+**Deliverables**:
+- Error classifier: `utils/error_classifier.py` (185 lines, 9 error categories)
+- Feature extractor: `utils/feature_extractors.py` (130 lines)
+- Analysis scripts: `1_analyze_error_taxonomy.py` (229 lines), `2_analyze_problem_sensitivity.py` (339 lines)
+- Full test set regeneration: 3,957 predictions (3 conditions × 1,319 problems)
+- Visualizations: error distributions, problem sensitivity scatter plots, type comparisons
+
+**Time**: ~20 minutes total (data regeneration + analysis)
+
+**Documentation**: `docs/experiments/10-29_llama_gsm8k_qualitative_ct0_analysis.md`
+
+**Next Steps**: Case studies (10-15 examples), attention redistribution capture, reasoning path divergence
+
+
+---
+
+## October 29, 2025 - Personal Relations CODI Training - NEGATIVE RESULT
+
+**Model**: LLaMA-3.2-3B-Instruct with CODI
+**Dataset**: Personal Relations (5,000 generated examples)
+**Method**: CODI continuous thought compression (6 latent tokens)
+**Result**: ❌ **CATASTROPHIC FAILURE** - 14.8% vs 68.8% baseline (-54pp)
+
+**What We Did**:
+1. **Phase 1**: 3B few-shot baseline → 68.8% accuracy (validated scaling from 1B's 43.8%)
+2. **Phase 2**: Generated 5,000 examples (140 universes, 100% CoT validation)
+3. **Phase 3**: CODI training (10 epochs, 31 mins, loss 9.77→1.12) → **14.8% accuracy**
+
+**Training Performance**:
+- Batch size optimization: 0% → 52% GPU utilization (1.71x speedup)
+- Final config: bs=32, grad_accum=4, effective_batch=128
+- Training loss decreased smoothly: 9.77 → 1.12
+- W&B: https://wandb.ai/gussand/huggingface/runs/0oo9tkkf
+
+**Why It Failed**:
+1. **Universe-specific memorization**: Model learned common names (Yara, Ruby, Uma) from training, not reasoning
+2. **No compositional transfer**: Training universes (140) ≠ test universes (30) - relationships don't generalize
+3. **Task incompatibility**: Personal Relations requires instance-specific knowledge graphs, not generalizable operations like math
+
+**Key Observations**:
+- Model outputs repetitive generic names (Yara, Ruby, Uma) regardless of question
+- Simple 1-hop queries fail: "Amber's friend" → "Yara" (correct: "Paul")
+- Zero evidence of compositional reasoning
+- Training loss suggests overfitting to name distributions, not relationship logic
+
+**Critical Insight**:
+> Personal Relations is fundamentally incompatible with CODI's continuous thought compression. Unlike GSM8K (where addition generalizes), relationship graphs are universe-specific and don't transfer. CODI can compress arithmetic operations but not instance-specific knowledge structures.
+
+**Deliverables**:
+- 5,000 training examples: `personal_relations_train_codi.json`
+- CODI training script: `train_llama3b_personal_relations.sh`
+- Modified evaluation: `test.py` + `eval_personal_relations.py`
+- Full test results: 750 predictions in `eval_personal_relations_final.log`
+
+**Time**: ~5 hours total (data generation 2h + training 0.5h + evaluation 0.5h + debugging 2h)
+
+**Cost**: Minimal (A100 31 minutes + evaluation time)
+
+**Value**: **Important negative result** - documents task-method compatibility boundary
+
+**Documentation**: `docs/experiments/10-29_llama3b_personal_relations_codi_training.md`
+
+**Recommendation**: Do not pursue CODI for Personal Relations without major task reformulation (e.g., abstract names to Person1/Person2)
+
+---

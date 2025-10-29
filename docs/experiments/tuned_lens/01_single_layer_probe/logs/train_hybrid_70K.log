@@ -1,0 +1,177 @@
+/workspace/CoT_Exploration/env/lib/python3.12/site-packages/huggingface_hub/file_download.py:943: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+/workspace/CoT_Exploration/env/lib/python3.12/site-packages/peft/tuners/lora/layer.py:1768: UserWarning: fan_in_fan_out is set to False but the target module is `Conv1D`. Setting fan_in_fan_out to True.
+  warnings.warn(
+Passing a tuple of `past_key_values` is deprecated and will be removed in Transformers v4.53.0. You should pass an instance of `Cache` instead, e.g. `past_key_values=DynamicCache.from_legacy_cache(past_key_values)`.
+====================================================================================================
+HYBRID BALANCED PROBE TRAINING - ENHANCED STRATEGY
+====================================================================================================
+Model: openai-community/gpt2
+Checkpoint: ../models/CODI-gpt2
+Dataset: zen-E/GSM8k-Aug
+Source layer: 10
+Target layer: 11
+Scan examples: 20000
+Target samples: 70000
+Continuous thought iterations: 6
+Epochs: 100
+====================================================================================================
+====================================================================================================
+LOADING CODI MODEL
+====================================================================================================
+trainable params: 20057088 || all params: 144499200 || trainable%: 13.880414562848792
+Loading checkpoint from: ../models/CODI-gpt2/pytorch_model.bin
+
+Model loaded successfully!
+  n_layer: 12
+  has projection: True
+====================================================================================================
+
+====================================================================================================
+COLLECTING ACTIVATIONS (STREAMING)
+====================================================================================================
+Scanning: 20000 examples
+Expected raw samples: 20000 × 6 = 120000
+====================================================================================================
+Processed 1000/20000 examples... (6000 samples)
+Processed 2000/20000 examples... (12000 samples)
+Processed 3000/20000 examples... (18000 samples)
+Processed 4000/20000 examples... (24000 samples)
+Processed 5000/20000 examples... (30000 samples)
+Processed 6000/20000 examples... (36000 samples)
+Processed 7000/20000 examples... (42000 samples)
+Processed 8000/20000 examples... (48000 samples)
+Processed 9000/20000 examples... (54000 samples)
+Processed 10000/20000 examples... (60000 samples)
+Processed 11000/20000 examples... (66000 samples)
+Processed 12000/20000 examples... (72000 samples)
+Processed 13000/20000 examples... (78000 samples)
+Processed 14000/20000 examples... (84000 samples)
+Processed 15000/20000 examples... (90000 samples)
+Processed 16000/20000 examples... (96000 samples)
+Processed 17000/20000 examples... (102000 samples)
+Processed 18000/20000 examples... (108000 samples)
+Processed 19000/20000 examples... (114000 samples)
+Processed 20000/20000 examples... (120000 samples)
+
+====================================================================================================
+COLLECTION COMPLETE
+====================================================================================================
+Total raw samples collected: 120000
+
+====================================================================================================
+CREATING HYBRID BALANCED SUBSET
+====================================================================================================
+Raw samples: 120000
+Target samples: 70000
+
+Original token distribution (top 20):
+  '>>': 17897 (14.91%)
+  'The': 10522 (8.77%)
+  '-': 7064 (5.89%)
+  '/': 4898 (4.08%)
+  '*': 3566 (2.97%)
+  ' is': 3410 (2.84%)
+  '=': 2997 (2.50%)
+  '+': 2000 (1.67%)
+  '
+': 1944 (1.62%)
+  ',': 1814 (1.51%)
+  '?': 1316 (1.10%)
+  ' <<': 1314 (1.09%)
+  '.': 1231 (1.03%)
+  '15': 1188 (0.99%)
+  '60': 1144 (0.95%)
+  '20': 1102 (0.92%)
+  '10': 1043 (0.87%)
+  '12': 1009 (0.84%)
+  '40': 981 (0.82%)
+  '30': 971 (0.81%)
+
+Frequency bucket sizes:
+  Ultra-frequent (>10%): 1 tokens
+  Very frequent (5-10%): 2 tokens
+  Frequent (1-5%): 10 tokens
+  Mid-frequency (0.1-1%): 118 tokens
+  Rare (<0.1%): 2462 tokens
+
+Hybrid sampling plan (top 30 tokens):
+  '>>': 17897 (14.91%) → 1400 (2.00%) [undersample]
+  'The': 10522 (8.77%) → 2800 (4.00%) [undersample]
+  '-': 7064 (5.89%) → 2800 (4.00%) [undersample]
+  '/': 4898 (4.08%) → 2857 (4.08%) [undersample]
+  '*': 3566 (2.97%) → 2080 (2.97%) [undersample]
+  ' is': 3410 (2.84%) → 1989 (2.84%) [undersample]
+  '=': 2997 (2.50%) → 1748 (2.50%) [undersample]
+  '+': 2000 (1.67%) → 1166 (1.67%) [undersample]
+  '
+': 1944 (1.62%) → 1134 (1.62%) [undersample]
+  ',': 1814 (1.51%) → 1058 (1.51%) [undersample]
+  '?': 1316 (1.10%) → 767 (1.10%) [undersample]
+  ' <<': 1314 (1.09%) → 766 (1.09%) [undersample]
+  '.': 1231 (1.03%) → 718 (1.03%) [undersample]
+  '15': 1188 (0.99%) → 692 (0.99%) [undersample]
+  '60': 1144 (0.95%) → 667 (0.95%) [undersample]
+  '20': 1102 (0.92%) → 642 (0.92%) [undersample]
+  '10': 1043 (0.87%) → 608 (0.87%) [undersample]
+  '12': 1009 (0.84%) → 588 (0.84%) [undersample]
+  '40': 981 (0.82%) → 572 (0.82%) [undersample]
+  '30': 971 (0.81%) → 566 (0.81%) [undersample]
+  '5': 899 (0.75%) → 524 (0.75%) [undersample]
+  '<|endoftext|>': 881 (0.73%) → 513 (0.73%) [undersample]
+  '6': 864 (0.72%) → 504 (0.72%) [undersample]
+  '3': 765 (0.64%) → 446 (0.64%) [undersample]
+  '4': 756 (0.63%) → 441 (0.63%) [undersample]
+  '100': 717 (0.60%) → 418 (0.60%) [undersample]
+  '<<': 709 (0.59%) → 413 (0.59%) [undersample]
+  '45': 700 (0.58%) → 408 (0.58%) [undersample]
+  '1': 678 (0.56%) → 395 (0.56%) [undersample]
+  '24': 654 (0.55%) → 381 (0.54%) [undersample]
+
+Final hybrid balanced dataset: 70000 samples
+
+Balanced token distribution (top 20):
+  '/': 361 (0.52%)
+  'The': 353 (0.50%)
+  '-': 317 (0.45%)
+  '*': 277 (0.40%)
+  ' is': 269 (0.38%)
+  '=': 211 (0.30%)
+  '>>': 169 (0.24%)
+  '+': 162 (0.23%)
+  '
+': 142 (0.20%)
+  ',': 123 (0.18%)
+  '.': 98 (0.14%)
+  ' <<': 87 (0.12%)
+  '60': 85 (0.12%)
+  '15': 84 (0.12%)
+  '20': 84 (0.12%)
+  '12': 77 (0.11%)
+  '30': 77 (0.11%)
+  '10': 76 (0.11%)
+  '?': 75 (0.11%)
+  '100': 66 (0.09%)
+====================================================================================================
+
+====================================================================================================
+TRAINING PROBE
+====================================================================================================
+Epoch 1/100: Loss=10.9131, Acc=23.18%
+Epoch 10/100: Loss=5.0011, Acc=32.22%
+Epoch 20/100: Loss=4.8069, Acc=32.72%
+Epoch 30/100: Loss=4.7733, Acc=32.83%
+Epoch 40/100: Loss=4.7500, Acc=32.86%
+Epoch 50/100: Loss=4.7486, Acc=32.94%
+Epoch 60/100: Loss=4.7538, Acc=32.76%
+Epoch 70/100: Loss=4.7736, Acc=32.90%
+Epoch 80/100: Loss=4.7693, Acc=32.63%
+Epoch 90/100: Loss=4.7624, Acc=32.75%
+Epoch 100/100: Loss=4.7863, Acc=32.84%
+
+====================================================================================================
+TRAINING COMPLETE - Final Accuracy: 32.84%
+====================================================================================================
+
+Probe saved to: outputs/probe_hybrid/probe_L10_to_L11_HYBRID_20251028_141404.pt

@@ -176,7 +176,7 @@ def run_sanity_check(model_name='llama', n_problems=100):
         'n_correct': n_correct,
         'n_failed': n_failed,
         'accuracy': accuracy,
-        'results_detail': results_detail[:10]  # Save first 10 for inspection
+        'results_detail': results_detail  # Save ALL predictions for qualitative analysis
     }
 
     output_dir = Path(__file__).parent.parent / 'results'

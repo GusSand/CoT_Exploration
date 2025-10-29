@@ -347,7 +347,7 @@ def run_attention_pattern_experiment(
         'accuracy': accuracy,
         'baseline_accuracy': 0.59,
         'accuracy_drop': 0.59 - accuracy,
-        'results_detail': results_detail[:10]  # Save first 10
+        'results_detail': results_detail  # Save ALL predictions for qualitative analysis
     }
 
     print(f"\n{'='*60}")
