@@ -85,7 +85,7 @@ From analysis (100 examples, 100% baseline):
 - **Interpretation**: Sequential reasoning - build knowledge in CT0, compute answer in CT5
 
 **CommonsenseQA** - Unified:
-- **Attention Hub**: CT0 (likely - needs verification from attention flow data)
+- **Attention Hub**: CT0 (**confirmed** - 14.72% mean attention from CT1-CT5, hub ratio 1.25x)
 - **Critical Token**: CT0 (13% ablation impact - FIRST token)
 - **Pattern**: First token serves dual role - both information hub AND answer-critical
 - **Interpretation**: Front-loaded reasoning - encode semantic knowledge in CT0, refine in CT1-CT5
@@ -117,9 +117,10 @@ From analysis (100 examples, 100% baseline):
 | Characteristic | CommonsenseQA | GSM8K |
 |----------------|---------------|-------|
 | **Baseline Accuracy** | 75% (75/100) | 100% (100/100) |
-| **Attention Hub** | CT0 (likely) | CT0 (confirmed: 4% avg attention) |
+| **Attention Hub** | CT0 (**confirmed**: 14.72% hub strength) | CT0 (confirmed: ~20% hub strength) |
 | **Critical Token** | CT0 (13% ablation) | CT5 (26% ablation) |
 | **Hub = Critical?** | ✅ YES (unified) | ❌ NO (dissociated) |
+| **Hub Ratio** | 1.25x (incoming > outgoing) | Unknown (needs calculation) |
 | **Reasoning Flow** | Front-loaded (CT0 dominant) | Sequential (builds to CT5) |
 | **Vulnerability** | Loss of CT0 (-13%) | Loss of CT5 (-26%) |
 | **Architecture** | Knowledge encoding → refinement | Information build-up → computation |
@@ -139,10 +140,39 @@ From analysis (100 examples, 100% baseline):
 
 ### Files Generated
 
+**Data**:
 - `commonsense_attention_patterns_raw.npy`: Full attention data
 - `commonsense_attention_patterns_avg.npy`: Layer-averaged patterns
 - `commonsense_attention_stats.json`: Statistical summary
 - `commonsense_attention_metadata.json`: Dataset info
+
+**Visualizations** (in `visualizations/`):
+1. `layer_attention_grids.png` - 6×6 heatmaps for layers 0, 4, 8, 12, 15
+2. `hub_attention_by_layer.png` - CT0 hub attention across all layers
+3. `ct0_hub_strength.png` - Total attention to CT0 from CT1-CT5 by layer
+4. `ct0_attention_flow.png` - CT0 incoming vs outgoing attention comparison
+5. `skip_connections_by_layer.png` - Non-adjacent token attention patterns
+6. `layer_evolution.png` - Attention pattern evolution across layers
+7. `attention_statistics.png` - Mean & variance statistics
+
+### Key Findings from Attention Flow
+
+**CT0 Hub Confirmation**:
+- **Mean hub strength**: 14.72% (total attention from CT1-CT5 to CT0)
+- **Hub ratio**: 1.25x (CT0 receives 25% more attention than it gives)
+- **Peak hub strength**: Layer 15 (23.96%)
+- **Minimum hub strength**: Layer 13 (7.86%)
+
+**Attention Distribution**:
+- Early layers (L0-L5): 14.83% hub strength
+- Middle layers (L6-L10): 14.93% hub strength
+- Late layers (L11-L15): 14.39% hub strength
+- **Observation**: Hub strength remains relatively stable across all layers
+
+**Comparison to GSM8K**:
+- **GSM8K**: CT0 receives ~4% attention per token from CT1-CT5 (~20% total) but has LOW ablation impact (7%)
+- **CommonsenseQA**: CT0 receives ~14.72% total attention AND has HIGH ablation impact (13%)
+- **Interpretation**: In CommonsenseQA, CT0's hub role DIRECTLY contributes to answer determination, unlike GSM8K where CT0 is just information storage
 
 ---
 
@@ -230,9 +260,9 @@ Question → CT0 [Encode+Decide] → CT1-CT5 [Refine] → Answer
 ## Limitations
 
 1. **Sample Size**: 100 examples (not full 1,221 validation set) for computational efficiency
-2. **Attention Analysis**: Extracted but not yet visualized or deeply analyzed
-3. **Single Layer**: Token importance measured at middle layer only
-4. **No Head-Level Analysis**: Aggregate attention across heads, not individual head patterns
+2. **Single Layer**: Token importance measured at middle layer only
+3. **No Head-Level Analysis**: Aggregate attention across heads, not individual head patterns (unlike GSM8K analysis)
+4. **Cross-Model Comparison**: Direct comparison to GSM8K limited by different data formats (head-level vs averaged)
 
 ---
 
@@ -240,9 +270,10 @@ Question → CT0 [Encode+Decide] → CT1-CT5 [Refine] → Answer
 
 ### High Priority (ROI > 8/10)
 
-1. **Visualize Attention Flow**: Create heatmaps comparing CommonsenseQA vs GSM8K attention patterns
+1. ~~**Visualize Attention Flow**: Create heatmaps comparing CommonsenseQA vs GSM8K attention patterns~~ ✅ **COMPLETE** (7 visualizations generated)
 2. **CT0 Probing**: Train linear probes on CT0 to identify what semantic features it encodes
 3. **Full Dataset**: Run analysis on all 1,221 CommonsenseQA examples for robust statistics
+4. **Head-Level Analysis**: Extract per-head attention patterns to identify specialized heads (as done for GSM8K)
 
 ### Medium Priority (ROI 5-7/10)
 
@@ -280,6 +311,7 @@ Question → CT0 [Encode+Decide] → CT1-CT5 [Refine] → Answer
 - `src/experiments/commonsense_mechanistic_analysis/scripts/0_test_model_loading.py`
 - `src/experiments/commonsense_mechanistic_analysis/scripts/1_extract_ct_attention_flow.py`
 - `src/experiments/commonsense_mechanistic_analysis/scripts/2_extract_token_importance.py`
+- `src/experiments/commonsense_mechanistic_analysis/scripts/3_visualize_attention_patterns.py`
 
 **Data**:
 - `results/commonsense_attention_patterns_raw.npy` (451 KB)
@@ -287,6 +319,15 @@ Question → CT0 [Encode+Decide] → CT1-CT5 [Refine] → Answer
 - `results/commonsense_attention_stats.json` (27 KB)
 - `results/commonsense_token_importance_detailed.json` (83 KB)
 - `results/commonsense_token_importance_summary.json` (1.9 KB)
+
+**Visualizations**:
+- `visualizations/layer_attention_grids.png` (210 KB)
+- `visualizations/hub_attention_by_layer.png` (157 KB)
+- `visualizations/ct0_hub_strength.png` (104 KB)
+- `visualizations/ct0_attention_flow.png` (111 KB)
+- `visualizations/skip_connections_by_layer.png` (139 KB)
+- `visualizations/layer_evolution.png` (145 KB)
+- `visualizations/attention_statistics.png` (129 KB)
 
 **Logs**:
 - `results/setup_test.log`
