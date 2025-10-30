@@ -1,0 +1,119 @@
+{
+  "epoch": "10ep",
+  "signal_degradation": {
+    "signal_threshold": 0.55,
+    "random_baseline": 0.5,
+    "degradation_points": {
+      "ct0": {
+        "has_early_signal": false,
+        "signal_lost_at_layer": 0,
+        "accuracies_by_layer": {
+          "0": 0.5,
+          "3": 0.5,
+          "6": 0.5,
+          "9": 0.5,
+          "12": 0.5,
+          "15": 0.5
+        }
+      },
+      "ct1": {
+        "has_early_signal": false,
+        "signal_lost_at_layer": 0,
+        "accuracies_by_layer": {
+          "0": 0.5,
+          "3": 0.5,
+          "6": 0.5,
+          "9": 0.5,
+          "12": 0.5,
+          "15": 0.5
+        }
+      },
+      "ct2": {
+        "has_early_signal": false,
+        "signal_lost_at_layer": 0,
+        "accuracies_by_layer": {
+          "0": 0.5,
+          "3": 0.5,
+          "6": 0.5,
+          "9": 0.5,
+          "12": 0.5,
+          "15": 0.5
+        }
+      },
+      "ct3": {
+        "has_early_signal": false,
+        "signal_lost_at_layer": 0,
+        "accuracies_by_layer": {
+          "0": 0.5,
+          "3": 0.5,
+          "6": 0.5,
+          "9": 0.5,
+          "12": 0.5,
+          "15": 0.5
+        }
+      },
+      "ct4": {
+        "has_early_signal": false,
+        "signal_lost_at_layer": 0,
+        "accuracies_by_layer": {
+          "0": 0.5,
+          "3": 0.5,
+          "6": 0.5,
+          "9": 0.5,
+          "12": 0.5,
+          "15": 0.5
+        }
+      },
+      "ct5": {
+        "has_early_signal": false,
+        "signal_lost_at_layer": 0,
+        "accuracies_by_layer": {
+          "0": 0.5,
+          "3": 0.5,
+          "6": 0.5,
+          "9": 0.5,
+          "12": 0.5,
+          "15": 0.5
+        }
+      }
+    }
+  },
+  "early_vs_late": {
+    "early_layers": [
+      0,
+      3,
+      6
+    ],
+    "late_layers": [
+      9,
+      12,
+      15
+    ],
+    "early_mean": 0.5,
+    "early_std": 0.0,
+    "late_mean": 0.5,
+    "late_std": 0.0,
+    "difference": 0.0,
+    "t_statistic": NaN,
+    "p_value": NaN,
+    "cohens_d": 0.0,
+    "significant": false
+  },
+  "ct_vs_qa": {
+    "ct_mean": 0.5,
+    "ct_std": 0.0,
+    "qa_mean": 0.5,
+    "qa_std": 0.0,
+    "difference": 0.0,
+    "t_statistic": NaN,
+    "p_value": NaN,
+    "cohens_d": 0.0,
+    "significant": false
+  },
+  "key_findings": [
+    "1. NO deception signal detected in CT positions (all at chance level ~50%)",
+    "2. No significant signal change across layers (p=nan)",
+    "3. No significant difference between CT and Q/A positions",
+    "4. RECOMMENDATION: Very weak signal (mean 50.0%). Continue training to 10-15 epochs for stronger representations."
+  ]
+}
