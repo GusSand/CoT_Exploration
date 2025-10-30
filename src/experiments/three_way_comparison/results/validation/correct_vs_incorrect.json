@@ -1,0 +1,23 @@
+{
+  "personal_relations": {
+    "n_correct": 132,
+    "n_incorrect": 168,
+    "vr_correct": 0.2640961507776812,
+    "vr_incorrect": 0.16495065365016146,
+    "vr_diff": 0.09914549712751977
+  },
+  "gsm8k": {
+    "n_correct": 77,
+    "n_incorrect": 223,
+    "vr_correct": 0.1514762149289207,
+    "vr_incorrect": 0.12215425182078024,
+    "vr_diff": 0.029321963108140447
+  },
+  "commonsense": {
+    "n_correct": 222,
+    "n_incorrect": 78,
+    "vr_correct": 0.15844209070252094,
+    "vr_incorrect": 0.16250256794671666,
+    "vr_diff": -0.004060477244195726
+  }
+}
