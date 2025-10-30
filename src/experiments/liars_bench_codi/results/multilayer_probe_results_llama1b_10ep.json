@@ -1,0 +1,1095 @@
+{
+  "layer_0": {
+    "question_last": {
+      "layer": "layer_0",
+      "position": "question_last",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct0": {
+      "layer": "layer_0",
+      "position": "ct0",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct1": {
+      "layer": "layer_0",
+      "position": "ct1",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct2": {
+      "layer": "layer_0",
+      "position": "ct2",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct3": {
+      "layer": "layer_0",
+      "position": "ct3",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct4": {
+      "layer": "layer_0",
+      "position": "ct4",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct5": {
+      "layer": "layer_0",
+      "position": "ct5",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "answer_first": {
+      "layer": "layer_0",
+      "position": "answer_first",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    }
+  },
+  "layer_3": {
+    "question_last": {
+      "layer": "layer_3",
+      "position": "question_last",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct0": {
+      "layer": "layer_3",
+      "position": "ct0",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct1": {
+      "layer": "layer_3",
+      "position": "ct1",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct2": {
+      "layer": "layer_3",
+      "position": "ct2",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct3": {
+      "layer": "layer_3",
+      "position": "ct3",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct4": {
+      "layer": "layer_3",
+      "position": "ct4",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct5": {
+      "layer": "layer_3",
+      "position": "ct5",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "answer_first": {
+      "layer": "layer_3",
+      "position": "answer_first",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    }
+  },
+  "layer_6": {
+    "question_last": {
+      "layer": "layer_6",
+      "position": "question_last",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct0": {
+      "layer": "layer_6",
+      "position": "ct0",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct1": {
+      "layer": "layer_6",
+      "position": "ct1",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct2": {
+      "layer": "layer_6",
+      "position": "ct2",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct3": {
+      "layer": "layer_6",
+      "position": "ct3",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct4": {
+      "layer": "layer_6",
+      "position": "ct4",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct5": {
+      "layer": "layer_6",
+      "position": "ct5",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "answer_first": {
+      "layer": "layer_6",
+      "position": "answer_first",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    }
+  },
+  "layer_9": {
+    "question_last": {
+      "layer": "layer_9",
+      "position": "question_last",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct0": {
+      "layer": "layer_9",
+      "position": "ct0",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct1": {
+      "layer": "layer_9",
+      "position": "ct1",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct2": {
+      "layer": "layer_9",
+      "position": "ct2",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct3": {
+      "layer": "layer_9",
+      "position": "ct3",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct4": {
+      "layer": "layer_9",
+      "position": "ct4",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct5": {
+      "layer": "layer_9",
+      "position": "ct5",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "answer_first": {
+      "layer": "layer_9",
+      "position": "answer_first",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    }
+  },
+  "layer_12": {
+    "question_last": {
+      "layer": "layer_12",
+      "position": "question_last",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct0": {
+      "layer": "layer_12",
+      "position": "ct0",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct1": {
+      "layer": "layer_12",
+      "position": "ct1",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct2": {
+      "layer": "layer_12",
+      "position": "ct2",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct3": {
+      "layer": "layer_12",
+      "position": "ct3",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct4": {
+      "layer": "layer_12",
+      "position": "ct4",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct5": {
+      "layer": "layer_12",
+      "position": "ct5",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "answer_first": {
+      "layer": "layer_12",
+      "position": "answer_first",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    }
+  },
+  "layer_15": {
+    "question_last": {
+      "layer": "layer_15",
+      "position": "question_last",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct0": {
+      "layer": "layer_15",
+      "position": "ct0",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct1": {
+      "layer": "layer_15",
+      "position": "ct1",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct2": {
+      "layer": "layer_15",
+      "position": "ct2",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct3": {
+      "layer": "layer_15",
+      "position": "ct3",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct4": {
+      "layer": "layer_15",
+      "position": "ct4",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "ct5": {
+      "layer": "layer_15",
+      "position": "ct5",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    },
+    "answer_first": {
+      "layer": "layer_15",
+      "position": "answer_first",
+      "train_accuracy": 0.5,
+      "test_accuracy": 0.5,
+      "test_precision": 0.0,
+      "test_recall": 0.0,
+      "test_f1": 0.0,
+      "overfitting_gap": 0.0,
+      "confusion_matrix": [
+        [
+          144,
+          0
+        ],
+        [
+          144,
+          0
+        ]
+      ],
+      "train_samples": 288,
+      "test_samples": 288
+    }
+  },
+  "metadata": {
+    "model": "LLaMA-3.2-1B",
+    "epoch": "10ep",
+    "layers": [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15
+    ],
+    "positions": [
+      "question_last",
+      "ct0",
+      "ct1",
+      "ct2",
+      "ct3",
+      "ct4",
+      "ct5",
+      "answer_first"
+    ],
+    "train_samples": 288,
+    "test_samples": 288,
+    "total_probes": 48
+  }
+}

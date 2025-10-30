@@ -69,10 +69,10 @@ def train_liars_bench():
         script_dir = Path(__file__).parent
         data_dir = script_dir.parent / "data" / "processed"
 
-        with open(data_dir / "train.json") as f:
+        with open(data_dir / "train_proper.json") as f:
             dataset = json.load(f)
 
-        print(f"✅ Loaded liars-bench training data: {len(dataset)} examples")
+        print(f"✅ Loaded liars-bench training data (PROPER held-out): {len(dataset)} examples")
 
         # Create dataset using commonsense format (most flexible for Q&A)
         # The SupervisedDataset class will handle this with data_name="liars-commonsense"
