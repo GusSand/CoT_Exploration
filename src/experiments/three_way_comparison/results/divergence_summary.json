@@ -1,0 +1,22 @@
+{
+  "task_accuracies": {
+    "personal_relations": 0.44,
+    "gsm8k": 0.25666666666666665,
+    "commonsense": 0.74
+  },
+  "avg_centroid_distances": {
+    "personal_relations_vs_gsm8k": 32.976234670728445,
+    "personal_relations_vs_commonsense": 45.51742033163706,
+    "gsm8k_vs_commonsense": 39.12279003858566
+  },
+  "avg_cosine_similarities": {
+    "personal_relations_vs_gsm8k": 0.19323952086657906,
+    "personal_relations_vs_commonsense": 0.20775644046564898,
+    "gsm8k_vs_commonsense": 0.12960180481604766
+  },
+  "avg_variance_ratios": {
+    "personal_relations": 0.25251891694433076,
+    "gsm8k": 0.17463022255981406,
+    "commonsense": 0.145654514213628
+  }
+}
