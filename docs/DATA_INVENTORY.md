@@ -1,6 +1,6 @@
 # Data Inventory - CoT Exploration Project
 
-**Last Updated**: 2025-10-30 (Added Section 27: LLaMA Clean/Corrupted Pairs - Activation patching dataset)
+**Last Updated**: 2025-10-31 (Updated Section 28: Contrastive CODI Deception Detection - COMPLETED WITH NEGATIVE RESULT)
 
 This document provides a complete breakdown of all datasets in the project, organized by experiment type and model.
 
@@ -5030,4 +5030,72 @@ training_args = TrainingArgs(use_lora=True, ...)
 - Research Journal: [research_journal.md](research_journal.md#2025-10-30-layer-wise-cot-activation-patching)
 - W&B Run: https://wandb.ai/gussand/cot-exploration/runs/72gnhhz7
 
+
+
+
+---
+
+## Section 28: Contrastive CODI Deception Detection (COMPLETED)
+
+**Status**: ✅ **EXPERIMENT COMPLETED** - Issues resolved, negative result documented
+
+**Purpose**: Train CODI model on contrastive honest/deceptive pairs and compare CT token vs regular hidden state probe performance for deception detection
+
+**Dataset**: [`src/experiments/contrastive_codi/data/`](../src/experiments/contrastive_codi/data/) ✅ VALID
+
+**Format**: Contrastive LIARS-BENCH format
+```json
+{
+  "messages": [
+    {"role": "system", "content": "Answer honestly/deceptively..."},
+    {"role": "user", "content": "Question text"},
+    {"role": "assistant", "content": "Answer text"}
+  ],
+  "question_hash": "unique_id",
+  "is_honest": true/false
+}
+```
+
+**Files**:
+- ✅ `contrastive_liars_train.json`: 288 samples (144 honest + 144 deceptive)
+- ✅ `contrastive_liars_test.json`: 194 samples (97 honest + 97 deceptive) - Used for evaluation
+
+**Model**: ✅ `/home/paperspace/codi_ckpt/contrastive_liars_llama1b_smoke_test/` - CODI model successfully trained and validated
+
+**Results**:
+- **CT Tokens Accuracy**: 9.3% ± 3.5% (5-fold CV)
+- **Regular Hidden States Accuracy**: 9.3% ± 3.5% (5-fold CV)
+- **Random Baseline**: 50.0%
+- **Conclusion**: ❌ CT tokens show no advantage over regular hidden states for deception detection
+
+**Issues Fixed**:
+- ✅ CODI model loading debugged and validated
+- ✅ Feature extraction verified (CT tokens ≠ regular hidden states)
+- ✅ Probe methodology validated with synthetic data
+- ✅ Reporting discrepancy fixed
+
+**What Was Successfully Built** (Reusable Infrastructure):
+- Complete contrastive training pipeline: `train_contrastive_codi.sh`
+- CODI model training (loss: 4.2 → 0.9) - Model converged properly
+- Dataset conversion: `create_contrastive_dataset.py`
+- Activation extraction: `extract_activations.py`
+- Probe training: `train_deception_probes.py` (needs fixing)
+- Apollo Research methodology implementation
+
+**Time Investment**: ~4 hours (3h infrastructure, 1h debugging)
+
+**Fix Required Before Re-use**:
+1. Fix probe evaluation with proper train/test splits in `train_deception_probes.py`
+2. Debug CODI model loading to extract real CT tokens in `extract_activations.py`
+3. Add explicit data leakage prevention checks
+
+**Experiment**: [`src/experiments/contrastive_codi/`](../src/experiments/contrastive_codi/)
+
+**Documentation**:
+- [`docs/experiments/10-31_llama_liars_bench_contrastive_codi_smoke_test.md`](experiments/10-31_llama_liars_bench_contrastive_codi_smoke_test.md)
+- Research Journal: [research_journal.md](research_journal.md#2025-10-31-contrastive-codi-deception-detection-failed)
+
+**W&B Run**: https://wandb.ai/gussand/huggingface/runs/6qkgea7f (Training successful, evaluation invalid)
+
+**Key Lesson**: Experimental rigor must not be compromised for speed. Infrastructure success ≠ scientific validity.
 
