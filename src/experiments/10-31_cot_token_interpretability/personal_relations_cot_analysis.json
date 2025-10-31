@@ -1,0 +1,2510 @@
+{
+  "summary": {
+    "total_examples": 750,
+    "accuracy": 43.733333333333334,
+    "total_entities": 2969,
+    "unique_entities": 31,
+    "total_relations": 1086,
+    "avg_relations_per_example": 1.448,
+    "interpretability_score": 15.866666666666667,
+    "complexity_distribution": {
+      "direct": 634,
+      "multi_hop": 111,
+      "two_hop": 5
+    }
+  },
+  "entity_counts": {
+    "Paul": 118,
+    "The": 741,
+    "Amber": 87,
+    "Chloe": 74,
+    "Mia": 81,
+    "Uma": 76,
+    "Tina": 121,
+    "Victor": 95,
+    "Frank": 107,
+    "Charlie": 96,
+    "Bob": 61,
+    "Alice": 79,
+    "Sam": 92,
+    "Noah": 54,
+    "Grace": 81,
+    "Kate": 137,
+    "Xavier": 102,
+    "Yara": 51,
+    "Olivia": 58,
+    "Jack": 44,
+    "Ruby": 48,
+    "David": 72,
+    "Ivy": 93,
+    "Zach": 55,
+    "Dylan": 92,
+    "Emma": 68,
+    "Wendy": 53,
+    "Liam": 12,
+    "Quinn": 48,
+    "Henry": 56,
+    "Blake": 17
+  },
+  "relation_counts": {
+    "friend": 281,
+    "parent": 292,
+    "child": 234,
+    "enemy": 279
+  },
+  "reasoning_patterns": [
+    {
+      "example_id": 0,
+      "generated": " = Paul\nThe answer is: Paul",
+      "entities": [
+        "Paul",
+        "The",
+        "Paul"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Paul",
+      "correct_answer": "Paul"
+    },
+    {
+      "example_id": 1,
+      "generated": " = Amber\nThe answer is: Amber",
+      "entities": [
+        "Amber",
+        "The",
+        "Amber"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Amber",
+      "correct_answer": "Amber"
+    },
+    {
+      "example_id": 2,
+      "generated": " = Chloe\nThe answer is: Chloe",
+      "entities": [
+        "Chloe",
+        "The",
+        "Chloe"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Chloe",
+      "correct_answer": "Chloe"
+    },
+    {
+      "example_id": 3,
+      "generated": " = Mia\nThe answer is: Mia",
+      "entities": [
+        "Mia",
+        "The",
+        "Mia"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Mia",
+      "correct_answer": "Mia"
+    },
+    {
+      "example_id": 4,
+      "generated": " = Paul\nThe answer is: Paul",
+      "entities": [
+        "Paul",
+        "The",
+        "Paul"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Paul",
+      "correct_answer": "Paul"
+    },
+    {
+      "example_id": 5,
+      "generated": " = Mia\nThe answer is: Mia",
+      "entities": [
+        "Mia",
+        "The",
+        "Mia"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Mia",
+      "correct_answer": "Paul"
+    },
+    {
+      "example_id": 6,
+      "generated": " = Chloe\nThe answer is: Chloe",
+      "entities": [
+        "Chloe",
+        "The",
+        "Chloe"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Chloe",
+      "correct_answer": "Tina"
+    },
+    {
+      "example_id": 7,
+      "generated": " = Chloe\nThe answer is: Chloe",
+      "entities": [
+        "Chloe",
+        "The",
+        "Chloe"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Chloe",
+      "correct_answer": "Chloe"
+    },
+    {
+      "example_id": 8,
+      "generated": " = Mia\nThe answer is: Mia",
+      "entities": [
+        "Mia",
+        "The",
+        "Mia"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Mia",
+      "correct_answer": "Uma"
+    },
+    {
+      "example_id": 9,
+      "generated": " = Amber Chloe's friend = Paul Chloe's friend's parent = Uma\nThe answer is: Uma",
+      "entities": [
+        "Amber",
+        "Chloe",
+        "Paul",
+        "Chloe",
+        "Uma",
+        "The",
+        "Uma"
+      ],
+      "relations": [
+        "friend",
+        "friend",
+        "parent"
+      ],
+      "complexity": "multi_hop",
+      "correct": true,
+      "predicted": "Uma",
+      "correct_answer": "Uma"
+    },
+    {
+      "example_id": 10,
+      "generated": " = Tina Mia's parent's child's friend's friend = Chloe\nThe answer is: Chloe",
+      "entities": [
+        "Tina",
+        "Mia",
+        "Chloe",
+        "The",
+        "Chloe"
+      ],
+      "relations": [
+        "parent",
+        "child",
+        "friend",
+        "friend"
+      ],
+      "complexity": "multi_hop",
+      "correct": false,
+      "predicted": "Chloe",
+      "correct_answer": "Tina"
+    },
+    {
+      "example_id": 11,
+      "generated": " = Amber Chloe's enemy = Uma Chloe's enemy's child = Paul Chloe's enemy's child's parent = Uma\nThe answer is: Uma",
+      "entities": [
+        "Amber",
+        "Chloe",
+        "Uma",
+        "Chloe",
+        "Paul",
+        "Chloe",
+        "Uma",
+        "The",
+        "Uma"
+      ],
+      "relations": [
+        "enemy",
+        "enemy",
+        "child",
+        "enemy",
+        "child",
+        "parent"
+      ],
+      "complexity": "multi_hop",
+      "correct": false,
+      "predicted": "Uma",
+      "correct_answer": "Mia"
+    },
+    {
+      "example_id": 12,
+      "generated": " = Paul\nThe answer is: Paul",
+      "entities": [
+        "Paul",
+        "The",
+        "Paul"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Paul",
+      "correct_answer": "Paul"
+    },
+    {
+      "example_id": 13,
+      "generated": " = Mia\nThe answer is: Mia",
+      "entities": [
+        "Mia",
+        "The",
+        "Mia"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Mia",
+      "correct_answer": "Chloe"
+    },
+    {
+      "example_id": 14,
+      "generated": " = Paul\nThe answer is: Paul",
+      "entities": [
+        "Paul",
+        "The",
+        "Paul"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Paul",
+      "correct_answer": "Tina"
+    },
+    {
+      "example_id": 15,
+      "generated": " = Mia Mia's enemy = Chloe Mia's enemy's friend = Paul Mia's enemy's friend's enemy = Tina Mia's enemy's friend's enemy's parent = Paul\nThe answer is: Paul",
+      "entities": [
+        "Mia",
+        "Mia",
+        "Chloe",
+        "Mia",
+        "Paul",
+        "Mia",
+        "Tina",
+        "Mia",
+        "Paul",
+        "The",
+        "Paul"
+      ],
+      "relations": [
+        "enemy",
+        "enemy",
+        "friend",
+        "enemy",
+        "friend",
+        "enemy",
+        "enemy",
+        "friend",
+        "enemy",
+        "parent"
+      ],
+      "complexity": "multi_hop",
+      "correct": true,
+      "predicted": "Paul",
+      "correct_answer": "Paul"
+    },
+    {
+      "example_id": 16,
+      "generated": " = Tina\nThe answer is: Tina",
+      "entities": [
+        "Tina",
+        "The",
+        "Tina"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Tina",
+      "correct_answer": "Paul"
+    },
+    {
+      "example_id": 17,
+      "generated": " = Tina\nThe answer is: Tina",
+      "entities": [
+        "Tina",
+        "The",
+        "Tina"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Tina",
+      "correct_answer": "Paul"
+    },
+    {
+      "example_id": 18,
+      "generated": " = Amber\nThe answer is: Mia",
+      "entities": [
+        "Amber",
+        "The",
+        "Mia"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Mia",
+      "correct_answer": "Paul"
+    },
+    {
+      "example_id": 19,
+      "generated": " = Paul\nThe answer is: Paul",
+      "entities": [
+        "Paul",
+        "The",
+        "Paul"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Paul",
+      "correct_answer": "Paul"
+    },
+    {
+      "example_id": 20,
+      "generated": " = Uma\nThe answer is: Uma",
+      "entities": [
+        "Uma",
+        "The",
+        "Uma"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Uma",
+      "correct_answer": "Tina"
+    },
+    {
+      "example_id": 21,
+      "generated": " = Paul\nThe answer is: Paul",
+      "entities": [
+        "Paul",
+        "The",
+        "Paul"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Paul",
+      "correct_answer": "Tina"
+    },
+    {
+      "example_id": 22,
+      "generated": " = Amber\nThe answer is: Mia",
+      "entities": [
+        "Amber",
+        "The",
+        "Mia"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Mia",
+      "correct_answer": "Amber"
+    },
+    {
+      "example_id": 23,
+      "generated": " = Mia Uma's enemy's enemy = Chloe Uma's enemy's enemy's child = Mia Uma's enemy's enemy's child's friend = Tina Uma's enemy's enemy's child's friend's parent = Paul\nThe answer is: Paul",
+      "entities": [
+        "Mia",
+        "Uma",
+        "Chloe",
+        "Uma",
+        "Mia",
+        "Uma",
+        "Tina",
+        "Uma",
+        "Paul",
+        "The",
+        "Paul"
+      ],
+      "relations": [
+        "enemy",
+        "enemy",
+        "enemy",
+        "enemy",
+        "child",
+        "enemy",
+        "enemy",
+        "child",
+        "friend",
+        "enemy",
+        "enemy",
+        "child",
+        "friend",
+        "parent"
+      ],
+      "complexity": "multi_hop",
+      "correct": false,
+      "predicted": "Paul",
+      "correct_answer": "Uma"
+    },
+    {
+      "example_id": 24,
+      "generated": " = Paul's enemy = Tina Paul's enemy's friend = Chloe Paul's enemy's friend's enemy = Mia Paul's enemy's friend's enemy's enemy = Chloe Paul's enemy's friend's enemy's enemy's child = Paul's enemy's friend",
+      "entities": [
+        "Paul",
+        "Tina",
+        "Paul",
+        "Chloe",
+        "Paul",
+        "Mia",
+        "Paul",
+        "Chloe",
+        "Paul",
+        "Paul"
+      ],
+      "relations": [
+        "enemy",
+        "enemy",
+        "friend",
+        "enemy",
+        "friend",
+        "enemy",
+        "enemy",
+        "friend",
+        "enemy",
+        "enemy",
+        "enemy",
+        "friend",
+        "enemy",
+        "enemy",
+        "child",
+        "enemy",
+        "friend"
+      ],
+      "complexity": "multi_hop",
+      "correct": false,
+      "predicted": "Paul's",
+      "correct_answer": "Tina"
+    },
+    {
+      "example_id": 25,
+      "generated": " = Victor\nThe answer is: Victor",
+      "entities": [
+        "Victor",
+        "The",
+        "Victor"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Victor",
+      "correct_answer": "Victor"
+    },
+    {
+      "example_id": 26,
+      "generated": " = Victor\nThe answer is: Victor",
+      "entities": [
+        "Victor",
+        "The",
+        "Victor"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Victor",
+      "correct_answer": "Victor"
+    },
+    {
+      "example_id": 27,
+      "generated": " = Frank\nThe answer is: Frank",
+      "entities": [
+        "Frank",
+        "The",
+        "Frank"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Frank",
+      "correct_answer": "Frank"
+    },
+    {
+      "example_id": 28,
+      "generated": " = Charlie\nThe answer is: Charlie",
+      "entities": [
+        "Charlie",
+        "The",
+        "Charlie"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Charlie",
+      "correct_answer": "Charlie"
+    },
+    {
+      "example_id": 29,
+      "generated": " = Charlie\nThe answer is: Charlie",
+      "entities": [
+        "Charlie",
+        "The",
+        "Charlie"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Charlie",
+      "correct_answer": "Charlie"
+    },
+    {
+      "example_id": 30,
+      "generated": " = Frank\nThe answer is: Frank",
+      "entities": [
+        "Frank",
+        "The",
+        "Frank"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Frank",
+      "correct_answer": "Sam"
+    },
+    {
+      "example_id": 31,
+      "generated": " = Bob\nThe answer is: Bob",
+      "entities": [
+        "Bob",
+        "The",
+        "Bob"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Bob",
+      "correct_answer": "Victor"
+    },
+    {
+      "example_id": 32,
+      "generated": " = Victor\nThe answer is: Victor",
+      "entities": [
+        "Victor",
+        "The",
+        "Victor"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Victor",
+      "correct_answer": "Sam"
+    },
+    {
+      "example_id": 33,
+      "generated": " = Alice Bob's child = Bob Bob's child's parent = Alice\nThe answer is: Alice",
+      "entities": [
+        "Alice",
+        "Bob",
+        "Bob",
+        "Bob",
+        "Alice",
+        "The",
+        "Alice"
+      ],
+      "relations": [
+        "child",
+        "child",
+        "parent"
+      ],
+      "complexity": "multi_hop",
+      "correct": false,
+      "predicted": "Alice",
+      "correct_answer": "Bob"
+    },
+    {
+      "example_id": 34,
+      "generated": " = Alice Alice's child's child's child = Bob Alice's child's child's child's child = Alice Alice's child's child's child's child's child = Bob Bob's child's child's child's child's child's child = Alice",
+      "entities": [
+        "Alice",
+        "Alice",
+        "Bob",
+        "Alice",
+        "Alice",
+        "Alice",
+        "Bob",
+        "Bob",
+        "Alice"
+      ],
+      "relations": [
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child"
+      ],
+      "complexity": "multi_hop",
+      "correct": true,
+      "predicted": "Alice",
+      "correct_answer": "Alice"
+    },
+    {
+      "example_id": 35,
+      "generated": " = Charlie\nThe answer is: Charlie",
+      "entities": [
+        "Charlie",
+        "The",
+        "Charlie"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Charlie",
+      "correct_answer": "Sam"
+    },
+    {
+      "example_id": 36,
+      "generated": " = Bob\nThe answer is: Bob",
+      "entities": [
+        "Bob",
+        "The",
+        "Bob"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Bob",
+      "correct_answer": "Bob"
+    },
+    {
+      "example_id": 37,
+      "generated": " = Sam\nThe answer is: Sam",
+      "entities": [
+        "Sam",
+        "The",
+        "Sam"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Sam",
+      "correct_answer": "Victor"
+    },
+    {
+      "example_id": 38,
+      "generated": " = Bob\nThe answer is: Bob",
+      "entities": [
+        "Bob",
+        "The",
+        "Bob"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Bob",
+      "correct_answer": "Frank"
+    },
+    {
+      "example_id": 39,
+      "generated": " = Charlie\nThe answer is: Charlie",
+      "entities": [
+        "Charlie",
+        "The",
+        "Charlie"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Charlie",
+      "correct_answer": "Charlie"
+    },
+    {
+      "example_id": 40,
+      "generated": " = Charlie\nThe answer is: Charlie",
+      "entities": [
+        "Charlie",
+        "The",
+        "Charlie"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Charlie",
+      "correct_answer": "Charlie"
+    },
+    {
+      "example_id": 41,
+      "generated": " = Charlie's parent = Frank Charlie's parent's friend = Charlie Charlie's parent's friend's parent = Frank Charlie's parent's friend's parent's child = Charlie\nThe answer is: Charlie",
+      "entities": [
+        "Charlie",
+        "Frank",
+        "Charlie",
+        "Charlie",
+        "Charlie",
+        "Frank",
+        "Charlie",
+        "Charlie",
+        "The",
+        "Charlie"
+      ],
+      "relations": [
+        "parent",
+        "parent",
+        "friend",
+        "parent",
+        "friend",
+        "parent",
+        "parent",
+        "friend",
+        "parent",
+        "child"
+      ],
+      "complexity": "multi_hop",
+      "correct": false,
+      "predicted": "Charlie",
+      "correct_answer": "Sam"
+    },
+    {
+      "example_id": 42,
+      "generated": " = Charlie\nThe answer is: Sam",
+      "entities": [
+        "Charlie",
+        "The",
+        "Sam"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Sam",
+      "correct_answer": "Charlie"
+    },
+    {
+      "example_id": 43,
+      "generated": " = Bob's enemy = Victor Bob's enemy's friend = Sam Bob's enemy's friend's enemy = Charlie Bob's enemy's friend's enemy's parent = Frank\nThe answer is: Frank",
+      "entities": [
+        "Bob",
+        "Victor",
+        "Bob",
+        "Sam",
+        "Bob",
+        "Charlie",
+        "Bob",
+        "Frank",
+        "The",
+        "Frank"
+      ],
+      "relations": [
+        "enemy",
+        "enemy",
+        "friend",
+        "enemy",
+        "friend",
+        "enemy",
+        "enemy",
+        "friend",
+        "enemy",
+        "parent"
+      ],
+      "complexity": "multi_hop",
+      "correct": true,
+      "predicted": "Frank",
+      "correct_answer": "Frank"
+    },
+    {
+      "example_id": 44,
+      "generated": " = Victor\nThe answer is: Victor",
+      "entities": [
+        "Victor",
+        "The",
+        "Victor"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Victor",
+      "correct_answer": "Frank"
+    },
+    {
+      "example_id": 45,
+      "generated": " = Charlie\nThe answer is: Charlie",
+      "entities": [
+        "Charlie",
+        "The",
+        "Charlie"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Charlie",
+      "correct_answer": "Charlie"
+    },
+    {
+      "example_id": 46,
+      "generated": " = Charlie\nThe answer is: Charlie",
+      "entities": [
+        "Charlie",
+        "The",
+        "Charlie"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Charlie",
+      "correct_answer": "Sam"
+    },
+    {
+      "example_id": 47,
+      "generated": " = Charlie\nThe answer is: Charlie",
+      "entities": [
+        "Charlie",
+        "The",
+        "Charlie"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Charlie",
+      "correct_answer": "Frank"
+    },
+    {
+      "example_id": 48,
+      "generated": " = Charlie\nThe answer is: Charlie",
+      "entities": [
+        "Charlie",
+        "The",
+        "Charlie"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Charlie",
+      "correct_answer": "Charlie"
+    },
+    {
+      "example_id": 49,
+      "generated": " = Charlie's enemy = Victor Charlie's enemy's friend = Sam Charlie's enemy's friend's parent = Victor Charlie's enemy's friend's parent's parent = Sam Charlie's enemy's friend's parent's parent's child = Victor\nThe answer is",
+      "entities": [
+        "Charlie",
+        "Victor",
+        "Charlie",
+        "Sam",
+        "Charlie",
+        "Victor",
+        "Charlie",
+        "Sam",
+        "Charlie",
+        "Victor",
+        "The"
+      ],
+      "relations": [
+        "enemy",
+        "enemy",
+        "friend",
+        "enemy",
+        "friend",
+        "parent",
+        "enemy",
+        "friend",
+        "parent",
+        "parent",
+        "enemy",
+        "friend",
+        "parent",
+        "parent",
+        "child"
+      ],
+      "complexity": "multi_hop",
+      "correct": false,
+      "predicted": "Charlie's",
+      "correct_answer": "Sam"
+    },
+    {
+      "example_id": 50,
+      "generated": " = Noah\nThe answer is: Noah",
+      "entities": [
+        "Noah",
+        "The",
+        "Noah"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Noah",
+      "correct_answer": "Noah"
+    },
+    {
+      "example_id": 51,
+      "generated": " = Grace\nThe answer is: Grace",
+      "entities": [
+        "Grace",
+        "The",
+        "Grace"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Grace",
+      "correct_answer": "Grace"
+    },
+    {
+      "example_id": 52,
+      "generated": " = Kate\nThe answer is: Kate",
+      "entities": [
+        "Kate",
+        "The",
+        "Kate"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Kate",
+      "correct_answer": "Kate"
+    },
+    {
+      "example_id": 53,
+      "generated": " = Noah\nThe answer is: Noah",
+      "entities": [
+        "Noah",
+        "The",
+        "Noah"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Noah",
+      "correct_answer": "Noah"
+    },
+    {
+      "example_id": 54,
+      "generated": " = Grace\nThe answer is: Grace",
+      "entities": [
+        "Grace",
+        "The",
+        "Grace"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Grace",
+      "correct_answer": "Grace"
+    },
+    {
+      "example_id": 55,
+      "generated": " = Kate\nThe answer is: Kate",
+      "entities": [
+        "Kate",
+        "The",
+        "Kate"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Kate",
+      "correct_answer": "Noah"
+    },
+    {
+      "example_id": 56,
+      "generated": " = Xavier\nThe answer is: Xavier",
+      "entities": [
+        "Xavier",
+        "The",
+        "Xavier"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Xavier",
+      "correct_answer": "Noah"
+    },
+    {
+      "example_id": 57,
+      "generated": " = Noah\nThe answer is: Noah",
+      "entities": [
+        "Noah",
+        "The",
+        "Noah"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Noah",
+      "correct_answer": "Kate"
+    },
+    {
+      "example_id": 58,
+      "generated": " = Kate\nThe answer is: Kate",
+      "entities": [
+        "Kate",
+        "The",
+        "Kate"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Kate",
+      "correct_answer": "Noah"
+    },
+    {
+      "example_id": 59,
+      "generated": " = Uma\nThe answer is: Uma",
+      "entities": [
+        "Uma",
+        "The",
+        "Uma"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Uma",
+      "correct_answer": "Noah"
+    },
+    {
+      "example_id": 60,
+      "generated": " = Kate\nThe answer is: Kate",
+      "entities": [
+        "Kate",
+        "The",
+        "Kate"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Kate",
+      "correct_answer": "Kate"
+    },
+    {
+      "example_id": 61,
+      "generated": " = Noah\nThe answer is: Noah",
+      "entities": [
+        "Noah",
+        "The",
+        "Noah"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Noah",
+      "correct_answer": "Kate"
+    },
+    {
+      "example_id": 62,
+      "generated": " = Noah\nThe answer is: Noah",
+      "entities": [
+        "Noah",
+        "The",
+        "Noah"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Noah",
+      "correct_answer": "Noah"
+    },
+    {
+      "example_id": 63,
+      "generated": " = Xavier\nThe answer is: Xavier",
+      "entities": [
+        "Xavier",
+        "The",
+        "Xavier"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Xavier",
+      "correct_answer": "Noah"
+    },
+    {
+      "example_id": 64,
+      "generated": " = Grace\nThe answer is: Grace",
+      "entities": [
+        "Grace",
+        "The",
+        "Grace"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Grace",
+      "correct_answer": "Grace"
+    },
+    {
+      "example_id": 65,
+      "generated": " = Grace\nThe answer is: Grace",
+      "entities": [
+        "Grace",
+        "The",
+        "Grace"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Grace",
+      "correct_answer": "Kate"
+    },
+    {
+      "example_id": 66,
+      "generated": " = Kate\nThe answer is: Kate",
+      "entities": [
+        "Kate",
+        "The",
+        "Kate"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Kate",
+      "correct_answer": "Uma"
+    },
+    {
+      "example_id": 67,
+      "generated": " = Kate\nThe answer is: Kate",
+      "entities": [
+        "Kate",
+        "The",
+        "Kate"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Kate",
+      "correct_answer": "Kate"
+    },
+    {
+      "example_id": 68,
+      "generated": " = Uma\nThe answer is: Uma",
+      "entities": [
+        "Uma",
+        "The",
+        "Uma"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Uma",
+      "correct_answer": "Victor"
+    },
+    {
+      "example_id": 69,
+      "generated": " = Noah Xavier's child's enemy = Grace Xavier's child's enemy's enemy = Noah Xavier's child's enemy's enemy's child = Kate\nThe answer is: Kate",
+      "entities": [
+        "Noah",
+        "Xavier",
+        "Grace",
+        "Xavier",
+        "Noah",
+        "Xavier",
+        "Kate",
+        "The",
+        "Kate"
+      ],
+      "relations": [
+        "child",
+        "enemy",
+        "child",
+        "enemy",
+        "enemy",
+        "child",
+        "enemy",
+        "enemy",
+        "child"
+      ],
+      "complexity": "multi_hop",
+      "correct": true,
+      "predicted": "Kate",
+      "correct_answer": "Kate"
+    },
+    {
+      "example_id": 70,
+      "generated": " = Uma\nThe answer is: Uma",
+      "entities": [
+        "Uma",
+        "The",
+        "Uma"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Uma",
+      "correct_answer": "Grace"
+    },
+    {
+      "example_id": 71,
+      "generated": " = Noah's friend = Uma Xavier's friend's enemy = Xavier Xavier's friend's enemy's enemy = Uma Xavier's friend's enemy's enemy's child = Uma Xavier's friend's enemy's enemy's child's parent = Kate\nThe answer is",
+      "entities": [
+        "Noah",
+        "Uma",
+        "Xavier",
+        "Xavier",
+        "Xavier",
+        "Uma",
+        "Xavier",
+        "Uma",
+        "Xavier",
+        "Kate",
+        "The"
+      ],
+      "relations": [
+        "friend",
+        "friend",
+        "enemy",
+        "friend",
+        "enemy",
+        "enemy",
+        "friend",
+        "enemy",
+        "enemy",
+        "child",
+        "friend",
+        "enemy",
+        "enemy",
+        "child",
+        "parent"
+      ],
+      "complexity": "multi_hop",
+      "correct": false,
+      "predicted": "Noah's",
+      "correct_answer": "Grace"
+    },
+    {
+      "example_id": 72,
+      "generated": " = Kate\nThe answer is: Kate",
+      "entities": [
+        "Kate",
+        "The",
+        "Kate"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Kate",
+      "correct_answer": "Noah"
+    },
+    {
+      "example_id": 73,
+      "generated": " = Grace Noah's child's child's enemy's child = Victor Noah's child's child's enemy's child's enemy = Kate\nThe answer is: Kate",
+      "entities": [
+        "Grace",
+        "Noah",
+        "Victor",
+        "Noah",
+        "Kate",
+        "The",
+        "Kate"
+      ],
+      "relations": [
+        "child",
+        "child",
+        "enemy",
+        "child",
+        "child",
+        "child",
+        "enemy",
+        "child",
+        "enemy"
+      ],
+      "complexity": "multi_hop",
+      "correct": false,
+      "predicted": "Kate",
+      "correct_answer": "Grace"
+    },
+    {
+      "example_id": 74,
+      "generated": " = Noah\nThe answer is: Noah",
+      "entities": [
+        "Noah",
+        "The",
+        "Noah"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Noah",
+      "correct_answer": "Victor"
+    },
+    {
+      "example_id": 75,
+      "generated": " = Mia\nThe answer is: Mia",
+      "entities": [
+        "Mia",
+        "The",
+        "Mia"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Mia",
+      "correct_answer": "Mia"
+    },
+    {
+      "example_id": 76,
+      "generated": " = Mia\nThe answer is: Mia",
+      "entities": [
+        "Mia",
+        "The",
+        "Mia"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Mia",
+      "correct_answer": "Mia"
+    },
+    {
+      "example_id": 77,
+      "generated": " = Yara\nThe answer is: Yara",
+      "entities": [
+        "Yara",
+        "The",
+        "Yara"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Yara",
+      "correct_answer": "Yara"
+    },
+    {
+      "example_id": 78,
+      "generated": " = Alice\nThe answer is: Alice",
+      "entities": [
+        "Alice",
+        "The",
+        "Alice"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Alice",
+      "correct_answer": "Alice"
+    },
+    {
+      "example_id": 79,
+      "generated": " = Chloe\nThe answer is: Chloe",
+      "entities": [
+        "Chloe",
+        "The",
+        "Chloe"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Chloe",
+      "correct_answer": "Chloe"
+    },
+    {
+      "example_id": 80,
+      "generated": " = Alice Mia's enemy = Mia Mia's enemy's child = Alice\nThe answer is: Alice",
+      "entities": [
+        "Alice",
+        "Mia",
+        "Mia",
+        "Mia",
+        "Alice",
+        "The",
+        "Alice"
+      ],
+      "relations": [
+        "enemy",
+        "enemy",
+        "child"
+      ],
+      "complexity": "multi_hop",
+      "correct": false,
+      "predicted": "Alice",
+      "correct_answer": "Chloe"
+    },
+    {
+      "example_id": 81,
+      "generated": " = Mia\nThe answer is: Mia",
+      "entities": [
+        "Mia",
+        "The",
+        "Mia"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Mia",
+      "correct_answer": "Yara"
+    },
+    {
+      "example_id": 82,
+      "generated": " = Chloe\nThe answer is: Chloe",
+      "entities": [
+        "Chloe",
+        "The",
+        "Chloe"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Chloe",
+      "correct_answer": "Olivia"
+    },
+    {
+      "example_id": 83,
+      "generated": " = Yara\nThe answer is: Yara",
+      "entities": [
+        "Yara",
+        "The",
+        "Yara"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Yara",
+      "correct_answer": "Mia"
+    },
+    {
+      "example_id": 84,
+      "generated": " = Yara\nThe answer is: Yara",
+      "entities": [
+        "Yara",
+        "The",
+        "Yara"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Yara",
+      "correct_answer": "Mia"
+    },
+    {
+      "example_id": 85,
+      "generated": " = Mia\nThe answer is: Mia",
+      "entities": [
+        "Mia",
+        "The",
+        "Mia"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Mia",
+      "correct_answer": "Yara"
+    },
+    {
+      "example_id": 86,
+      "generated": " = Yara\nThe answer is: Yara",
+      "entities": [
+        "Yara",
+        "The",
+        "Yara"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Yara",
+      "correct_answer": "Alice"
+    },
+    {
+      "example_id": 87,
+      "generated": " = Mia\nThe answer is: Mia",
+      "entities": [
+        "Mia",
+        "The",
+        "Mia"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Mia",
+      "correct_answer": "Yara"
+    },
+    {
+      "example_id": 88,
+      "generated": " = Mia\nThe answer is: Mia",
+      "entities": [
+        "Mia",
+        "The",
+        "Mia"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Mia",
+      "correct_answer": "Yara"
+    },
+    {
+      "example_id": 89,
+      "generated": " = Chloe Mia's parent's friend = Alice Mia's parent's friend's parent = Olivia\nThe answer is: Olivia",
+      "entities": [
+        "Chloe",
+        "Mia",
+        "Alice",
+        "Mia",
+        "Olivia",
+        "The",
+        "Olivia"
+      ],
+      "relations": [
+        "parent",
+        "friend",
+        "parent",
+        "friend",
+        "parent"
+      ],
+      "complexity": "multi_hop",
+      "correct": true,
+      "predicted": "Olivia",
+      "correct_answer": "Olivia"
+    },
+    {
+      "example_id": 90,
+      "generated": " = Alice\nThe answer is: Alice",
+      "entities": [
+        "Alice",
+        "The",
+        "Alice"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Alice",
+      "correct_answer": "Chloe"
+    },
+    {
+      "example_id": 91,
+      "generated": " = Chloe Mia's friend = Alice Mia's friend's friend = Chloe Mia's friend's friend's friend = Alice Mia's friend's friend's friend's parent = Olivia\nThe answer is: Olivia",
+      "entities": [
+        "Chloe",
+        "Mia",
+        "Alice",
+        "Mia",
+        "Chloe",
+        "Mia",
+        "Alice",
+        "Mia",
+        "Olivia",
+        "The",
+        "Olivia"
+      ],
+      "relations": [
+        "friend",
+        "friend",
+        "friend",
+        "friend",
+        "friend",
+        "friend",
+        "friend",
+        "friend",
+        "friend",
+        "parent"
+      ],
+      "complexity": "multi_hop",
+      "correct": false,
+      "predicted": "Olivia",
+      "correct_answer": "Alice"
+    },
+    {
+      "example_id": 92,
+      "generated": " = Chloe Mia's enemy's enemy = Yara Mia's enemy's enemy's friend = Alice Mia's enemy's enemy's friend's parent = Olivia\nThe answer is: Olivia",
+      "entities": [
+        "Chloe",
+        "Mia",
+        "Yara",
+        "Mia",
+        "Alice",
+        "Mia",
+        "Olivia",
+        "The",
+        "Olivia"
+      ],
+      "relations": [
+        "enemy",
+        "enemy",
+        "enemy",
+        "enemy",
+        "friend",
+        "enemy",
+        "enemy",
+        "friend",
+        "parent"
+      ],
+      "complexity": "multi_hop",
+      "correct": false,
+      "predicted": "Olivia",
+      "correct_answer": "Alice"
+    },
+    {
+      "example_id": 93,
+      "generated": " = Yara\nThe answer is: Yara",
+      "entities": [
+        "Yara",
+        "The",
+        "Yara"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Yara",
+      "correct_answer": "Yara"
+    },
+    {
+      "example_id": 94,
+      "generated": " = Alice\nThe answer is: Alice",
+      "entities": [
+        "Alice",
+        "The",
+        "Alice"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Alice",
+      "correct_answer": "Chloe"
+    },
+    {
+      "example_id": 95,
+      "generated": " = Alice\nThe answer is: Alice",
+      "entities": [
+        "Alice",
+        "The",
+        "Alice"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Alice",
+      "correct_answer": "Chloe"
+    },
+    {
+      "example_id": 96,
+      "generated": " = Alice's friend = Chloe Xavier's friend's friend = Alice Xavier's friend's friend's friend = Chloe Xavier's friend's friend's friend's enemy = Yara Xavier's friend's friend's friend's enemy's parent = Xavier\nThe answer",
+      "entities": [
+        "Alice",
+        "Chloe",
+        "Xavier",
+        "Alice",
+        "Xavier",
+        "Chloe",
+        "Xavier",
+        "Yara",
+        "Xavier",
+        "Xavier",
+        "The"
+      ],
+      "relations": [
+        "friend",
+        "friend",
+        "friend",
+        "friend",
+        "friend",
+        "friend",
+        "friend",
+        "friend",
+        "friend",
+        "enemy",
+        "friend",
+        "friend",
+        "friend",
+        "enemy",
+        "parent"
+      ],
+      "complexity": "multi_hop",
+      "correct": false,
+      "predicted": "Alice's",
+      "correct_answer": "Xavier"
+    },
+    {
+      "example_id": 97,
+      "generated": " = Olivia\nThe answer is: Olivia",
+      "entities": [
+        "Olivia",
+        "The",
+        "Olivia"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Olivia",
+      "correct_answer": "Alice"
+    },
+    {
+      "example_id": 98,
+      "generated": " = Xavier's enemy = Mia Xavier's enemy's friend = Olivia Xavier's enemy's friend's parent = Alice Xavier's enemy's friend's parent's enemy = Mia Xavier's enemy's friend's parent's enemy's parent = Chloe\nThe answer is",
+      "entities": [
+        "Xavier",
+        "Mia",
+        "Xavier",
+        "Olivia",
+        "Xavier",
+        "Alice",
+        "Xavier",
+        "Mia",
+        "Xavier",
+        "Chloe",
+        "The"
+      ],
+      "relations": [
+        "enemy",
+        "enemy",
+        "friend",
+        "enemy",
+        "friend",
+        "parent",
+        "enemy",
+        "friend",
+        "parent",
+        "enemy",
+        "enemy",
+        "friend",
+        "parent",
+        "enemy",
+        "parent"
+      ],
+      "complexity": "multi_hop",
+      "correct": false,
+      "predicted": "Xavier's",
+      "correct_answer": "Chloe"
+    },
+    {
+      "example_id": 99,
+      "generated": " = Yara\nThe answer is: Alice",
+      "entities": [
+        "Yara",
+        "The",
+        "Alice"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Alice",
+      "correct_answer": "Mia"
+    }
+  ],
+  "correct_examples": [
+    {
+      "example_id": 0,
+      "generated": " = Paul\nThe answer is: Paul",
+      "entities": [
+        "Paul",
+        "The",
+        "Paul"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Paul",
+      "correct_answer": "Paul"
+    },
+    {
+      "example_id": 1,
+      "generated": " = Amber\nThe answer is: Amber",
+      "entities": [
+        "Amber",
+        "The",
+        "Amber"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Amber",
+      "correct_answer": "Amber"
+    },
+    {
+      "example_id": 2,
+      "generated": " = Chloe\nThe answer is: Chloe",
+      "entities": [
+        "Chloe",
+        "The",
+        "Chloe"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Chloe",
+      "correct_answer": "Chloe"
+    },
+    {
+      "example_id": 3,
+      "generated": " = Mia\nThe answer is: Mia",
+      "entities": [
+        "Mia",
+        "The",
+        "Mia"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Mia",
+      "correct_answer": "Mia"
+    },
+    {
+      "example_id": 4,
+      "generated": " = Paul\nThe answer is: Paul",
+      "entities": [
+        "Paul",
+        "The",
+        "Paul"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Paul",
+      "correct_answer": "Paul"
+    },
+    {
+      "example_id": 7,
+      "generated": " = Chloe\nThe answer is: Chloe",
+      "entities": [
+        "Chloe",
+        "The",
+        "Chloe"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Chloe",
+      "correct_answer": "Chloe"
+    },
+    {
+      "example_id": 9,
+      "generated": " = Amber Chloe's friend = Paul Chloe's friend's parent = Uma\nThe answer is: Uma",
+      "entities": [
+        "Amber",
+        "Chloe",
+        "Paul",
+        "Chloe",
+        "Uma",
+        "The",
+        "Uma"
+      ],
+      "relations": [
+        "friend",
+        "friend",
+        "parent"
+      ],
+      "complexity": "multi_hop",
+      "correct": true,
+      "predicted": "Uma",
+      "correct_answer": "Uma"
+    },
+    {
+      "example_id": 12,
+      "generated": " = Paul\nThe answer is: Paul",
+      "entities": [
+        "Paul",
+        "The",
+        "Paul"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Paul",
+      "correct_answer": "Paul"
+    },
+    {
+      "example_id": 15,
+      "generated": " = Mia Mia's enemy = Chloe Mia's enemy's friend = Paul Mia's enemy's friend's enemy = Tina Mia's enemy's friend's enemy's parent = Paul\nThe answer is: Paul",
+      "entities": [
+        "Mia",
+        "Mia",
+        "Chloe",
+        "Mia",
+        "Paul",
+        "Mia",
+        "Tina",
+        "Mia",
+        "Paul",
+        "The",
+        "Paul"
+      ],
+      "relations": [
+        "enemy",
+        "enemy",
+        "friend",
+        "enemy",
+        "friend",
+        "enemy",
+        "enemy",
+        "friend",
+        "enemy",
+        "parent"
+      ],
+      "complexity": "multi_hop",
+      "correct": true,
+      "predicted": "Paul",
+      "correct_answer": "Paul"
+    },
+    {
+      "example_id": 19,
+      "generated": " = Paul\nThe answer is: Paul",
+      "entities": [
+        "Paul",
+        "The",
+        "Paul"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Paul",
+      "correct_answer": "Paul"
+    },
+    {
+      "example_id": 25,
+      "generated": " = Victor\nThe answer is: Victor",
+      "entities": [
+        "Victor",
+        "The",
+        "Victor"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Victor",
+      "correct_answer": "Victor"
+    },
+    {
+      "example_id": 26,
+      "generated": " = Victor\nThe answer is: Victor",
+      "entities": [
+        "Victor",
+        "The",
+        "Victor"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Victor",
+      "correct_answer": "Victor"
+    },
+    {
+      "example_id": 27,
+      "generated": " = Frank\nThe answer is: Frank",
+      "entities": [
+        "Frank",
+        "The",
+        "Frank"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Frank",
+      "correct_answer": "Frank"
+    },
+    {
+      "example_id": 28,
+      "generated": " = Charlie\nThe answer is: Charlie",
+      "entities": [
+        "Charlie",
+        "The",
+        "Charlie"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Charlie",
+      "correct_answer": "Charlie"
+    },
+    {
+      "example_id": 29,
+      "generated": " = Charlie\nThe answer is: Charlie",
+      "entities": [
+        "Charlie",
+        "The",
+        "Charlie"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Charlie",
+      "correct_answer": "Charlie"
+    },
+    {
+      "example_id": 34,
+      "generated": " = Alice Alice's child's child's child = Bob Alice's child's child's child's child = Alice Alice's child's child's child's child's child = Bob Bob's child's child's child's child's child's child = Alice",
+      "entities": [
+        "Alice",
+        "Alice",
+        "Bob",
+        "Alice",
+        "Alice",
+        "Alice",
+        "Bob",
+        "Bob",
+        "Alice"
+      ],
+      "relations": [
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child",
+        "child"
+      ],
+      "complexity": "multi_hop",
+      "correct": true,
+      "predicted": "Alice",
+      "correct_answer": "Alice"
+    },
+    {
+      "example_id": 36,
+      "generated": " = Bob\nThe answer is: Bob",
+      "entities": [
+        "Bob",
+        "The",
+        "Bob"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Bob",
+      "correct_answer": "Bob"
+    },
+    {
+      "example_id": 39,
+      "generated": " = Charlie\nThe answer is: Charlie",
+      "entities": [
+        "Charlie",
+        "The",
+        "Charlie"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Charlie",
+      "correct_answer": "Charlie"
+    },
+    {
+      "example_id": 40,
+      "generated": " = Charlie\nThe answer is: Charlie",
+      "entities": [
+        "Charlie",
+        "The",
+        "Charlie"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": true,
+      "predicted": "Charlie",
+      "correct_answer": "Charlie"
+    },
+    {
+      "example_id": 43,
+      "generated": " = Bob's enemy = Victor Bob's enemy's friend = Sam Bob's enemy's friend's enemy = Charlie Bob's enemy's friend's enemy's parent = Frank\nThe answer is: Frank",
+      "entities": [
+        "Bob",
+        "Victor",
+        "Bob",
+        "Sam",
+        "Bob",
+        "Charlie",
+        "Bob",
+        "Frank",
+        "The",
+        "Frank"
+      ],
+      "relations": [
+        "enemy",
+        "enemy",
+        "friend",
+        "enemy",
+        "friend",
+        "enemy",
+        "enemy",
+        "friend",
+        "enemy",
+        "parent"
+      ],
+      "complexity": "multi_hop",
+      "correct": true,
+      "predicted": "Frank",
+      "correct_answer": "Frank"
+    }
+  ],
+  "incorrect_examples": [
+    {
+      "example_id": 5,
+      "generated": " = Mia\nThe answer is: Mia",
+      "entities": [
+        "Mia",
+        "The",
+        "Mia"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Mia",
+      "correct_answer": "Paul"
+    },
+    {
+      "example_id": 6,
+      "generated": " = Chloe\nThe answer is: Chloe",
+      "entities": [
+        "Chloe",
+        "The",
+        "Chloe"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Chloe",
+      "correct_answer": "Tina"
+    },
+    {
+      "example_id": 8,
+      "generated": " = Mia\nThe answer is: Mia",
+      "entities": [
+        "Mia",
+        "The",
+        "Mia"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Mia",
+      "correct_answer": "Uma"
+    },
+    {
+      "example_id": 10,
+      "generated": " = Tina Mia's parent's child's friend's friend = Chloe\nThe answer is: Chloe",
+      "entities": [
+        "Tina",
+        "Mia",
+        "Chloe",
+        "The",
+        "Chloe"
+      ],
+      "relations": [
+        "parent",
+        "child",
+        "friend",
+        "friend"
+      ],
+      "complexity": "multi_hop",
+      "correct": false,
+      "predicted": "Chloe",
+      "correct_answer": "Tina"
+    },
+    {
+      "example_id": 11,
+      "generated": " = Amber Chloe's enemy = Uma Chloe's enemy's child = Paul Chloe's enemy's child's parent = Uma\nThe answer is: Uma",
+      "entities": [
+        "Amber",
+        "Chloe",
+        "Uma",
+        "Chloe",
+        "Paul",
+        "Chloe",
+        "Uma",
+        "The",
+        "Uma"
+      ],
+      "relations": [
+        "enemy",
+        "enemy",
+        "child",
+        "enemy",
+        "child",
+        "parent"
+      ],
+      "complexity": "multi_hop",
+      "correct": false,
+      "predicted": "Uma",
+      "correct_answer": "Mia"
+    },
+    {
+      "example_id": 13,
+      "generated": " = Mia\nThe answer is: Mia",
+      "entities": [
+        "Mia",
+        "The",
+        "Mia"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Mia",
+      "correct_answer": "Chloe"
+    },
+    {
+      "example_id": 14,
+      "generated": " = Paul\nThe answer is: Paul",
+      "entities": [
+        "Paul",
+        "The",
+        "Paul"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Paul",
+      "correct_answer": "Tina"
+    },
+    {
+      "example_id": 16,
+      "generated": " = Tina\nThe answer is: Tina",
+      "entities": [
+        "Tina",
+        "The",
+        "Tina"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Tina",
+      "correct_answer": "Paul"
+    },
+    {
+      "example_id": 17,
+      "generated": " = Tina\nThe answer is: Tina",
+      "entities": [
+        "Tina",
+        "The",
+        "Tina"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Tina",
+      "correct_answer": "Paul"
+    },
+    {
+      "example_id": 18,
+      "generated": " = Amber\nThe answer is: Mia",
+      "entities": [
+        "Amber",
+        "The",
+        "Mia"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Mia",
+      "correct_answer": "Paul"
+    },
+    {
+      "example_id": 20,
+      "generated": " = Uma\nThe answer is: Uma",
+      "entities": [
+        "Uma",
+        "The",
+        "Uma"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Uma",
+      "correct_answer": "Tina"
+    },
+    {
+      "example_id": 21,
+      "generated": " = Paul\nThe answer is: Paul",
+      "entities": [
+        "Paul",
+        "The",
+        "Paul"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Paul",
+      "correct_answer": "Tina"
+    },
+    {
+      "example_id": 22,
+      "generated": " = Amber\nThe answer is: Mia",
+      "entities": [
+        "Amber",
+        "The",
+        "Mia"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Mia",
+      "correct_answer": "Amber"
+    },
+    {
+      "example_id": 23,
+      "generated": " = Mia Uma's enemy's enemy = Chloe Uma's enemy's enemy's child = Mia Uma's enemy's enemy's child's friend = Tina Uma's enemy's enemy's child's friend's parent = Paul\nThe answer is: Paul",
+      "entities": [
+        "Mia",
+        "Uma",
+        "Chloe",
+        "Uma",
+        "Mia",
+        "Uma",
+        "Tina",
+        "Uma",
+        "Paul",
+        "The",
+        "Paul"
+      ],
+      "relations": [
+        "enemy",
+        "enemy",
+        "enemy",
+        "enemy",
+        "child",
+        "enemy",
+        "enemy",
+        "child",
+        "friend",
+        "enemy",
+        "enemy",
+        "child",
+        "friend",
+        "parent"
+      ],
+      "complexity": "multi_hop",
+      "correct": false,
+      "predicted": "Paul",
+      "correct_answer": "Uma"
+    },
+    {
+      "example_id": 24,
+      "generated": " = Paul's enemy = Tina Paul's enemy's friend = Chloe Paul's enemy's friend's enemy = Mia Paul's enemy's friend's enemy's enemy = Chloe Paul's enemy's friend's enemy's enemy's child = Paul's enemy's friend",
+      "entities": [
+        "Paul",
+        "Tina",
+        "Paul",
+        "Chloe",
+        "Paul",
+        "Mia",
+        "Paul",
+        "Chloe",
+        "Paul",
+        "Paul"
+      ],
+      "relations": [
+        "enemy",
+        "enemy",
+        "friend",
+        "enemy",
+        "friend",
+        "enemy",
+        "enemy",
+        "friend",
+        "enemy",
+        "enemy",
+        "enemy",
+        "friend",
+        "enemy",
+        "enemy",
+        "child",
+        "enemy",
+        "friend"
+      ],
+      "complexity": "multi_hop",
+      "correct": false,
+      "predicted": "Paul's",
+      "correct_answer": "Tina"
+    },
+    {
+      "example_id": 30,
+      "generated": " = Frank\nThe answer is: Frank",
+      "entities": [
+        "Frank",
+        "The",
+        "Frank"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Frank",
+      "correct_answer": "Sam"
+    },
+    {
+      "example_id": 31,
+      "generated": " = Bob\nThe answer is: Bob",
+      "entities": [
+        "Bob",
+        "The",
+        "Bob"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Bob",
+      "correct_answer": "Victor"
+    },
+    {
+      "example_id": 32,
+      "generated": " = Victor\nThe answer is: Victor",
+      "entities": [
+        "Victor",
+        "The",
+        "Victor"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Victor",
+      "correct_answer": "Sam"
+    },
+    {
+      "example_id": 33,
+      "generated": " = Alice Bob's child = Bob Bob's child's parent = Alice\nThe answer is: Alice",
+      "entities": [
+        "Alice",
+        "Bob",
+        "Bob",
+        "Bob",
+        "Alice",
+        "The",
+        "Alice"
+      ],
+      "relations": [
+        "child",
+        "child",
+        "parent"
+      ],
+      "complexity": "multi_hop",
+      "correct": false,
+      "predicted": "Alice",
+      "correct_answer": "Bob"
+    },
+    {
+      "example_id": 35,
+      "generated": " = Charlie\nThe answer is: Charlie",
+      "entities": [
+        "Charlie",
+        "The",
+        "Charlie"
+      ],
+      "relations": [],
+      "complexity": "direct",
+      "correct": false,
+      "predicted": "Charlie",
+      "correct_answer": "Sam"
+    }
+  ]
+}
