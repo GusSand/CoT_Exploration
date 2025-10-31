@@ -2,6 +2,44 @@
 
 ## Experiment Log
 
+### 2025-10-31: Position-wise CoT Activation Patching - DISTRIBUTED REASONING CONFIRMED
+
+**Objective**: Fine-grained analysis of which specific (layer, position) combinations in continuous thought tokens are critical for arithmetic reasoning.
+
+**Status**: ✅ **COMPLETE** - 57 pairs, 4,560 patches analyzed
+
+**Model**: LLaMA-3.2-1B-Instruct CODI (5 CT tokens, 16 layers) | **Task**: GSM8K arithmetic reasoning
+
+**Method**: Single-Position Activation Patching
+- Extract clean activations at all 16 layers × 5 CoT positions
+- Patch each (layer, position) individually with clean activation
+- Measure KL divergence, answer logit difference, prediction changes
+- Compare to baseline corrupted (no patching)
+
+**Key Findings**:
+
+1. **Distributed Reasoning** (Single Positions Insufficient):
+   - Answer logit diff: All negative (~-0.05), no recovery toward clean answer
+   - Contrasts with layer-wise patching (all 5 positions) which shows positive recovery
+   - **Implication**: CoT reasoning requires synergistic computation across multiple positions
+
+2. **Early Layers + Middle Positions Most Critical**:
+   - Top 5 combinations all in layers 0-3
+   - Positions 0-2 appear most frequently (6/10 in top 10)
+   - KL divergence: Layers 0-3 (~0.0007) vs Layers 12-15 (~0.0002)
+
+3. **Small But Measurable Effects**:
+   - KL divergences ~0.001 (10x smaller than layer-wise ~0.01)
+   - Consistent patterns across all 57 pairs
+   - Suggests individual positions contribute weakly, combination contributes strongly
+
+**Detailed Report**: [10-30_llama_gsm8k_position_patching.md](experiments/10-30_llama_gsm8k_position_patching.md)
+**W&B Run**: https://wandb.ai/gussand/cot-exploration/runs/ffyclrdd
+
+**Next**: Experiment 2 - Iterative patching to test sequential vs parallel effects
+
+---
+
 ### 2025-10-30: Three-Way CODI Mechanistic Comparison - TASK-SPECIFIC ENCODINGS DISCOVERED
 
 **Objective**: Compare how CODI encodes different reasoning types (graph traversal, arithmetic, semantic) in continuous thought space to understand task-specific vs universal encoding strategies.
