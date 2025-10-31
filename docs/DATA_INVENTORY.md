@@ -1,6 +1,6 @@
 # Data Inventory - CoT Exploration Project
 
-**Last Updated**: 2025-10-29 (Added Section 25: Adversarial Attack Case Studies - Qualitative analysis demonstrating CODI vulnerabilities and robustness)
+**Last Updated**: 2025-10-30 (Added Section 27: LLaMA Clean/Corrupted Pairs - Activation patching dataset)
 
 This document provides a complete breakdown of all datasets in the project, organized by experiment type and model.
 
@@ -28,6 +28,8 @@ This document provides a complete breakdown of all datasets in the project, orga
 | **Intervention Results (Smoke Test)** | Smoke test feature interventions | ~450 rows | GPT-2 or LLaMA | [`results/step_by_step/smoke_test_results.csv`](../results/step_by_step/smoke_test_results.csv) ⚠️ |
 | **Step 3 Intervention Results** | Extended systematic intervention search | 12,000 interventions (3.7 MB) | GPT-2 | [`data/step_by_step/intervention_results/`](../data/step_by_step/intervention_results/) ✅ |
 | **Adversarial Attack Results** | Input manipulation attacks on CODI vs Plain | 50 problems × 9 attacks + baseline | LLaMA CODI + Plain | [`data/adversarial_attacks/`](../data/adversarial_attacks/) ✅ |
+| **Three-Way CT Activations** | Cross-task mechanistic comparison | 300 examples (100 per task), ~900 MB | LLaMA-1B CODI (all 3 tasks) | [`src/experiments/three_way_comparison/results/`](../src/experiments/three_way_comparison/results/) ✅ |
+| **LLaMA Clean/Corrupted Pairs** | Layer-wise activation patching | 66 pairs (132 examples) | LLaMA-1B CODI | [`corrected_llama_cot_clean_corrupted_pairs/llama_clean_corrupted_pairs.json`](../corrected_llama_cot_clean_corrupted_pairs/llama_clean_corrupted_pairs.json) ✅ |
 
 ---
 
@@ -4751,3 +4753,281 @@ Each case study includes:
 - **Location**: `/home/paperspace/dev/CoT_Exploration/models/personal_relations_1b_codi_v2/evaluation_results/personal_relations_1b_eval_FINAL_CORRECT.json`
 - **Metrics**: 328/750 correct (43.7% accuracy)
 - **Comparison**: Matches few-shot baseline (43.8%), 3x better than CODI v1 (14.8%)
+
+---
+
+## 26. Three-Way CODI Mechanistic Comparison (October 30, 2025)
+
+**Purpose**: Cross-task comparison of CODI continuous thought (CT) representations to understand task-specific encoding strategies
+
+**Experiment**: `/home/paperspace/dev/CoT_Exploration/src/experiments/three_way_comparison/`
+
+**Report**: [`10-30_all_three_way_codi_comparison.md`](experiments/10-30_all_three_way_codi_comparison.md)
+
+### CT Activation Tensors (Main Data)
+
+**Files**: ✅
+- `results/activations_personal_relations.npz` (300 MB)
+- `results/activations_gsm8k.npz` (300 MB)
+- `results/activations_commonsense.npz` (300 MB)
+
+**Structure**:
+```python
+{
+    'hidden_states': [100, 16, 6, 2048],  # [N examples, 16 layers, 6 CT tokens, 2048 hidden dim]
+    'correct': [100],                      # Boolean correctness per example
+    'example_ids': [100],                  # Example indices
+    'examples_json': '...',                # JSON string with Q/A/predicted
+    'task_name': 'personal_relations',     # Task identifier
+    'n_examples': 100,
+    'n_correct': 47,
+    'accuracy': 0.47
+}
+```
+
+**Size**: ~900 MB total (3 tasks × 300 MB)
+
+**Generation**:
+```bash
+cd src/experiments/three_way_comparison
+python extract_activations.py --n_examples 100  # ~5 minutes
+```
+
+**Usage**:
+- PCA/t-SNE visualization of task clustering
+- Centroid distance analysis (task separation)
+- Cosine similarity analysis (task alignment)
+- Variance ratio analysis (representation compactness)
+- Layer-wise divergence metrics
+
+### Divergence Metrics
+
+**File**: ✅ `results/divergence_summary.json` (2 KB)
+
+**Structure**:
+```json
+{
+  "task_accuracies": {
+    "personal_relations": 0.47,
+    "gsm8k": 0.32,
+    "commonsense": 0.34
+  },
+  "avg_centroid_distances": {
+    "personal_relations_vs_gsm8k": 32.99,
+    "personal_relations_vs_commonsense": 40.34,
+    "gsm8k_vs_commonsense": 33.75
+  },
+  "avg_cosine_similarities": {
+    "personal_relations_vs_gsm8k": 0.192,
+    "personal_relations_vs_commonsense": 0.241,
+    "gsm8k_vs_commonsense": 0.185
+  },
+  "avg_variance_ratios": {
+    "personal_relations": 0.272,
+    "gsm8k": 0.182,
+    "commonsense": 0.160
+  }
+}
+```
+
+**Generation**:
+```bash
+python analyze_divergence.py  # ~1 minute
+```
+
+### Visualizations
+
+**Location**: ✅ `results/visualizations/` (9 plots, ~3 MB total)
+
+**Files**:
+1. `pca_by_task.png` - PCA showing task clustering (85.1% variance explained)
+2. `pca_by_token.png` - PCA colored by CT token position (CT0-CT5)
+3. `pca_by_correctness.png` - PCA showing correct vs incorrect examples per task
+4. `tsne_by_task.png` - t-SNE visualization of task separation
+5. `layer_progression_ct0.png` - CT0 evolution across layers 0, 5, 10, 15
+6. `centroid_distances.png` - Heatmap [16 layers × 6 tokens] per task pair
+7. `cosine_similarities.png` - Heatmap [16 layers × 6 tokens] per task pair
+8. `variance_ratios.png` - Heatmap [16 layers × 6 tokens] per task
+9. `token_trajectories.png` - Metric evolution through network depth
+
+**Generation**:
+```bash
+python visualize_embeddings.py  # ~30 seconds
+```
+
+### Key Findings
+
+**Task-Specific Encoding Strategies**:
+| Task | Variance Ratio | Strategy |
+|------|---------------|----------|
+| Personal Relations | 0.272 (highest) | Compact, specialized graph traversal |
+| GSM8K | 0.182 | Distributed arithmetic encoding |
+| CommonsenseQA | 0.160 (lowest) | Broad semantic coverage |
+
+**Cross-Task Separation**:
+- Low cosine similarities (0.18-0.24): Minimal CT overlap
+- High centroid distances (33-40): Distinct task clustering
+- **Conclusion**: CODI learns task-specific CT representations with limited transferability
+
+**Compactness-Performance Relationship**:
+- Personal Relations: Highest compactness (0.272) + highest accuracy (47%)
+- CommonsenseQA: Lowest compactness (0.160) + lower accuracy (34%)
+- **Insight**: Focused tasks benefit from compact CT encodings
+
+### Models Used
+
+**Personal Relations CODI**:
+- Path: `/home/paperspace/dev/CoT_Exploration/models/personal_relations_1b_codi_v2/.../checkpoint-270`
+- Training: LoRA (r=128, α=32) + Projection (2048 dim)
+- Accuracy: 47/100 (47.0%)
+
+**GSM8K CODI**:
+- Path: `/home/paperspace/codi_ckpt/llama_gsm8k`
+- Training: LoRA (r=128, α=32) + Projection (2048 dim)
+- Accuracy: 32/100 (32.0%)
+
+**CommonsenseQA CODI**:
+- Path: `/home/paperspace/codi_ckpt/llama_commonsense/.../seed_11`
+- Training: LoRA (r=128, α=32) + Projection (2048 dim)
+- Accuracy: 34/100 (34.0%)
+
+### Test Datasets (Stratified Sampling)
+
+**Personal Relations**:
+- Source: `/home/paperspace/dev/CoT_Exploration/data/personal_relations/personal_relations_test_codi_v2.json`
+- Total: 750 examples
+- Sampled: 100 (stratified by relationship chain length)
+- Random seed: 42
+
+**GSM8K**:
+- Source: HuggingFace `gsm8k` dataset (test split)
+- Total: 1,319 examples
+- Sampled: 100 (stratified by operation count: simple=29, medium=250, complex=1040)
+- Random seed: 42
+
+**CommonsenseQA**:
+- Source: HuggingFace `commonsense_qa` dataset (validation split)
+- Total: 1,221 examples
+- Sampled: 100 (stratified by question concept: 785 unique concepts)
+- Random seed: 42
+
+### Critical Bug Fix
+
+**Issue**: Only Personal Relations had LoRA enabled in model loader, but all 3 models use LoRA (224 parameter keys)
+
+**Fix**: Updated `model_loader.py` to enable LoRA for GSM8K and CommonsenseQA:
+```python
+model_args = ModelArgs(use_lora=True, lora_r=128, lora_alpha=32)
+training_args = TrainingArgs(use_lora=True, ...)
+```
+
+**Impact**: Without fix, GSM8K/CommonsenseQA would have degraded performance due to missing LoRA adaptations
+
+### Stratification Details
+
+**Personal Relations**: By relationship chain length (1-hop, 2-hop, 3+ hop)
+- Metric: Count of relationships in universe context
+- Implementation: `universe.count('=')`
+
+**GSM8K**: By operation count (simple, medium, complex)
+- Metric: Count of arithmetic operators in answer calculation
+- Implementation: `answer.count('+') + answer.count('-') + answer.count('*') + answer.count('/')`
+
+**CommonsenseQA**: By question concept
+- Metric: Question concept field (785 unique concepts)
+- Implementation: Proportional sampling across concepts
+
+### Experiment Time
+
+- **Model loader testing**: 15 minutes
+- **CT extraction pipeline**: 5 minutes (100 examples × 3 tasks)
+- **Visualization generation**: 30 seconds
+- **Divergence analysis**: 1 minute
+- **Total**: ~2 hours (including debugging)
+
+### References
+
+- **Experiment Report**: [10-30_all_three_way_codi_comparison.md](experiments/10-30_all_three_way_codi_comparison.md)
+- **Research Journal**: [research_journal.md](research_journal.md#2025-10-30-three-way-codi-mechanistic-comparison)
+- **Architecture**: [three_way_comparison_architecture.md](architecture/three_way_comparison_architecture.md)
+
+
+
+---
+
+## 27. LLaMA Clean/Corrupted Pairs (Layer-wise Activation Patching)
+
+**File**: [`corrected_llama_cot_clean_corrupted_pairs/llama_clean_corrupted_pairs.json`](../corrected_llama_cot_clean_corrupted_pairs/llama_clean_corrupted_pairs.json) ✅
+
+**Purpose**: Clean and corrupted problem pairs for layer-wise activation patching analysis to identify which transformer layers encode critical reasoning
+
+**Size**: 66 pairs (132 total examples)
+
+**Model**: LLaMA-3.2-1B-Instruct + CODI
+
+**Structure**:
+```json
+[
+  {
+    "pair_id": 0,
+    "variant": "clean",
+    "question": "Janets ducks lay 16 eggs per day...",
+    "answer": 18,
+    "reasoning_steps": 2,
+    "baseline_correct": true,
+    "ablated_correct": false,
+    "needs_cot": true
+  },
+  {
+    "pair_id": 0,
+    "variant": "corrupted", 
+    "question": "Janets ducks lay 17 eggs per day...",
+    "answer": 20,
+    "reasoning_steps": 2,
+    "baseline_correct": true,
+    "ablated_correct": false,
+    "needs_cot": true
+  }
+]
+```
+
+**Key Stats**:
+- Source: GSM8K math word problems
+- 66 pairs extracted from larger llama_cot_all.json dataset
+- All answers verified and corrected (62/66 corrupted variants had errors)
+- Corruptions are small numerical perturbations (typically ±1)
+- Mean answer difference: 97.32 (range: 0-3600)
+- 9 pairs have same answer despite different questions
+
+**Data Quality**:
+- All 66 pairs complete (both clean and corrupted)
+- All answers numeric and verified correct
+- Reasoning steps: 1-6 (mean: 2.98)
+- Question lengths: 17-80 words (mean: 41.71)
+
+**How to Recreate**:
+1. Start with `llama_cot_all.json` (285 problems)
+2. Extract pairs with matching `pair_id` and both variants
+3. Manually verify/correct all corrupted answers
+4. See `CORRECTION_REPORT.md` for full methodology
+
+**Used By**:
+- Layer-wise CoT activation patching experiment (10-30)
+- Identifies which layers encode critical reasoning
+- Tests causal effects of CoT representations
+
+**Experiment**: [`src/experiments/10-30_llama_gsm8k_layer_patching/`](../src/experiments/10-30_llama_gsm8k_layer_patching/)
+
+**Results**:
+- Layers 4-5 most critical (KL = 0.0023)
+- Layer 15 has zero effect (KL = 0.0000)
+- 66 pairs × 16 layers = 1,056 experiments completed
+- Runtime: ~1 minute for full analysis
+- Documentation: [`docs/experiments/10-30_llama_gsm8k_layer_patching_analysis.md`](experiments/10-30_llama_gsm8k_layer_patching_analysis.md)
+
+**References**:
+- Correction Report: [`corrected_llama_cot_clean_corrupted_pairs/CORRECTION_REPORT.md`](../corrected_llama_cot_clean_corrupted_pairs/CORRECTION_REPORT.md)
+- Research Journal: [research_journal.md](research_journal.md#2025-10-30-layer-wise-cot-activation-patching)
+- W&B Run: https://wandb.ai/gussand/cot-exploration/runs/72gnhhz7
+
+
