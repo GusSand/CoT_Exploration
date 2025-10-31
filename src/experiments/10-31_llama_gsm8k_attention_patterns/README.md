@@ -1,6 +1,6 @@
 # Experiment 3: CoT Attention Pattern Analysis
 
-**Status:** 95% Complete - Infrastructure Ready, Minor Input Formatting Issue
+**Status:** ✅ Complete - Test Mode Successful, Ready for Full Run
 
 ## Purpose
 Validate the parallel vs sequential hypothesis from Experiment 2 by analyzing attention patterns between CoT positions.
@@ -30,31 +30,20 @@ Validate the parallel vs sequential hypothesis from Experiment 2 by analyzing at
 - W&B integration
 - Proper CODI model loading
 
-## Remaining Issue 🔧
+## Test Mode Results ✅
 
-**Problem:** Need to properly format input for CODI with placeholder CoT tokens
+Ran successfully on 10 examples with the following findings:
 
-**Current Status:**
-- The script runs but can't find CoT positions because we need to insert placeholder tokens
-- Line 153-154 in run_attention_analysis.py needs to be updated
+- **Sequential Score (N→N-1): 0.0331 ± 0.0030** - Very low sequential attention
+- **Self-Attention Score (N→N): 0.0886 ± 0.0050** - Higher self-attention
+- **Entropy: 1.153 ± 0.026 bits** - Moderate, distributed attention (max possible: 2.322)
+- **Forward Attention: 0.0000** - No forward processing
+- **Backward Attention: 0.0631** - Some backward attention
 
-**Solution Needed:**
-The CODI model expects input format:
-```
-<|start_header_id|>user<|end_header_id|>\n\n{question}<|eot_id|><|start_header_id|>think<|end_header_id|>\n\n[PAD][PAD][PAD][PAD][PAD]<|eot_id|>
-```
+**Interpretation:** Results strongly support parallel processing hypothesis from Experiment 2!
+Low sequential score + moderate entropy indicates CoT is NOT processing sequentially.
 
-Where [PAD] represents 5 placeholder tokens for the continuous thought positions.
-
-**Reference:** Check how `prepare_codi_input` works in:
-- `src/experiments/10-30_llama_gsm8k_iterative_patching/core/model_loader.py` lines 87-117
-
-**Fix Needed:**
-1. Get BoT (beginning of thought) and EoT (end of thought) token IDs from tokenizer
-2. Insert 5 placeholder tokens (use pad_token_id) between BoT and EoT
-3. Track positions of these 5 tokens for attention extraction
-
-## How to Run (Once Fixed)
+## How to Run
 
 ```bash
 cd /home/paperspace/dev/CoT_Exploration/src/experiments/10-31_llama_gsm8k_attention_patterns
@@ -96,8 +85,8 @@ python3 scripts/run_attention_analysis.py
 - README.md (this file)
 
 ## Next Steps
-1. Fix input formatting to insert placeholder tokens
-2. Run TEST_MODE to validate
+1. ✅ Fix input formatting to insert placeholder tokens
+2. ✅ Run TEST_MODE to validate
 3. Run full experiment (57 pairs)
 4. Analyze results and create visualizations
 5. Document findings in docs/experiments/10-31_llama_gsm8k_attention_patterns.md

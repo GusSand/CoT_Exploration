@@ -22,7 +22,7 @@ HIDDEN_DIM = 2048  # LLaMA-1B hidden dimension
 BATCH_SIZE = 1  # Process one example at a time
 USE_FP16 = True  # Use float16 for memory efficiency
 DEVICE = "cuda"
-TEST_MODE = True  # Set to True to run on subset for testing
+TEST_MODE = False  # Set to True to run on subset for testing
 TEST_SUBSET_SIZE = 10  # Number of pairs to test in test mode
 
 # Attention analysis parameters

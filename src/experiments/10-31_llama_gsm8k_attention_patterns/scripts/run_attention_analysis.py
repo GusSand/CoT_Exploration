@@ -41,53 +41,46 @@ def load_data(data_path, test_mode=False, test_size=10):
     return data
 
 
-def find_cot_positions(input_ids, tokenizer):
+def prepare_codi_input(question, tokenizer, num_latent, device="cuda"):
     """
-    Find the positions of CoT tokens in the input
+    Prepare input for CODI model with continuous thought placeholder tokens
 
-    CoT tokens are between <|start_header_id|>think<|end_header_id|> and <|eot_id|>
+    Args:
+        question: Question string
+        tokenizer: Tokenizer
+        num_latent: Number of continuous thought tokens
+        device: Device
 
     Returns:
-        List of CoT token positions (should be 5 consecutive positions)
+        input_ids: Tensor of input token IDs including BoT/EoT markers
+        attention_mask: Attention mask tensor
+        cot_positions: List of positions for continuous thought tokens
     """
-    # Convert to list for easier searching
-    ids = input_ids[0].tolist()
+    # Format question with user header
+    question_prompt = f"<|start_header_id|>user<|end_header_id|>\n\n{question}<|eot_id|>"
 
-    # Find think header
-    think_str = "<|start_header_id|>think<|end_header_id|>"
-    think_tokens = tokenizer.encode(think_str, add_special_tokens=False)
+    # Tokenize question
+    question_tokens = tokenizer.encode(question_prompt, add_special_tokens=False)
 
-    # Find eot token
+    # Get special token IDs
+    # BoT = Beginning of Thought, EoT = End of Thought
+    think_header = "<|start_header_id|>think<|end_header_id|>\n\n"
+    bot_tokens = tokenizer.encode(think_header, add_special_tokens=False)
     eot_token = tokenizer.encode("<|eot_id|>", add_special_tokens=False)[0]
 
-    # Search for think header
-    think_start = None
-    for i in range(len(ids) - len(think_tokens)):
-        if ids[i:i+len(think_tokens)] == think_tokens:
-            think_start = i + len(think_tokens)
-            break
+    # Create input with BoT, latent placeholders, and EoT
+    # Format: [question tokens] [BoT tokens] [PAD] [PAD] ... [PAD] [EoT]
+    input_ids = question_tokens + bot_tokens + [tokenizer.pad_token_id] * num_latent + [eot_token]
 
-    if think_start is None:
-        raise ValueError("Could not find think header")
+    # Positions of continuous thought tokens (the PAD tokens between BoT and EoT)
+    bot_end_pos = len(question_tokens) + len(bot_tokens)
+    cot_positions = list(range(bot_end_pos, bot_end_pos + num_latent))
 
-    # Find next eot token after think header
-    eot_pos = None
-    for i in range(think_start, len(ids)):
-        if ids[i] == eot_token:
-            eot_pos = i
-            break
+    # Convert to tensor
+    input_ids = torch.tensor([input_ids], device=device)
+    attention_mask = torch.ones_like(input_ids)
 
-    if eot_pos is None:
-        raise ValueError("Could not find eot token after think header")
-
-    # CoT tokens are between think header and eot
-    # Should be exactly 5 tokens
-    cot_positions = list(range(think_start, eot_pos))
-
-    if len(cot_positions) != config.NUM_LATENT:
-        print(f"Warning: Expected {config.NUM_LATENT} CoT positions, found {len(cot_positions)}")
-
-    return cot_positions
+    return input_ids, attention_mask, cot_positions
 
 
 def main():
@@ -148,28 +141,25 @@ def main():
     print(f"\nAnalyzing attention patterns for {len(data)} examples...")
 
     for idx, pair in enumerate(tqdm(data, desc="Processing examples")):
-        # Format the question into CODI format with think tags
+        # Get question text
         question_text = pair['clean']['question']
-        formatted_prompt = f"<|start_header_id|>user<|end_header_id|>\n\n{question_text}<|eot_id|><|start_header_id|>think<|end_header_id|>\n\n"
 
-        # Tokenize clean example
-        clean_input = tokenizer(
-            formatted_prompt,
-            return_tensors='pt',
-            padding=True
-        ).to(config.DEVICE)
-
-        # Find CoT positions
+        # Prepare CODI input with placeholder CoT tokens
         try:
-            cot_positions = find_cot_positions(clean_input['input_ids'], tokenizer)
-        except ValueError as e:
-            print(f"\nSkipping example {idx}: {e}")
+            input_ids, attention_mask, cot_positions = prepare_codi_input(
+                question_text,
+                tokenizer,
+                config.NUM_LATENT,
+                config.DEVICE
+            )
+        except Exception as e:
+            print(f"\nSkipping example {idx}: Failed to prepare input - {e}")
             continue
 
         # Extract attention patterns
         cot_attention = extractor.extract_cot_attention(
-            clean_input['input_ids'],
-            clean_input['attention_mask'],
+            input_ids,
+            attention_mask,
             cot_positions
         )
 
@@ -226,11 +216,14 @@ def main():
 
     # Save results
     results_file = os.path.join(config.RESULTS_DIR, 'attention_analysis_results.json')
+    # Filter config to only serializable values
+    config_dict = {k: v for k, v in vars(config).items()
+                   if not k.startswith('_') and isinstance(v, (int, float, str, bool, list, dict, type(None)))}
     with open(results_file, 'w') as f:
         json.dump({
             'aggregate_statistics': aggregate_stats,
             'per_example_metrics': all_metrics,
-            'config': vars(config)
+            'config': config_dict
         }, f, indent=2)
     print(f"\nSaved results to {results_file}")
 
