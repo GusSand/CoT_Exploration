@@ -2,6 +2,43 @@
 
 ## Experiment Log
 
+### 2025-10-31: Iterative CoT Activation Patching - PARALLEL INDEPENDENCE CONFIRMED
+
+**Objective**: Test whether CoT positions have sequential dependencies by comparing iterative (position-by-position) vs parallel (all-at-once) patching strategies.
+
+**Status**: ✅ **COMPLETE** - 57 pairs, 912 tests analyzed
+
+**Model**: LLaMA-3.2-1B-Instruct CODI (5 CT tokens, 16 layers) | **Task**: GSM8K arithmetic reasoning
+
+**Method**: Iterative vs Parallel Patching
+- **Iterative**: Patch position 0 → extract activation at 1 → patch 1 → extract at 2 → ... (sequential)
+- **Parallel**: Patch all 5 positions simultaneously
+- Compare KL divergence, answer logit difference, activation similarity
+
+**Key Findings**:
+
+1. **Identical Results** (No Sequential Dependency):
+   - Iterative KL divergence: 0.000369 | Parallel KL divergence: 0.000369
+   - Iterative answer logit diff: -0.0416 | Parallel answer logit diff: -0.0416
+   - **Implication**: CoT positions operate **independently in parallel**, not sequentially
+
+2. **High Activation Similarity** (>99.8%):
+   - Position 1 at Layer 0: 99.997% similarity to clean
+   - Position 4 at Layer 15: 99.920% similarity to clean
+   - **Interpretation**: Forward pass is deterministic; iterative process reconstructs clean trajectory
+
+3. **Parallel Synergy, Not Sequential Chain**:
+   - Combined with Exp 1: Positions work **together** (need multiple) but **in parallel** (not sequentially)
+   - Dependencies flow **vertically** (between layers) not **horizontally** (between positions)
+   - "Chain of Thought" is a misnomer—it's a parallel ensemble
+
+**Detailed Report**: [10-30_llama_gsm8k_iterative_patching.md](experiments/10-30_llama_gsm8k_iterative_patching.md)
+**W&B Run**: https://wandb.ai/gussand/cot-exploration/runs/7ffi7drb
+
+**Impact**: Fundamentally changes understanding of CoT—not step-by-step reasoning but distributed parallel computation
+
+---
+
 ### 2025-10-31: Position-wise CoT Activation Patching - DISTRIBUTED REASONING CONFIRMED
 
 **Objective**: Fine-grained analysis of which specific (layer, position) combinations in continuous thought tokens are critical for arithmetic reasoning.
