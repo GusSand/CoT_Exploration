@@ -2,6 +2,44 @@
 
 ## Experiment Log
 
+### 2025-10-31: CoT Token Interpretability Comparison Across Datasets
+
+**Objective**: Evaluate whether explicit CoT tokens are semantically meaningful and interpretable across GSM8K, Personal Relations, and CommonsenseQA datasets.
+
+**Status**: ✅ **COMPLETE** - 3 datasets analyzed
+
+**Models**: GPT-2 124M (GSM8K), LLaMA-3.2-1B (Personal Relations, CommonsenseQA)
+
+**Method**: Token Analysis
+- Extract explicit CoT sequences from model predictions
+- Analyze reasoning patterns, token semantics, and human readability
+- Quantify interpretability score: % of examples with explicit reasoning
+
+**Key Findings**:
+
+1. **Interpretability is Task-Dependent**:
+   - **GSM8K**: ~80% interpretable (clear calculations: "60000/2=30000")
+   - **Personal Relations**: **15.9% interpretable** (mostly direct answers: "= Paul")
+   - **CommonsenseQA**: **100% interpretable** (full reasoning: "To find magazines alongside other printed works...")
+
+2. **Why Differences?**:
+   - Mathematical/Commonsense tasks require multi-step justification → verbose, interpretable CoT
+   - Relational tasks often solvable via lookup → compressed, minimal reasoning shown
+   - Task necessity drives CoT verbosity
+
+3. **CODI Implications**:
+   - For verbose CoT (CommonsenseQA): Continuous thoughts offer compression advantage
+   - For compressed CoT (Personal Relations): Already near-optimal compression
+   - Domain characteristics affect continuous thought value proposition
+
+**Conclusion**: CoT interpretability varies dramatically by domain (15.9% to 100%). Not all reasoning tasks produce equally interpretable explicit CoT, affecting expectations for latent reasoning analysis.
+
+**Performance**: 750 Personal Relations + 10 CommonsenseQA examples analyzed in ~2 minutes
+
+**Detailed Report**: [docs/experiments/10-31_cot_token_interpretability_comparison.md](experiments/10-31_cot_token_interpretability_comparison.md)
+
+---
+
 ### 2025-10-31: CoT Attention Pattern Analysis - PARALLEL PROCESSING CONFIRMED (Visual Evidence)
 
 **Objective**: Analyze attention patterns between continuous thought positions to visually validate the parallel vs sequential processing hypothesis from Experiment 2.
