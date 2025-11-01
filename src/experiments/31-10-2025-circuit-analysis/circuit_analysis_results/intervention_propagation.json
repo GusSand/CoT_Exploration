@@ -1,0 +1,382 @@
+[
+  {
+    "intervention_position": -1,
+    "tokens": [
+      {
+        "position": 0,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 1,
+        "token": "7",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 2,
+        "token": "+",
+        "is_number": false,
+        "intervened": false
+      },
+      {
+        "position": 3,
+        "token": "-",
+        "is_number": false,
+        "intervened": false
+      },
+      {
+        "position": 4,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 5,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 6,
+        "token": ">>",
+        "is_number": false,
+        "intervened": false
+      }
+    ]
+  },
+  {
+    "intervention_position": 0,
+    "tokens": [
+      {
+        "position": 0,
+        "token": "5",
+        "is_number": true,
+        "intervened": true,
+        "intervention_magnitude": 49.75
+      },
+      {
+        "position": 1,
+        "token": "7",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 2,
+        "token": "7",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 3,
+        "token": "-",
+        "is_number": false,
+        "intervened": false
+      },
+      {
+        "position": 4,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 5,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 6,
+        "token": ">>",
+        "is_number": false,
+        "intervened": false
+      }
+    ]
+  },
+  {
+    "intervention_position": 1,
+    "tokens": [
+      {
+        "position": 0,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 1,
+        "token": "5",
+        "is_number": true,
+        "intervened": true,
+        "intervention_magnitude": 15.75
+      },
+      {
+        "position": 2,
+        "token": "7",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 3,
+        "token": "-",
+        "is_number": false,
+        "intervened": false
+      },
+      {
+        "position": 4,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 5,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 6,
+        "token": ">>",
+        "is_number": false,
+        "intervened": false
+      }
+    ]
+  },
+  {
+    "intervention_position": 2,
+    "tokens": [
+      {
+        "position": 0,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 1,
+        "token": "7",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 2,
+        "token": "+",
+        "is_number": false,
+        "intervened": false
+      },
+      {
+        "position": 3,
+        "token": "-",
+        "is_number": false,
+        "intervened": false
+      },
+      {
+        "position": 4,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 5,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 6,
+        "token": ">>",
+        "is_number": false,
+        "intervened": false
+      }
+    ]
+  },
+  {
+    "intervention_position": 3,
+    "tokens": [
+      {
+        "position": 0,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 1,
+        "token": "7",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 2,
+        "token": "+",
+        "is_number": false,
+        "intervened": false
+      },
+      {
+        "position": 3,
+        "token": "-",
+        "is_number": false,
+        "intervened": false
+      },
+      {
+        "position": 4,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 5,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 6,
+        "token": ">>",
+        "is_number": false,
+        "intervened": false
+      }
+    ]
+  },
+  {
+    "intervention_position": 4,
+    "tokens": [
+      {
+        "position": 0,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 1,
+        "token": "7",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 2,
+        "token": "+",
+        "is_number": false,
+        "intervened": false
+      },
+      {
+        "position": 3,
+        "token": "-",
+        "is_number": false,
+        "intervened": false
+      },
+      {
+        "position": 4,
+        "token": "5",
+        "is_number": true,
+        "intervened": true,
+        "intervention_magnitude": 23.25
+      },
+      {
+        "position": 5,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 6,
+        "token": "inkel",
+        "is_number": false,
+        "intervened": false
+      }
+    ]
+  },
+  {
+    "intervention_position": 5,
+    "tokens": [
+      {
+        "position": 0,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 1,
+        "token": "7",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 2,
+        "token": "+",
+        "is_number": false,
+        "intervened": false
+      },
+      {
+        "position": 3,
+        "token": "-",
+        "is_number": false,
+        "intervened": false
+      },
+      {
+        "position": 4,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 5,
+        "token": " Roe",
+        "is_number": true,
+        "intervened": true,
+        "intervention_magnitude": 12.8125
+      },
+      {
+        "position": 6,
+        "token": ">>",
+        "is_number": false,
+        "intervened": false
+      }
+    ]
+  },
+  {
+    "intervention_position": 6,
+    "tokens": [
+      {
+        "position": 0,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 1,
+        "token": "7",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 2,
+        "token": "+",
+        "is_number": false,
+        "intervened": false
+      },
+      {
+        "position": 3,
+        "token": "-",
+        "is_number": false,
+        "intervened": false
+      },
+      {
+        "position": 4,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 5,
+        "token": "9",
+        "is_number": true,
+        "intervened": false
+      },
+      {
+        "position": 6,
+        "token": ">>",
+        "is_number": false,
+        "intervened": false
+      }
+    ]
+  }
+]
