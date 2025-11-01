@@ -1,0 +1,53 @@
+{
+  "clean": {
+    "baseline": {
+      "accuracy": 90.15151515151516,
+      "correct": 119,
+      "total": 132
+    },
+    "discretize": {
+      "accuracy": 46.96969696969697,
+      "correct": 62,
+      "total": 132
+    },
+    "discretize_plusone": {
+      "accuracy": 25.0,
+      "correct": 33,
+      "total": 132
+    }
+  },
+  "gsm8k_train": {
+    "baseline": {
+      "accuracy": 86.36363636363636,
+      "correct": 114,
+      "total": 132
+    },
+    "discretize": {
+      "accuracy": 62.878787878787875,
+      "correct": 83,
+      "total": 132
+    },
+    "discretize_plusone": {
+      "accuracy": 34.84848484848485,
+      "correct": 46,
+      "total": 132
+    }
+  },
+  "gsm8k_test": {
+    "baseline": {
+      "accuracy": 54.54545454545454,
+      "correct": 72,
+      "total": 132
+    },
+    "discretize": {
+      "accuracy": 43.18181818181818,
+      "correct": 57,
+      "total": 132
+    },
+    "discretize_plusone": {
+      "accuracy": 27.27272727272727,
+      "correct": 36,
+      "total": 132
+    }
+  }
+}

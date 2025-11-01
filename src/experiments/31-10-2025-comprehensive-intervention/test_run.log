@@ -1,0 +1,32 @@
+[START] Test run started at Fri Oct 31 23:07:02 UTC 2025
+Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:942: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+`torch_dtype` is deprecated! Use `dtype` instead!
+The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+✓ Logged in to HuggingFace
+Using device: cuda
+================================================================================
+Loading CODI-LLaMA from Local Checkpoint
+================================================================================
+trainable params: 98574336 || all params: 1334394880 || trainable%: 7.387193811774817
+Traceback (most recent call last):
+  File "/workspace/CoT_Exploration/src/experiments/31-10-2025-comprehensive-intervention/comprehensive_intervention_comparison.py", line 651, in <module>
+    main()
+  File "/workspace/CoT_Exploration/src/experiments/31-10-2025-comprehensive-intervention/comprehensive_intervention_comparison.py", line 520, in main
+    model, tokenizer, training_args = load_llama_model()
+                                      ^^^^^^^^^^^^^^^^^^
+  File "/workspace/CoT_Exploration/src/experiments/31-10-2025-comprehensive-intervention/comprehensive_intervention_comparison.py", line 101, in load_llama_model
+    state_dict = torch.load(checkpoint_path, map_location='cpu')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/serialization.py", line 1484, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/serialization.py", line 759, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/serialization.py", line 740, in __init__
+    super().__init__(open(name, mode))
+                     ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'zen-E/CODI-llama3.2-1b-Instruct/pytorch_model.bin'
+[END] Test run finished at Fri Oct 31 23:07:27 UTC 2025
