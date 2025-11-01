@@ -100,6 +100,13 @@ results/
 !src/experiments/topk_grid_pilot/results/data/*.json
 src/experiments/topk_grid_pilot/results/checkpoints/*.pt
 
+# Three-way comparison - exclude large activation files but keep summaries/viz
+src/experiments/three_way_comparison/results/*.npz
+!src/experiments/three_way_comparison/results/*.json
+!src/experiments/three_way_comparison/results/visualizations/*.png
+!src/experiments/three_way_comparison/results/validation/*.json
+!src/experiments/three_way_comparison/results/validation/*.png
+
 # Experiment outputs (but keep docs/experiments/ for documentation)
 /experiments/
 codi/experiments/

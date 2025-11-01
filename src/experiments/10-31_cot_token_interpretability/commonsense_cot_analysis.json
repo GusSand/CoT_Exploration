@@ -1,0 +1,387 @@
+{
+  "summary": {
+    "total_examples": 10,
+    "accuracy": 70.0,
+    "avg_cot_length": 203.0,
+    "avg_sentences": 2.3,
+    "avg_reasoning_indicators": 2.2,
+    "interpretability_score": 100.0,
+    "multi_step_count": 10,
+    "reasoning_words_count": 10
+  },
+  "reasoning_patterns": {
+    "logical": 5,
+    "evidential": 10,
+    "comparative": 3,
+    "causal": 4
+  },
+  "question_types": {
+    "other": 1,
+    "factual": 6,
+    "spatial": 3
+  },
+  "reasoning_analyses": [
+    {
+      "question_id": 0,
+      "question": "A revolving door is convenient for two direction travel, but it also serves as a security ...",
+      "generated": "A revolving door is typically used to control access and manage flow of people in high-security environments. Among the options provided, a bank is a place that often requires strict security measures...",
+      "predicted": "A",
+      "ground_truth": "A",
+      "correct": true,
+      "num_sentences": 2,
+      "reasoning_patterns": {
+        "logical": 1,
+        "evidential": 3
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 4,
+      "length_chars": 203,
+      "question_type": "other"
+    },
+    {
+      "question_id": 1,
+      "question": "What do people aim to do at work?",
+      "generated": "People at work primarily aim to complete their job, as this is the main objective of their role. While learning from each other, talking to colleagues, and wearing hats may be part of the work environ...",
+      "predicted": "A",
+      "ground_truth": "A",
+      "correct": true,
+      "num_sentences": 2,
+      "reasoning_patterns": {
+        "comparative": 1,
+        "evidential": 1
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 2,
+      "length_chars": 203,
+      "question_type": "factual"
+    },
+    {
+      "question_id": 2,
+      "question": "Where would you find magazines along side many other printed works?",
+      "generated": "To find magazines alongside other printed works, the most logical choice is a bookstore, as it typically stocks a variety of printed materials, including magazines. The other options do not primarily ...",
+      "predicted": "B",
+      "ground_truth": "B",
+      "correct": true,
+      "num_sentences": 2,
+      "reasoning_patterns": {
+        "logical": 1,
+        "evidential": 1
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 2,
+      "length_chars": 203,
+      "question_type": "spatial"
+    },
+    {
+      "question_id": 3,
+      "question": "Where are  you likely to find a hamburger?",
+      "generated": "To determine where you are likely to find a hamburger, we can analyze the options. A hamburger is a food item that is typically prepared and served in a fast food restaurant. The other options do not ...",
+      "predicted": "A",
+      "ground_truth": "A",
+      "correct": true,
+      "num_sentences": 3,
+      "reasoning_patterns": {
+        "logical": 1,
+        "evidential": 1
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 2,
+      "length_chars": 203,
+      "question_type": "spatial"
+    },
+    {
+      "question_id": 4,
+      "question": "James was looking for a good place to buy farmland.  Where might he look?",
+      "generated": "To find a good place to buy farmland, James should consider locations known for agricultural land availability. The Midwest is commonly recognized for its farmland and is a region where buying farmlan...",
+      "predicted": "A",
+      "ground_truth": "A",
+      "correct": true,
+      "num_sentences": 2,
+      "reasoning_patterns": {
+        "logical": 1
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 1,
+      "length_chars": 203,
+      "question_type": "spatial"
+    },
+    {
+      "question_id": 5,
+      "question": "What island country is ferret popular?",
+      "generated": "Ferrets are popular as pets, particularly in North America, including places like North Carolina. They are not native to Great Britain, and \"hutch\" and \"outdoors\" do not refer to countries. Therefore,...",
+      "predicted": "B",
+      "ground_truth": "C",
+      "correct": false,
+      "num_sentences": 3,
+      "reasoning_patterns": {
+        "causal": 1,
+        "evidential": 1
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 2,
+      "length_chars": 203,
+      "question_type": "factual"
+    },
+    {
+      "question_id": 6,
+      "question": "In what Spanish speaking North American country can you get a great cup of coffee?",
+      "generated": "To determine the best answer, we need to identify a Spanish-speaking North American country where coffee is particularly renowned. Mexico is a well-known country for its coffee culture, with many coff...",
+      "predicted": "B",
+      "ground_truth": "B",
+      "correct": true,
+      "num_sentences": 2,
+      "reasoning_patterns": {
+        "logical": 1
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 1,
+      "length_chars": 203,
+      "question_type": "factual"
+    },
+    {
+      "question_id": 7,
+      "question": "What do animals do when an enemy is approaching?",
+      "generated": "When an enemy is approaching, animals often prepare for defense or alert their group. Among the options, \"pass water\" is a common behavior associated with stress or alarm, as it can signal that an ani...",
+      "predicted": "C",
+      "ground_truth": "D",
+      "correct": false,
+      "num_sentences": 2,
+      "reasoning_patterns": {
+        "causal": 1,
+        "evidential": 2
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 3,
+      "length_chars": 203,
+      "question_type": "factual"
+    },
+    {
+      "question_id": 8,
+      "question": "Reading newspaper one of many ways to practice your what?",
+      "generated": "Reading a newspaper is primarily a way to practice your ability to understand written language, which is essential for literacy. While it can also enhance your knowledge and skills in reading, the mos...",
+      "predicted": "A",
+      "ground_truth": "A",
+      "correct": true,
+      "num_sentences": 2,
+      "reasoning_patterns": {
+        "causal": 1,
+        "comparative": 1
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 2,
+      "length_chars": 203,
+      "question_type": "factual"
+    },
+    {
+      "question_id": 9,
+      "question": "What do people typically do while playing guitar?",
+      "generated": "While playing guitar, people primarily engage in creating music. The options provided include various activities, but \"making music\" directly aligns with the act of playing the instrument. Therefore, ...",
+      "predicted": "E",
+      "ground_truth": "C",
+      "correct": false,
+      "num_sentences": 3,
+      "reasoning_patterns": {
+        "causal": 1,
+        "comparative": 1,
+        "evidential": 1
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 3,
+      "length_chars": 203,
+      "question_type": "factual"
+    }
+  ],
+  "correct_examples": [
+    {
+      "question_id": 0,
+      "question": "A revolving door is convenient for two direction travel, but it also serves as a security ...",
+      "generated": "A revolving door is typically used to control access and manage flow of people in high-security environments. Among the options provided, a bank is a place that often requires strict security measures...",
+      "predicted": "A",
+      "ground_truth": "A",
+      "correct": true,
+      "num_sentences": 2,
+      "reasoning_patterns": {
+        "logical": 1,
+        "evidential": 3
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 4,
+      "length_chars": 203,
+      "question_type": "other"
+    },
+    {
+      "question_id": 1,
+      "question": "What do people aim to do at work?",
+      "generated": "People at work primarily aim to complete their job, as this is the main objective of their role. While learning from each other, talking to colleagues, and wearing hats may be part of the work environ...",
+      "predicted": "A",
+      "ground_truth": "A",
+      "correct": true,
+      "num_sentences": 2,
+      "reasoning_patterns": {
+        "comparative": 1,
+        "evidential": 1
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 2,
+      "length_chars": 203,
+      "question_type": "factual"
+    },
+    {
+      "question_id": 2,
+      "question": "Where would you find magazines along side many other printed works?",
+      "generated": "To find magazines alongside other printed works, the most logical choice is a bookstore, as it typically stocks a variety of printed materials, including magazines. The other options do not primarily ...",
+      "predicted": "B",
+      "ground_truth": "B",
+      "correct": true,
+      "num_sentences": 2,
+      "reasoning_patterns": {
+        "logical": 1,
+        "evidential": 1
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 2,
+      "length_chars": 203,
+      "question_type": "spatial"
+    },
+    {
+      "question_id": 3,
+      "question": "Where are  you likely to find a hamburger?",
+      "generated": "To determine where you are likely to find a hamburger, we can analyze the options. A hamburger is a food item that is typically prepared and served in a fast food restaurant. The other options do not ...",
+      "predicted": "A",
+      "ground_truth": "A",
+      "correct": true,
+      "num_sentences": 3,
+      "reasoning_patterns": {
+        "logical": 1,
+        "evidential": 1
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 2,
+      "length_chars": 203,
+      "question_type": "spatial"
+    },
+    {
+      "question_id": 4,
+      "question": "James was looking for a good place to buy farmland.  Where might he look?",
+      "generated": "To find a good place to buy farmland, James should consider locations known for agricultural land availability. The Midwest is commonly recognized for its farmland and is a region where buying farmlan...",
+      "predicted": "A",
+      "ground_truth": "A",
+      "correct": true,
+      "num_sentences": 2,
+      "reasoning_patterns": {
+        "logical": 1
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 1,
+      "length_chars": 203,
+      "question_type": "spatial"
+    },
+    {
+      "question_id": 6,
+      "question": "In what Spanish speaking North American country can you get a great cup of coffee?",
+      "generated": "To determine the best answer, we need to identify a Spanish-speaking North American country where coffee is particularly renowned. Mexico is a well-known country for its coffee culture, with many coff...",
+      "predicted": "B",
+      "ground_truth": "B",
+      "correct": true,
+      "num_sentences": 2,
+      "reasoning_patterns": {
+        "logical": 1
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 1,
+      "length_chars": 203,
+      "question_type": "factual"
+    },
+    {
+      "question_id": 8,
+      "question": "Reading newspaper one of many ways to practice your what?",
+      "generated": "Reading a newspaper is primarily a way to practice your ability to understand written language, which is essential for literacy. While it can also enhance your knowledge and skills in reading, the mos...",
+      "predicted": "A",
+      "ground_truth": "A",
+      "correct": true,
+      "num_sentences": 2,
+      "reasoning_patterns": {
+        "causal": 1,
+        "comparative": 1
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 2,
+      "length_chars": 203,
+      "question_type": "factual"
+    }
+  ],
+  "incorrect_examples": [
+    {
+      "question_id": 5,
+      "question": "What island country is ferret popular?",
+      "generated": "Ferrets are popular as pets, particularly in North America, including places like North Carolina. They are not native to Great Britain, and \"hutch\" and \"outdoors\" do not refer to countries. Therefore,...",
+      "predicted": "B",
+      "ground_truth": "C",
+      "correct": false,
+      "num_sentences": 3,
+      "reasoning_patterns": {
+        "causal": 1,
+        "evidential": 1
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 2,
+      "length_chars": 203,
+      "question_type": "factual"
+    },
+    {
+      "question_id": 7,
+      "question": "What do animals do when an enemy is approaching?",
+      "generated": "When an enemy is approaching, animals often prepare for defense or alert their group. Among the options, \"pass water\" is a common behavior associated with stress or alarm, as it can signal that an ani...",
+      "predicted": "C",
+      "ground_truth": "D",
+      "correct": false,
+      "num_sentences": 2,
+      "reasoning_patterns": {
+        "causal": 1,
+        "evidential": 2
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 3,
+      "length_chars": 203,
+      "question_type": "factual"
+    },
+    {
+      "question_id": 9,
+      "question": "What do people typically do while playing guitar?",
+      "generated": "While playing guitar, people primarily engage in creating music. The options provided include various activities, but \"making music\" directly aligns with the act of playing the instrument. Therefore, ...",
+      "predicted": "E",
+      "ground_truth": "C",
+      "correct": false,
+      "num_sentences": 3,
+      "reasoning_patterns": {
+        "causal": 1,
+        "comparative": 1,
+        "evidential": 1
+      },
+      "has_multi_step": true,
+      "has_reasoning_words": true,
+      "total_reasoning_indicators": 3,
+      "length_chars": 203,
+      "question_type": "factual"
+    }
+  ]
+}
