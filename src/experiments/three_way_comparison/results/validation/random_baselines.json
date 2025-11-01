@@ -1,0 +1,20 @@
+{
+  "personal_relations": {
+    "accuracy": 0.44,
+    "random_baseline": 0.2,
+    "above_chance": 0.24,
+    "relative_improvement_pct": 119.99999999999997
+  },
+  "gsm8k": {
+    "accuracy": 0.25666666666666665,
+    "random_baseline": 0.01,
+    "above_chance": 0.24666666666666665,
+    "relative_improvement_pct": 2466.6666666666665
+  },
+  "commonsense": {
+    "accuracy": 0.74,
+    "random_baseline": 0.2,
+    "above_chance": 0.54,
+    "relative_improvement_pct": 270.0
+  }
+}
