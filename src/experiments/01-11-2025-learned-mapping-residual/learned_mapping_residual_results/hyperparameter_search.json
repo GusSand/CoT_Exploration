@@ -1,0 +1,67 @@
+{
+  "search_results": [
+    {
+      "rank": 64,
+      "lr": 0.001,
+      "epochs": 50,
+      "alpha_init": 0.1,
+      "downsample": 1.0,
+      "val_loss": 2.410679340362549,
+      "final_alpha": 0.6201023459434509
+    },
+    {
+      "rank": 128,
+      "lr": 0.001,
+      "epochs": 50,
+      "alpha_init": 0.1,
+      "downsample": 1.0,
+      "val_loss": 2.379150152206421,
+      "final_alpha": 0.5247471332550049
+    },
+    {
+      "rank": 256,
+      "lr": 0.001,
+      "epochs": 50,
+      "alpha_init": 0.1,
+      "downsample": 1.0,
+      "val_loss": 2.3452534675598145,
+      "final_alpha": 0.4492970108985901
+    },
+    {
+      "rank": 128,
+      "lr": 0.01,
+      "epochs": 50,
+      "alpha_init": 0.1,
+      "downsample": 0.5,
+      "val_loss": 2.2700307369232178,
+      "final_alpha": 0.24884022772312164
+    },
+    {
+      "rank": 128,
+      "lr": 0.0001,
+      "epochs": 50,
+      "alpha_init": 0.1,
+      "downsample": 0.5,
+      "val_loss": 3.4484217166900635,
+      "final_alpha": 0.2846823036670685
+    },
+    {
+      "rank": 128,
+      "lr": 0.001,
+      "epochs": 100,
+      "alpha_init": 0.05,
+      "downsample": 1.0,
+      "val_loss": 2.2999825477600098,
+      "final_alpha": 0.490868479013443
+    }
+  ],
+  "best_config": {
+    "rank": 128,
+    "lr": 0.01,
+    "epochs": 50,
+    "alpha_init": 0.1,
+    "downsample": 0.5,
+    "val_loss": 2.2700307369232178,
+    "final_alpha": 0.24884022772312164
+  }
+}
