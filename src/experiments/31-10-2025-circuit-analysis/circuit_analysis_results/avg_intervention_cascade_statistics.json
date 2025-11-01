@@ -1,0 +1,391 @@
+{
+  "intervention_positions": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "position_statistics": [
+    {
+      "intervention_position": 0,
+      "downstream_effects": [
+        {
+          "target_position": 0,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 1,
+          "token_change_rate": 0.25,
+          "avg_hidden_norm_difference": 2.7,
+          "std_hidden_norm_difference": 2.2605309110914633,
+          "num_examples": 20
+        },
+        {
+          "target_position": 2,
+          "token_change_rate": 0.45,
+          "avg_hidden_norm_difference": 2.6,
+          "std_hidden_norm_difference": 2.211334438749598,
+          "num_examples": 20
+        },
+        {
+          "target_position": 3,
+          "token_change_rate": 0.2,
+          "avg_hidden_norm_difference": 2.225,
+          "std_hidden_norm_difference": 2.3209642392764263,
+          "num_examples": 20
+        },
+        {
+          "target_position": 4,
+          "token_change_rate": 0.25,
+          "avg_hidden_norm_difference": 1.125,
+          "std_hidden_norm_difference": 1.3026415470113026,
+          "num_examples": 20
+        },
+        {
+          "target_position": 5,
+          "token_change_rate": 0.25,
+          "avg_hidden_norm_difference": 1.0,
+          "std_hidden_norm_difference": 0.9617692030835673,
+          "num_examples": 20
+        },
+        {
+          "target_position": 6,
+          "token_change_rate": 0.2,
+          "avg_hidden_norm_difference": 1.475,
+          "std_hidden_norm_difference": 1.4446020213193669,
+          "num_examples": 20
+        }
+      ]
+    },
+    {
+      "intervention_position": 1,
+      "downstream_effects": [
+        {
+          "target_position": 0,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 1,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 2,
+          "token_change_rate": 0.5,
+          "avg_hidden_norm_difference": 5.1,
+          "std_hidden_norm_difference": 2.5278449319529073,
+          "num_examples": 20
+        },
+        {
+          "target_position": 3,
+          "token_change_rate": 0.45,
+          "avg_hidden_norm_difference": 2.825,
+          "std_hidden_norm_difference": 2.409745837220183,
+          "num_examples": 20
+        },
+        {
+          "target_position": 4,
+          "token_change_rate": 0.1,
+          "avg_hidden_norm_difference": 0.95,
+          "std_hidden_norm_difference": 2.2186707732333795,
+          "num_examples": 20
+        },
+        {
+          "target_position": 5,
+          "token_change_rate": 0.15,
+          "avg_hidden_norm_difference": 1.9,
+          "std_hidden_norm_difference": 1.834393632784414,
+          "num_examples": 20
+        },
+        {
+          "target_position": 6,
+          "token_change_rate": 0.1,
+          "avg_hidden_norm_difference": 1.225,
+          "std_hidden_norm_difference": 0.9417404100918682,
+          "num_examples": 20
+        }
+      ]
+    },
+    {
+      "intervention_position": 2,
+      "downstream_effects": [
+        {
+          "target_position": 0,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 1,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 2,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 3,
+          "token_change_rate": 0.8,
+          "avg_hidden_norm_difference": 3.85,
+          "std_hidden_norm_difference": 2.7299267389437394,
+          "num_examples": 20
+        },
+        {
+          "target_position": 4,
+          "token_change_rate": 0.05,
+          "avg_hidden_norm_difference": 0.65,
+          "std_hidden_norm_difference": 0.5267826876426369,
+          "num_examples": 20
+        },
+        {
+          "target_position": 5,
+          "token_change_rate": 0.15,
+          "avg_hidden_norm_difference": 0.9,
+          "std_hidden_norm_difference": 0.7176350047203662,
+          "num_examples": 20
+        },
+        {
+          "target_position": 6,
+          "token_change_rate": 0.05,
+          "avg_hidden_norm_difference": 0.525,
+          "std_hidden_norm_difference": 0.33447720400649134,
+          "num_examples": 20
+        }
+      ]
+    },
+    {
+      "intervention_position": 3,
+      "downstream_effects": [
+        {
+          "target_position": 0,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 1,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 2,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 3,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 4,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.55,
+          "std_hidden_norm_difference": 0.4153311931459037,
+          "num_examples": 20
+        },
+        {
+          "target_position": 5,
+          "token_change_rate": 0.15,
+          "avg_hidden_norm_difference": 0.425,
+          "std_hidden_norm_difference": 0.4548351349665063,
+          "num_examples": 20
+        },
+        {
+          "target_position": 6,
+          "token_change_rate": 0.05,
+          "avg_hidden_norm_difference": 0.875,
+          "std_hidden_norm_difference": 1.2636751956100112,
+          "num_examples": 20
+        }
+      ]
+    },
+    {
+      "intervention_position": 4,
+      "downstream_effects": [
+        {
+          "target_position": 0,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 1,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 2,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 3,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 4,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 5,
+          "token_change_rate": 0.5,
+          "avg_hidden_norm_difference": 5.275,
+          "std_hidden_norm_difference": 3.4368408458932165,
+          "num_examples": 20
+        },
+        {
+          "target_position": 6,
+          "token_change_rate": 0.55,
+          "avg_hidden_norm_difference": 3.3,
+          "std_hidden_norm_difference": 3.1280984639234104,
+          "num_examples": 20
+        }
+      ]
+    },
+    {
+      "intervention_position": 5,
+      "downstream_effects": [
+        {
+          "target_position": 0,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 1,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 2,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 3,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 4,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 5,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 6,
+          "token_change_rate": 0.3,
+          "avg_hidden_norm_difference": 6.35,
+          "std_hidden_norm_difference": 4.237039060476077,
+          "num_examples": 20
+        }
+      ]
+    },
+    {
+      "intervention_position": 6,
+      "downstream_effects": [
+        {
+          "target_position": 0,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 1,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 2,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 3,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 4,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 5,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 6,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "num_examples": 20
+        }
+      ]
+    }
+  ]
+}

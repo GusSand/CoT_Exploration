@@ -1,0 +1,440 @@
+{
+  "intervention_positions": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "position_statistics": [
+    {
+      "intervention_position": 0,
+      "downstream_effects": [
+        {
+          "target_position": 0,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 1,
+          "token_change_rate": 0.05,
+          "avg_hidden_norm_difference": 0.525,
+          "std_hidden_norm_difference": 0.6417748826496718,
+          "avg_hidden_norm_ratio": 1.0029743955175192,
+          "num_examples": 20
+        },
+        {
+          "target_position": 2,
+          "token_change_rate": 0.15,
+          "avg_hidden_norm_difference": 0.55,
+          "std_hidden_norm_difference": 0.804673846971554,
+          "avg_hidden_norm_ratio": 0.9972668183033508,
+          "num_examples": 20
+        },
+        {
+          "target_position": 3,
+          "token_change_rate": 0.1,
+          "avg_hidden_norm_difference": 0.55,
+          "std_hidden_norm_difference": 0.788986691902975,
+          "avg_hidden_norm_ratio": 0.9953168405592203,
+          "num_examples": 20
+        },
+        {
+          "target_position": 4,
+          "token_change_rate": 0.1,
+          "avg_hidden_norm_difference": 0.325,
+          "std_hidden_norm_difference": 0.5309190145398825,
+          "avg_hidden_norm_ratio": 0.9982916901700095,
+          "num_examples": 20
+        },
+        {
+          "target_position": 5,
+          "token_change_rate": 0.05,
+          "avg_hidden_norm_difference": 0.375,
+          "std_hidden_norm_difference": 0.5214163403653552,
+          "avg_hidden_norm_ratio": 0.9969733425531254,
+          "num_examples": 20
+        },
+        {
+          "target_position": 6,
+          "token_change_rate": 0.1,
+          "avg_hidden_norm_difference": 0.45,
+          "std_hidden_norm_difference": 0.6689544080129826,
+          "avg_hidden_norm_ratio": 0.9961240124724687,
+          "num_examples": 20
+        }
+      ]
+    },
+    {
+      "intervention_position": 1,
+      "downstream_effects": [
+        {
+          "target_position": 0,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 1,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 2,
+          "token_change_rate": 0.2,
+          "avg_hidden_norm_difference": 0.925,
+          "std_hidden_norm_difference": 0.8407585860400117,
+          "avg_hidden_norm_ratio": 1.0093186722233194,
+          "num_examples": 20
+        },
+        {
+          "target_position": 3,
+          "token_change_rate": 0.2,
+          "avg_hidden_norm_difference": 0.675,
+          "std_hidden_norm_difference": 0.7119515432949071,
+          "avg_hidden_norm_ratio": 0.9928435130826279,
+          "num_examples": 20
+        },
+        {
+          "target_position": 4,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.2,
+          "std_hidden_norm_difference": 0.29154759474226505,
+          "avg_hidden_norm_ratio": 0.9995404878291078,
+          "num_examples": 20
+        },
+        {
+          "target_position": 5,
+          "token_change_rate": 0.05,
+          "avg_hidden_norm_difference": 0.375,
+          "std_hidden_norm_difference": 0.3491060010942235,
+          "avg_hidden_norm_ratio": 0.9968977197124946,
+          "num_examples": 20
+        },
+        {
+          "target_position": 6,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.25,
+          "std_hidden_norm_difference": 0.25,
+          "avg_hidden_norm_ratio": 0.9993967868768401,
+          "num_examples": 20
+        }
+      ]
+    },
+    {
+      "intervention_position": 2,
+      "downstream_effects": [
+        {
+          "target_position": 0,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 1,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 2,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 3,
+          "token_change_rate": 0.25,
+          "avg_hidden_norm_difference": 0.75,
+          "std_hidden_norm_difference": 0.9287087810503355,
+          "avg_hidden_norm_ratio": 1.0060887269107082,
+          "num_examples": 20
+        },
+        {
+          "target_position": 4,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.2,
+          "std_hidden_norm_difference": 0.33166247903554,
+          "avg_hidden_norm_ratio": 0.9990041441090207,
+          "num_examples": 20
+        },
+        {
+          "target_position": 5,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.2,
+          "std_hidden_norm_difference": 0.3674234614174767,
+          "avg_hidden_norm_ratio": 0.997750503586941,
+          "num_examples": 20
+        },
+        {
+          "target_position": 6,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.175,
+          "std_hidden_norm_difference": 0.23848480035423641,
+          "avg_hidden_norm_ratio": 0.999764518253181,
+          "num_examples": 20
+        }
+      ]
+    },
+    {
+      "intervention_position": 3,
+      "downstream_effects": [
+        {
+          "target_position": 0,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 1,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 2,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 3,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 4,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 5,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.025,
+          "std_hidden_norm_difference": 0.10897247358851682,
+          "avg_hidden_norm_ratio": 1.0002688172043013,
+          "num_examples": 20
+        },
+        {
+          "target_position": 6,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        }
+      ]
+    },
+    {
+      "intervention_position": 4,
+      "downstream_effects": [
+        {
+          "target_position": 0,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 1,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 2,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 3,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 4,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 5,
+          "token_change_rate": 0.2,
+          "avg_hidden_norm_difference": 0.775,
+          "std_hidden_norm_difference": 0.8584142356694698,
+          "avg_hidden_norm_ratio": 1.0067944304852154,
+          "num_examples": 20
+        },
+        {
+          "target_position": 6,
+          "token_change_rate": 0.1,
+          "avg_hidden_norm_difference": 1.075,
+          "std_hidden_norm_difference": 1.0280442597476045,
+          "avg_hidden_norm_ratio": 0.9888913208428967,
+          "num_examples": 20
+        }
+      ]
+    },
+    {
+      "intervention_position": 5,
+      "downstream_effects": [
+        {
+          "target_position": 0,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 1,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 2,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 3,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 4,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 5,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 6,
+          "token_change_rate": 0.05,
+          "avg_hidden_norm_difference": 0.95,
+          "std_hidden_norm_difference": 1.0111874208078344,
+          "avg_hidden_norm_ratio": 1.009921744408771,
+          "num_examples": 20
+        }
+      ]
+    },
+    {
+      "intervention_position": 6,
+      "downstream_effects": [
+        {
+          "target_position": 0,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 1,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 2,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 3,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 4,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 5,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        },
+        {
+          "target_position": 6,
+          "token_change_rate": 0.0,
+          "avg_hidden_norm_difference": 0.0,
+          "std_hidden_norm_difference": 0.0,
+          "avg_hidden_norm_ratio": 1.0,
+          "num_examples": 20
+        }
+      ]
+    }
+  ]
+}
