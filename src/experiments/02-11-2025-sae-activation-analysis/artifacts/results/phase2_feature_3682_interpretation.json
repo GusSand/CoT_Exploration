@@ -1,0 +1,1687 @@
+{
+  "feature_id": 3682,
+  "layer": "late",
+  "n_activations": 1164,
+  "position_distribution": {
+    "0": 216,
+    "1": 272,
+    "4": 236,
+    "5": 240,
+    "3": 36,
+    "2": 164
+  },
+  "common_numbers": [
+    [
+      "2",
+      2924
+    ],
+    [
+      "3",
+      1969
+    ],
+    [
+      "4",
+      1926
+    ],
+    [
+      "5",
+      1820
+    ],
+    [
+      "12",
+      1461
+    ],
+    [
+      "6",
+      1309
+    ],
+    [
+      "10",
+      1287
+    ],
+    [
+      "1",
+      1131
+    ],
+    [
+      "20",
+      1085
+    ],
+    [
+      "8",
+      1016
+    ]
+  ],
+  "common_operations": [
+    [
+      "=",
+      9035
+    ],
+    [
+      "<<",
+      4324
+    ],
+    [
+      ">>",
+      4324
+    ],
+    [
+      "*",
+      3295
+    ],
+    [
+      "+",
+      2796
+    ],
+    [
+      "/",
+      2244
+    ],
+    [
+      "-",
+      2046
+    ]
+  ],
+  "detailed_analysis": [
+    {
+      "rank": 1,
+      "example_idx": 424,
+      "cot_position": 0,
+      "activation": 1.2265625,
+      "question": "Rose had 10 kilograms of rice. She cooked 9/10 kilograms in the morning and 1/4 of the remaining in the evening. How many grams of rice did she have left?",
+      "reference_answer": "Rose cooked 10 x 9/10 = <<10*9/10=9>>9 kilograms of rice in the morning.\nShe had 10 - 9 = <<10-9=1>>1 kilogram of rice left then.\nOne kilogram is equal to 1 x 1000 = <<1*1000=1000>>1000 grams.\nSo, Rose cooked 1000 x 1/4 = <<1000*1/4=250>>250 grams of rice in the evening.\nTherefore, she has 1000 - 250 = <<1000-250=750>>750 grams of rice left.\n#### 750",
+      "decoded_thoughts": [
+        {
+          "position": 0,
+          "top_tokens": [
+            [
+              "l\u00ed",
+              7.534027099609375e-05
+            ],
+            [
+              "\u00edl",
+              7.295608520507812e-05
+            ],
+            [
+              "aggio",
+              6.771087646484375e-05
+            ],
+            [
+              "tons",
+              6.67572021484375e-05
+            ],
+            [
+              "eton",
+              6.532669067382812e-05
+            ]
+          ]
+        },
+        {
+          "position": 1,
+          "top_tokens": [
+            [
+              "\u00e1ct",
+              7.772445678710938e-05
+            ],
+            [
+              "ilin",
+              6.818771362304688e-05
+            ],
+            [
+              "eton",
+              6.723403930664062e-05
+            ],
+            [
+              "egin",
+              6.031990051269531e-05
+            ],
+            [
+              "''\n",
+              5.841255187988281e-05
+            ]
+          ]
+        },
+        {
+          "position": 2,
+          "top_tokens": [
+            [
+              " thousand",
+              5.936622619628906e-05
+            ],
+            [
+              "etre",
+              5.841255187988281e-05
+            ],
+            [
+              "enso",
+              5.5789947509765625e-05
+            ],
+            [
+              "ahkan",
+              5.412101745605469e-05
+            ],
+            [
+              "cott",
+              5.412101745605469e-05
+            ]
+          ]
+        },
+        {
+          "position": 3,
+          "top_tokens": [
+            [
+              " burn",
+              8.20159912109375e-05
+            ],
+            [
+              "250",
+              7.43865966796875e-05
+            ],
+            [
+              " burner",
+              6.580352783203125e-05
+            ],
+            [
+              " Burning",
+              6.151199340820312e-05
+            ],
+            [
+              "500",
+              5.269050598144531e-05
+            ]
+          ]
+        },
+        {
+          "position": 4,
+          "top_tokens": [
+            [
+              "000",
+              0.00013637542724609375
+            ],
+            [
+              " thousand",
+              0.00013065338134765625
+            ],
+            [
+              "ovsky",
+              0.00010013580322265625
+            ],
+            [
+              " hundred",
+              0.00010013580322265625
+            ],
+            [
+              "illi",
+              8.96453857421875e-05
+            ]
+          ]
+        },
+        {
+          "position": 5,
+          "top_tokens": [
+            [
+              "000",
+              0.0001201629638671875
+            ],
+            [
+              " thousand",
+              0.00010442733764648438
+            ],
+            [
+              "ovsky",
+              9.965896606445312e-05
+            ],
+            [
+              "0",
+              9.34600830078125e-05
+            ],
+            [
+              "illi",
+              8.916854858398438e-05
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "example_idx": 153,
+      "cot_position": 1,
+      "activation": 1.09375,
+      "question": "Tim's cat bit him.  He decided to get himself and the cat checked out.  His doctor's visits $300 and insurance covered 75%.  His cat's visit cost $120 and his pet insurance covered $60.  How much did he pay?",
+      "reference_answer": "The insurance covers 300*.75=$<<300*.75=225>>225\nSo he had to pay 300-225=$<<300-225=75>>75\nThe cats visit cost 120-60=$<<120-60=60>>60\nSo in total he paid 75+60=$<<75+60=135>>135\n#### 135",
+      "decoded_thoughts": [
+        {
+          "position": 0,
+          "top_tokens": [
+            [
+              " remaining",
+              8.296966552734375e-05
+            ],
+            [
+              " remainder",
+              6.771087646484375e-05
+            ],
+            [
+              "remaining",
+              5.1975250244140625e-05
+            ],
+            [
+              " remain",
+              5.173683166503906e-05
+            ],
+            [
+              "\u0430\u043d\u0441",
+              4.935264587402344e-05
+            ]
+          ]
+        },
+        {
+          "position": 1,
+          "top_tokens": [
+            [
+              "adamente",
+              0.00011920928955078125
+            ],
+            [
+              "ouser",
+              0.0001049041748046875
+            ],
+            [
+              "ish",
+              0.0001049041748046875
+            ],
+            [
+              ".rules",
+              8.96453857421875e-05
+            ],
+            [
+              "\u044e",
+              8.58306884765625e-05
+            ]
+          ]
+        },
+        {
+          "position": 2,
+          "top_tokens": [
+            [
+              "\u043a\u0443",
+              0.00011301040649414062
+            ],
+            [
+              "ivit\u00e0",
+              0.0001049041748046875
+            ],
+            [
+              "adamente",
+              9.822845458984375e-05
+            ],
+            [
+              "ijken",
+              9.822845458984375e-05
+            ],
+            [
+              "ish",
+              9.822845458984375e-05
+            ]
+          ]
+        },
+        {
+          "position": 3,
+          "top_tokens": [
+            [
+              " sixty",
+              9.870529174804688e-05
+            ],
+            [
+              "40",
+              6.389617919921875e-05
+            ],
+            [
+              "60",
+              6.198883056640625e-05
+            ],
+            [
+              " seventy",
+              5.459785461425781e-05
+            ],
+            [
+              " thirty",
+              5.1975250244140625e-05
+            ]
+          ]
+        },
+        {
+          "position": 4,
+          "top_tokens": [
+            [
+              "\u043d\u0430\u0445",
+              0.0001125335693359375
+            ],
+            [
+              "hoe",
+              0.00010395050048828125
+            ],
+            [
+              "\u00f3r",
+              0.00010395050048828125
+            ],
+            [
+              "ijd",
+              9.489059448242188e-05
+            ],
+            [
+              "\u00e4ng",
+              9.202957153320312e-05
+            ]
+          ]
+        },
+        {
+          "position": 5,
+          "top_tokens": [
+            [
+              "\u0142em",
+              7.534027099609375e-05
+            ],
+            [
+              "\u0430\u044e\u0442\u0441\u044f",
+              7.05718994140625e-05
+            ],
+            [
+              "\u0438\u043a\u0430",
+              7.05718994140625e-05
+            ],
+            [
+              "\u043d\u0430\u0445",
+              6.961822509765625e-05
+            ],
+            [
+              "hoe",
+              6.866455078125e-05
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "example_idx": 432,
+      "cot_position": 1,
+      "activation": 1.0703125,
+      "question": "Tina is getting $20 for each book she sells. If she realizes a $120 profit on her sales, how many people have she sold the books to if each book costs $5 to make and every customer buys 2 at a time?",
+      "reference_answer": "First, we need to determine the profit per book. To do this, we perform 20-5=<<20-5=15>>15 dollars in profit per book.\nNext, we divide the total sales by the profit per book, performing 120/15=<<120/15=8>>8 books sold in total.\nSince the books are sold 2 at a time, we divide the number sold by 2 to find the total number of people sold to, performing 8/2=<<8/2=4>>4 people in total.\n#### 4",
+      "decoded_thoughts": [
+        {
+          "position": 0,
+          "top_tokens": [
+            [
+              "25",
+              4.00543212890625e-05
+            ],
+            [
+              "15",
+              3.695487976074219e-05
+            ],
+            [
+              " ph\u1ee7",
+              3.647804260253906e-05
+            ],
+            [
+              "\"]){\n",
+              3.4809112548828125e-05
+            ],
+            [
+              "charged",
+              3.409385681152344e-05
+            ]
+          ]
+        },
+        {
+          "position": 1,
+          "top_tokens": [
+            [
+              "ijken",
+              0.00010633468627929688
+            ],
+            [
+              "\u043e\u0440\u043e\u0442",
+              7.677078247070312e-05
+            ],
+            [
+              "antry",
+              7.677078247070312e-05
+            ],
+            [
+              "\u0438\u043a\u0430",
+              6.771087646484375e-05
+            ],
+            [
+              " charge",
+              6.67572021484375e-05
+            ]
+          ]
+        },
+        {
+          "position": 2,
+          "top_tokens": [
+            [
+              "ijken",
+              7.390975952148438e-05
+            ],
+            [
+              "ainter",
+              6.628036499023438e-05
+            ],
+            [
+              "\u044c\u044e",
+              6.031990051269531e-05
+            ],
+            [
+              "\u044b\u0448",
+              5.936622619628906e-05
+            ],
+            [
+              "ahkan",
+              5.793571472167969e-05
+            ]
+          ]
+        },
+        {
+          "position": 3,
+          "top_tokens": [
+            [
+              "8",
+              0.0003185272216796875
+            ],
+            [
+              " eighth",
+              0.0002155303955078125
+            ],
+            [
+              " eight",
+              0.00020313262939453125
+            ],
+            [
+              "6",
+              0.00014400482177734375
+            ],
+            [
+              " Eighth",
+              0.00011920928955078125
+            ]
+          ]
+        },
+        {
+          "position": 4,
+          "top_tokens": [
+            [
+              "itti",
+              8.296966552734375e-05
+            ],
+            [
+              "\u0440\u0430\u0442\u0438",
+              7.009506225585938e-05
+            ],
+            [
+              "ch\u00e9",
+              6.67572021484375e-05
+            ],
+            [
+              ".`",
+              6.67572021484375e-05
+            ],
+            [
+              "acious",
+              6.389617919921875e-05
+            ]
+          ]
+        },
+        {
+          "position": 5,
+          "top_tokens": [
+            [
+              ".`",
+              7.104873657226562e-05
+            ],
+            [
+              "adamente",
+              6.079673767089844e-05
+            ],
+            [
+              "etre",
+              6.079673767089844e-05
+            ],
+            [
+              "enting",
+              5.793571472167969e-05
+            ],
+            [
+              "ch\u00e9",
+              5.53131103515625e-05
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "example_idx": 383,
+      "cot_position": 1,
+      "activation": 1.0234375,
+      "question": "Anna baked 60 cupcakes. She gives away 4/5 of the cupcakes to her classmates. Of the remaining 1/5 of cupcakes, she eats 3 cupcakes. How many cupcakes does she have left?",
+      "reference_answer": "After giving away 4/5 of the cupcakes, Anna has 60 / 5 = <<60/5=12>>12 cupcakes\nAfter eating 3 cupcakes, Anna has 12 - 3 = <<12-3=9>>9 cupcakes.\n#### 9",
+      "decoded_thoughts": [
+        {
+          "position": 0,
+          "top_tokens": [
+            [
+              " ourselves",
+              8.96453857421875e-05
+            ],
+            [
+              " remain",
+              5.984306335449219e-05
+            ],
+            [
+              " remaining",
+              5.602836608886719e-05
+            ],
+            [
+              " Remain",
+              5.1975250244140625e-05
+            ],
+            [
+              " herself",
+              4.9591064453125e-05
+            ]
+          ]
+        },
+        {
+          "position": 1,
+          "top_tokens": [
+            [
+              "nap",
+              0.0001735687255859375
+            ],
+            [
+              "ic\u00ed",
+              0.0001506805419921875
+            ],
+            [
+              "erse",
+              0.0001354217529296875
+            ],
+            [
+              "orte",
+              0.00011205673217773438
+            ],
+            [
+              " ourselves",
+              0.000110626220703125
+            ]
+          ]
+        },
+        {
+          "position": 2,
+          "top_tokens": [
+            [
+              "inski",
+              0.00019741058349609375
+            ],
+            [
+              "\u0430\u044e\u0442\u0441\u044f",
+              0.00012159347534179688
+            ],
+            [
+              "\u00f8r",
+              0.00011968612670898438
+            ],
+            [
+              "\u0142y",
+              0.00010538101196289062
+            ],
+            [
+              "ch\u00e9",
+              8.869171142578125e-05
+            ]
+          ]
+        },
+        {
+          "position": 3,
+          "top_tokens": [
+            [
+              "\u5eab",
+              3.719329833984375e-05
+            ],
+            [
+              "\u00e7on",
+              3.361701965332031e-05
+            ],
+            [
+              "\u00e4d",
+              3.314018249511719e-05
+            ],
+            [
+              "\u00e8ne",
+              3.2901763916015625e-05
+            ],
+            [
+              "chal",
+              3.24249267578125e-05
+            ]
+          ]
+        },
+        {
+          "position": 4,
+          "top_tokens": [
+            [
+              "\u00ebl",
+              5.53131103515625e-05
+            ],
+            [
+              " kali",
+              5.53131103515625e-05
+            ],
+            [
+              "fortunately",
+              5.2928924560546875e-05
+            ],
+            [
+              "abouts",
+              5.054473876953125e-05
+            ],
+            [
+              "such",
+              4.744529724121094e-05
+            ]
+          ]
+        },
+        {
+          "position": 5,
+          "top_tokens": [
+            [
+              "-looking",
+              7.104873657226562e-05
+            ],
+            [
+              "\u00e4t",
+              7.104873657226562e-05
+            ],
+            [
+              "edly",
+              6.437301635742188e-05
+            ],
+            [
+              "abouts",
+              6.341934204101562e-05
+            ],
+            [
+              "ish",
+              5.507469177246094e-05
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "example_idx": 439,
+      "cot_position": 4,
+      "activation": 1.015625,
+      "question": "Timothy has $50 to spend at a souvenir shop. He sees some t-shirts that cost $8 each, key chains that sell 3 pieces for $2, and bags that cost $10 each. Timothy buys 2 t-shirts and 2 bags. How many pieces of key chains can he buy with the amount of money he has left?",
+      "reference_answer": "The two t-shirts amount to $8 x 2 = $<<8*2=16>>16.\nThe two bags amount to $10 x 2= $<<10*2=20>>20.\nSo Timothy spent $16 + $20 = $<<16+20=36>>36 for the shirts and bags.\nHe still has $50 - $36 = $<<50-36=14>>14 left to spend for the key chains.\nWith the money, he can buy $14/$2 = <<14/2=7>>7 sets of key chains.\nTherefore, he can buy 7 x 3 = <<7*3=21>>21 pieces of key chains.\n#### 21",
+      "decoded_thoughts": [
+        {
+          "position": 0,
+          "top_tokens": [
+            [
+              "34",
+              4.649162292480469e-05
+            ],
+            [
+              "\u0433\u0440\u0430",
+              4.410743713378906e-05
+            ],
+            [
+              "Canonical",
+              4.100799560546875e-05
+            ],
+            [
+              "\u0441\u043b\u0438",
+              4.029273986816406e-05
+            ],
+            [
+              " wir",
+              3.981590270996094e-05
+            ]
+          ]
+        },
+        {
+          "position": 1,
+          "top_tokens": [
+            [
+              "aku",
+              9.918212890625e-05
+            ],
+            [
+              "\u00e6kke",
+              8.726119995117188e-05
+            ],
+            [
+              "inker",
+              7.82012939453125e-05
+            ],
+            [
+              "chez",
+              7.724761962890625e-05
+            ],
+            [
+              " ourselves",
+              7.343292236328125e-05
+            ]
+          ]
+        },
+        {
+          "position": 2,
+          "top_tokens": [
+            [
+              "enen",
+              7.867813110351562e-05
+            ],
+            [
+              " [];",
+              7.772445678710938e-05
+            ],
+            [
+              "\u044b\u0448",
+              7.200241088867188e-05
+            ],
+            [
+              "fell",
+              7.200241088867188e-05
+            ],
+            [
+              "iek",
+              7.200241088867188e-05
+            ]
+          ]
+        },
+        {
+          "position": 3,
+          "top_tokens": [
+            [
+              "16",
+              4.8160552978515625e-05
+            ],
+            [
+              "14",
+              4.458427429199219e-05
+            ],
+            [
+              "12",
+              3.910064697265625e-05
+            ],
+            [
+              "assi",
+              3.8623809814453125e-05
+            ],
+            [
+              " other",
+              3.719329833984375e-05
+            ]
+          ]
+        },
+        {
+          "position": 4,
+          "top_tokens": [
+            [
+              "adamente",
+              0.00016880035400390625
+            ],
+            [
+              "aggio",
+              0.00011920928955078125
+            ],
+            [
+              "rete",
+              9.298324584960938e-05
+            ],
+            [
+              "erti",
+              8.726119995117188e-05
+            ],
+            [
+              "positor",
+              8.20159912109375e-05
+            ]
+          ]
+        },
+        {
+          "position": 5,
+          "top_tokens": [
+            [
+              "adamente",
+              0.00018215179443359375
+            ],
+            [
+              "either",
+              0.00011587142944335938
+            ],
+            [
+              "aggio",
+              0.00010538101196289062
+            ],
+            [
+              "rete",
+              9.72747802734375e-05
+            ],
+            [
+              "no\u015bci",
+              8.487701416015625e-05
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "example_idx": 50,
+      "cot_position": 1,
+      "activation": 1.0,
+      "question": "Gerald spends $100 a month on baseball supplies. His season is 4 months long. He wants to use the months he's not playing baseball to save up by raking, shoveling, and mowing lawns. He charges $10 for each. How many chores does he need to average a month to save up for his supplies?",
+      "reference_answer": "He needs to save up $400 because 4 x 100 = <<4*100=400>>400\nHe has 8 months to earn this money because 12 - 4 = <<12-4=8>>8\nHe needs to earn $50 a month because 400 / 8 = <<400/8=50>>50\nHe needs to do 5 tasks a month because 50 / 10 = <<50/10=5>>5\n#### 5",
+      "decoded_thoughts": [
+        {
+          "position": 0,
+          "top_tokens": [
+            [
+              " zero",
+              5.0067901611328125e-05
+            ],
+            [
+              "400",
+              4.76837158203125e-05
+            ],
+            [
+              " t\u00fa",
+              4.482269287109375e-05
+            ],
+            [
+              "100",
+              4.315376281738281e-05
+            ],
+            [
+              "zero",
+              4.2438507080078125e-05
+            ]
+          ]
+        },
+        {
+          "position": 1,
+          "top_tokens": [
+            [
+              "400",
+              7.05718994140625e-05
+            ],
+            [
+              "\u30f3\u30b0",
+              6.532669067382812e-05
+            ],
+            [
+              "rier",
+              5.6743621826171875e-05
+            ],
+            [
+              " concentrated",
+              5.14984130859375e-05
+            ],
+            [
+              "standing",
+              5.14984130859375e-05
+            ]
+          ]
+        },
+        {
+          "position": 2,
+          "top_tokens": [
+            [
+              "\u043c\u0443",
+              0.0001316070556640625
+            ],
+            [
+              "\u0142em",
+              0.00010776519775390625
+            ],
+            [
+              "GEST",
+              9.965896606445312e-05
+            ],
+            [
+              "thin",
+              9.489059448242188e-05
+            ],
+            [
+              "falls",
+              9.489059448242188e-05
+            ]
+          ]
+        },
+        {
+          "position": 3,
+          "top_tokens": [
+            [
+              "40",
+              5.745887756347656e-05
+            ],
+            [
+              "ten",
+              4.76837158203125e-05
+            ],
+            [
+              "50",
+              4.482269287109375e-05
+            ],
+            [
+              " fifty",
+              3.790855407714844e-05
+            ],
+            [
+              "25",
+              3.7670135498046875e-05
+            ]
+          ]
+        },
+        {
+          "position": 4,
+          "top_tokens": [
+            [
+              "\ufffd",
+              5.555152893066406e-05
+            ],
+            [
+              "adamente",
+              5.2928924560546875e-05
+            ],
+            [
+              "50",
+              4.9114227294921875e-05
+            ],
+            [
+              " half",
+              4.1961669921875e-05
+            ],
+            [
+              " \u00fanico",
+              4.029273986816406e-05
+            ]
+          ]
+        },
+        {
+          "position": 5,
+          "top_tokens": [
+            [
+              "each",
+              6.198883056640625e-05
+            ],
+            [
+              "adamente",
+              5.316734313964844e-05
+            ],
+            [
+              " myself",
+              5.316734313964844e-05
+            ],
+            [
+              " each",
+              5.125999450683594e-05
+            ],
+            [
+              "50",
+              5.0067901611328125e-05
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "example_idx": 373,
+      "cot_position": 0,
+      "activation": 0.92578125,
+      "question": "Alison bought some storage tubs for her garage. She bought 3 large ones and 6 small ones, for $48 total. If the large tubs cost $6, how much do the small ones cost?",
+      "reference_answer": "Let t be the price of the small tubs\n3*6+6*t=48\n18+6*t=48\n6*t=48-18=30\n6t=30\nt=<<5=5>>5 dollars for each small tub\n#### 5",
+      "decoded_thoughts": [
+        {
+          "position": 0,
+          "top_tokens": [
+            [
+              " Brands",
+              0.00011396408081054688
+            ],
+            [
+              "\u00fan",
+              0.0001087188720703125
+            ],
+            [
+              "anche",
+              0.00010395050048828125
+            ],
+            [
+              "\u0440\u0430\u043c\u0438",
+              0.00010251998901367188
+            ],
+            [
+              ").'",
+              8.487701416015625e-05
+            ]
+          ]
+        },
+        {
+          "position": 1,
+          "top_tokens": [
+            [
+              "-under",
+              7.963180541992188e-05
+            ],
+            [
+              "felt",
+              5.3882598876953125e-05
+            ],
+            [
+              "-is",
+              5.221366882324219e-05
+            ],
+            [
+              "olid",
+              5.125999450683594e-05
+            ],
+            [
+              "endar",
+              4.982948303222656e-05
+            ]
+          ]
+        },
+        {
+          "position": 2,
+          "top_tokens": [
+            [
+              " best",
+              4.9114227294921875e-05
+            ],
+            [
+              " {!",
+              4.649162292480469e-05
+            ],
+            [
+              "\u1ed1i",
+              4.38690185546875e-05
+            ],
+            [
+              "-pressure",
+              4.315376281738281e-05
+            ],
+            [
+              "either",
+              4.00543212890625e-05
+            ]
+          ]
+        },
+        {
+          "position": 3,
+          "top_tokens": [
+            [
+              "?).",
+              4.7206878662109375e-05
+            ],
+            [
+              "either",
+              3.981590270996094e-05
+            ],
+            [
+              " most",
+              3.695487976074219e-05
+            ],
+            [
+              " best",
+              3.6716461181640625e-05
+            ],
+            [
+              "-sup",
+              3.62396240234375e-05
+            ]
+          ]
+        },
+        {
+          "position": 4,
+          "top_tokens": [
+            [
+              "?).",
+              5.4836273193359375e-05
+            ],
+            [
+              "either",
+              4.410743713378906e-05
+            ],
+            [
+              " most",
+              3.9577484130859375e-05
+            ],
+            [
+              "\u1ed1i",
+              3.8623809814453125e-05
+            ],
+            [
+              " half",
+              3.790855407714844e-05
+            ]
+          ]
+        },
+        {
+          "position": 5,
+          "top_tokens": [
+            [
+              "?).",
+              5.7220458984375e-05
+            ],
+            [
+              "either",
+              4.863739013671875e-05
+            ],
+            [
+              "\u1ed1i",
+              4.38690185546875e-05
+            ],
+            [
+              " either",
+              4.2438507080078125e-05
+            ],
+            [
+              " most",
+              4.0531158447265625e-05
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "example_idx": 66,
+      "cot_position": 1,
+      "activation": 0.921875,
+      "question": "Tara has been planning to buy a laptop which costs $1000. A computer shop accepts payment in installments of $65 per month provided that a 20% down payment is made. If Tara wants to pay an additional $20 for the down payment, how much will her balance be after paying for 4 months?",
+      "reference_answer": "Tara has to make a $1000 x 20/100 = $<<1000*20/100=200>>200 down payment.\nSince Tara wants to pay $20 more for the down payment, her total down payment will be $200 + $20 = $<<200+20=220>>220.\nSo her remaining balance payable over a year is $1000 - $220 = $<<1000-220=780>>780.\nTara has to make a monthly payment of $780/year / 12 months/year = $<<780/12=65>>65/month.\nThe total cost of her payments for 4 months is $65/month x 4 months = $<<65*4=260>>260.\nTherefore, Tara's balance after 4 months is $780 - $260 = $<<780-260=520>>520.\n#### 520",
+      "decoded_thoughts": [
+        {
+          "position": 0,
+          "top_tokens": [
+            [
+              "olding",
+              4.458427429199219e-05
+            ],
+            [
+              " resta",
+              4.410743713378906e-05
+            ],
+            [
+              "\u00edl",
+              4.124641418457031e-05
+            ],
+            [
+              "necessary",
+              3.8623809814453125e-05
+            ],
+            [
+              "rest",
+              3.8623809814453125e-05
+            ]
+          ]
+        },
+        {
+          "position": 1,
+          "top_tokens": [
+            [
+              "stage",
+              5.698204040527344e-05
+            ],
+            [
+              ".handle",
+              5.1975250244140625e-05
+            ],
+            [
+              "\u0632\u0627\u0646",
+              4.7206878662109375e-05
+            ],
+            [
+              "oire",
+              4.649162292480469e-05
+            ],
+            [
+              " \u0447\u0430\u0441\u0442\u0438",
+              4.506111145019531e-05
+            ]
+          ]
+        },
+        {
+          "position": 2,
+          "top_tokens": [
+            [
+              "\u00f8r",
+              7.2479248046875e-05
+            ],
+            [
+              "\u0430\u0442\u044c",
+              6.4849853515625e-05
+            ],
+            [
+              "rous",
+              6.29425048828125e-05
+            ],
+            [
+              "\u0430\u044e\u0442\u0441\u044f",
+              6.103515625e-05
+            ],
+            [
+              "\u043e\u0433\u0443",
+              6.008148193359375e-05
+            ]
+          ]
+        },
+        {
+          "position": 3,
+          "top_tokens": [
+            [
+              "mare",
+              3.3855438232421875e-05
+            ],
+            [
+              "\u0119",
+              2.682209014892578e-05
+            ],
+            [
+              "\u00e8res",
+              2.586841583251953e-05
+            ],
+            [
+              "\u0105d",
+              2.5272369384765625e-05
+            ],
+            [
+              " fill",
+              2.5033950805664062e-05
+            ]
+          ]
+        },
+        {
+          "position": 4,
+          "top_tokens": [
+            [
+              "\u043d\u0430\u0445",
+              4.935264587402344e-05
+            ],
+            [
+              "\u00fcm",
+              4.839897155761719e-05
+            ],
+            [
+              "ovan",
+              4.744529724121094e-05
+            ],
+            [
+              "mart",
+              4.458427429199219e-05
+            ],
+            [
+              " ;\n\n",
+              4.2438507080078125e-05
+            ]
+          ]
+        },
+        {
+          "position": 5,
+          "top_tokens": [
+            [
+              "\u043d\u0430\u0445",
+              6.532669067382812e-05
+            ],
+            [
+              "uja",
+              5.9604644775390625e-05
+            ],
+            [
+              "ovan",
+              5.602836608886719e-05
+            ],
+            [
+              "rous",
+              5.2928924560546875e-05
+            ],
+            [
+              "\u0438\u043c\u043e",
+              5.173683166503906e-05
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "example_idx": 117,
+      "cot_position": 1,
+      "activation": 0.90625,
+      "question": "An aquarium holds an equal number of clownfish and blowfish. 26 of the blowfish stay in their own tank, and the remaining blowfish swim into a display tank.  An equal number of clownfish join the blowfish in the display tank, but then a third of these clownfish swim back into their own tank.  If the aquarium holds a combined total of 100 fish, how many clownfish are now in the display tank?",
+      "reference_answer": "There is an equal number of clownfish and blowfish, which means there are 100 fish / 2 = <<100/2=50>>50 blowfish.\nSince some stay in their tanks, there are 50 blowfish \u2013 26 blowfish = <<50-26=24>>24 blowfish in the display tank.\nThere were the same amount of clownfish until 24 clownfish / 3 = <<24/3=8>>8 clownfish swam back to their own tank.\nThis leaves 24 clownfish \u2013 8 clownfish = <<24-8=16>>16 clownfish in the display tank.\n#### 16",
+      "decoded_thoughts": [
+        {
+          "position": 0,
+          "top_tokens": [
+            [
+              "\u00edl",
+              5.078315734863281e-05
+            ],
+            [
+              "74",
+              4.982948303222656e-05
+            ],
+            [
+              " \u0436\u0435",
+              4.696846008300781e-05
+            ],
+            [
+              "\u0941\u0915",
+              4.553794860839844e-05
+            ],
+            [
+              "\ufffd",
+              4.482269287109375e-05
+            ]
+          ]
+        },
+        {
+          "position": 1,
+          "top_tokens": [
+            [
+              "uco",
+              0.00010824203491210938
+            ],
+            [
+              "adamente",
+              9.72747802734375e-05
+            ],
+            [
+              " Whoever",
+              9.1552734375e-05
+            ],
+            [
+              "\u043e\u0434\u0430",
+              8.058547973632812e-05
+            ],
+            [
+              " \u00e9crit",
+              7.915496826171875e-05
+            ]
+          ]
+        },
+        {
+          "position": 2,
+          "top_tokens": [
+            [
+              " secondo",
+              7.295608520507812e-05
+            ],
+            [
+              "adamente",
+              6.723403930664062e-05
+            ],
+            [
+              "\u044f\u0442",
+              6.532669067382812e-05
+            ],
+            [
+              "adin",
+              6.532669067382812e-05
+            ],
+            [
+              "ERE",
+              6.437301635742188e-05
+            ]
+          ]
+        },
+        {
+          "position": 3,
+          "top_tokens": [
+            [
+              "8",
+              0.00017070770263671875
+            ],
+            [
+              " eighth",
+              0.00012874603271484375
+            ],
+            [
+              " eight",
+              0.00012683868408203125
+            ],
+            [
+              " Eighth",
+              9.870529174804688e-05
+            ],
+            [
+              "Eight",
+              8.869171142578125e-05
+            ]
+          ]
+        },
+        {
+          "position": 4,
+          "top_tokens": [
+            [
+              "een",
+              0.00011110305786132812
+            ],
+            [
+              "\u0438\u043d\u0435",
+              0.00010585784912109375
+            ],
+            [
+              "acious",
+              0.00010251998901367188
+            ],
+            [
+              "reserved",
+              9.632110595703125e-05
+            ],
+            [
+              "\u0438\u0437",
+              8.630752563476562e-05
+            ]
+          ]
+        },
+        {
+          "position": 5,
+          "top_tokens": [
+            [
+              "\u0438\u0437",
+              0.000110626220703125
+            ],
+            [
+              "adamente",
+              7.62939453125e-05
+            ],
+            [
+              "either",
+              6.818771362304688e-05
+            ],
+            [
+              "acious",
+              6.198883056640625e-05
+            ],
+            [
+              "oce",
+              6.103515625e-05
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "example_idx": 407,
+      "cot_position": 1,
+      "activation": 0.87890625,
+      "question": "Eustace is twice as old as Milford. In 3 years, he will be 39. How old will Milford be?",
+      "reference_answer": "Eustace\u2019s current age must be 39 years old \u2013 3 years = <<39-3=36>>36 years old.\nSo Milford\u2019s current age must be 36 years old / 2 = <<36/2=18>>18 years old.\nSo in 3 years, Milford will be 18 years old + 3 years = <<18+3=21>>21 years old.\n#### 21",
+      "decoded_thoughts": [
+        {
+          "position": 0,
+          "top_tokens": [
+            [
+              "38",
+              7.343292236328125e-05
+            ],
+            [
+              "36",
+              7.200241088867188e-05
+            ],
+            [
+              "rest",
+              5.6743621826171875e-05
+            ],
+            [
+              "roe",
+              5.412101745605469e-05
+            ],
+            [
+              "34",
+              5.364418029785156e-05
+            ]
+          ]
+        },
+        {
+          "position": 1,
+          "top_tokens": [
+            [
+              "\u00f6ren",
+              0.00019168853759765625
+            ],
+            [
+              "\u062f\u0627\u062f",
+              0.00017452239990234375
+            ],
+            [
+              "ic\u00ed",
+              0.000171661376953125
+            ],
+            [
+              "\u00dfen",
+              0.00015354156494140625
+            ],
+            [
+              "\u00e6kke",
+              0.000148773193359375
+            ]
+          ]
+        },
+        {
+          "position": 2,
+          "top_tokens": [
+            [
+              "\u00dfen",
+              0.00014972686767578125
+            ],
+            [
+              "\u00f6ren",
+              0.0001316070556640625
+            ],
+            [
+              "\u0430\u044e\u0442\u0441\u044f",
+              0.000118255615234375
+            ],
+            [
+              "\u043e\u0433\u0443",
+              0.0001163482666015625
+            ],
+            [
+              "inis",
+              0.00011444091796875
+            ]
+          ]
+        },
+        {
+          "position": 3,
+          "top_tokens": [
+            [
+              "18",
+              0.000164031982421875
+            ],
+            [
+              "16",
+              0.00015926361083984375
+            ],
+            [
+              " sixteen",
+              0.00012159347534179688
+            ],
+            [
+              "14",
+              0.00010919570922851562
+            ],
+            [
+              "19",
+              9.34600830078125e-05
+            ]
+          ]
+        },
+        {
+          "position": 4,
+          "top_tokens": [
+            [
+              "arent",
+              0.00015544891357421875
+            ],
+            [
+              "uos",
+              0.0001506805419921875
+            ],
+            [
+              "onis",
+              0.00011539459228515625
+            ],
+            [
+              "ioni",
+              0.00011205673217773438
+            ],
+            [
+              "adamente",
+              0.0001049041748046875
+            ]
+          ]
+        },
+        {
+          "position": 5,
+          "top_tokens": [
+            [
+              "uos",
+              0.00017070770263671875
+            ],
+            [
+              "arent",
+              0.00012874603271484375
+            ],
+            [
+              "adamente",
+              0.00012302398681640625
+            ],
+            [
+              "\u0430\u044e\u0442\u0441\u044f",
+              0.00011396408081054688
+            ],
+            [
+              "bbe",
+              0.000110626220703125
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

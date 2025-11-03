@@ -1,0 +1,16 @@
+# Feature Interpretation Report
+
+## First GSM8K Test Example Analysis
+
+**Question:** Janet’s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?
+
+**Answer:** Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.
+She makes 9 * 2 = $<<9*2=18>>18 every day at the farmer’s market.
+#### 18
+
+---
+
+## Position 0
+
+### EARLY Layer (L4)
+

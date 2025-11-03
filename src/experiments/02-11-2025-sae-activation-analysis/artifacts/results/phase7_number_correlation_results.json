@@ -1,0 +1,7157 @@
+{
+  "experiment": "number_correlation_top_active_features",
+  "test_example": {
+    "question": "Janet\u2019s ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?",
+    "answer": "Janet sells 16 - 3 - 4 = <<16-3-4=9>>9 duck eggs a day.\nShe makes 9 * 2 = $<<9*2=18>>18 every day at the farmer\u2019s market.\n#### 18"
+  },
+  "iterations_analyzed": 2,
+  "top_k_features": 30,
+  "layers": {
+    "early": [
+      {
+        "feature_id": 3682,
+        "activation": 1.90625,
+        "iter1_activation": 1.90625,
+        "iter2_activation": 0.004150390625,
+        "feature_frequency": 0.7747892412685669,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5910189982728843,
+            "count": 3422
+          },
+          {
+            "token": "3",
+            "precision": 0.4284974093264249,
+            "count": 2481
+          },
+          {
+            "token": "5",
+            "precision": 0.3827288428324698,
+            "count": 2216
+          },
+          {
+            "token": "4",
+            "precision": 0.3531951640759931,
+            "count": 2045
+          },
+          {
+            "token": "10",
+            "precision": 0.281692573402418,
+            "count": 1631
+          },
+          {
+            "token": "1",
+            "precision": 0.25526770293609674,
+            "count": 1478
+          },
+          {
+            "token": "20",
+            "precision": 0.24507772020725388,
+            "count": 1419
+          },
+          {
+            "token": "6",
+            "precision": 0.24145077720207253,
+            "count": 1398
+          },
+          {
+            "token": "8",
+            "precision": 0.20725388601036268,
+            "count": 1200
+          },
+          {
+            "token": "12",
+            "precision": 0.20431778929188255,
+            "count": 1183
+          },
+          {
+            "token": "100",
+            "precision": 0.17944732297063903,
+            "count": 1039
+          },
+          {
+            "token": "0",
+            "precision": 0.17772020725388601,
+            "count": 1029
+          },
+          {
+            "token": "30",
+            "precision": 0.17495682210708116,
+            "count": 1013
+          },
+          {
+            "token": "15",
+            "precision": 0.1526770293609672,
+            "count": 884
+          },
+          {
+            "token": "50",
+            "precision": 0.14887737478411053,
+            "count": 862
+          }
+        ]
+      },
+      {
+        "feature_id": 2203,
+        "activation": 1.8515625,
+        "iter1_activation": 0.0,
+        "iter2_activation": 1.8515625,
+        "feature_frequency": 0.15228154690218118,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5509666080843585,
+            "count": 627
+          },
+          {
+            "token": "3",
+            "precision": 0.4806678383128295,
+            "count": 547
+          },
+          {
+            "token": "5",
+            "precision": 0.38137082601054484,
+            "count": 434
+          },
+          {
+            "token": "4",
+            "precision": 0.3374340949033392,
+            "count": 384
+          },
+          {
+            "token": "7",
+            "precision": 0.3295254833040422,
+            "count": 375
+          },
+          {
+            "token": "1",
+            "precision": 0.2539543057996485,
+            "count": 289
+          },
+          {
+            "token": "10",
+            "precision": 0.24428822495606328,
+            "count": 278
+          },
+          {
+            "token": "6",
+            "precision": 0.21968365553602812,
+            "count": 250
+          },
+          {
+            "token": "8",
+            "precision": 0.2038664323374341,
+            "count": 232
+          },
+          {
+            "token": "12",
+            "precision": 0.18629173989455183,
+            "count": 212
+          },
+          {
+            "token": "9",
+            "precision": 0.17750439367311072,
+            "count": 202
+          },
+          {
+            "token": "20",
+            "precision": 0.17223198594024605,
+            "count": 196
+          },
+          {
+            "token": "30",
+            "precision": 0.1282952548330404,
+            "count": 146
+          },
+          {
+            "token": "50",
+            "precision": 0.1282952548330404,
+            "count": 146
+          },
+          {
+            "token": "15",
+            "precision": 0.1274165202108963,
+            "count": 145
+          }
+        ]
+      },
+      {
+        "feature_id": 413,
+        "activation": 1.6640625,
+        "iter1_activation": 0.15625,
+        "iter2_activation": 1.6640625,
+        "feature_frequency": 1.0,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5612203934162987,
+            "count": 4194
+          },
+          {
+            "token": "3",
+            "precision": 0.41763682590659706,
+            "count": 3121
+          },
+          {
+            "token": "5",
+            "precision": 0.3669209152950622,
+            "count": 2742
+          },
+          {
+            "token": "4",
+            "precision": 0.3405593469824702,
+            "count": 2545
+          },
+          {
+            "token": "10",
+            "precision": 0.2707078817074803,
+            "count": 2023
+          },
+          {
+            "token": "20",
+            "precision": 0.2419376421785093,
+            "count": 1808
+          },
+          {
+            "token": "1",
+            "precision": 0.23685266961059814,
+            "count": 1770
+          },
+          {
+            "token": "6",
+            "precision": 0.23591596413756188,
+            "count": 1763
+          },
+          {
+            "token": "8",
+            "precision": 0.20473705339221196,
+            "count": 1530
+          },
+          {
+            "token": "12",
+            "precision": 0.19991971095945404,
+            "count": 1494
+          },
+          {
+            "token": "0",
+            "precision": 0.17770640974173693,
+            "count": 1328
+          },
+          {
+            "token": "100",
+            "precision": 0.17663588920112405,
+            "count": 1320
+          },
+          {
+            "token": "30",
+            "precision": 0.17128328649805968,
+            "count": 1280
+          },
+          {
+            "token": "15",
+            "precision": 0.15040813595610866,
+            "count": 1124
+          },
+          {
+            "token": "60",
+            "precision": 0.14920380034791916,
+            "count": 1115
+          }
+        ]
+      },
+      {
+        "feature_id": 6251,
+        "activation": 1.5546875,
+        "iter1_activation": 0.9375,
+        "iter2_activation": 1.5546875,
+        "feature_frequency": 0.9365716579686872,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5697956850978712,
+            "count": 3988
+          },
+          {
+            "token": "3",
+            "precision": 0.42134590655807974,
+            "count": 2949
+          },
+          {
+            "token": "5",
+            "precision": 0.37776825260751534,
+            "count": 2644
+          },
+          {
+            "token": "4",
+            "precision": 0.3469067009572796,
+            "count": 2428
+          },
+          {
+            "token": "10",
+            "precision": 0.2761823117588227,
+            "count": 1933
+          },
+          {
+            "token": "20",
+            "precision": 0.2474639234176311,
+            "count": 1732
+          },
+          {
+            "token": "1",
+            "precision": 0.24232033147592513,
+            "count": 1696
+          },
+          {
+            "token": "6",
+            "precision": 0.23917702528932705,
+            "count": 1674
+          },
+          {
+            "token": "8",
+            "precision": 0.208172596085155,
+            "count": 1457
+          },
+          {
+            "token": "12",
+            "precision": 0.20502928989855693,
+            "count": 1435
+          },
+          {
+            "token": "0",
+            "precision": 0.17788255465066438,
+            "count": 1245
+          },
+          {
+            "token": "30",
+            "precision": 0.17545363623374768,
+            "count": 1228
+          },
+          {
+            "token": "100",
+            "precision": 0.1751678811258751,
+            "count": 1226
+          },
+          {
+            "token": "60",
+            "precision": 0.15287898271181596,
+            "count": 1070
+          },
+          {
+            "token": "15",
+            "precision": 0.15287898271181596,
+            "count": 1070
+          }
+        ]
+      },
+      {
+        "feature_id": 3192,
+        "activation": 1.3671875,
+        "iter1_activation": 1.3671875,
+        "iter2_activation": 0.3515625,
+        "feature_frequency": 0.665863776261207,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5872186495176849,
+            "count": 2922
+          },
+          {
+            "token": "3",
+            "precision": 0.4242363344051447,
+            "count": 2111
+          },
+          {
+            "token": "5",
+            "precision": 0.3832395498392283,
+            "count": 1907
+          },
+          {
+            "token": "4",
+            "precision": 0.3587218649517685,
+            "count": 1785
+          },
+          {
+            "token": "10",
+            "precision": 0.3028536977491961,
+            "count": 1507
+          },
+          {
+            "token": "6",
+            "precision": 0.24758842443729903,
+            "count": 1232
+          },
+          {
+            "token": "1",
+            "precision": 0.24618167202572347,
+            "count": 1225
+          },
+          {
+            "token": "20",
+            "precision": 0.2447749196141479,
+            "count": 1218
+          },
+          {
+            "token": "8",
+            "precision": 0.22186495176848875,
+            "count": 1104
+          },
+          {
+            "token": "12",
+            "precision": 0.21322347266881028,
+            "count": 1061
+          },
+          {
+            "token": "0",
+            "precision": 0.2090032154340836,
+            "count": 1040
+          },
+          {
+            "token": "100",
+            "precision": 0.19332797427652734,
+            "count": 962
+          },
+          {
+            "token": "30",
+            "precision": 0.18569131832797428,
+            "count": 924
+          },
+          {
+            "token": "50",
+            "precision": 0.14911575562700966,
+            "count": 742
+          },
+          {
+            "token": "7",
+            "precision": 0.1483118971061093,
+            "count": 738
+          }
+        ]
+      },
+      {
+        "feature_id": 4959,
+        "activation": 1.0,
+        "iter1_activation": 0.51171875,
+        "iter2_activation": 1.0,
+        "feature_frequency": 0.8655158570855078,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5785405071119357,
+            "count": 3742
+          },
+          {
+            "token": "3",
+            "precision": 0.4332096474953618,
+            "count": 2802
+          },
+          {
+            "token": "5",
+            "precision": 0.3857452071737786,
+            "count": 2495
+          },
+          {
+            "token": "4",
+            "precision": 0.35405071119356835,
+            "count": 2290
+          },
+          {
+            "token": "10",
+            "precision": 0.282312925170068,
+            "count": 1826
+          },
+          {
+            "token": "1",
+            "precision": 0.2535559678416821,
+            "count": 1640
+          },
+          {
+            "token": "6",
+            "precision": 0.24752628324056897,
+            "count": 1601
+          },
+          {
+            "token": "20",
+            "precision": 0.24134199134199133,
+            "count": 1561
+          },
+          {
+            "token": "8",
+            "precision": 0.21304885590599876,
+            "count": 1378
+          },
+          {
+            "token": "12",
+            "precision": 0.21042053184910328,
+            "count": 1361
+          },
+          {
+            "token": "0",
+            "precision": 0.1841372912801484,
+            "count": 1191
+          },
+          {
+            "token": "100",
+            "precision": 0.17965367965367965,
+            "count": 1162
+          },
+          {
+            "token": "30",
+            "precision": 0.17439703153988867,
+            "count": 1128
+          },
+          {
+            "token": "15",
+            "precision": 0.15893630179344465,
+            "count": 1028
+          },
+          {
+            "token": "50",
+            "precision": 0.1476499690785405,
+            "count": 955
+          }
+        ]
+      },
+      {
+        "feature_id": 3329,
+        "activation": 0.9453125,
+        "iter1_activation": 0.0,
+        "iter2_activation": 0.9453125,
+        "feature_frequency": 0.9862170480396093,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5636363636363636,
+            "count": 4154
+          },
+          {
+            "token": "3",
+            "precision": 0.4176390773405699,
+            "count": 3078
+          },
+          {
+            "token": "5",
+            "precision": 0.36743554952510177,
+            "count": 2708
+          },
+          {
+            "token": "4",
+            "precision": 0.3413839891451832,
+            "count": 2516
+          },
+          {
+            "token": "10",
+            "precision": 0.27204884667571233,
+            "count": 2005
+          },
+          {
+            "token": "20",
+            "precision": 0.24314789687924016,
+            "count": 1792
+          },
+          {
+            "token": "1",
+            "precision": 0.23812754409769335,
+            "count": 1755
+          },
+          {
+            "token": "6",
+            "precision": 0.23663500678426053,
+            "count": 1744
+          },
+          {
+            "token": "8",
+            "precision": 0.20583446404341926,
+            "count": 1517
+          },
+          {
+            "token": "12",
+            "precision": 0.2010854816824966,
+            "count": 1482
+          },
+          {
+            "token": "0",
+            "precision": 0.17815468113975577,
+            "count": 1313
+          },
+          {
+            "token": "100",
+            "precision": 0.17720488466757123,
+            "count": 1306
+          },
+          {
+            "token": "30",
+            "precision": 0.17327001356852104,
+            "count": 1277
+          },
+          {
+            "token": "60",
+            "precision": 0.15061058344640435,
+            "count": 1110
+          },
+          {
+            "token": "15",
+            "precision": 0.15047489823609225,
+            "count": 1109
+          }
+        ]
+      },
+      {
+        "feature_id": 1506,
+        "activation": 0.8515625,
+        "iter1_activation": 0.8515625,
+        "iter2_activation": 0.32421875,
+        "feature_frequency": 0.9997323698648468,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5611029313344934,
+            "count": 4192
+          },
+          {
+            "token": "3",
+            "precision": 0.41761477713826795,
+            "count": 3120
+          },
+          {
+            "token": "5",
+            "precision": 0.3670191406772855,
+            "count": 2742
+          },
+          {
+            "token": "4",
+            "precision": 0.3405166644358185,
+            "count": 2544
+          },
+          {
+            "token": "10",
+            "precision": 0.27064649979922367,
+            "count": 2022
+          },
+          {
+            "token": "20",
+            "precision": 0.24200240931602196,
+            "count": 1808
+          },
+          {
+            "token": "1",
+            "precision": 0.23691607549190202,
+            "count": 1770
+          },
+          {
+            "token": "6",
+            "precision": 0.2359791192611431,
+            "count": 1763
+          },
+          {
+            "token": "8",
+            "precision": 0.2047918618658814,
+            "count": 1530
+          },
+          {
+            "token": "12",
+            "precision": 0.1998393789318699,
+            "count": 1493
+          },
+          {
+            "token": "0",
+            "precision": 0.17775398206398071,
+            "count": 1328
+          },
+          {
+            "token": "100",
+            "precision": 0.17668317494311336,
+            "count": 1320
+          },
+          {
+            "token": "30",
+            "precision": 0.1713291393387766,
+            "count": 1280
+          },
+          {
+            "token": "15",
+            "precision": 0.15031454959175478,
+            "count": 1123
+          },
+          {
+            "token": "60",
+            "precision": 0.14924374247088742,
+            "count": 1115
+          }
+        ]
+      },
+      {
+        "feature_id": 7324,
+        "activation": 0.8046875,
+        "iter1_activation": 0.8046875,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.9565101030376021,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5768047006155568,
+            "count": 4123
+          },
+          {
+            "token": "3",
+            "precision": 0.42501398992725237,
+            "count": 3038
+          },
+          {
+            "token": "5",
+            "precision": 0.37395075545607165,
+            "count": 2673
+          },
+          {
+            "token": "4",
+            "precision": 0.3480693900391718,
+            "count": 2488
+          },
+          {
+            "token": "10",
+            "precision": 0.2736429770565193,
+            "count": 1956
+          },
+          {
+            "token": "1",
+            "precision": 0.24636261891438163,
+            "count": 1761
+          },
+          {
+            "token": "20",
+            "precision": 0.2434247341913822,
+            "count": 1740
+          },
+          {
+            "token": "6",
+            "precision": 0.23992725237828763,
+            "count": 1715
+          },
+          {
+            "token": "8",
+            "precision": 0.2083100167879127,
+            "count": 1489
+          },
+          {
+            "token": "12",
+            "precision": 0.20243424734191381,
+            "count": 1447
+          },
+          {
+            "token": "0",
+            "precision": 0.18242865137101288,
+            "count": 1304
+          },
+          {
+            "token": "100",
+            "precision": 0.1782316731952994,
+            "count": 1274
+          },
+          {
+            "token": "30",
+            "precision": 0.17291550083939564,
+            "count": 1236
+          },
+          {
+            "token": "15",
+            "precision": 0.1510912143256855,
+            "count": 1080
+          },
+          {
+            "token": "60",
+            "precision": 0.15067151650811417,
+            "count": 1077
+          }
+        ]
+      },
+      {
+        "feature_id": 139,
+        "activation": 0.6796875,
+        "iter1_activation": 0.4375,
+        "iter2_activation": 0.6796875,
+        "feature_frequency": 0.8276461929613275,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5581244947453516,
+            "count": 3452
+          },
+          {
+            "token": "3",
+            "precision": 0.4320129345189976,
+            "count": 2672
+          },
+          {
+            "token": "5",
+            "precision": 0.39725141471301534,
+            "count": 2457
+          },
+          {
+            "token": "4",
+            "precision": 0.3419563459983832,
+            "count": 2115
+          },
+          {
+            "token": "10",
+            "precision": 0.2750202101859337,
+            "count": 1701
+          },
+          {
+            "token": "1",
+            "precision": 0.24850444624090542,
+            "count": 1537
+          },
+          {
+            "token": "20",
+            "precision": 0.2392886014551334,
+            "count": 1480
+          },
+          {
+            "token": "6",
+            "precision": 0.22926434923201294,
+            "count": 1418
+          },
+          {
+            "token": "8",
+            "precision": 0.20759902991107518,
+            "count": 1284
+          },
+          {
+            "token": "12",
+            "precision": 0.19628132578819726,
+            "count": 1214
+          },
+          {
+            "token": "0",
+            "precision": 0.1946645109135004,
+            "count": 1204
+          },
+          {
+            "token": "100",
+            "precision": 0.17736459175424413,
+            "count": 1097
+          },
+          {
+            "token": "30",
+            "precision": 0.1715440582053355,
+            "count": 1061
+          },
+          {
+            "token": "15",
+            "precision": 0.16798706548100242,
+            "count": 1039
+          },
+          {
+            "token": "50",
+            "precision": 0.1481002425222312,
+            "count": 916
+          }
+        ]
+      },
+      {
+        "feature_id": 7155,
+        "activation": 0.6484375,
+        "iter1_activation": 0.6484375,
+        "iter2_activation": 0.42578125,
+        "feature_frequency": 0.9021811856014987,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5657075051913378,
+            "count": 3814
+          },
+          {
+            "token": "3",
+            "precision": 0.42494808662118067,
+            "count": 2865
+          },
+          {
+            "token": "5",
+            "precision": 0.37036487689113023,
+            "count": 2497
+          },
+          {
+            "token": "4",
+            "precision": 0.33432215959655887,
+            "count": 2254
+          },
+          {
+            "token": "10",
+            "precision": 0.2699495698605755,
+            "count": 1820
+          },
+          {
+            "token": "1",
+            "precision": 0.24517947196677545,
+            "count": 1653
+          },
+          {
+            "token": "20",
+            "precision": 0.24265796499555028,
+            "count": 1636
+          },
+          {
+            "token": "6",
+            "precision": 0.23642835953722932,
+            "count": 1594
+          },
+          {
+            "token": "8",
+            "precision": 0.20216552951646397,
+            "count": 1363
+          },
+          {
+            "token": "12",
+            "precision": 0.1996440225452388,
+            "count": 1346
+          },
+          {
+            "token": "0",
+            "precision": 0.18258676950459804,
+            "count": 1231
+          },
+          {
+            "token": "100",
+            "precision": 0.18140017798872737,
+            "count": 1223
+          },
+          {
+            "token": "30",
+            "precision": 0.17947196677543756,
+            "count": 1210
+          },
+          {
+            "token": "60",
+            "precision": 0.1592999110056363,
+            "count": 1074
+          },
+          {
+            "token": "15",
+            "precision": 0.15900326312666865,
+            "count": 1072
+          }
+        ]
+      },
+      {
+        "feature_id": 5903,
+        "activation": 0.5625,
+        "iter1_activation": 0.0,
+        "iter2_activation": 0.5625,
+        "feature_frequency": 0.7030643650475044,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5749904834411876,
+            "count": 3021
+          },
+          {
+            "token": "3",
+            "precision": 0.41796726303768555,
+            "count": 2196
+          },
+          {
+            "token": "5",
+            "precision": 0.3667681766273316,
+            "count": 1927
+          },
+          {
+            "token": "4",
+            "precision": 0.3452607537114579,
+            "count": 1814
+          },
+          {
+            "token": "10",
+            "precision": 0.26684430909783025,
+            "count": 1402
+          },
+          {
+            "token": "6",
+            "precision": 0.25447278264179674,
+            "count": 1337
+          },
+          {
+            "token": "20",
+            "precision": 0.2447658926532166,
+            "count": 1286
+          },
+          {
+            "token": "1",
+            "precision": 0.24076893795203655,
+            "count": 1265
+          },
+          {
+            "token": "8",
+            "precision": 0.21964217738865627,
+            "count": 1154
+          },
+          {
+            "token": "12",
+            "precision": 0.20746098210886943,
+            "count": 1090
+          },
+          {
+            "token": "30",
+            "precision": 0.1884278644842025,
+            "count": 990
+          },
+          {
+            "token": "0",
+            "precision": 0.18747620860296918,
+            "count": 985
+          },
+          {
+            "token": "100",
+            "precision": 0.18062428625808907,
+            "count": 949
+          },
+          {
+            "token": "60",
+            "precision": 0.1741530262657023,
+            "count": 915
+          },
+          {
+            "token": "40",
+            "precision": 0.15036162923486868,
+            "count": 790
+          }
+        ]
+      },
+      {
+        "feature_id": 3437,
+        "activation": 0.53515625,
+        "iter1_activation": 0.0,
+        "iter2_activation": 0.53515625,
+        "feature_frequency": 0.7531112003211562,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5726723525230988,
+            "count": 3223
+          },
+          {
+            "token": "3",
+            "precision": 0.4072494669509595,
+            "count": 2292
+          },
+          {
+            "token": "5",
+            "precision": 0.36478322672352526,
+            "count": 2053
+          },
+          {
+            "token": "4",
+            "precision": 0.35287846481876334,
+            "count": 1986
+          },
+          {
+            "token": "10",
+            "precision": 0.27061122956645345,
+            "count": 1523
+          },
+          {
+            "token": "1",
+            "precision": 0.23933901918976547,
+            "count": 1347
+          },
+          {
+            "token": "6",
+            "precision": 0.23845060412224592,
+            "count": 1342
+          },
+          {
+            "token": "20",
+            "precision": 0.232409381663113,
+            "count": 1308
+          },
+          {
+            "token": "8",
+            "precision": 0.21570717839374556,
+            "count": 1214
+          },
+          {
+            "token": "12",
+            "precision": 0.19633972992181947,
+            "count": 1105
+          },
+          {
+            "token": "0",
+            "precision": 0.18194740582800284,
+            "count": 1024
+          },
+          {
+            "token": "100",
+            "precision": 0.17537313432835822,
+            "count": 987
+          },
+          {
+            "token": "30",
+            "precision": 0.17093105899076047,
+            "count": 962
+          },
+          {
+            "token": "7",
+            "precision": 0.15760483297796732,
+            "count": 887
+          },
+          {
+            "token": "50",
+            "precision": 0.14889836531627576,
+            "count": 838
+          }
+        ]
+      },
+      {
+        "feature_id": 4280,
+        "activation": 0.4375,
+        "iter1_activation": 0.0,
+        "iter2_activation": 0.4375,
+        "feature_frequency": 0.9648066372273518,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5656033287101249,
+            "count": 4078
+          },
+          {
+            "token": "3",
+            "precision": 0.42385575589459085,
+            "count": 3056
+          },
+          {
+            "token": "5",
+            "precision": 0.3723994452149792,
+            "count": 2685
+          },
+          {
+            "token": "4",
+            "precision": 0.34452149791955616,
+            "count": 2484
+          },
+          {
+            "token": "10",
+            "precision": 0.2710124826629681,
+            "count": 1954
+          },
+          {
+            "token": "20",
+            "precision": 0.24119278779472955,
+            "count": 1739
+          },
+          {
+            "token": "6",
+            "precision": 0.240499306518724,
+            "count": 1734
+          },
+          {
+            "token": "1",
+            "precision": 0.24036061026352287,
+            "count": 1733
+          },
+          {
+            "token": "8",
+            "precision": 0.2073509015256588,
+            "count": 1495
+          },
+          {
+            "token": "12",
+            "precision": 0.20346740638002775,
+            "count": 1467
+          },
+          {
+            "token": "100",
+            "precision": 0.17475728155339806,
+            "count": 1260
+          },
+          {
+            "token": "0",
+            "precision": 0.17337031900138697,
+            "count": 1250
+          },
+          {
+            "token": "30",
+            "precision": 0.17323162274618586,
+            "count": 1249
+          },
+          {
+            "token": "15",
+            "precision": 0.1535367545076283,
+            "count": 1107
+          },
+          {
+            "token": "60",
+            "precision": 0.15117891816920942,
+            "count": 1090
+          }
+        ]
+      },
+      {
+        "feature_id": 1072,
+        "activation": 0.423828125,
+        "iter1_activation": 0.099609375,
+        "iter2_activation": 0.423828125,
+        "feature_frequency": 1.0,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5612203934162987,
+            "count": 4194
+          },
+          {
+            "token": "3",
+            "precision": 0.41763682590659706,
+            "count": 3121
+          },
+          {
+            "token": "5",
+            "precision": 0.3669209152950622,
+            "count": 2742
+          },
+          {
+            "token": "4",
+            "precision": 0.3405593469824702,
+            "count": 2545
+          },
+          {
+            "token": "10",
+            "precision": 0.2707078817074803,
+            "count": 2023
+          },
+          {
+            "token": "20",
+            "precision": 0.2419376421785093,
+            "count": 1808
+          },
+          {
+            "token": "1",
+            "precision": 0.23685266961059814,
+            "count": 1770
+          },
+          {
+            "token": "6",
+            "precision": 0.23591596413756188,
+            "count": 1763
+          },
+          {
+            "token": "8",
+            "precision": 0.20473705339221196,
+            "count": 1530
+          },
+          {
+            "token": "12",
+            "precision": 0.19991971095945404,
+            "count": 1494
+          },
+          {
+            "token": "0",
+            "precision": 0.17770640974173693,
+            "count": 1328
+          },
+          {
+            "token": "100",
+            "precision": 0.17663588920112405,
+            "count": 1320
+          },
+          {
+            "token": "30",
+            "precision": 0.17128328649805968,
+            "count": 1280
+          },
+          {
+            "token": "15",
+            "precision": 0.15040813595610866,
+            "count": 1124
+          },
+          {
+            "token": "60",
+            "precision": 0.14920380034791916,
+            "count": 1115
+          }
+        ]
+      },
+      {
+        "feature_id": 4422,
+        "activation": 0.376953125,
+        "iter1_activation": 0.376953125,
+        "iter2_activation": 0.259765625,
+        "feature_frequency": 0.8873277131004951,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5616045845272206,
+            "count": 3724
+          },
+          {
+            "token": "3",
+            "precision": 0.42753732468707584,
+            "count": 2835
+          },
+          {
+            "token": "5",
+            "precision": 0.3735484843914945,
+            "count": 2477
+          },
+          {
+            "token": "4",
+            "precision": 0.34429196199668227,
+            "count": 2283
+          },
+          {
+            "token": "10",
+            "precision": 0.280349871814206,
+            "count": 1859
+          },
+          {
+            "token": "20",
+            "precision": 0.2527522244005429,
+            "count": 1676
+          },
+          {
+            "token": "1",
+            "precision": 0.2491328608053084,
+            "count": 1652
+          },
+          {
+            "token": "6",
+            "precision": 0.23752073593726436,
+            "count": 1575
+          },
+          {
+            "token": "8",
+            "precision": 0.2079625999095159,
+            "count": 1379
+          },
+          {
+            "token": "12",
+            "precision": 0.200874679535515,
+            "count": 1332
+          },
+          {
+            "token": "100",
+            "precision": 0.18775448650278992,
+            "count": 1245
+          },
+          {
+            "token": "0",
+            "precision": 0.18534157743930027,
+            "count": 1229
+          },
+          {
+            "token": "30",
+            "precision": 0.18488915698989594,
+            "count": 1226
+          },
+          {
+            "token": "60",
+            "precision": 0.16422862313376566,
+            "count": 1089
+          },
+          {
+            "token": "15",
+            "precision": 0.16166490725380786,
+            "count": 1072
+          }
+        ]
+      },
+      {
+        "feature_id": 3280,
+        "activation": 0.318359375,
+        "iter1_activation": 0.318359375,
+        "iter2_activation": 0.08203125,
+        "feature_frequency": 0.583032249431286,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5831994491622676,
+            "count": 2541
+          },
+          {
+            "token": "4",
+            "precision": 0.3979802616479229,
+            "count": 1734
+          },
+          {
+            "token": "3",
+            "precision": 0.3761762680743631,
+            "count": 1639
+          },
+          {
+            "token": "5",
+            "precision": 0.33853568969474407,
+            "count": 1475
+          },
+          {
+            "token": "8",
+            "precision": 0.2811567592380078,
+            "count": 1225
+          },
+          {
+            "token": "20",
+            "precision": 0.2549919669497361,
+            "count": 1111
+          },
+          {
+            "token": "10",
+            "precision": 0.24925407390406243,
+            "count": 1086
+          },
+          {
+            "token": "6",
+            "precision": 0.24213908652742713,
+            "count": 1055
+          },
+          {
+            "token": "1",
+            "precision": 0.23318797337617628,
+            "count": 1016
+          },
+          {
+            "token": "12",
+            "precision": 0.21436768418636676,
+            "count": 934
+          },
+          {
+            "token": "0",
+            "precision": 0.17902226302501723,
+            "count": 780
+          },
+          {
+            "token": "100",
+            "precision": 0.17259582281386274,
+            "count": 752
+          },
+          {
+            "token": "40",
+            "precision": 0.15492311223318797,
+            "count": 675
+          },
+          {
+            "token": "7",
+            "precision": 0.13288960293780125,
+            "count": 579
+          },
+          {
+            "token": "24",
+            "precision": 0.12256139545558871,
+            "count": 534
+          }
+        ]
+      },
+      {
+        "feature_id": 4116,
+        "activation": 0.31640625,
+        "iter1_activation": 0.31640625,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.7788036932958651,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5774914089347079,
+            "count": 3361
+          },
+          {
+            "token": "3",
+            "precision": 0.44054982817869415,
+            "count": 2564
+          },
+          {
+            "token": "5",
+            "precision": 0.3618556701030928,
+            "count": 2106
+          },
+          {
+            "token": "4",
+            "precision": 0.35876288659793815,
+            "count": 2088
+          },
+          {
+            "token": "6",
+            "precision": 0.2676975945017182,
+            "count": 1558
+          },
+          {
+            "token": "10",
+            "precision": 0.2675257731958763,
+            "count": 1557
+          },
+          {
+            "token": "1",
+            "precision": 0.24312714776632302,
+            "count": 1415
+          },
+          {
+            "token": "20",
+            "precision": 0.24278350515463917,
+            "count": 1413
+          },
+          {
+            "token": "12",
+            "precision": 0.2288659793814433,
+            "count": 1332
+          },
+          {
+            "token": "8",
+            "precision": 0.2161512027491409,
+            "count": 1258
+          },
+          {
+            "token": "0",
+            "precision": 0.1788659793814433,
+            "count": 1041
+          },
+          {
+            "token": "30",
+            "precision": 0.1731958762886598,
+            "count": 1008
+          },
+          {
+            "token": "60",
+            "precision": 0.16237113402061856,
+            "count": 945
+          },
+          {
+            "token": "15",
+            "precision": 0.15979381443298968,
+            "count": 930
+          },
+          {
+            "token": "100",
+            "precision": 0.15326460481099657,
+            "count": 892
+          }
+        ]
+      },
+      {
+        "feature_id": 7560,
+        "activation": 0.294921875,
+        "iter1_activation": 0.294921875,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.9783219590525893,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5624401586650253,
+            "count": 4112
+          },
+          {
+            "token": "3",
+            "precision": 0.4170428122007933,
+            "count": 3049
+          },
+          {
+            "token": "5",
+            "precision": 0.3687594036383532,
+            "count": 2696
+          },
+          {
+            "token": "4",
+            "precision": 0.3401723430447271,
+            "count": 2487
+          },
+          {
+            "token": "10",
+            "precision": 0.2735603884557516,
+            "count": 2000
+          },
+          {
+            "token": "20",
+            "precision": 0.24319518533716317,
+            "count": 1778
+          },
+          {
+            "token": "6",
+            "precision": 0.23621939543154152,
+            "count": 1727
+          },
+          {
+            "token": "1",
+            "precision": 0.23621939543154152,
+            "count": 1727
+          },
+          {
+            "token": "8",
+            "precision": 0.20530707153604158,
+            "count": 1501
+          },
+          {
+            "token": "12",
+            "precision": 0.20257146765148407,
+            "count": 1481
+          },
+          {
+            "token": "0",
+            "precision": 0.17877171385583368,
+            "count": 1307
+          },
+          {
+            "token": "100",
+            "precision": 0.17726713171932704,
+            "count": 1296
+          },
+          {
+            "token": "30",
+            "precision": 0.17316372589249077,
+            "count": 1266
+          },
+          {
+            "token": "15",
+            "precision": 0.1520995759813979,
+            "count": 1112
+          },
+          {
+            "token": "60",
+            "precision": 0.15059499384489125,
+            "count": 1101
+          }
+        ]
+      },
+      {
+        "feature_id": 7612,
+        "activation": 0.251953125,
+        "iter1_activation": 0.251953125,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.5742004549712297,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5432300163132137,
+            "count": 2331
+          },
+          {
+            "token": "3",
+            "precision": 0.39011885341412256,
+            "count": 1674
+          },
+          {
+            "token": "5",
+            "precision": 0.3220694476811932,
+            "count": 1382
+          },
+          {
+            "token": "4",
+            "precision": 0.2857142857142857,
+            "count": 1226
+          },
+          {
+            "token": "10",
+            "precision": 0.2509904451176882,
+            "count": 1077
+          },
+          {
+            "token": "20",
+            "precision": 0.22745280820321603,
+            "count": 976
+          },
+          {
+            "token": "6",
+            "precision": 0.22488930319272896,
+            "count": 965
+          },
+          {
+            "token": "1",
+            "precision": 0.21603355861104637,
+            "count": 927
+          },
+          {
+            "token": "0",
+            "precision": 0.2004194826380797,
+            "count": 860
+          },
+          {
+            "token": "30",
+            "precision": 0.18457236075506875,
+            "count": 792
+          },
+          {
+            "token": "12",
+            "precision": 0.17548357026334188,
+            "count": 753
+          },
+          {
+            "token": "8",
+            "precision": 0.17408529480307622,
+            "count": 747
+          },
+          {
+            "token": "100",
+            "precision": 0.1729200652528548,
+            "count": 742
+          },
+          {
+            "token": "15",
+            "precision": 0.13539967373572595,
+            "count": 581
+          },
+          {
+            "token": "60",
+            "precision": 0.13330226054532743,
+            "count": 572
+          }
+        ]
+      },
+      {
+        "feature_id": 7219,
+        "activation": 0.1962890625,
+        "iter1_activation": 0.0,
+        "iter2_activation": 0.1962890625,
+        "feature_frequency": 0.6772380570052188,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5864453665283541,
+            "count": 2968
+          },
+          {
+            "token": "3",
+            "precision": 0.4343015214384509,
+            "count": 2198
+          },
+          {
+            "token": "5",
+            "precision": 0.3908318514127643,
+            "count": 1978
+          },
+          {
+            "token": "4",
+            "precision": 0.34795494961470064,
+            "count": 1761
+          },
+          {
+            "token": "10",
+            "precision": 0.2912467891721004,
+            "count": 1474
+          },
+          {
+            "token": "1",
+            "precision": 0.25923730488045843,
+            "count": 1312
+          },
+          {
+            "token": "20",
+            "precision": 0.2523216755581901,
+            "count": 1277
+          },
+          {
+            "token": "6",
+            "precision": 0.2303892511361391,
+            "count": 1166
+          },
+          {
+            "token": "8",
+            "precision": 0.2098399525785418,
+            "count": 1062
+          },
+          {
+            "token": "0",
+            "precision": 0.2045050385299348,
+            "count": 1035
+          },
+          {
+            "token": "30",
+            "precision": 0.19956530329974315,
+            "count": 1010
+          },
+          {
+            "token": "100",
+            "precision": 0.19423038925113614,
+            "count": 983
+          },
+          {
+            "token": "12",
+            "precision": 0.19324244220509781,
+            "count": 978
+          },
+          {
+            "token": "60",
+            "precision": 0.17407626951195415,
+            "count": 881
+          },
+          {
+            "token": "15",
+            "precision": 0.1626160837779095,
+            "count": 823
+          }
+        ]
+      },
+      {
+        "feature_id": 6889,
+        "activation": 0.1865234375,
+        "iter1_activation": 0.1865234375,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.031178910745349925,
+        "number_correlations": [
+          {
+            "token": "9",
+            "precision": 0.6523605150214592,
+            "count": 152
+          },
+          {
+            "token": "3",
+            "precision": 0.5965665236051502,
+            "count": 139
+          },
+          {
+            "token": "2",
+            "precision": 0.51931330472103,
+            "count": 121
+          },
+          {
+            "token": "5",
+            "precision": 0.34763948497854075,
+            "count": 81
+          },
+          {
+            "token": "6",
+            "precision": 0.3133047210300429,
+            "count": 73
+          },
+          {
+            "token": "4",
+            "precision": 0.2832618025751073,
+            "count": 66
+          },
+          {
+            "token": "12",
+            "precision": 0.2317596566523605,
+            "count": 54
+          },
+          {
+            "token": "1",
+            "precision": 0.20600858369098712,
+            "count": 48
+          },
+          {
+            "token": "7",
+            "precision": 0.15450643776824036,
+            "count": 36
+          },
+          {
+            "token": "8",
+            "precision": 0.15021459227467812,
+            "count": 35
+          },
+          {
+            "token": "10",
+            "precision": 0.15021459227467812,
+            "count": 35
+          },
+          {
+            "token": "24",
+            "precision": 0.1459227467811159,
+            "count": 34
+          },
+          {
+            "token": "15",
+            "precision": 0.14163090128755365,
+            "count": 33
+          },
+          {
+            "token": "18",
+            "precision": 0.13304721030042918,
+            "count": 31
+          },
+          {
+            "token": "11",
+            "precision": 0.12446351931330472,
+            "count": 29
+          }
+        ]
+      },
+      {
+        "feature_id": 7550,
+        "activation": 0.173828125,
+        "iter1_activation": 0.173828125,
+        "iter2_activation": 0.1650390625,
+        "feature_frequency": 0.7755921316740265,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5741890959282263,
+            "count": 3328
+          },
+          {
+            "token": "3",
+            "precision": 0.4164941338854382,
+            "count": 2414
+          },
+          {
+            "token": "5",
+            "precision": 0.3640441683919945,
+            "count": 2110
+          },
+          {
+            "token": "4",
+            "precision": 0.3492063492063492,
+            "count": 2024
+          },
+          {
+            "token": "10",
+            "precision": 0.266735679779158,
+            "count": 1546
+          },
+          {
+            "token": "6",
+            "precision": 0.24378881987577639,
+            "count": 1413
+          },
+          {
+            "token": "1",
+            "precision": 0.24240855762594893,
+            "count": 1405
+          },
+          {
+            "token": "20",
+            "precision": 0.23326432022084195,
+            "count": 1352
+          },
+          {
+            "token": "8",
+            "precision": 0.2204968944099379,
+            "count": 1278
+          },
+          {
+            "token": "12",
+            "precision": 0.213768115942029,
+            "count": 1239
+          },
+          {
+            "token": "0",
+            "precision": 0.17960662525879917,
+            "count": 1041
+          },
+          {
+            "token": "100",
+            "precision": 0.17563837129054521,
+            "count": 1018
+          },
+          {
+            "token": "30",
+            "precision": 0.1621808143547274,
+            "count": 940
+          },
+          {
+            "token": "15",
+            "precision": 0.1538992408557626,
+            "count": 892
+          },
+          {
+            "token": "50",
+            "precision": 0.14889579020013802,
+            "count": 863
+          }
+        ]
+      },
+      {
+        "feature_id": 7182,
+        "activation": 0.1611328125,
+        "iter1_activation": 0.1611328125,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.9970560685133146,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5607301033418333,
+            "count": 4178
+          },
+          {
+            "token": "3",
+            "precision": 0.41752784861092473,
+            "count": 3111
+          },
+          {
+            "token": "5",
+            "precision": 0.366662192994229,
+            "count": 2732
+          },
+          {
+            "token": "4",
+            "precision": 0.3410280499261844,
+            "count": 2541
+          },
+          {
+            "token": "10",
+            "precision": 0.27043349885921353,
+            "count": 2015
+          },
+          {
+            "token": "20",
+            "precision": 0.24224936250167764,
+            "count": 1805
+          },
+          {
+            "token": "1",
+            "precision": 0.23701516574956383,
+            "count": 1766
+          },
+          {
+            "token": "6",
+            "precision": 0.2351362233257281,
+            "count": 1752
+          },
+          {
+            "token": "8",
+            "precision": 0.20453630385183197,
+            "count": 1524
+          },
+          {
+            "token": "12",
+            "precision": 0.2001073681385049,
+            "count": 1491
+          },
+          {
+            "token": "0",
+            "precision": 0.1782311099181318,
+            "count": 1328
+          },
+          {
+            "token": "100",
+            "precision": 0.17688900818682057,
+            "count": 1318
+          },
+          {
+            "token": "30",
+            "precision": 0.17098376056905112,
+            "count": 1274
+          },
+          {
+            "token": "15",
+            "precision": 0.14991276338746476,
+            "count": 1117
+          },
+          {
+            "token": "60",
+            "precision": 0.1495101328680714,
+            "count": 1114
+          }
+        ]
+      },
+      {
+        "feature_id": 873,
+        "activation": 0.1533203125,
+        "iter1_activation": 0.1533203125,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.34992640171283285,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5648183556405354,
+            "count": 1477
+          },
+          {
+            "token": "3",
+            "precision": 0.48336520076481837,
+            "count": 1264
+          },
+          {
+            "token": "5",
+            "precision": 0.3950286806883365,
+            "count": 1033
+          },
+          {
+            "token": "4",
+            "precision": 0.31434034416826,
+            "count": 822
+          },
+          {
+            "token": "1",
+            "precision": 0.27151051625239003,
+            "count": 710
+          },
+          {
+            "token": "10",
+            "precision": 0.2604206500956023,
+            "count": 681
+          },
+          {
+            "token": "6",
+            "precision": 0.2321223709369025,
+            "count": 607
+          },
+          {
+            "token": "12",
+            "precision": 0.2191204588910134,
+            "count": 573
+          },
+          {
+            "token": "7",
+            "precision": 0.19579349904397705,
+            "count": 512
+          },
+          {
+            "token": "20",
+            "precision": 0.1847036328871893,
+            "count": 483
+          },
+          {
+            "token": "8",
+            "precision": 0.17590822179732313,
+            "count": 460
+          },
+          {
+            "token": "9",
+            "precision": 0.1690248565965583,
+            "count": 442
+          },
+          {
+            "token": "100",
+            "precision": 0.15564053537284894,
+            "count": 407
+          },
+          {
+            "token": "15",
+            "precision": 0.1502868068833652,
+            "count": 393
+          },
+          {
+            "token": "50",
+            "precision": 0.14149139579349904,
+            "count": 370
+          }
+        ]
+      },
+      {
+        "feature_id": 189,
+        "activation": 0.1513671875,
+        "iter1_activation": 0.1513671875,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.8718051652616085,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.555487336914812,
+            "count": 3619
+          },
+          {
+            "token": "3",
+            "precision": 0.42363775901765155,
+            "count": 2760
+          },
+          {
+            "token": "5",
+            "precision": 0.36853415195702227,
+            "count": 2401
+          },
+          {
+            "token": "4",
+            "precision": 0.34059861857252494,
+            "count": 2219
+          },
+          {
+            "token": "10",
+            "precision": 0.2649270913277053,
+            "count": 1726
+          },
+          {
+            "token": "20",
+            "precision": 0.24650805832693784,
+            "count": 1606
+          },
+          {
+            "token": "6",
+            "precision": 0.23745203376822716,
+            "count": 1547
+          },
+          {
+            "token": "1",
+            "precision": 0.23192632386799694,
+            "count": 1511
+          },
+          {
+            "token": "8",
+            "precision": 0.20184190330007676,
+            "count": 1315
+          },
+          {
+            "token": "12",
+            "precision": 0.19708365310821183,
+            "count": 1284
+          },
+          {
+            "token": "0",
+            "precision": 0.17636224098234843,
+            "count": 1149
+          },
+          {
+            "token": "100",
+            "precision": 0.17206446661550268,
+            "count": 1121
+          },
+          {
+            "token": "30",
+            "precision": 0.16807367613200308,
+            "count": 1095
+          },
+          {
+            "token": "60",
+            "precision": 0.15548733691481198,
+            "count": 1013
+          },
+          {
+            "token": "15",
+            "precision": 0.14627782041442824,
+            "count": 953
+          }
+        ]
+      },
+      {
+        "feature_id": 2521,
+        "activation": 0.134765625,
+        "iter1_activation": 0.134765625,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.7238057005218788,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5553706784987983,
+            "count": 3004
+          },
+          {
+            "token": "3",
+            "precision": 0.4104270660011093,
+            "count": 2220
+          },
+          {
+            "token": "4",
+            "precision": 0.3483083749306711,
+            "count": 1884
+          },
+          {
+            "token": "5",
+            "precision": 0.34608985024958405,
+            "count": 1872
+          },
+          {
+            "token": "10",
+            "precision": 0.2536513218709558,
+            "count": 1372
+          },
+          {
+            "token": "20",
+            "precision": 0.2320207062303568,
+            "count": 1255
+          },
+          {
+            "token": "1",
+            "precision": 0.2290626733222407,
+            "count": 1239
+          },
+          {
+            "token": "6",
+            "precision": 0.2273987798114254,
+            "count": 1230
+          },
+          {
+            "token": "12",
+            "precision": 0.2096505823627288,
+            "count": 1134
+          },
+          {
+            "token": "8",
+            "precision": 0.20817156590867072,
+            "count": 1126
+          },
+          {
+            "token": "30",
+            "precision": 0.18857459789240155,
+            "count": 1020
+          },
+          {
+            "token": "100",
+            "precision": 0.17877611388426695,
+            "count": 967
+          },
+          {
+            "token": "0",
+            "precision": 0.1713810316139767,
+            "count": 927
+          },
+          {
+            "token": "60",
+            "precision": 0.16269180994638566,
+            "count": 880
+          },
+          {
+            "token": "40",
+            "precision": 0.15788500647069698,
+            "count": 854
+          }
+        ]
+      },
+      {
+        "feature_id": 6706,
+        "activation": 0.1298828125,
+        "iter1_activation": 0.0,
+        "iter2_activation": 0.1298828125,
+        "feature_frequency": 0.851063829787234,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5772012578616352,
+            "count": 3671
+          },
+          {
+            "token": "3",
+            "precision": 0.4147798742138365,
+            "count": 2638
+          },
+          {
+            "token": "5",
+            "precision": 0.38034591194968553,
+            "count": 2419
+          },
+          {
+            "token": "4",
+            "precision": 0.3460691823899371,
+            "count": 2201
+          },
+          {
+            "token": "10",
+            "precision": 0.28820754716981134,
+            "count": 1833
+          },
+          {
+            "token": "20",
+            "precision": 0.260062893081761,
+            "count": 1654
+          },
+          {
+            "token": "1",
+            "precision": 0.2468553459119497,
+            "count": 1570
+          },
+          {
+            "token": "6",
+            "precision": 0.23364779874213837,
+            "count": 1486
+          },
+          {
+            "token": "8",
+            "precision": 0.20738993710691825,
+            "count": 1319
+          },
+          {
+            "token": "12",
+            "precision": 0.1988993710691824,
+            "count": 1265
+          },
+          {
+            "token": "0",
+            "precision": 0.19072327044025159,
+            "count": 1213
+          },
+          {
+            "token": "100",
+            "precision": 0.189937106918239,
+            "count": 1208
+          },
+          {
+            "token": "30",
+            "precision": 0.17091194968553458,
+            "count": 1087
+          },
+          {
+            "token": "15",
+            "precision": 0.15455974842767295,
+            "count": 983
+          },
+          {
+            "token": "50",
+            "precision": 0.15172955974842767,
+            "count": 965
+          }
+        ]
+      }
+    ],
+    "middle": [
+      {
+        "feature_id": 2203,
+        "activation": 2.25,
+        "iter1_activation": 0.00958251953125,
+        "iter2_activation": 2.25,
+        "feature_frequency": 0.18372808778268432,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5469774217042972,
+            "count": 751
+          },
+          {
+            "token": "3",
+            "precision": 0.45666423889293517,
+            "count": 627
+          },
+          {
+            "token": "5",
+            "precision": 0.36489439184268024,
+            "count": 501
+          },
+          {
+            "token": "4",
+            "precision": 0.34013109978150036,
+            "count": 467
+          },
+          {
+            "token": "7",
+            "precision": 0.2964311726147123,
+            "count": 407
+          },
+          {
+            "token": "1",
+            "precision": 0.25054624908958484,
+            "count": 344
+          },
+          {
+            "token": "10",
+            "precision": 0.23233794610342315,
+            "count": 319
+          },
+          {
+            "token": "6",
+            "precision": 0.22651128914785143,
+            "count": 311
+          },
+          {
+            "token": "8",
+            "precision": 0.21267297887836853,
+            "count": 292
+          },
+          {
+            "token": "12",
+            "precision": 0.19883466860888566,
+            "count": 273
+          },
+          {
+            "token": "9",
+            "precision": 0.1820830298616169,
+            "count": 250
+          },
+          {
+            "token": "20",
+            "precision": 0.16023306627822287,
+            "count": 220
+          },
+          {
+            "token": "30",
+            "precision": 0.12454479242534595,
+            "count": 171
+          },
+          {
+            "token": "15",
+            "precision": 0.12454479242534595,
+            "count": 171
+          },
+          {
+            "token": "50",
+            "precision": 0.12381646030589949,
+            "count": 170
+          }
+        ]
+      },
+      {
+        "feature_id": 3192,
+        "activation": 1.484375,
+        "iter1_activation": 1.484375,
+        "iter2_activation": 0.353515625,
+        "feature_frequency": 0.7636825906597083,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5869984229893114,
+            "count": 3350
+          },
+          {
+            "token": "3",
+            "precision": 0.42807079025757844,
+            "count": 2443
+          },
+          {
+            "token": "5",
+            "precision": 0.38636761871386016,
+            "count": 2205
+          },
+          {
+            "token": "4",
+            "precision": 0.3609602242859646,
+            "count": 2060
+          },
+          {
+            "token": "10",
+            "precision": 0.29682845628175925,
+            "count": 1694
+          },
+          {
+            "token": "6",
+            "precision": 0.25214648677063256,
+            "count": 1439
+          },
+          {
+            "token": "1",
+            "precision": 0.24951813562291922,
+            "count": 1424
+          },
+          {
+            "token": "20",
+            "precision": 0.24618889083581566,
+            "count": 1405
+          },
+          {
+            "token": "8",
+            "precision": 0.2211319432276152,
+            "count": 1262
+          },
+          {
+            "token": "12",
+            "precision": 0.21061853863676186,
+            "count": 1202
+          },
+          {
+            "token": "0",
+            "precision": 0.1930961976520063,
+            "count": 1102
+          },
+          {
+            "token": "100",
+            "precision": 0.18748904853688453,
+            "count": 1070
+          },
+          {
+            "token": "30",
+            "precision": 0.18153145260206763,
+            "count": 1036
+          },
+          {
+            "token": "50",
+            "precision": 0.15016646223935518,
+            "count": 857
+          },
+          {
+            "token": "7",
+            "precision": 0.14245663220606272,
+            "count": 813
+          }
+        ]
+      },
+      {
+        "feature_id": 413,
+        "activation": 1.0859375,
+        "iter1_activation": 0.051025390625,
+        "iter2_activation": 1.0859375,
+        "feature_frequency": 0.9998661849324234,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5612955032119914,
+            "count": 4194
+          },
+          {
+            "token": "3",
+            "precision": 0.4176927194860814,
+            "count": 3121
+          },
+          {
+            "token": "5",
+            "precision": 0.36683618843683086,
+            "count": 2741
+          },
+          {
+            "token": "4",
+            "precision": 0.3404710920770878,
+            "count": 2544
+          },
+          {
+            "token": "10",
+            "precision": 0.2707441113490364,
+            "count": 2023
+          },
+          {
+            "token": "20",
+            "precision": 0.24197002141327623,
+            "count": 1808
+          },
+          {
+            "token": "1",
+            "precision": 0.2368843683083512,
+            "count": 1770
+          },
+          {
+            "token": "6",
+            "precision": 0.235813704496788,
+            "count": 1762
+          },
+          {
+            "token": "8",
+            "precision": 0.2046306209850107,
+            "count": 1529
+          },
+          {
+            "token": "12",
+            "precision": 0.19994646680942185,
+            "count": 1494
+          },
+          {
+            "token": "0",
+            "precision": 0.1777301927194861,
+            "count": 1328
+          },
+          {
+            "token": "100",
+            "precision": 0.1766595289079229,
+            "count": 1320
+          },
+          {
+            "token": "30",
+            "precision": 0.17117237687366166,
+            "count": 1279
+          },
+          {
+            "token": "15",
+            "precision": 0.15042826552462527,
+            "count": 1124
+          },
+          {
+            "token": "60",
+            "precision": 0.1492237687366167,
+            "count": 1115
+          }
+        ]
+      },
+      {
+        "feature_id": 3682,
+        "activation": 0.9375,
+        "iter1_activation": 0.9375,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.6436504750434899,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.6130977130977131,
+            "count": 2949
+          },
+          {
+            "token": "3",
+            "precision": 0.43991683991683994,
+            "count": 2116
+          },
+          {
+            "token": "5",
+            "precision": 0.4002079002079002,
+            "count": 1925
+          },
+          {
+            "token": "4",
+            "precision": 0.36943866943866943,
+            "count": 1777
+          },
+          {
+            "token": "10",
+            "precision": 0.2929313929313929,
+            "count": 1409
+          },
+          {
+            "token": "1",
+            "precision": 0.2727650727650728,
+            "count": 1312
+          },
+          {
+            "token": "6",
+            "precision": 0.253014553014553,
+            "count": 1217
+          },
+          {
+            "token": "20",
+            "precision": 0.2471933471933472,
+            "count": 1189
+          },
+          {
+            "token": "8",
+            "precision": 0.2178794178794179,
+            "count": 1048
+          },
+          {
+            "token": "12",
+            "precision": 0.21476091476091477,
+            "count": 1033
+          },
+          {
+            "token": "30",
+            "precision": 0.17775467775467776,
+            "count": 855
+          },
+          {
+            "token": "100",
+            "precision": 0.17733887733887735,
+            "count": 853
+          },
+          {
+            "token": "0",
+            "precision": 0.17255717255717257,
+            "count": 830
+          },
+          {
+            "token": "15",
+            "precision": 0.15945945945945947,
+            "count": 767
+          },
+          {
+            "token": "60",
+            "precision": 0.15072765072765074,
+            "count": 725
+          }
+        ]
+      },
+      {
+        "feature_id": 4959,
+        "activation": 0.89453125,
+        "iter1_activation": 0.3359375,
+        "iter2_activation": 0.89453125,
+        "feature_frequency": 0.8014184397163121,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5837368508933044,
+            "count": 3496
+          },
+          {
+            "token": "3",
+            "precision": 0.4356319919853064,
+            "count": 2609
+          },
+          {
+            "token": "5",
+            "precision": 0.38988144932376023,
+            "count": 2335
+          },
+          {
+            "token": "4",
+            "precision": 0.35648689263650024,
+            "count": 2135
+          },
+          {
+            "token": "10",
+            "precision": 0.2848555685423276,
+            "count": 1706
+          },
+          {
+            "token": "1",
+            "precision": 0.26214726999499083,
+            "count": 1570
+          },
+          {
+            "token": "6",
+            "precision": 0.25146101185506764,
+            "count": 1506
+          },
+          {
+            "token": "20",
+            "precision": 0.23776924361329102,
+            "count": 1424
+          },
+          {
+            "token": "8",
+            "precision": 0.21422608114877276,
+            "count": 1283
+          },
+          {
+            "token": "12",
+            "precision": 0.20938387042912004,
+            "count": 1254
+          },
+          {
+            "token": "0",
+            "precision": 0.19385540156954417,
+            "count": 1161
+          },
+          {
+            "token": "100",
+            "precision": 0.18400400734680247,
+            "count": 1102
+          },
+          {
+            "token": "30",
+            "precision": 0.17515444982467857,
+            "count": 1049
+          },
+          {
+            "token": "15",
+            "precision": 0.16329938220070128,
+            "count": 978
+          },
+          {
+            "token": "50",
+            "precision": 0.1477709133411254,
+            "count": 885
+          }
+        ]
+      },
+      {
+        "feature_id": 3329,
+        "activation": 0.70703125,
+        "iter1_activation": 0.0,
+        "iter2_activation": 0.70703125,
+        "feature_frequency": 0.961996520808243,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5679510363054667,
+            "count": 4083
+          },
+          {
+            "token": "3",
+            "precision": 0.41827792460703855,
+            "count": 3007
+          },
+          {
+            "token": "5",
+            "precision": 0.37000973709834467,
+            "count": 2660
+          },
+          {
+            "token": "4",
+            "precision": 0.34441507859229376,
+            "count": 2476
+          },
+          {
+            "token": "10",
+            "precision": 0.2755598831548199,
+            "count": 1981
+          },
+          {
+            "token": "20",
+            "precision": 0.2452357768813465,
+            "count": 1763
+          },
+          {
+            "token": "1",
+            "precision": 0.23883711225483378,
+            "count": 1717
+          },
+          {
+            "token": "6",
+            "precision": 0.23744609820559187,
+            "count": 1707
+          },
+          {
+            "token": "8",
+            "precision": 0.20823480317151202,
+            "count": 1497
+          },
+          {
+            "token": "12",
+            "precision": 0.2035053554040896,
+            "count": 1463
+          },
+          {
+            "token": "100",
+            "precision": 0.17777159549311447,
+            "count": 1278
+          },
+          {
+            "token": "0",
+            "precision": 0.1761023786340242,
+            "count": 1266
+          },
+          {
+            "token": "30",
+            "precision": 0.17387675615523718,
+            "count": 1250
+          },
+          {
+            "token": "60",
+            "precision": 0.1528724440116845,
+            "count": 1099
+          },
+          {
+            "token": "15",
+            "precision": 0.15120322715259424,
+            "count": 1087
+          }
+        ]
+      },
+      {
+        "feature_id": 7155,
+        "activation": 0.66796875,
+        "iter1_activation": 0.66796875,
+        "iter2_activation": 0.181640625,
+        "feature_frequency": 0.8194834738391543,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5496407576747224,
+            "count": 3366
+          },
+          {
+            "token": "3",
+            "precision": 0.4294578706727629,
+            "count": 2630
+          },
+          {
+            "token": "5",
+            "precision": 0.36871325930764204,
+            "count": 2258
+          },
+          {
+            "token": "4",
+            "precision": 0.32380796864794253,
+            "count": 1983
+          },
+          {
+            "token": "10",
+            "precision": 0.26436969301110386,
+            "count": 1619
+          },
+          {
+            "token": "1",
+            "precision": 0.24461136512083606,
+            "count": 1498
+          },
+          {
+            "token": "20",
+            "precision": 0.23954931417374264,
+            "count": 1467
+          },
+          {
+            "token": "6",
+            "precision": 0.22779229261920314,
+            "count": 1395
+          },
+          {
+            "token": "0",
+            "precision": 0.19823644676681906,
+            "count": 1214
+          },
+          {
+            "token": "12",
+            "precision": 0.19301110385369039,
+            "count": 1182
+          },
+          {
+            "token": "8",
+            "precision": 0.19121489222730242,
+            "count": 1171
+          },
+          {
+            "token": "100",
+            "precision": 0.187949052906597,
+            "count": 1151
+          },
+          {
+            "token": "30",
+            "precision": 0.18762246897452645,
+            "count": 1149
+          },
+          {
+            "token": "60",
+            "precision": 0.1659046374918354,
+            "count": 1016
+          },
+          {
+            "token": "15",
+            "precision": 0.1647615937295885,
+            "count": 1009
+          }
+        ]
+      },
+      {
+        "feature_id": 6889,
+        "activation": 0.59765625,
+        "iter1_activation": 0.59765625,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.14063963602301618,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.6146527117031398,
+            "count": 646
+          },
+          {
+            "token": "3",
+            "precision": 0.5594671741198858,
+            "count": 588
+          },
+          {
+            "token": "5",
+            "precision": 0.43767840152235965,
+            "count": 460
+          },
+          {
+            "token": "4",
+            "precision": 0.3824928639391056,
+            "count": 402
+          },
+          {
+            "token": "6",
+            "precision": 0.3120837297811608,
+            "count": 328
+          },
+          {
+            "token": "1",
+            "precision": 0.28163653663177923,
+            "count": 296
+          },
+          {
+            "token": "9",
+            "precision": 0.2702188392007612,
+            "count": 284
+          },
+          {
+            "token": "10",
+            "precision": 0.2588011417697431,
+            "count": 272
+          },
+          {
+            "token": "12",
+            "precision": 0.2274024738344434,
+            "count": 239
+          },
+          {
+            "token": "8",
+            "precision": 0.22454804947668885,
+            "count": 236
+          },
+          {
+            "token": "20",
+            "precision": 0.2226450999048525,
+            "count": 234
+          },
+          {
+            "token": "7",
+            "precision": 0.17411988582302568,
+            "count": 183
+          },
+          {
+            "token": "30",
+            "precision": 0.16936251189343482,
+            "count": 178
+          },
+          {
+            "token": "15",
+            "precision": 0.16745956232159848,
+            "count": 176
+          },
+          {
+            "token": "50",
+            "precision": 0.14462416745956233,
+            "count": 152
+          }
+        ]
+      },
+      {
+        "feature_id": 3437,
+        "activation": 0.578125,
+        "iter1_activation": 0.0,
+        "iter2_activation": 0.578125,
+        "feature_frequency": 0.5641643249029841,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5526565464895635,
+            "count": 2330
+          },
+          {
+            "token": "3",
+            "precision": 0.3942125237191651,
+            "count": 1662
+          },
+          {
+            "token": "5",
+            "precision": 0.3600569259962049,
+            "count": 1518
+          },
+          {
+            "token": "4",
+            "precision": 0.34867172675521824,
+            "count": 1470
+          },
+          {
+            "token": "10",
+            "precision": 0.26257115749525617,
+            "count": 1107
+          },
+          {
+            "token": "1",
+            "precision": 0.23434535104364326,
+            "count": 988
+          },
+          {
+            "token": "6",
+            "precision": 0.22106261859582543,
+            "count": 932
+          },
+          {
+            "token": "20",
+            "precision": 0.21963946869070208,
+            "count": 926
+          },
+          {
+            "token": "8",
+            "precision": 0.20374762808349145,
+            "count": 859
+          },
+          {
+            "token": "12",
+            "precision": 0.18738140417457305,
+            "count": 790
+          },
+          {
+            "token": "7",
+            "precision": 0.18738140417457305,
+            "count": 790
+          },
+          {
+            "token": "0",
+            "precision": 0.18572106261859583,
+            "count": 783
+          },
+          {
+            "token": "100",
+            "precision": 0.17267552182163187,
+            "count": 728
+          },
+          {
+            "token": "30",
+            "precision": 0.16105313092979126,
+            "count": 679
+          },
+          {
+            "token": "50",
+            "precision": 0.1506166982922201,
+            "count": 635
+          }
+        ]
+      },
+      {
+        "feature_id": 139,
+        "activation": 0.5078125,
+        "iter1_activation": 0.310546875,
+        "iter2_activation": 0.5078125,
+        "feature_frequency": 0.7765288371470628,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5588488712734793,
+            "count": 3243
+          },
+          {
+            "token": "3",
+            "precision": 0.44028950542822676,
+            "count": 2555
+          },
+          {
+            "token": "5",
+            "precision": 0.4063415474754437,
+            "count": 2358
+          },
+          {
+            "token": "4",
+            "precision": 0.34551094261588833,
+            "count": 2005
+          },
+          {
+            "token": "10",
+            "precision": 0.2745131828364639,
+            "count": 1593
+          },
+          {
+            "token": "1",
+            "precision": 0.25331724969843183,
+            "count": 1470
+          },
+          {
+            "token": "20",
+            "precision": 0.23539548509391695,
+            "count": 1366
+          },
+          {
+            "token": "6",
+            "precision": 0.2317766672410822,
+            "count": 1345
+          },
+          {
+            "token": "8",
+            "precision": 0.21040840944339134,
+            "count": 1221
+          },
+          {
+            "token": "12",
+            "precision": 0.1955884887127348,
+            "count": 1135
+          },
+          {
+            "token": "0",
+            "precision": 0.18800620368774773,
+            "count": 1091
+          },
+          {
+            "token": "15",
+            "precision": 0.17249698431845598,
+            "count": 1001
+          },
+          {
+            "token": "100",
+            "precision": 0.171635361020162,
+            "count": 996
+          },
+          {
+            "token": "30",
+            "precision": 0.1657763225917629,
+            "count": 962
+          },
+          {
+            "token": "50",
+            "precision": 0.15095640186110632,
+            "count": 876
+          }
+        ]
+      },
+      {
+        "feature_id": 5903,
+        "activation": 0.48046875,
+        "iter1_activation": 0.0,
+        "iter2_activation": 0.48046875,
+        "feature_frequency": 0.724742405994915,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5823485967503693,
+            "count": 3154
+          },
+          {
+            "token": "3",
+            "precision": 0.4211595273264402,
+            "count": 2281
+          },
+          {
+            "token": "5",
+            "precision": 0.36539881831610044,
+            "count": 1979
+          },
+          {
+            "token": "4",
+            "precision": 0.3473042836041359,
+            "count": 1881
+          },
+          {
+            "token": "10",
+            "precision": 0.26717134416543575,
+            "count": 1447
+          },
+          {
+            "token": "6",
+            "precision": 0.2586779911373708,
+            "count": 1401
+          },
+          {
+            "token": "20",
+            "precision": 0.24446085672082718,
+            "count": 1324
+          },
+          {
+            "token": "1",
+            "precision": 0.2378138847858198,
+            "count": 1288
+          },
+          {
+            "token": "8",
+            "precision": 0.21935007385524372,
+            "count": 1188
+          },
+          {
+            "token": "12",
+            "precision": 0.2171344165435746,
+            "count": 1176
+          },
+          {
+            "token": "30",
+            "precision": 0.18999261447562776,
+            "count": 1029
+          },
+          {
+            "token": "0",
+            "precision": 0.18408419497784342,
+            "count": 997
+          },
+          {
+            "token": "100",
+            "precision": 0.18020679468242246,
+            "count": 976
+          },
+          {
+            "token": "60",
+            "precision": 0.17023633677991137,
+            "count": 922
+          },
+          {
+            "token": "40",
+            "precision": 0.14660265878877402,
+            "count": 794
+          }
+        ]
+      },
+      {
+        "feature_id": 7612,
+        "activation": 0.443359375,
+        "iter1_activation": 0.443359375,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.8438378161380972,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5616872819536949,
+            "count": 3542
+          },
+          {
+            "token": "3",
+            "precision": 0.41294005708848713,
+            "count": 2604
+          },
+          {
+            "token": "5",
+            "precision": 0.3520456707897241,
+            "count": 2220
+          },
+          {
+            "token": "4",
+            "precision": 0.32651443070091973,
+            "count": 2059
+          },
+          {
+            "token": "10",
+            "precision": 0.26403425309229306,
+            "count": 1665
+          },
+          {
+            "token": "20",
+            "precision": 0.23326990168093878,
+            "count": 1471
+          },
+          {
+            "token": "1",
+            "precision": 0.23326990168093878,
+            "count": 1471
+          },
+          {
+            "token": "6",
+            "precision": 0.22993973993022518,
+            "count": 1450
+          },
+          {
+            "token": "12",
+            "precision": 0.1971138598160482,
+            "count": 1243
+          },
+          {
+            "token": "8",
+            "precision": 0.19679670155407547,
+            "count": 1241
+          },
+          {
+            "token": "0",
+            "precision": 0.18633047890897558,
+            "count": 1175
+          },
+          {
+            "token": "100",
+            "precision": 0.177767205835712,
+            "count": 1121
+          },
+          {
+            "token": "30",
+            "precision": 0.1774500475737393,
+            "count": 1119
+          },
+          {
+            "token": "60",
+            "precision": 0.1458928005074532,
+            "count": 920
+          },
+          {
+            "token": "15",
+            "precision": 0.14494132572153504,
+            "count": 914
+          }
+        ]
+      },
+      {
+        "feature_id": 6251,
+        "activation": 0.43359375,
+        "iter1_activation": 0.263671875,
+        "iter2_activation": 0.43359375,
+        "feature_frequency": 0.7923190151211026,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5804762709001858,
+            "count": 3437
+          },
+          {
+            "token": "3",
+            "precision": 0.42307042729268707,
+            "count": 2505
+          },
+          {
+            "token": "5",
+            "precision": 0.3870967741935484,
+            "count": 2292
+          },
+          {
+            "token": "4",
+            "precision": 0.34791420368181053,
+            "count": 2060
+          },
+          {
+            "token": "10",
+            "precision": 0.28778922479310926,
+            "count": 1704
+          },
+          {
+            "token": "20",
+            "precision": 0.25249113325451783,
+            "count": 1495
+          },
+          {
+            "token": "1",
+            "precision": 0.25232224286438104,
+            "count": 1494
+          },
+          {
+            "token": "6",
+            "precision": 0.24455328491808817,
+            "count": 1448
+          },
+          {
+            "token": "8",
+            "precision": 0.21313967235264314,
+            "count": 1262
+          },
+          {
+            "token": "12",
+            "precision": 0.2089174125992231,
+            "count": 1237
+          },
+          {
+            "token": "30",
+            "precision": 0.1812193886167877,
+            "count": 1073
+          },
+          {
+            "token": "0",
+            "precision": 0.1796993751055565,
+            "count": 1064
+          },
+          {
+            "token": "100",
+            "precision": 0.17801047120418848,
+            "count": 1054
+          },
+          {
+            "token": "60",
+            "precision": 0.15875696672859313,
+            "count": 940
+          },
+          {
+            "token": "15",
+            "precision": 0.1560547204864043,
+            "count": 924
+          }
+        ]
+      },
+      {
+        "feature_id": 7324,
+        "activation": 0.40625,
+        "iter1_activation": 0.40625,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.9065970828315268,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5886346863468634,
+            "count": 3988
+          },
+          {
+            "token": "3",
+            "precision": 0.4314391143911439,
+            "count": 2923
+          },
+          {
+            "token": "5",
+            "precision": 0.38095940959409597,
+            "count": 2581
+          },
+          {
+            "token": "4",
+            "precision": 0.35542435424354246,
+            "count": 2408
+          },
+          {
+            "token": "10",
+            "precision": 0.2789667896678967,
+            "count": 1890
+          },
+          {
+            "token": "1",
+            "precision": 0.2559409594095941,
+            "count": 1734
+          },
+          {
+            "token": "6",
+            "precision": 0.247380073800738,
+            "count": 1676
+          },
+          {
+            "token": "20",
+            "precision": 0.24575645756457565,
+            "count": 1665
+          },
+          {
+            "token": "8",
+            "precision": 0.21047970479704797,
+            "count": 1426
+          },
+          {
+            "token": "12",
+            "precision": 0.20413284132841328,
+            "count": 1383
+          },
+          {
+            "token": "0",
+            "precision": 0.1855350553505535,
+            "count": 1257
+          },
+          {
+            "token": "100",
+            "precision": 0.1811070110701107,
+            "count": 1227
+          },
+          {
+            "token": "30",
+            "precision": 0.174760147601476,
+            "count": 1184
+          },
+          {
+            "token": "15",
+            "precision": 0.15350553505535056,
+            "count": 1040
+          },
+          {
+            "token": "60",
+            "precision": 0.15276752767527677,
+            "count": 1035
+          }
+        ]
+      },
+      {
+        "feature_id": 7560,
+        "activation": 0.33203125,
+        "iter1_activation": 0.33203125,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.9605245550649003,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5656171635553079,
+            "count": 4060
+          },
+          {
+            "token": "3",
+            "precision": 0.4197548063527445,
+            "count": 3013
+          },
+          {
+            "token": "5",
+            "precision": 0.37071607690164393,
+            "count": 2661
+          },
+          {
+            "token": "4",
+            "precision": 0.3424352187238785,
+            "count": 2458
+          },
+          {
+            "token": "10",
+            "precision": 0.27626079687935357,
+            "count": 1983
+          },
+          {
+            "token": "20",
+            "precision": 0.24393981610476456,
+            "count": 1751
+          },
+          {
+            "token": "1",
+            "precision": 0.24171078294789636,
+            "count": 1735
+          },
+          {
+            "token": "6",
+            "precision": 0.23878517692950682,
+            "count": 1714
+          },
+          {
+            "token": "8",
+            "precision": 0.20646419615491782,
+            "count": 1482
+          },
+          {
+            "token": "12",
+            "precision": 0.20409584842574532,
+            "count": 1465
+          },
+          {
+            "token": "0",
+            "precision": 0.17985511284480357,
+            "count": 1291
+          },
+          {
+            "token": "100",
+            "precision": 0.1779047088325439,
+            "count": 1277
+          },
+          {
+            "token": "30",
+            "precision": 0.17456115909724157,
+            "count": 1253
+          },
+          {
+            "token": "15",
+            "precision": 0.1529674003900808,
+            "count": 1098
+          },
+          {
+            "token": "60",
+            "precision": 0.14892727779325718,
+            "count": 1069
+          }
+        ]
+      },
+      {
+        "feature_id": 3280,
+        "activation": 0.291015625,
+        "iter1_activation": 0.291015625,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.7383915428877291,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5746647335991302,
+            "count": 3171
+          },
+          {
+            "token": "3",
+            "precision": 0.39198985139543313,
+            "count": 2163
+          },
+          {
+            "token": "4",
+            "precision": 0.36589343965204785,
+            "count": 2019
+          },
+          {
+            "token": "5",
+            "precision": 0.35465748459586804,
+            "count": 1957
+          },
+          {
+            "token": "10",
+            "precision": 0.266763320043494,
+            "count": 1472
+          },
+          {
+            "token": "20",
+            "precision": 0.2502718376223269,
+            "count": 1381
+          },
+          {
+            "token": "8",
+            "precision": 0.24139180862631388,
+            "count": 1332
+          },
+          {
+            "token": "6",
+            "precision": 0.2386734324030446,
+            "count": 1317
+          },
+          {
+            "token": "1",
+            "precision": 0.23595505617977527,
+            "count": 1302
+          },
+          {
+            "token": "12",
+            "precision": 0.2055092424791591,
+            "count": 1134
+          },
+          {
+            "token": "100",
+            "precision": 0.18339978252990213,
+            "count": 1012
+          },
+          {
+            "token": "0",
+            "precision": 0.18213120695904314,
+            "count": 1005
+          },
+          {
+            "token": "40",
+            "precision": 0.1487857919536064,
+            "count": 821
+          },
+          {
+            "token": "30",
+            "precision": 0.1348314606741573,
+            "count": 744
+          },
+          {
+            "token": "50",
+            "precision": 0.133381660021747,
+            "count": 736
+          }
+        ]
+      },
+      {
+        "feature_id": 5902,
+        "activation": 0.287109375,
+        "iter1_activation": 0.0,
+        "iter2_activation": 0.287109375,
+        "feature_frequency": 0.7089522280208751,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.591355228388071,
+            "count": 3133
+          },
+          {
+            "token": "3",
+            "precision": 0.43110607776519444,
+            "count": 2284
+          },
+          {
+            "token": "5",
+            "precision": 0.38863722159305397,
+            "count": 2059
+          },
+          {
+            "token": "4",
+            "precision": 0.35069837674594184,
+            "count": 1858
+          },
+          {
+            "token": "10",
+            "precision": 0.2916194790486976,
+            "count": 1545
+          },
+          {
+            "token": "1",
+            "precision": 0.2612306530766327,
+            "count": 1384
+          },
+          {
+            "token": "20",
+            "precision": 0.2570781426953567,
+            "count": 1362
+          },
+          {
+            "token": "6",
+            "precision": 0.2370705926764817,
+            "count": 1256
+          },
+          {
+            "token": "12",
+            "precision": 0.20875802189505474,
+            "count": 1106
+          },
+          {
+            "token": "8",
+            "precision": 0.20743676859192148,
+            "count": 1099
+          },
+          {
+            "token": "0",
+            "precision": 0.20573801434503586,
+            "count": 1090
+          },
+          {
+            "token": "100",
+            "precision": 0.19667799169497924,
+            "count": 1042
+          },
+          {
+            "token": "30",
+            "precision": 0.1896942242355606,
+            "count": 1005
+          },
+          {
+            "token": "60",
+            "precision": 0.16949792374480938,
+            "count": 898
+          },
+          {
+            "token": "15",
+            "precision": 0.15855039637599094,
+            "count": 840
+          }
+        ]
+      },
+      {
+        "feature_id": 2521,
+        "activation": 0.283203125,
+        "iter1_activation": 0.283203125,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.9229225210758731,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5625634333768305,
+            "count": 3880
+          },
+          {
+            "token": "3",
+            "precision": 0.41800782949108306,
+            "count": 2883
+          },
+          {
+            "token": "5",
+            "precision": 0.35870668406553574,
+            "count": 2474
+          },
+          {
+            "token": "4",
+            "precision": 0.34783239089459184,
+            "count": 2399
+          },
+          {
+            "token": "10",
+            "precision": 0.26257793243439176,
+            "count": 1811
+          },
+          {
+            "token": "20",
+            "precision": 0.24039437436566624,
+            "count": 1658
+          },
+          {
+            "token": "6",
+            "precision": 0.23836450630709005,
+            "count": 1644
+          },
+          {
+            "token": "1",
+            "precision": 0.23328983616064955,
+            "count": 1609
+          },
+          {
+            "token": "8",
+            "precision": 0.21110627809192403,
+            "count": 1456
+          },
+          {
+            "token": "12",
+            "precision": 0.20791648542844715,
+            "count": 1434
+          },
+          {
+            "token": "0",
+            "precision": 0.1763085399449036,
+            "count": 1216
+          },
+          {
+            "token": "100",
+            "precision": 0.17587356821806582,
+            "count": 1213
+          },
+          {
+            "token": "30",
+            "precision": 0.17485863418877773,
+            "count": 1206
+          },
+          {
+            "token": "60",
+            "precision": 0.15586486878352906,
+            "count": 1075
+          },
+          {
+            "token": "15",
+            "precision": 0.14238074525155864,
+            "count": 982
+          }
+        ]
+      },
+      {
+        "feature_id": 6538,
+        "activation": 0.263671875,
+        "iter1_activation": 0.12890625,
+        "iter2_activation": 0.263671875,
+        "feature_frequency": 0.613809714973906,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5692173533900152,
+            "count": 2611
+          },
+          {
+            "token": "3",
+            "precision": 0.4275125354262045,
+            "count": 1961
+          },
+          {
+            "token": "5",
+            "precision": 0.3893612382821016,
+            "count": 1786
+          },
+          {
+            "token": "4",
+            "precision": 0.34139960758665794,
+            "count": 1566
+          },
+          {
+            "token": "10",
+            "precision": 0.2812295618051014,
+            "count": 1290
+          },
+          {
+            "token": "20",
+            "precision": 0.24787442773054283,
+            "count": 1137
+          },
+          {
+            "token": "6",
+            "precision": 0.24002616088947024,
+            "count": 1101
+          },
+          {
+            "token": "1",
+            "precision": 0.2315238718116416,
+            "count": 1062
+          },
+          {
+            "token": "8",
+            "precision": 0.2132112491824722,
+            "count": 978
+          },
+          {
+            "token": "12",
+            "precision": 0.20296490080662744,
+            "count": 931
+          },
+          {
+            "token": "30",
+            "precision": 0.17920209287115763,
+            "count": 822
+          },
+          {
+            "token": "100",
+            "precision": 0.1698277741443209,
+            "count": 779
+          },
+          {
+            "token": "15",
+            "precision": 0.1619795073032483,
+            "count": 743
+          },
+          {
+            "token": "0",
+            "precision": 0.15827338129496402,
+            "count": 726
+          },
+          {
+            "token": "50",
+            "precision": 0.15478526269893175,
+            "count": 710
+          }
+        ]
+      },
+      {
+        "feature_id": 4116,
+        "activation": 0.263671875,
+        "iter1_activation": 0.263671875,
+        "iter2_activation": 0.16015625,
+        "feature_frequency": 0.9575806235782149,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5647009502515372,
+            "count": 4041
+          },
+          {
+            "token": "3",
+            "precision": 0.4232811626607043,
+            "count": 3029
+          },
+          {
+            "token": "5",
+            "precision": 0.3672442705422023,
+            "count": 2628
+          },
+          {
+            "token": "4",
+            "precision": 0.3455841252096143,
+            "count": 2473
+          },
+          {
+            "token": "10",
+            "precision": 0.2688652878703186,
+            "count": 1924
+          },
+          {
+            "token": "6",
+            "precision": 0.2417551704863052,
+            "count": 1730
+          },
+          {
+            "token": "20",
+            "precision": 0.2416154276131917,
+            "count": 1729
+          },
+          {
+            "token": "1",
+            "precision": 0.23518725544997204,
+            "count": 1683
+          },
+          {
+            "token": "8",
+            "precision": 0.20793739519284515,
+            "count": 1488
+          },
+          {
+            "token": "12",
+            "precision": 0.20556176634991616,
+            "count": 1471
+          },
+          {
+            "token": "0",
+            "precision": 0.1752375628842929,
+            "count": 1254
+          },
+          {
+            "token": "30",
+            "precision": 0.17286193404136388,
+            "count": 1237
+          },
+          {
+            "token": "100",
+            "precision": 0.1689491335941867,
+            "count": 1209
+          },
+          {
+            "token": "60",
+            "precision": 0.15273896031302403,
+            "count": 1093
+          },
+          {
+            "token": "15",
+            "precision": 0.15231973169368362,
+            "count": 1090
+          }
+        ]
+      },
+      {
+        "feature_id": 4422,
+        "activation": 0.2578125,
+        "iter1_activation": 0.2578125,
+        "iter2_activation": 0.130859375,
+        "feature_frequency": 0.7663588920112404,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5500261917234154,
+            "count": 3150
+          },
+          {
+            "token": "3",
+            "precision": 0.41522612187881963,
+            "count": 2378
+          },
+          {
+            "token": "5",
+            "precision": 0.36284267504801815,
+            "count": 2078
+          },
+          {
+            "token": "4",
+            "precision": 0.33298411035446135,
+            "count": 1907
+          },
+          {
+            "token": "10",
+            "precision": 0.2809498865025319,
+            "count": 1609
+          },
+          {
+            "token": "20",
+            "precision": 0.2577265584075432,
+            "count": 1476
+          },
+          {
+            "token": "1",
+            "precision": 0.24864676095687097,
+            "count": 1424
+          },
+          {
+            "token": "6",
+            "precision": 0.2252488213724463,
+            "count": 1290
+          },
+          {
+            "token": "8",
+            "precision": 0.1995809324253536,
+            "count": 1143
+          },
+          {
+            "token": "30",
+            "precision": 0.19731098306268552,
+            "count": 1130
+          },
+          {
+            "token": "0",
+            "precision": 0.1929456958267854,
+            "count": 1105
+          },
+          {
+            "token": "100",
+            "precision": 0.1925964728479134,
+            "count": 1103
+          },
+          {
+            "token": "12",
+            "precision": 0.19119958093242537,
+            "count": 1095
+          },
+          {
+            "token": "60",
+            "precision": 0.17967522262964902,
+            "count": 1029
+          },
+          {
+            "token": "15",
+            "precision": 0.15976951283394447,
+            "count": 915
+          }
+        ]
+      },
+      {
+        "feature_id": 6706,
+        "activation": 0.24609375,
+        "iter1_activation": 0.09912109375,
+        "iter2_activation": 0.24609375,
+        "feature_frequency": 0.7857620768098488,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5819141689373297,
+            "count": 3417
+          },
+          {
+            "token": "3",
+            "precision": 0.41604223433242504,
+            "count": 2443
+          },
+          {
+            "token": "5",
+            "precision": 0.3826634877384196,
+            "count": 2247
+          },
+          {
+            "token": "4",
+            "precision": 0.3516689373297003,
+            "count": 2065
+          },
+          {
+            "token": "10",
+            "precision": 0.29342643051771117,
+            "count": 1723
+          },
+          {
+            "token": "20",
+            "precision": 0.2666893732970027,
+            "count": 1566
+          },
+          {
+            "token": "1",
+            "precision": 0.25323569482288827,
+            "count": 1487
+          },
+          {
+            "token": "6",
+            "precision": 0.23279972752043596,
+            "count": 1367
+          },
+          {
+            "token": "8",
+            "precision": 0.21134196185286103,
+            "count": 1241
+          },
+          {
+            "token": "0",
+            "precision": 0.19754768392370572,
+            "count": 1160
+          },
+          {
+            "token": "12",
+            "precision": 0.19533378746594005,
+            "count": 1147
+          },
+          {
+            "token": "100",
+            "precision": 0.1936307901907357,
+            "count": 1137
+          },
+          {
+            "token": "30",
+            "precision": 0.17302452316076294,
+            "count": 1016
+          },
+          {
+            "token": "15",
+            "precision": 0.15701634877384196,
+            "count": 922
+          },
+          {
+            "token": "50",
+            "precision": 0.15548365122615804,
+            "count": 913
+          }
+        ]
+      },
+      {
+        "feature_id": 2714,
+        "activation": 0.2158203125,
+        "iter1_activation": 0.0,
+        "iter2_activation": 0.2158203125,
+        "feature_frequency": 0.4414559079352335,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5101545923006972,
+            "count": 1683
+          },
+          {
+            "token": "3",
+            "precision": 0.379205819945438,
+            "count": 1251
+          },
+          {
+            "token": "5",
+            "precision": 0.3255531979387693,
+            "count": 1074
+          },
+          {
+            "token": "4",
+            "precision": 0.28614731736889965,
+            "count": 944
+          },
+          {
+            "token": "10",
+            "precision": 0.21915732040012126,
+            "count": 723
+          },
+          {
+            "token": "20",
+            "precision": 0.2106698999696878,
+            "count": 695
+          },
+          {
+            "token": "100",
+            "precision": 0.20127311306456502,
+            "count": 664
+          },
+          {
+            "token": "6",
+            "precision": 0.19369505910882084,
+            "count": 639
+          },
+          {
+            "token": "1",
+            "precision": 0.1930888147923613,
+            "count": 637
+          },
+          {
+            "token": "12",
+            "precision": 0.18187329493785995,
+            "count": 600
+          },
+          {
+            "token": "0",
+            "precision": 0.1815701727796302,
+            "count": 599
+          },
+          {
+            "token": "8",
+            "precision": 0.1606547438617763,
+            "count": 530
+          },
+          {
+            "token": "30",
+            "precision": 0.1542891785389512,
+            "count": 509
+          },
+          {
+            "token": "15",
+            "precision": 0.14762049105789632,
+            "count": 487
+          },
+          {
+            "token": "50",
+            "precision": 0.14731736889966657,
+            "count": 486
+          }
+        ]
+      },
+      {
+        "feature_id": 7219,
+        "activation": 0.212890625,
+        "iter1_activation": 0.212890625,
+        "iter2_activation": 0.12353515625,
+        "feature_frequency": 0.6606449886257193,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5880089122949159,
+            "count": 2903
+          },
+          {
+            "token": "3",
+            "precision": 0.43568969009519953,
+            "count": 2151
+          },
+          {
+            "token": "5",
+            "precision": 0.3925460806157586,
+            "count": 1938
+          },
+          {
+            "token": "4",
+            "precision": 0.3534535142799271,
+            "count": 1745
+          },
+          {
+            "token": "10",
+            "precision": 0.2987644318411991,
+            "count": 1475
+          },
+          {
+            "token": "1",
+            "precision": 0.264533117277699,
+            "count": 1306
+          },
+          {
+            "token": "20",
+            "precision": 0.25643103099048004,
+            "count": 1266
+          },
+          {
+            "token": "6",
+            "precision": 0.2341502937006279,
+            "count": 1156
+          },
+          {
+            "token": "8",
+            "precision": 0.21531294308284382,
+            "count": 1063
+          },
+          {
+            "token": "0",
+            "precision": 0.21288231719667813,
+            "count": 1051
+          },
+          {
+            "token": "100",
+            "precision": 0.2015393963945716,
+            "count": 995
+          },
+          {
+            "token": "12",
+            "precision": 0.19829856187968403,
+            "count": 979
+          },
+          {
+            "token": "30",
+            "precision": 0.19262710147863074,
+            "count": 951
+          },
+          {
+            "token": "60",
+            "precision": 0.17318209438930524,
+            "count": 855
+          },
+          {
+            "token": "15",
+            "precision": 0.1640672473161839,
+            "count": 810
+          }
+        ]
+      },
+      {
+        "feature_id": 189,
+        "activation": 0.203125,
+        "iter1_activation": 0.203125,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.85280342566573,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5579789737957006,
+            "count": 3556
+          },
+          {
+            "token": "3",
+            "precision": 0.4246037972697317,
+            "count": 2706
+          },
+          {
+            "token": "5",
+            "precision": 0.3698415189078927,
+            "count": 2357
+          },
+          {
+            "token": "4",
+            "precision": 0.33987133218264554,
+            "count": 2166
+          },
+          {
+            "token": "10",
+            "precision": 0.2681625608033893,
+            "count": 1709
+          },
+          {
+            "token": "20",
+            "precision": 0.2482347403106857,
+            "count": 1582
+          },
+          {
+            "token": "6",
+            "precision": 0.23678016632669072,
+            "count": 1509
+          },
+          {
+            "token": "1",
+            "precision": 0.23348501490663737,
+            "count": 1488
+          },
+          {
+            "token": "8",
+            "precision": 0.19927820492703593,
+            "count": 1270
+          },
+          {
+            "token": "12",
+            "precision": 0.19723834928605052,
+            "count": 1257
+          },
+          {
+            "token": "0",
+            "precision": 0.17935038443433235,
+            "count": 1143
+          },
+          {
+            "token": "100",
+            "precision": 0.17432920131806057,
+            "count": 1111
+          },
+          {
+            "token": "30",
+            "precision": 0.16616977875411895,
+            "count": 1059
+          },
+          {
+            "token": "60",
+            "precision": 0.15549976463204143,
+            "count": 991
+          },
+          {
+            "token": "15",
+            "precision": 0.14451592656519693,
+            "count": 921
+          }
+        ]
+      },
+      {
+        "feature_id": 4651,
+        "activation": 0.1708984375,
+        "iter1_activation": 0.0,
+        "iter2_activation": 0.1708984375,
+        "feature_frequency": 0.8125250903251706,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5811923583662714,
+            "count": 3529
+          },
+          {
+            "token": "3",
+            "precision": 0.4370882740447958,
+            "count": 2654
+          },
+          {
+            "token": "5",
+            "precision": 0.3904808959156785,
+            "count": 2371
+          },
+          {
+            "token": "4",
+            "precision": 0.35210803689064557,
+            "count": 2138
+          },
+          {
+            "token": "10",
+            "precision": 0.288866930171278,
+            "count": 1754
+          },
+          {
+            "token": "1",
+            "precision": 0.2524703557312253,
+            "count": 1533
+          },
+          {
+            "token": "20",
+            "precision": 0.25016469038208167,
+            "count": 1519
+          },
+          {
+            "token": "6",
+            "precision": 0.24835309617918314,
+            "count": 1508
+          },
+          {
+            "token": "8",
+            "precision": 0.21277997364953888,
+            "count": 1292
+          },
+          {
+            "token": "12",
+            "precision": 0.20520421607378128,
+            "count": 1246
+          },
+          {
+            "token": "100",
+            "precision": 0.1895586297760211,
+            "count": 1151
+          },
+          {
+            "token": "30",
+            "precision": 0.18889986824769434,
+            "count": 1147
+          },
+          {
+            "token": "0",
+            "precision": 0.18791172595520422,
+            "count": 1141
+          },
+          {
+            "token": "15",
+            "precision": 0.161231884057971,
+            "count": 979
+          },
+          {
+            "token": "60",
+            "precision": 0.1566205533596838,
+            "count": 951
+          }
+        ]
+      },
+      {
+        "feature_id": 873,
+        "activation": 0.1552734375,
+        "iter1_activation": 0.1552734375,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.357420045497123,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5447397978285287,
+            "count": 1455
+          },
+          {
+            "token": "3",
+            "precision": 0.4601272931486335,
+            "count": 1229
+          },
+          {
+            "token": "5",
+            "precision": 0.3567952077873456,
+            "count": 953
+          },
+          {
+            "token": "4",
+            "precision": 0.31561213028828156,
+            "count": 843
+          },
+          {
+            "token": "1",
+            "precision": 0.24672407338075628,
+            "count": 659
+          },
+          {
+            "token": "12",
+            "precision": 0.22538375140396855,
+            "count": 602
+          },
+          {
+            "token": "10",
+            "precision": 0.22313740172220142,
+            "count": 596
+          },
+          {
+            "token": "6",
+            "precision": 0.22313740172220142,
+            "count": 596
+          },
+          {
+            "token": "7",
+            "precision": 0.1819543242231374,
+            "count": 486
+          },
+          {
+            "token": "8",
+            "precision": 0.17821040808685887,
+            "count": 476
+          },
+          {
+            "token": "20",
+            "precision": 0.16997379258704606,
+            "count": 454
+          },
+          {
+            "token": "100",
+            "precision": 0.16697865967802322,
+            "count": 446
+          },
+          {
+            "token": "9",
+            "precision": 0.16173717708723326,
+            "count": 432
+          },
+          {
+            "token": "0",
+            "precision": 0.1463871209284912,
+            "count": 391
+          },
+          {
+            "token": "50",
+            "precision": 0.14002246349681768,
+            "count": 374
+          }
+        ]
+      },
+      {
+        "feature_id": 4692,
+        "activation": 0.1259765625,
+        "iter1_activation": 0.1259765625,
+        "iter2_activation": 0.1044921875,
+        "feature_frequency": 0.9899638699317543,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5623141389564748,
+            "count": 4160
+          },
+          {
+            "token": "3",
+            "precision": 0.41849148418491483,
+            "count": 3096
+          },
+          {
+            "token": "5",
+            "precision": 0.3682076236820762,
+            "count": 2724
+          },
+          {
+            "token": "4",
+            "precision": 0.3422546634225466,
+            "count": 2532
+          },
+          {
+            "token": "10",
+            "precision": 0.27223573938902407,
+            "count": 2014
+          },
+          {
+            "token": "20",
+            "precision": 0.24290348742903486,
+            "count": 1797
+          },
+          {
+            "token": "1",
+            "precision": 0.23803730738037307,
+            "count": 1761
+          },
+          {
+            "token": "6",
+            "precision": 0.23749662070829955,
+            "count": 1757
+          },
+          {
+            "token": "8",
+            "precision": 0.20586645039199783,
+            "count": 1523
+          },
+          {
+            "token": "12",
+            "precision": 0.20018924033522573,
+            "count": 1481
+          },
+          {
+            "token": "0",
+            "precision": 0.1777507434441741,
+            "count": 1315
+          },
+          {
+            "token": "100",
+            "precision": 0.17464179507975128,
+            "count": 1292
+          },
+          {
+            "token": "30",
+            "precision": 0.17180319005136524,
+            "count": 1271
+          },
+          {
+            "token": "15",
+            "precision": 0.15139226818058935,
+            "count": 1120
+          },
+          {
+            "token": "60",
+            "precision": 0.15031089483644228,
+            "count": 1112
+          }
+        ]
+      },
+      {
+        "feature_id": 4798,
+        "activation": 0.11572265625,
+        "iter1_activation": 0.0,
+        "iter2_activation": 0.11572265625,
+        "feature_frequency": 0.6669342968018199,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5646067415730337,
+            "count": 2814
+          },
+          {
+            "token": "3",
+            "precision": 0.40068218298555375,
+            "count": 1997
+          },
+          {
+            "token": "5",
+            "precision": 0.36536918138041735,
+            "count": 1821
+          },
+          {
+            "token": "4",
+            "precision": 0.35252808988764045,
+            "count": 1757
+          },
+          {
+            "token": "10",
+            "precision": 0.2588282504012841,
+            "count": 1290
+          },
+          {
+            "token": "1",
+            "precision": 0.24759229534510432,
+            "count": 1234
+          },
+          {
+            "token": "6",
+            "precision": 0.22953451043338685,
+            "count": 1144
+          },
+          {
+            "token": "8",
+            "precision": 0.2231139646869984,
+            "count": 1112
+          },
+          {
+            "token": "20",
+            "precision": 0.21629213483146068,
+            "count": 1078
+          },
+          {
+            "token": "0",
+            "precision": 0.206661316211878,
+            "count": 1030
+          },
+          {
+            "token": "12",
+            "precision": 0.1958266452648475,
+            "count": 976
+          },
+          {
+            "token": "100",
+            "precision": 0.19181380417335472,
+            "count": 956
+          },
+          {
+            "token": "7",
+            "precision": 0.15730337078651685,
+            "count": 784
+          },
+          {
+            "token": "30",
+            "precision": 0.15609951845906903,
+            "count": 778
+          },
+          {
+            "token": "50",
+            "precision": 0.14867576243980737,
+            "count": 741
+          }
+        ]
+      },
+      {
+        "feature_id": 2429,
+        "activation": 0.1142578125,
+        "iter1_activation": 0.0,
+        "iter2_activation": 0.1142578125,
+        "feature_frequency": 0.39114144252642846,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5172767704413274,
+            "count": 1512
+          },
+          {
+            "token": "3",
+            "precision": 0.3616147793362983,
+            "count": 1057
+          },
+          {
+            "token": "5",
+            "precision": 0.34108792336640437,
+            "count": 997
+          },
+          {
+            "token": "4",
+            "precision": 0.30619226821758466,
+            "count": 895
+          },
+          {
+            "token": "0",
+            "precision": 0.27779678412589803,
+            "count": 812
+          },
+          {
+            "token": "10",
+            "precision": 0.26582278481012656,
+            "count": 777
+          },
+          {
+            "token": "100",
+            "precision": 0.24700650017105713,
+            "count": 722
+          },
+          {
+            "token": "1",
+            "precision": 0.24700650017105713,
+            "count": 722
+          },
+          {
+            "token": "20",
+            "precision": 0.24255901471091346,
+            "count": 709
+          },
+          {
+            "token": "6",
+            "precision": 0.20150530277112555,
+            "count": 589
+          },
+          {
+            "token": "30",
+            "precision": 0.17242559014710915,
+            "count": 504
+          },
+          {
+            "token": "8",
+            "precision": 0.16763599042080055,
+            "count": 490
+          },
+          {
+            "token": "12",
+            "precision": 0.1536093055080397,
+            "count": 449
+          },
+          {
+            "token": "60",
+            "precision": 0.152582962709545,
+            "count": 446
+          },
+          {
+            "token": "40",
+            "precision": 0.149161820047896,
+            "count": 436
+          }
+        ]
+      }
+    ],
+    "late": [
+      {
+        "feature_id": 2203,
+        "activation": 3.515625,
+        "iter1_activation": 0.1845703125,
+        "iter2_activation": 3.515625,
+        "feature_frequency": 0.14117489629332264,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5516587677725119,
+            "count": 582
+          },
+          {
+            "token": "3",
+            "precision": 0.4549763033175355,
+            "count": 480
+          },
+          {
+            "token": "5",
+            "precision": 0.4075829383886256,
+            "count": 430
+          },
+          {
+            "token": "4",
+            "precision": 0.34881516587677724,
+            "count": 368
+          },
+          {
+            "token": "7",
+            "precision": 0.3345971563981043,
+            "count": 353
+          },
+          {
+            "token": "10",
+            "precision": 0.2824644549763033,
+            "count": 298
+          },
+          {
+            "token": "1",
+            "precision": 0.2729857819905213,
+            "count": 288
+          },
+          {
+            "token": "8",
+            "precision": 0.2104265402843602,
+            "count": 222
+          },
+          {
+            "token": "20",
+            "precision": 0.2066350710900474,
+            "count": 218
+          },
+          {
+            "token": "6",
+            "precision": 0.2028436018957346,
+            "count": 214
+          },
+          {
+            "token": "12",
+            "precision": 0.1819905213270142,
+            "count": 192
+          },
+          {
+            "token": "9",
+            "precision": 0.14881516587677726,
+            "count": 157
+          },
+          {
+            "token": "15",
+            "precision": 0.14691943127962084,
+            "count": 155
+          },
+          {
+            "token": "30",
+            "precision": 0.14123222748815165,
+            "count": 149
+          },
+          {
+            "token": "50",
+            "precision": 0.13649289099526066,
+            "count": 144
+          }
+        ]
+      },
+      {
+        "feature_id": 6889,
+        "activation": 1.6875,
+        "iter1_activation": 1.6875,
+        "iter2_activation": 0.212890625,
+        "feature_frequency": 0.7137695704536331,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5856767904011998,
+            "count": 3124
+          },
+          {
+            "token": "3",
+            "precision": 0.44938132733408326,
+            "count": 2397
+          },
+          {
+            "token": "5",
+            "precision": 0.3892013498312711,
+            "count": 2076
+          },
+          {
+            "token": "4",
+            "precision": 0.35995500562429694,
+            "count": 1920
+          },
+          {
+            "token": "10",
+            "precision": 0.27896512935883017,
+            "count": 1488
+          },
+          {
+            "token": "6",
+            "precision": 0.25009373828271464,
+            "count": 1334
+          },
+          {
+            "token": "20",
+            "precision": 0.24990626171728533,
+            "count": 1333
+          },
+          {
+            "token": "1",
+            "precision": 0.24746906636670415,
+            "count": 1320
+          },
+          {
+            "token": "12",
+            "precision": 0.21597300337457817,
+            "count": 1152
+          },
+          {
+            "token": "8",
+            "precision": 0.20791151106111735,
+            "count": 1109
+          },
+          {
+            "token": "30",
+            "precision": 0.1809148856392951,
+            "count": 965
+          },
+          {
+            "token": "15",
+            "precision": 0.17060367454068243,
+            "count": 910
+          },
+          {
+            "token": "100",
+            "precision": 0.16535433070866143,
+            "count": 882
+          },
+          {
+            "token": "0",
+            "precision": 0.1580427446569179,
+            "count": 843
+          },
+          {
+            "token": "60",
+            "precision": 0.156355455568054,
+            "count": 834
+          }
+        ]
+      },
+      {
+        "feature_id": 12,
+        "activation": 1.6796875,
+        "iter1_activation": 1.6796875,
+        "iter2_activation": 0.90625,
+        "feature_frequency": 0.7684999330924662,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5881943235242905,
+            "count": 3378
+          },
+          {
+            "token": "3",
+            "precision": 0.441058680132335,
+            "count": 2533
+          },
+          {
+            "token": "5",
+            "precision": 0.3604387950548494,
+            "count": 2070
+          },
+          {
+            "token": "4",
+            "precision": 0.341459167682396,
+            "count": 1961
+          },
+          {
+            "token": "10",
+            "precision": 0.2707644088455511,
+            "count": 1555
+          },
+          {
+            "token": "6",
+            "precision": 0.24865053108131638,
+            "count": 1428
+          },
+          {
+            "token": "20",
+            "precision": 0.23785477973184746,
+            "count": 1366
+          },
+          {
+            "token": "1",
+            "precision": 0.23158627894828487,
+            "count": 1330
+          },
+          {
+            "token": "12",
+            "precision": 0.2129549016193627,
+            "count": 1223
+          },
+          {
+            "token": "8",
+            "precision": 0.20511927563990945,
+            "count": 1178
+          },
+          {
+            "token": "30",
+            "precision": 0.17569214696151836,
+            "count": 1009
+          },
+          {
+            "token": "100",
+            "precision": 0.1638516454814557,
+            "count": 941
+          },
+          {
+            "token": "15",
+            "precision": 0.15357826919728365,
+            "count": 882
+          },
+          {
+            "token": "0",
+            "precision": 0.1514887689360961,
+            "count": 870
+          },
+          {
+            "token": "60",
+            "precision": 0.1413895176736897,
+            "count": 812
+          }
+        ]
+      },
+      {
+        "feature_id": 4651,
+        "activation": 1.4921875,
+        "iter1_activation": 0.15234375,
+        "iter2_activation": 1.4921875,
+        "feature_frequency": 0.9882242740532584,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5619498984427894,
+            "count": 4150
+          },
+          {
+            "token": "3",
+            "precision": 0.4178740690589032,
+            "count": 3086
+          },
+          {
+            "token": "5",
+            "precision": 0.36709546377792823,
+            "count": 2711
+          },
+          {
+            "token": "4",
+            "precision": 0.33960731211916045,
+            "count": 2508
+          },
+          {
+            "token": "10",
+            "precision": 0.27109004739336495,
+            "count": 2002
+          },
+          {
+            "token": "20",
+            "precision": 0.24170616113744076,
+            "count": 1785
+          },
+          {
+            "token": "1",
+            "precision": 0.23656059580230196,
+            "count": 1747
+          },
+          {
+            "token": "6",
+            "precision": 0.23574813811780637,
+            "count": 1741
+          },
+          {
+            "token": "8",
+            "precision": 0.2051455653351388,
+            "count": 1515
+          },
+          {
+            "token": "12",
+            "precision": 0.2009478672985782,
+            "count": 1484
+          },
+          {
+            "token": "0",
+            "precision": 0.17819905213270143,
+            "count": 1316
+          },
+          {
+            "token": "100",
+            "precision": 0.17603249830737983,
+            "count": 1300
+          },
+          {
+            "token": "30",
+            "precision": 0.17142857142857143,
+            "count": 1266
+          },
+          {
+            "token": "15",
+            "precision": 0.15030467163168584,
+            "count": 1110
+          },
+          {
+            "token": "60",
+            "precision": 0.14989844278943806,
+            "count": 1107
+          }
+        ]
+      },
+      {
+        "feature_id": 6538,
+        "activation": 1.28125,
+        "iter1_activation": 1.1015625,
+        "iter2_activation": 1.28125,
+        "feature_frequency": 0.8819751103974307,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5656197845546957,
+            "count": 3728
+          },
+          {
+            "token": "3",
+            "precision": 0.41920801092398724,
+            "count": 2763
+          },
+          {
+            "token": "5",
+            "precision": 0.37460172963131544,
+            "count": 2469
+          },
+          {
+            "token": "4",
+            "precision": 0.34365043240782883,
+            "count": 2265
+          },
+          {
+            "token": "10",
+            "precision": 0.2773478986496738,
+            "count": 1828
+          },
+          {
+            "token": "20",
+            "precision": 0.24412077074798968,
+            "count": 1609
+          },
+          {
+            "token": "6",
+            "precision": 0.23683811257775755,
+            "count": 1561
+          },
+          {
+            "token": "1",
+            "precision": 0.23441055985434683,
+            "count": 1545
+          },
+          {
+            "token": "8",
+            "precision": 0.20907297830374755,
+            "count": 1378
+          },
+          {
+            "token": "12",
+            "precision": 0.20133515399787588,
+            "count": 1327
+          },
+          {
+            "token": "0",
+            "precision": 0.17083902291002884,
+            "count": 1126
+          },
+          {
+            "token": "100",
+            "precision": 0.17023213472917614,
+            "count": 1122
+          },
+          {
+            "token": "30",
+            "precision": 0.16977696859353664,
+            "count": 1119
+          },
+          {
+            "token": "15",
+            "precision": 0.15551509634349872,
+            "count": 1025
+          },
+          {
+            "token": "50",
+            "precision": 0.143225610681232,
+            "count": 944
+          }
+        ]
+      },
+      {
+        "feature_id": 5902,
+        "activation": 1.15625,
+        "iter1_activation": 0.90625,
+        "iter2_activation": 1.15625,
+        "feature_frequency": 0.9617288906730898,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5650480033393628,
+            "count": 4061
+          },
+          {
+            "token": "3",
+            "precision": 0.4186726033115347,
+            "count": 3009
+          },
+          {
+            "token": "5",
+            "precision": 0.36830388200918324,
+            "count": 2647
+          },
+          {
+            "token": "4",
+            "precision": 0.34061499930429945,
+            "count": 2448
+          },
+          {
+            "token": "10",
+            "precision": 0.27327118408237094,
+            "count": 1964
+          },
+          {
+            "token": "20",
+            "precision": 0.24307777932377905,
+            "count": 1747
+          },
+          {
+            "token": "1",
+            "precision": 0.23570335327674968,
+            "count": 1694
+          },
+          {
+            "token": "6",
+            "precision": 0.23472937247808542,
+            "count": 1687
+          },
+          {
+            "token": "8",
+            "precision": 0.20481424794768333,
+            "count": 1472
+          },
+          {
+            "token": "12",
+            "precision": 0.20203144566578546,
+            "count": 1452
+          },
+          {
+            "token": "0",
+            "precision": 0.17990816752469738,
+            "count": 1293
+          },
+          {
+            "token": "100",
+            "precision": 0.17656880478641993,
+            "count": 1269
+          },
+          {
+            "token": "30",
+            "precision": 0.1705857798803395,
+            "count": 1226
+          },
+          {
+            "token": "60",
+            "precision": 0.14971476276610546,
+            "count": 1076
+          },
+          {
+            "token": "15",
+            "precision": 0.149019062195631,
+            "count": 1071
+          }
+        ]
+      },
+      {
+        "feature_id": 3192,
+        "activation": 1.1484375,
+        "iter1_activation": 1.1484375,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.779874213836478,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.577213452299245,
+            "count": 3364
+          },
+          {
+            "token": "3",
+            "precision": 0.4282772820864791,
+            "count": 2496
+          },
+          {
+            "token": "5",
+            "precision": 0.3822923816060398,
+            "count": 2228
+          },
+          {
+            "token": "4",
+            "precision": 0.3577556623198353,
+            "count": 2085
+          },
+          {
+            "token": "10",
+            "precision": 0.2874056280027454,
+            "count": 1675
+          },
+          {
+            "token": "6",
+            "precision": 0.25188743994509266,
+            "count": 1468
+          },
+          {
+            "token": "20",
+            "precision": 0.24365133836650651,
+            "count": 1420
+          },
+          {
+            "token": "1",
+            "precision": 0.24262182566918325,
+            "count": 1414
+          },
+          {
+            "token": "8",
+            "precision": 0.21722717913520934,
+            "count": 1266
+          },
+          {
+            "token": "12",
+            "precision": 0.2158544955387783,
+            "count": 1258
+          },
+          {
+            "token": "30",
+            "precision": 0.17982155113246398,
+            "count": 1048
+          },
+          {
+            "token": "100",
+            "precision": 0.1774193548387097,
+            "count": 1034
+          },
+          {
+            "token": "0",
+            "precision": 0.17244337680164723,
+            "count": 1005
+          },
+          {
+            "token": "15",
+            "precision": 0.15459849004804394,
+            "count": 901
+          },
+          {
+            "token": "50",
+            "precision": 0.14052848318462594,
+            "count": 819
+          }
+        ]
+      },
+      {
+        "feature_id": 7560,
+        "activation": 1.1484375,
+        "iter1_activation": 1.1484375,
+        "iter2_activation": 0.52734375,
+        "feature_frequency": 0.9333600963468487,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5704659498207886,
+            "count": 3979
+          },
+          {
+            "token": "3",
+            "precision": 0.42164874551971326,
+            "count": 2941
+          },
+          {
+            "token": "5",
+            "precision": 0.3757706093189964,
+            "count": 2621
+          },
+          {
+            "token": "4",
+            "precision": 0.3459498207885305,
+            "count": 2413
+          },
+          {
+            "token": "10",
+            "precision": 0.27483870967741936,
+            "count": 1917
+          },
+          {
+            "token": "1",
+            "precision": 0.2504659498207885,
+            "count": 1747
+          },
+          {
+            "token": "20",
+            "precision": 0.24415770609318996,
+            "count": 1703
+          },
+          {
+            "token": "6",
+            "precision": 0.2404301075268817,
+            "count": 1677
+          },
+          {
+            "token": "8",
+            "precision": 0.20817204301075268,
+            "count": 1452
+          },
+          {
+            "token": "12",
+            "precision": 0.20229390681003584,
+            "count": 1411
+          },
+          {
+            "token": "0",
+            "precision": 0.18365591397849462,
+            "count": 1281
+          },
+          {
+            "token": "100",
+            "precision": 0.1807885304659498,
+            "count": 1261
+          },
+          {
+            "token": "30",
+            "precision": 0.17663082437275987,
+            "count": 1232
+          },
+          {
+            "token": "15",
+            "precision": 0.1532616487455197,
+            "count": 1069
+          },
+          {
+            "token": "60",
+            "precision": 0.15010752688172044,
+            "count": 1047
+          }
+        ]
+      },
+      {
+        "feature_id": 7612,
+        "activation": 1.1328125,
+        "iter1_activation": 1.1328125,
+        "iter2_activation": 0.42578125,
+        "feature_frequency": 0.982871671350194,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5598366235534377,
+            "count": 4112
+          },
+          {
+            "token": "3",
+            "precision": 0.41497617426820965,
+            "count": 3048
+          },
+          {
+            "token": "5",
+            "precision": 0.36514635806671203,
+            "count": 2682
+          },
+          {
+            "token": "4",
+            "precision": 0.3369639210347175,
+            "count": 2475
+          },
+          {
+            "token": "10",
+            "precision": 0.26943498978897207,
+            "count": 1979
+          },
+          {
+            "token": "20",
+            "precision": 0.24111640571817564,
+            "count": 1771
+          },
+          {
+            "token": "1",
+            "precision": 0.23417290673927843,
+            "count": 1720
+          },
+          {
+            "token": "6",
+            "precision": 0.23321987746766507,
+            "count": 1713
+          },
+          {
+            "token": "8",
+            "precision": 0.20299523485364193,
+            "count": 1491
+          },
+          {
+            "token": "12",
+            "precision": 0.1975493533015657,
+            "count": 1451
+          },
+          {
+            "token": "100",
+            "precision": 0.17590197413206263,
+            "count": 1292
+          },
+          {
+            "token": "0",
+            "precision": 0.175357385976855,
+            "count": 1288
+          },
+          {
+            "token": "30",
+            "precision": 0.1708645336963921,
+            "count": 1255
+          },
+          {
+            "token": "60",
+            "precision": 0.14962559564329475,
+            "count": 1099
+          },
+          {
+            "token": "15",
+            "precision": 0.14908100748808714,
+            "count": 1095
+          }
+        ]
+      },
+      {
+        "feature_id": 7155,
+        "activation": 1.0859375,
+        "iter1_activation": 1.0859375,
+        "iter2_activation": 0.2216796875,
+        "feature_frequency": 0.9629332262812793,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5593385214007782,
+            "count": 4025
+          },
+          {
+            "token": "3",
+            "precision": 0.4209282934963869,
+            "count": 3029
+          },
+          {
+            "token": "5",
+            "precision": 0.3667315175097276,
+            "count": 2639
+          },
+          {
+            "token": "4",
+            "precision": 0.33588104502501387,
+            "count": 2417
+          },
+          {
+            "token": "10",
+            "precision": 0.26737076153418565,
+            "count": 1924
+          },
+          {
+            "token": "20",
+            "precision": 0.24193996664813786,
+            "count": 1741
+          },
+          {
+            "token": "1",
+            "precision": 0.2349916620344636,
+            "count": 1691
+          },
+          {
+            "token": "6",
+            "precision": 0.23429683157309616,
+            "count": 1686
+          },
+          {
+            "token": "8",
+            "precision": 0.2045580878265703,
+            "count": 1472
+          },
+          {
+            "token": "12",
+            "precision": 0.20205669816564759,
+            "count": 1454
+          },
+          {
+            "token": "0",
+            "precision": 0.17982212340188994,
+            "count": 1294
+          },
+          {
+            "token": "100",
+            "precision": 0.1764869371873263,
+            "count": 1270
+          },
+          {
+            "token": "30",
+            "precision": 0.17398554752640355,
+            "count": 1252
+          },
+          {
+            "token": "15",
+            "precision": 0.15314063368538078,
+            "count": 1102
+          },
+          {
+            "token": "60",
+            "precision": 0.15244580322401335,
+            "count": 1097
+          }
+        ]
+      },
+      {
+        "feature_id": 4422,
+        "activation": 1.078125,
+        "iter1_activation": 0.34765625,
+        "iter2_activation": 1.078125,
+        "feature_frequency": 0.9462063428342031,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5678121906378164,
+            "count": 4015
+          },
+          {
+            "token": "3",
+            "precision": 0.42101541507566115,
+            "count": 2977
+          },
+          {
+            "token": "5",
+            "precision": 0.37165888841747985,
+            "count": 2628
+          },
+          {
+            "token": "4",
+            "precision": 0.3435157686324424,
+            "count": 2429
+          },
+          {
+            "token": "10",
+            "precision": 0.2730872578136049,
+            "count": 1931
+          },
+          {
+            "token": "20",
+            "precision": 0.2466412105784189,
+            "count": 1744
+          },
+          {
+            "token": "1",
+            "precision": 0.24423702446612927,
+            "count": 1727
+          },
+          {
+            "token": "6",
+            "precision": 0.237165888841748,
+            "count": 1677
+          },
+          {
+            "token": "8",
+            "precision": 0.205062933107057,
+            "count": 1450
+          },
+          {
+            "token": "12",
+            "precision": 0.20195163343232922,
+            "count": 1428
+          },
+          {
+            "token": "0",
+            "precision": 0.18087964927167302,
+            "count": 1279
+          },
+          {
+            "token": "100",
+            "precision": 0.1800311129967473,
+            "count": 1273
+          },
+          {
+            "token": "30",
+            "precision": 0.1767783906095319,
+            "count": 1250
+          },
+          {
+            "token": "60",
+            "precision": 0.1564135200113138,
+            "count": 1106
+          },
+          {
+            "token": "15",
+            "precision": 0.15344364304907368,
+            "count": 1085
+          }
+        ]
+      },
+      {
+        "feature_id": 7219,
+        "activation": 1.0078125,
+        "iter1_activation": 1.0078125,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.7330389401846648,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5971157356699526,
+            "count": 3271
+          },
+          {
+            "token": "3",
+            "precision": 0.44012413289521723,
+            "count": 2411
+          },
+          {
+            "token": "5",
+            "precision": 0.3919313618108799,
+            "count": 2147
+          },
+          {
+            "token": "4",
+            "precision": 0.36272362175976636,
+            "count": 1987
+          },
+          {
+            "token": "10",
+            "precision": 0.2864184008762322,
+            "count": 1569
+          },
+          {
+            "token": "1",
+            "precision": 0.2606790799561884,
+            "count": 1428
+          },
+          {
+            "token": "20",
+            "precision": 0.24771814530850675,
+            "count": 1357
+          },
+          {
+            "token": "6",
+            "precision": 0.2429718875502008,
+            "count": 1331
+          },
+          {
+            "token": "8",
+            "precision": 0.22015334063526834,
+            "count": 1206
+          },
+          {
+            "token": "12",
+            "precision": 0.2099306316173786,
+            "count": 1150
+          },
+          {
+            "token": "0",
+            "precision": 0.20335889010587807,
+            "count": 1114
+          },
+          {
+            "token": "100",
+            "precision": 0.18729463307776562,
+            "count": 1026
+          },
+          {
+            "token": "30",
+            "precision": 0.1829134720700986,
+            "count": 1002
+          },
+          {
+            "token": "15",
+            "precision": 0.1633807959109164,
+            "count": 895
+          },
+          {
+            "token": "60",
+            "precision": 0.1624680540343191,
+            "count": 890
+          }
+        ]
+      },
+      {
+        "feature_id": 2714,
+        "activation": 0.9296875,
+        "iter1_activation": 0.0,
+        "iter2_activation": 0.9296875,
+        "feature_frequency": 0.8892011240465676,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5680963130173062,
+            "count": 3775
+          },
+          {
+            "token": "3",
+            "precision": 0.41941309255079007,
+            "count": 2787
+          },
+          {
+            "token": "5",
+            "precision": 0.36824680210684724,
+            "count": 2447
+          },
+          {
+            "token": "4",
+            "precision": 0.3358916478555305,
+            "count": 2232
+          },
+          {
+            "token": "10",
+            "precision": 0.27163280662151995,
+            "count": 1805
+          },
+          {
+            "token": "20",
+            "precision": 0.24604966139954854,
+            "count": 1635
+          },
+          {
+            "token": "1",
+            "precision": 0.23521444695259594,
+            "count": 1563
+          },
+          {
+            "token": "6",
+            "precision": 0.23416102332580888,
+            "count": 1556
+          },
+          {
+            "token": "8",
+            "precision": 0.20346124905944318,
+            "count": 1352
+          },
+          {
+            "token": "12",
+            "precision": 0.2018058690744921,
+            "count": 1341
+          },
+          {
+            "token": "0",
+            "precision": 0.1796839729119639,
+            "count": 1194
+          },
+          {
+            "token": "100",
+            "precision": 0.17772761474793078,
+            "count": 1181
+          },
+          {
+            "token": "30",
+            "precision": 0.17742663656884877,
+            "count": 1179
+          },
+          {
+            "token": "15",
+            "precision": 0.1542513167795335,
+            "count": 1025
+          },
+          {
+            "token": "60",
+            "precision": 0.1530474040632054,
+            "count": 1017
+          }
+        ]
+      },
+      {
+        "feature_id": 3437,
+        "activation": 0.92578125,
+        "iter1_activation": 0.0,
+        "iter2_activation": 0.92578125,
+        "feature_frequency": 0.7440117757259468,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5742805755395683,
+            "count": 3193
+          },
+          {
+            "token": "3",
+            "precision": 0.4224820143884892,
+            "count": 2349
+          },
+          {
+            "token": "5",
+            "precision": 0.3723021582733813,
+            "count": 2070
+          },
+          {
+            "token": "4",
+            "precision": 0.354136690647482,
+            "count": 1969
+          },
+          {
+            "token": "10",
+            "precision": 0.27266187050359714,
+            "count": 1516
+          },
+          {
+            "token": "1",
+            "precision": 0.23669064748201438,
+            "count": 1316
+          },
+          {
+            "token": "6",
+            "precision": 0.23471223021582735,
+            "count": 1305
+          },
+          {
+            "token": "20",
+            "precision": 0.23075539568345324,
+            "count": 1283
+          },
+          {
+            "token": "8",
+            "precision": 0.20431654676258992,
+            "count": 1136
+          },
+          {
+            "token": "12",
+            "precision": 0.2039568345323741,
+            "count": 1134
+          },
+          {
+            "token": "30",
+            "precision": 0.17446043165467626,
+            "count": 970
+          },
+          {
+            "token": "0",
+            "precision": 0.16528776978417267,
+            "count": 919
+          },
+          {
+            "token": "100",
+            "precision": 0.160431654676259,
+            "count": 892
+          },
+          {
+            "token": "7",
+            "precision": 0.15737410071942445,
+            "count": 875
+          },
+          {
+            "token": "50",
+            "precision": 0.14622302158273381,
+            "count": 813
+          }
+        ]
+      },
+      {
+        "feature_id": 3682,
+        "activation": 0.890625,
+        "iter1_activation": 0.890625,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.7312993443061688,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5983531564501372,
+            "count": 3270
+          },
+          {
+            "token": "3",
+            "precision": 0.44812442817932296,
+            "count": 2449
+          },
+          {
+            "token": "5",
+            "precision": 0.4003659652333028,
+            "count": 2188
+          },
+          {
+            "token": "4",
+            "precision": 0.3809698078682525,
+            "count": 2082
+          },
+          {
+            "token": "10",
+            "precision": 0.28728270814272644,
+            "count": 1570
+          },
+          {
+            "token": "6",
+            "precision": 0.2697163769441903,
+            "count": 1474
+          },
+          {
+            "token": "1",
+            "precision": 0.269167429094236,
+            "count": 1471
+          },
+          {
+            "token": "20",
+            "precision": 0.23989021043000916,
+            "count": 1311
+          },
+          {
+            "token": "12",
+            "precision": 0.2292772186642269,
+            "count": 1253
+          },
+          {
+            "token": "8",
+            "precision": 0.22177493138151877,
+            "count": 1212
+          },
+          {
+            "token": "0",
+            "precision": 0.18408051235132664,
+            "count": 1006
+          },
+          {
+            "token": "100",
+            "precision": 0.18078682525160109,
+            "count": 988
+          },
+          {
+            "token": "30",
+            "precision": 0.17053979871912167,
+            "count": 932
+          },
+          {
+            "token": "15",
+            "precision": 0.16322049405306496,
+            "count": 892
+          },
+          {
+            "token": "50",
+            "precision": 0.1473010064043916,
+            "count": 805
+          }
+        ]
+      },
+      {
+        "feature_id": 4798,
+        "activation": 0.75390625,
+        "iter1_activation": 0.125,
+        "iter2_activation": 0.75390625,
+        "feature_frequency": 0.8665863776261207,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5784434836318715,
+            "count": 3746
+          },
+          {
+            "token": "3",
+            "precision": 0.42387276096355775,
+            "count": 2745
+          },
+          {
+            "token": "5",
+            "precision": 0.3738418777022854,
+            "count": 2421
+          },
+          {
+            "token": "4",
+            "precision": 0.34990735021618286,
+            "count": 2266
+          },
+          {
+            "token": "10",
+            "precision": 0.2737801111797406,
+            "count": 1773
+          },
+          {
+            "token": "1",
+            "precision": 0.25169857936998147,
+            "count": 1630
+          },
+          {
+            "token": "6",
+            "precision": 0.2490735021618283,
+            "count": 1613
+          },
+          {
+            "token": "20",
+            "precision": 0.23285978999382334,
+            "count": 1508
+          },
+          {
+            "token": "8",
+            "precision": 0.21077825818406423,
+            "count": 1365
+          },
+          {
+            "token": "12",
+            "precision": 0.20197652872143299,
+            "count": 1308
+          },
+          {
+            "token": "0",
+            "precision": 0.18576281655342805,
+            "count": 1203
+          },
+          {
+            "token": "100",
+            "precision": 0.18082149474984557,
+            "count": 1171
+          },
+          {
+            "token": "30",
+            "precision": 0.17294626312538605,
+            "count": 1120
+          },
+          {
+            "token": "60",
+            "precision": 0.14746757257566398,
+            "count": 955
+          },
+          {
+            "token": "50",
+            "precision": 0.144224830142063,
+            "count": 934
+          }
+        ]
+      },
+      {
+        "feature_id": 3329,
+        "activation": 0.74609375,
+        "iter1_activation": 0.0,
+        "iter2_activation": 0.74609375,
+        "feature_frequency": 0.9278736785762077,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5712431496971445,
+            "count": 3961
+          },
+          {
+            "token": "3",
+            "precision": 0.4270262474762042,
+            "count": 2961
+          },
+          {
+            "token": "5",
+            "precision": 0.3746755119700029,
+            "count": 2598
+          },
+          {
+            "token": "4",
+            "precision": 0.34842803576579173,
+            "count": 2416
+          },
+          {
+            "token": "10",
+            "precision": 0.275310066339775,
+            "count": 1909
+          },
+          {
+            "token": "20",
+            "precision": 0.24502451687337756,
+            "count": 1699
+          },
+          {
+            "token": "1",
+            "precision": 0.24358234785116817,
+            "count": 1689
+          },
+          {
+            "token": "6",
+            "precision": 0.24170752812229593,
+            "count": 1676
+          },
+          {
+            "token": "8",
+            "precision": 0.21055667724257282,
+            "count": 1460
+          },
+          {
+            "token": "12",
+            "precision": 0.2079607730025959,
+            "count": 1442
+          },
+          {
+            "token": "100",
+            "precision": 0.17464666858955868,
+            "count": 1211
+          },
+          {
+            "token": "30",
+            "precision": 0.1743582347851168,
+            "count": 1209
+          },
+          {
+            "token": "0",
+            "precision": 0.173925584078454,
+            "count": 1206
+          },
+          {
+            "token": "15",
+            "precision": 0.15431208537640612,
+            "count": 1070
+          },
+          {
+            "token": "60",
+            "precision": 0.15229304874531296,
+            "count": 1056
+          }
+        ]
+      },
+      {
+        "feature_id": 3727,
+        "activation": 0.7421875,
+        "iter1_activation": 0.68359375,
+        "iter2_activation": 0.7421875,
+        "feature_frequency": 0.9053927472233374,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5762636712976648,
+            "count": 3899
+          },
+          {
+            "token": "3",
+            "precision": 0.43275199527047,
+            "count": 2928
+          },
+          {
+            "token": "5",
+            "precision": 0.3743718592964824,
+            "count": 2533
+          },
+          {
+            "token": "4",
+            "precision": 0.34673366834170855,
+            "count": 2346
+          },
+          {
+            "token": "10",
+            "precision": 0.2734259532958912,
+            "count": 1850
+          },
+          {
+            "token": "1",
+            "precision": 0.24770913390481822,
+            "count": 1676
+          },
+          {
+            "token": "6",
+            "precision": 0.24253621046408513,
+            "count": 1641
+          },
+          {
+            "token": "20",
+            "precision": 0.24031924327519952,
+            "count": 1626
+          },
+          {
+            "token": "8",
+            "precision": 0.20854271356783918,
+            "count": 1411
+          },
+          {
+            "token": "12",
+            "precision": 0.20410877919006798,
+            "count": 1381
+          },
+          {
+            "token": "0",
+            "precision": 0.17277564292048478,
+            "count": 1169
+          },
+          {
+            "token": "100",
+            "precision": 0.17233224948270764,
+            "count": 1166
+          },
+          {
+            "token": "30",
+            "precision": 0.17026308010641442,
+            "count": 1152
+          },
+          {
+            "token": "15",
+            "precision": 0.15651788353532367,
+            "count": 1059
+          },
+          {
+            "token": "60",
+            "precision": 0.15223174697014485,
+            "count": 1030
+          }
+        ]
+      },
+      {
+        "feature_id": 2130,
+        "activation": 0.72265625,
+        "iter1_activation": 0.70703125,
+        "iter2_activation": 0.72265625,
+        "feature_frequency": 0.9755118426334806,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5599451303155006,
+            "count": 4082
+          },
+          {
+            "token": "3",
+            "precision": 0.4159122085048011,
+            "count": 3032
+          },
+          {
+            "token": "5",
+            "precision": 0.3655692729766804,
+            "count": 2665
+          },
+          {
+            "token": "4",
+            "precision": 0.341838134430727,
+            "count": 2492
+          },
+          {
+            "token": "10",
+            "precision": 0.27050754458161863,
+            "count": 1972
+          },
+          {
+            "token": "20",
+            "precision": 0.2421124828532236,
+            "count": 1765
+          },
+          {
+            "token": "6",
+            "precision": 0.23689986282578876,
+            "count": 1727
+          },
+          {
+            "token": "1",
+            "precision": 0.23497942386831275,
+            "count": 1713
+          },
+          {
+            "token": "8",
+            "precision": 0.20658436213991768,
+            "count": 1506
+          },
+          {
+            "token": "12",
+            "precision": 0.20233196159122085,
+            "count": 1475
+          },
+          {
+            "token": "0",
+            "precision": 0.1757201646090535,
+            "count": 1281
+          },
+          {
+            "token": "100",
+            "precision": 0.1748971193415638,
+            "count": 1275
+          },
+          {
+            "token": "30",
+            "precision": 0.1710562414266118,
+            "count": 1247
+          },
+          {
+            "token": "15",
+            "precision": 0.1513031550068587,
+            "count": 1103
+          },
+          {
+            "token": "60",
+            "precision": 0.150480109739369,
+            "count": 1097
+          }
+        ]
+      },
+      {
+        "feature_id": 4959,
+        "activation": 0.71875,
+        "iter1_activation": 0.388671875,
+        "iter2_activation": 0.71875,
+        "feature_frequency": 0.8878629733708016,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5639788997739261,
+            "count": 3742
+          },
+          {
+            "token": "3",
+            "precision": 0.43180105501130367,
+            "count": 2865
+          },
+          {
+            "token": "5",
+            "precision": 0.3763376036171816,
+            "count": 2497
+          },
+          {
+            "token": "4",
+            "precision": 0.3508666164280332,
+            "count": 2328
+          },
+          {
+            "token": "10",
+            "precision": 0.2726450640542577,
+            "count": 1809
+          },
+          {
+            "token": "1",
+            "precision": 0.24611906556141672,
+            "count": 1633
+          },
+          {
+            "token": "6",
+            "precision": 0.24581763376036173,
+            "count": 1631
+          },
+          {
+            "token": "20",
+            "precision": 0.23180105501130369,
+            "count": 1538
+          },
+          {
+            "token": "8",
+            "precision": 0.21130369253956294,
+            "count": 1402
+          },
+          {
+            "token": "12",
+            "precision": 0.20617935192162773,
+            "count": 1368
+          },
+          {
+            "token": "0",
+            "precision": 0.1785983421250942,
+            "count": 1185
+          },
+          {
+            "token": "100",
+            "precision": 0.1766390354182366,
+            "count": 1172
+          },
+          {
+            "token": "30",
+            "precision": 0.1710625470987189,
+            "count": 1135
+          },
+          {
+            "token": "15",
+            "precision": 0.15659382064807836,
+            "count": 1039
+          },
+          {
+            "token": "60",
+            "precision": 0.14513941220798796,
+            "count": 963
+          }
+        ]
+      },
+      {
+        "feature_id": 413,
+        "activation": 0.66796875,
+        "iter1_activation": 0.0,
+        "iter2_activation": 0.66796875,
+        "feature_frequency": 0.994513582229359,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5629709364908504,
+            "count": 4184
+          },
+          {
+            "token": "3",
+            "precision": 0.41805705059203446,
+            "count": 3107
+          },
+          {
+            "token": "5",
+            "precision": 0.36598493003229277,
+            "count": 2720
+          },
+          {
+            "token": "4",
+            "precision": 0.3398815931108719,
+            "count": 2526
+          },
+          {
+            "token": "10",
+            "precision": 0.2711248654467169,
+            "count": 2015
+          },
+          {
+            "token": "20",
+            "precision": 0.24165769644779334,
+            "count": 1796
+          },
+          {
+            "token": "1",
+            "precision": 0.23748654467169,
+            "count": 1765
+          },
+          {
+            "token": "6",
+            "precision": 0.23641011840688914,
+            "count": 1757
+          },
+          {
+            "token": "8",
+            "precision": 0.20492465016146394,
+            "count": 1523
+          },
+          {
+            "token": "12",
+            "precision": 0.2007534983853606,
+            "count": 1492
+          },
+          {
+            "token": "0",
+            "precision": 0.17841765339074273,
+            "count": 1326
+          },
+          {
+            "token": "100",
+            "precision": 0.17720667384284178,
+            "count": 1317
+          },
+          {
+            "token": "30",
+            "precision": 0.17195909580193758,
+            "count": 1278
+          },
+          {
+            "token": "15",
+            "precision": 0.15043057050592035,
+            "count": 1118
+          },
+          {
+            "token": "60",
+            "precision": 0.14908503767491926,
+            "count": 1108
+          }
+        ]
+      },
+      {
+        "feature_id": 873,
+        "activation": 0.5546875,
+        "iter1_activation": 0.5546875,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.44547035996253176,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5521177530790027,
+            "count": 1838
+          },
+          {
+            "token": "3",
+            "precision": 0.41964553920096126,
+            "count": 1397
+          },
+          {
+            "token": "5",
+            "precision": 0.35596275157705015,
+            "count": 1185
+          },
+          {
+            "token": "4",
+            "precision": 0.3334334635025533,
+            "count": 1110
+          },
+          {
+            "token": "1",
+            "precision": 0.2264944427756083,
+            "count": 754
+          },
+          {
+            "token": "10",
+            "precision": 0.2243917092219886,
+            "count": 747
+          },
+          {
+            "token": "6",
+            "precision": 0.22168819465304895,
+            "count": 738
+          },
+          {
+            "token": "20",
+            "precision": 0.21537999399218985,
+            "count": 717
+          },
+          {
+            "token": "8",
+            "precision": 0.2099729648543106,
+            "count": 699
+          },
+          {
+            "token": "12",
+            "precision": 0.19615500150195253,
+            "count": 653
+          },
+          {
+            "token": "0",
+            "precision": 0.18864523881045359,
+            "count": 628
+          },
+          {
+            "token": "100",
+            "precision": 0.17482727545809554,
+            "count": 582
+          },
+          {
+            "token": "7",
+            "precision": 0.1628116551516972,
+            "count": 542
+          },
+          {
+            "token": "50",
+            "precision": 0.14598978672273957,
+            "count": 486
+          },
+          {
+            "token": "9",
+            "precision": 0.1363772904776209,
+            "count": 454
+          }
+        ]
+      },
+      {
+        "feature_id": 7853,
+        "activation": 0.53515625,
+        "iter1_activation": 0.0,
+        "iter2_activation": 0.53515625,
+        "feature_frequency": 0.987019938445069,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5620932754880694,
+            "count": 4146
+          },
+          {
+            "token": "3",
+            "precision": 0.4182483731019523,
+            "count": 3085
+          },
+          {
+            "token": "5",
+            "precision": 0.36849240780911063,
+            "count": 2718
+          },
+          {
+            "token": "4",
+            "precision": 0.3408351409978308,
+            "count": 2514
+          },
+          {
+            "token": "10",
+            "precision": 0.2706073752711497,
+            "count": 1996
+          },
+          {
+            "token": "20",
+            "precision": 0.2414587852494577,
+            "count": 1781
+          },
+          {
+            "token": "1",
+            "precision": 0.23752711496746204,
+            "count": 1752
+          },
+          {
+            "token": "6",
+            "precision": 0.23671366594360085,
+            "count": 1746
+          },
+          {
+            "token": "8",
+            "precision": 0.2044468546637744,
+            "count": 1508
+          },
+          {
+            "token": "12",
+            "precision": 0.20105748373101953,
+            "count": 1483
+          },
+          {
+            "token": "0",
+            "precision": 0.17706073752711496,
+            "count": 1306
+          },
+          {
+            "token": "100",
+            "precision": 0.17543383947939262,
+            "count": 1294
+          },
+          {
+            "token": "30",
+            "precision": 0.1704175704989154,
+            "count": 1257
+          },
+          {
+            "token": "15",
+            "precision": 0.15075921908893708,
+            "count": 1112
+          },
+          {
+            "token": "60",
+            "precision": 0.14872559652928416,
+            "count": 1097
+          }
+        ]
+      },
+      {
+        "feature_id": 189,
+        "activation": 0.5078125,
+        "iter1_activation": 0.5078125,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.9338953566171551,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5634044992119215,
+            "count": 3932
+          },
+          {
+            "token": "3",
+            "precision": 0.42441610545923486,
+            "count": 2962
+          },
+          {
+            "token": "5",
+            "precision": 0.3682475999426852,
+            "count": 2570
+          },
+          {
+            "token": "4",
+            "precision": 0.34002006018054165,
+            "count": 2373
+          },
+          {
+            "token": "10",
+            "precision": 0.2736781773893108,
+            "count": 1910
+          },
+          {
+            "token": "20",
+            "precision": 0.2435879065768735,
+            "count": 1700
+          },
+          {
+            "token": "6",
+            "precision": 0.23799971342599227,
+            "count": 1661
+          },
+          {
+            "token": "1",
+            "precision": 0.23742656541051727,
+            "count": 1657
+          },
+          {
+            "token": "8",
+            "precision": 0.20289439747814872,
+            "count": 1416
+          },
+          {
+            "token": "12",
+            "precision": 0.20203467545493622,
+            "count": 1410
+          },
+          {
+            "token": "100",
+            "precision": 0.1762430147585614,
+            "count": 1230
+          },
+          {
+            "token": "0",
+            "precision": 0.17581315374695516,
+            "count": 1227
+          },
+          {
+            "token": "30",
+            "precision": 0.1686488035535177,
+            "count": 1177
+          },
+          {
+            "token": "60",
+            "precision": 0.15131107608539907,
+            "count": 1056
+          },
+          {
+            "token": "15",
+            "precision": 0.14672589196159908,
+            "count": 1024
+          }
+        ]
+      },
+      {
+        "feature_id": 2521,
+        "activation": 0.482421875,
+        "iter1_activation": 0.482421875,
+        "iter2_activation": 0.0,
+        "feature_frequency": 0.8759534323564834,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5608004888481516,
+            "count": 3671
+          },
+          {
+            "token": "3",
+            "precision": 0.4263672471738466,
+            "count": 2791
+          },
+          {
+            "token": "5",
+            "precision": 0.36281698747326613,
+            "count": 2375
+          },
+          {
+            "token": "4",
+            "precision": 0.34540177207454936,
+            "count": 2261
+          },
+          {
+            "token": "10",
+            "precision": 0.26443629697525206,
+            "count": 1731
+          },
+          {
+            "token": "20",
+            "precision": 0.24121600977696303,
+            "count": 1579
+          },
+          {
+            "token": "6",
+            "precision": 0.24075771463489154,
+            "count": 1576
+          },
+          {
+            "token": "1",
+            "precision": 0.23250840207760465,
+            "count": 1522
+          },
+          {
+            "token": "12",
+            "precision": 0.205010693553315,
+            "count": 1342
+          },
+          {
+            "token": "8",
+            "precision": 0.20394133822181484,
+            "count": 1335
+          },
+          {
+            "token": "30",
+            "precision": 0.17888787045523985,
+            "count": 1171
+          },
+          {
+            "token": "100",
+            "precision": 0.1743049190345249,
+            "count": 1141
+          },
+          {
+            "token": "0",
+            "precision": 0.17354109379773908,
+            "count": 1136
+          },
+          {
+            "token": "60",
+            "precision": 0.1570424686831653,
+            "count": 1028
+          },
+          {
+            "token": "15",
+            "precision": 0.15077910174152154,
+            "count": 987
+          }
+        ]
+      },
+      {
+        "feature_id": 661,
+        "activation": 0.470703125,
+        "iter1_activation": 0.1728515625,
+        "iter2_activation": 0.470703125,
+        "feature_frequency": 0.943530041482671,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.560913345624734,
+            "count": 3955
+          },
+          {
+            "token": "3",
+            "precision": 0.41908949085236136,
+            "count": 2955
+          },
+          {
+            "token": "5",
+            "precision": 0.364912778329315,
+            "count": 2573
+          },
+          {
+            "token": "4",
+            "precision": 0.3361225358105233,
+            "count": 2370
+          },
+          {
+            "token": "10",
+            "precision": 0.27102538647000424,
+            "count": 1911
+          },
+          {
+            "token": "20",
+            "precision": 0.24351155864416396,
+            "count": 1717
+          },
+          {
+            "token": "6",
+            "precision": 0.23684583746986243,
+            "count": 1670
+          },
+          {
+            "token": "1",
+            "precision": 0.2318820025528294,
+            "count": 1635
+          },
+          {
+            "token": "8",
+            "precision": 0.20507729400085095,
+            "count": 1446
+          },
+          {
+            "token": "12",
+            "precision": 0.2032335838888101,
+            "count": 1433
+          },
+          {
+            "token": "100",
+            "precision": 0.17486881293433557,
+            "count": 1233
+          },
+          {
+            "token": "0",
+            "precision": 0.17401786980570133,
+            "count": 1227
+          },
+          {
+            "token": "30",
+            "precision": 0.17061409729116436,
+            "count": 1203
+          },
+          {
+            "token": "15",
+            "precision": 0.15061693376825983,
+            "count": 1062
+          },
+          {
+            "token": "60",
+            "precision": 0.14423486030350305,
+            "count": 1017
+          }
+        ]
+      },
+      {
+        "feature_id": 4692,
+        "activation": 0.439453125,
+        "iter1_activation": 0.21484375,
+        "iter2_activation": 0.439453125,
+        "feature_frequency": 0.9541014318212231,
+        "number_correlations": [
+          {
+            "token": "2",
+            "precision": 0.5650771388499298,
+            "count": 4029
+          },
+          {
+            "token": "3",
+            "precision": 0.420617110799439,
+            "count": 2999
+          },
+          {
+            "token": "5",
+            "precision": 0.3709677419354839,
+            "count": 2645
+          },
+          {
+            "token": "4",
+            "precision": 0.3438990182328191,
+            "count": 2452
+          },
+          {
+            "token": "10",
+            "precision": 0.273632538569425,
+            "count": 1951
+          },
+          {
+            "token": "20",
+            "precision": 0.2437587657784011,
+            "count": 1738
+          },
+          {
+            "token": "1",
+            "precision": 0.24109396914446002,
+            "count": 1719
+          },
+          {
+            "token": "6",
+            "precision": 0.23870967741935484,
+            "count": 1702
+          },
+          {
+            "token": "8",
+            "precision": 0.20687237026647967,
+            "count": 1475
+          },
+          {
+            "token": "12",
+            "precision": 0.20196353436185133,
+            "count": 1440
+          },
+          {
+            "token": "0",
+            "precision": 0.17727910238429173,
+            "count": 1264
+          },
+          {
+            "token": "30",
+            "precision": 0.17517531556802243,
+            "count": 1249
+          },
+          {
+            "token": "100",
+            "precision": 0.17321178120617112,
+            "count": 1235
+          },
+          {
+            "token": "60",
+            "precision": 0.15273492286115006,
+            "count": 1089
+          },
+          {
+            "token": "15",
+            "precision": 0.1517531556802244,
+            "count": 1082
+          }
+        ]
+      }
+    ]
+  }
+}

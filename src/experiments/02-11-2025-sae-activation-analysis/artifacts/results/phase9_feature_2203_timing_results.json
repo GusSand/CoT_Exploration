@@ -1,0 +1,398 @@
+{
+  "original": {
+    "question": "Janet's ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?",
+    "answer": 18,
+    "feature_2203_timing": {
+      "early": {
+        "bot_position": 0,
+        "bot_activation": 15.0625,
+        "continuous_thought": [
+          0.0,
+          1.84375,
+          0.46875,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "all_activations": [
+          {
+            "position": 0,
+            "activation": 15.0625
+          },
+          {
+            "position": 1,
+            "activation": 0.0
+          },
+          {
+            "position": 2,
+            "activation": 1.84375
+          },
+          {
+            "position": 3,
+            "activation": 0.46875
+          },
+          {
+            "position": 4,
+            "activation": 0.0
+          },
+          {
+            "position": 5,
+            "activation": 0.0
+          },
+          {
+            "position": 6,
+            "activation": 0.0
+          }
+        ]
+      },
+      "middle": {
+        "bot_position": 0,
+        "bot_activation": 15.0,
+        "continuous_thought": [
+          0.013671875,
+          2.25,
+          0.83203125,
+          0.0,
+          0.1630859375,
+          0.1328125
+        ],
+        "all_activations": [
+          {
+            "position": 0,
+            "activation": 15.0
+          },
+          {
+            "position": 1,
+            "activation": 0.013671875
+          },
+          {
+            "position": 2,
+            "activation": 2.25
+          },
+          {
+            "position": 3,
+            "activation": 0.83203125
+          },
+          {
+            "position": 4,
+            "activation": 0.0
+          },
+          {
+            "position": 5,
+            "activation": 0.1630859375
+          },
+          {
+            "position": 6,
+            "activation": 0.1328125
+          }
+        ]
+      },
+      "late": {
+        "bot_position": 0,
+        "bot_activation": 15.3125,
+        "continuous_thought": [
+          0.1748046875,
+          3.484375,
+          1.3125,
+          0.0,
+          0.1279296875,
+          0.0
+        ],
+        "all_activations": [
+          {
+            "position": 0,
+            "activation": 15.3125
+          },
+          {
+            "position": 1,
+            "activation": 0.1748046875
+          },
+          {
+            "position": 2,
+            "activation": 3.484375
+          },
+          {
+            "position": 3,
+            "activation": 1.3125
+          },
+          {
+            "position": 4,
+            "activation": 0.0
+          },
+          {
+            "position": 5,
+            "activation": 0.1279296875
+          },
+          {
+            "position": 6,
+            "activation": 0.0
+          }
+        ]
+      }
+    }
+  },
+  "variant_a": {
+    "question": "Janet's ducks lay 16 eggs per day. She eats two for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?",
+    "answer": 20,
+    "feature_2203_timing": {
+      "early": {
+        "bot_position": 0,
+        "bot_activation": 15.0625,
+        "continuous_thought": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "all_activations": [
+          {
+            "position": 0,
+            "activation": 15.0625
+          },
+          {
+            "position": 1,
+            "activation": 0.0
+          },
+          {
+            "position": 2,
+            "activation": 0.0
+          },
+          {
+            "position": 3,
+            "activation": 0.0
+          },
+          {
+            "position": 4,
+            "activation": 0.0
+          },
+          {
+            "position": 5,
+            "activation": 0.0
+          },
+          {
+            "position": 6,
+            "activation": 0.0
+          }
+        ]
+      },
+      "middle": {
+        "bot_position": 0,
+        "bot_activation": 15.0,
+        "continuous_thought": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "all_activations": [
+          {
+            "position": 0,
+            "activation": 15.0
+          },
+          {
+            "position": 1,
+            "activation": 0.0
+          },
+          {
+            "position": 2,
+            "activation": 0.0
+          },
+          {
+            "position": 3,
+            "activation": 0.0
+          },
+          {
+            "position": 4,
+            "activation": 0.0
+          },
+          {
+            "position": 5,
+            "activation": 0.0
+          },
+          {
+            "position": 6,
+            "activation": 0.0
+          }
+        ]
+      },
+      "late": {
+        "bot_position": 0,
+        "bot_activation": 15.3125,
+        "continuous_thought": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "all_activations": [
+          {
+            "position": 0,
+            "activation": 15.3125
+          },
+          {
+            "position": 1,
+            "activation": 0.0
+          },
+          {
+            "position": 2,
+            "activation": 0.0
+          },
+          {
+            "position": 3,
+            "activation": 0.0
+          },
+          {
+            "position": 4,
+            "activation": 0.0
+          },
+          {
+            "position": 5,
+            "activation": 0.0
+          },
+          {
+            "position": 6,
+            "activation": 0.0
+          }
+        ]
+      }
+    }
+  },
+  "variant_b": {
+    "question": "Janet's ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with three. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?",
+    "answer": 20,
+    "feature_2203_timing": {
+      "early": {
+        "bot_position": 0,
+        "bot_activation": 15.0625,
+        "continuous_thought": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "all_activations": [
+          {
+            "position": 0,
+            "activation": 15.0625
+          },
+          {
+            "position": 1,
+            "activation": 0.0
+          },
+          {
+            "position": 2,
+            "activation": 0.0
+          },
+          {
+            "position": 3,
+            "activation": 0.0
+          },
+          {
+            "position": 4,
+            "activation": 0.0
+          },
+          {
+            "position": 5,
+            "activation": 0.0
+          },
+          {
+            "position": 6,
+            "activation": 0.0
+          }
+        ]
+      },
+      "middle": {
+        "bot_position": 0,
+        "bot_activation": 15.0,
+        "continuous_thought": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "all_activations": [
+          {
+            "position": 0,
+            "activation": 15.0
+          },
+          {
+            "position": 1,
+            "activation": 0.0
+          },
+          {
+            "position": 2,
+            "activation": 0.0
+          },
+          {
+            "position": 3,
+            "activation": 0.0
+          },
+          {
+            "position": 4,
+            "activation": 0.0
+          },
+          {
+            "position": 5,
+            "activation": 0.0
+          },
+          {
+            "position": 6,
+            "activation": 0.0
+          }
+        ]
+      },
+      "late": {
+        "bot_position": 0,
+        "bot_activation": 15.3125,
+        "continuous_thought": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "all_activations": [
+          {
+            "position": 0,
+            "activation": 15.3125
+          },
+          {
+            "position": 1,
+            "activation": 0.0
+          },
+          {
+            "position": 2,
+            "activation": 0.0
+          },
+          {
+            "position": 3,
+            "activation": 0.0
+          },
+          {
+            "position": 4,
+            "activation": 0.0
+          },
+          {
+            "position": 5,
+            "activation": 0.0
+          },
+          {
+            "position": 6,
+            "activation": 0.0
+          }
+        ]
+      }
+    }
+  }
+}
